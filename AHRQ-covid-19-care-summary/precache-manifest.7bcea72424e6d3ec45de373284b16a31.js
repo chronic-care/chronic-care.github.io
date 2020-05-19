@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66f9f80ab9a0b9dc30798bdba2813e1f",
+    "revision": "b22074669016b05e5ff53822c9d26356",
     "url": "/AHRQ-covid-19-care-summary/index.html"
   },
   {
-    "revision": "a1dc3bea0fb5910fe33c",
+    "revision": "adb65fbf734eb44160e6",
     "url": "/AHRQ-covid-19-care-summary/static/css/main.d8b70692.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AHRQ-covid-19-care-summary/static/js/launch.9d21efbd.chunk.js"
   },
   {
-    "revision": "a1dc3bea0fb5910fe33c",
-    "url": "/AHRQ-covid-19-care-summary/static/js/main.1969aa26.chunk.js"
+    "revision": "adb65fbf734eb44160e6",
+    "url": "/AHRQ-covid-19-care-summary/static/js/main.f041911a.chunk.js"
   },
   {
     "revision": "3b59e21409c3e69f904a",
