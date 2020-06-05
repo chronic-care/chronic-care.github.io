@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/AHRQ-covid-19-care-summary/precache-manifest.7bcea72424e6d3ec45de373284b16a31.js"
+  "/AHRQ-covid-19-care-summary/precache-manifest.c0b5a61b93c739a0fe4e53375146f608.js"
 );
 
 self.addEventListener('message', (event) => {
