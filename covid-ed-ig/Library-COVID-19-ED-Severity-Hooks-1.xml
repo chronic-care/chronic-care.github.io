@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="COVID_19_ED_Severity_Hooks" system="http://fhir.org/guides/acep" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
+   </usings>
+   <includes>
+      <def locator="13:1-13:68" localIdentifier="CovidED" path="http://fhir.org/guides/acep/COVID_19_ED_Severity_FHIRv400" version="1.0.0"/>
+   </includes>
+   <contexts>
+      <def locator="17:1-17:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="17:1-17:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="17:1-17:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def locator="24:1-25:47" name="Has Severity Classification" context="Patient" accessLevel="Public">
+         <expression locator="25:3-25:47" xsi:type="Not">
+            <operand locator="25:3-25:47" xsi:type="IsNull">
+               <operand locator="25:3-25:35" name="Severity Classification" libraryName="CovidED" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="27:1-28:58" name="Get Severity Card Summary" context="Patient" accessLevel="Public">
+         <expression locator="28:3-28:58" xsi:type="Concatenate">
+            <operand locator="28:3-28:35" name="Severity Classification" libraryName="CovidED" xsi:type="ExpressionRef"/>
+            <operand locator="28:39-28:58" valueType="t:String" value=" COVID-19 Severity" xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def locator="30:1-31:142" name="Get Severity Card Detail" context="Patient" accessLevel="Public">
+         <expression locator="31:3-31:142" xsi:type="Concatenate">
+            <operand locator="31:3-31:103" xsi:type="Concatenate">
+               <operand locator="31:3-31:76" xsi:type="Concatenate">
+                  <operand locator="31:3-31:40" valueType="t:String" value="COVID-19 severity classification is " xsi:type="Literal"/>
+                  <operand locator="31:44-31:76" name="Severity Classification" libraryName="CovidED" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand locator="31:80-31:103" valueType="t:String" value=" with a risk score of " xsi:type="Literal"/>
+            </operand>
+            <operand locator="31:107-31:142" xsi:type="ToString">
+               <operand locator="31:116-31:141" name="Total Risk Score" libraryName="CovidED" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="33:1-36:16" name="Get Severity Card Indicator" context="Patient" accessLevel="Public">
+         <expression locator="34:3-36:16" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="34:6-34:99" xsi:type="Or">
+                  <operand locator="34:6-34:51" xsi:type="Equal">
+                     <operand locator="34:6-34:38" name="Severity Classification" libraryName="CovidED" xsi:type="ExpressionRef"/>
+                     <operand locator="34:42-34:51" valueType="t:String" value="CRITICAL" xsi:type="Literal"/>
+                  </operand>
+                  <operand locator="34:56-34:99" xsi:type="Equal">
+                     <operand locator="34:56-34:88" name="Severity Classification" libraryName="CovidED" xsi:type="ExpressionRef"/>
+                     <operand locator="34:92-34:99" valueType="t:String" value="SEVERE" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then locator="35:10-35:19" valueType="t:String" value="critical" xsi:type="Literal"/>
+            <else locator="36:8-36:16" valueType="t:String" value="warning" xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>

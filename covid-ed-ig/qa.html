@@ -1,0 +1,351 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- broken links = 0, errors = 7, warn = 13, info = 10 -->
+<head>
+  <title>COVID19EDSeverityClassification : Validation Results</title>
+  <link href="fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results for COVID19EDSeverityClassification</h1>
+ <p>Generated Mon Mar 01 21:40:24 UTC 2021, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.min.html">Errors Only</a></p>
+<table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.59</span></td></tr>
+ <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = fhir.acep.covid19-ed-r4, Canonical = http://fhir.org/guides/acep</td></tr>
+ <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
+ <tr><td>Version Check:</td><td>0.1.0: <span stlye="color: marron; font-weight: bold">No entry in the package-list.json file for this version</span></td></tr>
+ <tr><td>Supressed Messages:</td><td><a href="#suppressed">3 Suppressed Issues</a>
+</td></tr>
+ <tr><td>Dependency Checks:</td><td><div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of the package">Version</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR Release</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Canonical URL">Canonical</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Web Reference Base">Web Base</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Comments about this entry">Comment</span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/home/runner/work/covid-ed-ig/covid-ed-ig/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAL0lEQVR42u3XsQ0AQAgCQHdl/xn8jxvYWB3JlTR0VJLa+OltBwAAYP6EEQAAgCsPVYVAgIJrA/sAAAAASUVORK5CYII=)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> fhir.acep.covid19-ed-r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0.1.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://fhir.org/guides/acep</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/home/runner/work/covid-ed-ig/covid-ed-ig/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAI0lEQVR42u3QIQEAAAACIL/6/4MvTAQOkLYBAAB4kAAAANwMad9AqkRjgNAAAAAASUVORK5CYII=)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.cpg</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="background-color: #ffcccc">current</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/uv/cpg</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">https://build.fhir.org/ig/HL7/cqf-recommendations/</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Cannot be published with a dependency on a current build version</td></tr>
+</table><para>Templates: fhir.base.template#0.2.1</para></div></td></tr>
+ <tr><td>HL7 Publication Rules:</td><td>Code = n/a. <ul>
+  <li>package-list.json: No category entry for the registry category (talk to FHIR product director on #IG Creation for assistance). Note: existing IGs already have a category in the <a href="http://fhir.org/guides/acep/package-list.json">existing package-list.json</a> - update your package-list.json from there</li>
+  <li>package-list.json: No entry found for version 0.1.0</li>
+</ul>
+</td></tr>
+ <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://fhir.org/guides/acep (Problem #1 with package-list.json at http://fhir.org/guides/acep: http://fhir.org/guides/acep/package-list.json)</td></tr>
+ <tr><td>Summary:</td><td> broken links = 0, errors = 7, warn = 13, info = 10</td></tr>
+</table>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_contentig"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>1</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-CDS_Connect_Commons"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDS_Connect_Commons</b></a></td><td><b>2</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_Concepts"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_Concepts</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_ED_Severity"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity</b></a></td><td><b>3</b></td><td><b>9</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_ED_Severity_Hooks"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity_Hooks</b></a></td><td><b>1</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-FHIRHelpers"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers</b></a></td><td><b>1</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_plandefinition_PlanDefinition-COVID_19_ED_Severity"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>2</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="internal"> </a>
+<h2><a href="">n/a</a></h2>
+ <table class="grid">
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_contentig"> </a>
+<h2><a href="ImplementationGuide-fhir.acep.covid19-ed-r4.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>ImplementationGuide/fhir.acep.covid19-ed-r4: ImplementationGuide</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-CDS_Connect_Commons"> </a>
+<h2><a href="Library-CDS-Connect-Commons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDS_Connect_Commons.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDS-Connect-Commons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/CDS-Connect-Commons: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/CDS-Connect-Commons: Library.relatedArtifact[1].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDS-Connect-Commons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDS-Connect-Commons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDS-Connect-Commons: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl6" class="flip" onclick="flip('l6')">Show Reasoning</span><div id="l6" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDS-Connect-Commons: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl7" class="flip" onclick="flip('l7')">Show Reasoning</span><div id="l7" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDS-Connect-Commons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDS-Connect-Commons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDS-Connect-Commons: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl10" class="flip" onclick="flip('l10')">Show Reasoning</span><div id="l10" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_Concepts"> </a>
+<h2><a href="Library-COVID-19-Concepts.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_Concepts.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-Concepts: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-Concepts: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-Concepts: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/COVID-19-Concepts: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl14" class="flip" onclick="flip('l14')">Show Reasoning</span><div id="l14" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/COVID-19-Concepts: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl15" class="flip" onclick="flip('l15')">Show Reasoning</span><div id="l15" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-Concepts: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-Concepts: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/COVID-19-Concepts: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl18" class="flip" onclick="flip('l18')">Show Reasoning</span><div id="l18" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_ED_Severity"> </a>
+<h2><a href="Library-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Parameter type tuple of Fever: System.Boolean, Cough: System.Boolean, SoreThroat: System.Boolean, Malaise: System.Boolean, Headache: System.Boolean, MusclePain: System.Boolean, Nausea: System.Boolean, LossOfTasteAndSmell: System.Boolean, ShortnessOfBreath: System.Boolean of parameter Symptoms is not supported; reported as FHIR.Any</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Parameter type tuple of Alertness: System.String, InspiredOxygen: System.Boolean, PerformanceStatus: System.String, Dyspnea: System.Boolean, AbnormalChestImaging: System.Boolean, PaO2FiO2Ratio: System.Decimal, LungInfiltrates: System.Decimal, RespiratoryFailure: System.Boolean, SepticShock: System.Boolean, MultiorganDysfunction: System.Boolean of parameter ClinicalAssessments is not supported; reported as FHIR.Any</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Parameter type tuple of Cancer: System.Boolean, CardiovascularDisease: System.Boolean, ChronicRespiratoryDisease: System.Boolean, DiabetesType2: System.Boolean, DownsSyndrome: System.Boolean, Hypertension: System.Boolean, Immunosuppression: System.Boolean, NeurologicDisease: System.Boolean, Obesity: System.Boolean, ObstructiveSleepApnea: System.Boolean, Pregnancy: System.Boolean, RenalDisease: System.Boolean, SteroidUsage: System.Boolean of parameter RiskFactors is not supported; reported as FHIR.Any</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type List of tuple of Date: System.String, Systolic: System.Decimal, Diastolic: System.Decimal, Display: System.String of definition Blood Pressure Observation Components is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type List of tuple of Date: System.String, Systolic: System.Decimal, Diastolic: System.Decimal, Display: System.String of definition Systolic Blood Pressure Observations is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type List of tuple of Date: System.String, Systolic: System.Decimal, Diastolic: System.Decimal, Display: System.String of definition Blood Pressure Observations is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of Date: System.String, Systolic: System.Decimal, Diastolic: System.Decimal, Display: System.String of definition Last SBP is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of Patient: tuple of Name: System.String, Gender: System.String, Age: System.Integer, Race: string, Risk: tuple of SeverityClassification: System.String, RiskScore: System.Integer, RiskPercent: System.Integer, RiskFactors: System.Integer, Disposition: List of System.Any, SmartPhrases: List of System.Any, ClinicalAssessment: tuple of RespiratoryRate: System.Decimal, O2Saturation: System.Decimal, HeartRate: System.Decimal, BloodPressure: System.String, SystolicBloodPressure: System.Decimal, TemperatureC: System.Decimal, TemperatureF: System.Decimal, Alertness: System.Any, InspiredOxygen: System.Any, PerformanceStatus: System.Any, RiskFactors: tuple of Cancer: System.Boolean, CardiovascularDisease: System.Boolean, ChronicRespiratoryDisease: System.Boolean, DiabetesType2: System.Boolean, DownsSyndrome: System.Boolean, Hypertension: System.Boolean, Immunosuppression: System.Boolean, NeurologicDisease: System.Boolean, Obesity: System.Boolean, ObstructiveSleepApnea: System.Boolean, Pregnancy: System.Boolean, RenalDisease: System.Boolean, SteroidUsage: System.Boolean, DiagnosticAssessment: tuple of ALT: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, AST: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Creatinine: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, CRP: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, DDimer: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Ferritin: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, LDH: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Lymphopenia: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Neutrophils: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Thrombocytopenia: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Troponin: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, WBC: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.String, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean of definition Summary is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of RespiratoryRate: List of tuple of Date: System.String, Name: System.String, Result: System.String, ResultValue: System.String, O2Saturation: List of tuple of Date: System.String, Name: System.String, Result: System.String, ResultValue: System.String, HeartRate: List of tuple of Date: System.String, Name: System.String, Result: System.String, ResultValue: System.String, BloodPressure: List of tuple of Date: System.String, Systolic: System.Decimal, Diastolic: System.Decimal, Display: System.String, Temperature: List of Observation of definition TrendData is not supported; implementations may not be able to use the result of this expression</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>COVID_19_ED_Severity_FHIRv400.cql</b></td><td><b>error</b></td><td title=""><b>CQL Processing failed with exception: null</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/COVID-19-ED-Severity: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/COVID-19-ED-Severity: Library.relatedArtifact[1].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID_19_ED_Severity_Hooks"> </a>
+<h2><a href="Library-COVID-19-ED-Severity-Hooks.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity_Hooks.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity-Hooks: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/COVID-19-ED-Severity-Hooks: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/COVID-19-ED-Severity-Hooks: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/COVID-19-ED-Severity-Hooks: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl39" class="flip" onclick="flip('l39')">Show Reasoning</span><div id="l39" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-FHIRHelpers"> </a>
+<h2><a href="Library-FHIRHelpers-4.0.1.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/FHIRHelpers-4.0.1: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl44" class="flip" onclick="flip('l44')">Show Reasoning</span><div id="l44" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl45" class="flip" onclick="flip('l45')">Show Reasoning</span><div id="l45" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl48" class="flip" onclick="flip('l48')">Show Reasoning</span><div id="l48" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_plandefinition_PlanDefinition-COVID_19_ED_Severity"> </a>
+<h2><a href="PlanDefinition-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition.action[0].condition[0].expression.language</b></td><td><b>warning</b></td><td title="Terminology_TX_ValueSet_NotFound"><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition.action[0].dynamicValue[0].expression.language</b></td><td><b>warning</b></td><td title="Terminology_TX_ValueSet_NotFound"><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition.action[0].dynamicValue[1].expression.language</b></td><td><b>warning</b></td><td title="Terminology_TX_ValueSet_NotFound"><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition.action[0].dynamicValue[2].expression.language</b></td><td><b>warning</b></td><td title="Terminology_TX_ValueSet_NotFound"><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>PlanDefinition/COVID-19-ED-Severity: PlanDefinition</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition - listed in meta</b></td>
+   </tr>
+</table>
+<a name="suppressed"> </a>
+<p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
+<p><b>IG publisher CQL content not recognized as a slice</b></p><ul>
+ <li>INFORMATION: Library/COVID-19-ED-Severity: Library.content[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</li>
+ <li>INFORMATION: Library/COVID-19-ED-Severity: Library.content[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</li>
+ <li>INFORMATION: Library/COVID-19-ED-Severity: Library.content[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</li>
+</ul>
+<p>No suppressed messsages</p><a name="sorted"> </a>
+<p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"> </a>
+<h2>TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-CDS-Connect-Commons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDS_Connect_Commons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-CDS-Connect-Commons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDS_Connect_Commons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-COVID-19-ED-Severity-Hooks.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID_19_ED_Severity_Hooks.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-FHIRHelpers-4.0.1.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Terminology_TX_ValueSet_NotFound"> </a>
+<h2>Terminology_TX_ValueSet_NotFound</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="PlanDefinition-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="PlanDefinition-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="PlanDefinition-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="PlanDefinition-COVID-19-ED-Severity.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/PlanDefinition-COVID_19_ED_Severity.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+   </tr>
+</table>
+</body>
+</html>

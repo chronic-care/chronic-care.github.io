@@ -1,0 +1,287 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/acep/Library/COVID-19-Concepts> a fhir:Library;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "COVID-19-Concepts"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary>
+     ], [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary";
+       fhir:index 1;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary>
+     ], [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary";
+       fhir:index 2;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary>
+     ], [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary";
+       fhir:index 3;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Related Artifacts</h2><table class=\"grid\"><tr><td>depends-on</td><td><a href=\"http://terminology.hl7.org/2.0.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></td></tr><tr><td>depends-on</td><td><a href=\"http://terminology.hl7.org/2.0.0/CodeSystem-v3-snomed-CT.html\">SNOMED&nbsp;CT International Edition</a></td></tr><tr><td>depends-on</td><td><code>urn:oid:2.16.840.1.113883.6.238</code></td></tr><tr><td>depends-on</td><td><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin</code></td></tr><tr><td>depends-on</td><td><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091</code></td></tr><tr><td>depends-on</td><td><code>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203</code></td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class=\"language-sql\">library COVID_19_Concepts version '1.0.0'\n\n// ## Code Systems ##ß\n\ncodesystem \"LOINC\": 'http://loinc.org'\ncodesystem \"SNOMED-CT\": 'http://snomed.info/sct'\ncodesystem \"Race\": 'urn:oid:2.16.840.1.113883.6.238'\n\n// ## Value sets ##\n\n// [See value set in VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.2074.1.1.3/expansion)\nvalueset \"Race Category\": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3'\n\n// Value sets not available in VSAC, included via expanded FHIR ValueSet resources\nvalueset \"Cardiovascular Disease Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular'\nvalueset \"Chronic Respiratory Disease Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory'\nvalueset \"Diabetes Type 2 Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes'\nvalueset \"Downs Syndrome Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome'\nvalueset \"Hypertension Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension'\nvalueset \"Malignancy Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy'\nvalueset \"Obstructive Sleep Apnea Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea'\nvalueset \"Renal Disease Codes\": 'http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal'\n\n// Lab results\nvalueset \"ALT Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt'\nvalueset \"AST Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast'\nvalueset \"CRP Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp'\nvalueset \"Creatinine Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine'\nvalueset \"D-dimer Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer'\nvalueset \"Ferritin Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin'\nvalueset \"LDH Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh'\nvalueset \"Leukocyte Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte'\nvalueset \"Lymphocytes Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes'\nvalueset \"Neutrophils Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils'\nvalueset \"Platelets Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets'\nvalueset \"Troponin Lab Results\": 'http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin'\n\n// Value sets from VSAC\nvalueset \"Obesity ICD10CM Codes\": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091'\nvalueset \"Obesity SNOMED Codes\": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203'\n\n// ## Individual codes ##\n\n// list individual codes from code systems used directly in the CQL logic. Individual codes are used when there is\n// a single code from a particular vocabulary standard used to represent a clinical concept. It is considered\n// best-practice not to create value sets containing a single code.\n\ncode \"Black or African American\": '2054-5' from \"Race\" display 'Black or African American'\ncode \"White\": '2106-3' from \"Race\" display 'White'\n\ncode \"Blood pressure\": '85354-9' from \"LOINC\" display 'Blood pressure systolic and diastolic'\ncode \"Systolic blood pressure\": '8480-6' from \"LOINC\" display 'Systolic blood pressure'\ncode \"Diastolic blood pressure\": '8462-4' from \"LOINC\" display 'Diastolic blood pressure'\n\ncode \"Heart rate\": '8867-4' from \"LOINC\" display 'Heart rate'\ncode \"Oxygen saturation\": '2708-6' from \"LOINC\" display 'Oxygen saturation'\ncode \"Respiratory rate\": '9279-1' from \"LOINC\" display 'Respiratory rate'\ncode \"Body temperature\": '8310-5' from \"LOINC\" display 'Body temperature'\ncode \"Body height\": '8302-2' from \"LOINC\" display 'Body height'\ncode \"Body weight\": '29463-7' from \"LOINC\" display 'Body weight'\ncode \"Body mass index\": '39156-5' from \"LOINC\" display 'Body mass index'\n</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 6Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 9Kb)</p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "shareable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "computable" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "publishable" ]
+  ], [
+     fhir:index 3;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "executable" ]
+  ], [
+     fhir:index 4;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueCode [ fhir:value "structured" ]
+  ];
+  fhir:Library.url [ fhir:value "http://fhir.org/guides/acep/Library/COVID-19-Concepts"];
+  fhir:Library.version [ fhir:value "0.1.0"];
+  fhir:Library.name [ fhir:value "COVID_19_Concepts"];
+  fhir:Library.title [ fhir:value "CQL Library - COVID-19 Shared Concepts and Terminology"];
+  fhir:Library.status [ fhir:value "active"];
+  fhir:Library.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:Library.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/library-type" ];
+       fhir:Coding.code [ fhir:value "logic-library" ]
+     ]
+  ];
+  fhir:Library.date [ fhir:value "2021-03-01T21:40:12+00:00"^^xsd:dateTime];
+  fhir:Library.publisher [ fhir:value "Veterans Health Administration (VHA)"];
+  fhir:Library.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/Special/committees/[something]" ]
+     ]
+  ];
+  fhir:Library.description [ fhir:value "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries."];
+  fhir:Library.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:Library.relatedArtifact [
+     fhir:index 0;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://loinc.org";
+       fhir:link <http://loinc.org>
+     ]
+  ], [
+     fhir:index 1;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://snomed.info/sct";
+       fhir:link <http://snomed.info/sct>
+     ]
+  ], [
+     fhir:index 2;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [ fhir:value "urn:oid:2.16.840.1.113883.6.238" ]
+  ], [
+     fhir:index 3;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3";
+       fhir:link <http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3>
+     ]
+  ], [
+     fhir:index 4;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular>
+     ]
+  ], [
+     fhir:index 5;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory>
+     ]
+  ], [
+     fhir:index 6;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes>
+     ]
+  ], [
+     fhir:index 7;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome>
+     ]
+  ], [
+     fhir:index 8;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension>
+     ]
+  ], [
+     fhir:index 9;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy>
+     ]
+  ], [
+     fhir:index 10;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea>
+     ]
+  ], [
+     fhir:index 11;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal>
+     ]
+  ], [
+     fhir:index 12;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt>
+     ]
+  ], [
+     fhir:index 13;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast>
+     ]
+  ], [
+     fhir:index 14;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp>
+     ]
+  ], [
+     fhir:index 15;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine>
+     ]
+  ], [
+     fhir:index 16;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer>
+     ]
+  ], [
+     fhir:index 17;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin>
+     ]
+  ], [
+     fhir:index 18;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh>
+     ]
+  ], [
+     fhir:index 19;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte>
+     ]
+  ], [
+     fhir:index 20;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes>
+     ]
+  ], [
+     fhir:index 21;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils>
+     ]
+  ], [
+     fhir:index 22;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets>
+     ]
+  ], [
+     fhir:index 23;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin";
+       fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin>
+     ]
+  ], [
+     fhir:index 24;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091";
+       fhir:link <http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091>
+     ]
+  ], [
+     fhir:index 25;
+     fhir:RelatedArtifact.type [ fhir:value "depends-on" ];
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203";
+       fhir:link <http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203>
+     ]
+  ];
+  fhir:Library.content [
+     fhir:index 0;
+     fhir:Attachment.contentType [ fhir:value "text/cql" ];
+     fhir:Attachment.data [ fhir:value "bGlicmFyeSBDT1ZJRF8xOV9Db25jZXB0cyB2ZXJzaW9uICcxLjAuMCcKCi8vICMjIENvZGUgU3lzdGVtcyAjI8OfCgpjb2Rlc3lzdGVtICJMT0lOQyI6ICdodHRwOi8vbG9pbmMub3JnJwpjb2Rlc3lzdGVtICJTTk9NRUQtQ1QiOiAnaHR0cDovL3Nub21lZC5pbmZvL3NjdCcKY29kZXN5c3RlbSAiUmFjZSI6ICd1cm46b2lkOjIuMTYuODQwLjEuMTEzODgzLjYuMjM4JwoKLy8gIyMgVmFsdWUgc2V0cyAjIwoKLy8gW1NlZSB2YWx1ZSBzZXQgaW4gVlNBQ10oaHR0cHM6Ly92c2FjLm5sbS5uaWguZ292L3ZhbHVlc2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMjA3NC4xLjEuMy9leHBhbnNpb24pCnZhbHVlc2V0ICJSYWNlIENhdGVnb3J5IjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjIwNzQuMS4xLjMnCgovLyBWYWx1ZSBzZXRzIG5vdCBhdmFpbGFibGUgaW4gVlNBQywgaW5jbHVkZWQgdmlhIGV4cGFuZGVkIEZISVIgVmFsdWVTZXQgcmVzb3VyY2VzCnZhbHVlc2V0ICJDYXJkaW92YXNjdWxhciBEaXNlYXNlIENvZGVzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1jYXJkaW92YXNjdWxhcicKdmFsdWVzZXQgIkNocm9uaWMgUmVzcGlyYXRvcnkgRGlzZWFzZSBDb2RlcyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stcmVzcGlyYXRvcnknCnZhbHVlc2V0ICJEaWFiZXRlcyBUeXBlIDIgQ29kZXMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWRpYWJldGVzJwp2YWx1ZXNldCAiRG93bnMgU3luZHJvbWUgQ29kZXMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWRvd25zLXN5bmRyb21lJwp2YWx1ZXNldCAiSHlwZXJ0ZW5zaW9uIENvZGVzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1oeXBlcnRlbnNpb24nCnZhbHVlc2V0ICJNYWxpZ25hbmN5IENvZGVzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1tYWxpZ25hbmN5Jwp2YWx1ZXNldCAiT2JzdHJ1Y3RpdmUgU2xlZXAgQXBuZWEgQ29kZXMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLW9ic3RydWN0aXZlLXNsZWVwLWFwbmVhJwp2YWx1ZXNldCAiUmVuYWwgRGlzZWFzZSBDb2RlcyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stcmVuYWwnCgovLyBMYWIgcmVzdWx0cwp2YWx1ZXNldCAiQUxUIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItYWx0Jwp2YWx1ZXNldCAiQVNUIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItYXN0Jwp2YWx1ZXNldCAiQ1JQIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItY3JwJwp2YWx1ZXNldCAiQ3JlYXRpbmluZSBMYWIgUmVzdWx0cyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWNyZWF0aW5pbmUnCnZhbHVlc2V0ICJELWRpbWVyIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItZGRpbWVyJwp2YWx1ZXNldCAiRmVycml0aW4gTGFiIFJlc3VsdHMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1mZXJyaXRpbicKdmFsdWVzZXQgIkxESCBMYWIgUmVzdWx0cyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWxkaCcKdmFsdWVzZXQgIkxldWtvY3l0ZSBMYWIgUmVzdWx0cyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWxldWtvY3l0ZScKdmFsdWVzZXQgIkx5bXBob2N5dGVzIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItbHltcGhvY3l0ZXMnCnZhbHVlc2V0ICJOZXV0cm9waGlscyBMYWIgUmVzdWx0cyI6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLW5ldXRyb3BoaWxzJwp2YWx1ZXNldCAiUGxhdGVsZXRzIExhYiBSZXN1bHRzIjogJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItcGxhdGVsZXRzJwp2YWx1ZXNldCAiVHJvcG9uaW4gTGFiIFJlc3VsdHMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi10cm9wb25pbicKCi8vIFZhbHVlIHNldHMgZnJvbSBWU0FDCnZhbHVlc2V0ICJPYmVzaXR5IElDRDEwQ00gQ29kZXMiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMzYxNi4yMDAuMTEwLjEwMi4zMDkxJwp2YWx1ZXNldCAiT2Jlc2l0eSBTTk9NRUQgQ29kZXMiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMzYxNi4yMDAuMTEwLjEwMi42MjAzJwoKLy8gIyMgSW5kaXZpZHVhbCBjb2RlcyAjIwoKLy8gbGlzdCBpbmRpdmlkdWFsIGNvZGVzIGZyb20gY29kZSBzeXN0ZW1zIHVzZWQgZGlyZWN0bHkgaW4gdGhlIENRTCBsb2dpYy4gSW5kaXZpZHVhbCBjb2RlcyBhcmUgdXNlZCB3aGVuIHRoZXJlIGlzCi8vIGEgc2luZ2xlIGNvZGUgZnJvbSBhIHBhcnRpY3VsYXIgdm9jYWJ1bGFyeSBzdGFuZGFyZCB1c2VkIHRvIHJlcHJlc2VudCBhIGNsaW5pY2FsIGNvbmNlcHQuIEl0IGlzIGNvbnNpZGVyZWQKLy8gYmVzdC1wcmFjdGljZSBub3QgdG8gY3JlYXRlIHZhbHVlIHNldHMgY29udGFpbmluZyBhIHNpbmdsZSBjb2RlLgoKY29kZSAiQmxhY2sgb3IgQWZyaWNhbiBBbWVyaWNhbiI6ICcyMDU0LTUnIGZyb20gIlJhY2UiIGRpc3BsYXkgJ0JsYWNrIG9yIEFmcmljYW4gQW1lcmljYW4nCmNvZGUgIldoaXRlIjogJzIxMDYtMycgZnJvbSAiUmFjZSIgZGlzcGxheSAnV2hpdGUnCgpjb2RlICJCbG9vZCBwcmVzc3VyZSI6ICc4NTM1NC05JyBmcm9tICJMT0lOQyIgZGlzcGxheSAnQmxvb2QgcHJlc3N1cmUgc3lzdG9saWMgYW5kIGRpYXN0b2xpYycKY29kZSAiU3lzdG9saWMgYmxvb2QgcHJlc3N1cmUiOiAnODQ4MC02JyBmcm9tICJMT0lOQyIgZGlzcGxheSAnU3lzdG9saWMgYmxvb2QgcHJlc3N1cmUnCmNvZGUgIkRpYXN0b2xpYyBibG9vZCBwcmVzc3VyZSI6ICc4NDYyLTQnIGZyb20gIkxPSU5DIiBkaXNwbGF5ICdEaWFzdG9saWMgYmxvb2QgcHJlc3N1cmUnCgpjb2RlICJIZWFydCByYXRlIjogJzg4NjctNCcgZnJvbSAiTE9JTkMiIGRpc3BsYXkgJ0hlYXJ0IHJhdGUnCmNvZGUgIk94eWdlbiBzYXR1cmF0aW9uIjogJzI3MDgtNicgZnJvbSAiTE9JTkMiIGRpc3BsYXkgJ094eWdlbiBzYXR1cmF0aW9uJwpjb2RlICJSZXNwaXJhdG9yeSByYXRlIjogJzkyNzktMScgZnJvbSAiTE9JTkMiIGRpc3BsYXkgJ1Jlc3BpcmF0b3J5IHJhdGUnCmNvZGUgIkJvZHkgdGVtcGVyYXR1cmUiOiAnODMxMC01JyBmcm9tICJMT0lOQyIgZGlzcGxheSAnQm9keSB0ZW1wZXJhdHVyZScKY29kZSAiQm9keSBoZWlnaHQiOiAnODMwMi0yJyBmcm9tICJMT0lOQyIgZGlzcGxheSAnQm9keSBoZWlnaHQnCmNvZGUgIkJvZHkgd2VpZ2h0IjogJzI5NDYzLTcnIGZyb20gIkxPSU5DIiBkaXNwbGF5ICdCb2R5IHdlaWdodCcKY29kZSAiQm9keSBtYXNzIGluZGV4IjogJzM5MTU2LTUnIGZyb20gIkxPSU5DIiBkaXNwbGF5ICdCb2R5IG1hc3MgaW5kZXgnCg=="^^xsd:base64Binary ]
+  ], [
+     fhir:index 1;
+     fhir:Attachment.contentType [ fhir:value "application/elm+xml" ];
+     fhir:Attachment.data [ fhir:value "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpYnJhcnkgeG1sbnM9InVybjpobDctb3JnOmVsbTpyMSIgeG1sbnM6dD0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpmaGlyPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB4bWxuczpxZG00Mz0idXJuOmhlYWx0aGl0LWdvdjpxZG06djRfMyIgeG1sbnM6cWRtNTM9InVybjpoZWFsdGhpdC1nb3Y6cWRtOnY1XzMiIHhtbG5zOmE9InVybjpobDctb3JnOmNxbC1hbm5vdGF0aW9uczpyMSI+CiAgIDxhbm5vdGF0aW9uIHRyYW5zbGF0b3JPcHRpb25zPSJFbmFibGVMb2NhdG9ycyxEaXNhYmxlTGlzdERlbW90aW9uLERpc2FibGVMaXN0UHJvbW90aW9uIiB4c2k6dHlwZT0iYTpDcWxUb0VsbUluZm8iLz4KICAgPGlkZW50aWZpZXIgaWQ9IkNPVklEXzE5X0NvbmNlcHRzIiBzeXN0ZW09Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcCIgdmVyc2lvbj0iMS4wLjAiLz4KICAgPHNjaGVtYUlkZW50aWZpZXIgaWQ9InVybjpobDctb3JnOmVsbSIgdmVyc2lvbj0icjEiLz4KICAgPHVzaW5ncz4KICAgICAgPGRlZiBsb2NhbElkZW50aWZpZXI9IlN5c3RlbSIgdXJpPSJ1cm46aGw3LW9yZzplbG0tdHlwZXM6cjEiLz4KICAgPC91c2luZ3M+CiAgIDxjb2RlU3lzdGVtcz4KICAgICAgPGRlZiBsb2NhdG9yPSI1OjEtNTozOCIgbmFtZT0iTE9JTkMiIGlkPSJodHRwOi8vbG9pbmMub3JnIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iNjoxLTY6NDgiIG5hbWU9IlNOT01FRC1DVCIgaWQ9Imh0dHA6Ly9zbm9tZWQuaW5mby9zY3QiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSI3OjEtNzo1MiIgbmFtZT0iUmFjZSIgaWQ9InVybjpvaWQ6Mi4xNi44NDAuMS4xMTM4ODMuNi4yMzgiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgPC9jb2RlU3lzdGVtcz4KICAgPHZhbHVlU2V0cz4KICAgICAgPGRlZiBsb2NhdG9yPSIxMjoxLTEyOjk1IiBuYW1lPSJSYWNlIENhdGVnb3J5IiBpZD0iaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMjA3NC4xLjEuMyIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjE1OjEtMTU6MTE4IiBuYW1lPSJDYXJkaW92YXNjdWxhciBEaXNlYXNlIENvZGVzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWNhcmRpb3Zhc2N1bGFyIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iMTY6MS0xNjoxMjAiIG5hbWU9IkNocm9uaWMgUmVzcGlyYXRvcnkgRGlzZWFzZSBDb2RlcyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1yZXNwaXJhdG9yeSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjE3OjEtMTc6MTA1IiBuYW1lPSJEaWFiZXRlcyBUeXBlIDIgQ29kZXMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stZGlhYmV0ZXMiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIxODoxLTE4OjExMCIgbmFtZT0iRG93bnMgU3luZHJvbWUgQ29kZXMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stZG93bnMtc3luZHJvbWUiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIxOToxLTE5OjEwNiIgbmFtZT0iSHlwZXJ0ZW5zaW9uIENvZGVzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWh5cGVydGVuc2lvbiIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjIwOjEtMjA6MTAyIiBuYW1lPSJNYWxpZ25hbmN5IENvZGVzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLW1hbGlnbmFuY3kiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIyMToxLTIxOjEyOCIgbmFtZT0iT2JzdHJ1Y3RpdmUgU2xlZXAgQXBuZWEgQ29kZXMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stb2JzdHJ1Y3RpdmUtc2xlZXAtYXBuZWEiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIyMjoxLTIyOjEwMCIgbmFtZT0iUmVuYWwgRGlzZWFzZSBDb2RlcyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1yZW5hbCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjI1OjEtMjU6ODMiIG5hbWU9IkFMVCBMYWIgUmVzdWx0cyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItYWx0IiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iMjY6MS0yNjo4MyIgbmFtZT0iQVNUIExhYiBSZXN1bHRzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1hc3QiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIyNzoxLTI3OjgzIiBuYW1lPSJDUlAgTGFiIFJlc3VsdHMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWNycCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjI4OjEtMjg6OTciIG5hbWU9IkNyZWF0aW5pbmUgTGFiIFJlc3VsdHMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWNyZWF0aW5pbmUiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIyOToxLTI5OjkwIiBuYW1lPSJELWRpbWVyIExhYiBSZXN1bHRzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1kZGltZXIiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIzMDoxLTMwOjkzIiBuYW1lPSJGZXJyaXRpbiBMYWIgUmVzdWx0cyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItZmVycml0aW4iIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIzMToxLTMxOjgzIiBuYW1lPSJMREggTGFiIFJlc3VsdHMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWxkaCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyIvPgogICAgICA8ZGVmIGxvY2F0b3I9IjMyOjEtMzI6OTUiIG5hbWU9IkxldWtvY3l0ZSBMYWIgUmVzdWx0cyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItbGV1a29jeXRlIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iMzM6MS0zMzo5OSIgbmFtZT0iTHltcGhvY3l0ZXMgTGFiIFJlc3VsdHMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWx5bXBob2N5dGVzIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iMzQ6MS0zNDo5OSIgbmFtZT0iTmV1dHJvcGhpbHMgTGFiIFJlc3VsdHMiIGlkPSJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLW5ldXRyb3BoaWxzIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iMzU6MS0zNTo5NSIgbmFtZT0iUGxhdGVsZXRzIExhYiBSZXN1bHRzIiBpZD0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1wbGF0ZWxldHMiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIzNjoxLTM2OjkzIiBuYW1lPSJUcm9wb25pbiBMYWIgUmVzdWx0cyIgaWQ9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItdHJvcG9uaW4iIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgICAgPGRlZiBsb2NhdG9yPSIzOToxLTM5OjExNCIgbmFtZT0iT2Jlc2l0eSBJQ0QxMENNIENvZGVzIiBpZD0iaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMzYxNi4yMDAuMTEwLjEwMi4zMDkxIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iNDA6MS00MDoxMTMiIG5hbWU9Ik9iZXNpdHkgU05PTUVEIENvZGVzIiBpZD0iaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMzYxNi4yMDAuMTEwLjEwMi42MjAzIiBhY2Nlc3NMZXZlbD0iUHVibGljIi8+CiAgIDwvdmFsdWVTZXRzPgogICA8Y29kZXM+CiAgICAgIDxkZWYgbG9jYXRvcj0iNDg6MS00ODo5MCIgbmFtZT0iQmxhY2sgb3IgQWZyaWNhbiBBbWVyaWNhbiIgaWQ9IjIwNTQtNSIgZGlzcGxheT0iQmxhY2sgb3IgQWZyaWNhbiBBbWVyaWNhbiIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjQ4OjQ5LTQ4OjU0IiBuYW1lPSJSYWNlIi8+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjQ5OjEtNDk6NTAiIG5hbWU9IldoaXRlIiBpZD0iMjEwNi0zIiBkaXNwbGF5PSJXaGl0ZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjQ5OjI5LTQ5OjM0IiBuYW1lPSJSYWNlIi8+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjUxOjEtNTE6OTMiIG5hbWU9IkJsb29kIHByZXNzdXJlIiBpZD0iODUzNTQtOSIgZGlzcGxheT0iQmxvb2QgcHJlc3N1cmUgc3lzdG9saWMgYW5kIGRpYXN0b2xpYyIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjUxOjM5LTUxOjQ1IiBuYW1lPSJMT0lOQyIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBsb2NhdG9yPSI1MjoxLTUyOjg3IiBuYW1lPSJTeXN0b2xpYyBibG9vZCBwcmVzc3VyZSIgaWQ9Ijg0ODAtNiIgZGlzcGxheT0iU3lzdG9saWMgYmxvb2QgcHJlc3N1cmUiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8Y29kZVN5c3RlbSBsb2NhdG9yPSI1Mjo0Ny01Mjo1MyIgbmFtZT0iTE9JTkMiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbG9jYXRvcj0iNTM6MS01Mzo4OSIgbmFtZT0iRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiBpZD0iODQ2Mi00IiBkaXNwbGF5PSJEaWFzdG9saWMgYmxvb2QgcHJlc3N1cmUiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8Y29kZVN5c3RlbSBsb2NhdG9yPSI1Mzo0OC01Mzo1NCIgbmFtZT0iTE9JTkMiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbG9jYXRvcj0iNTU6MS01NTo2MSIgbmFtZT0iSGVhcnQgcmF0ZSIgaWQ9Ijg4NjctNCIgZGlzcGxheT0iSGVhcnQgcmF0ZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjU1OjM0LTU1OjQwIiBuYW1lPSJMT0lOQyIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBsb2NhdG9yPSI1NjoxLTU2Ojc1IiBuYW1lPSJPeHlnZW4gc2F0dXJhdGlvbiIgaWQ9IjI3MDgtNiIgZGlzcGxheT0iT3h5Z2VuIHNhdHVyYXRpb24iIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8Y29kZVN5c3RlbSBsb2NhdG9yPSI1Njo0MS01Njo0NyIgbmFtZT0iTE9JTkMiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbG9jYXRvcj0iNTc6MS01Nzo3MyIgbmFtZT0iUmVzcGlyYXRvcnkgcmF0ZSIgaWQ9IjkyNzktMSIgZGlzcGxheT0iUmVzcGlyYXRvcnkgcmF0ZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjU3OjQwLTU3OjQ2IiBuYW1lPSJMT0lOQyIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBsb2NhdG9yPSI1ODoxLTU4OjczIiBuYW1lPSJCb2R5IHRlbXBlcmF0dXJlIiBpZD0iODMxMC01IiBkaXNwbGF5PSJCb2R5IHRlbXBlcmF0dXJlIiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGNvZGVTeXN0ZW0gbG9jYXRvcj0iNTg6NDAtNTg6NDYiIG5hbWU9IkxPSU5DIi8+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjU5OjEtNTk6NjMiIG5hbWU9IkJvZHkgaGVpZ2h0IiBpZD0iODMwMi0yIiBkaXNwbGF5PSJCb2R5IGhlaWdodCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjU5OjM1LTU5OjQxIiBuYW1lPSJMT0lOQyIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBsb2NhdG9yPSI2MDoxLTYwOjY0IiBuYW1lPSJCb2R5IHdlaWdodCIgaWQ9IjI5NDYzLTciIGRpc3BsYXk9IkJvZHkgd2VpZ2h0IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGNvZGVTeXN0ZW0gbG9jYXRvcj0iNjA6MzYtNjA6NDIiIG5hbWU9IkxPSU5DIi8+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjYxOjEtNjE6NzIiIG5hbWU9IkJvZHkgbWFzcyBpbmRleCIgaWQ9IjM5MTU2LTUiIGRpc3BsYXk9IkJvZHkgbWFzcyBpbmRleCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIGxvY2F0b3I9IjYxOjQwLTYxOjQ2IiBuYW1lPSJMT0lOQyIvPgogICAgICA8L2RlZj4KICAgPC9jb2Rlcz4KPC9saWJyYXJ5Pgo="^^xsd:base64Binary ]
+  ], [
+     fhir:index 2;
+     fhir:Attachment.contentType [ fhir:value "application/elm+json" ];
+     fhir:Attachment.data [ fhir:value "ewogICAibGlicmFyeSIgOiB7CiAgICAgICJhbm5vdGF0aW9uIiA6IFsgewogICAgICAgICAidHJhbnNsYXRvck9wdGlvbnMiIDogIkVuYWJsZUxvY2F0b3JzLERpc2FibGVMaXN0RGVtb3Rpb24sRGlzYWJsZUxpc3RQcm9tb3Rpb24iLAogICAgICAgICAidHlwZSIgOiAiQ3FsVG9FbG1JbmZvIgogICAgICB9IF0sCiAgICAgICJpZGVudGlmaWVyIiA6IHsKICAgICAgICAgImlkIiA6ICJDT1ZJRF8xOV9Db25jZXB0cyIsCiAgICAgICAgICJzeXN0ZW0iIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcCIsCiAgICAgICAgICJ2ZXJzaW9uIiA6ICIxLjAuMCIKICAgICAgfSwKICAgICAgInNjaGVtYUlkZW50aWZpZXIiIDogewogICAgICAgICAiaWQiIDogInVybjpobDctb3JnOmVsbSIsCiAgICAgICAgICJ2ZXJzaW9uIiA6ICJyMSIKICAgICAgfSwKICAgICAgInVzaW5ncyIgOiB7CiAgICAgICAgICJkZWYiIDogWyB7CiAgICAgICAgICAgICJsb2NhbElkZW50aWZpZXIiIDogIlN5c3RlbSIsCiAgICAgICAgICAgICJ1cmkiIDogInVybjpobDctb3JnOmVsbS10eXBlczpyMSIKICAgICAgICAgfSBdCiAgICAgIH0sCiAgICAgICJjb2RlU3lzdGVtcyIgOiB7CiAgICAgICAgICJkZWYiIDogWyB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1OjEtNTozOCIsCiAgICAgICAgICAgICJuYW1lIiA6ICJMT0lOQyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2xvaW5jLm9yZyIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI2OjEtNjo0OCIsCiAgICAgICAgICAgICJuYW1lIiA6ICJTTk9NRUQtQ1QiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9zbm9tZWQuaW5mby9zY3QiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiNzoxLTc6NTIiLAogICAgICAgICAgICAibmFtZSIgOiAiUmFjZSIsCiAgICAgICAgICAgICJpZCIgOiAidXJuOm9pZDoyLjE2Ljg0MC4xLjExMzg4My42LjIzOCIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9IF0KICAgICAgfSwKICAgICAgInZhbHVlU2V0cyIgOiB7CiAgICAgICAgICJkZWYiIDogWyB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIxMjoxLTEyOjk1IiwKICAgICAgICAgICAgIm5hbWUiIDogIlJhY2UgQ2F0ZWdvcnkiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjIwNzQuMS4xLjMiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMTU6MS0xNToxMTgiLAogICAgICAgICAgICAibmFtZSIgOiAiQ2FyZGlvdmFzY3VsYXIgRGlzZWFzZSBDb2RlcyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWNhcmRpb3Zhc2N1bGFyIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjE2OjEtMTY6MTIwIiwKICAgICAgICAgICAgIm5hbWUiIDogIkNocm9uaWMgUmVzcGlyYXRvcnkgRGlzZWFzZSBDb2RlcyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLXJlc3BpcmF0b3J5IiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjE3OjEtMTc6MTA1IiwKICAgICAgICAgICAgIm5hbWUiIDogIkRpYWJldGVzIFR5cGUgMiBDb2RlcyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLWRpYWJldGVzIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjE4OjEtMTg6MTEwIiwKICAgICAgICAgICAgIm5hbWUiIDogIkRvd25zIFN5bmRyb21lIENvZGVzIiwKICAgICAgICAgICAgImlkIiA6ICJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stZG93bnMtc3luZHJvbWUiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMTk6MS0xOToxMDYiLAogICAgICAgICAgICAibmFtZSIgOiAiSHlwZXJ0ZW5zaW9uIENvZGVzIiwKICAgICAgICAgICAgImlkIiA6ICJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2staHlwZXJ0ZW5zaW9uIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjIwOjEtMjA6MTAyIiwKICAgICAgICAgICAgIm5hbWUiIDogIk1hbGlnbmFuY3kgQ29kZXMiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1jb25kaXRpb24tcmlzay1tYWxpZ25hbmN5IiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjIxOjEtMjE6MTI4IiwKICAgICAgICAgICAgIm5hbWUiIDogIk9ic3RydWN0aXZlIFNsZWVwIEFwbmVhIENvZGVzIiwKICAgICAgICAgICAgImlkIiA6ICJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktY29uZGl0aW9uLXJpc2stb2JzdHJ1Y3RpdmUtc2xlZXAtYXBuZWEiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMjI6MS0yMjoxMDAiLAogICAgICAgICAgICAibmFtZSIgOiAiUmVuYWwgRGlzZWFzZSBDb2RlcyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWNvbmRpdGlvbi1yaXNrLXJlbmFsIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjI1OjEtMjU6ODMiLAogICAgICAgICAgICAibmFtZSIgOiAiQUxUIExhYiBSZXN1bHRzIiwKICAgICAgICAgICAgImlkIiA6ICJodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2FjZXAvVmFsdWVTZXQvY292aWQtMTktbGFiLWFsdCIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIyNjoxLTI2OjgzIiwKICAgICAgICAgICAgIm5hbWUiIDogIkFTVCBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1hc3QiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMjc6MS0yNzo4MyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJDUlAgTGFiIFJlc3VsdHMiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItY3JwIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjI4OjEtMjg6OTciLAogICAgICAgICAgICAibmFtZSIgOiAiQ3JlYXRpbmluZSBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1jcmVhdGluaW5lIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjI5OjEtMjk6OTAiLAogICAgICAgICAgICAibmFtZSIgOiAiRC1kaW1lciBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1kZGltZXIiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMzA6MS0zMDo5MyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJGZXJyaXRpbiBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1mZXJyaXRpbiIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzMToxLTMxOjgzIiwKICAgICAgICAgICAgIm5hbWUiIDogIkxESCBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1sZGgiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMzI6MS0zMjo5NSIsCiAgICAgICAgICAgICJuYW1lIiA6ICJMZXVrb2N5dGUgTGFiIFJlc3VsdHMiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItbGV1a29jeXRlIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjMzOjEtMzM6OTkiLAogICAgICAgICAgICAibmFtZSIgOiAiTHltcGhvY3l0ZXMgTGFiIFJlc3VsdHMiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvYWNlcC9WYWx1ZVNldC9jb3ZpZC0xOS1sYWItbHltcGhvY3l0ZXMiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMzQ6MS0zNDo5OSIsCiAgICAgICAgICAgICJuYW1lIiA6ICJOZXV0cm9waGlscyBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1uZXV0cm9waGlscyIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzNToxLTM1Ojk1IiwKICAgICAgICAgICAgIm5hbWUiIDogIlBsYXRlbGV0cyBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi1wbGF0ZWxldHMiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIKICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMzY6MS0zNjo5MyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJUcm9wb25pbiBMYWIgUmVzdWx0cyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9hY2VwL1ZhbHVlU2V0L2NvdmlkLTE5LWxhYi10cm9wb25pbiIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzOToxLTM5OjExNCIsCiAgICAgICAgICAgICJuYW1lIiA6ICJPYmVzaXR5IElDRDEwQ00gQ29kZXMiLAogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjM2MTYuMjAwLjExMC4xMDIuMzA5MSIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIgogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI0MDoxLTQwOjExMyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJPYmVzaXR5IFNOT01FRCBDb2RlcyIsCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuMzYxNi4yMDAuMTEwLjEwMi42MjAzIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiCiAgICAgICAgIH0gXQogICAgICB9LAogICAgICAiY29kZXMiIDogewogICAgICAgICAiZGVmIiA6IFsgewogICAgICAgICAgICAibG9jYXRvciIgOiAiNDg6MS00ODo5MCIsCiAgICAgICAgICAgICJuYW1lIiA6ICJCbGFjayBvciBBZnJpY2FuIEFtZXJpY2FuIiwKICAgICAgICAgICAgImlkIiA6ICIyMDU0LTUiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiQmxhY2sgb3IgQWZyaWNhbiBBbWVyaWNhbiIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIiwKICAgICAgICAgICAgImNvZGVTeXN0ZW0iIDogewogICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNDg6NDktNDg6NTQiLAogICAgICAgICAgICAgICAibmFtZSIgOiAiUmFjZSIKICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI0OToxLTQ5OjUwIiwKICAgICAgICAgICAgIm5hbWUiIDogIldoaXRlIiwKICAgICAgICAgICAgImlkIiA6ICIyMTA2LTMiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiV2hpdGUiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjQ5OjI5LTQ5OjM0IiwKICAgICAgICAgICAgICAgIm5hbWUiIDogIlJhY2UiCiAgICAgICAgICAgIH0KICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiNTE6MS01MTo5MyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJCbG9vZCBwcmVzc3VyZSIsCiAgICAgICAgICAgICJpZCIgOiAiODUzNTQtOSIsCiAgICAgICAgICAgICJkaXNwbGF5IiA6ICJCbG9vZCBwcmVzc3VyZSBzeXN0b2xpYyBhbmQgZGlhc3RvbGljIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiY29kZVN5c3RlbSIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1MTozOS01MTo0NSIsCiAgICAgICAgICAgICAgICJuYW1lIiA6ICJMT0lOQyIKICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1MjoxLTUyOjg3IiwKICAgICAgICAgICAgIm5hbWUiIDogIlN5c3RvbGljIGJsb29kIHByZXNzdXJlIiwKICAgICAgICAgICAgImlkIiA6ICI4NDgwLTYiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiU3lzdG9saWMgYmxvb2QgcHJlc3N1cmUiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjUyOjQ3LTUyOjUzIiwKICAgICAgICAgICAgICAgIm5hbWUiIDogIkxPSU5DIgogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjUzOjEtNTM6ODkiLAogICAgICAgICAgICAibmFtZSIgOiAiRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiwKICAgICAgICAgICAgImlkIiA6ICI4NDYyLTQiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiY29kZVN5c3RlbSIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1Mzo0OC01Mzo1NCIsCiAgICAgICAgICAgICAgICJuYW1lIiA6ICJMT0lOQyIKICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1NToxLTU1OjYxIiwKICAgICAgICAgICAgIm5hbWUiIDogIkhlYXJ0IHJhdGUiLAogICAgICAgICAgICAiaWQiIDogIjg4NjctNCIsCiAgICAgICAgICAgICJkaXNwbGF5IiA6ICJIZWFydCByYXRlIiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiY29kZVN5c3RlbSIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1NTozNC01NTo0MCIsCiAgICAgICAgICAgICAgICJuYW1lIiA6ICJMT0lOQyIKICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICI1NjoxLTU2Ojc1IiwKICAgICAgICAgICAgIm5hbWUiIDogIk94eWdlbiBzYXR1cmF0aW9uIiwKICAgICAgICAgICAgImlkIiA6ICIyNzA4LTYiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiT3h5Z2VuIHNhdHVyYXRpb24iLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjU2OjQxLTU2OjQ3IiwKICAgICAgICAgICAgICAgIm5hbWUiIDogIkxPSU5DIgogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjU3OjEtNTc6NzMiLAogICAgICAgICAgICAibmFtZSIgOiAiUmVzcGlyYXRvcnkgcmF0ZSIsCiAgICAgICAgICAgICJpZCIgOiAiOTI3OS0xIiwKICAgICAgICAgICAgImRpc3BsYXkiIDogIlJlc3BpcmF0b3J5IHJhdGUiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjU3OjQwLTU3OjQ2IiwKICAgICAgICAgICAgICAgIm5hbWUiIDogIkxPSU5DIgogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjU4OjEtNTg6NzMiLAogICAgICAgICAgICAibmFtZSIgOiAiQm9keSB0ZW1wZXJhdHVyZSIsCiAgICAgICAgICAgICJpZCIgOiAiODMxMC01IiwKICAgICAgICAgICAgImRpc3BsYXkiIDogIkJvZHkgdGVtcGVyYXR1cmUiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjU4OjQwLTU4OjQ2IiwKICAgICAgICAgICAgICAgIm5hbWUiIDogIkxPSU5DIgogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjU5OjEtNTk6NjMiLAogICAgICAgICAgICAibmFtZSIgOiAiQm9keSBoZWlnaHQiLAogICAgICAgICAgICAiaWQiIDogIjgzMDItMiIsCiAgICAgICAgICAgICJkaXNwbGF5IiA6ICJCb2R5IGhlaWdodCIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIiwKICAgICAgICAgICAgImNvZGVTeXN0ZW0iIDogewogICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNTk6MzUtNTk6NDEiLAogICAgICAgICAgICAgICAibmFtZSIgOiAiTE9JTkMiCiAgICAgICAgICAgIH0KICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiNjA6MS02MDo2NCIsCiAgICAgICAgICAgICJuYW1lIiA6ICJCb2R5IHdlaWdodCIsCiAgICAgICAgICAgICJpZCIgOiAiMjk0NjMtNyIsCiAgICAgICAgICAgICJkaXNwbGF5IiA6ICJCb2R5IHdlaWdodCIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIiwKICAgICAgICAgICAgImNvZGVTeXN0ZW0iIDogewogICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNjA6MzYtNjA6NDIiLAogICAgICAgICAgICAgICAibmFtZSIgOiAiTE9JTkMiCiAgICAgICAgICAgIH0KICAgICAgICAgfSwgewogICAgICAgICAgICAibG9jYXRvciIgOiAiNjE6MS02MTo3MiIsCiAgICAgICAgICAgICJuYW1lIiA6ICJCb2R5IG1hc3MgaW5kZXgiLAogICAgICAgICAgICAiaWQiIDogIjM5MTU2LTUiLAogICAgICAgICAgICAiZGlzcGxheSIgOiAiQm9keSBtYXNzIGluZGV4IiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiY29kZVN5c3RlbSIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI2MTo0MC02MTo0NiIsCiAgICAgICAgICAgICAgICJuYW1lIiA6ICJMT0lOQyIKICAgICAgICAgICAgfQogICAgICAgICB9IF0KICAgICAgfQogICB9Cn0="^^xsd:base64Binary ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/acep/Library/COVID-19-Concepts.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

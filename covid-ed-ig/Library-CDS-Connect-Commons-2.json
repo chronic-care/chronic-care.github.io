@@ -1,0 +1,3251 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableLocators,DisableListDemotion,DisableListPromotion",
+         "type" : "CqlToElmInfo"
+      } ],
+      "identifier" : {
+         "id" : "CDS_Connect_Commons_for_FHIRv400",
+         "system" : "http://fhir.org/guides/acep",
+         "version" : "1.0.2"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "locator" : "15:1-15:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1"
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "locator" : "18:1-18:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://hl7.org/fhir/FHIRHelpers",
+            "version" : "4.0.1"
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "locator" : "20:1-20:97",
+            "name" : "AIVERSTATUS",
+            "id" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+            "accessLevel" : "Public"
+         }, {
+            "locator" : "21:1-21:94",
+            "name" : "AICLINSTATUS",
+            "id" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+            "accessLevel" : "Public"
+         }, {
+            "locator" : "22:1-22:88",
+            "name" : "CONDVERSTATUS",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "accessLevel" : "Public"
+         }, {
+            "locator" : "23:1-23:87",
+            "name" : "CONDCLINSTATUS",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "accessLevel" : "Public"
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "locator" : "24:1-24:92",
+            "name" : "AllergyIntolerance Confirmed code",
+            "id" : "confirmed",
+            "display" : "Confirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "24:60-24:72",
+               "name" : "AIVERSTATUS"
+            }
+         }, {
+            "locator" : "25:1-25:84",
+            "name" : "AllergyIntolerance Active code",
+            "id" : "active",
+            "display" : "Active",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "25:54-25:67",
+               "name" : "AICLINSTATUS"
+            }
+         }, {
+            "locator" : "26:1-26:85",
+            "name" : "Condition Confirmed code",
+            "id" : "confirmed",
+            "display" : "Confirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "26:51-26:65",
+               "name" : "CONDVERSTATUS"
+            }
+         }, {
+            "locator" : "27:1-27:77",
+            "name" : "Condition Active code",
+            "id" : "active",
+            "display" : "Active",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "27:45-27:60",
+               "name" : "CONDCLINSTATUS"
+            }
+         }, {
+            "locator" : "28:1-28:89",
+            "name" : "Condition Recurrence code",
+            "id" : "recurrence",
+            "display" : "Recurrence",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "28:53-28:68",
+               "name" : "CONDCLINSTATUS"
+            }
+         }, {
+            "locator" : "29:1-29:80",
+            "name" : "Condition Relapse code",
+            "id" : "relapse",
+            "display" : "Relapse",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "locator" : "29:47-29:62",
+               "name" : "CONDCLINSTATUS"
+            }
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "47:1-54:56",
+            "name" : "PeriodToInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "48:3-54:56",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "48:6-48:19",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "locator" : "48:6-48:11",
+                        "name" : "period",
+                        "type" : "OperandRef"
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "49:5-49:8",
+                     "type" : "Null"
+                  },
+                  "asTypeSpecifier" : {
+                     "type" : "IntervalTypeSpecifier",
+                     "pointType" : {
+                        "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }
+               },
+               "else" : {
+                  "locator" : "51:5-54:56",
+                  "type" : "If",
+                  "condition" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "locator" : "51:8-51:29",
+                        "type" : "IsNull",
+                        "operand" : {
+                           "locator" : "51:8-51:21",
+                           "path" : "start",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "51:8-51:13",
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
+                        }
+                     }
+                  },
+                  "then" : {
+                     "locator" : "52:7-52:56",
+                     "lowClosed" : false,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "52:16-52:35",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "52:16-52:29",
+                           "path" : "start",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "52:16-52:21",
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
+                        }
+                     },
+                     "high" : {
+                        "locator" : "52:38-52:55",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "52:38-52:49",
+                           "path" : "end",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "52:38-52:43",
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
+                        }
+                     }
+                  },
+                  "else" : {
+                     "locator" : "54:7-54:56",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "54:16-54:35",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "54:16-54:29",
+                           "path" : "start",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "54:16-54:21",
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
+                        }
+                     },
+                     "high" : {
+                        "locator" : "54:38-54:55",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "54:38-54:49",
+                           "path" : "end",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "54:38-54:43",
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
+                        }
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "period",
+               "operandTypeSpecifier" : {
+                  "locator" : "47:41-47:51",
+                  "name" : "{http://hl7.org/fhir}Period",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "101:1-105:83",
+            "name" : "RangeToInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "102:3-105:83",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "102:6-102:18",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "locator" : "102:6-102:10",
+                        "name" : "range",
+                        "type" : "OperandRef"
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "103:5-103:8",
+                     "type" : "Null"
+                  },
+                  "asTypeSpecifier" : {
+                     "type" : "IntervalTypeSpecifier",
+                     "pointType" : {
+                        "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }
+               },
+               "else" : {
+                  "locator" : "105:5-105:83",
+                  "lowClosed" : true,
+                  "highClosed" : true,
+                  "type" : "Interval",
+                  "low" : {
+                     "locator" : "105:14-105:46",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "105:37-105:45",
+                        "path" : "low",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "105:37-105:41",
+                           "name" : "range",
+                           "type" : "OperandRef"
+                        }
+                     } ]
+                  },
+                  "high" : {
+                     "locator" : "105:49-105:82",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "105:72-105:81",
+                        "path" : "high",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "105:72-105:76",
+                           "name" : "range",
+                           "type" : "OperandRef"
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "range",
+               "operandTypeSpecifier" : {
+                  "locator" : "101:39-101:48",
+                  "name" : "{http://hl7.org/fhir}Range",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "115:1-116:63",
+            "name" : "ObservationsByConcept",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "116:3-116:63",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "116:3-116:17",
+                  "alias" : "O",
+                  "expression" : {
+                     "locator" : "116:3-116:15",
+                     "dataType" : "{http://hl7.org/fhir}Observation",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
+                     "type" : "Retrieve"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "116:19-116:63",
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                     "locator" : "116:25-116:53",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "116:47-116:52",
+                        "path" : "code",
+                        "scope" : "O",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "locator" : "116:57-116:63",
+                     "name" : "Koncept",
+                     "type" : "OperandRef"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "Koncept",
+               "operandTypeSpecifier" : {
+                  "locator" : "115:47-115:60",
+                  "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "125:1-126:69",
+            "name" : "Verified",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "126:3-126:69",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "126:3-126:11",
+                  "alias" : "O",
+                  "expression" : {
+                     "locator" : "126:3-126:9",
+                     "name" : "ObsList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "126:13-126:69",
+                  "type" : "In",
+                  "operand" : [ {
+                     "locator" : "126:19-126:32",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "126:19-126:26",
+                        "path" : "status",
+                        "scope" : "O",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "126:37-126:69",
+                     "type" : "List",
+                     "element" : [ {
+                        "locator" : "126:38-126:44",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "final",
+                        "type" : "Literal"
+                     }, {
+                        "locator" : "126:47-126:57",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "corrected",
+                        "type" : "Literal"
+                     }, {
+                        "locator" : "126:60-126:68",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "amended",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "125:34-125:50",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "125:39-125:49",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "134:1-136:102",
+            "name" : "WithUnit",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "135:3-136:102",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "135:3-135:11",
+                  "alias" : "O",
+                  "expression" : {
+                     "locator" : "135:3-135:9",
+                     "name" : "ObsList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "136:5-136:102",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "136:11-136:54",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "locator" : "136:11-136:47",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "136:11-136:41",
+                           "path" : "unit",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "136:11-136:36",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "136:12-136:18",
+                                 "path" : "value",
+                                 "scope" : "O",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "136:23-136:35",
+                                 "name" : "{http://hl7.org/fhir}Quantity",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }
+                     }, {
+                        "locator" : "136:51-136:54",
+                        "name" : "Unit",
+                        "type" : "OperandRef"
+                     } ]
+                  }, {
+                     "locator" : "136:59-136:102",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "locator" : "136:59-136:95",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "136:59-136:89",
+                           "path" : "code",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "136:59-136:84",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "136:60-136:66",
+                                 "path" : "value",
+                                 "scope" : "O",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "136:71-136:83",
+                                 "name" : "{http://hl7.org/fhir}Quantity",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }
+                     }, {
+                        "locator" : "136:99-136:102",
+                        "name" : "Unit",
+                        "type" : "OperandRef"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "134:34-134:50",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "134:39-134:49",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "Unit",
+               "operandTypeSpecifier" : {
+                  "locator" : "134:58-134:63",
+                  "name" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "146:1-152:43",
+            "name" : "ObservationLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "147:3-152:43",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "147:3-147:11",
+                  "alias" : "O",
+                  "expression" : {
+                     "locator" : "147:3-147:9",
+                     "name" : "ObsList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "let" : [ {
+                  "locator" : "148:9-148:59",
+                  "identifier" : "LookBackInterval",
+                  "expression" : {
+                     "locator" : "148:27-148:59",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "148:36-148:51",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "148:36-148:40",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "148:44-148:51",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "148:54-148:58",
+                        "type" : "Now"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "149:5-152:43",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "149:11-151:79",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "149:11-150:64",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "locator" : "149:11-149:66",
+                           "type" : "In",
+                           "operand" : [ {
+                              "locator" : "149:11-149:46",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "149:11-149:40",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "149:12-149:22",
+                                    "path" : "effective",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "149:27-149:39",
+                                    "name" : "{http://hl7.org/fhir}dateTime",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "149:51-149:66",
+                              "name" : "LookBackInterval",
+                              "type" : "QueryLetRef"
+                           } ]
+                        }, {
+                           "locator" : "150:10-150:64",
+                           "type" : "In",
+                           "operand" : [ {
+                              "locator" : "150:10-150:44",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "150:10-150:38",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "150:11-150:21",
+                                    "path" : "effective",
+                                    "scope" : "O",
+                                    "type" : "Property"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "150:26-150:37",
+                                    "name" : "{http://hl7.org/fhir}instant",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "150:49-150:64",
+                              "name" : "LookBackInterval",
+                              "type" : "QueryLetRef"
+                           } ]
+                        } ]
+                     }, {
+                        "locator" : "151:10-151:79",
+                        "type" : "Overlaps",
+                        "operand" : [ {
+                           "locator" : "151:10-151:53",
+                           "name" : "PeriodToInterval",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "151:27-151:52",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "151:27-151:37",
+                                 "path" : "effective",
+                                 "scope" : "O",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "151:42-151:52",
+                                 "name" : "{http://hl7.org/fhir}Period",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           } ]
+                        }, {
+                           "locator" : "151:64-151:79",
+                           "name" : "LookBackInterval",
+                           "type" : "QueryLetRef"
+                        } ]
+                     } ]
+                  }, {
+                     "locator" : "152:10-152:43",
+                     "type" : "In",
+                     "operand" : [ {
+                        "locator" : "152:10-152:23",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "152:10-152:17",
+                           "path" : "issued",
+                           "scope" : "O",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "152:28-152:43",
+                        "name" : "LookBackInterval",
+                        "type" : "QueryLetRef"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "146:45-146:61",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "146:50-146:60",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "146:73-146:87",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "163:1-170:3",
+            "name" : "MostRecent",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "164:3-170:3",
+               "type" : "Last",
+               "source" : {
+                  "locator" : "164:8-169:17",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "164:8-164:16",
+                     "alias" : "O",
+                     "expression" : {
+                        "locator" : "164:8-164:14",
+                        "name" : "ObsList",
+                        "type" : "OperandRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "locator" : "164:18-169:17",
+                     "by" : [ {
+                        "locator" : "164:26-169:17",
+                        "direction" : "asc",
+                        "type" : "ByExpression",
+                        "expression" : {
+                           "locator" : "164:26-169:17",
+                           "type" : "Coalesce",
+                           "operand" : [ {
+                              "locator" : "165:5-165:38",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "165:5-165:32",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "165:6-165:14",
+                                    "name" : "effective",
+                                    "type" : "IdentifierRef"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "165:19-165:31",
+                                    "name" : "{http://hl7.org/fhir}dateTime",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "166:5-166:37",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "166:5-166:31",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "166:6-166:14",
+                                    "name" : "effective",
+                                    "type" : "IdentifierRef"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "166:19-166:30",
+                                    "name" : "{http://hl7.org/fhir}instant",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "167:5-167:42",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "167:5-167:36",
+                                 "path" : "end",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "167:5-167:30",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "167:6-167:14",
+                                       "name" : "effective",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "167:19-167:29",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           }, {
+                              "locator" : "168:5-168:44",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "168:5-168:38",
+                                 "path" : "start",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "168:5-168:30",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "168:6-168:14",
+                                       "name" : "effective",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "168:19-168:29",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           }, {
+                              "locator" : "169:5-169:16",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "169:5-169:10",
+                                 "name" : "issued",
+                                 "type" : "IdentifierRef"
+                              }
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "163:36-163:52",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "163:41-163:51",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "177:1-178:52",
+            "name" : "QuantityValue",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "178:3-178:52",
+               "name" : "ToQuantity",
+               "libraryName" : "FHIRHelpers",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "locator" : "178:26-178:51",
+                  "strict" : false,
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "178:26-178:34",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "178:26-178:28",
+                        "name" : "Obs",
+                        "type" : "OperandRef"
+                     }
+                  },
+                  "asTypeSpecifier" : {
+                     "locator" : "178:39-178:51",
+                     "name" : "{http://hl7.org/fhir}Quantity",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "name" : "Obs",
+               "operandTypeSpecifier" : {
+                  "locator" : "177:35-177:45",
+                  "name" : "{http://hl7.org/fhir}Observation",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "185:1-186:58",
+            "name" : "ConceptValue",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "186:3-186:58",
+               "name" : "ToConcept",
+               "libraryName" : "FHIRHelpers",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "locator" : "186:25-186:57",
+                  "strict" : false,
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "186:25-186:33",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "186:25-186:27",
+                        "name" : "Obs",
+                        "type" : "OperandRef"
+                     }
+                  },
+                  "asTypeSpecifier" : {
+                     "locator" : "186:38-186:57",
+                     "name" : "{http://hl7.org/fhir}CodeableConcept",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "name" : "Obs",
+               "operandTypeSpecifier" : {
+                  "locator" : "185:34-185:44",
+                  "name" : "{http://hl7.org/fhir}Observation",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "195:1-202:3",
+            "name" : "FindDate",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "196:3-202:3",
+               "type" : "Coalesce",
+               "operand" : [ {
+                  "locator" : "197:5-197:42",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "197:5-197:36",
+                     "strict" : false,
+                     "type" : "As",
+                     "operand" : {
+                        "locator" : "197:6-197:18",
+                        "path" : "effective",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "197:6-197:8",
+                           "name" : "Obs",
+                           "type" : "OperandRef"
+                        }
+                     },
+                     "asTypeSpecifier" : {
+                        "locator" : "197:23-197:35",
+                        "name" : "{http://hl7.org/fhir}dateTime",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }
+               }, {
+                  "locator" : "198:5-198:41",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "198:5-198:35",
+                     "strict" : false,
+                     "type" : "As",
+                     "operand" : {
+                        "locator" : "198:6-198:18",
+                        "path" : "effective",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "198:6-198:8",
+                           "name" : "Obs",
+                           "type" : "OperandRef"
+                        }
+                     },
+                     "asTypeSpecifier" : {
+                        "locator" : "198:23-198:34",
+                        "name" : "{http://hl7.org/fhir}instant",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }
+               }, {
+                  "locator" : "199:5-199:46",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "199:5-199:40",
+                     "path" : "end",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "199:5-199:34",
+                        "strict" : false,
+                        "type" : "As",
+                        "operand" : {
+                           "locator" : "199:6-199:18",
+                           "path" : "effective",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "199:6-199:8",
+                              "name" : "Obs",
+                              "type" : "OperandRef"
+                           }
+                        },
+                        "asTypeSpecifier" : {
+                           "locator" : "199:23-199:33",
+                           "name" : "{http://hl7.org/fhir}Period",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }
+                  }
+               }, {
+                  "locator" : "200:5-200:48",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "200:5-200:42",
+                     "path" : "start",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "200:5-200:34",
+                        "strict" : false,
+                        "type" : "As",
+                        "operand" : {
+                           "locator" : "200:6-200:18",
+                           "path" : "effective",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "200:6-200:8",
+                              "name" : "Obs",
+                              "type" : "OperandRef"
+                           }
+                        },
+                        "asTypeSpecifier" : {
+                           "locator" : "200:23-200:33",
+                           "name" : "{http://hl7.org/fhir}Period",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }
+                  }
+               }, {
+                  "locator" : "201:5-201:20",
+                  "path" : "value",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "201:5-201:14",
+                     "path" : "issued",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "201:5-201:7",
+                        "name" : "Obs",
+                        "type" : "OperandRef"
+                     }
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "name" : "Obs",
+               "operandTypeSpecifier" : {
+                  "locator" : "195:30-195:40",
+                  "name" : "{http://hl7.org/fhir}Observation",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "210:1-211:72",
+            "name" : "HighestObservation",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "211:3-211:72",
+               "type" : "Max",
+               "source" : {
+                  "locator" : "211:7-211:71",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "211:7-211:15",
+                     "alias" : "O",
+                     "expression" : {
+                        "locator" : "211:7-211:13",
+                        "name" : "ObsList",
+                        "type" : "OperandRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "locator" : "211:17-211:71",
+                     "expression" : {
+                        "locator" : "211:24-211:71",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "211:47-211:70",
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "locator" : "211:47-211:53",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           },
+                           "asTypeSpecifier" : {
+                              "locator" : "211:58-211:70",
+                              "name" : "{http://hl7.org/fhir}Quantity",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ]
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "210:44-210:60",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "210:49-210:59",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "219:1-220:72",
+            "name" : "LowestObservation",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "220:3-220:72",
+               "type" : "Min",
+               "source" : {
+                  "locator" : "220:7-220:71",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "220:7-220:15",
+                     "alias" : "O",
+                     "expression" : {
+                        "locator" : "220:7-220:13",
+                        "name" : "ObsList",
+                        "type" : "OperandRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "locator" : "220:17-220:71",
+                     "expression" : {
+                        "locator" : "220:24-220:71",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "220:47-220:70",
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "locator" : "220:47-220:53",
+                              "path" : "value",
+                              "scope" : "O",
+                              "type" : "Property"
+                           },
+                           "asTypeSpecifier" : {
+                              "locator" : "220:58-220:70",
+                              "name" : "{http://hl7.org/fhir}Quantity",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ]
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "ObsList",
+               "operandTypeSpecifier" : {
+                  "locator" : "219:43-219:59",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "219:48-219:58",
+                     "name" : "{http://hl7.org/fhir}Observation",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "231:1-232:61",
+            "name" : "ConditionsByConcept",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "232:3-232:61",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "232:3-232:15",
+                  "alias" : "C",
+                  "expression" : {
+                     "locator" : "232:3-232:13",
+                     "dataType" : "{http://hl7.org/fhir}Condition",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                     "type" : "Retrieve"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "232:17-232:61",
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                     "locator" : "232:23-232:51",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "232:45-232:50",
+                        "path" : "code",
+                        "scope" : "C",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "locator" : "232:55-232:61",
+                     "name" : "Koncept",
+                     "type" : "OperandRef"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "Koncept",
+               "operandTypeSpecifier" : {
+                  "locator" : "231:45-231:58",
+                  "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "240:1-241:68",
+            "name" : "Confirmed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "241:3-241:68",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "241:3-241:12",
+                  "alias" : "C",
+                  "expression" : {
+                     "locator" : "241:3-241:10",
+                     "name" : "CondList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "241:14-241:68",
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "241:20-241:39",
+                        "path" : "verificationStatus",
+                        "scope" : "C",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "type" : "ToConcept",
+                     "operand" : {
+                        "locator" : "241:43-241:68",
+                        "name" : "Condition Confirmed code",
+                        "type" : "CodeRef"
+                     }
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "CondList",
+               "operandTypeSpecifier" : {
+                  "locator" : "240:36-240:50",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "240:41-240:49",
+                     "name" : "{http://hl7.org/fhir}Condition",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "251:1-254:29",
+            "name" : "ActiveCondition",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "252:3-254:29",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "252:3-252:12",
+                  "alias" : "C",
+                  "expression" : {
+                     "locator" : "252:3-252:10",
+                     "name" : "CondList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "253:5-254:29",
+                  "type" : "And",
+                  "operand" : [ {
+                     "locator" : "253:11-253:52",
+                     "type" : "Equivalent",
+                     "operand" : [ {
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "253:11-253:26",
+                           "path" : "clinicalStatus",
+                           "scope" : "C",
+                           "type" : "Property"
+                        } ]
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "locator" : "253:30-253:52",
+                           "name" : "Condition Active code",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }, {
+                     "locator" : "254:11-254:29",
+                     "type" : "IsNull",
+                     "operand" : {
+                        "locator" : "254:11-254:21",
+                        "path" : "abatement",
+                        "scope" : "C",
+                        "type" : "Property"
+                     }
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "CondList",
+               "operandTypeSpecifier" : {
+                  "locator" : "251:42-251:56",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "251:47-251:55",
+                     "name" : "{http://hl7.org/fhir}Condition",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "264:1-268:52",
+            "name" : "ActiveOrRecurring",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "265:3-268:52",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "265:3-265:12",
+                  "alias" : "C",
+                  "expression" : {
+                     "locator" : "265:3-265:10",
+                     "name" : "CondList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "266:5-268:52",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "266:11-267:55",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "266:11-266:52",
+                        "type" : "Equivalent",
+                        "operand" : [ {
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "266:11-266:26",
+                              "path" : "clinicalStatus",
+                              "scope" : "C",
+                              "type" : "Property"
+                           } ]
+                        }, {
+                           "type" : "ToConcept",
+                           "operand" : {
+                              "locator" : "266:30-266:52",
+                              "name" : "Condition Active code",
+                              "type" : "CodeRef"
+                           }
+                        } ]
+                     }, {
+                        "locator" : "267:10-267:55",
+                        "type" : "Equivalent",
+                        "operand" : [ {
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "267:10-267:25",
+                              "path" : "clinicalStatus",
+                              "scope" : "C",
+                              "type" : "Property"
+                           } ]
+                        }, {
+                           "type" : "ToConcept",
+                           "operand" : {
+                              "locator" : "267:29-267:55",
+                              "name" : "Condition Recurrence code",
+                              "type" : "CodeRef"
+                           }
+                        } ]
+                     } ]
+                  }, {
+                     "locator" : "268:10-268:52",
+                     "type" : "Equivalent",
+                     "operand" : [ {
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "268:10-268:25",
+                           "path" : "clinicalStatus",
+                           "scope" : "C",
+                           "type" : "Property"
+                        } ]
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "locator" : "268:29-268:52",
+                           "name" : "Condition Relapse code",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "CondList",
+               "operandTypeSpecifier" : {
+                  "locator" : "264:44-264:58",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "264:49-264:57",
+                     "name" : "{http://hl7.org/fhir}Condition",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "278:1-283:49",
+            "name" : "ConditionLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "279:3-283:49",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "279:3-279:12",
+                  "alias" : "C",
+                  "expression" : {
+                     "locator" : "279:3-279:10",
+                     "name" : "CondList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "let" : [ {
+                  "locator" : "280:9-280:59",
+                  "identifier" : "LookBackInterval",
+                  "expression" : {
+                     "locator" : "280:27-280:59",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "280:36-280:51",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "280:36-280:40",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "280:44-280:51",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "280:54-280:58",
+                        "type" : "Now"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "281:5-283:49",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "281:11-282:75",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "281:11-281:62",
+                        "type" : "In",
+                        "operand" : [ {
+                           "locator" : "281:11-281:42",
+                           "path" : "value",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "281:11-281:36",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "281:12-281:18",
+                                 "path" : "onset",
+                                 "scope" : "C",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "281:23-281:35",
+                                 "name" : "{http://hl7.org/fhir}dateTime",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }, {
+                           "locator" : "281:47-281:62",
+                           "name" : "LookBackInterval",
+                           "type" : "QueryLetRef"
+                        } ]
+                     }, {
+                        "locator" : "282:10-282:75",
+                        "type" : "Overlaps",
+                        "operand" : [ {
+                           "locator" : "282:10-282:49",
+                           "name" : "PeriodToInterval",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "282:27-282:48",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "282:27-282:33",
+                                 "path" : "onset",
+                                 "scope" : "C",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "282:38-282:48",
+                                 "name" : "{http://hl7.org/fhir}Period",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           } ]
+                        }, {
+                           "locator" : "282:60-282:75",
+                           "name" : "LookBackInterval",
+                           "type" : "QueryLetRef"
+                        } ]
+                     } ]
+                  }, {
+                     "locator" : "283:10-283:49",
+                     "type" : "In",
+                     "operand" : [ {
+                        "locator" : "283:10-283:29",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "283:10-283:23",
+                           "path" : "recordedDate",
+                           "scope" : "C",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "283:34-283:49",
+                        "name" : "LookBackInterval",
+                        "type" : "QueryLetRef"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "CondList",
+               "operandTypeSpecifier" : {
+                  "locator" : "278:44-278:58",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "278:49-278:57",
+                     "name" : "{http://hl7.org/fhir}Condition",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "278:70-278:84",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "292:1-298:3",
+            "name" : "MostRecentCondition",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "293:3-298:3",
+               "type" : "Last",
+               "source" : {
+                  "locator" : "293:8-297:23",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "293:8-293:17",
+                     "alias" : "C",
+                     "expression" : {
+                        "locator" : "293:8-293:15",
+                        "name" : "CondList",
+                        "type" : "OperandRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "locator" : "293:19-297:23",
+                     "by" : [ {
+                        "locator" : "293:27-297:23",
+                        "direction" : "asc",
+                        "type" : "ByExpression",
+                        "expression" : {
+                           "locator" : "293:27-297:23",
+                           "type" : "Coalesce",
+                           "operand" : [ {
+                              "locator" : "294:5-294:34",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "294:5-294:28",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "294:6-294:10",
+                                    "name" : "onset",
+                                    "type" : "IdentifierRef"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "294:15-294:27",
+                                    "name" : "{http://hl7.org/fhir}dateTime",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "295:5-295:38",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "295:5-295:32",
+                                 "path" : "end",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "295:5-295:26",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "295:6-295:10",
+                                       "name" : "onset",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "295:15-295:25",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           }, {
+                              "locator" : "296:5-296:40",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "296:5-296:34",
+                                 "path" : "start",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "296:5-296:26",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "296:6-296:10",
+                                       "name" : "onset",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "296:15-296:25",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           }, {
+                              "locator" : "297:5-297:22",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "297:5-297:16",
+                                 "name" : "recordedDate",
+                                 "type" : "IdentifierRef"
+                              }
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "CondList",
+               "operandTypeSpecifier" : {
+                  "locator" : "292:46-292:60",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "292:51-292:59",
+                     "name" : "{http://hl7.org/fhir}Condition",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "308:2-309:62",
+            "name" : "ProceduresByConcept",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "309:4-309:62",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "309:4-309:16",
+                  "alias" : "P",
+                  "expression" : {
+                     "locator" : "309:4-309:14",
+                     "dataType" : "{http://hl7.org/fhir}Procedure",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/Procedure",
+                     "type" : "Retrieve"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "309:18-309:62",
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                     "locator" : "309:24-309:52",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "309:46-309:51",
+                        "path" : "code",
+                        "scope" : "P",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "locator" : "309:56-309:62",
+                     "name" : "Koncept",
+                     "type" : "OperandRef"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "Koncept",
+               "operandTypeSpecifier" : {
+                  "locator" : "308:46-308:59",
+                  "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "317:1-319:38",
+            "name" : "Completed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "318:3-319:38",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "318:3-318:12",
+                  "alias" : "P",
+                  "expression" : {
+                     "locator" : "318:3-318:10",
+                     "name" : "ProcList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "319:5-319:38",
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "locator" : "319:11-319:24",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "319:11-319:18",
+                        "path" : "status",
+                        "scope" : "P",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "319:28-319:38",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "completed",
+                     "type" : "Literal"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ProcList",
+               "operandTypeSpecifier" : {
+                  "locator" : "317:36-317:50",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "317:41-317:49",
+                     "name" : "{http://hl7.org/fhir}Procedure",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "327:1-329:40",
+            "name" : "ProcedureInProgress",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "328:3-329:40",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "328:3-328:12",
+                  "alias" : "P",
+                  "expression" : {
+                     "locator" : "328:3-328:10",
+                     "name" : "ProcList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "329:5-329:40",
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "locator" : "329:11-329:24",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "329:11-329:18",
+                        "path" : "status",
+                        "scope" : "P",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "329:28-329:40",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "in-progress",
+                     "type" : "Literal"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ProcList",
+               "operandTypeSpecifier" : {
+                  "locator" : "327:46-327:60",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "327:51-327:59",
+                     "name" : "{http://hl7.org/fhir}Procedure",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "338:1-340:92",
+            "name" : "ProcedurePerformance",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "339:3-340:92",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "339:3-339:12",
+                  "alias" : "P",
+                  "expression" : {
+                     "locator" : "339:3-339:10",
+                     "name" : "ProcList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "340:5-340:92",
+                  "type" : "Not",
+                  "operand" : {
+                     "locator" : "340:15-340:92",
+                     "type" : "In",
+                     "operand" : [ {
+                        "locator" : "340:16-340:29",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "340:16-340:23",
+                           "path" : "status",
+                           "scope" : "P",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "340:34-340:91",
+                        "type" : "List",
+                        "element" : [ {
+                           "locator" : "340:35-340:47",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "preparation",
+                           "type" : "Literal"
+                        }, {
+                           "locator" : "340:50-340:59",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "not-done",
+                           "type" : "Literal"
+                        }, {
+                           "locator" : "340:62-340:79",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "entered-in-error",
+                           "type" : "Literal"
+                        }, {
+                           "locator" : "340:82-340:90",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "unknown",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "ProcList",
+               "operandTypeSpecifier" : {
+                  "locator" : "338:47-338:61",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "338:52-338:60",
+                     "name" : "{http://hl7.org/fhir}Procedure",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "351:1-355:79",
+            "name" : "ProcedureLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "352:3-355:79",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "352:3-352:12",
+                  "alias" : "P",
+                  "expression" : {
+                     "locator" : "352:3-352:10",
+                     "name" : "ProcList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "let" : [ {
+                  "locator" : "353:9-353:59",
+                  "identifier" : "LookBackInterval",
+                  "expression" : {
+                     "locator" : "353:27-353:59",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "353:36-353:51",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "353:36-353:40",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "353:44-353:51",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "353:54-353:58",
+                        "type" : "Now"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "354:5-355:79",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "354:11-354:66",
+                     "type" : "In",
+                     "operand" : [ {
+                        "locator" : "354:11-354:46",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "354:11-354:40",
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "locator" : "354:12-354:22",
+                              "path" : "performed",
+                              "scope" : "P",
+                              "type" : "Property"
+                           },
+                           "asTypeSpecifier" : {
+                              "locator" : "354:27-354:39",
+                              "name" : "{http://hl7.org/fhir}dateTime",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }
+                     }, {
+                        "locator" : "354:51-354:66",
+                        "name" : "LookBackInterval",
+                        "type" : "QueryLetRef"
+                     } ]
+                  }, {
+                     "locator" : "355:10-355:79",
+                     "type" : "Overlaps",
+                     "operand" : [ {
+                        "locator" : "355:10-355:53",
+                        "name" : "PeriodToInterval",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "355:27-355:52",
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "locator" : "355:27-355:37",
+                              "path" : "performed",
+                              "scope" : "P",
+                              "type" : "Property"
+                           },
+                           "asTypeSpecifier" : {
+                              "locator" : "355:42-355:52",
+                              "name" : "{http://hl7.org/fhir}Period",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ]
+                     }, {
+                        "locator" : "355:64-355:79",
+                        "name" : "LookBackInterval",
+                        "type" : "QueryLetRef"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ProcList",
+               "operandTypeSpecifier" : {
+                  "locator" : "351:44-351:58",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "351:49-351:57",
+                     "name" : "{http://hl7.org/fhir}Procedure",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "351:70-351:84",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "364:1-369:3",
+            "name" : "MostRecentProcedure",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "365:3-369:3",
+               "type" : "Last",
+               "source" : {
+                  "locator" : "365:8-368:45",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "365:8-365:17",
+                     "alias" : "P",
+                     "expression" : {
+                        "locator" : "365:8-365:15",
+                        "name" : "ProcList",
+                        "type" : "OperandRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "sort" : {
+                     "locator" : "365:19-368:45",
+                     "by" : [ {
+                        "locator" : "365:27-368:45",
+                        "direction" : "asc",
+                        "type" : "ByExpression",
+                        "expression" : {
+                           "locator" : "365:27-368:45",
+                           "type" : "Coalesce",
+                           "operand" : [ {
+                              "locator" : "366:5-366:38",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "366:5-366:32",
+                                 "strict" : false,
+                                 "type" : "As",
+                                 "operand" : {
+                                    "locator" : "366:6-366:14",
+                                    "name" : "performed",
+                                    "type" : "IdentifierRef"
+                                 },
+                                 "asTypeSpecifier" : {
+                                    "locator" : "366:19-366:31",
+                                    "name" : "{http://hl7.org/fhir}dateTime",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }
+                           }, {
+                              "locator" : "367:5-367:42",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "367:5-367:36",
+                                 "path" : "end",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "367:5-367:30",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "367:6-367:14",
+                                       "name" : "performed",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "367:19-367:29",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           }, {
+                              "locator" : "368:5-368:44",
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "locator" : "368:5-368:38",
+                                 "path" : "start",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "locator" : "368:5-368:30",
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "locator" : "368:6-368:14",
+                                       "name" : "performed",
+                                       "type" : "IdentifierRef"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "locator" : "368:19-368:29",
+                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "ProcList",
+               "operandTypeSpecifier" : {
+                  "locator" : "364:46-364:60",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "364:51-364:59",
+                     "name" : "{http://hl7.org/fhir}Procedure",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "383:1-385:55",
+            "name" : "ServiceRequestActiveOrCompleted",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "384:3-385:55",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "384:3-384:22",
+                  "alias" : "S",
+                  "expression" : {
+                     "locator" : "384:3-384:20",
+                     "name" : "ServiceRequestList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "385:5-385:55",
+                  "type" : "In",
+                  "operand" : [ {
+                     "locator" : "385:11-385:24",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "385:11-385:18",
+                        "path" : "status",
+                        "scope" : "S",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "385:29-385:55",
+                     "type" : "List",
+                     "element" : [ {
+                        "locator" : "385:34-385:41",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "active",
+                        "type" : "Literal"
+                     }, {
+                        "locator" : "385:44-385:54",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "completed",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ServiceRequestList",
+               "operandTypeSpecifier" : {
+                  "locator" : "383:68-383:87",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "383:73-383:86",
+                     "name" : "{http://hl7.org/fhir}ServiceRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "396:1-398:65",
+            "name" : "ServiceRequestLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "397:3-398:65",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "397:3-397:22",
+                  "alias" : "S",
+                  "expression" : {
+                     "locator" : "397:3-397:20",
+                     "name" : "ServiceRequestList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "398:5-398:65",
+                  "type" : "In",
+                  "operand" : [ {
+                     "locator" : "398:11-398:28",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "398:11-398:22",
+                        "path" : "authoredOn",
+                        "scope" : "S",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "398:33-398:65",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "398:42-398:57",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "398:42-398:46",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "398:50-398:57",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "398:60-398:64",
+                        "type" : "Now"
+                     }
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "ServiceRequestList",
+               "operandTypeSpecifier" : {
+                  "locator" : "396:59-396:78",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "396:64-396:77",
+                     "name" : "{http://hl7.org/fhir}ServiceRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "396:90-396:104",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "417:1-418:43",
+            "name" : "ActiveMedicationRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "418:3-418:43",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "418:3-418:11",
+                  "alias" : "M",
+                  "expression" : {
+                     "locator" : "418:3-418:9",
+                     "name" : "MedList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "418:13-418:43",
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "locator" : "418:19-418:32",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "418:19-418:26",
+                        "path" : "status",
+                        "scope" : "M",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "418:36-418:43",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "active",
+                     "type" : "Literal"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "MedList",
+               "operandTypeSpecifier" : {
+                  "locator" : "417:49-417:71",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "417:54-417:70",
+                     "name" : "{http://hl7.org/fhir}MedicationRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "428:1-431:37",
+            "name" : "ActiveOrCompletedMedicationRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "429:3-431:37",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "429:3-429:11",
+                  "alias" : "M",
+                  "expression" : {
+                     "locator" : "429:3-429:9",
+                     "name" : "MedList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "430:5-431:37",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "430:11-430:35",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "locator" : "430:11-430:24",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "430:11-430:18",
+                           "path" : "status",
+                           "scope" : "M",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "430:28-430:35",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "active",
+                        "type" : "Literal"
+                     } ]
+                  }, {
+                     "locator" : "431:10-431:37",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "locator" : "431:10-431:23",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "431:10-431:17",
+                           "path" : "status",
+                           "scope" : "M",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "431:27-431:37",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "completed",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "MedList",
+               "operandTypeSpecifier" : {
+                  "locator" : "428:60-428:82",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "428:65-428:81",
+                     "name" : "{http://hl7.org/fhir}MedicationRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "441:1-445:35",
+            "name" : "ActiveCompletedOrStoppedMedicationRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "442:3-445:35",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "442:3-442:11",
+                  "alias" : "M",
+                  "expression" : {
+                     "locator" : "442:3-442:9",
+                     "name" : "MedList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "443:5-445:35",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "443:11-444:37",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "443:11-443:35",
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "locator" : "443:11-443:24",
+                           "path" : "value",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "443:11-443:18",
+                              "path" : "status",
+                              "scope" : "M",
+                              "type" : "Property"
+                           }
+                        }, {
+                           "locator" : "443:28-443:35",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "active",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "locator" : "444:10-444:37",
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "locator" : "444:10-444:23",
+                           "path" : "value",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "444:10-444:17",
+                              "path" : "status",
+                              "scope" : "M",
+                              "type" : "Property"
+                           }
+                        }, {
+                           "locator" : "444:27-444:37",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "completed",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  }, {
+                     "locator" : "445:10-445:35",
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "locator" : "445:10-445:23",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "445:10-445:17",
+                           "path" : "status",
+                           "scope" : "M",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "locator" : "445:27-445:35",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "stopped",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "MedList",
+               "operandTypeSpecifier" : {
+                  "locator" : "441:67-441:89",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "441:72-441:88",
+                     "name" : "{http://hl7.org/fhir}MedicationRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "455:1-458:48",
+            "name" : "MedicationRequestLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "456:3-458:48",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "456:3-456:11",
+                  "alias" : "M",
+                  "expression" : {
+                     "locator" : "456:3-456:9",
+                     "name" : "MedList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "let" : [ {
+                  "locator" : "457:9-457:59",
+                  "identifier" : "LookBackInterval",
+                  "expression" : {
+                     "locator" : "457:27-457:59",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "457:36-457:51",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "457:36-457:40",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "457:44-457:51",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "457:54-457:58",
+                        "type" : "Now"
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "458:5-458:48",
+                  "type" : "In",
+                  "operand" : [ {
+                     "locator" : "458:11-458:28",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "458:11-458:22",
+                        "path" : "authoredOn",
+                        "scope" : "M",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "458:33-458:48",
+                     "name" : "LookBackInterval",
+                     "type" : "QueryLetRef"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "MedList",
+               "operandTypeSpecifier" : {
+                  "locator" : "455:51-455:73",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "455:56-455:72",
+                     "name" : "{http://hl7.org/fhir}MedicationRequest",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "455:85-455:99",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "469:1-470:85",
+            "name" : "EncountersByConcept",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "470:3-470:85",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "470:3-470:15",
+                  "alias" : "E",
+                  "expression" : {
+                     "locator" : "470:3-470:13",
+                     "dataType" : "{http://hl7.org/fhir}Encounter",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/Encounter",
+                     "type" : "Retrieve"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "470:17-470:85",
+                  "type" : "Exists",
+                  "operand" : {
+                     "locator" : "470:29-470:85",
+                     "type" : "Query",
+                     "source" : [ {
+                        "locator" : "470:31-470:41",
+                        "alias" : "ET",
+                        "expression" : {
+                           "locator" : "470:31-470:38",
+                           "path" : "type",
+                           "scope" : "E",
+                           "type" : "Property"
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "locator" : "470:43-470:83",
+                        "type" : "Equivalent",
+                        "operand" : [ {
+                           "locator" : "470:49-470:73",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "470:71-470:72",
+                              "name" : "ET",
+                              "type" : "AliasRef"
+                           } ]
+                        }, {
+                           "locator" : "470:77-470:83",
+                           "name" : "Koncept",
+                           "type" : "OperandRef"
+                        } ]
+                     }
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "Koncept",
+               "operandTypeSpecifier" : {
+                  "locator" : "469:45-469:58",
+                  "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "478:1-480:40",
+            "name" : "InProgress",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "479:3-480:40",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "479:3-479:11",
+                  "alias" : "E",
+                  "expression" : {
+                     "locator" : "479:3-479:9",
+                     "name" : "EncList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "480:5-480:40",
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "locator" : "480:11-480:24",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "480:11-480:18",
+                        "path" : "status",
+                        "scope" : "E",
+                        "type" : "Property"
+                     }
+                  }, {
+                     "locator" : "480:28-480:40",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "in-progress",
+                     "type" : "Literal"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "EncList",
+               "operandTypeSpecifier" : {
+                  "locator" : "478:36-478:50",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "478:41-478:49",
+                     "name" : "{http://hl7.org/fhir}Encounter",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "490:1-491:70",
+            "name" : "AllergyIntolerancesByConcept",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "491:3-491:70",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "491:3-491:24",
+                  "alias" : "A",
+                  "expression" : {
+                     "locator" : "491:3-491:22",
+                     "dataType" : "{http://hl7.org/fhir}AllergyIntolerance",
+                     "templateId" : "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance",
+                     "type" : "Retrieve"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "491:26-491:70",
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                     "locator" : "491:32-491:60",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "locator" : "491:54-491:59",
+                        "path" : "code",
+                        "scope" : "A",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "locator" : "491:64-491:70",
+                     "name" : "Koncept",
+                     "type" : "OperandRef"
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "Koncept",
+               "operandTypeSpecifier" : {
+                  "locator" : "490:54-490:67",
+                  "name" : "{urn:hl7-org:elm-types:r1}Concept",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "locator" : "501:1-504:67",
+            "name" : "ActiveOrConfirmedAllergyIntolerance",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "502:3-504:67",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "502:3-502:20",
+                  "alias" : "A",
+                  "expression" : {
+                     "locator" : "502:3-502:18",
+                     "name" : "AllergyIntolList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "503:5-504:67",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "503:11-503:61",
+                     "type" : "Equivalent",
+                     "operand" : [ {
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "503:11-503:26",
+                           "path" : "clinicalStatus",
+                           "scope" : "A",
+                           "type" : "Property"
+                        } ]
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "locator" : "503:30-503:61",
+                           "name" : "AllergyIntolerance Active code",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  }, {
+                     "locator" : "504:10-504:67",
+                     "type" : "Equivalent",
+                     "operand" : [ {
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "locator" : "504:10-504:29",
+                           "path" : "verificationStatus",
+                           "scope" : "A",
+                           "type" : "Property"
+                        } ]
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "locator" : "504:33-504:67",
+                           "name" : "AllergyIntolerance Confirmed code",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "AllergyIntolList",
+               "operandTypeSpecifier" : {
+                  "locator" : "501:70-501:93",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "501:75-501:92",
+                     "name" : "{http://hl7.org/fhir}AllergyIntolerance",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "locator" : "516:1-526:79",
+            "name" : "GoalLookBack",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "locator" : "517:3-526:79",
+               "type" : "Query",
+               "source" : [ {
+                  "locator" : "517:3-517:12",
+                  "alias" : "G",
+                  "expression" : {
+                     "locator" : "517:3-517:10",
+                     "name" : "GoalList",
+                     "type" : "OperandRef"
+                  }
+               } ],
+               "let" : [ {
+                  "locator" : "518:9-518:59",
+                  "identifier" : "LookBackInterval",
+                  "expression" : {
+                     "locator" : "518:27-518:59",
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "locator" : "518:36-518:51",
+                        "type" : "Subtract",
+                        "operand" : [ {
+                           "locator" : "518:36-518:40",
+                           "type" : "Now"
+                        }, {
+                           "locator" : "518:44-518:51",
+                           "name" : "LookBack",
+                           "type" : "OperandRef"
+                        } ]
+                     },
+                     "high" : {
+                        "locator" : "518:54-518:58",
+                        "type" : "Now"
+                     }
+                  }
+               }, {
+                  "locator" : "519:5-519:43",
+                  "identifier" : "StartDate",
+                  "expression" : {
+                     "locator" : "519:16-519:43",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "519:16-519:37",
+                        "strict" : false,
+                        "type" : "As",
+                        "operand" : {
+                           "locator" : "519:17-519:23",
+                           "path" : "start",
+                           "scope" : "G",
+                           "type" : "Property"
+                        },
+                        "asTypeSpecifier" : {
+                           "locator" : "519:28-519:36",
+                           "name" : "{http://hl7.org/fhir}date",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }
+                  }
+               }, {
+                  "locator" : "520:5-520:34",
+                  "identifier" : "StatusDate",
+                  "expression" : {
+                     "locator" : "520:17-520:34",
+                     "path" : "value",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "520:17-520:28",
+                        "path" : "statusDate",
+                        "scope" : "G",
+                        "type" : "Property"
+                     }
+                  }
+               }, {
+                  "locator" : "521:5-521:63",
+                  "identifier" : "TargetDates",
+                  "expression" : {
+                     "locator" : "521:18-521:63",
+                     "type" : "Query",
+                     "source" : [ {
+                        "locator" : "521:18-521:29",
+                        "alias" : "T",
+                        "expression" : {
+                           "locator" : "521:18-521:27",
+                           "path" : "target",
+                           "scope" : "G",
+                           "type" : "Property"
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "locator" : "521:31-521:63",
+                        "expression" : {
+                           "locator" : "521:38-521:63",
+                           "path" : "value",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "521:38-521:57",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "521:39-521:43",
+                                 "path" : "due",
+                                 "scope" : "T",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "521:48-521:56",
+                                 "name" : "{http://hl7.org/fhir}date",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }
+                     }
+                  }
+               }, {
+                  "locator" : "522:5-522:88",
+                  "identifier" : "TargetQuantities",
+                  "expression" : {
+                     "locator" : "522:23-522:88",
+                     "type" : "Query",
+                     "source" : [ {
+                        "locator" : "522:23-522:34",
+                        "alias" : "T",
+                        "expression" : {
+                           "locator" : "522:23-522:32",
+                           "path" : "target",
+                           "scope" : "G",
+                           "type" : "Property"
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "locator" : "522:36-522:88",
+                        "expression" : {
+                           "locator" : "522:43-522:88",
+                           "name" : "ToQuantity",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "locator" : "522:66-522:87",
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "locator" : "522:66-522:70",
+                                 "path" : "due",
+                                 "scope" : "T",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "locator" : "522:75-522:87",
+                                 "name" : "{http://hl7.org/fhir}Duration",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           } ]
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "locator" : "523:5-526:79",
+                  "type" : "Or",
+                  "operand" : [ {
+                     "locator" : "523:11-525:60",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "523:11-524:39",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "locator" : "523:11-523:39",
+                           "type" : "In",
+                           "operand" : [ {
+                              "type" : "ToDateTime",
+                              "operand" : {
+                                 "locator" : "523:11-523:19",
+                                 "name" : "StartDate",
+                                 "type" : "QueryLetRef"
+                              }
+                           }, {
+                              "locator" : "523:24-523:39",
+                              "name" : "LookBackInterval",
+                              "type" : "QueryLetRef"
+                           } ]
+                        }, {
+                           "locator" : "524:10-524:39",
+                           "type" : "In",
+                           "operand" : [ {
+                              "type" : "ToDateTime",
+                              "operand" : {
+                                 "locator" : "524:10-524:19",
+                                 "name" : "StatusDate",
+                                 "type" : "QueryLetRef"
+                              }
+                           }, {
+                              "locator" : "524:24-524:39",
+                              "name" : "LookBackInterval",
+                              "type" : "QueryLetRef"
+                           } ]
+                        } ]
+                     }, {
+                        "locator" : "525:10-525:60",
+                        "type" : "Exists",
+                        "operand" : {
+                           "locator" : "525:16-525:60",
+                           "type" : "Query",
+                           "source" : [ {
+                              "locator" : "525:17-525:30",
+                              "alias" : "TD",
+                              "expression" : {
+                                 "locator" : "525:17-525:27",
+                                 "name" : "TargetDates",
+                                 "type" : "QueryLetRef"
+                              }
+                           } ],
+                           "relationship" : [ ],
+                           "where" : {
+                              "locator" : "525:32-525:59",
+                              "type" : "In",
+                              "operand" : [ {
+                                 "type" : "ToDateTime",
+                                 "operand" : {
+                                    "locator" : "525:38-525:39",
+                                    "name" : "TD",
+                                    "type" : "AliasRef"
+                                 }
+                              }, {
+                                 "locator" : "525:44-525:59",
+                                 "name" : "LookBackInterval",
+                                 "type" : "QueryLetRef"
+                              } ]
+                           }
+                        }
+                     } ]
+                  }, {
+                     "locator" : "526:10-526:79",
+                     "type" : "Exists",
+                     "operand" : {
+                        "locator" : "526:16-526:79",
+                        "type" : "Query",
+                        "source" : [ {
+                           "locator" : "526:17-526:35",
+                           "alias" : "TQ",
+                           "expression" : {
+                              "locator" : "526:17-526:32",
+                              "name" : "TargetQuantities",
+                              "type" : "QueryLetRef"
+                           }
+                        } ],
+                        "relationship" : [ ],
+                        "where" : {
+                           "locator" : "526:37-526:78",
+                           "type" : "In",
+                           "operand" : [ {
+                              "type" : "ToDateTime",
+                              "operand" : {
+                                 "locator" : "526:43-526:58",
+                                 "type" : "Add",
+                                 "operand" : [ {
+                                    "locator" : "526:44-526:52",
+                                    "name" : "StartDate",
+                                    "type" : "QueryLetRef"
+                                 }, {
+                                    "locator" : "526:56-526:57",
+                                    "name" : "TQ",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }, {
+                              "locator" : "526:63-526:78",
+                              "name" : "LookBackInterval",
+                              "type" : "QueryLetRef"
+                           } ]
+                        }
+                     }
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "GoalList",
+               "operandTypeSpecifier" : {
+                  "locator" : "516:39-516:48",
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "locator" : "516:44-516:47",
+                     "name" : "{http://hl7.org/fhir}Goal",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }, {
+               "name" : "LookBack",
+               "operandTypeSpecifier" : {
+                  "locator" : "516:60-516:74",
+                  "name" : "{urn:hl7-org:elm-types:r1}Quantity",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         } ]
+      }
+   }
+}
