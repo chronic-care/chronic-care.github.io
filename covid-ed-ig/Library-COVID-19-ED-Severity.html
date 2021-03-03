@@ -399,7 +399,11 @@ define &quot;Last Body Height value&quot;:
   ))).value
 
 define &quot;Last BMI&quot;:
-	System.Quantity { value: Round(&quot;Last Body Weight value&quot; / (&quot;Last Body Height value&quot; / 100) ^ 2), unit: 'kg/m2' }
+  case
+    when &quot;Last Body Weight value&quot; is null then null
+    when &quot;Last Body Height value&quot; is null then null
+    else System.Quantity { value: Round(&quot;Last Body Weight value&quot; / (&quot;Last Body Height value&quot; / 100) ^ 2), unit: 'kg/m2' }
+  end
 
 define function ToQuantity(quantity FHIR.Quantity):
 	System.Quantity {
@@ -424,17 +428,20 @@ define function TemperatureInF(qty System.Quantity):
   end
 
 define function ToMetric(qty System.Quantity):
-	case when qty.unit = '[lb_av]' then
-		System.Quantity { value: qty.value * 0.454, unit: 'kg' }
-	when qty.unit = 'g' then
-		System.Quantity { value: qty.value / 1000, unit: 'kg' }
-	when qty.unit = '[in_i]' then
-		System.Quantity { value: qty.value * 2.54, unit: 'cm' }
-	when qty.unit = '[degF]' then
-		System.Quantity { value: (qty.value - 32) * (5 / 9), unit: 'Cel' }
-	else
-		qty
-	end
+  case
+  when qty is null then null
+  when qty.value is null then null
+  when qty.unit = '[lb_av]' then
+    System.Quantity { value: qty.value * 0.454, unit: 'kg' }
+  when qty.unit = 'g' then
+    System.Quantity { value: qty.value / 1000, unit: 'kg' }
+  when qty.unit = '[in_i]' then
+    System.Quantity { value: qty.value * 2.54, unit: 'cm' }
+  when qty.unit = '[degF]' then
+    System.Quantity { value: (qty.value - 32) * (5 / 9), unit: 'Cel' }
+  else
+    qty
+  end
 
 /*
 * Determine Severity Classification
@@ -936,7 +943,7 @@ define TrendData: {
   BloodPressure: &quot;Blood Pressure Observations&quot;,
   Temperature: &quot;Body Temperature Observations&quot;    // TODO convert all to degF
 }
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 195Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 361Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 197Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 365Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -963,7 +970,7 @@ define TrendData: {
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 1, 2021 21:40+0000">2021-03-01</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 3, 2021 17:30+0000">2021-03-03</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
