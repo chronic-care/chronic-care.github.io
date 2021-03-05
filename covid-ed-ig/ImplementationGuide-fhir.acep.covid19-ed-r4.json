@@ -11,7 +11,7 @@
   "title": "Emergency Department COVID-19 Severity Classification",
   "status": "draft",
   "experimental": false,
-  "date": "2021-03-03T18:11:15+00:00",
+  "date": "2021-03-05T01:49:25+00:00",
   "publisher": "Veterans Health Administration (VHA)",
   "contact": [
     {
@@ -371,7 +371,33 @@
           }
         ],
         "reference": {
-          "reference": "Library/COVID-19-Concepts"
+          "reference": "Library/COVID19EmergencyDeptHooks"
+        },
+        "name": "CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic",
+        "description": "This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/CDSConnectCommons"
+        },
+        "name": "CQL Library - Common Logic for CDS",
+        "description": "CQL Common Logic for CDS providing shared helper functions."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/COVID19Concepts"
         },
         "name": "CQL Library - COVID-19 Shared Concepts and Terminology",
         "description": "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries."
@@ -384,10 +410,10 @@
           }
         ],
         "reference": {
-          "reference": "Library/COVID-19-ED-Severity"
+          "reference": "Library/COVID19EmergencyDeptSummary"
         },
-        "name": "CQL Library - ACEP COVID-19 ED Severity Classification and Disposition Logic",
-        "description": "This library contains logic to support the ACEP COVID-19 ED Severity Classification and Disposition guideline, including caclculation of the qCDI score and severity."
+        "name": "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool",
+        "description": "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores."
       },
       {
         "extension": [
@@ -397,23 +423,10 @@
           }
         ],
         "reference": {
-          "reference": "Library/COVID-19-ED-Severity-Hooks"
+          "reference": "Library/COVID19EmergencyDeptAssessment"
         },
-        "name": "CQL Library - CDS Hooks for ACEP COVID-19 ED Severity Classification and Disposition Logic",
-        "description": "This library contains logic to support CDS Hooks for the ACEP COVID-19 ED Severity Classification and Disposition guideline, including caclculation of the qCDI score and severity."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/CDS-Connect-Commons"
-        },
-        "name": "CQL Library - Common Logic for CDS",
-        "description": "CQL Common Logic for CDS providing shared helper functions."
+        "name": "CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic",
+        "description": "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity."
       },
       {
         "extension": [
@@ -423,7 +436,7 @@
           }
         ],
         "reference": {
-          "reference": "PlanDefinition/COVID-19-ED-Severity"
+          "reference": "PlanDefinition/COVID19EmergencyDeptRecommendation"
         },
         "name": "PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition",
         "description": "CDS Hook definitions for ACEP COVID-19 ED Severity Classification and Disposition"

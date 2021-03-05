@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="CDSConnectCommons" system="http://fhir.org/guides/acep" version="1.0.3"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def locator="5:1-5:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
+   </usings>
+   <includes>
+      <def locator="8:1-8:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/acep/FHIRHelpers" version="4.0.1"/>
+   </includes>
+   <codeSystems>
+      <def locator="10:1-10:97" name="AIVERSTATUS" id="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification" accessLevel="Public"/>
+      <def locator="11:1-11:94" name="AICLINSTATUS" id="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical" accessLevel="Public"/>
+      <def locator="12:1-12:88" name="CONDVERSTATUS" id="http://terminology.hl7.org/CodeSystem/condition-ver-status" accessLevel="Public"/>
+      <def locator="13:1-13:87" name="CONDCLINSTATUS" id="http://terminology.hl7.org/CodeSystem/condition-clinical" accessLevel="Public"/>
+   </codeSystems>
+   <codes>
+      <def locator="14:1-14:92" name="AllergyIntolerance Confirmed code" id="confirmed" display="Confirmed" accessLevel="Public">
+         <codeSystem locator="14:60-14:72" name="AIVERSTATUS"/>
+      </def>
+      <def locator="15:1-15:84" name="AllergyIntolerance Active code" id="active" display="Active" accessLevel="Public">
+         <codeSystem locator="15:54-15:67" name="AICLINSTATUS"/>
+      </def>
+      <def locator="16:1-16:85" name="Condition Confirmed code" id="confirmed" display="Confirmed" accessLevel="Public">
+         <codeSystem locator="16:51-16:65" name="CONDVERSTATUS"/>
+      </def>
+      <def locator="17:1-17:77" name="Condition Active code" id="active" display="Active" accessLevel="Public">
+         <codeSystem locator="17:45-17:60" name="CONDCLINSTATUS"/>
+      </def>
+      <def locator="18:1-18:89" name="Condition Recurrence code" id="recurrence" display="Recurrence" accessLevel="Public">
+         <codeSystem locator="18:53-18:68" name="CONDCLINSTATUS"/>
+      </def>
+      <def locator="19:1-19:80" name="Condition Relapse code" id="relapse" display="Relapse" accessLevel="Public">
+         <codeSystem locator="19:47-19:62" name="CONDCLINSTATUS"/>
+      </def>
+   </codes>
+   <statements>
+      <def locator="37:1-44:56" name="PeriodToInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="38:3-44:56" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="38:6-38:19" xsi:type="IsNull">
+                  <operand locator="38:6-38:11" name="period" xsi:type="OperandRef"/>
+               </operand>
+            </condition>
+            <then xsi:type="As">
+               <operand locator="39:5-39:8" xsi:type="Null"/>
+               <asTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </asTypeSpecifier>
+            </then>
+            <else locator="41:5-44:56" xsi:type="If">
+               <condition asType="t:Boolean" xsi:type="As">
+                  <operand locator="41:8-41:29" xsi:type="IsNull">
+                     <operand locator="41:8-41:21" path="start" xsi:type="Property">
+                        <source locator="41:8-41:13" name="period" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </condition>
+               <then locator="42:7-42:56" lowClosed="false" highClosed="true" xsi:type="Interval">
+                  <low locator="42:16-42:35" path="value" xsi:type="Property">
+                     <source locator="42:16-42:29" path="start" xsi:type="Property">
+                        <source locator="42:16-42:21" name="period" xsi:type="OperandRef"/>
+                     </source>
+                  </low>
+                  <high locator="42:38-42:55" path="value" xsi:type="Property">
+                     <source locator="42:38-42:49" path="end" xsi:type="Property">
+                        <source locator="42:38-42:43" name="period" xsi:type="OperandRef"/>
+                     </source>
+                  </high>
+               </then>
+               <else locator="44:7-44:56" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="44:16-44:35" path="value" xsi:type="Property">
+                     <source locator="44:16-44:29" path="start" xsi:type="Property">
+                        <source locator="44:16-44:21" name="period" xsi:type="OperandRef"/>
+                     </source>
+                  </low>
+                  <high locator="44:38-44:55" path="value" xsi:type="Property">
+                     <source locator="44:38-44:49" path="end" xsi:type="Property">
+                        <source locator="44:38-44:43" name="period" xsi:type="OperandRef"/>
+                     </source>
+                  </high>
+               </else>
+            </else>
+         </expression>
+         <operand name="period">
+            <operandTypeSpecifier locator="37:41-37:51" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="91:1-95:83" name="RangeToInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="92:3-95:83" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="92:6-92:18" xsi:type="IsNull">
+                  <operand locator="92:6-92:10" name="range" xsi:type="OperandRef"/>
+               </operand>
+            </condition>
+            <then xsi:type="As">
+               <operand locator="93:5-93:8" xsi:type="Null"/>
+               <asTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+               </asTypeSpecifier>
+            </then>
+            <else locator="95:5-95:83" lowClosed="true" highClosed="true" xsi:type="Interval">
+               <low locator="95:14-95:46" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="95:37-95:45" path="low" xsi:type="Property">
+                     <source locator="95:37-95:41" name="range" xsi:type="OperandRef"/>
+                  </operand>
+               </low>
+               <high locator="95:49-95:82" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="95:72-95:81" path="high" xsi:type="Property">
+                     <source locator="95:72-95:76" name="range" xsi:type="OperandRef"/>
+                  </operand>
+               </high>
+            </else>
+         </expression>
+         <operand name="range">
+            <operandTypeSpecifier locator="91:39-91:48" name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="105:1-106:63" name="ObservationsByConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="106:3-106:63" xsi:type="Query">
+            <source locator="106:3-106:17" alias="O">
+               <expression locator="106:3-106:15" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" xsi:type="Retrieve"/>
+            </source>
+            <where locator="106:19-106:63" xsi:type="Equivalent">
+               <operand locator="106:25-106:53" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="106:47-106:52" path="code" scope="O" xsi:type="Property"/>
+               </operand>
+               <operand locator="106:57-106:63" name="Koncept" xsi:type="OperandRef"/>
+            </where>
+         </expression>
+         <operand name="Koncept">
+            <operandTypeSpecifier locator="105:47-105:60" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="115:1-116:69" name="Verified" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="116:3-116:69" xsi:type="Query">
+            <source locator="116:3-116:11" alias="O">
+               <expression locator="116:3-116:9" name="ObsList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="116:13-116:69" xsi:type="In">
+               <operand locator="116:19-116:32" path="value" xsi:type="Property">
+                  <source locator="116:19-116:26" path="status" scope="O" xsi:type="Property"/>
+               </operand>
+               <operand locator="116:37-116:69" xsi:type="List">
+                  <element locator="116:38-116:44" valueType="t:String" value="final" xsi:type="Literal"/>
+                  <element locator="116:47-116:57" valueType="t:String" value="corrected" xsi:type="Literal"/>
+                  <element locator="116:60-116:68" valueType="t:String" value="amended" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="115:34-115:50" xsi:type="ListTypeSpecifier">
+               <elementType locator="115:39-115:49" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="124:1-126:102" name="WithUnit" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="125:3-126:102" xsi:type="Query">
+            <source locator="125:3-125:11" alias="O">
+               <expression locator="125:3-125:9" name="ObsList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="126:5-126:102" xsi:type="Or">
+               <operand locator="126:11-126:54" xsi:type="Equal">
+                  <operand locator="126:11-126:47" path="value" xsi:type="Property">
+                     <source locator="126:11-126:41" path="unit" xsi:type="Property">
+                        <source locator="126:11-126:36" strict="false" xsi:type="As">
+                           <operand locator="126:12-126:18" path="value" scope="O" xsi:type="Property"/>
+                           <asTypeSpecifier locator="126:23-126:35" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </source>
+                  </operand>
+                  <operand locator="126:51-126:54" name="Unit" xsi:type="OperandRef"/>
+               </operand>
+               <operand locator="126:59-126:102" xsi:type="Equal">
+                  <operand locator="126:59-126:95" path="value" xsi:type="Property">
+                     <source locator="126:59-126:89" path="code" xsi:type="Property">
+                        <source locator="126:59-126:84" strict="false" xsi:type="As">
+                           <operand locator="126:60-126:66" path="value" scope="O" xsi:type="Property"/>
+                           <asTypeSpecifier locator="126:71-126:83" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </source>
+                  </operand>
+                  <operand locator="126:99-126:102" name="Unit" xsi:type="OperandRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="124:34-124:50" xsi:type="ListTypeSpecifier">
+               <elementType locator="124:39-124:49" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="Unit">
+            <operandTypeSpecifier locator="124:58-124:63" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="136:1-142:43" name="ObservationLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="137:3-142:43" xsi:type="Query">
+            <source locator="137:3-137:11" alias="O">
+               <expression locator="137:3-137:9" name="ObsList" xsi:type="OperandRef"/>
+            </source>
+            <let locator="138:9-138:59" identifier="LookBackInterval">
+               <expression locator="138:27-138:59" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="138:36-138:51" xsi:type="Subtract">
+                     <operand locator="138:36-138:40" xsi:type="Now"/>
+                     <operand locator="138:44-138:51" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="138:54-138:58" xsi:type="Now"/>
+               </expression>
+            </let>
+            <where locator="139:5-142:43" xsi:type="Or">
+               <operand locator="139:11-141:79" xsi:type="Or">
+                  <operand locator="139:11-140:64" xsi:type="Or">
+                     <operand locator="139:11-139:66" xsi:type="In">
+                        <operand locator="139:11-139:46" path="value" xsi:type="Property">
+                           <source locator="139:11-139:40" strict="false" xsi:type="As">
+                              <operand locator="139:12-139:22" path="effective" scope="O" xsi:type="Property"/>
+                              <asTypeSpecifier locator="139:27-139:39" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="139:51-139:66" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                     </operand>
+                     <operand locator="140:10-140:64" xsi:type="In">
+                        <operand locator="140:10-140:44" path="value" xsi:type="Property">
+                           <source locator="140:10-140:38" strict="false" xsi:type="As">
+                              <operand locator="140:11-140:21" path="effective" scope="O" xsi:type="Property"/>
+                              <asTypeSpecifier locator="140:26-140:37" name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="140:49-140:64" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                     </operand>
+                  </operand>
+                  <operand locator="141:10-141:79" xsi:type="Overlaps">
+                     <operand locator="141:10-141:53" name="PeriodToInterval" xsi:type="FunctionRef">
+                        <operand locator="141:27-141:52" strict="false" xsi:type="As">
+                           <operand locator="141:27-141:37" path="effective" scope="O" xsi:type="Property"/>
+                           <asTypeSpecifier locator="141:42-141:52" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </operand>
+                     <operand locator="141:64-141:79" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                  </operand>
+               </operand>
+               <operand locator="142:10-142:43" xsi:type="In">
+                  <operand locator="142:10-142:23" path="value" xsi:type="Property">
+                     <source locator="142:10-142:17" path="issued" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="142:28-142:43" name="LookBackInterval" xsi:type="QueryLetRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="136:45-136:61" xsi:type="ListTypeSpecifier">
+               <elementType locator="136:50-136:60" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="136:73-136:87" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="153:1-160:3" name="MostRecent" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="154:3-160:3" xsi:type="Last">
+            <source locator="154:8-159:17" xsi:type="Query">
+               <source locator="154:8-154:16" alias="O">
+                  <expression locator="154:8-154:14" name="ObsList" xsi:type="OperandRef"/>
+               </source>
+               <sort locator="154:18-159:17">
+                  <by locator="154:26-159:17" direction="asc" xsi:type="ByExpression">
+                     <expression locator="154:26-159:17" xsi:type="Coalesce">
+                        <operand locator="155:5-155:38" path="value" xsi:type="Property">
+                           <source locator="155:5-155:32" strict="false" xsi:type="As">
+                              <operand locator="155:6-155:14" name="effective" xsi:type="IdentifierRef"/>
+                              <asTypeSpecifier locator="155:19-155:31" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="156:5-156:37" path="value" xsi:type="Property">
+                           <source locator="156:5-156:31" strict="false" xsi:type="As">
+                              <operand locator="156:6-156:14" name="effective" xsi:type="IdentifierRef"/>
+                              <asTypeSpecifier locator="156:19-156:30" name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="157:5-157:42" path="value" xsi:type="Property">
+                           <source locator="157:5-157:36" path="end" xsi:type="Property">
+                              <source locator="157:5-157:30" strict="false" xsi:type="As">
+                                 <operand locator="157:6-157:14" name="effective" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="157:19-157:29" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand locator="158:5-158:44" path="value" xsi:type="Property">
+                           <source locator="158:5-158:38" path="start" xsi:type="Property">
+                              <source locator="158:5-158:30" strict="false" xsi:type="As">
+                                 <operand locator="158:6-158:14" name="effective" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="158:19-158:29" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand locator="159:5-159:16" path="value" xsi:type="Property">
+                           <source locator="159:5-159:10" name="issued" xsi:type="IdentifierRef"/>
+                        </operand>
+                     </expression>
+                  </by>
+               </sort>
+            </source>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="153:36-153:52" xsi:type="ListTypeSpecifier">
+               <elementType locator="153:41-153:51" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="167:1-173:5" name="QuantityValue" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="168:3-173:5" xsi:type="Case">
+            <caseItem locator="169:3-169:28">
+               <when locator="169:8-169:18" xsi:type="IsNull">
+                  <operand locator="169:8-169:10" name="Obs" xsi:type="OperandRef"/>
+               </when>
+               <then asType="t:Quantity" xsi:type="As">
+                  <operand locator="169:25-169:28" xsi:type="Null"/>
+               </then>
+            </caseItem>
+            <caseItem locator="170:3-170:51">
+               <when locator="170:8-170:41" xsi:type="IsNull">
+                  <operand locator="170:8-170:33" strict="false" xsi:type="As">
+                     <operand locator="170:8-170:16" path="value" xsi:type="Property">
+                        <source locator="170:8-170:10" name="Obs" xsi:type="OperandRef"/>
+                     </operand>
+                     <asTypeSpecifier locator="170:21-170:33" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                  </operand>
+               </when>
+               <then asType="t:Quantity" xsi:type="As">
+                  <operand locator="170:48-170:51" xsi:type="Null"/>
+               </then>
+            </caseItem>
+            <else locator="172:5-172:54" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand locator="172:28-172:53" strict="false" xsi:type="As">
+                  <operand locator="172:28-172:36" path="value" xsi:type="Property">
+                     <source locator="172:28-172:30" name="Obs" xsi:type="OperandRef"/>
+                  </operand>
+                  <asTypeSpecifier locator="172:41-172:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+               </operand>
+            </else>
+         </expression>
+         <operand name="Obs">
+            <operandTypeSpecifier locator="167:35-167:45" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="180:1-181:58" name="ConceptValue" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="181:3-181:58" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+            <operand locator="181:25-181:57" strict="false" xsi:type="As">
+               <operand locator="181:25-181:33" path="value" xsi:type="Property">
+                  <source locator="181:25-181:27" name="Obs" xsi:type="OperandRef"/>
+               </operand>
+               <asTypeSpecifier locator="181:38-181:57" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+            </operand>
+         </expression>
+         <operand name="Obs">
+            <operandTypeSpecifier locator="180:34-180:44" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="190:1-197:3" name="FindDate" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="191:3-197:3" xsi:type="Coalesce">
+            <operand locator="192:5-192:42" path="value" xsi:type="Property">
+               <source locator="192:5-192:36" strict="false" xsi:type="As">
+                  <operand locator="192:6-192:18" path="effective" xsi:type="Property">
+                     <source locator="192:6-192:8" name="Obs" xsi:type="OperandRef"/>
+                  </operand>
+                  <asTypeSpecifier locator="192:23-192:35" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+               </source>
+            </operand>
+            <operand locator="193:5-193:41" path="value" xsi:type="Property">
+               <source locator="193:5-193:35" strict="false" xsi:type="As">
+                  <operand locator="193:6-193:18" path="effective" xsi:type="Property">
+                     <source locator="193:6-193:8" name="Obs" xsi:type="OperandRef"/>
+                  </operand>
+                  <asTypeSpecifier locator="193:23-193:34" name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+               </source>
+            </operand>
+            <operand locator="194:5-194:46" path="value" xsi:type="Property">
+               <source locator="194:5-194:40" path="end" xsi:type="Property">
+                  <source locator="194:5-194:34" strict="false" xsi:type="As">
+                     <operand locator="194:6-194:18" path="effective" xsi:type="Property">
+                        <source locator="194:6-194:8" name="Obs" xsi:type="OperandRef"/>
+                     </operand>
+                     <asTypeSpecifier locator="194:23-194:33" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                  </source>
+               </source>
+            </operand>
+            <operand locator="195:5-195:48" path="value" xsi:type="Property">
+               <source locator="195:5-195:42" path="start" xsi:type="Property">
+                  <source locator="195:5-195:34" strict="false" xsi:type="As">
+                     <operand locator="195:6-195:18" path="effective" xsi:type="Property">
+                        <source locator="195:6-195:8" name="Obs" xsi:type="OperandRef"/>
+                     </operand>
+                     <asTypeSpecifier locator="195:23-195:33" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                  </source>
+               </source>
+            </operand>
+            <operand locator="196:5-196:20" path="value" xsi:type="Property">
+               <source locator="196:5-196:14" path="issued" xsi:type="Property">
+                  <source locator="196:5-196:7" name="Obs" xsi:type="OperandRef"/>
+               </source>
+            </operand>
+         </expression>
+         <operand name="Obs">
+            <operandTypeSpecifier locator="190:30-190:40" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="205:1-206:72" name="HighestObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="206:3-206:72" xsi:type="Max">
+            <source locator="206:7-206:71" xsi:type="Query">
+               <source locator="206:7-206:15" alias="O">
+                  <expression locator="206:7-206:13" name="ObsList" xsi:type="OperandRef"/>
+               </source>
+               <return locator="206:17-206:71">
+                  <expression locator="206:24-206:71" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="206:47-206:70" strict="false" xsi:type="As">
+                        <operand locator="206:47-206:53" path="value" scope="O" xsi:type="Property"/>
+                        <asTypeSpecifier locator="206:58-206:70" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     </operand>
+                  </expression>
+               </return>
+            </source>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="205:44-205:60" xsi:type="ListTypeSpecifier">
+               <elementType locator="205:49-205:59" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="214:1-215:72" name="LowestObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="215:3-215:72" xsi:type="Min">
+            <source locator="215:7-215:71" xsi:type="Query">
+               <source locator="215:7-215:15" alias="O">
+                  <expression locator="215:7-215:13" name="ObsList" xsi:type="OperandRef"/>
+               </source>
+               <return locator="215:17-215:71">
+                  <expression locator="215:24-215:71" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="215:47-215:70" strict="false" xsi:type="As">
+                        <operand locator="215:47-215:53" path="value" scope="O" xsi:type="Property"/>
+                        <asTypeSpecifier locator="215:58-215:70" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     </operand>
+                  </expression>
+               </return>
+            </source>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier locator="214:43-214:59" xsi:type="ListTypeSpecifier">
+               <elementType locator="214:48-214:58" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="226:1-227:61" name="ConditionsByConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="227:3-227:61" xsi:type="Query">
+            <source locator="227:3-227:15" alias="C">
+               <expression locator="227:3-227:13" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
+            </source>
+            <where locator="227:17-227:61" xsi:type="Equivalent">
+               <operand locator="227:23-227:51" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="227:45-227:50" path="code" scope="C" xsi:type="Property"/>
+               </operand>
+               <operand locator="227:55-227:61" name="Koncept" xsi:type="OperandRef"/>
+            </where>
+         </expression>
+         <operand name="Koncept">
+            <operandTypeSpecifier locator="226:45-226:58" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="235:1-236:68" name="Confirmed" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="236:3-236:68" xsi:type="Query">
+            <source locator="236:3-236:12" alias="C">
+               <expression locator="236:3-236:10" name="CondList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="236:14-236:68" xsi:type="Equivalent">
+               <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="236:20-236:39" path="verificationStatus" scope="C" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="ToConcept">
+                  <operand locator="236:43-236:68" name="Condition Confirmed code" xsi:type="CodeRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="CondList">
+            <operandTypeSpecifier locator="235:36-235:50" xsi:type="ListTypeSpecifier">
+               <elementType locator="235:41-235:49" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="246:1-249:29" name="ActiveCondition" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="247:3-249:29" xsi:type="Query">
+            <source locator="247:3-247:12" alias="C">
+               <expression locator="247:3-247:10" name="CondList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="248:5-249:29" xsi:type="And">
+               <operand locator="248:11-248:52" xsi:type="Equivalent">
+                  <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="248:11-248:26" path="clinicalStatus" scope="C" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="ToConcept">
+                     <operand locator="248:30-248:52" name="Condition Active code" xsi:type="CodeRef"/>
+                  </operand>
+               </operand>
+               <operand locator="249:11-249:29" xsi:type="IsNull">
+                  <operand locator="249:11-249:21" path="abatement" scope="C" xsi:type="Property"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="CondList">
+            <operandTypeSpecifier locator="246:42-246:56" xsi:type="ListTypeSpecifier">
+               <elementType locator="246:47-246:55" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="259:1-263:52" name="ActiveOrRecurring" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="260:3-263:52" xsi:type="Query">
+            <source locator="260:3-260:12" alias="C">
+               <expression locator="260:3-260:10" name="CondList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="261:5-263:52" xsi:type="Or">
+               <operand locator="261:11-262:55" xsi:type="Or">
+                  <operand locator="261:11-261:52" xsi:type="Equivalent">
+                     <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="261:11-261:26" path="clinicalStatus" scope="C" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="ToConcept">
+                        <operand locator="261:30-261:52" name="Condition Active code" xsi:type="CodeRef"/>
+                     </operand>
+                  </operand>
+                  <operand locator="262:10-262:55" xsi:type="Equivalent">
+                     <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="262:10-262:25" path="clinicalStatus" scope="C" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="ToConcept">
+                        <operand locator="262:29-262:55" name="Condition Recurrence code" xsi:type="CodeRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand locator="263:10-263:52" xsi:type="Equivalent">
+                  <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="263:10-263:25" path="clinicalStatus" scope="C" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="ToConcept">
+                     <operand locator="263:29-263:52" name="Condition Relapse code" xsi:type="CodeRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand name="CondList">
+            <operandTypeSpecifier locator="259:44-259:58" xsi:type="ListTypeSpecifier">
+               <elementType locator="259:49-259:57" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="273:1-278:49" name="ConditionLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="274:3-278:49" xsi:type="Query">
+            <source locator="274:3-274:12" alias="C">
+               <expression locator="274:3-274:10" name="CondList" xsi:type="OperandRef"/>
+            </source>
+            <let locator="275:9-275:59" identifier="LookBackInterval">
+               <expression locator="275:27-275:59" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="275:36-275:51" xsi:type="Subtract">
+                     <operand locator="275:36-275:40" xsi:type="Now"/>
+                     <operand locator="275:44-275:51" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="275:54-275:58" xsi:type="Now"/>
+               </expression>
+            </let>
+            <where locator="276:5-278:49" xsi:type="Or">
+               <operand locator="276:11-277:75" xsi:type="Or">
+                  <operand locator="276:11-276:62" xsi:type="In">
+                     <operand locator="276:11-276:42" path="value" xsi:type="Property">
+                        <source locator="276:11-276:36" strict="false" xsi:type="As">
+                           <operand locator="276:12-276:18" path="onset" scope="C" xsi:type="Property"/>
+                           <asTypeSpecifier locator="276:23-276:35" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </operand>
+                     <operand locator="276:47-276:62" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                  </operand>
+                  <operand locator="277:10-277:75" xsi:type="Overlaps">
+                     <operand locator="277:10-277:49" name="PeriodToInterval" xsi:type="FunctionRef">
+                        <operand locator="277:27-277:48" strict="false" xsi:type="As">
+                           <operand locator="277:27-277:33" path="onset" scope="C" xsi:type="Property"/>
+                           <asTypeSpecifier locator="277:38-277:48" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </operand>
+                     <operand locator="277:60-277:75" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                  </operand>
+               </operand>
+               <operand locator="278:10-278:49" xsi:type="In">
+                  <operand locator="278:10-278:29" path="value" xsi:type="Property">
+                     <source locator="278:10-278:23" path="recordedDate" scope="C" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="278:34-278:49" name="LookBackInterval" xsi:type="QueryLetRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="CondList">
+            <operandTypeSpecifier locator="273:44-273:58" xsi:type="ListTypeSpecifier">
+               <elementType locator="273:49-273:57" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="273:70-273:84" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="287:1-293:3" name="MostRecentCondition" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="288:3-293:3" xsi:type="Last">
+            <source locator="288:8-292:23" xsi:type="Query">
+               <source locator="288:8-288:17" alias="C">
+                  <expression locator="288:8-288:15" name="CondList" xsi:type="OperandRef"/>
+               </source>
+               <sort locator="288:19-292:23">
+                  <by locator="288:27-292:23" direction="asc" xsi:type="ByExpression">
+                     <expression locator="288:27-292:23" xsi:type="Coalesce">
+                        <operand locator="289:5-289:34" path="value" xsi:type="Property">
+                           <source locator="289:5-289:28" strict="false" xsi:type="As">
+                              <operand locator="289:6-289:10" name="onset" xsi:type="IdentifierRef"/>
+                              <asTypeSpecifier locator="289:15-289:27" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="290:5-290:38" path="value" xsi:type="Property">
+                           <source locator="290:5-290:32" path="end" xsi:type="Property">
+                              <source locator="290:5-290:26" strict="false" xsi:type="As">
+                                 <operand locator="290:6-290:10" name="onset" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="290:15-290:25" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand locator="291:5-291:40" path="value" xsi:type="Property">
+                           <source locator="291:5-291:34" path="start" xsi:type="Property">
+                              <source locator="291:5-291:26" strict="false" xsi:type="As">
+                                 <operand locator="291:6-291:10" name="onset" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="291:15-291:25" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand locator="292:5-292:22" path="value" xsi:type="Property">
+                           <source locator="292:5-292:16" name="recordedDate" xsi:type="IdentifierRef"/>
+                        </operand>
+                     </expression>
+                  </by>
+               </sort>
+            </source>
+         </expression>
+         <operand name="CondList">
+            <operandTypeSpecifier locator="287:46-287:60" xsi:type="ListTypeSpecifier">
+               <elementType locator="287:51-287:59" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="303:2-304:62" name="ProceduresByConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="304:4-304:62" xsi:type="Query">
+            <source locator="304:4-304:16" alias="P">
+               <expression locator="304:4-304:14" dataType="fhir:Procedure" templateId="http://hl7.org/fhir/StructureDefinition/Procedure" xsi:type="Retrieve"/>
+            </source>
+            <where locator="304:18-304:62" xsi:type="Equivalent">
+               <operand locator="304:24-304:52" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="304:46-304:51" path="code" scope="P" xsi:type="Property"/>
+               </operand>
+               <operand locator="304:56-304:62" name="Koncept" xsi:type="OperandRef"/>
+            </where>
+         </expression>
+         <operand name="Koncept">
+            <operandTypeSpecifier locator="303:46-303:59" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="312:1-314:38" name="Completed" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="313:3-314:38" xsi:type="Query">
+            <source locator="313:3-313:12" alias="P">
+               <expression locator="313:3-313:10" name="ProcList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="314:5-314:38" xsi:type="Equal">
+               <operand locator="314:11-314:24" path="value" xsi:type="Property">
+                  <source locator="314:11-314:18" path="status" scope="P" xsi:type="Property"/>
+               </operand>
+               <operand locator="314:28-314:38" valueType="t:String" value="completed" xsi:type="Literal"/>
+            </where>
+         </expression>
+         <operand name="ProcList">
+            <operandTypeSpecifier locator="312:36-312:50" xsi:type="ListTypeSpecifier">
+               <elementType locator="312:41-312:49" name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="322:1-324:40" name="ProcedureInProgress" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="323:3-324:40" xsi:type="Query">
+            <source locator="323:3-323:12" alias="P">
+               <expression locator="323:3-323:10" name="ProcList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="324:5-324:40" xsi:type="Equal">
+               <operand locator="324:11-324:24" path="value" xsi:type="Property">
+                  <source locator="324:11-324:18" path="status" scope="P" xsi:type="Property"/>
+               </operand>
+               <operand locator="324:28-324:40" valueType="t:String" value="in-progress" xsi:type="Literal"/>
+            </where>
+         </expression>
+         <operand name="ProcList">
+            <operandTypeSpecifier locator="322:46-322:60" xsi:type="ListTypeSpecifier">
+               <elementType locator="322:51-322:59" name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="333:1-335:92" name="ProcedurePerformance" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="334:3-335:92" xsi:type="Query">
+            <source locator="334:3-334:12" alias="P">
+               <expression locator="334:3-334:10" name="ProcList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="335:5-335:92" xsi:type="Not">
+               <operand locator="335:15-335:92" xsi:type="In">
+                  <operand locator="335:16-335:29" path="value" xsi:type="Property">
+                     <source locator="335:16-335:23" path="status" scope="P" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="335:34-335:91" xsi:type="List">
+                     <element locator="335:35-335:47" valueType="t:String" value="preparation" xsi:type="Literal"/>
+                     <element locator="335:50-335:59" valueType="t:String" value="not-done" xsi:type="Literal"/>
+                     <element locator="335:62-335:79" valueType="t:String" value="entered-in-error" xsi:type="Literal"/>
+                     <element locator="335:82-335:90" valueType="t:String" value="unknown" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ProcList">
+            <operandTypeSpecifier locator="333:47-333:61" xsi:type="ListTypeSpecifier">
+               <elementType locator="333:52-333:60" name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="346:1-350:79" name="ProcedureLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="347:3-350:79" xsi:type="Query">
+            <source locator="347:3-347:12" alias="P">
+               <expression locator="347:3-347:10" name="ProcList" xsi:type="OperandRef"/>
+            </source>
+            <let locator="348:9-348:59" identifier="LookBackInterval">
+               <expression locator="348:27-348:59" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="348:36-348:51" xsi:type="Subtract">
+                     <operand locator="348:36-348:40" xsi:type="Now"/>
+                     <operand locator="348:44-348:51" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="348:54-348:58" xsi:type="Now"/>
+               </expression>
+            </let>
+            <where locator="349:5-350:79" xsi:type="Or">
+               <operand locator="349:11-349:66" xsi:type="In">
+                  <operand locator="349:11-349:46" path="value" xsi:type="Property">
+                     <source locator="349:11-349:40" strict="false" xsi:type="As">
+                        <operand locator="349:12-349:22" path="performed" scope="P" xsi:type="Property"/>
+                        <asTypeSpecifier locator="349:27-349:39" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                     </source>
+                  </operand>
+                  <operand locator="349:51-349:66" name="LookBackInterval" xsi:type="QueryLetRef"/>
+               </operand>
+               <operand locator="350:10-350:79" xsi:type="Overlaps">
+                  <operand locator="350:10-350:53" name="PeriodToInterval" xsi:type="FunctionRef">
+                     <operand locator="350:27-350:52" strict="false" xsi:type="As">
+                        <operand locator="350:27-350:37" path="performed" scope="P" xsi:type="Property"/>
+                        <asTypeSpecifier locator="350:42-350:52" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                     </operand>
+                  </operand>
+                  <operand locator="350:64-350:79" name="LookBackInterval" xsi:type="QueryLetRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ProcList">
+            <operandTypeSpecifier locator="346:44-346:58" xsi:type="ListTypeSpecifier">
+               <elementType locator="346:49-346:57" name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="346:70-346:84" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="359:1-364:3" name="MostRecentProcedure" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="360:3-364:3" xsi:type="Last">
+            <source locator="360:8-363:45" xsi:type="Query">
+               <source locator="360:8-360:17" alias="P">
+                  <expression locator="360:8-360:15" name="ProcList" xsi:type="OperandRef"/>
+               </source>
+               <sort locator="360:19-363:45">
+                  <by locator="360:27-363:45" direction="asc" xsi:type="ByExpression">
+                     <expression locator="360:27-363:45" xsi:type="Coalesce">
+                        <operand locator="361:5-361:38" path="value" xsi:type="Property">
+                           <source locator="361:5-361:32" strict="false" xsi:type="As">
+                              <operand locator="361:6-361:14" name="performed" xsi:type="IdentifierRef"/>
+                              <asTypeSpecifier locator="361:19-361:31" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                           </source>
+                        </operand>
+                        <operand locator="362:5-362:42" path="value" xsi:type="Property">
+                           <source locator="362:5-362:36" path="end" xsi:type="Property">
+                              <source locator="362:5-362:30" strict="false" xsi:type="As">
+                                 <operand locator="362:6-362:14" name="performed" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="362:19-362:29" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand locator="363:5-363:44" path="value" xsi:type="Property">
+                           <source locator="363:5-363:38" path="start" xsi:type="Property">
+                              <source locator="363:5-363:30" strict="false" xsi:type="As">
+                                 <operand locator="363:6-363:14" name="performed" xsi:type="IdentifierRef"/>
+                                 <asTypeSpecifier locator="363:19-363:29" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              </source>
+                           </source>
+                        </operand>
+                     </expression>
+                  </by>
+               </sort>
+            </source>
+         </expression>
+         <operand name="ProcList">
+            <operandTypeSpecifier locator="359:46-359:60" xsi:type="ListTypeSpecifier">
+               <elementType locator="359:51-359:59" name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="378:1-380:55" name="ServiceRequestActiveOrCompleted" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="379:3-380:55" xsi:type="Query">
+            <source locator="379:3-379:22" alias="S">
+               <expression locator="379:3-379:20" name="ServiceRequestList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="380:5-380:55" xsi:type="In">
+               <operand locator="380:11-380:24" path="value" xsi:type="Property">
+                  <source locator="380:11-380:18" path="status" scope="S" xsi:type="Property"/>
+               </operand>
+               <operand locator="380:29-380:55" xsi:type="List">
+                  <element locator="380:34-380:41" valueType="t:String" value="active" xsi:type="Literal"/>
+                  <element locator="380:44-380:54" valueType="t:String" value="completed" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ServiceRequestList">
+            <operandTypeSpecifier locator="378:68-378:87" xsi:type="ListTypeSpecifier">
+               <elementType locator="378:73-378:86" name="fhir:ServiceRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="391:1-393:65" name="ServiceRequestLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="392:3-393:65" xsi:type="Query">
+            <source locator="392:3-392:22" alias="S">
+               <expression locator="392:3-392:20" name="ServiceRequestList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="393:5-393:65" xsi:type="In">
+               <operand locator="393:11-393:28" path="value" xsi:type="Property">
+                  <source locator="393:11-393:22" path="authoredOn" scope="S" xsi:type="Property"/>
+               </operand>
+               <operand locator="393:33-393:65" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="393:42-393:57" xsi:type="Subtract">
+                     <operand locator="393:42-393:46" xsi:type="Now"/>
+                     <operand locator="393:50-393:57" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="393:60-393:64" xsi:type="Now"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="ServiceRequestList">
+            <operandTypeSpecifier locator="391:59-391:78" xsi:type="ListTypeSpecifier">
+               <elementType locator="391:64-391:77" name="fhir:ServiceRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="391:90-391:104" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="412:1-413:43" name="ActiveMedicationRequest" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="413:3-413:43" xsi:type="Query">
+            <source locator="413:3-413:11" alias="M">
+               <expression locator="413:3-413:9" name="MedList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="413:13-413:43" xsi:type="Equal">
+               <operand locator="413:19-413:32" path="value" xsi:type="Property">
+                  <source locator="413:19-413:26" path="status" scope="M" xsi:type="Property"/>
+               </operand>
+               <operand locator="413:36-413:43" valueType="t:String" value="active" xsi:type="Literal"/>
+            </where>
+         </expression>
+         <operand name="MedList">
+            <operandTypeSpecifier locator="412:49-412:71" xsi:type="ListTypeSpecifier">
+               <elementType locator="412:54-412:70" name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="423:1-426:37" name="ActiveOrCompletedMedicationRequest" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="424:3-426:37" xsi:type="Query">
+            <source locator="424:3-424:11" alias="M">
+               <expression locator="424:3-424:9" name="MedList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="425:5-426:37" xsi:type="Or">
+               <operand locator="425:11-425:35" xsi:type="Equal">
+                  <operand locator="425:11-425:24" path="value" xsi:type="Property">
+                     <source locator="425:11-425:18" path="status" scope="M" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="425:28-425:35" valueType="t:String" value="active" xsi:type="Literal"/>
+               </operand>
+               <operand locator="426:10-426:37" xsi:type="Equal">
+                  <operand locator="426:10-426:23" path="value" xsi:type="Property">
+                     <source locator="426:10-426:17" path="status" scope="M" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="426:27-426:37" valueType="t:String" value="completed" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="MedList">
+            <operandTypeSpecifier locator="423:60-423:82" xsi:type="ListTypeSpecifier">
+               <elementType locator="423:65-423:81" name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="436:1-440:35" name="ActiveCompletedOrStoppedMedicationRequest" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="437:3-440:35" xsi:type="Query">
+            <source locator="437:3-437:11" alias="M">
+               <expression locator="437:3-437:9" name="MedList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="438:5-440:35" xsi:type="Or">
+               <operand locator="438:11-439:37" xsi:type="Or">
+                  <operand locator="438:11-438:35" xsi:type="Equal">
+                     <operand locator="438:11-438:24" path="value" xsi:type="Property">
+                        <source locator="438:11-438:18" path="status" scope="M" xsi:type="Property"/>
+                     </operand>
+                     <operand locator="438:28-438:35" valueType="t:String" value="active" xsi:type="Literal"/>
+                  </operand>
+                  <operand locator="439:10-439:37" xsi:type="Equal">
+                     <operand locator="439:10-439:23" path="value" xsi:type="Property">
+                        <source locator="439:10-439:17" path="status" scope="M" xsi:type="Property"/>
+                     </operand>
+                     <operand locator="439:27-439:37" valueType="t:String" value="completed" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+               <operand locator="440:10-440:35" xsi:type="Equal">
+                  <operand locator="440:10-440:23" path="value" xsi:type="Property">
+                     <source locator="440:10-440:17" path="status" scope="M" xsi:type="Property"/>
+                  </operand>
+                  <operand locator="440:27-440:35" valueType="t:String" value="stopped" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="MedList">
+            <operandTypeSpecifier locator="436:67-436:89" xsi:type="ListTypeSpecifier">
+               <elementType locator="436:72-436:88" name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="450:1-453:48" name="MedicationRequestLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="451:3-453:48" xsi:type="Query">
+            <source locator="451:3-451:11" alias="M">
+               <expression locator="451:3-451:9" name="MedList" xsi:type="OperandRef"/>
+            </source>
+            <let locator="452:9-452:59" identifier="LookBackInterval">
+               <expression locator="452:27-452:59" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="452:36-452:51" xsi:type="Subtract">
+                     <operand locator="452:36-452:40" xsi:type="Now"/>
+                     <operand locator="452:44-452:51" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="452:54-452:58" xsi:type="Now"/>
+               </expression>
+            </let>
+            <where locator="453:5-453:48" xsi:type="In">
+               <operand locator="453:11-453:28" path="value" xsi:type="Property">
+                  <source locator="453:11-453:22" path="authoredOn" scope="M" xsi:type="Property"/>
+               </operand>
+               <operand locator="453:33-453:48" name="LookBackInterval" xsi:type="QueryLetRef"/>
+            </where>
+         </expression>
+         <operand name="MedList">
+            <operandTypeSpecifier locator="450:51-450:73" xsi:type="ListTypeSpecifier">
+               <elementType locator="450:56-450:72" name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="450:85-450:99" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="464:1-465:85" name="EncountersByConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="465:3-465:85" xsi:type="Query">
+            <source locator="465:3-465:15" alias="E">
+               <expression locator="465:3-465:13" dataType="fhir:Encounter" templateId="http://hl7.org/fhir/StructureDefinition/Encounter" xsi:type="Retrieve"/>
+            </source>
+            <where locator="465:17-465:85" xsi:type="Exists">
+               <operand locator="465:29-465:85" xsi:type="Query">
+                  <source locator="465:31-465:41" alias="ET">
+                     <expression locator="465:31-465:38" path="type" scope="E" xsi:type="Property"/>
+                  </source>
+                  <where locator="465:43-465:83" xsi:type="Equivalent">
+                     <operand locator="465:49-465:73" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="465:71-465:72" name="ET" xsi:type="AliasRef"/>
+                     </operand>
+                     <operand locator="465:77-465:83" name="Koncept" xsi:type="OperandRef"/>
+                  </where>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Koncept">
+            <operandTypeSpecifier locator="464:45-464:58" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="473:1-475:40" name="InProgress" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="474:3-475:40" xsi:type="Query">
+            <source locator="474:3-474:11" alias="E">
+               <expression locator="474:3-474:9" name="EncList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="475:5-475:40" xsi:type="Equal">
+               <operand locator="475:11-475:24" path="value" xsi:type="Property">
+                  <source locator="475:11-475:18" path="status" scope="E" xsi:type="Property"/>
+               </operand>
+               <operand locator="475:28-475:40" valueType="t:String" value="in-progress" xsi:type="Literal"/>
+            </where>
+         </expression>
+         <operand name="EncList">
+            <operandTypeSpecifier locator="473:36-473:50" xsi:type="ListTypeSpecifier">
+               <elementType locator="473:41-473:49" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="485:1-486:70" name="AllergyIntolerancesByConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="486:3-486:70" xsi:type="Query">
+            <source locator="486:3-486:24" alias="A">
+               <expression locator="486:3-486:22" dataType="fhir:AllergyIntolerance" templateId="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" xsi:type="Retrieve"/>
+            </source>
+            <where locator="486:26-486:70" xsi:type="Equivalent">
+               <operand locator="486:32-486:60" name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="486:54-486:59" path="code" scope="A" xsi:type="Property"/>
+               </operand>
+               <operand locator="486:64-486:70" name="Koncept" xsi:type="OperandRef"/>
+            </where>
+         </expression>
+         <operand name="Koncept">
+            <operandTypeSpecifier locator="485:54-485:67" name="t:Concept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="496:1-499:67" name="ActiveOrConfirmedAllergyIntolerance" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="497:3-499:67" xsi:type="Query">
+            <source locator="497:3-497:20" alias="A">
+               <expression locator="497:3-497:18" name="AllergyIntolList" xsi:type="OperandRef"/>
+            </source>
+            <where locator="498:5-499:67" xsi:type="Or">
+               <operand locator="498:11-498:61" xsi:type="Equivalent">
+                  <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="498:11-498:26" path="clinicalStatus" scope="A" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="ToConcept">
+                     <operand locator="498:30-498:61" name="AllergyIntolerance Active code" xsi:type="CodeRef"/>
+                  </operand>
+               </operand>
+               <operand locator="499:10-499:67" xsi:type="Equivalent">
+                  <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand locator="499:10-499:29" path="verificationStatus" scope="A" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="ToConcept">
+                     <operand locator="499:33-499:67" name="AllergyIntolerance Confirmed code" xsi:type="CodeRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand name="AllergyIntolList">
+            <operandTypeSpecifier locator="496:70-496:93" xsi:type="ListTypeSpecifier">
+               <elementType locator="496:75-496:92" name="fhir:AllergyIntolerance" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def locator="511:1-521:79" name="GoalLookBack" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="512:3-521:79" xsi:type="Query">
+            <source locator="512:3-512:12" alias="G">
+               <expression locator="512:3-512:10" name="GoalList" xsi:type="OperandRef"/>
+            </source>
+            <let locator="513:9-513:59" identifier="LookBackInterval">
+               <expression locator="513:27-513:59" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <low locator="513:36-513:51" xsi:type="Subtract">
+                     <operand locator="513:36-513:40" xsi:type="Now"/>
+                     <operand locator="513:44-513:51" name="LookBack" xsi:type="OperandRef"/>
+                  </low>
+                  <high locator="513:54-513:58" xsi:type="Now"/>
+               </expression>
+            </let>
+            <let locator="514:5-514:43" identifier="StartDate">
+               <expression locator="514:16-514:43" path="value" xsi:type="Property">
+                  <source locator="514:16-514:37" strict="false" xsi:type="As">
+                     <operand locator="514:17-514:23" path="start" scope="G" xsi:type="Property"/>
+                     <asTypeSpecifier locator="514:28-514:36" name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                  </source>
+               </expression>
+            </let>
+            <let locator="515:5-515:34" identifier="StatusDate">
+               <expression locator="515:17-515:34" path="value" xsi:type="Property">
+                  <source locator="515:17-515:28" path="statusDate" scope="G" xsi:type="Property"/>
+               </expression>
+            </let>
+            <let locator="516:5-516:63" identifier="TargetDates">
+               <expression locator="516:18-516:63" xsi:type="Query">
+                  <source locator="516:18-516:29" alias="T">
+                     <expression locator="516:18-516:27" path="target" scope="G" xsi:type="Property"/>
+                  </source>
+                  <return locator="516:31-516:63">
+                     <expression locator="516:38-516:63" path="value" xsi:type="Property">
+                        <source locator="516:38-516:57" strict="false" xsi:type="As">
+                           <operand locator="516:39-516:43" path="due" scope="T" xsi:type="Property"/>
+                           <asTypeSpecifier locator="516:48-516:56" name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </expression>
+                  </return>
+               </expression>
+            </let>
+            <let locator="517:5-517:88" identifier="TargetQuantities">
+               <expression locator="517:23-517:88" xsi:type="Query">
+                  <source locator="517:23-517:34" alias="T">
+                     <expression locator="517:23-517:32" path="target" scope="G" xsi:type="Property"/>
+                  </source>
+                  <return locator="517:36-517:88">
+                     <expression locator="517:43-517:88" name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="517:66-517:87" strict="false" xsi:type="As">
+                           <operand locator="517:66-517:70" path="due" scope="T" xsi:type="Property"/>
+                           <asTypeSpecifier locator="517:75-517:87" name="fhir:Duration" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </expression>
+                  </return>
+               </expression>
+            </let>
+            <where locator="518:5-521:79" xsi:type="Or">
+               <operand locator="518:11-520:60" xsi:type="Or">
+                  <operand locator="518:11-519:39" xsi:type="Or">
+                     <operand locator="518:11-518:39" xsi:type="In">
+                        <operand xsi:type="ToDateTime">
+                           <operand locator="518:11-518:19" name="StartDate" xsi:type="QueryLetRef"/>
+                        </operand>
+                        <operand locator="518:24-518:39" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                     </operand>
+                     <operand locator="519:10-519:39" xsi:type="In">
+                        <operand xsi:type="ToDateTime">
+                           <operand locator="519:10-519:19" name="StatusDate" xsi:type="QueryLetRef"/>
+                        </operand>
+                        <operand locator="519:24-519:39" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                     </operand>
+                  </operand>
+                  <operand locator="520:10-520:60" xsi:type="Exists">
+                     <operand locator="520:16-520:60" xsi:type="Query">
+                        <source locator="520:17-520:30" alias="TD">
+                           <expression locator="520:17-520:27" name="TargetDates" xsi:type="QueryLetRef"/>
+                        </source>
+                        <where locator="520:32-520:59" xsi:type="In">
+                           <operand xsi:type="ToDateTime">
+                              <operand locator="520:38-520:39" name="TD" xsi:type="AliasRef"/>
+                           </operand>
+                           <operand locator="520:44-520:59" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                        </where>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand locator="521:10-521:79" xsi:type="Exists">
+                  <operand locator="521:16-521:79" xsi:type="Query">
+                     <source locator="521:17-521:35" alias="TQ">
+                        <expression locator="521:17-521:32" name="TargetQuantities" xsi:type="QueryLetRef"/>
+                     </source>
+                     <where locator="521:37-521:78" xsi:type="In">
+                        <operand xsi:type="ToDateTime">
+                           <operand locator="521:43-521:58" xsi:type="Add">
+                              <operand locator="521:44-521:52" name="StartDate" xsi:type="QueryLetRef"/>
+                              <operand locator="521:56-521:57" name="TQ" xsi:type="AliasRef"/>
+                           </operand>
+                        </operand>
+                        <operand locator="521:63-521:78" name="LookBackInterval" xsi:type="QueryLetRef"/>
+                     </where>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand name="GoalList">
+            <operandTypeSpecifier locator="511:39-511:48" xsi:type="ListTypeSpecifier">
+               <elementType locator="511:44-511:47" name="fhir:Goal" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="LookBack">
+            <operandTypeSpecifier locator="511:60-511:74" name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+   </statements>
+</library>

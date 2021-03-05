@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "Emergency Department COVID-19 Severity Classification"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2021-03-03T18:11:15+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-03-05T01:49:25+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "Veterans Health Administration (VHA)"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -352,11 +352,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/COVID-19-Concepts>;
-         fhir:Reference.reference [ fhir:value "Library/COVID-19-Concepts" ]
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptHooks>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptHooks" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - COVID-19 Shared Concepts and Terminology" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline." ]
      ], [
        fhir:index 2;
        fhir:Element.extension [
@@ -365,11 +365,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/COVID-19-ED-Severity>;
-         fhir:Reference.reference [ fhir:value "Library/COVID-19-ED-Severity" ]
+         fhir:link <http://fhir.org/guides/acep/Library/CDSConnectCommons>;
+         fhir:Reference.reference [ fhir:value "Library/CDSConnectCommons" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - ACEP COVID-19 ED Severity Classification and Disposition Logic" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP COVID-19 ED Severity Classification and Disposition guideline, including caclculation of the qCDI score and severity." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Common Logic for CDS" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Common Logic for CDS providing shared helper functions." ]
      ], [
        fhir:index 3;
        fhir:Element.extension [
@@ -378,11 +378,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/COVID-19-ED-Severity-Hooks>;
-         fhir:Reference.reference [ fhir:value "Library/COVID-19-ED-Severity-Hooks" ]
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19Concepts>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19Concepts" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - CDS Hooks for ACEP COVID-19 ED Severity Classification and Disposition Logic" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support CDS Hooks for the ACEP COVID-19 ED Severity Classification and Disposition guideline, including caclculation of the qCDI score and severity." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - COVID-19 Shared Concepts and Terminology" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries." ]
      ], [
        fhir:index 4;
        fhir:Element.extension [
@@ -391,21 +391,34 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/CDS-Connect-Commons>;
-         fhir:Reference.reference [ fhir:value "Library/CDS-Connect-Commons" ]
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptSummary>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptSummary" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Common Logic for CDS" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Common Logic for CDS providing shared helper functions." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores." ]
      ], [
        fhir:index 5;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptAssessment>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptAssessment" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity." ]
+     ], [
+       fhir:index 6;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "PlanDefinition" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/PlanDefinition/COVID-19-ED-Severity>;
-         fhir:Reference.reference [ fhir:value "PlanDefinition/COVID-19-ED-Severity" ]
+         fhir:link <http://fhir.org/guides/acep/PlanDefinition/COVID19EmergencyDeptRecommendation>;
+         fhir:Reference.reference [ fhir:value "PlanDefinition/COVID19EmergencyDeptRecommendation" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "CDS Hook definitions for ACEP COVID-19 ED Severity Classification and Disposition" ]

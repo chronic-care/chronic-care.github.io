@@ -1,0 +1,356 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.ACEP.COVID19-ED-R4\PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition - JSON Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.7"}
+    h3,h4,h5,h6{--heading-prefix:"6.7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Emergency Department COVID-19 Severity Classification</span><br/>0.1.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Emergency Department COVID-19 Severity Classification - Local Development build (v0.1.0). See the <a href="http://fhir.org/guides/acep/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="PlanDefinition-COVID19EmergencyDeptRecommendation.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition - JSON Representation</h2>
+
+<p><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.json" no-download="true">Raw json</a> | <a href="PlanDefinition-COVID19EmergencyDeptRecommendation.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json"><code class="language-json">
+{
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition">resourceType</a>" : "PlanDefinition",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.id">id</a>" : "COVID19EmergencyDeptRecommendation",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;knowledgeCapability&lt;/b&gt;: shareable&lt;/p&gt;&lt;p&gt;&lt;b&gt;knowledgeCapability&lt;/b&gt;: computable&lt;/p&gt;&lt;p&gt;&lt;b&gt;knowledgeCapability&lt;/b&gt;: publishable&lt;/p&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://fhir.org/guides/acep/PlanDefinition/COVID19EmergencyDeptRecommendation&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: COVID19EmergencyDeptHooks&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: &lt;span title=\&quot;Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type eca-rule}\&quot;&gt;ECA Rule&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: draft&lt;/p&gt;&lt;p&gt;&lt;b&gt;experimental&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-03-04&lt;/p&gt;&lt;p&gt;&lt;b&gt;publisher&lt;/b&gt;: Veterans Health Administration (VHA)&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: &lt;a href=\&quot;http://hl7.org/Special/committees/[something]\&quot;&gt;http://hl7.org/Special/committees/[something]&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: CDS Hook definitions for ACEP COVID-19 ED Severity Classification and Disposition&lt;/p&gt;&lt;p&gt;&lt;b&gt;jurisdiction&lt;/b&gt;: &lt;span title=\&quot;Codes: {http://unstats.un.org/unsd/methods/m49/m49.htm 001}\&quot;&gt;World&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;copyright&lt;/b&gt;: &amp;copy; Veterans Health Administration 2020+.&lt;/p&gt;&lt;p&gt;&lt;b&gt;library&lt;/b&gt;: &lt;a href=\&quot;http://fhir.org/guides/acep/Library/COVID19EmergencyDeptHooks\&quot;&gt;http://fhir.org/guides/acep/Library/COVID19EmergencyDeptHooks&lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: ACEP Emergency Department COVID-19 Management&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: For adults presenting to the Emergency Department (ED) with possible or confirmed COVID-19, provide a Clinical Practice Guideline and decision support tool that helps classify patient disease severity and give guidance on appropriate disposition. This tool will be accessible by emergency physicians in a workflow-friendly manner to assist in management of their patients.&lt;/p&gt;&lt;h3&gt;Documentations&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Triggers&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;condition&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;kind&lt;/b&gt;: applicability&lt;/p&gt;&lt;h3&gt;Expressions&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;dynamicValue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;path&lt;/b&gt;: action.description&lt;/p&gt;&lt;h3&gt;Expressions&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;dynamicValue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;path&lt;/b&gt;: action.title&lt;/p&gt;&lt;h3&gt;Expressions&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;dynamicValue&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;path&lt;/b&gt;: action.extension&lt;/p&gt;&lt;h3&gt;Expressions&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.extension">extension</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "shareable"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "computable"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "publishable"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.url">url</a>" : "http://fhir.org/guides/acep/PlanDefinition/COVID19EmergencyDeptRecommendation",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.version">version</a>" : "0.1.0",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.name">name</a>" : "COVID19EmergencyDeptHooks",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.title">title</a>" : "PlanDefinition - ACEP COVID-19 ED Severity Classification and Disposition",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.type">type</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "eca-rule",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "ECA Rule"
+      }
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.experimental">experimental</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.date">date</a>" : "2021-03-04",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.publisher">publisher</a>" : "Veterans Health Administration (VHA)",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://hl7.org/Special/committees/[something]"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.description">description</a>" : "CDS Hook definitions for ACEP COVID-19 ED Severity Classification and Disposition",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "001"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.copyright">copyright</a>" : "© Veterans Health Administration 2020+.",
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.library">library</a>" : [
+    "http://fhir.org/guides/acep/Library/COVID19EmergencyDeptHooks"
+  ],
+  "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action">action</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.title">title</a>" : "ACEP Emergency Department COVID-19 Management",
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.description">description</a>" : "For adults presenting to the Emergency Department (ED) with possible or confirmed COVID-19, provide a Clinical Practice Guideline and decision support tool that helps classify patient disease severity and give guidance on appropriate disposition. This tool will be accessible by emergency physicians in a workflow-friendly manner to assist in management of their patients.",
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.documentation">documentation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "documentation",
+          "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "ACEP Emergency Department COVID-19 Management Tool",
+          "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.url">url</a>" : "https://www.acep.org/globalassets/sites/acep/media/covid-19-main/acep_evidencecare_covid19severitytool.pdf"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.trigger">trigger</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/metadatatypes.html#TriggerDefinition#TriggerDefinition.type">type</a>" : "named-event",
+          "<a href="http://hl7.org/fhir/R4/metadatatypes.html#TriggerDefinition#TriggerDefinition.name">name</a>" : "patient-view"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.condition">condition</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.condition.kind">kind</a>" : "applicability",
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.condition.expression">expression</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a>" : "text/cql.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a>" : "Has Severity Classification"
+          }
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue">dynamicValue</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.path">path</a>" : "action.description",
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.expression">expression</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a>" : "text/cql.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a>" : "Get Severity Card Detail"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.path">path</a>" : "action.title",
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.expression">expression</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a>" : "text/cql.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a>" : "Get Severity Card Summary"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.path">path</a>" : "action.extension",
+          "<a href="http://hl7.org/fhir/R4/plandefinition.html#PlanDefinition.action.dynamicValue.expression">expression</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a>" : "text/cql.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.expression">expression</a>" : "Get Severity Card Indicator"
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 5, 2021 01:49+0000">2021-03-05</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

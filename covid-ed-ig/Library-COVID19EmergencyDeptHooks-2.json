@@ -1,0 +1,227 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableLocators,DisableListDemotion,DisableListPromotion",
+         "type" : "CqlToElmInfo"
+      } ],
+      "identifier" : {
+         "id" : "COVID19EmergencyDeptHooks",
+         "system" : "http://fhir.org/guides/acep",
+         "version" : "0.1.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "locator" : "9:1-9:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1"
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "locator" : "13:1-13:66",
+            "localIdentifier" : "CovidED",
+            "path" : "http://fhir.org/guides/acep/COVID19EmergencyDeptSummary",
+            "version" : "1.0.0"
+         } ]
+      },
+      "contexts" : {
+         "def" : [ {
+            "locator" : "17:1-17:15",
+            "name" : "Patient"
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "locator" : "17:1-17:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "locator" : "17:1-17:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "locator" : "24:1-25:56",
+            "name" : "Has Severity Classification",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "25:3-25:56",
+               "type" : "Not",
+               "operand" : {
+                  "locator" : "25:3-25:56",
+                  "type" : "IsNull",
+                  "operand" : {
+                     "locator" : "25:3-25:44",
+                     "path" : "SeverityClassification",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "25:3-25:21",
+                        "name" : "RiskSummary",
+                        "libraryName" : "CovidED",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               }
+            }
+         }, {
+            "locator" : "27:1-28:67",
+            "name" : "Get Severity Card Summary",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "28:3-28:67",
+               "type" : "Concatenate",
+               "operand" : [ {
+                  "locator" : "28:3-28:44",
+                  "path" : "SeverityClassification",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "28:3-28:21",
+                     "name" : "RiskSummary",
+                     "libraryName" : "CovidED",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "locator" : "28:48-28:67",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : " COVID-19 Severity",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "locator" : "30:1-31:154",
+            "name" : "Get Severity Card Detail",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "31:3-31:154",
+               "type" : "Concatenate",
+               "operand" : [ {
+                  "locator" : "31:3-31:112",
+                  "type" : "Concatenate",
+                  "operand" : [ {
+                     "locator" : "31:3-31:85",
+                     "type" : "Concatenate",
+                     "operand" : [ {
+                        "locator" : "31:3-31:40",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "COVID-19 severity classification is ",
+                        "type" : "Literal"
+                     }, {
+                        "locator" : "31:44-31:85",
+                        "path" : "SeverityClassification",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "31:44-31:62",
+                           "name" : "RiskSummary",
+                           "libraryName" : "CovidED",
+                           "type" : "ExpressionRef"
+                        }
+                     } ]
+                  }, {
+                     "locator" : "31:89-31:112",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : " with a risk score of ",
+                     "type" : "Literal"
+                  } ]
+               }, {
+                  "locator" : "31:116-31:154",
+                  "type" : "ToString",
+                  "operand" : {
+                     "locator" : "31:125-31:153",
+                     "path" : "RiskScore",
+                     "type" : "Property",
+                     "source" : {
+                        "locator" : "31:125-31:143",
+                        "name" : "RiskSummary",
+                        "libraryName" : "CovidED",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "locator" : "33:1-36:16",
+            "name" : "Get Severity Card Indicator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "34:3-36:16",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "locator" : "34:6-34:117",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "34:6-34:60",
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "locator" : "34:6-34:47",
+                           "path" : "SeverityClassification",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "34:6-34:24",
+                              "name" : "RiskSummary",
+                              "libraryName" : "CovidED",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "locator" : "34:51-34:60",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "CRITICAL",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "locator" : "34:65-34:117",
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "locator" : "34:65-34:106",
+                           "path" : "SeverityClassification",
+                           "type" : "Property",
+                           "source" : {
+                              "locator" : "34:65-34:83",
+                              "name" : "RiskSummary",
+                              "libraryName" : "CovidED",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "locator" : "34:110-34:117",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "SEVERE",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  }
+               },
+               "then" : {
+                  "locator" : "35:10-35:19",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "critical",
+                  "type" : "Literal"
+               },
+               "else" : {
+                  "locator" : "36:8-36:16",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "warning",
+                  "type" : "Literal"
+               }
+            }
+         } ]
+      }
+   }
+}
