@@ -1,0 +1,165 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "covid-19-lab-creatinine"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ];
+  fhir:Resource.language [ fhir:value "en"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p>This value set contains 13 concepts</p><p>All codes from system <a href=\"http://terminology.hl7.org/2.0.0/CodeSystem-v3-loinc.html\"><code>http://loinc.org</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-2160-0\"> </a><a href=\"http://details.loinc.org/LOINC/2160-0.html\">2160-0</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-44784-7\"> </a><a href=\"http://details.loinc.org/LOINC/44784-7.html\">44784-7</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-35203-9\"> </a><a href=\"http://details.loinc.org/LOINC/35203-9.html\">35203-9</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-77140-2\"> </a><a href=\"http://details.loinc.org/LOINC/77140-2.html\">77140-2</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-14682-9\"> </a><a href=\"http://details.loinc.org/LOINC/14682-9.html\">14682-9</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-16188-5\"> </a><a href=\"http://details.loinc.org/LOINC/16188-5.html\">16188-5</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-16189-3\"> </a><a href=\"http://details.loinc.org/LOINC/16189-3.html\">16189-3</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-40248-7\"> </a><a href=\"http://details.loinc.org/LOINC/40248-7.html\">40248-7</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-40264-4\"> </a><a href=\"http://details.loinc.org/LOINC/40264-4.html\">40264-4</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11041-1\"> </a><a href=\"http://details.loinc.org/LOINC/11041-1.html\">11041-1</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-51620-3\"> </a><a href=\"http://details.loinc.org/LOINC/51620-3.html\">51620-3</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11042-9\"> </a><a href=\"http://details.loinc.org/LOINC/11042-9.html\">11042-9</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-51619-5\"> </a><a href=\"http://details.loinc.org/LOINC/51619-5.html\">51619-5</a></td><td/><td/></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueCode [ fhir:value "executable" ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine"];
+  fhir:ValueSet.version [ fhir:value "0.1.0"];
+  fhir:ValueSet.name [ fhir:value "COVID19LabCreatinine"];
+  fhir:ValueSet.title [ fhir:value "COVID-19 Laboratory Value Set for Creatinine"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-02-26T20:00:00+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Veterans Health Administration (VHA)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/Special/committees/[something]" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "COVID-19 Laboratory Value Set for Creatinine"];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "2160-0" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "44784-7" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "35203-9" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77140-2" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "14682-9" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16188-5" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16189-3" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "40248-7" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "40264-4" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "11041-1" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "51620-3" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "11042-9" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "51619-5" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-03-05T17:10:31-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "2160-0" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "44784-7" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "35203-9" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "77140-2" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "14682-9" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "16188-5" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "16189-3" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "40248-7" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "40264-4" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "11041-1" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "51620-3" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "11042-9" ]
+     ], [
+       fhir:index 12;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "51619-5" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

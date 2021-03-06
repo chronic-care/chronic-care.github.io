@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "covid-19-condition-risk-downs-syndrome"];
+  fhir:Resource.language [ fhir:value "en"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p>This value set contains 8 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on SNOMED CT Australian edition 04-Feb 2021</p><p>All codes from system <a href=\"http://terminology.hl7.org/2.0.0/CodeSystem-v3-snomed-CT.html\"><code>http://snomed.info/sct</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-709469005\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=709469005\">709469005</a></td><td>Periodontitis co-occurrent with Down syndrome</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-840505007\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=840505007\">840505007</a></td><td>Down syndrome co-occurrent with leukaemoid reaction associated transient neonatal pustulosis</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-724644005\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=724644005\">724644005</a></td><td>Myeloid leukaemia co-occurrent with Down syndrome</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-724643004\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=724643004\">724643004</a></td><td>Transient abnormal myelopoiesis co-occurrent with Down syndrome</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-205615000\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=205615000\">205615000</a></td><td>Trisomy 21- meiotic nondisjunction</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-733194007\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=733194007\">733194007</a></td><td>Dementia co-occurrent and due to Down syndrome</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-125501000119105\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=125501000119105\">125501000119105</a></td><td>Fetal trisomy 21, Down syndrome</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-41040004\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=41040004\">41040004</a></td><td>Complete trisomy 21 syndrome</td><td/></tr></table></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome"];
+  fhir:ValueSet.version [ fhir:value "0.1.0"];
+  fhir:ValueSet.name [ fhir:value "COVID19RiskFactorDownsSyndrome"];
+  fhir:ValueSet.title [ fhir:value "COVID-19 Risk Factor Downs Syndrome Conditions Value Set"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-03-06T00:58:44+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Veterans Health Administration (VHA)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7.org/Special/committees/[something]" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "COVID-19 Risk Factor Downs Syndrome Conditions Value Set"];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "f3d77542-b753-48cd-81e8-42d201ca903b" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-02-20T05:22:21+10:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.total [ fhir:value "8"^^xsd:integer ];
+     fhir:ValueSet.expansion.offset [ fhir:value "0"^^xsd:integer ];
+     fhir:ValueSet.expansion.parameter [
+       fhir:index 0;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "version" ];
+       fhir:ValueSet.expansion.parameter.valueUri [ fhir:value "http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20210204" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "count" ];
+       fhir:ValueSet.expansion.parameter.valueInteger [ fhir:value "2147483647"^^xsd:integer ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "offset" ];
+       fhir:ValueSet.expansion.parameter.valueInteger [ fhir:value "0"^^xsd:integer ]
+     ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "709469005" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Periodontitis co-occurrent with Down syndrome" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "840505007" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Down syndrome co-occurrent with leukaemoid reaction associated transient neonatal pustulosis" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "724644005" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Myeloid leukaemia co-occurrent with Down syndrome" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "724643004" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Transient abnormal myelopoiesis co-occurrent with Down syndrome" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "205615000" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Trisomy 21- meiotic nondisjunction" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "733194007" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Dementia co-occurrent and due to Down syndrome" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "125501000119105" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Fetal trisomy 21, Down syndrome" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "41040004" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Complete trisomy 21 syndrome" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

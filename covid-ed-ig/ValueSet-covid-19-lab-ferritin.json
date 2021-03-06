@@ -1,0 +1,94 @@
+{
+  "resourceType": "ValueSet",
+  "id": "covid-19-lab-ferritin",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
+    ]
+  },
+  "language": "en",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p>This value set contains 4 concepts</p><p>All codes from system <a href=\"http://terminology.hl7.org/2.0.0/CodeSystem-v3-loinc.html\"><code>http://loinc.org</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-2276-4\"> </a><a href=\"http://details.loinc.org/LOINC/2276-4.html\">2276-4</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-20567-4\"> </a><a href=\"http://details.loinc.org/LOINC/20567-4.html\">20567-4</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-35209-6\"> </a><a href=\"http://details.loinc.org/LOINC/35209-6.html\">35209-6</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-14723-1\"> </a><a href=\"http://details.loinc.org/LOINC/14723-1.html\">14723-1</a></td><td/><td/></tr></table></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueCode": "executable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueCode": "executable"
+    }
+  ],
+  "url": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin",
+  "version": "0.1.0",
+  "name": "COVID19LabFerritin",
+  "title": "COVID-19 Laboratory Value Set for Ferritin",
+  "status": "active",
+  "date": "2021-02-26T20:00:00+00:00",
+  "publisher": "Veterans Health Administration (VHA)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/[something]"
+        }
+      ]
+    }
+  ],
+  "description": "COVID-19 Laboratory Value Set for Ferritin",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "2276-4"
+          },
+          {
+            "code": "20567-4"
+          },
+          {
+            "code": "35209-6"
+          },
+          {
+            "code": "14723-1"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2021-03-05T17:10:31-07:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "code": "2276-4"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "20567-4"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "35209-6"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "14723-1"
+      }
+    ]
+  }
+}
