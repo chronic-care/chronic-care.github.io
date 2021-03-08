@@ -1,0 +1,355 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- broken links = 0, errors = 14, warn = 0, info = 16 -->
+<head>
+  <title>PreventiveCareGuidelines : Validation Results</title>
+  <link href="fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results for PreventiveCareGuidelines</h1>
+ <p>Generated Mon Mar 08 22:54:55 UTC 2021, FHIR version 4.0.1 for fhir.preventive-care-ig#1.0.0 (canonical = <a href="http://fhir.org/guides/preventive-care">http://fhir.org/guides/preventive-care</a> (<a href="http://fhir.org/guides/preventive-care/history.html">history</a>)). See <a href="/github/workspace/output/qa.html">Full QA Report</a></p>
+<table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.63</span></td></tr>
+ <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = fhir.preventive-care-ig, Canonical = http://fhir.org/guides/preventive-care</td></tr>
+ <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
+ <tr><td>Version Check:</td><td>1.0.0: <span stlye="color: marron; font-weight: bold">No entry in the package-list.json file for this version</span></td></tr>
+ <tr><td>Supressed Messages:</td><td><a href="#suppressed">8 Suppressed Issues</a>
+</td></tr>
+ <tr><td>Dependency Checks:</td><td><div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of the package">Version</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR Release</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Canonical URL">Canonical</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Web Reference Base">Web Base</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Comments about this entry">Comment</span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/github/workspace/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> fhir.preventive-care-ig</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1.0.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://fhir.org/guides/preventive-care</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/github/workspace/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.cpg</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1.0.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/uv/cpg</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/uv/cpg/STU1</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+</table><para>Templates: fhir.base.template#0.2.1</para></div></td></tr>
+ <tr><td>HL7 Publication Rules:</td><td>Code = n/a. <ul>
+  <li>package-list.json: No category entry for the registry category (talk to FHIR product director on #IG Creation for assistance). Note: existing IGs already have a category in the <a href="http://fhir.org/guides/preventive-care/package-list.json">existing package-list.json</a> - update your package-list.json from there</li>
+  <li>package-list.json: No entry found for version 1.0.0</li>
+</ul>
+</td></tr>
+ <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://fhir.org/guides/preventive-care (Problem #1 with package-list.json at http://fhir.org/guides/preventive-care: http://fhir.org/guides/preventive-care/package-list.json)</td></tr>
+ <tr><td>Summary:</td><td> broken links = 0, errors = 14, warn = 0, info = 16</td></tr>
+</table>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_library_library-CDSConnectCommons"><b>/github/workspace/input/resources/library/library-CDSConnectCommons</b></a></td><td><b>2</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_library_library-FHIRHelpers"><b>/github/workspace/input/resources/library/library-FHIRHelpers</b></a></td><td><b>1</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_library_library-PreventiveCareData"><b>/github/workspace/input/resources/library/library-PreventiveCareData</b></a></td><td><b>2</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_library_library-PreventiveCareHooks"><b>/github/workspace/input/resources/library/library-PreventiveCareHooks</b></a></td><td><b>1</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_library_library-ProstateCancerScreening"><b>/github/workspace/input/resources/library/library-ProstateCancerScreening</b></a></td><td><b>3</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_resources_plandefinition_plandefinition-PreventiveCarePlanning"><b>/github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning</b></a></td><td><b>3</b></td><td><b>0</b></td><td><b>2</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_github_workspace_input_vocabulary_valueset_valueset-2.16.840.1.113883.3.526.2.215"><b>/github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215</b></a></td><td><b>2</b></td><td><b>0</b></td><td><b>1</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="internal"> </a>
+<h2><a href="">n/a</a></h2>
+ <table class="grid">
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_library_library-CDSConnectCommons"> </a>
+<h2><a href="Library-CDSConnectCommons.html">/github/workspace/input/resources/library/library-CDSConnectCommons.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDSConnectCommons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/CDSConnectCommons: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/CDSConnectCommons: Library.relatedArtifact[1].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDSConnectCommons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDSConnectCommons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDSConnectCommons: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl5" class="flip" onclick="flip('l5')">Show Reasoning</span><div id="l5" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDSConnectCommons: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl6" class="flip" onclick="flip('l6')">Show Reasoning</span><div id="l6" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDSConnectCommons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/CDSConnectCommons: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/CDSConnectCommons: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl9" class="flip" onclick="flip('l9')">Show Reasoning</span><div id="l9" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_library_library-FHIRHelpers"> </a>
+<h2><a href="Library-FHIRHelpers-4.0.1.html">/github/workspace/input/resources/library/library-FHIRHelpers.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/FHIRHelpers-4.0.1: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl14" class="flip" onclick="flip('l14')">Show Reasoning</span><div id="l14" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl15" class="flip" onclick="flip('l15')">Show Reasoning</span><div id="l15" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl18" class="flip" onclick="flip('l18')">Show Reasoning</span><div id="l18" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_library_library-PreventiveCareData"> </a>
+<h2><a href="Library-PreventiveCareData.html">/github/workspace/input/resources/library/library-PreventiveCareData.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareData: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/PreventiveCareData: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/PreventiveCareData: Library.relatedArtifact[1].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareData: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareData: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/PreventiveCareData: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl24" class="flip" onclick="flip('l24')">Show Reasoning</span><div id="l24" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/PreventiveCareData: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl25" class="flip" onclick="flip('l25')">Show Reasoning</span><div id="l25" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareData: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareData: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/PreventiveCareData: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl28" class="flip" onclick="flip('l28')">Show Reasoning</span><div id="l28" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_library_library-PreventiveCareHooks"> </a>
+<h2><a href="Library-PreventiveCareHooks.html">/github/workspace/input/resources/library/library-PreventiveCareHooks.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareHooks: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/PreventiveCareHooks: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/PreventiveCareHooks: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/PreventiveCareHooks: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl32" class="flip" onclick="flip('l32')">Show Reasoning</span><div id="l32" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_library_library-ProstateCancerScreening"> </a>
+<h2><a href="Library-ProstateCancerScreening.html">/github/workspace/input/resources/library/library-ProstateCancerScreening.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ProstateCancerScreening.cql</b></td><td><b>error</b></td><td title=""><b>CQL Processing failed with exception: null</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/ProstateCancerScreening: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/ProstateCancerScreening: Library.relatedArtifact[0].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Library/ProstateCancerScreening: Library.relatedArtifact[1].resource</b></td><td><b>error</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/ProstateCancerScreening: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/ProstateCancerScreening: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/ProstateCancerScreening: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl39" class="flip" onclick="flip('l39')">Show Reasoning</span><div id="l39" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/ProstateCancerScreening: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl40" class="flip" onclick="flip('l40')">Show Reasoning</span><div id="l40" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/ProstateCancerScreening: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Library/ProstateCancerScreening: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b><a href="">Library/ProstateCancerScreening: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl43" class="flip" onclick="flip('l43')">Show Reasoning</span><div id="l43" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_resources_plandefinition_plandefinition-PreventiveCarePlanning"> </a>
+<h2><a href="PlanDefinition-PreventiveCarePlanning.html">/github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>PlanDefinition.where(url = 'http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening')</b></td><td><b>error</b></td><td title="RESOURCE_CANONICAL_MISMATCH"><b>Conformance resource /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json - the canonical URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCarePlanning) does not match the URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>PlanDefinition.url</b></td><td><b>error</b></td><td title="RESOURCE_ID_MISMATCH"><b>Resource id/url mismatch: PreventiveCarePlanning/http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>PlanDefinition/PreventiveCarePlanning: PlanDefinition</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>PlanDefinition/PreventiveCarePlanning: PlanDefinition</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-pathwaydefinition - listed in meta</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCarePlanning vs http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_github_workspace_input_vocabulary_valueset_valueset-2.16.840.1.113883.3.526.2.215"> </a>
+<h2><a href="ValueSet-2.16.840.1.113883.3.526.2.215.html">/github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.215')</b></td><td><b>error</b></td><td title="RESOURCE_CANONICAL_MISMATCH"><b>Conformance resource /github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215.json - the canonical URL (http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.526.2.215) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.215)</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>ValueSet/2.16.840.1.113883.3.526.2.215: ValueSet</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.526.2.215 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.215</b></td>
+   </tr>
+</table>
+<a name="suppressed"> </a>
+<p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
+<p><b>IG publisher does not resolve FHIR-ModelInfo and FHIRHelpers</b></p><ul>
+ <li>ERROR: Library/CDSConnectCommons: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</li>
+ <li>ERROR: Library/CDSConnectCommons: Library.relatedArtifact[1].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</li>
+ <li>ERROR: Library/PreventiveCareHooks: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</li>
+ <li>ERROR: Library/ProstateCancerScreening: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</li>
+ <li>ERROR: Library/PreventiveCareData: Library.relatedArtifact[1].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</li>
+ <li>ERROR: Library/PreventiveCareData: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</li>
+ <li>ERROR: Library/ProstateCancerScreening: Library.relatedArtifact[1].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</li>
+ <li>ERROR: Library/FHIRHelpers-4.0.1: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</li>
+</ul>
+<p>No suppressed messsages</p><a name="sorted"> </a>
+<p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="RESOURCE_CANONICAL_MISMATCH"> </a>
+<h2>RESOURCE_CANONICAL_MISMATCH</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="PlanDefinition-PreventiveCarePlanning.html">/github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json</a></td><td><b>Conformance resource /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json - the canonical URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCarePlanning) does not match the URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="ValueSet-2.16.840.1.113883.3.526.2.215.html">/github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215.json</a></td><td><b>Conformance resource /github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215.json - the canonical URL (http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.526.2.215) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.215)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="RESOURCE_ID_MISMATCH"> </a>
+<h2>RESOURCE_ID_MISMATCH</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="PlanDefinition-PreventiveCarePlanning.html">/github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json</a></td><td><b>Resource id/url mismatch: PreventiveCarePlanning/http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"> </a>
+<h2>TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-CDSConnectCommons.html">/github/workspace/input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-CDSConnectCommons.html">/github/workspace/input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-FHIRHelpers-4.0.1.html">/github/workspace/input/resources/library/library-FHIRHelpers.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-PreventiveCareData.html">/github/workspace/input/resources/library/library-PreventiveCareData.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-PreventiveCareData.html">/github/workspace/input/resources/library/library-PreventiveCareData.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-PreventiveCareHooks.html">/github/workspace/input/resources/library/library-PreventiveCareHooks.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-ProstateCancerScreening.html">/github/workspace/input/resources/library/library-ProstateCancerScreening.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="Library-ProstateCancerScreening.html">/github/workspace/input/resources/library/library-ProstateCancerScreening.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+   </tr>
+</table>
+</body>
+</html>

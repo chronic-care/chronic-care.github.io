@@ -1,0 +1,132 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "PreventiveCareScreening"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>knowledgeCapability</b>: shareable</p><p><b>knowledgeCapability</b>: computable</p><p><b>knowledgeCapability</b>: publishable</p><p><b>url</b>: <code>http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening</code></p><p><b>identifier</b>: id: PlanDefinition_PreventiveCareScreening (OFFICIAL)</p><p><b>version</b>: 1.0.0</p><p><b>name</b>: ProstateCancerScreening</p><p><b>title</b>: PlanDefinition - Recommendations on Prostate Cancer Screening</p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type eca-rule}\">ECA Rule</span></p><p><b>status</b>: draft</p><p><b>experimental</b>: true</p><p><b>date</b>: 2021-03-05</p><p><b>publisher</b>: U.S. Preventive Services Task Force (USPSTF)</p><p><b>contact</b>: <a href=\"https://www.uspreventiveservicestaskforce.org/uspstf/\">https://www.uspreventiveservicestaskforce.org/uspstf/</a></p><p><b>description</b>: Recommends decision-making on preventive care screening for Prostate Cancer.</p><p><b>jurisdiction</b>: <span title=\"Codes: {http://unstats.un.org/unsd/methods/m49/m49.htm 001}\">World</span></p><p><b>copyright</b>: &copy; U.S. Preventive Services Task Force (USPSTF) 2020+.</p><p><b>library</b>: <a href=\"http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks\">http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks</a></p><blockquote><p><b>action</b></p><p><b>title</b>: Recommendations on Prostate Cancer Screening</p><p><b>description</b>: Recommends decision-making on preventive care screening for Prostate Cancer.</p><h3>Documentations</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Triggers</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><blockquote><p><b>condition</b></p><p><b>kind</b>: applicability</p><h3>Expressions</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.title</p><h3>Expressions</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.description</p><h3>Expressions</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote><blockquote><p><b>dynamicValue</b></p><p><b>path</b>: action.extension</p><h3>Expressions</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table></blockquote></blockquote></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "shareable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "computable" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "publishable" ]
+  ];
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening"];
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "PlanDefinition_PreventiveCareScreening" ]
+  ];
+  fhir:PlanDefinition.version [ fhir:value "1.0.0"];
+  fhir:PlanDefinition.name [ fhir:value "ProstateCancerScreening"];
+  fhir:PlanDefinition.title [ fhir:value "PlanDefinition - Recommendations on Prostate Cancer Screening"];
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ];
+       fhir:Coding.display [ fhir:value "ECA Rule" ]
+     ]
+  ];
+  fhir:PlanDefinition.status [ fhir:value "draft"];
+  fhir:PlanDefinition.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:PlanDefinition.date [ fhir:value "2021-03-05"^^xsd:date];
+  fhir:PlanDefinition.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:PlanDefinition.description [ fhir:value "Recommends decision-making on preventive care screening for Prostate Cancer."];
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:PlanDefinition.copyright [ fhir:value "© U.S. Preventive Services Task Force (USPSTF) 2020+."];
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks>
+  ];
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "Recommendations on Prostate Cancer Screening" ];
+     fhir:PlanDefinition.action.description [ fhir:value "Recommends decision-making on preventive care screening for Prostate Cancer." ];
+     fhir:PlanDefinition.action.documentation [
+       fhir:index 0;
+       fhir:RelatedArtifact.type [ fhir:value "documentation" ];
+       fhir:RelatedArtifact.display [ fhir:value "USPSTF recommendation for prostate cancer testing" ];
+       fhir:RelatedArtifact.url [ fhir:value "http://www.uspreventiveservicestaskforce.org/Page/Topic/recommendation-summary/prostate-cancer-screening?ds=1&s=prostate%20cancer" ]
+     ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "patient-view" ]
+     ];
+     fhir:PlanDefinition.action.condition [
+       fhir:index 0;
+       fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+       fhir:PlanDefinition.action.condition.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Needs Prostate Cancer Screening" ]
+       ]
+     ];
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.title" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Needs Prostate Cancer Screening Summary" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.description" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Needs Prostate Cancer Screening Detail" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "action.extension" ];
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql" ];
+         fhir:Expression.expression [ fhir:value "Needs Prostate Cancer Screening Indicator" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

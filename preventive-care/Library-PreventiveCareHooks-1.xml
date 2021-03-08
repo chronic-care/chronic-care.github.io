@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="PreventiveCareHooks" system="http://fhir.org/guides/preventive-care" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
+   </usings>
+   <includes>
+      <def locator="13:1-13:63" localIdentifier="Prostate" path="http://fhir.org/guides/preventive-care/ProstateCancerScreening" version="1.0.0"/>
+   </includes>
+   <contexts>
+      <def locator="17:1-17:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="17:1-17:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="17:1-17:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def locator="24:1-25:32" name="Age Between 40 and 70" context="Patient" accessLevel="Public">
+         <expression locator="25:3-25:32" xsi:type="And">
+            <operand xsi:type="GreaterOrEqual">
+               <operand locator="25:3-25:14" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand locator="25:24-25:25" valueType="t:Integer" value="40" xsi:type="Literal"/>
+            </operand>
+            <operand xsi:type="LessOrEqual">
+               <operand locator="25:3-25:14" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand locator="25:31-25:32" valueType="t:Integer" value="70" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="27:1-32:3" name="Needs Prostate Cancer Screening" context="Patient" accessLevel="Public">
+         <expression locator="28:3-32:3" xsi:type="And">
+            <operand locator="28:3-28:25" name="Age Between 40 and 70" xsi:type="ExpressionRef"/>
+            <operand locator="29:3-32:3" xsi:type="Or">
+               <operand locator="29:4-30:85" xsi:type="Or">
+                  <operand locator="29:4-29:33" name="No PSA test results" libraryName="Prostate" xsi:type="ExpressionRef"/>
+                  <operand locator="30:8-30:85" xsi:type="And">
+                     <operand locator="30:9-30:41" name="Last PSA value is high" libraryName="Prostate" xsi:type="ExpressionRef"/>
+                     <operand locator="30:47-30:84" xsi:type="Not">
+                        <operand locator="30:51-30:84" name="Has PSA within one year" libraryName="Prostate" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand locator="31:8-31:46" xsi:type="Not">
+                  <operand locator="31:12-31:46" name="Has PSA within two years" libraryName="Prostate" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def locator="34:1-35:29" name="Needs Prostate Cancer Screening Summary" context="Patient" accessLevel="Public">
+         <expression locator="35:3-35:29" valueType="t:String" value="Prostate Cancer Screening" xsi:type="Literal"/>
+      </def>
+      <def locator="37:1-38:57" name="Needs Prostate Cancer Screening Detail" context="Patient" accessLevel="Public">
+         <expression locator="38:3-38:57" xsi:type="Concatenate">
+            <operand locator="38:3-38:32" xsi:type="Concatenate">
+               <operand locator="38:3-38:26" name="MI PSA Date 1" libraryName="Prostate" xsi:type="ExpressionRef"/>
+               <operand locator="38:30-38:32" valueType="t:String" value=" " xsi:type="Literal"/>
+            </operand>
+            <operand locator="38:36-38:57" name="PSA value 1" libraryName="Prostate" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def locator="40:1-42:16" name="Needs Prostate Cancer Screening Indicator" context="Patient" accessLevel="Public">
+         <expression locator="41:3-42:16" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="41:6-41:38" name="Last PSA value is high" libraryName="Prostate" xsi:type="ExpressionRef"/>
+            </condition>
+            <then locator="41:45-41:54" valueType="t:String" value="critical" xsi:type="Literal"/>
+            <else locator="42:8-42:16" valueType="t:String" value="warning" xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>

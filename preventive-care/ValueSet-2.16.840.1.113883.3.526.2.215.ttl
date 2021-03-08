@@ -1,0 +1,138 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.526.2.215> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113883.3.526.2.215"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "17" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-12-03T17:11:36.000+00:00"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Value Set Contents</h3><p>This value set contains 12 concepts</p><p>All codes from system <code>http://loinc.org</code></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a name=\"http---loinc.org-10508-0\"> </a><a href=\"http://details.loinc.org/LOINC/10508-0.html\">10508-0</a></td><td>Prostate specific Ag [Presence] in Tissue by Immune stain</td></tr><tr><td><a name=\"http---loinc.org-10886-0\"> </a><a href=\"http://details.loinc.org/LOINC/10886-0.html\">10886-0</a></td><td>Prostate Specific Ag Free [Mass/volume] in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-12841-3\"> </a><a href=\"http://details.loinc.org/LOINC/12841-3.html\">12841-3</a></td><td>Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-15323-9\"> </a><a href=\"http://details.loinc.org/LOINC/15323-9.html\">15323-9</a></td><td>Prostate specific Ag/Prostate volume calculated from height, width and length</td></tr><tr><td><a name=\"http---loinc.org-15324-7\"> </a><a href=\"http://details.loinc.org/LOINC/15324-7.html\">15324-7</a></td><td>Prostate specific Ag/Prostate volume calculated from planimetry</td></tr><tr><td><a name=\"http---loinc.org-15325-4\"> </a><a href=\"http://details.loinc.org/LOINC/15325-4.html\">15325-4</a></td><td>Prostate specific Ag/Prostate volume calculated</td></tr><tr><td><a name=\"http---loinc.org-19195-7\"> </a><a href=\"http://details.loinc.org/LOINC/19195-7.html\">19195-7</a></td><td>Prostate specific Ag [Units/volume] in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-19201-3\"> </a><a href=\"http://details.loinc.org/LOINC/19201-3.html\">19201-3</a></td><td>Prostate Specific Ag Free [Units/volume] in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-2857-1\"> </a><a href=\"http://details.loinc.org/LOINC/2857-1.html\">2857-1</a></td><td>Prostate specific Ag [Mass/volume] in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-33667-7\"> </a><a href=\"http://details.loinc.org/LOINC/33667-7.html\">33667-7</a></td><td>Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma</td></tr><tr><td><a name=\"http---loinc.org-34611-4\"> </a><a href=\"http://details.loinc.org/LOINC/34611-4.html\">34611-4</a></td><td>Prostate specific Ag [Mass/volume] in Urine</td></tr><tr><td><a name=\"http---loinc.org-35741-8\"> </a><a href=\"http://details.loinc.org/LOINC/35741-8.html\">35741-8</a></td><td>Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit &lt;= 0.01 ng/mL</td></tr></table></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.215"];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "ProstateSpecificAntigenTest"];
+  fhir:ValueSet.title [ fhir:value "Prostate Specific Antigen Test"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2017-05-04T01:00:13-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "This value set contains concepts that represent prostate specific antigen (PSA) test."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "urn:uuid:9f78c91a-73ce-422a-a6e5-146a07707651" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2020-12-23T18:17:43-05:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.total [ fhir:value "12"^^xsd:integer ];
+     fhir:ValueSet.expansion.offset [ fhir:value "0"^^xsd:integer ];
+     fhir:ValueSet.expansion.parameter [
+       fhir:index 0;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "count" ];
+       fhir:ValueSet.expansion.parameter.valueInteger [ fhir:value "1000"^^xsd:integer ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.parameter.name [ fhir:value "offset" ];
+       fhir:ValueSet.expansion.parameter.valueInteger [ fhir:value "0"^^xsd:integer ]
+     ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "10508-0" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag [Presence] in Tissue by Immune stain" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "10886-0" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate Specific Ag Free [Mass/volume] in Serum or Plasma" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "12841-3" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "15323-9" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag/Prostate volume calculated from height, width and length" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "15324-7" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag/Prostate volume calculated from planimetry" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "15325-4" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag/Prostate volume calculated" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "19195-7" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag [Units/volume] in Serum or Plasma" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "19201-3" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate Specific Ag Free [Units/volume] in Serum or Plasma" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "2857-1" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag [Mass/volume] in Serum or Plasma" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "33667-7" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "34611-4" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag [Mass/volume] in Urine" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://loinc.org" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2.68" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "35741-8" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.526.2.215.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

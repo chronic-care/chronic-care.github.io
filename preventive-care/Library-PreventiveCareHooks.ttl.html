@@ -1,0 +1,386 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans - TTL Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.4"}
+    h3,h4,h5,h6{--heading-prefix:"6.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Pre</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Pre - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Library-PreventiveCareHooks.html">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="Library-PreventiveCareHooks.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-PreventiveCareHooks.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans - TTL Representation</h2>
+
+<p><a href="Library-PreventiveCareHooks.ttl" no-download="true">Raw ttl</a> | <a href="Library-PreventiveCareHooks.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sct: &lt;http://snomed.info/id/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:Library;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://hl7.org/fhir/R4/library.html#Library.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;PreventiveCareHooks&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary&quot;;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary&gt;     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Related Artifacts&lt;/h2&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;depends-on&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;depends-on&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;Library-ProstateCancerScreening.html\&quot;&gt;CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans (version 1.0.0)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h2&gt;Parameters&lt;/h2&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Patient&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Age Between 40 and 70&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;boolean&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Needs Prostate Cancer Screening&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;boolean&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Needs Prostate Cancer Screening Summary&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Needs Prostate Cancer Screening Detail&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Needs Prostate Cancer Screening Indicator&lt;/td&gt;&lt;td&gt;out&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h2&gt;Contents&lt;/h2&gt;&lt;p&gt;&lt;code&gt;text/cql&lt;/code&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=\&quot;language-sql\&quot;&gt;// # Introduction\n\n// CDS Hooks logic for use with CQF Ruler\n\nlibrary PreventiveCareHooks version '1.0.0'\n\n// # Data model #\n\nusing FHIR version '4.0.1'\n\n// # Referenced libraries #\n\ninclude ProstateCancerScreening version '1.0.0' called Prostate\n\n// # CDS logic #\n\ncontext Patient\n\n/*\n * Expressions for CDS Hook cards.\n */\n\n// Used to trigger presentation of recommendations\ndefine \&quot;Age Between 40 and 70\&quot;:\n  AgeInYears() between 40 and 70\n\ndefine \&quot;Needs Prostate Cancer Screening\&quot;:\n  \&quot;Age Between 40 and 70\&quot; and\n  (Prostate.\&quot;No PSA test results\&quot;\n    or (Prostate.\&quot;Last PSA value is high\&quot; and not Prostate.\&quot;Has PSA within one year\&quot;)\n    or not Prostate.\&quot;Has PSA within two years\&quot;\n  )\n\ndefine \&quot;Needs Prostate Cancer Screening Summary\&quot;:\n  'Prostate Cancer Screening'\n\ndefine \&quot;Needs Prostate Cancer Screening Detail\&quot;:\n  Prostate.\&quot;MI PSA Date 1\&quot; + ' ' + Prostate.\&quot;PSA value 1\&quot;\n\ndefine \&quot;Needs Prostate Cancer Screening Indicator\&quot;:\n  if Prostate.\&quot;Last PSA value is high\&quot; then 'critical'\n  else 'warning'\n&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;Content not shown - (&lt;/code&gt;&lt;code&gt;application/elm+xml&lt;/code&gt;, size = 5Kb)&lt;/p&gt;&lt;p&gt;&lt;code&gt;Content not shown - (&lt;/code&gt;&lt;code&gt;application/elm+json&lt;/code&gt;, size = 8Kb)&lt;/p&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.extension">fhir:DomainResource.extension</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability&quot; ];
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">fhir:Extension.valueCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;executable&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel&quot; ];
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">fhir:Extension.valueCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;structured&quot; ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.url">fhir:Library.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.version">fhir:Library.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1.0.0&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.name">fhir:Library.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;PreventiveCareHooks&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.title">fhir:Library.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.status">fhir:Library.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.experimental">fhir:Library.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.type">fhir:Library.type</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://terminology.hl7.org/CodeSystem/library-type&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;logic-library&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.date">fhir:Library.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2021-03-08T22:54:39+00:00&quot;^^xsd:dateTime];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.publisher">fhir:Library.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;U.S. Preventive Services Task Force (USPSTF)&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.contact">fhir:Library.contact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;url&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;https://www.uspreventiveservicestaskforce.org/uspstf/&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.description">fhir:Library.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:value</a> &quot;This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans.&quot;];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.useContext">fhir:Library.useContext</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#UsageContext#UsageContext.code">fhir:UsageContext.code</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://terminology.hl7.org/CodeSystem/usage-context-type&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;focus&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Clinical Focus&quot; ]     ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#UsageContext#UsageContext.value[x]">fhir:UsageContext.valueCodeableConcept</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+         a sct:302805002;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;302805002&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Preventive monitoring (regime/therapy)&quot; ]       ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.jurisdiction">fhir:Library.jurisdiction</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://unstats.un.org/unsd/methods/m49/m49.htm&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;001&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">fhir:Library.relatedArtifact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">fhir:RelatedArtifact.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;depends-on&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">fhir:RelatedArtifact.resource</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1&quot;;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1&gt;     ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">fhir:RelatedArtifact.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;depends-on&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">fhir:RelatedArtifact.resource</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://fhir.org/guides/preventive-care/Library/ProstateCancerScreening|1.0.0&quot;;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://fhir.org/guides/preventive-care/Library/ProstateCancerScreening|1.0.0&gt;     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.parameter">fhir:Library.parameter</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Patient&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Patient&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Age Between 40 and 70&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;boolean&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Needs Prostate Cancer Screening&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;boolean&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Needs Prostate Cancer Screening Summary&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Needs Prostate Cancer Screening Detail&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.name">fhir:ParameterDefinition.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;Needs Prostate Cancer Screening Indicator&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.use">fhir:ParameterDefinition.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;out&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.min">fhir:ParameterDefinition.min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#integer">fhir:value</a> &quot;0&quot;^^xsd:integer ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.max">fhir:ParameterDefinition.max</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition#ParameterDefinition.type">fhir:ParameterDefinition.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;string&quot; ]
+  ];
+  <a href="http://hl7.org/fhir/R4/library.html#Library.content">fhir:Library.content</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">fhir:Attachment.contentType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;text/cql&quot; ];
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">fhir:Attachment.data</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">fhir:value</a> &quot;Ly8gIyBJbnRyb2R1Y3Rpb24KCi8vIENEUyBIb29rcyBsb2dpYyBmb3IgdXNlIHdpdGggQ1FGIFJ1bGVyCgpsaWJyYXJ5IFByZXZlbnRpdmVDYXJlSG9va3MgdmVyc2lvbiAnMS4wLjAnCgovLyAjIERhdGEgbW9kZWwgIwoKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKCi8vICMgUmVmZXJlbmNlZCBsaWJyYXJpZXMgIwoKaW5jbHVkZSBQcm9zdGF0ZUNhbmNlclNjcmVlbmluZyB2ZXJzaW9uICcxLjAuMCcgY2FsbGVkIFByb3N0YXRlCgovLyAjIENEUyBsb2dpYyAjCgpjb250ZXh0IFBhdGllbnQKCi8qCiAqIEV4cHJlc3Npb25zIGZvciBDRFMgSG9vayBjYXJkcy4KICovCgovLyBVc2VkIHRvIHRyaWdnZXIgcHJlc2VudGF0aW9uIG9mIHJlY29tbWVuZGF0aW9ucwpkZWZpbmUgIkFnZSBCZXR3ZWVuIDQwIGFuZCA3MCI6CiAgQWdlSW5ZZWFycygpIGJldHdlZW4gNDAgYW5kIDcwCgpkZWZpbmUgIk5lZWRzIFByb3N0YXRlIENhbmNlciBTY3JlZW5pbmciOgogICJBZ2UgQmV0d2VlbiA0MCBhbmQgNzAiIGFuZAogIChQcm9zdGF0ZS4iTm8gUFNBIHRlc3QgcmVzdWx0cyIKICAgIG9yIChQcm9zdGF0ZS4iTGFzdCBQU0EgdmFsdWUgaXMgaGlnaCIgYW5kIG5vdCBQcm9zdGF0ZS4iSGFzIFBTQSB3aXRoaW4gb25lIHllYXIiKQogICAgb3Igbm90IFByb3N0YXRlLiJIYXMgUFNBIHdpdGhpbiB0d28geWVhcnMiCiAgKQoKZGVmaW5lICJOZWVkcyBQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIFN1bW1hcnkiOgogICdQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nJwoKZGVmaW5lICJOZWVkcyBQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIERldGFpbCI6CiAgUHJvc3RhdGUuIk1JIFBTQSBEYXRlIDEiICsgJyAnICsgUHJvc3RhdGUuIlBTQSB2YWx1ZSAxIgoKZGVmaW5lICJOZWVkcyBQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIEluZGljYXRvciI6CiAgaWYgUHJvc3RhdGUuIkxhc3QgUFNBIHZhbHVlIGlzIGhpZ2giIHRoZW4gJ2NyaXRpY2FsJwogIGVsc2UgJ3dhcm5pbmcnCg==&quot;^^xsd:base64Binary ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">fhir:Attachment.contentType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;application/elm+xml&quot; ];
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">fhir:Attachment.data</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">fhir:value</a> &quot;PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpYnJhcnkgeG1sbnM9InVybjpobDctb3JnOmVsbTpyMSIgeG1sbnM6dD0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpmaGlyPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB4bWxuczpxZG00Mz0idXJuOmhlYWx0aGl0LWdvdjpxZG06djRfMyIgeG1sbnM6cWRtNTM9InVybjpoZWFsdGhpdC1nb3Y6cWRtOnY1XzMiIHhtbG5zOmE9InVybjpobDctb3JnOmNxbC1hbm5vdGF0aW9uczpyMSI+CiAgIDxhbm5vdGF0aW9uIHRyYW5zbGF0b3JPcHRpb25zPSJFbmFibGVMb2NhdG9ycyxEaXNhYmxlTGlzdERlbW90aW9uLERpc2FibGVMaXN0UHJvbW90aW9uIiB4c2k6dHlwZT0iYTpDcWxUb0VsbUluZm8iLz4KICAgPGlkZW50aWZpZXIgaWQ9IlByZXZlbnRpdmVDYXJlSG9va3MiIHN5c3RlbT0iaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9wcmV2ZW50aXZlLWNhcmUiIHZlcnNpb249IjEuMC4wIi8+CiAgIDxzY2hlbWFJZGVudGlmaWVyIGlkPSJ1cm46aGw3LW9yZzplbG0iIHZlcnNpb249InIxIi8+CiAgIDx1c2luZ3M+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJTeXN0ZW0iIHVyaT0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIi8+CiAgICAgIDxkZWYgbG9jYXRvcj0iOToxLTk6MjYiIGxvY2FsSWRlbnRpZmllcj0iRkhJUiIgdXJpPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB2ZXJzaW9uPSI0LjAuMSIvPgogICA8L3VzaW5ncz4KICAgPGluY2x1ZGVzPgogICAgICA8ZGVmIGxvY2F0b3I9IjEzOjEtMTM6NjMiIGxvY2FsSWRlbnRpZmllcj0iUHJvc3RhdGUiIHBhdGg9Imh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvcHJldmVudGl2ZS1jYXJlL1Byb3N0YXRlQ2FuY2VyU2NyZWVuaW5nIiB2ZXJzaW9uPSIxLjAuMCIvPgogICA8L2luY2x1ZGVzPgogICA8Y29udGV4dHM+CiAgICAgIDxkZWYgbG9jYXRvcj0iMTc6MS0xNzoxNSIgbmFtZT0iUGF0aWVudCIvPgogICA8L2NvbnRleHRzPgogICA8c3RhdGVtZW50cz4KICAgICAgPGRlZiBsb2NhdG9yPSIxNzoxLTE3OjE1IiBuYW1lPSJQYXRpZW50IiBjb250ZXh0PSJQYXRpZW50Ij4KICAgICAgICAgPGV4cHJlc3Npb24geHNpOnR5cGU9IlNpbmdsZXRvbkZyb20iPgogICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIxNzoxLTE3OjE1IiBkYXRhVHlwZT0iZmhpcjpQYXRpZW50IiB0ZW1wbGF0ZUlkPSJodHRwOi8vaGw3Lm9yZy9maGlyL1N0cnVjdHVyZURlZmluaXRpb24vUGF0aWVudCIgeHNpOnR5cGU9IlJldHJpZXZlIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbG9jYXRvcj0iMjQ6MS0yNTozMiIgbmFtZT0iQWdlIEJldHdlZW4gNDAgYW5kIDcwIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gbG9jYXRvcj0iMjU6My0yNTozMiIgeHNpOnR5cGU9IkFuZCI+CiAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJHcmVhdGVyT3JFcXVhbCI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjI1OjMtMjU6MTQiIHByZWNpc2lvbj0iWWVhciIgeHNpOnR5cGU9IkNhbGN1bGF0ZUFnZSI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImJpcnRoRGF0ZS52YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJQYXRpZW50IiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iMjU6MjQtMjU6MjUiIHZhbHVlVHlwZT0idDpJbnRlZ2VyIiB2YWx1ZT0iNDAiIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9Ikxlc3NPckVxdWFsIj4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iMjU6My0yNToxNCIgcHJlY2lzaW9uPSJZZWFyIiB4c2k6dHlwZT0iQ2FsY3VsYXRlQWdlIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0iYmlydGhEYXRlLnZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIG5hbWU9IlBhdGllbnQiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIyNTozMS0yNTozMiIgdmFsdWVUeXBlPSJ0OkludGVnZXIiIHZhbHVlPSI3MCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjI3OjEtMzI6MyIgbmFtZT0iTmVlZHMgUHJvc3RhdGUgQ2FuY2VyIFNjcmVlbmluZyIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIGxvY2F0b3I9IjI4OjMtMzI6MyIgeHNpOnR5cGU9IkFuZCI+CiAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjI4OjMtMjg6MjUiIG5hbWU9IkFnZSBCZXR3ZWVuIDQwIGFuZCA3MCIgeHNpOnR5cGU9IkV4cHJlc3Npb25SZWYiLz4KICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iMjk6My0zMjozIiB4c2k6dHlwZT0iT3IiPgogICAgICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIyOTo0LTMwOjg1IiB4c2k6dHlwZT0iT3IiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIyOTo0LTI5OjMzIiBuYW1lPSJObyBQU0EgdGVzdCByZXN1bHRzIiBsaWJyYXJ5TmFtZT0iUHJvc3RhdGUiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjMwOjgtMzA6ODUiIHhzaTp0eXBlPSJBbmQiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIzMDo5LTMwOjQxIiBuYW1lPSJMYXN0IFBTQSB2YWx1ZSBpcyBoaWdoIiBsaWJyYXJ5TmFtZT0iUHJvc3RhdGUiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjMwOjQ3LTMwOjg0IiB4c2k6dHlwZT0iTm90Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iMzA6NTEtMzA6ODQiIG5hbWU9IkhhcyBQU0Egd2l0aGluIG9uZSB5ZWFyIiBsaWJyYXJ5TmFtZT0iUHJvc3RhdGUiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjMxOjgtMzE6NDYiIHhzaTp0eXBlPSJOb3QiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBsb2NhdG9yPSIzMToxMi0zMTo0NiIgbmFtZT0iSGFzIFBTQSB3aXRoaW4gdHdvIHllYXJzIiBsaWJyYXJ5TmFtZT0iUHJvc3RhdGUiIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjM0OjEtMzU6MjkiIG5hbWU9Ik5lZWRzIFByb3N0YXRlIENhbmNlciBTY3JlZW5pbmcgU3VtbWFyeSIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIGxvY2F0b3I9IjM1OjMtMzU6MjkiIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSJQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBsb2NhdG9yPSIzNzoxLTM4OjU3IiBuYW1lPSJOZWVkcyBQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIERldGFpbCIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIGxvY2F0b3I9IjM4OjMtMzg6NTciIHhzaTp0eXBlPSJDb25jYXRlbmF0ZSI+CiAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjM4OjMtMzg6MzIiIHhzaTp0eXBlPSJDb25jYXRlbmF0ZSI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjM4OjMtMzg6MjYiIG5hbWU9Ik1JIFBTQSBEYXRlIDEiIGxpYnJhcnlOYW1lPSJQcm9zdGF0ZSIgeHNpOnR5cGU9IkV4cHJlc3Npb25SZWYiLz4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iMzg6MzAtMzg6MzIiIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSIgIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgIDxvcGVyYW5kIGxvY2F0b3I9IjM4OjM2LTM4OjU3IiBuYW1lPSJQU0EgdmFsdWUgMSIgbGlicmFyeU5hbWU9IlByb3N0YXRlIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIGxvY2F0b3I9IjQwOjEtNDI6MTYiIG5hbWU9Ik5lZWRzIFByb3N0YXRlIENhbmNlciBTY3JlZW5pbmcgSW5kaWNhdG9yIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gbG9jYXRvcj0iNDE6My00MjoxNiIgeHNpOnR5cGU9IklmIj4KICAgICAgICAgICAgPGNvbmRpdGlvbiBhc1R5cGU9InQ6Qm9vbGVhbiIgeHNpOnR5cGU9IkFzIj4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbG9jYXRvcj0iNDE6Ni00MTozOCIgbmFtZT0iTGFzdCBQU0EgdmFsdWUgaXMgaGlnaCIgbGlicmFyeU5hbWU9IlByb3N0YXRlIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICA8L2NvbmRpdGlvbj4KICAgICAgICAgICAgPHRoZW4gbG9jYXRvcj0iNDE6NDUtNDE6NTQiIHZhbHVlVHlwZT0idDpTdHJpbmciIHZhbHVlPSJjcml0aWNhbCIgeHNpOnR5cGU9IkxpdGVyYWwiLz4KICAgICAgICAgICAgPGVsc2UgbG9jYXRvcj0iNDI6OC00MjoxNiIgdmFsdWVUeXBlPSJ0OlN0cmluZyIgdmFsdWU9Indhcm5pbmciIHhzaTp0eXBlPSJMaXRlcmFsIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgIDwvc3RhdGVtZW50cz4KPC9saWJyYXJ5Pgo=&quot;^^xsd:base64Binary ]
+  ], [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">fhir:Attachment.contentType</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;application/elm+json&quot; ];
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">fhir:Attachment.data</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">fhir:value</a> &quot;ewogICAibGlicmFyeSIgOiB7CiAgICAgICJhbm5vdGF0aW9uIiA6IFsgewogICAgICAgICAidHJhbnNsYXRvck9wdGlvbnMiIDogIkVuYWJsZUxvY2F0b3JzLERpc2FibGVMaXN0RGVtb3Rpb24sRGlzYWJsZUxpc3RQcm9tb3Rpb24iLAogICAgICAgICAidHlwZSIgOiAiQ3FsVG9FbG1JbmZvIgogICAgICB9IF0sCiAgICAgICJpZGVudGlmaWVyIiA6IHsKICAgICAgICAgImlkIiA6ICJQcmV2ZW50aXZlQ2FyZUhvb2tzIiwKICAgICAgICAgInN5c3RlbSIgOiAiaHR0cDovL2ZoaXIub3JnL2d1aWRlcy9wcmV2ZW50aXZlLWNhcmUiLAogICAgICAgICAidmVyc2lvbiIgOiAiMS4wLjAiCiAgICAgIH0sCiAgICAgICJzY2hlbWFJZGVudGlmaWVyIiA6IHsKICAgICAgICAgImlkIiA6ICJ1cm46aGw3LW9yZzplbG0iLAogICAgICAgICAidmVyc2lvbiIgOiAicjEiCiAgICAgIH0sCiAgICAgICJ1c2luZ3MiIDogewogICAgICAgICAiZGVmIiA6IFsgewogICAgICAgICAgICAibG9jYWxJZGVudGlmaWVyIiA6ICJTeXN0ZW0iLAogICAgICAgICAgICAidXJpIiA6ICJ1cm46aGw3LW9yZzplbG0tdHlwZXM6cjEiCiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjk6MS05OjI2IiwKICAgICAgICAgICAgImxvY2FsSWRlbnRpZmllciIgOiAiRkhJUiIsCiAgICAgICAgICAgICJ1cmkiIDogImh0dHA6Ly9obDcub3JnL2ZoaXIiLAogICAgICAgICAgICAidmVyc2lvbiIgOiAiNC4wLjEiCiAgICAgICAgIH0gXQogICAgICB9LAogICAgICAiaW5jbHVkZXMiIDogewogICAgICAgICAiZGVmIiA6IFsgewogICAgICAgICAgICAibG9jYXRvciIgOiAiMTM6MS0xMzo2MyIsCiAgICAgICAgICAgICJsb2NhbElkZW50aWZpZXIiIDogIlByb3N0YXRlIiwKICAgICAgICAgICAgInBhdGgiIDogImh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvcHJldmVudGl2ZS1jYXJlL1Byb3N0YXRlQ2FuY2VyU2NyZWVuaW5nIiwKICAgICAgICAgICAgInZlcnNpb24iIDogIjEuMC4wIgogICAgICAgICB9IF0KICAgICAgfSwKICAgICAgImNvbnRleHRzIiA6IHsKICAgICAgICAgImRlZiIgOiBbIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjE3OjEtMTc6MTUiLAogICAgICAgICAgICAibmFtZSIgOiAiUGF0aWVudCIKICAgICAgICAgfSBdCiAgICAgIH0sCiAgICAgICJzdGF0ZW1lbnRzIiA6IHsKICAgICAgICAgImRlZiIgOiBbIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjE3OjEtMTc6MTUiLAogICAgICAgICAgICAibmFtZSIgOiAiUGF0aWVudCIsCiAgICAgICAgICAgICJjb250ZXh0IiA6ICJQYXRpZW50IiwKICAgICAgICAgICAgImV4cHJlc3Npb24iIDogewogICAgICAgICAgICAgICAidHlwZSIgOiAiU2luZ2xldG9uRnJvbSIsCiAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IHsKICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjE3OjEtMTc6MTUiLAogICAgICAgICAgICAgICAgICAiZGF0YVR5cGUiIDogIntodHRwOi8vaGw3Lm9yZy9maGlyfVBhdGllbnQiLAogICAgICAgICAgICAgICAgICAidGVtcGxhdGVJZCIgOiAiaHR0cDovL2hsNy5vcmcvZmhpci9TdHJ1Y3R1cmVEZWZpbml0aW9uL1BhdGllbnQiLAogICAgICAgICAgICAgICAgICAidHlwZSIgOiAiUmV0cmlldmUiCiAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIyNDoxLTI1OjMyIiwKICAgICAgICAgICAgIm5hbWUiIDogIkFnZSBCZXR3ZWVuIDQwIGFuZCA3MCIsCiAgICAgICAgICAgICJjb250ZXh0IiA6ICJQYXRpZW50IiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiZXhwcmVzc2lvbiIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIyNTozLTI1OjMyIiwKICAgICAgICAgICAgICAgInR5cGUiIDogIkFuZCIsCiAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IFsgewogICAgICAgICAgICAgICAgICAidHlwZSIgOiAiR3JlYXRlck9yRXF1YWwiLAogICAgICAgICAgICAgICAgICAib3BlcmFuZCIgOiBbIHsKICAgICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjI1OjMtMjU6MTQiLAogICAgICAgICAgICAgICAgICAgICAicHJlY2lzaW9uIiA6ICJZZWFyIiwKICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkNhbGN1bGF0ZUFnZSIsCiAgICAgICAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IHsKICAgICAgICAgICAgICAgICAgICAgICAgInBhdGgiIDogImJpcnRoRGF0ZS52YWx1ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJQcm9wZXJ0eSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJzb3VyY2UiIDogewogICAgICAgICAgICAgICAgICAgICAgICAgICAibmFtZSIgOiAiUGF0aWVudCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJFeHByZXNzaW9uUmVmIgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgfSwgewogICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMjU6MjQtMjU6MjUiLAogICAgICAgICAgICAgICAgICAgICAidmFsdWVUeXBlIiA6ICJ7dXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxfUludGVnZXIiLAogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogIjQwIiwKICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkxpdGVyYWwiCiAgICAgICAgICAgICAgICAgIH0gXQogICAgICAgICAgICAgICB9LCB7CiAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJMZXNzT3JFcXVhbCIsCiAgICAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IFsgewogICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMjU6My0yNToxNCIsCiAgICAgICAgICAgICAgICAgICAgICJwcmVjaXNpb24iIDogIlllYXIiLAogICAgICAgICAgICAgICAgICAgICAidHlwZSIgOiAiQ2FsY3VsYXRlQWdlIiwKICAgICAgICAgICAgICAgICAgICAgIm9wZXJhbmQiIDogewogICAgICAgICAgICAgICAgICAgICAgICAicGF0aCIgOiAiYmlydGhEYXRlLnZhbHVlIiwKICAgICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIlByb3BlcnR5IiwKICAgICAgICAgICAgICAgICAgICAgICAgInNvdXJjZSIgOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICJuYW1lIiA6ICJQYXRpZW50IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkV4cHJlc3Npb25SZWYiCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICB9LCB7CiAgICAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIyNTozMS0yNTozMiIsCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZVR5cGUiIDogInt1cm46aGw3LW9yZzplbG0tdHlwZXM6cjF9SW50ZWdlciIsCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiAiNzAiLAogICAgICAgICAgICAgICAgICAgICAidHlwZSIgOiAiTGl0ZXJhbCIKICAgICAgICAgICAgICAgICAgfSBdCiAgICAgICAgICAgICAgIH0gXQogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjI3OjEtMzI6MyIsCiAgICAgICAgICAgICJuYW1lIiA6ICJOZWVkcyBQcm9zdGF0ZSBDYW5jZXIgU2NyZWVuaW5nIiwKICAgICAgICAgICAgImNvbnRleHQiIDogIlBhdGllbnQiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJleHByZXNzaW9uIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjI4OjMtMzI6MyIsCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbmQiLAogICAgICAgICAgICAgICAib3BlcmFuZCIgOiBbIHsKICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjI4OjMtMjg6MjUiLAogICAgICAgICAgICAgICAgICAibmFtZSIgOiAiQWdlIEJldHdlZW4gNDAgYW5kIDcwIiwKICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkV4cHJlc3Npb25SZWYiCiAgICAgICAgICAgICAgIH0sIHsKICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjI5OjMtMzI6MyIsCiAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJPciIsCiAgICAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IFsgewogICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMjk6NC0zMDo4NSIsCiAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJPciIsCiAgICAgICAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IFsgewogICAgICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMjk6NC0yOTozMyIsCiAgICAgICAgICAgICAgICAgICAgICAgICJuYW1lIiA6ICJObyBQU0EgdGVzdCByZXN1bHRzIiwKICAgICAgICAgICAgICAgICAgICAgICAgImxpYnJhcnlOYW1lIiA6ICJQcm9zdGF0ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJFeHByZXNzaW9uUmVmIgogICAgICAgICAgICAgICAgICAgICB9LCB7CiAgICAgICAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzMDo4LTMwOjg1IiwKICAgICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkFuZCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJvcGVyYW5kIiA6IFsgewogICAgICAgICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMzA6OS0zMDo0MSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJuYW1lIiA6ICJMYXN0IFBTQSB2YWx1ZSBpcyBoaWdoIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgImxpYnJhcnlOYW1lIiA6ICJQcm9zdGF0ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJFeHByZXNzaW9uUmVmIgogICAgICAgICAgICAgICAgICAgICAgICB9LCB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzMDo0Ny0zMDo4NCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJOb3QiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAib3BlcmFuZCIgOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzMDo1MS0zMDo4NCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJuYW1lIiA6ICJIYXMgUFNBIHdpdGhpbiBvbmUgeWVhciIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJsaWJyYXJ5TmFtZSIgOiAiUHJvc3RhdGUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAidHlwZSIgOiAiRXhwcmVzc2lvblJlZiIKICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICB9IF0KICAgICAgICAgICAgICAgICAgICAgfSBdCiAgICAgICAgICAgICAgICAgIH0sIHsKICAgICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjMxOjgtMzE6NDYiLAogICAgICAgICAgICAgICAgICAgICAidHlwZSIgOiAiTm90IiwKICAgICAgICAgICAgICAgICAgICAgIm9wZXJhbmQiIDogewogICAgICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMzE6MTItMzE6NDYiLAogICAgICAgICAgICAgICAgICAgICAgICAibmFtZSIgOiAiSGFzIFBTQSB3aXRoaW4gdHdvIHllYXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgImxpYnJhcnlOYW1lIiA6ICJQcm9zdGF0ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJFeHByZXNzaW9uUmVmIgogICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIH0gXQogICAgICAgICAgICAgICB9IF0KICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzNDoxLTM1OjI5IiwKICAgICAgICAgICAgIm5hbWUiIDogIk5lZWRzIFByb3N0YXRlIENhbmNlciBTY3JlZW5pbmcgU3VtbWFyeSIsCiAgICAgICAgICAgICJjb250ZXh0IiA6ICJQYXRpZW50IiwKICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLAogICAgICAgICAgICAiZXhwcmVzc2lvbiIgOiB7CiAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzNTozLTM1OjI5IiwKICAgICAgICAgICAgICAgInZhbHVlVHlwZSIgOiAie3VybjpobDctb3JnOmVsbS10eXBlczpyMX1TdHJpbmciLAogICAgICAgICAgICAgICAidmFsdWUiIDogIlByb3N0YXRlIENhbmNlciBTY3JlZW5pbmciLAogICAgICAgICAgICAgICAidHlwZSIgOiAiTGl0ZXJhbCIKICAgICAgICAgICAgfQogICAgICAgICB9LCB7CiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIzNzoxLTM4OjU3IiwKICAgICAgICAgICAgIm5hbWUiIDogIk5lZWRzIFByb3N0YXRlIENhbmNlciBTY3JlZW5pbmcgRGV0YWlsIiwKICAgICAgICAgICAgImNvbnRleHQiIDogIlBhdGllbnQiLAogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsCiAgICAgICAgICAgICJleHByZXNzaW9uIiA6IHsKICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjM4OjMtMzg6NTciLAogICAgICAgICAgICAgICAidHlwZSIgOiAiQ29uY2F0ZW5hdGUiLAogICAgICAgICAgICAgICAib3BlcmFuZCIgOiBbIHsKICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjM4OjMtMzg6MzIiLAogICAgICAgICAgICAgICAgICAidHlwZSIgOiAiQ29uY2F0ZW5hdGUiLAogICAgICAgICAgICAgICAgICAib3BlcmFuZCIgOiBbIHsKICAgICAgICAgICAgICAgICAgICAgImxvY2F0b3IiIDogIjM4OjMtMzg6MjYiLAogICAgICAgICAgICAgICAgICAgICAibmFtZSIgOiAiTUkgUFNBIERhdGUgMSIsCiAgICAgICAgICAgICAgICAgICAgICJsaWJyYXJ5TmFtZSIgOiAiUHJvc3RhdGUiLAogICAgICAgICAgICAgICAgICAgICAidHlwZSIgOiAiRXhwcmVzc2lvblJlZiIKICAgICAgICAgICAgICAgICAgfSwgewogICAgICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMzg6MzAtMzg6MzIiLAogICAgICAgICAgICAgICAgICAgICAidmFsdWVUeXBlIiA6ICJ7dXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxfVN0cmluZyIsCiAgICAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiAiICIsCiAgICAgICAgICAgICAgICAgICAgICJ0eXBlIiA6ICJMaXRlcmFsIgogICAgICAgICAgICAgICAgICB9IF0KICAgICAgICAgICAgICAgfSwgewogICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiMzg6MzYtMzg6NTciLAogICAgICAgICAgICAgICAgICAibmFtZSIgOiAiUFNBIHZhbHVlIDEiLAogICAgICAgICAgICAgICAgICAibGlicmFyeU5hbWUiIDogIlByb3N0YXRlIiwKICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkV4cHJlc3Npb25SZWYiCiAgICAgICAgICAgICAgIH0gXQogICAgICAgICAgICB9CiAgICAgICAgIH0sIHsKICAgICAgICAgICAgImxvY2F0b3IiIDogIjQwOjEtNDI6MTYiLAogICAgICAgICAgICAibmFtZSIgOiAiTmVlZHMgUHJvc3RhdGUgQ2FuY2VyIFNjcmVlbmluZyBJbmRpY2F0b3IiLAogICAgICAgICAgICAiY29udGV4dCIgOiAiUGF0aWVudCIsCiAgICAgICAgICAgICJhY2Nlc3NMZXZlbCIgOiAiUHVibGljIiwKICAgICAgICAgICAgImV4cHJlc3Npb24iIDogewogICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNDE6My00MjoxNiIsCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJJZiIsCiAgICAgICAgICAgICAgICJjb25kaXRpb24iIDogewogICAgICAgICAgICAgICAgICAiYXNUeXBlIiA6ICJ7dXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxfUJvb2xlYW4iLAogICAgICAgICAgICAgICAgICAidHlwZSIgOiAiQXMiLAogICAgICAgICAgICAgICAgICAib3BlcmFuZCIgOiB7CiAgICAgICAgICAgICAgICAgICAgICJsb2NhdG9yIiA6ICI0MTo2LTQxOjM4IiwKICAgICAgICAgICAgICAgICAgICAgIm5hbWUiIDogIkxhc3QgUFNBIHZhbHVlIGlzIGhpZ2giLAogICAgICAgICAgICAgICAgICAgICAibGlicmFyeU5hbWUiIDogIlByb3N0YXRlIiwKICAgICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkV4cHJlc3Npb25SZWYiCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgInRoZW4iIDogewogICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNDE6NDUtNDE6NTQiLAogICAgICAgICAgICAgICAgICAidmFsdWVUeXBlIiA6ICJ7dXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxfVN0cmluZyIsCiAgICAgICAgICAgICAgICAgICJ2YWx1ZSIgOiAiY3JpdGljYWwiLAogICAgICAgICAgICAgICAgICAidHlwZSIgOiAiTGl0ZXJhbCIKICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgImVsc2UiIDogewogICAgICAgICAgICAgICAgICAibG9jYXRvciIgOiAiNDI6OC00MjoxNiIsCiAgICAgICAgICAgICAgICAgICJ2YWx1ZVR5cGUiIDogInt1cm46aGw3LW9yZzplbG0tdHlwZXM6cjF9U3RyaW5nIiwKICAgICAgICAgICAgICAgICAgInZhbHVlIiA6ICJ3YXJuaW5nIiwKICAgICAgICAgICAgICAgICAgInR5cGUiIDogIkxpdGVyYWwiCiAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICB9IF0KICAgICAgfQogICB9Cn0=&quot;^^xsd:base64Binary ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 8, 2021 22:54+0000">2021-03-08</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
