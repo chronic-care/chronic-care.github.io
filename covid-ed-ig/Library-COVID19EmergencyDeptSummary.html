@@ -40,8 +40,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.29"}
-    h3,h4,h5,h6{--heading-prefix:"6.29"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.32"}
+    h3,h4,h5,h6{--heading-prefix:"6.32"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -334,10 +334,9 @@ define TrendData: {
  */
 
 define &quot;Recommend Obtain Diagnostics&quot;:
-  (C19.&quot;Is Critical Severity&quot; or C19.&quot;Is Severe Severity&quot; or C19.&quot;Is Moderate Severity&quot;
-    or C19.&quot;Total Risk Score&quot; &gt;= 5
+  (C19.&quot;Total Risk Score&quot; &gt;= 5
     or C19.&quot;Risk Factors count&quot; &gt; 1)
-  and LabResultCount &lt; 5                // TODO Need feedback on minimum number of labs
+  and LabResultCount &lt; 1
 
 define &quot;Recommend Discharge Home&quot;:
   C19.&quot;Is Mild Severity&quot;
@@ -353,9 +352,7 @@ define &quot;Recommend Consider Discharging Home&quot;:
 
 define &quot;Recommend Consider Admission&quot;:
   (C19.&quot;Is Mild Severity&quot; or C19.&quot;Is Moderate Severity&quot;)
-    and (C19.&quot;Total Risk Score&quot; &gt;= 5
-      or C19.&quot;Risk Factors count&quot; &gt; 1
-      or ConcerningLabsOrImaging)
+    and ConcerningLabsOrImaging is true
     and LabResultCount &gt;= 1
 
 define &quot;Recommend Severe Admission&quot;:
@@ -446,7 +443,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 77Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 139Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 75Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 136Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -473,11 +470,13 @@ define function LabInterpretation(o FHIR.Observation):
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 23, 2021 16:51+0000">2021-03-23</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 26, 2021 02:16+0000">2021-03-26</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 
+                
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
@@ -499,6 +498,13 @@ define function LabInterpretation(o FHIR.Observation):
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
   <!-- Analytics Below
   ================================================== -->
   </body>
