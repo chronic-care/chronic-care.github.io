@@ -21,24 +21,24 @@
             <operand locator="20:1-20:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def locator="210:1-213:3" name="PatientName" context="Patient" accessLevel="Public">
-         <expression locator="211:3-213:3" xsi:type="Coalesce">
-            <operand locator="211:12-211:37" path="value" xsi:type="Property">
-               <source locator="211:12-211:31" path="text" xsi:type="Property">
-                  <source locator="211:12-211:26" xsi:type="Indexer">
-                     <operand locator="211:12-211:23" path="name" xsi:type="Property">
-                        <source locator="211:12-211:18" name="Patient" xsi:type="ExpressionRef"/>
+      <def locator="213:1-216:3" name="PatientName" context="Patient" accessLevel="Public">
+         <expression locator="214:3-216:3" xsi:type="Coalesce">
+            <operand locator="214:12-214:37" path="value" xsi:type="Property">
+               <source locator="214:12-214:31" path="text" xsi:type="Property">
+                  <source locator="214:12-214:26" xsi:type="Indexer">
+                     <operand locator="214:12-214:23" path="name" xsi:type="Property">
+                        <source locator="214:12-214:18" name="Patient" xsi:type="ExpressionRef"/>
                      </operand>
-                     <operand locator="211:25" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     <operand locator="214:25" valueType="t:Integer" value="0" xsi:type="Literal"/>
                   </source>
                </source>
             </operand>
-            <operand locator="212:5-212:114" xsi:type="Concatenate">
-               <operand locator="212:6-212:60" xsi:type="Concatenate">
-                  <operand locator="212:6-212:54" xsi:type="Combine">
-                     <source locator="212:14-212:48" xsi:type="Query">
-                        <source locator="212:14-212:33" alias="G">
-                           <expression locator="212:14-212:31" xsi:type="Flatten">
+            <operand locator="215:5-215:114" xsi:type="Concatenate">
+               <operand locator="215:6-215:60" xsi:type="Concatenate">
+                  <operand locator="215:6-215:54" xsi:type="Combine">
+                     <source locator="215:14-215:48" xsi:type="Query">
+                        <source locator="215:14-215:33" alias="G">
+                           <expression locator="215:14-215:31" xsi:type="Flatten">
                               <operand xsi:type="Query">
                                  <source alias="$this">
                                     <expression path="name" xsi:type="Property">
@@ -60,18 +60,18 @@
                               </operand>
                            </expression>
                         </source>
-                        <return locator="212:35-212:48">
-                           <expression locator="212:42-212:48" path="value" scope="G" xsi:type="Property"/>
+                        <return locator="215:35-215:48">
+                           <expression locator="215:42-215:48" path="value" scope="G" xsi:type="Property"/>
                         </return>
                      </source>
-                     <separator locator="212:51-212:53" valueType="t:String" value=" " xsi:type="Literal"/>
+                     <separator locator="215:51-215:53" valueType="t:String" value=" " xsi:type="Literal"/>
                   </operand>
-                  <operand locator="212:58-212:60" valueType="t:String" value=" " xsi:type="Literal"/>
+                  <operand locator="215:58-215:60" valueType="t:String" value=" " xsi:type="Literal"/>
                </operand>
-               <operand locator="212:64-212:113" xsi:type="Combine">
-                  <source locator="212:72-212:107" xsi:type="Query">
-                     <source locator="212:72-212:92" alias="F">
-                        <expression locator="212:72-212:90" xsi:type="Query">
+               <operand locator="215:64-215:113" xsi:type="Combine">
+                  <source locator="215:72-215:107" xsi:type="Query">
+                     <source locator="215:72-215:92" alias="F">
+                        <expression locator="215:72-215:90" xsi:type="Query">
                            <source alias="$this">
                               <expression path="name" xsi:type="Property">
                                  <source name="Patient" xsi:type="ExpressionRef"/>
@@ -91,11 +91,11 @@
                            </return>
                         </expression>
                      </source>
-                     <return locator="212:94-212:107">
-                        <expression locator="212:101-212:107" path="value" scope="F" xsi:type="Property"/>
+                     <return locator="215:94-215:107">
+                        <expression locator="215:101-215:107" path="value" scope="F" xsi:type="Property"/>
                      </return>
                   </source>
-                  <separator locator="212:110-212:112" valueType="t:String" value=" " xsi:type="Literal"/>
+                  <separator locator="215:110-215:112" valueType="t:String" value=" " xsi:type="Literal"/>
                </operand>
             </operand>
          </expression>
@@ -127,138 +127,138 @@
             </element>
          </expression>
       </def>
-      <def locator="197:1-198:119" name="ConceptText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="198:3-198:119" xsi:type="Coalesce">
-            <operand locator="198:12-198:23" path="value" xsi:type="Property">
-               <source locator="198:12-198:17" path="text" xsi:type="Property">
-                  <source locator="198:12" name="c" xsi:type="OperandRef"/>
+      <def locator="200:1-201:119" name="ConceptText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="201:3-201:119" xsi:type="Coalesce">
+            <operand locator="201:12-201:23" path="value" xsi:type="Property">
+               <source locator="201:12-201:17" path="text" xsi:type="Property">
+                  <source locator="201:12" name="c" xsi:type="OperandRef"/>
                </source>
             </operand>
-            <operand locator="198:26-198:72" xsi:type="Coalesce">
-               <operand locator="198:35-198:71" xsi:type="Query">
-                  <source locator="198:35-198:47" alias="c2">
-                     <expression locator="198:35-198:44" path="coding" xsi:type="Property">
-                        <source locator="198:36" name="c" xsi:type="OperandRef"/>
+            <operand locator="201:26-201:72" xsi:type="Coalesce">
+               <operand locator="201:35-201:71" xsi:type="Query">
+                  <source locator="201:35-201:47" alias="c2">
+                     <expression locator="201:35-201:44" path="coding" xsi:type="Property">
+                        <source locator="201:36" name="c" xsi:type="OperandRef"/>
                      </expression>
                   </source>
-                  <return locator="198:49-198:71">
-                     <expression locator="198:56-198:71" path="value" xsi:type="Property">
-                        <source locator="198:56-198:65" path="display" scope="c2" xsi:type="Property"/>
+                  <return locator="201:49-201:71">
+                     <expression locator="201:56-201:71" path="value" xsi:type="Property">
+                        <source locator="201:56-201:65" path="display" scope="c2" xsi:type="Property"/>
                      </expression>
                   </return>
                </operand>
             </operand>
-            <operand locator="198:75-198:118" xsi:type="Coalesce">
-               <operand locator="198:84-198:117" xsi:type="Query">
-                  <source locator="198:84-198:96" alias="c3">
-                     <expression locator="198:84-198:93" path="coding" xsi:type="Property">
-                        <source locator="198:85" name="c" xsi:type="OperandRef"/>
+            <operand locator="201:75-201:118" xsi:type="Coalesce">
+               <operand locator="201:84-201:117" xsi:type="Query">
+                  <source locator="201:84-201:96" alias="c3">
+                     <expression locator="201:84-201:93" path="coding" xsi:type="Property">
+                        <source locator="201:85" name="c" xsi:type="OperandRef"/>
                      </expression>
                   </source>
-                  <return locator="198:98-198:117">
-                     <expression locator="198:105-198:117" path="value" xsi:type="Property">
-                        <source locator="198:105-198:111" path="code" scope="c3" xsi:type="Property"/>
+                  <return locator="201:98-201:117">
+                     <expression locator="201:105-201:117" path="value" xsi:type="Property">
+                        <source locator="201:105-201:111" path="code" scope="c3" xsi:type="Property"/>
                      </expression>
                   </return>
                </operand>
             </operand>
          </expression>
          <operand name="c">
-            <operandTypeSpecifier locator="197:31-197:50" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="200:31-200:50" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="204:1-208:30" name="QuantityText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="205:3-208:30" xsi:type="If">
+      <def locator="207:1-211:30" name="QuantityText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="208:3-211:30" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="205:6-205:16" xsi:type="IsNull">
-                  <operand locator="205:7" name="q" xsi:type="OperandRef"/>
+               <operand locator="208:6-208:16" xsi:type="IsNull">
+                  <operand locator="208:7" name="q" xsi:type="OperandRef"/>
                </operand>
             </condition>
             <then asType="t:String" xsi:type="As">
-               <operand locator="205:23-205:26" xsi:type="Null"/>
+               <operand locator="208:23-208:26" xsi:type="Null"/>
             </then>
-            <else locator="206:8-208:30" xsi:type="If">
+            <else locator="209:8-211:30" xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="206:11-206:60" xsi:type="And">
-                     <operand locator="206:12-206:29" xsi:type="Not">
-                        <operand locator="206:12-206:29" xsi:type="IsNull">
-                           <operand locator="206:12-206:17" path="unit" xsi:type="Property">
-                              <source locator="206:12" name="q" xsi:type="OperandRef"/>
+                  <operand locator="209:11-209:60" xsi:type="And">
+                     <operand locator="209:12-209:29" xsi:type="Not">
+                        <operand locator="209:12-209:29" xsi:type="IsNull">
+                           <operand locator="209:12-209:17" path="unit" xsi:type="Property">
+                              <source locator="209:12" name="q" xsi:type="OperandRef"/>
                            </operand>
                         </operand>
                      </operand>
-                     <operand locator="206:35-206:59" xsi:type="Not">
-                        <operand locator="206:35-206:59" xsi:type="Equal">
-                           <operand locator="206:35-206:46" path="value" xsi:type="Property">
-                              <source locator="206:35-206:40" path="unit" xsi:type="Property">
-                                 <source locator="206:35" name="q" xsi:type="OperandRef"/>
+                     <operand locator="209:35-209:59" xsi:type="Not">
+                        <operand locator="209:35-209:59" xsi:type="Equal">
+                           <operand locator="209:35-209:46" path="value" xsi:type="Property">
+                              <source locator="209:35-209:40" path="unit" xsi:type="Property">
+                                 <source locator="209:35" name="q" xsi:type="OperandRef"/>
                               </source>
                            </operand>
-                           <operand locator="206:51-206:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
+                           <operand locator="209:51-209:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
                         </operand>
                      </operand>
                   </operand>
                </condition>
-               <then locator="206:67-206:110" xsi:type="Concatenate">
-                  <operand locator="206:67-206:95" xsi:type="Concatenate">
-                     <operand locator="206:67-206:89" xsi:type="ToString">
-                        <operand locator="206:76-206:88" path="value" xsi:type="Property">
-                           <source locator="206:76-206:82" path="value" xsi:type="Property">
-                              <source locator="206:76" name="q" xsi:type="OperandRef"/>
+               <then locator="209:67-209:110" xsi:type="Concatenate">
+                  <operand locator="209:67-209:95" xsi:type="Concatenate">
+                     <operand locator="209:67-209:89" xsi:type="ToString">
+                        <operand locator="209:76-209:88" path="value" xsi:type="Property">
+                           <source locator="209:76-209:82" path="value" xsi:type="Property">
+                              <source locator="209:76" name="q" xsi:type="OperandRef"/>
                            </source>
                         </operand>
                      </operand>
-                     <operand locator="206:93-206:95" valueType="t:String" value=" " xsi:type="Literal"/>
+                     <operand locator="209:93-209:95" valueType="t:String" value=" " xsi:type="Literal"/>
                   </operand>
-                  <operand locator="206:99-206:110" path="value" xsi:type="Property">
-                     <source locator="206:99-206:104" path="unit" xsi:type="Property">
-                        <source locator="206:99" name="q" xsi:type="OperandRef"/>
+                  <operand locator="209:99-209:110" path="value" xsi:type="Property">
+                     <source locator="209:99-209:104" path="unit" xsi:type="Property">
+                        <source locator="209:99" name="q" xsi:type="OperandRef"/>
                      </source>
                   </operand>
                </then>
-               <else locator="207:8-208:30" xsi:type="If">
+               <else locator="210:8-211:30" xsi:type="If">
                   <condition asType="t:Boolean" xsi:type="As">
-                     <operand locator="207:11-207:60" xsi:type="And">
-                        <operand locator="207:12-207:29" xsi:type="Not">
-                           <operand locator="207:12-207:29" xsi:type="IsNull">
-                              <operand locator="207:12-207:17" path="code" xsi:type="Property">
-                                 <source locator="207:12" name="q" xsi:type="OperandRef"/>
+                     <operand locator="210:11-210:60" xsi:type="And">
+                        <operand locator="210:12-210:29" xsi:type="Not">
+                           <operand locator="210:12-210:29" xsi:type="IsNull">
+                              <operand locator="210:12-210:17" path="code" xsi:type="Property">
+                                 <source locator="210:12" name="q" xsi:type="OperandRef"/>
                               </operand>
                            </operand>
                         </operand>
-                        <operand locator="207:35-207:59" xsi:type="Not">
-                           <operand locator="207:35-207:59" xsi:type="Equal">
-                              <operand locator="207:35-207:46" path="value" xsi:type="Property">
-                                 <source locator="207:35-207:40" path="code" xsi:type="Property">
-                                    <source locator="207:35" name="q" xsi:type="OperandRef"/>
+                        <operand locator="210:35-210:59" xsi:type="Not">
+                           <operand locator="210:35-210:59" xsi:type="Equal">
+                              <operand locator="210:35-210:46" path="value" xsi:type="Property">
+                                 <source locator="210:35-210:40" path="code" xsi:type="Property">
+                                    <source locator="210:35" name="q" xsi:type="OperandRef"/>
                                  </source>
                               </operand>
-                              <operand locator="207:51-207:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
+                              <operand locator="210:51-210:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
                            </operand>
                         </operand>
                      </operand>
                   </condition>
-                  <then locator="207:67-207:110" xsi:type="Concatenate">
-                     <operand locator="207:67-207:95" xsi:type="Concatenate">
-                        <operand locator="207:67-207:89" xsi:type="ToString">
-                           <operand locator="207:76-207:88" path="value" xsi:type="Property">
-                              <source locator="207:76-207:82" path="value" xsi:type="Property">
-                                 <source locator="207:76" name="q" xsi:type="OperandRef"/>
+                  <then locator="210:67-210:110" xsi:type="Concatenate">
+                     <operand locator="210:67-210:95" xsi:type="Concatenate">
+                        <operand locator="210:67-210:89" xsi:type="ToString">
+                           <operand locator="210:76-210:88" path="value" xsi:type="Property">
+                              <source locator="210:76-210:82" path="value" xsi:type="Property">
+                                 <source locator="210:76" name="q" xsi:type="OperandRef"/>
                               </source>
                            </operand>
                         </operand>
-                        <operand locator="207:93-207:95" valueType="t:String" value=" " xsi:type="Literal"/>
+                        <operand locator="210:93-210:95" valueType="t:String" value=" " xsi:type="Literal"/>
                      </operand>
-                     <operand locator="207:99-207:110" path="value" xsi:type="Property">
-                        <source locator="207:99-207:104" path="code" xsi:type="Property">
-                           <source locator="207:99" name="q" xsi:type="OperandRef"/>
+                     <operand locator="210:99-210:110" path="value" xsi:type="Property">
+                        <source locator="210:99-210:104" path="code" xsi:type="Property">
+                           <source locator="210:99" name="q" xsi:type="OperandRef"/>
                         </source>
                      </operand>
                   </then>
-                  <else locator="208:8-208:30" xsi:type="ToString">
-                     <operand locator="208:17-208:29" path="value" xsi:type="Property">
-                        <source locator="208:17-208:23" path="value" xsi:type="Property">
-                           <source locator="208:17" name="q" xsi:type="OperandRef"/>
+                  <else locator="211:8-211:30" xsi:type="ToString">
+                     <operand locator="211:17-211:29" path="value" xsi:type="Property">
+                        <source locator="211:17-211:23" path="value" xsi:type="Property">
+                           <source locator="211:17" name="q" xsi:type="OperandRef"/>
                         </source>
                      </operand>
                   </else>
@@ -266,26 +266,12 @@
             </else>
          </expression>
          <operand name="q">
-            <operandTypeSpecifier locator="204:32-204:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="207:32-207:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="248:1-249:35" name="LabReferenceRangeLow" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="249:3-249:35" path="value" xsi:type="Property">
-            <source locator="249:3-249:29" path="low" xsi:type="Property">
-               <source locator="249:3-249:25" xsi:type="First">
-                  <source locator="249:9-249:24" path="referenceRange" xsi:type="Property">
-                     <source locator="249:9" name="o" xsi:type="OperandRef"/>
-                  </source>
-               </source>
-            </source>
-         </expression>
-         <operand name="o">
-            <operandTypeSpecifier locator="248:40-248:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
-         </operand>
-      </def>
-      <def locator="251:1-252:36" name="LabReferenceRangeHigh" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="252:3-252:36" path="value" xsi:type="Property">
-            <source locator="252:3-252:30" path="high" xsi:type="Property">
+      <def locator="251:1-252:35" name="LabReferenceRangeLow" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="252:3-252:35" path="value" xsi:type="Property">
+            <source locator="252:3-252:29" path="low" xsi:type="Property">
                <source locator="252:3-252:25" xsi:type="First">
                   <source locator="252:9-252:24" path="referenceRange" xsi:type="Property">
                      <source locator="252:9" name="o" xsi:type="OperandRef"/>
@@ -294,33 +280,47 @@
             </source>
          </expression>
          <operand name="o">
-            <operandTypeSpecifier locator="251:41-251:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="251:40-251:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="241:1-246:5" name="LabReferenceRange" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="242:3-246:5" xsi:type="If">
+      <def locator="254:1-255:36" name="LabReferenceRangeHigh" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="255:3-255:36" path="value" xsi:type="Property">
+            <source locator="255:3-255:30" path="high" xsi:type="Property">
+               <source locator="255:3-255:25" xsi:type="First">
+                  <source locator="255:9-255:24" path="referenceRange" xsi:type="Property">
+                     <source locator="255:9" name="o" xsi:type="OperandRef"/>
+                  </source>
+               </source>
+            </source>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier locator="254:41-254:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def locator="244:1-249:5" name="LabReferenceRange" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="245:3-249:5" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="242:6-242:44" xsi:type="Or">
-                  <operand locator="242:7-242:15" xsi:type="IsNull">
-                     <operand locator="242:7" name="o" xsi:type="OperandRef"/>
+               <operand locator="245:6-245:44" xsi:type="Or">
+                  <operand locator="245:7-245:15" xsi:type="IsNull">
+                     <operand locator="245:7" name="o" xsi:type="OperandRef"/>
                   </operand>
-                  <operand locator="242:20-242:43" xsi:type="IsNull">
-                     <operand locator="242:20-242:35" path="referenceRange" xsi:type="Property">
-                        <source locator="242:20" name="o" xsi:type="OperandRef"/>
+                  <operand locator="245:20-245:43" xsi:type="IsNull">
+                     <operand locator="245:20-245:35" path="referenceRange" xsi:type="Property">
+                        <source locator="245:20" name="o" xsi:type="OperandRef"/>
                      </operand>
                   </operand>
                </operand>
             </condition>
             <then asType="t:String" xsi:type="As">
-               <operand locator="242:51-242:54" xsi:type="Null"/>
+               <operand locator="245:51-245:54" xsi:type="Null"/>
             </then>
-            <else locator="244:5-246:5" xsi:type="Coalesce">
+            <else locator="247:5-249:5" xsi:type="Coalesce">
                <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                  <operand locator="244:14-244:41" xsi:type="First">
-                     <source locator="244:20-244:40" xsi:type="Query">
+                  <operand locator="247:14-247:41" xsi:type="First">
+                     <source locator="247:20-247:40" xsi:type="Query">
                         <source alias="$this">
-                           <expression locator="244:20-244:35" path="referenceRange" xsi:type="Property">
-                              <source locator="244:20" name="o" xsi:type="OperandRef"/>
+                           <expression locator="247:20-247:35" path="referenceRange" xsi:type="Property">
+                              <source locator="247:20" name="o" xsi:type="OperandRef"/>
                            </expression>
                         </source>
                         <where xsi:type="Not">
@@ -338,21 +338,21 @@
                      </source>
                   </operand>
                </operand>
-               <operand locator="245:7-245:84" xsi:type="Concatenate">
-                  <operand locator="245:7-245:47" xsi:type="Concatenate">
-                     <operand locator="245:7-245:39" xsi:type="ToString">
+               <operand locator="248:7-248:84" xsi:type="Concatenate">
+                  <operand locator="248:7-248:47" xsi:type="Concatenate">
+                     <operand locator="248:7-248:39" xsi:type="ToString">
                         <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                           <operand locator="245:16-245:38" name="LabReferenceRangeLow" xsi:type="FunctionRef">
-                              <operand locator="245:37" name="o" xsi:type="OperandRef"/>
+                           <operand locator="248:16-248:38" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                              <operand locator="248:37" name="o" xsi:type="OperandRef"/>
                            </operand>
                         </operand>
                      </operand>
-                     <operand locator="245:43-245:47" valueType="t:String" value=" - " xsi:type="Literal"/>
+                     <operand locator="248:43-248:47" valueType="t:String" value=" - " xsi:type="Literal"/>
                   </operand>
-                  <operand locator="245:51-245:84" xsi:type="ToString">
+                  <operand locator="248:51-248:84" xsi:type="ToString">
                      <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="245:60-245:83" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
-                           <operand locator="245:82" name="o" xsi:type="OperandRef"/>
+                        <operand locator="248:60-248:83" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                           <operand locator="248:82" name="o" xsi:type="OperandRef"/>
                         </operand>
                      </operand>
                   </operand>
@@ -360,27 +360,27 @@
             </else>
          </expression>
          <operand name="o">
-            <operandTypeSpecifier locator="241:37-241:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="244:37-244:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="259:1-268:8" name="LabInterpretation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="260:3-268:8" xsi:type="If">
+      <def locator="262:1-271:8" name="LabInterpretation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="263:3-271:8" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="260:6-260:35" xsi:type="Not">
-                  <operand locator="260:7-260:34" xsi:type="IsNull">
-                     <operand locator="260:7-260:22" path="interpretation" xsi:type="Property">
-                        <source locator="260:7" name="o" xsi:type="OperandRef"/>
+               <operand locator="263:6-263:35" xsi:type="Not">
+                  <operand locator="263:7-263:34" xsi:type="IsNull">
+                     <operand locator="263:7-263:22" path="interpretation" xsi:type="Property">
+                        <source locator="263:7" name="o" xsi:type="OperandRef"/>
                      </operand>
                   </operand>
                </operand>
             </condition>
             <then name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-               <operand locator="261:5-261:89" xsi:type="Coalesce">
-                  <operand locator="261:14-261:41" xsi:type="First">
-                     <source locator="261:20-261:40" xsi:type="Query">
+               <operand locator="264:5-264:89" xsi:type="Coalesce">
+                  <operand locator="264:14-264:41" xsi:type="First">
+                     <source locator="264:20-264:40" xsi:type="Query">
                         <source alias="$this">
-                           <expression locator="261:20-261:35" path="interpretation" xsi:type="Property">
-                              <source locator="261:20" name="o" xsi:type="OperandRef"/>
+                           <expression locator="264:20-264:35" path="interpretation" xsi:type="Property">
+                              <source locator="264:20" name="o" xsi:type="OperandRef"/>
                            </expression>
                         </source>
                         <where xsi:type="Not">
@@ -397,13 +397,13 @@
                         </return>
                      </source>
                   </operand>
-                  <operand locator="261:44-261:88" xsi:type="First">
-                     <source locator="261:50-261:87" xsi:type="Query">
+                  <operand locator="264:44-264:88" xsi:type="First">
+                     <source locator="264:50-264:87" xsi:type="Query">
                         <source alias="$this">
-                           <expression locator="261:50-261:79" path="coding" xsi:type="Property">
-                              <source locator="261:50-261:72" xsi:type="First">
-                                 <source locator="261:56-261:71" path="interpretation" xsi:type="Property">
-                                    <source locator="261:56" name="o" xsi:type="OperandRef"/>
+                           <expression locator="264:50-264:79" path="coding" xsi:type="Property">
+                              <source locator="264:50-264:72" xsi:type="First">
+                                 <source locator="264:56-264:71" path="interpretation" xsi:type="Property">
+                                    <source locator="264:56" name="o" xsi:type="OperandRef"/>
                                  </source>
                               </source>
                            </expression>
@@ -424,33 +424,33 @@
                   </operand>
                </operand>
             </then>
-            <else locator="262:8-268:8" xsi:type="If">
+            <else locator="265:8-271:8" xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="262:11-262:38" xsi:type="Not">
-                     <operand locator="262:11-262:38" xsi:type="IsNull">
-                        <operand locator="262:11-262:26" path="referenceRange" xsi:type="Property">
-                           <source locator="262:11" name="o" xsi:type="OperandRef"/>
+                  <operand locator="265:11-265:38" xsi:type="Not">
+                     <operand locator="265:11-265:38" xsi:type="IsNull">
+                        <operand locator="265:11-265:26" path="referenceRange" xsi:type="Property">
+                           <source locator="265:11" name="o" xsi:type="OperandRef"/>
                         </operand>
                      </operand>
                   </operand>
                </condition>
-               <then locator="264:5-266:13" xsi:type="If">
+               <then locator="267:5-269:13" xsi:type="If">
                   <condition asType="t:Boolean" xsi:type="As">
-                     <operand locator="264:8-264:46" xsi:type="Less">
+                     <operand locator="267:8-267:46" xsi:type="Less">
                         <operand xsi:type="Case">
                            <caseItem>
                               <when isType="t:Integer" xsi:type="Is">
-                                 <operand locator="264:8-264:20" path="value" xsi:type="Property">
-                                    <source locator="264:8-264:14" path="value" xsi:type="Property">
-                                       <source locator="264:8" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="267:8-267:20" path="value" xsi:type="Property">
+                                    <source locator="267:8-267:14" path="value" xsi:type="Property">
+                                       <source locator="267:8" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </when>
                               <then xsi:type="ToDecimal">
                                  <operand asType="t:Integer" xsi:type="As">
-                                    <operand locator="264:8-264:20" path="value" xsi:type="Property">
-                                       <source locator="264:8-264:14" path="value" xsi:type="Property">
-                                          <source locator="264:8" name="o" xsi:type="OperandRef"/>
+                                    <operand locator="267:8-267:20" path="value" xsi:type="Property">
+                                       <source locator="267:8-267:14" path="value" xsi:type="Property">
+                                          <source locator="267:8" name="o" xsi:type="OperandRef"/>
                                        </source>
                                     </operand>
                                  </operand>
@@ -458,17 +458,17 @@
                            </caseItem>
                            <caseItem>
                               <when isType="fhir:decimal" xsi:type="Is">
-                                 <operand locator="264:8-264:20" path="value" xsi:type="Property">
-                                    <source locator="264:8-264:14" path="value" xsi:type="Property">
-                                       <source locator="264:8" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="267:8-267:20" path="value" xsi:type="Property">
+                                    <source locator="267:8-267:14" path="value" xsi:type="Property">
+                                       <source locator="267:8" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </when>
                               <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
                                  <operand asType="fhir:decimal" xsi:type="As">
-                                    <operand locator="264:8-264:20" path="value" xsi:type="Property">
-                                       <source locator="264:8-264:14" path="value" xsi:type="Property">
-                                          <source locator="264:8" name="o" xsi:type="OperandRef"/>
+                                    <operand locator="267:8-267:20" path="value" xsi:type="Property">
+                                       <source locator="267:8-267:14" path="value" xsi:type="Property">
+                                          <source locator="267:8" name="o" xsi:type="OperandRef"/>
                                        </source>
                                     </operand>
                                  </operand>
@@ -477,30 +477,30 @@
                            <else resultTypeName="t:Decimal" xsi:type="Null"/>
                         </operand>
                         <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                           <operand locator="264:24-264:46" name="LabReferenceRangeLow" xsi:type="FunctionRef">
-                              <operand locator="264:45" name="o" xsi:type="OperandRef"/>
+                           <operand locator="267:24-267:46" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                              <operand locator="267:45" name="o" xsi:type="OperandRef"/>
                            </operand>
                         </operand>
                      </operand>
                   </condition>
-                  <then locator="264:53-264:55" valueType="t:String" value="L" xsi:type="Literal"/>
-                  <else locator="265:10-266:13" xsi:type="If">
+                  <then locator="267:53-267:55" valueType="t:String" value="L" xsi:type="Literal"/>
+                  <else locator="268:10-269:13" xsi:type="If">
                      <condition asType="t:Boolean" xsi:type="As">
-                        <operand locator="265:13-265:52" xsi:type="Greater">
+                        <operand locator="268:13-268:52" xsi:type="Greater">
                            <operand xsi:type="Case">
                               <caseItem>
                                  <when isType="t:Integer" xsi:type="Is">
-                                    <operand locator="265:13-265:25" path="value" xsi:type="Property">
-                                       <source locator="265:13-265:19" path="value" xsi:type="Property">
-                                          <source locator="265:13" name="o" xsi:type="OperandRef"/>
+                                    <operand locator="268:13-268:25" path="value" xsi:type="Property">
+                                       <source locator="268:13-268:19" path="value" xsi:type="Property">
+                                          <source locator="268:13" name="o" xsi:type="OperandRef"/>
                                        </source>
                                     </operand>
                                  </when>
                                  <then xsi:type="ToDecimal">
                                     <operand asType="t:Integer" xsi:type="As">
-                                       <operand locator="265:13-265:25" path="value" xsi:type="Property">
-                                          <source locator="265:13-265:19" path="value" xsi:type="Property">
-                                             <source locator="265:13" name="o" xsi:type="OperandRef"/>
+                                       <operand locator="268:13-268:25" path="value" xsi:type="Property">
+                                          <source locator="268:13-268:19" path="value" xsi:type="Property">
+                                             <source locator="268:13" name="o" xsi:type="OperandRef"/>
                                           </source>
                                        </operand>
                                     </operand>
@@ -508,17 +508,17 @@
                               </caseItem>
                               <caseItem>
                                  <when isType="fhir:decimal" xsi:type="Is">
-                                    <operand locator="265:13-265:25" path="value" xsi:type="Property">
-                                       <source locator="265:13-265:19" path="value" xsi:type="Property">
-                                          <source locator="265:13" name="o" xsi:type="OperandRef"/>
+                                    <operand locator="268:13-268:25" path="value" xsi:type="Property">
+                                       <source locator="268:13-268:19" path="value" xsi:type="Property">
+                                          <source locator="268:13" name="o" xsi:type="OperandRef"/>
                                        </source>
                                     </operand>
                                  </when>
                                  <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
                                     <operand asType="fhir:decimal" xsi:type="As">
-                                       <operand locator="265:13-265:25" path="value" xsi:type="Property">
-                                          <source locator="265:13-265:19" path="value" xsi:type="Property">
-                                             <source locator="265:13" name="o" xsi:type="OperandRef"/>
+                                       <operand locator="268:13-268:25" path="value" xsi:type="Property">
+                                          <source locator="268:13-268:19" path="value" xsi:type="Property">
+                                             <source locator="268:13" name="o" xsi:type="OperandRef"/>
                                           </source>
                                        </operand>
                                     </operand>
@@ -527,46 +527,46 @@
                               <else resultTypeName="t:Decimal" xsi:type="Null"/>
                            </operand>
                            <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                              <operand locator="265:29-265:52" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
-                                 <operand locator="265:51" name="o" xsi:type="OperandRef"/>
+                              <operand locator="268:29-268:52" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                                 <operand locator="268:51" name="o" xsi:type="OperandRef"/>
                               </operand>
                            </operand>
                         </operand>
                      </condition>
-                     <then locator="265:59-265:61" valueType="t:String" value="H" xsi:type="Literal"/>
+                     <then locator="268:59-268:61" valueType="t:String" value="H" xsi:type="Literal"/>
                      <else asType="t:String" xsi:type="As">
-                        <operand locator="266:10-266:13" xsi:type="Null"/>
+                        <operand locator="269:10-269:13" xsi:type="Null"/>
                      </else>
                   </else>
                </then>
                <else asType="t:String" xsi:type="As">
-                  <operand locator="268:5-268:8" xsi:type="Null"/>
+                  <operand locator="271:5-271:8" xsi:type="Null"/>
                </else>
             </else>
          </expression>
          <operand name="o">
-            <operandTypeSpecifier locator="259:37-259:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="262:37-262:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="254:1-257:12" name="LabReferenceRangeFlag" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="255:3-257:12" xsi:type="If">
+      <def locator="257:1-260:12" name="LabReferenceRangeFlag" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="258:3-260:12" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="255:6-256:50" xsi:type="Or">
-                  <operand locator="255:7-255:45" xsi:type="Less">
+               <operand locator="258:6-259:50" xsi:type="Or">
+                  <operand locator="258:7-258:45" xsi:type="Less">
                      <operand xsi:type="Case">
                         <caseItem>
                            <when isType="t:Integer" xsi:type="Is">
-                              <operand locator="255:7-255:19" path="value" xsi:type="Property">
-                                 <source locator="255:7-255:13" path="value" xsi:type="Property">
-                                    <source locator="255:7" name="o" xsi:type="OperandRef"/>
+                              <operand locator="258:7-258:19" path="value" xsi:type="Property">
+                                 <source locator="258:7-258:13" path="value" xsi:type="Property">
+                                    <source locator="258:7" name="o" xsi:type="OperandRef"/>
                                  </source>
                               </operand>
                            </when>
                            <then xsi:type="ToDecimal">
                               <operand asType="t:Integer" xsi:type="As">
-                                 <operand locator="255:7-255:19" path="value" xsi:type="Property">
-                                    <source locator="255:7-255:13" path="value" xsi:type="Property">
-                                       <source locator="255:7" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="258:7-258:19" path="value" xsi:type="Property">
+                                    <source locator="258:7-258:13" path="value" xsi:type="Property">
+                                       <source locator="258:7" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </operand>
@@ -574,17 +574,17 @@
                         </caseItem>
                         <caseItem>
                            <when isType="fhir:decimal" xsi:type="Is">
-                              <operand locator="255:7-255:19" path="value" xsi:type="Property">
-                                 <source locator="255:7-255:13" path="value" xsi:type="Property">
-                                    <source locator="255:7" name="o" xsi:type="OperandRef"/>
+                              <operand locator="258:7-258:19" path="value" xsi:type="Property">
+                                 <source locator="258:7-258:13" path="value" xsi:type="Property">
+                                    <source locator="258:7" name="o" xsi:type="OperandRef"/>
                                  </source>
                               </operand>
                            </when>
                            <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
                               <operand asType="fhir:decimal" xsi:type="As">
-                                 <operand locator="255:7-255:19" path="value" xsi:type="Property">
-                                    <source locator="255:7-255:13" path="value" xsi:type="Property">
-                                       <source locator="255:7" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="258:7-258:19" path="value" xsi:type="Property">
+                                    <source locator="258:7-258:13" path="value" xsi:type="Property">
+                                       <source locator="258:7" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </operand>
@@ -593,26 +593,26 @@
                         <else resultTypeName="t:Decimal" xsi:type="Null"/>
                      </operand>
                      <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="255:23-255:45" name="LabReferenceRangeLow" xsi:type="FunctionRef">
-                           <operand locator="255:44" name="o" xsi:type="OperandRef"/>
+                        <operand locator="258:23-258:45" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                           <operand locator="258:44" name="o" xsi:type="OperandRef"/>
                         </operand>
                      </operand>
                   </operand>
-                  <operand locator="256:10-256:49" xsi:type="Greater">
+                  <operand locator="259:10-259:49" xsi:type="Greater">
                      <operand xsi:type="Case">
                         <caseItem>
                            <when isType="t:Integer" xsi:type="Is">
-                              <operand locator="256:10-256:22" path="value" xsi:type="Property">
-                                 <source locator="256:10-256:16" path="value" xsi:type="Property">
-                                    <source locator="256:10" name="o" xsi:type="OperandRef"/>
+                              <operand locator="259:10-259:22" path="value" xsi:type="Property">
+                                 <source locator="259:10-259:16" path="value" xsi:type="Property">
+                                    <source locator="259:10" name="o" xsi:type="OperandRef"/>
                                  </source>
                               </operand>
                            </when>
                            <then xsi:type="ToDecimal">
                               <operand asType="t:Integer" xsi:type="As">
-                                 <operand locator="256:10-256:22" path="value" xsi:type="Property">
-                                    <source locator="256:10-256:16" path="value" xsi:type="Property">
-                                       <source locator="256:10" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="259:10-259:22" path="value" xsi:type="Property">
+                                    <source locator="259:10-259:16" path="value" xsi:type="Property">
+                                       <source locator="259:10" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </operand>
@@ -620,17 +620,17 @@
                         </caseItem>
                         <caseItem>
                            <when isType="fhir:decimal" xsi:type="Is">
-                              <operand locator="256:10-256:22" path="value" xsi:type="Property">
-                                 <source locator="256:10-256:16" path="value" xsi:type="Property">
-                                    <source locator="256:10" name="o" xsi:type="OperandRef"/>
+                              <operand locator="259:10-259:22" path="value" xsi:type="Property">
+                                 <source locator="259:10-259:16" path="value" xsi:type="Property">
+                                    <source locator="259:10" name="o" xsi:type="OperandRef"/>
                                  </source>
                               </operand>
                            </when>
                            <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
                               <operand asType="fhir:decimal" xsi:type="As">
-                                 <operand locator="256:10-256:22" path="value" xsi:type="Property">
-                                    <source locator="256:10-256:16" path="value" xsi:type="Property">
-                                       <source locator="256:10" name="o" xsi:type="OperandRef"/>
+                                 <operand locator="259:10-259:22" path="value" xsi:type="Property">
+                                    <source locator="259:10-259:16" path="value" xsi:type="Property">
+                                       <source locator="259:10" name="o" xsi:type="OperandRef"/>
                                     </source>
                                  </operand>
                               </operand>
@@ -639,29 +639,29 @@
                         <else resultTypeName="t:Decimal" xsi:type="Null"/>
                      </operand>
                      <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="256:26-256:49" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
-                           <operand locator="256:48" name="o" xsi:type="OperandRef"/>
+                        <operand locator="259:26-259:49" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                           <operand locator="259:48" name="o" xsi:type="OperandRef"/>
                         </operand>
                      </operand>
                   </operand>
                </operand>
             </condition>
-            <then locator="256:57-256:60" valueType="t:Boolean" value="true" xsi:type="Literal"/>
-            <else locator="257:8-257:12" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+            <then locator="259:57-259:60" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else locator="260:8-260:12" valueType="t:Boolean" value="false" xsi:type="Literal"/>
          </expression>
          <operand name="o">
-            <operandTypeSpecifier locator="254:41-254:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="257:41-257:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="227:1-239:5" name="ReportLabObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="228:3-239:5" xsi:type="If">
+      <def locator="230:1-242:5" name="ReportLabObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="231:3-242:5" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="228:6-228:16" xsi:type="IsNull">
-                  <operand locator="228:7" name="o" xsi:type="OperandRef"/>
+               <operand locator="231:6-231:16" xsi:type="IsNull">
+                  <operand locator="231:7" name="o" xsi:type="OperandRef"/>
                </operand>
             </condition>
             <then xsi:type="As">
-               <operand locator="228:23-228:26" xsi:type="Null"/>
+               <operand locator="231:23-231:26" xsi:type="Null"/>
                <asTypeSpecifier xsi:type="TupleTypeSpecifier">
                   <element name="Date">
                      <type name="t:String" xsi:type="NamedTypeSpecifier"/>
@@ -689,76 +689,76 @@
                   </element>
                </asTypeSpecifier>
             </then>
-            <else locator="230:5-239:5" xsi:type="Tuple">
+            <else locator="233:5-242:5" xsi:type="Tuple">
                <element name="Date">
-                  <value locator="231:15-231:39" xsi:type="ToString">
-                     <operand locator="231:24-231:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
-                        <operand locator="231:37" name="o" xsi:type="OperandRef"/>
+                  <value locator="234:15-234:39" xsi:type="ToString">
+                     <operand locator="234:24-234:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
+                        <operand locator="234:37" name="o" xsi:type="OperandRef"/>
                      </operand>
                   </value>
                </element>
                <element name="Name">
-                  <value locator="232:15-232:33" name="ConceptText" xsi:type="FunctionRef">
-                     <operand locator="232:27-232:32" path="code" xsi:type="Property">
-                        <source locator="232:27" name="o" xsi:type="OperandRef"/>
+                  <value locator="235:15-235:33" name="ConceptText" xsi:type="FunctionRef">
+                     <operand locator="235:27-235:32" path="code" xsi:type="Property">
+                        <source locator="235:27" name="o" xsi:type="OperandRef"/>
                      </operand>
                   </value>
                </element>
                <element name="ResultText">
-                  <value locator="233:19-233:56" name="QuantityText" xsi:type="FunctionRef">
-                     <operand locator="233:32-233:55" strict="false" xsi:type="As">
-                        <operand locator="233:32-233:38" path="value" xsi:type="Property">
-                           <source locator="233:32" name="o" xsi:type="OperandRef"/>
+                  <value locator="236:19-236:56" name="QuantityText" xsi:type="FunctionRef">
+                     <operand locator="236:32-236:55" strict="false" xsi:type="As">
+                        <operand locator="236:32-236:38" path="value" xsi:type="Property">
+                           <source locator="236:32" name="o" xsi:type="OperandRef"/>
                         </operand>
-                        <asTypeSpecifier locator="233:43-233:55" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        <asTypeSpecifier locator="236:43-236:55" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                      </operand>
                   </value>
                </element>
                <element name="ResultValue">
-                  <value locator="234:20-234:61" xsi:type="ToString">
+                  <value locator="237:20-237:61" xsi:type="ToString">
                      <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="234:29-234:60" path="value" xsi:type="Property">
-                           <source locator="234:29-234:54" strict="false" xsi:type="As">
-                              <operand locator="234:30-234:36" path="value" xsi:type="Property">
-                                 <source locator="234:30" name="o" xsi:type="OperandRef"/>
+                        <operand locator="237:29-237:60" path="value" xsi:type="Property">
+                           <source locator="237:29-237:54" strict="false" xsi:type="As">
+                              <operand locator="237:30-237:36" path="value" xsi:type="Property">
+                                 <source locator="237:30" name="o" xsi:type="OperandRef"/>
                               </operand>
-                              <asTypeSpecifier locator="234:41-234:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                              <asTypeSpecifier locator="237:41-237:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                            </source>
                         </operand>
                      </operand>
                   </value>
                </element>
                <element name="ResultUnits">
-                  <value locator="235:20-235:56" path="value" xsi:type="Property">
-                     <source locator="235:20-235:50" path="unit" xsi:type="Property">
-                        <source locator="235:20-235:45" strict="false" xsi:type="As">
-                           <operand locator="235:21-235:27" path="value" xsi:type="Property">
-                              <source locator="235:21" name="o" xsi:type="OperandRef"/>
+                  <value locator="238:20-238:56" path="value" xsi:type="Property">
+                     <source locator="238:20-238:50" path="unit" xsi:type="Property">
+                        <source locator="238:20-238:45" strict="false" xsi:type="As">
+                           <operand locator="238:21-238:27" path="value" xsi:type="Property">
+                              <source locator="238:21" name="o" xsi:type="OperandRef"/>
                            </operand>
-                           <asTypeSpecifier locator="235:32-235:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <asTypeSpecifier locator="238:32-238:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                         </source>
                      </source>
                   </value>
                </element>
                <element name="ReferenceRange">
-                  <value locator="236:23-236:42" name="LabReferenceRange" xsi:type="FunctionRef">
-                     <operand locator="236:41" name="o" xsi:type="OperandRef"/>
+                  <value locator="239:23-239:42" name="LabReferenceRange" xsi:type="FunctionRef">
+                     <operand locator="239:41" name="o" xsi:type="OperandRef"/>
                   </value>
                </element>
                <element name="Interpretation">
-                  <value locator="237:23-237:42" name="LabInterpretation" xsi:type="FunctionRef">
-                     <operand locator="237:41" name="o" xsi:type="OperandRef"/>
+                  <value locator="240:23-240:42" name="LabInterpretation" xsi:type="FunctionRef">
+                     <operand locator="240:41" name="o" xsi:type="OperandRef"/>
                   </value>
                </element>
                <element name="Flag">
-                  <value locator="238:13-238:36" name="LabReferenceRangeFlag" xsi:type="FunctionRef">
-                     <operand locator="238:35" name="o" xsi:type="OperandRef"/>
+                  <value locator="241:13-241:36" name="LabReferenceRangeFlag" xsi:type="FunctionRef">
+                     <operand locator="241:35" name="o" xsi:type="OperandRef"/>
                   </value>
                </element>
             </else>
          </expression>
          <operand name="o">
-            <operandTypeSpecifier locator="227:40-227:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="230:40-230:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
       <def locator="92:1-108:1" name="DiagnosticSummary" context="Patient" accessLevel="Public">
@@ -910,6 +910,12 @@
             </source>
          </expression>
       </def>
+      <def locator="144:1-145:47" name="DiagnosticInterpretation" context="Patient" accessLevel="Public">
+         <expression locator="145:5-145:47" xsi:type="Add">
+            <operand locator="145:5-145:22" name="ConcerningLabCount" xsi:type="ExpressionRef"/>
+            <operand locator="145:26-145:47" name="ConcerningImagingCount" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
       <def locator="33:1-41:1" name="RiskSummary" context="Patient" accessLevel="Public">
          <expression locator="33:21-41:1" xsi:type="Tuple">
             <element name="SeverityClassification">
@@ -925,10 +931,7 @@
                <value locator="37:20-37:43" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
             </element>
             <element name="DiagnosticInterpretation">
-               <value locator="38:29-38:71" xsi:type="Add">
-                  <operand locator="38:29-38:46" name="ConcerningLabCount" xsi:type="ExpressionRef"/>
-                  <operand locator="38:50-38:71" name="ConcerningImagingCount" xsi:type="ExpressionRef"/>
-               </value>
+               <value locator="38:29-38:52" name="DiagnosticInterpretation" xsi:type="ExpressionRef"/>
             </element>
             <element name="ConcerningLabCount">
                <value locator="39:23-39:40" name="ConcerningLabCount" xsi:type="ExpressionRef"/>
@@ -1014,45 +1017,45 @@
             </source>
          </expression>
       </def>
-      <def locator="158:1-162:24" name="Recommend Obtain Diagnostics" context="Patient" accessLevel="Public">
-         <expression locator="159:3-162:24" xsi:type="And">
-            <operand locator="159:3-161:36" xsi:type="And">
-               <operand locator="159:3-159:48" xsi:type="Not">
-                  <operand locator="159:3-159:48" xsi:type="IsNull">
-                     <operand locator="159:3-159:36" path="SeverityClassification" xsi:type="Property">
-                        <source locator="159:3-159:13" name="RiskSummary" xsi:type="ExpressionRef"/>
+      <def locator="161:1-165:24" name="Recommend Obtain Diagnostics" context="Patient" accessLevel="Public">
+         <expression locator="162:3-165:24" xsi:type="And">
+            <operand locator="162:3-164:36" xsi:type="And">
+               <operand locator="162:3-162:48" xsi:type="Not">
+                  <operand locator="162:3-162:48" xsi:type="IsNull">
+                     <operand locator="162:3-162:36" path="SeverityClassification" xsi:type="Property">
+                        <source locator="162:3-162:13" name="RiskSummary" xsi:type="ExpressionRef"/>
                      </operand>
                   </operand>
                </operand>
-               <operand locator="160:7-161:36" xsi:type="Or">
-                  <operand locator="160:8-160:34" xsi:type="GreaterOrEqual">
-                     <operand locator="160:8-160:29" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="160:34" valueType="t:Integer" value="5" xsi:type="Literal"/>
+               <operand locator="163:7-164:36" xsi:type="Or">
+                  <operand locator="163:8-163:34" xsi:type="GreaterOrEqual">
+                     <operand locator="163:8-163:29" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="163:34" valueType="t:Integer" value="5" xsi:type="Literal"/>
                   </operand>
-                  <operand locator="161:8-161:35" xsi:type="Greater">
-                     <operand locator="161:8-161:31" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="161:35" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  <operand locator="164:8-164:35" xsi:type="Greater">
+                     <operand locator="164:8-164:31" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="164:35" valueType="t:Integer" value="1" xsi:type="Literal"/>
                   </operand>
                </operand>
             </operand>
-            <operand locator="162:7-162:24" xsi:type="Less">
-               <operand locator="162:7-162:20" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="162:24" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            <operand locator="165:7-165:24" xsi:type="Less">
+               <operand locator="165:7-165:20" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="165:24" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="164:1-167:37" name="Recommend Discharge Home" context="Patient" accessLevel="Public">
-         <expression locator="165:3-167:37" xsi:type="And">
-            <operand locator="165:3-166:35" xsi:type="And">
-               <operand locator="165:3-165:24" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-               <operand locator="166:9-166:35" xsi:type="LessOrEqual">
-                  <operand locator="166:9-166:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
-                  <operand locator="166:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
+      <def locator="167:1-170:37" name="Recommend Discharge Home" context="Patient" accessLevel="Public">
+         <expression locator="168:3-170:37" xsi:type="And">
+            <operand locator="168:3-169:35" xsi:type="And">
+               <operand locator="168:3-168:24" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+               <operand locator="169:9-169:35" xsi:type="LessOrEqual">
+                  <operand locator="169:9-169:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="169:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
                </operand>
             </operand>
-            <operand locator="167:9-167:37" xsi:type="LessOrEqual">
-               <operand locator="167:9-167:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
-               <operand locator="167:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            <operand locator="170:9-170:37" xsi:type="LessOrEqual">
+               <operand locator="170:9-170:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+               <operand locator="170:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
@@ -1068,64 +1071,64 @@
             </operand>
          </expression>
       </def>
-      <def locator="176:1-179:27" name="Recommend Consider Admission" context="Patient" accessLevel="Public">
-         <expression locator="177:3-179:27" xsi:type="And">
-            <operand locator="177:3-178:39" xsi:type="And">
-               <operand locator="177:3-177:56" xsi:type="Or">
-                  <operand locator="177:4-177:25" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-                  <operand locator="177:30-177:55" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+      <def locator="179:1-182:27" name="Recommend Consider Admission" context="Patient" accessLevel="Public">
+         <expression locator="180:3-182:27" xsi:type="And">
+            <operand locator="180:3-181:39" xsi:type="And">
+               <operand locator="180:3-180:56" xsi:type="Or">
+                  <operand locator="180:4-180:25" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="180:30-180:55" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                </operand>
-               <operand locator="178:9-178:39" xsi:type="IsTrue">
-                  <operand locator="178:9-178:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
+               <operand locator="181:9-181:39" xsi:type="IsTrue">
+                  <operand locator="181:9-181:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
-            <operand locator="179:9-179:27" xsi:type="GreaterOrEqual">
-               <operand locator="179:9-179:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="179:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            <operand locator="182:9-182:27" xsi:type="GreaterOrEqual">
+               <operand locator="182:9-182:22" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="182:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="169:1-174:27" name="Recommend Consider Discharging Home" context="Patient" accessLevel="Public">
-         <expression locator="170:3-174:27" xsi:type="And">
-            <operand locator="170:3-173:40" xsi:type="And">
-               <operand locator="170:3-172:37" xsi:type="And">
-                  <operand locator="170:3-171:35" xsi:type="And">
-                     <operand locator="170:3-170:28" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="171:9-171:35" xsi:type="LessOrEqual">
-                        <operand locator="171:9-171:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
-                        <operand locator="171:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
+      <def locator="172:1-177:27" name="Recommend Consider Discharging Home" context="Patient" accessLevel="Public">
+         <expression locator="173:3-177:27" xsi:type="And">
+            <operand locator="173:3-176:40" xsi:type="And">
+               <operand locator="173:3-175:37" xsi:type="And">
+                  <operand locator="173:3-174:35" xsi:type="And">
+                     <operand locator="173:3-173:28" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="174:9-174:35" xsi:type="LessOrEqual">
+                        <operand locator="174:9-174:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                        <operand locator="174:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
                      </operand>
                   </operand>
-                  <operand locator="172:9-172:37" xsi:type="LessOrEqual">
-                     <operand locator="172:9-172:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="172:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  <operand locator="175:9-175:37" xsi:type="LessOrEqual">
+                     <operand locator="175:9-175:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="175:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
                   </operand>
                </operand>
-               <operand locator="173:9-173:40" xsi:type="IsFalse">
-                  <operand locator="173:9-173:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
+               <operand locator="176:9-176:40" xsi:type="IsFalse">
+                  <operand locator="176:9-176:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
-            <operand locator="174:9-174:27" xsi:type="GreaterOrEqual">
-               <operand locator="174:9-174:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="174:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            <operand locator="177:9-177:27" xsi:type="GreaterOrEqual">
+               <operand locator="177:9-177:22" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="177:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="181:1-183:27" name="Recommend Severe Admission" context="Patient" accessLevel="Public">
-         <expression locator="182:3-183:27" xsi:type="And">
-            <operand locator="182:3-182:26" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-            <operand locator="183:9-183:27" xsi:type="GreaterOrEqual">
-               <operand locator="183:9-183:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="183:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
+      <def locator="184:1-186:27" name="Recommend Severe Admission" context="Patient" accessLevel="Public">
+         <expression locator="185:3-186:27" xsi:type="And">
+            <operand locator="185:3-185:26" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+            <operand locator="186:9-186:27" xsi:type="GreaterOrEqual">
+               <operand locator="186:9-186:22" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="186:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="185:1-187:27" name="Recommend Critical Admission" context="Patient" accessLevel="Public">
-         <expression locator="186:3-187:27" xsi:type="And">
-            <operand locator="186:3-186:28" name="Is Critical Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-            <operand locator="187:9-187:27" xsi:type="GreaterOrEqual">
-               <operand locator="187:9-187:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="187:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
+      <def locator="188:1-190:27" name="Recommend Critical Admission" context="Patient" accessLevel="Public">
+         <expression locator="189:3-190:27" xsi:type="And">
+            <operand locator="189:3-189:28" name="Is Critical Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+            <operand locator="190:9-190:27" xsi:type="GreaterOrEqual">
+               <operand locator="190:9-190:22" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="190:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
@@ -1234,40 +1237,40 @@
             </element>
          </expression>
       </def>
-      <def locator="216:1-225:20" name="ReportObservations" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="217:3-225:20" xsi:type="Query">
-            <source locator="217:3-217:11" alias="o">
-               <expression locator="217:3-217:9" name="ObsList" xsi:type="OperandRef"/>
+      <def locator="219:1-228:20" name="ReportObservations" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="220:3-228:20" xsi:type="Query">
+            <source locator="220:3-220:11" alias="o">
+               <expression locator="220:3-220:9" name="ObsList" xsi:type="OperandRef"/>
             </source>
-            <return locator="218:5-224:5">
-               <expression locator="218:12-224:5" xsi:type="Tuple">
+            <return locator="221:5-227:5">
+               <expression locator="221:12-227:5" xsi:type="Tuple">
                   <element name="Date">
-                     <value locator="219:15-219:39" xsi:type="ToString">
-                        <operand locator="219:24-219:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
-                           <operand locator="219:37" name="o" xsi:type="AliasRef"/>
+                     <value locator="222:15-222:39" xsi:type="ToString">
+                        <operand locator="222:24-222:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
+                           <operand locator="222:37" name="o" xsi:type="AliasRef"/>
                         </operand>
                      </value>
                   </element>
                   <element name="Name">
-                     <value locator="221:15-221:33" name="ConceptText" xsi:type="FunctionRef">
-                        <operand locator="221:27-221:32" path="code" scope="o" xsi:type="Property"/>
+                     <value locator="224:15-224:33" name="ConceptText" xsi:type="FunctionRef">
+                        <operand locator="224:27-224:32" path="code" scope="o" xsi:type="Property"/>
                      </value>
                   </element>
                   <element name="Result">
-                     <value locator="222:15-222:52" name="QuantityText" xsi:type="FunctionRef">
-                        <operand locator="222:28-222:51" strict="false" xsi:type="As">
-                           <operand locator="222:28-222:34" path="value" scope="o" xsi:type="Property"/>
-                           <asTypeSpecifier locator="222:39-222:51" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     <value locator="225:15-225:52" name="QuantityText" xsi:type="FunctionRef">
+                        <operand locator="225:28-225:51" strict="false" xsi:type="As">
+                           <operand locator="225:28-225:34" path="value" scope="o" xsi:type="Property"/>
+                           <asTypeSpecifier locator="225:39-225:51" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                         </operand>
                      </value>
                   </element>
                   <element name="ResultValue">
-                     <value locator="223:20-223:61" xsi:type="ToString">
+                     <value locator="226:20-226:61" xsi:type="ToString">
                         <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                           <operand locator="223:29-223:60" path="value" xsi:type="Property">
-                              <source locator="223:29-223:54" strict="false" xsi:type="As">
-                                 <operand locator="223:30-223:36" path="value" scope="o" xsi:type="Property"/>
-                                 <asTypeSpecifier locator="223:41-223:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <operand locator="226:29-226:60" path="value" xsi:type="Property">
+                              <source locator="226:29-226:54" strict="false" xsi:type="As">
+                                 <operand locator="226:30-226:36" path="value" scope="o" xsi:type="Property"/>
+                                 <asTypeSpecifier locator="226:41-226:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                               </source>
                            </operand>
                         </operand>
@@ -1275,13 +1278,13 @@
                   </element>
                </expression>
             </return>
-            <sort locator="225:5-225:20">
-               <by locator="225:13-225:20" direction="asc" path="Date" xsi:type="ByColumn"/>
+            <sort locator="228:5-228:20">
+               <by locator="228:13-228:20" direction="asc" path="Date" xsi:type="ByColumn"/>
             </sort>
          </expression>
          <operand name="ObsList">
-            <operandTypeSpecifier locator="216:44-216:60" xsi:type="ListTypeSpecifier">
-               <elementType locator="216:49-216:59" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="219:44-219:60" xsi:type="ListTypeSpecifier">
+               <elementType locator="219:49-219:59" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
