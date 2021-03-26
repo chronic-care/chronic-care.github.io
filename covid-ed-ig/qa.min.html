@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = 0, errors = 47, warn = 21, info = 16 -->
+<!-- broken links = 0, errors = 47, warn = 22, info = 16 -->
 <head>
   <title>COVID19EDSeverityClassification : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for COVID19EDSeverityClassification</h1>
- <p>Generated Fri Mar 26 17:30:17 UTC 2021, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.html">Full QA Report</a></p>
+ <p>Generated Fri Mar 26 20:31:49 UTC 2021, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.html">Full QA Report</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
  <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.64</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = fhir.acep.covid19-ed-r4, Canonical = http://fhir.org/guides/acep</td></tr>
@@ -41,7 +41,7 @@
 </td></tr>
  <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
  <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://fhir.org/guides/acep (Problem #1 with package-list.json at http://fhir.org/guides/acep: http://fhir.org/guides/acep/package-list.json)</td></tr>
- <tr><td>Summary:</td><td> broken links = 0, errors = 47, warn = 21, info = 16</td></tr>
+ <tr><td>Summary:</td><td> broken links = 0, errors = 47, warn = 22, info = 16</td></tr>
 </table>
  <table class="grid">
    <tr>
@@ -54,7 +54,7 @@
      <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-CDSConnectCommons"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons</b></a></td><td><b>2</b></td><td><b>0</b></td><td><b>8</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptAssessment"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment</b></a></td><td><b>3</b></td><td><b>9</b></td><td><b>8</b></td>
+     <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptAssessment"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment</b></a></td><td><b>3</b></td><td><b>10</b></td><td><b>8</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
      <td><a href="#_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptHooks"><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptHooks</b></a></td><td><b>1</b></td><td><b>0</b></td><td><b>3</b></td>
@@ -183,6 +183,9 @@
      <td><b>COVID19EmergencyDeptAssessment.cql</b></td><td><b>warning</b></td><td title=""><b>Parameter type tuple of Gender: System.String, Age: System.Decimal of parameter PatientData is not supported; reported as FHIR.Any</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
+     <td><b>COVID19EmergencyDeptAssessment.cql</b></td><td><b>warning</b></td><td title=""><b>Parameter type tuple of ALT: System.Boolean, AST: System.Boolean, Creatinine: System.Boolean, CRP: System.Boolean, DDimer: System.Boolean, Ferritin: System.Boolean, LDH: System.Boolean, Lymphopenia: System.Boolean, Neutrophils: System.Boolean, Thrombocytopenia: System.Boolean, Troponin: System.Boolean, WBC: System.Boolean of parameter LabResults is not supported; reported as FHIR.Any</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
      <td><b>COVID19EmergencyDeptAssessment.cql</b></td><td><b>warning</b></td><td title=""><b>Result type choice&lt;FHIR.base64Binary,FHIR.boolean,FHIR.canonical,FHIR.code,FHIR.date,FHIR.dateTime,FHIR.decimal,FHIR.id,FHIR.instant,FHIR.integer,FHIR.markdown,FHIR.oid,FHIR.positiveInt,FHIR.string,FHIR.time,FHIR.unsignedInt,FHIR.uri,FHIR.url,FHIR.uuid,FHIR.Address,FHIR.Age,FHIR.Annotation,FHIR.Attachment,FHIR.CodeableConcept,FHIR.Coding,FHIR.ContactPoint,FHIR.Count,FHIR.Distance,FHIR.Duration,FHIR.HumanName,FHIR.Identifier,FHIR.Money,FHIR.Period,FHIR.Quantity,FHIR.Range,FHIR.Ratio,FHIR.Reference,FHIR.SampledData,FHIR.Signature,FHIR.Timing,FHIR.ContactDetail,FHIR.Contributor,FHIR.DataRequirement,FHIR.Expression,FHIR.ParameterDefinition,FHIR.RelatedArtifact,FHIR.TriggerDefinition,FHIR.UsageContext,FHIR.Dosage,FHIR.Meta&gt; of definition Patient Birth Sex is not supported; implementations may not be able to use the result of this expression</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
@@ -216,10 +219,10 @@
      <td><b>Library/COVID19EmergencyDeptAssessment: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl25" class="flip" onclick="flip('l25')">Show Reasoning</span><div id="l25" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl26" class="flip" onclick="flip('l26')">Show Reasoning</span><div id="l26" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl26" class="flip" onclick="flip('l26')">Show Reasoning</span><div id="l26" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl27" class="flip" onclick="flip('l27')">Show Reasoning</span><div id="l27" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #d6feff">
      <td><b>Library/COVID19EmergencyDeptAssessment: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
@@ -228,7 +231,7 @@
      <td><b>Library/COVID19EmergencyDeptAssessment: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl29" class="flip" onclick="flip('l29')">Show Reasoning</span><div id="l29" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptAssessment: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl30" class="flip" onclick="flip('l30')">Show Reasoning</span><div id="l30" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
    </tr>
 </table>
 <hr/>
@@ -248,7 +251,7 @@
      <td><b>Library/COVID19EmergencyDeptHooks: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptHooks: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl33" class="flip" onclick="flip('l33')">Show Reasoning</span><div id="l33" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptHooks: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl34" class="flip" onclick="flip('l34')">Show Reasoning</span><div id="l34" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
    </tr>
 </table>
 <hr/>
@@ -298,10 +301,10 @@
      <td><b>Library/COVID19EmergencyDeptSummary: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl47" class="flip" onclick="flip('l47')">Show Reasoning</span><div id="l47" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl48" class="flip" onclick="flip('l48')">Show Reasoning</span><div id="l48" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl48" class="flip" onclick="flip('l48')">Show Reasoning</span><div id="l48" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl49" class="flip" onclick="flip('l49')">Show Reasoning</span><div id="l49" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #d6feff">
      <td><b>Library/COVID19EmergencyDeptSummary: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
@@ -310,7 +313,7 @@
      <td><b>Library/COVID19EmergencyDeptSummary: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl51" class="flip" onclick="flip('l51')">Show Reasoning</span><div id="l51" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/COVID19EmergencyDeptSummary: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl52" class="flip" onclick="flip('l52')">Show Reasoning</span><div id="l52" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
    </tr>
 </table>
 <hr/>
@@ -333,10 +336,10 @@
      <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl56" class="flip" onclick="flip('l56')">Show Reasoning</span><div id="l56" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[1]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl57" class="flip" onclick="flip('l57')">Show Reasoning</span><div id="l57" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[1]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl57" class="flip" onclick="flip('l57')">Show Reasoning</span><div id="l57" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[2]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary</b> <span id="sl58" class="flip" onclick="flip('l58')">Show Reasoning</span><div id="l58" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablelibrary<ul><li>Library.content[2]: discriminator = true and ('text/cql' in contentType)</li></ul></div></td>
    </tr>
    <tr style="background-color: #d6feff">
      <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablelibrary - listed in meta</b></td>
@@ -345,7 +348,7 @@
      <td><b>Library/FHIRHelpers-4.0.1: Library</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_META"><b>Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl60" class="flip" onclick="flip('l60')">Show Reasoning</span><div id="l60" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
+     <td><b><a href="">Library/FHIRHelpers-4.0.1: Library.content[0]</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary</b> <span id="sl61" class="flip" onclick="flip('l61')">Show Reasoning</span><div id="l61" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary<ul><li>Library.content[0]: discriminator = true and ('application/elm+xml' in contentType)</li>, <li>Library.content[0]: discriminator = true and ('application/elm+json' in contentType)</li></ul></div></td>
    </tr>
 </table>
 <hr/>
