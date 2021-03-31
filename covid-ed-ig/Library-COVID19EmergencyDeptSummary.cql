@@ -35,6 +35,7 @@ define RiskSummary: {
   RiskScore: C19."Total Risk Score",
   RiskPercent: C19."Risk Percent",
   RiskFactorCount: C19."Risk Factors count",
+  DiagnosticInterpretation: DiagnosticInterpretation,
   ConcerningLabCount: ConcerningLabCount,
   ConcerningImagingCount: ConcerningImagingCount
 }
@@ -124,8 +125,7 @@ define LabResultList: {
 define ImagingResultList: {
   C19.ClinicalAssessments.ChestXRayConcerning,
   C19.ClinicalAssessments.UltrasoundConcerning,
-  C19.ClinicalAssessments.CTConcerning,
-  C19.ClinicalAssessments.LungInfiltratesOver50
+  C19.ClinicalAssessments.CTConcerning
 }
 
 define LabResultCount:
@@ -134,11 +134,22 @@ define LabResultCount:
 define ConcerningLabCount:
   Count(LabResultList result where result.Flag is true)
 
+// TODO Always returns count of 0 or 1 in Javascript engine... Bug?
+/*
 define ConcerningImagingCount:
   Count(ImagingResultList result where result is true)
+*/
+
+define ConcerningImagingCount:
+  (if C19.ClinicalAssessments.ChestXRayConcerning is true then 1 else 0)
+    + (if C19.ClinicalAssessments.UltrasoundConcerning is true then 1 else 0)
+    + (if C19.ClinicalAssessments.CTConcerning is true then 1 else 0)
 
 define ConcerningLabsOrImaging:
   ConcerningLabCount >= 1 or ConcerningImagingCount >= 1
+
+define DiagnosticInterpretation:
+    ConcerningLabCount + ConcerningImagingCount
 
 /*
 define TrendData: {
@@ -155,10 +166,10 @@ define TrendData: {
  */
 
 define "Recommend Obtain Diagnostics":
-  (C19."Is Critical Severity" or C19."Is Severe Severity" or C19."Is Moderate Severity"
-    or C19."Total Risk Score" >= 5
+  RiskSummary.SeverityClassification is not null
+  and (C19."Total Risk Score" >= 5
     or C19."Risk Factors count" > 1)
-  and LabResultCount < 5                // TODO Need feedback on minimum number of labs
+  and LabResultCount < 1
 
 define "Recommend Discharge Home":
   C19."Is Mild Severity"
@@ -174,9 +185,7 @@ define "Recommend Consider Discharging Home":
 
 define "Recommend Consider Admission":
   (C19."Is Mild Severity" or C19."Is Moderate Severity")
-    and (C19."Total Risk Score" >= 5
-      or C19."Risk Factors count" > 1
-      or ConcerningLabsOrImaging)
+    and ConcerningLabsOrImaging is true
     and LabResultCount >= 1
 
 define "Recommend Severe Admission":

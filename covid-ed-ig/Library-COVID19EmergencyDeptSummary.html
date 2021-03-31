@@ -40,8 +40,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.29"}
-    h3,h4,h5,h6{--heading-prefix:"6.29"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.32"}
+    h3,h4,h5,h6{--heading-prefix:"6.32"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -177,7 +177,7 @@
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Related Artifacts</h2><table class="grid"><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/Library/COVID19EmergencyDeptAssessment|1.0.0</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/Library/CDSConnectCommons|1.0.3</code></td></tr><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIRHelpers|4.0.1</code></td></tr></table><h2>Parameters</h2><table class="grid"><tr><td>Patient</td><td>out</td><td>0</td><td>1</td><td>Patient</td></tr><tr><td>PatientName</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>PatientSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>DiagnosticSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>LabResultList</td><td>out</td><td>0</td><td>*</td><td>Any</td></tr><tr><td>ConcerningLabCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>ImagingResultList</td><td>out</td><td>0</td><td>*</td><td>boolean</td></tr><tr><td>ConcerningImagingCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>RiskSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>SmartPhrases</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>LabResultCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>Recommend Obtain Diagnostics</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Discharge Home</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>ConcerningLabsOrImaging</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Consider Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Consider Discharging Home</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Severe Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Critical Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>RecommendationSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>AssessmentSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>RiskFactorSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Related Artifacts</h2><table class="grid"><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/Library/COVID19EmergencyDeptAssessment|1.0.0</code></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/acep/Library/CDSConnectCommons|1.0.3</code></td></tr><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIRHelpers|4.0.1</code></td></tr></table><h2>Parameters</h2><table class="grid"><tr><td>Patient</td><td>out</td><td>0</td><td>1</td><td>Patient</td></tr><tr><td>PatientName</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>PatientSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>DiagnosticSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>LabResultList</td><td>out</td><td>0</td><td>*</td><td>Any</td></tr><tr><td>ConcerningLabCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>ConcerningImagingCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>DiagnosticInterpretation</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>RiskSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>SmartPhrases</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>LabResultCount</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>Recommend Obtain Diagnostics</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Discharge Home</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>ConcerningLabsOrImaging</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Consider Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Consider Discharging Home</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Severe Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Recommend Critical Admission</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>RecommendationSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>AssessmentSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>RiskFactorSummary</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>ImagingResultList</td><td>out</td><td>0</td><td>*</td><td>boolean</td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
 
 // ACEP Emergency Department COVID-19 Management Tool
 
@@ -214,6 +214,7 @@ define RiskSummary: {
   RiskScore: C19.&quot;Total Risk Score&quot;,
   RiskPercent: C19.&quot;Risk Percent&quot;,
   RiskFactorCount: C19.&quot;Risk Factors count&quot;,
+  DiagnosticInterpretation: DiagnosticInterpretation,
   ConcerningLabCount: ConcerningLabCount,
   ConcerningImagingCount: ConcerningImagingCount
 }
@@ -303,8 +304,7 @@ define LabResultList: {
 define ImagingResultList: {
   C19.ClinicalAssessments.ChestXRayConcerning,
   C19.ClinicalAssessments.UltrasoundConcerning,
-  C19.ClinicalAssessments.CTConcerning,
-  C19.ClinicalAssessments.LungInfiltratesOver50
+  C19.ClinicalAssessments.CTConcerning
 }
 
 define LabResultCount:
@@ -313,11 +313,22 @@ define LabResultCount:
 define ConcerningLabCount:
   Count(LabResultList result where result.Flag is true)
 
+// TODO Always returns count of 0 or 1 in Javascript engine... Bug?
+/*
 define ConcerningImagingCount:
   Count(ImagingResultList result where result is true)
+*/
+
+define ConcerningImagingCount:
+  (if C19.ClinicalAssessments.ChestXRayConcerning is true then 1 else 0)
+    + (if C19.ClinicalAssessments.UltrasoundConcerning is true then 1 else 0)
+    + (if C19.ClinicalAssessments.CTConcerning is true then 1 else 0)
 
 define ConcerningLabsOrImaging:
   ConcerningLabCount &gt;= 1 or ConcerningImagingCount &gt;= 1
+
+define DiagnosticInterpretation:
+    ConcerningLabCount + ConcerningImagingCount
 
 /*
 define TrendData: {
@@ -334,10 +345,10 @@ define TrendData: {
  */
 
 define &quot;Recommend Obtain Diagnostics&quot;:
-  (C19.&quot;Is Critical Severity&quot; or C19.&quot;Is Severe Severity&quot; or C19.&quot;Is Moderate Severity&quot;
-    or C19.&quot;Total Risk Score&quot; &gt;= 5
+  RiskSummary.SeverityClassification is not null
+  and (C19.&quot;Total Risk Score&quot; &gt;= 5
     or C19.&quot;Risk Factors count&quot; &gt; 1)
-  and LabResultCount &lt; 5                // TODO Need feedback on minimum number of labs
+  and LabResultCount &lt; 1
 
 define &quot;Recommend Discharge Home&quot;:
   C19.&quot;Is Mild Severity&quot;
@@ -353,9 +364,7 @@ define &quot;Recommend Consider Discharging Home&quot;:
 
 define &quot;Recommend Consider Admission&quot;:
   (C19.&quot;Is Mild Severity&quot; or C19.&quot;Is Moderate Severity&quot;)
-    and (C19.&quot;Total Risk Score&quot; &gt;= 5
-      or C19.&quot;Risk Factors count&quot; &gt; 1
-      or ConcerningLabsOrImaging)
+    and ConcerningLabsOrImaging is true
     and LabResultCount &gt;= 1
 
 define &quot;Recommend Severe Admission&quot;:
@@ -446,7 +455,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 77Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 139Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 78Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 141Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -473,11 +482,13 @@ define function LabInterpretation(o FHIR.Observation):
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 23, 2021 16:51+0000">2021-03-23</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 30, 2021 16:08+0000">2021-03-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 
+                
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
@@ -499,6 +510,13 @@ define function LabInterpretation(o FHIR.Observation):
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
   <!-- Analytics Below
   ================================================== -->
   </body>
