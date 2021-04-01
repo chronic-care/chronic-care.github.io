@@ -345,10 +345,9 @@ define TrendData: {
  */
 
 define &quot;Recommend Obtain Diagnostics&quot;:
-  (((C19.&quot;Is Mild Severity&quot; or C19.&quot;Is Moderate Severity&quot;)
-    and (C19.&quot;Total Risk Score&quot; &gt;= 5 or C19.&quot;Risk Factors count&quot; &gt; 1))
-  or (C19.&quot;Is Severe Severity&quot; or C19.&quot;Is Critical Severity&quot;))
-  and LabResultCount &lt; 1
+  LabResultCount &lt; 1 and
+  ((C19.&quot;Is Mild Severity&quot; and (C19.&quot;Total Risk Score&quot; &gt;= 5 or C19.&quot;Risk Factors count&quot; &gt; 1))
+  or (C19.&quot;Is Moderate Severity&quot; or C19.&quot;Is Severe Severity&quot; or C19.&quot;Is Critical Severity&quot;))
 
 define &quot;Recommend Discharge Home&quot;:
   C19.&quot;Is Mild Severity&quot;
@@ -485,7 +484,7 @@ define function LabInterpretation(o FHIR.Observation):
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 1, 2021 14:24+0000">2021-04-01</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 1, 2021 15:21+0000">2021-04-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
