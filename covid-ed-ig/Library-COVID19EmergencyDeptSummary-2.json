@@ -2617,125 +2617,93 @@
                }
             }
          }, {
-            "locator" : "168:1-172:24",
+            "locator" : "168:1-171:92",
             "name" : "Recommend Obtain Diagnostics",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "169:3-172:24",
+               "locator" : "169:3-171:92",
                "type" : "And",
                "operand" : [ {
-                  "locator" : "169:3-171:36",
-                  "type" : "And",
-                  "operand" : [ {
-                     "locator" : "169:3-169:48",
-                     "type" : "Not",
-                     "operand" : {
-                        "locator" : "169:3-169:48",
-                        "type" : "IsNull",
-                        "operand" : {
-                           "locator" : "169:3-169:36",
-                           "path" : "SeverityClassification",
-                           "type" : "Property",
-                           "source" : {
-                              "locator" : "169:3-169:13",
-                              "name" : "RiskSummary",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     }
-                  }, {
-                     "locator" : "170:7-171:36",
-                     "type" : "Or",
-                     "operand" : [ {
-                        "locator" : "170:8-170:34",
-                        "type" : "GreaterOrEqual",
-                        "operand" : [ {
-                           "locator" : "170:8-170:29",
-                           "name" : "Total Risk Score",
-                           "libraryName" : "C19",
-                           "type" : "ExpressionRef"
-                        }, {
-                           "locator" : "170:34",
-                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                           "value" : "5",
-                           "type" : "Literal"
-                        } ]
-                     }, {
-                        "locator" : "171:8-171:35",
-                        "type" : "Greater",
-                        "operand" : [ {
-                           "locator" : "171:8-171:31",
-                           "name" : "Risk Factors count",
-                           "libraryName" : "C19",
-                           "type" : "ExpressionRef"
-                        }, {
-                           "locator" : "171:35",
-                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                           "value" : "1",
-                           "type" : "Literal"
-                        } ]
-                     } ]
-                  } ]
-               }, {
-                  "locator" : "172:7-172:24",
+                  "locator" : "169:3-169:20",
                   "type" : "Less",
                   "operand" : [ {
-                     "locator" : "172:7-172:20",
+                     "locator" : "169:3-169:16",
                      "name" : "LabResultCount",
                      "type" : "ExpressionRef"
                   }, {
-                     "locator" : "172:24",
+                     "locator" : "169:20",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                      "value" : "1",
                      "type" : "Literal"
                   } ]
-               } ]
-            }
-         }, {
-            "locator" : "174:1-177:37",
-            "name" : "Recommend Discharge Home",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "locator" : "175:3-177:37",
-               "type" : "And",
-               "operand" : [ {
-                  "locator" : "175:3-176:35",
-                  "type" : "And",
+               }, {
+                  "locator" : "170:3-171:92",
+                  "type" : "Or",
                   "operand" : [ {
-                     "locator" : "175:3-175:24",
-                     "name" : "Is Mild Severity",
-                     "libraryName" : "C19",
-                     "type" : "ExpressionRef"
-                  }, {
-                     "locator" : "176:9-176:35",
-                     "type" : "LessOrEqual",
+                     "locator" : "170:4-170:93",
+                     "type" : "And",
                      "operand" : [ {
-                        "locator" : "176:9-176:30",
-                        "name" : "Total Risk Score",
+                        "locator" : "170:5-170:26",
+                        "name" : "Is Mild Severity",
                         "libraryName" : "C19",
                         "type" : "ExpressionRef"
                      }, {
-                        "locator" : "176:35",
-                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                        "value" : "4",
-                        "type" : "Literal"
+                        "locator" : "170:32-170:92",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "locator" : "170:33-170:59",
+                           "type" : "GreaterOrEqual",
+                           "operand" : [ {
+                              "locator" : "170:33-170:54",
+                              "name" : "Total Risk Score",
+                              "libraryName" : "C19",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "locator" : "170:59",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "5",
+                              "type" : "Literal"
+                           } ]
+                        }, {
+                           "locator" : "170:64-170:91",
+                           "type" : "Greater",
+                           "operand" : [ {
+                              "locator" : "170:64-170:87",
+                              "name" : "Risk Factors count",
+                              "libraryName" : "C19",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "locator" : "170:91",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "1",
+                              "type" : "Literal"
+                           } ]
+                        } ]
                      } ]
-                  } ]
-               }, {
-                  "locator" : "177:9-177:37",
-                  "type" : "LessOrEqual",
-                  "operand" : [ {
-                     "locator" : "177:9-177:32",
-                     "name" : "Risk Factors count",
-                     "libraryName" : "C19",
-                     "type" : "ExpressionRef"
                   }, {
-                     "locator" : "177:37",
-                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                     "value" : "1",
-                     "type" : "Literal"
+                     "locator" : "171:6-171:91",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "171:7-171:60",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "locator" : "171:7-171:32",
+                           "name" : "Is Moderate Severity",
+                           "libraryName" : "C19",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "locator" : "171:37-171:60",
+                           "name" : "Is Severe Severity",
+                           "libraryName" : "C19",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "locator" : "171:65-171:90",
+                        "name" : "Is Critical Severity",
+                        "libraryName" : "C19",
+                        "type" : "ExpressionRef"
+                     } ]
                   } ]
                } ]
             }
@@ -2776,15 +2744,74 @@
                } ]
             }
          }, {
-            "locator" : "186:1-189:27",
+            "locator" : "173:1-177:40",
+            "name" : "Recommend Discharge Home",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "174:3-177:40",
+               "type" : "And",
+               "operand" : [ {
+                  "locator" : "174:3-176:37",
+                  "type" : "And",
+                  "operand" : [ {
+                     "locator" : "174:3-175:35",
+                     "type" : "And",
+                     "operand" : [ {
+                        "locator" : "174:3-174:24",
+                        "name" : "Is Mild Severity",
+                        "libraryName" : "C19",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "175:9-175:35",
+                        "type" : "LessOrEqual",
+                        "operand" : [ {
+                           "locator" : "175:9-175:30",
+                           "name" : "Total Risk Score",
+                           "libraryName" : "C19",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "locator" : "175:35",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "4",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  }, {
+                     "locator" : "176:9-176:37",
+                     "type" : "LessOrEqual",
+                     "operand" : [ {
+                        "locator" : "176:9-176:32",
+                        "name" : "Risk Factors count",
+                        "libraryName" : "C19",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "176:37",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }, {
+                  "locator" : "177:9-177:40",
+                  "type" : "IsFalse",
+                  "operand" : {
+                     "locator" : "177:9-177:31",
+                     "name" : "ConcerningLabsOrImaging",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         }, {
+            "locator" : "186:1-191:27",
             "name" : "Recommend Consider Admission",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "187:3-189:27",
+               "locator" : "187:3-191:27",
                "type" : "And",
                "operand" : [ {
-                  "locator" : "187:3-188:39",
+                  "locator" : "187:3-190:40",
                   "type" : "And",
                   "operand" : [ {
                      "locator" : "187:3-187:56",
@@ -2801,23 +2828,59 @@
                         "type" : "ExpressionRef"
                      } ]
                   }, {
-                     "locator" : "188:9-188:39",
-                     "type" : "IsTrue",
-                     "operand" : {
-                        "locator" : "188:9-188:31",
-                        "name" : "ConcerningLabsOrImaging",
-                        "type" : "ExpressionRef"
-                     }
+                     "locator" : "188:9-190:40",
+                     "type" : "Or",
+                     "operand" : [ {
+                        "locator" : "188:10-189:37",
+                        "type" : "Or",
+                        "operand" : [ {
+                           "locator" : "188:10-188:40",
+                           "type" : "IsTrue",
+                           "operand" : {
+                              "locator" : "188:10-188:32",
+                              "name" : "ConcerningLabsOrImaging",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "locator" : "189:12-189:37",
+                           "type" : "Greater",
+                           "operand" : [ {
+                              "locator" : "189:12-189:33",
+                              "name" : "Total Risk Score",
+                              "libraryName" : "C19",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "locator" : "189:37",
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "4",
+                              "type" : "Literal"
+                           } ]
+                        } ]
+                     }, {
+                        "locator" : "190:12-190:39",
+                        "type" : "Greater",
+                        "operand" : [ {
+                           "locator" : "190:12-190:35",
+                           "name" : "Risk Factors count",
+                           "libraryName" : "C19",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "locator" : "190:39",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "1",
+                           "type" : "Literal"
+                        } ]
+                     } ]
                   } ]
                }, {
-                  "locator" : "189:9-189:27",
+                  "locator" : "191:9-191:27",
                   "type" : "GreaterOrEqual",
                   "operand" : [ {
-                     "locator" : "189:9-189:22",
+                     "locator" : "191:9-191:22",
                      "name" : "LabResultCount",
                      "type" : "ExpressionRef"
                   }, {
-                     "locator" : "189:27",
+                     "locator" : "191:27",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                      "value" : "1",
                      "type" : "Literal"
@@ -2901,60 +2964,26 @@
                } ]
             }
          }, {
-            "locator" : "191:1-193:27",
+            "locator" : "193:1-194:26",
             "name" : "Recommend Severe Admission",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "192:3-193:27",
-               "type" : "And",
-               "operand" : [ {
-                  "locator" : "192:3-192:26",
-                  "name" : "Is Severe Severity",
-                  "libraryName" : "C19",
-                  "type" : "ExpressionRef"
-               }, {
-                  "locator" : "193:9-193:27",
-                  "type" : "GreaterOrEqual",
-                  "operand" : [ {
-                     "locator" : "193:9-193:22",
-                     "name" : "LabResultCount",
-                     "type" : "ExpressionRef"
-                  }, {
-                     "locator" : "193:27",
-                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                     "value" : "1",
-                     "type" : "Literal"
-                  } ]
-               } ]
+               "locator" : "194:3-194:26",
+               "name" : "Is Severe Severity",
+               "libraryName" : "C19",
+               "type" : "ExpressionRef"
             }
          }, {
-            "locator" : "195:1-197:27",
+            "locator" : "196:1-197:28",
             "name" : "Recommend Critical Admission",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "196:3-197:27",
-               "type" : "And",
-               "operand" : [ {
-                  "locator" : "196:3-196:28",
-                  "name" : "Is Critical Severity",
-                  "libraryName" : "C19",
-                  "type" : "ExpressionRef"
-               }, {
-                  "locator" : "197:9-197:27",
-                  "type" : "GreaterOrEqual",
-                  "operand" : [ {
-                     "locator" : "197:9-197:22",
-                     "name" : "LabResultCount",
-                     "type" : "ExpressionRef"
-                  }, {
-                     "locator" : "197:27",
-                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                     "value" : "1",
-                     "type" : "Literal"
-                  } ]
-               } ]
+               "locator" : "197:3-197:28",
+               "name" : "Is Critical Severity",
+               "libraryName" : "C19",
+               "type" : "ExpressionRef"
             }
          }, {
             "locator" : "54:1-61:1",

@@ -1028,45 +1028,33 @@
             </source>
          </expression>
       </def>
-      <def locator="168:1-172:24" name="Recommend Obtain Diagnostics" context="Patient" accessLevel="Public">
-         <expression locator="169:3-172:24" xsi:type="And">
-            <operand locator="169:3-171:36" xsi:type="And">
-               <operand locator="169:3-169:48" xsi:type="Not">
-                  <operand locator="169:3-169:48" xsi:type="IsNull">
-                     <operand locator="169:3-169:36" path="SeverityClassification" xsi:type="Property">
-                        <source locator="169:3-169:13" name="RiskSummary" xsi:type="ExpressionRef"/>
+      <def locator="168:1-171:92" name="Recommend Obtain Diagnostics" context="Patient" accessLevel="Public">
+         <expression locator="169:3-171:92" xsi:type="And">
+            <operand locator="169:3-169:20" xsi:type="Less">
+               <operand locator="169:3-169:16" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="169:20" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            </operand>
+            <operand locator="170:3-171:92" xsi:type="Or">
+               <operand locator="170:4-170:93" xsi:type="And">
+                  <operand locator="170:5-170:26" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="170:32-170:92" xsi:type="Or">
+                     <operand locator="170:33-170:59" xsi:type="GreaterOrEqual">
+                        <operand locator="170:33-170:54" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                        <operand locator="170:59" valueType="t:Integer" value="5" xsi:type="Literal"/>
+                     </operand>
+                     <operand locator="170:64-170:91" xsi:type="Greater">
+                        <operand locator="170:64-170:87" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+                        <operand locator="170:91" valueType="t:Integer" value="1" xsi:type="Literal"/>
                      </operand>
                   </operand>
                </operand>
-               <operand locator="170:7-171:36" xsi:type="Or">
-                  <operand locator="170:8-170:34" xsi:type="GreaterOrEqual">
-                     <operand locator="170:8-170:29" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="170:34" valueType="t:Integer" value="5" xsi:type="Literal"/>
+               <operand locator="171:6-171:91" xsi:type="Or">
+                  <operand locator="171:7-171:60" xsi:type="Or">
+                     <operand locator="171:7-171:32" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="171:37-171:60" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                   </operand>
-                  <operand locator="171:8-171:35" xsi:type="Greater">
-                     <operand locator="171:8-171:31" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="171:35" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                  </operand>
+                  <operand locator="171:65-171:90" name="Is Critical Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                </operand>
-            </operand>
-            <operand locator="172:7-172:24" xsi:type="Less">
-               <operand locator="172:7-172:20" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="172:24" valueType="t:Integer" value="1" xsi:type="Literal"/>
-            </operand>
-         </expression>
-      </def>
-      <def locator="174:1-177:37" name="Recommend Discharge Home" context="Patient" accessLevel="Public">
-         <expression locator="175:3-177:37" xsi:type="And">
-            <operand locator="175:3-176:35" xsi:type="And">
-               <operand locator="175:3-175:24" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-               <operand locator="176:9-176:35" xsi:type="LessOrEqual">
-                  <operand locator="176:9-176:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
-                  <operand locator="176:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
-               </operand>
-            </operand>
-            <operand locator="177:9-177:37" xsi:type="LessOrEqual">
-               <operand locator="177:9-177:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
-               <operand locator="177:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
@@ -1082,20 +1070,52 @@
             </operand>
          </expression>
       </def>
-      <def locator="186:1-189:27" name="Recommend Consider Admission" context="Patient" accessLevel="Public">
-         <expression locator="187:3-189:27" xsi:type="And">
-            <operand locator="187:3-188:39" xsi:type="And">
+      <def locator="173:1-177:40" name="Recommend Discharge Home" context="Patient" accessLevel="Public">
+         <expression locator="174:3-177:40" xsi:type="And">
+            <operand locator="174:3-176:37" xsi:type="And">
+               <operand locator="174:3-175:35" xsi:type="And">
+                  <operand locator="174:3-174:24" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="175:9-175:35" xsi:type="LessOrEqual">
+                     <operand locator="175:9-175:30" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="175:35" valueType="t:Integer" value="4" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+               <operand locator="176:9-176:37" xsi:type="LessOrEqual">
+                  <operand locator="176:9-176:32" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="176:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
+               </operand>
+            </operand>
+            <operand locator="177:9-177:40" xsi:type="IsFalse">
+               <operand locator="177:9-177:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="186:1-191:27" name="Recommend Consider Admission" context="Patient" accessLevel="Public">
+         <expression locator="187:3-191:27" xsi:type="And">
+            <operand locator="187:3-190:40" xsi:type="And">
                <operand locator="187:3-187:56" xsi:type="Or">
                   <operand locator="187:4-187:25" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                   <operand locator="187:30-187:55" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                </operand>
-               <operand locator="188:9-188:39" xsi:type="IsTrue">
-                  <operand locator="188:9-188:31" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
+               <operand locator="188:9-190:40" xsi:type="Or">
+                  <operand locator="188:10-189:37" xsi:type="Or">
+                     <operand locator="188:10-188:40" xsi:type="IsTrue">
+                        <operand locator="188:10-188:32" name="ConcerningLabsOrImaging" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand locator="189:12-189:37" xsi:type="Greater">
+                        <operand locator="189:12-189:33" name="Total Risk Score" libraryName="C19" xsi:type="ExpressionRef"/>
+                        <operand locator="189:37" valueType="t:Integer" value="4" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+                  <operand locator="190:12-190:39" xsi:type="Greater">
+                     <operand locator="190:12-190:35" name="Risk Factors count" libraryName="C19" xsi:type="ExpressionRef"/>
+                     <operand locator="190:39" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
                </operand>
             </operand>
-            <operand locator="189:9-189:27" xsi:type="GreaterOrEqual">
-               <operand locator="189:9-189:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="189:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            <operand locator="191:9-191:27" xsi:type="GreaterOrEqual">
+               <operand locator="191:9-191:22" name="LabResultCount" xsi:type="ExpressionRef"/>
+               <operand locator="191:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
@@ -1125,23 +1145,11 @@
             </operand>
          </expression>
       </def>
-      <def locator="191:1-193:27" name="Recommend Severe Admission" context="Patient" accessLevel="Public">
-         <expression locator="192:3-193:27" xsi:type="And">
-            <operand locator="192:3-192:26" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-            <operand locator="193:9-193:27" xsi:type="GreaterOrEqual">
-               <operand locator="193:9-193:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="193:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
-            </operand>
-         </expression>
+      <def locator="193:1-194:26" name="Recommend Severe Admission" context="Patient" accessLevel="Public">
+         <expression locator="194:3-194:26" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
       </def>
-      <def locator="195:1-197:27" name="Recommend Critical Admission" context="Patient" accessLevel="Public">
-         <expression locator="196:3-197:27" xsi:type="And">
-            <operand locator="196:3-196:28" name="Is Critical Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-            <operand locator="197:9-197:27" xsi:type="GreaterOrEqual">
-               <operand locator="197:9-197:22" name="LabResultCount" xsi:type="ExpressionRef"/>
-               <operand locator="197:27" valueType="t:Integer" value="1" xsi:type="Literal"/>
-            </operand>
-         </expression>
+      <def locator="196:1-197:28" name="Recommend Critical Admission" context="Patient" accessLevel="Public">
+         <expression locator="197:3-197:28" name="Is Critical Severity" libraryName="C19" xsi:type="ExpressionRef"/>
       </def>
       <def locator="54:1-61:1" name="RecommendationSummary" context="Patient" accessLevel="Public">
          <expression locator="54:31-61:1" xsi:type="Tuple">

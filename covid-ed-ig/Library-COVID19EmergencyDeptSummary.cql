@@ -166,15 +166,15 @@ define TrendData: {
  */
 
 define "Recommend Obtain Diagnostics":
-  RiskSummary.SeverityClassification is not null
-  and (C19."Total Risk Score" >= 5
-    or C19."Risk Factors count" > 1)
-  and LabResultCount < 1
+  LabResultCount < 1 and
+  ((C19."Is Mild Severity" and (C19."Total Risk Score" >= 5 or C19."Risk Factors count" > 1))
+  or (C19."Is Moderate Severity" or C19."Is Severe Severity" or C19."Is Critical Severity"))
 
 define "Recommend Discharge Home":
   C19."Is Mild Severity"
     and C19."Total Risk Score" <= 4
     and C19."Risk Factors count" <= 1
+    and ConcerningLabsOrImaging is false
 
 define "Recommend Consider Discharging Home":
   C19."Is Moderate Severity"
@@ -185,16 +185,16 @@ define "Recommend Consider Discharging Home":
 
 define "Recommend Consider Admission":
   (C19."Is Mild Severity" or C19."Is Moderate Severity")
-    and ConcerningLabsOrImaging is true
+    and (ConcerningLabsOrImaging is true
+        or C19."Total Risk Score" > 4
+        or C19."Risk Factors count" > 1)
     and LabResultCount >= 1
 
 define "Recommend Severe Admission":
   C19."Is Severe Severity"
-    and LabResultCount >= 1
 
 define "Recommend Critical Admission":
   C19."Is Critical Severity"
-    and LabResultCount >= 1
 
 /*
  * Helper functions for summary reporting.
