@@ -1,1 +1,0 @@
-(this.webpackJsonpmpc=this.webpackJsonpmpc||[]).push([[1],{190:function(n,t,c){n.exports=c(191)},191:function(n,t,c){"use strict";c.r(t);var o=c(23),e=c.n(o);fetch("".concat("","/launch-context.json")).then((function(n){return n.json()})).then((function(n){return e.a.oauth2.authorize(n)})).catch((function(n){return console.error(n)}))}},[[190,3,0]]]);
