@@ -423,7 +423,7 @@ define function ReportLabObservation(o FHIR.Observation):
       Date:   ToString(C3F.FindDate(o)),
       Name:   ConceptText(o.code),                                // display nanme
       ResultText: QuantityText(o.value as FHIR.Quantity),         // result value with units
-      ResultValue: ToString((o.value as FHIR.Quantity).value),
+      ResultValue: System.Quantity { value: (o.value as FHIR.Quantity).value}.value,
       ResultUnits: (o.value as FHIR.Quantity).unit.value,
       ReferenceRange: LabReferenceRange(o),
       Interpretation: LabInterpretation(o),
@@ -458,7 +458,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 79Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 144Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 79Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 145Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -485,7 +485,7 @@ define function LabInterpretation(o FHIR.Observation):
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 7, 2021 19:54+0000">2021-04-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 8, 2021 16:35+0000">2021-04-08</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -1675,7 +1675,7 @@
                      }, {
                         "name" : "ResultValue",
                         "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -1772,35 +1772,44 @@
                   }, {
                      "name" : "ResultValue",
                      "value" : {
-                        "locator" : "247:20-247:61",
-                        "type" : "ToString",
-                        "operand" : {
-                           "name" : "ToDecimal",
-                           "libraryName" : "FHIRHelpers",
-                           "type" : "FunctionRef",
-                           "operand" : [ {
-                              "locator" : "247:29-247:60",
-                              "path" : "value",
-                              "type" : "Property",
-                              "source" : {
-                                 "locator" : "247:29-247:54",
-                                 "strict" : false,
-                                 "type" : "As",
-                                 "operand" : {
-                                    "locator" : "247:30-247:36",
+                        "locator" : "247:20-247:83",
+                        "path" : "value",
+                        "type" : "Property",
+                        "source" : {
+                           "locator" : "247:20-247:77",
+                           "classType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                           "type" : "Instance",
+                           "element" : [ {
+                              "name" : "value",
+                              "value" : {
+                                 "name" : "ToDecimal",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "locator" : "247:45-247:76",
                                     "path" : "value",
                                     "type" : "Property",
                                     "source" : {
-                                       "locator" : "247:30",
-                                       "name" : "o",
-                                       "type" : "OperandRef"
+                                       "locator" : "247:45-247:70",
+                                       "strict" : false,
+                                       "type" : "As",
+                                       "operand" : {
+                                          "locator" : "247:46-247:52",
+                                          "path" : "value",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "locator" : "247:46",
+                                             "name" : "o",
+                                             "type" : "OperandRef"
+                                          }
+                                       },
+                                       "asTypeSpecifier" : {
+                                          "locator" : "247:57-247:69",
+                                          "name" : "{http://hl7.org/fhir}Quantity",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
                                     }
-                                 },
-                                 "asTypeSpecifier" : {
-                                    "locator" : "247:41-247:53",
-                                    "name" : "{http://hl7.org/fhir}Quantity",
-                                    "type" : "NamedTypeSpecifier"
-                                 }
+                                 } ]
                               }
                            } ]
                         }

@@ -673,7 +673,7 @@
                      <type name="t:String" xsi:type="NamedTypeSpecifier"/>
                   </element>
                   <element name="ResultValue">
-                     <type name="t:String" xsi:type="NamedTypeSpecifier"/>
+                     <type name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
                   </element>
                   <element name="ResultUnits">
                      <type name="t:String" xsi:type="NamedTypeSpecifier"/>
@@ -715,17 +715,21 @@
                   </value>
                </element>
                <element name="ResultValue">
-                  <value locator="247:20-247:61" xsi:type="ToString">
-                     <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="247:29-247:60" path="value" xsi:type="Property">
-                           <source locator="247:29-247:54" strict="false" xsi:type="As">
-                              <operand locator="247:30-247:36" path="value" xsi:type="Property">
-                                 <source locator="247:30" name="o" xsi:type="OperandRef"/>
+                  <value locator="247:20-247:83" path="value" xsi:type="Property">
+                     <source locator="247:20-247:77" classType="t:Quantity" xsi:type="Instance">
+                        <element name="value">
+                           <value name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand locator="247:45-247:76" path="value" xsi:type="Property">
+                                 <source locator="247:45-247:70" strict="false" xsi:type="As">
+                                    <operand locator="247:46-247:52" path="value" xsi:type="Property">
+                                       <source locator="247:46" name="o" xsi:type="OperandRef"/>
+                                    </operand>
+                                    <asTypeSpecifier locator="247:57-247:69" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                                 </source>
                               </operand>
-                              <asTypeSpecifier locator="247:41-247:53" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
-                           </source>
-                        </operand>
-                     </operand>
+                           </value>
+                        </element>
+                     </source>
                   </value>
                </element>
                <element name="ResultUnits">
