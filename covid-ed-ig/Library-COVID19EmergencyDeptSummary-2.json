@@ -2646,6 +2646,82 @@
                }
             }
          }, {
+            "locator" : "125:1-129:1",
+            "name" : "ImagingResultList",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "125:27-129:1",
+               "type" : "List",
+               "element" : [ {
+                  "locator" : "126:3-126:45",
+                  "path" : "ChestXRayConcerning",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "126:3-126:25",
+                     "name" : "ClinicalAssessments",
+                     "libraryName" : "C19",
+                     "type" : "ParameterRef"
+                  }
+               }, {
+                  "locator" : "127:3-127:46",
+                  "path" : "UltrasoundConcerning",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "127:3-127:25",
+                     "name" : "ClinicalAssessments",
+                     "libraryName" : "C19",
+                     "type" : "ParameterRef"
+                  }
+               }, {
+                  "locator" : "128:3-128:38",
+                  "path" : "CTConcerning",
+                  "type" : "Property",
+                  "source" : {
+                     "locator" : "128:3-128:25",
+                     "name" : "ClinicalAssessments",
+                     "libraryName" : "C19",
+                     "type" : "ParameterRef"
+                  }
+               } ]
+            }
+         }, {
+            "locator" : "134:1-135:58",
+            "name" : "ImagingResultCount",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "locator" : "135:3-135:58",
+               "type" : "Count",
+               "source" : {
+                  "locator" : "135:9-135:57",
+                  "type" : "Query",
+                  "source" : [ {
+                     "locator" : "135:9-135:32",
+                     "alias" : "result",
+                     "expression" : {
+                        "locator" : "135:9-135:25",
+                        "name" : "ImagingResultList",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "locator" : "135:34-135:57",
+                     "type" : "Not",
+                     "operand" : {
+                        "locator" : "135:40-135:57",
+                        "type" : "IsNull",
+                        "operand" : {
+                           "locator" : "135:40-135:45",
+                           "name" : "result",
+                           "type" : "AliasRef"
+                        }
+                     }
+                  }
+               }
+            }
+         }, {
             "locator" : "174:1-177:92",
             "name" : "Recommend Obtain Diagnostics",
             "context" : "Patient",
@@ -2654,56 +2730,73 @@
                "locator" : "175:3-177:92",
                "type" : "And",
                "operand" : [ {
-                  "locator" : "175:3-175:20",
-                  "type" : "Less",
+                  "locator" : "175:3-175:49",
+                  "type" : "And",
                   "operand" : [ {
-                     "locator" : "175:3-175:16",
-                     "name" : "LabResultCount",
-                     "type" : "ExpressionRef"
+                     "locator" : "175:4-175:21",
+                     "type" : "Less",
+                     "operand" : [ {
+                        "locator" : "175:4-175:17",
+                        "name" : "LabResultCount",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "175:21",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
                   }, {
-                     "locator" : "175:20",
-                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                     "value" : "1",
-                     "type" : "Literal"
+                     "locator" : "175:27-175:48",
+                     "type" : "Less",
+                     "operand" : [ {
+                        "locator" : "175:27-175:44",
+                        "name" : "ImagingResultCount",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "175:48",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
                   } ]
                }, {
-                  "locator" : "176:3-177:92",
+                  "locator" : "176:7-177:92",
                   "type" : "Or",
                   "operand" : [ {
-                     "locator" : "176:4-176:93",
+                     "locator" : "176:8-176:97",
                      "type" : "And",
                      "operand" : [ {
-                        "locator" : "176:5-176:26",
+                        "locator" : "176:9-176:30",
                         "name" : "Is Mild Severity",
                         "libraryName" : "C19",
                         "type" : "ExpressionRef"
                      }, {
-                        "locator" : "176:32-176:92",
+                        "locator" : "176:36-176:96",
                         "type" : "Or",
                         "operand" : [ {
-                           "locator" : "176:33-176:59",
+                           "locator" : "176:37-176:63",
                            "type" : "GreaterOrEqual",
                            "operand" : [ {
-                              "locator" : "176:33-176:54",
+                              "locator" : "176:37-176:58",
                               "name" : "Total Risk Score",
                               "libraryName" : "C19",
                               "type" : "ExpressionRef"
                            }, {
-                              "locator" : "176:59",
+                              "locator" : "176:63",
                               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                               "value" : "5",
                               "type" : "Literal"
                            } ]
                         }, {
-                           "locator" : "176:64-176:91",
+                           "locator" : "176:68-176:95",
                            "type" : "Greater",
                            "operand" : [ {
-                              "locator" : "176:64-176:87",
+                              "locator" : "176:68-176:91",
                               "name" : "Risk Factors count",
                               "libraryName" : "C19",
                               "type" : "ExpressionRef"
                            }, {
-                              "locator" : "176:91",
+                              "locator" : "176:95",
                               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                               "value" : "1",
                               "type" : "Literal"
@@ -2835,82 +2928,6 @@
                } ]
             }
          }, {
-            "locator" : "125:1-129:1",
-            "name" : "ImagingResultList",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "locator" : "125:27-129:1",
-               "type" : "List",
-               "element" : [ {
-                  "locator" : "126:3-126:45",
-                  "path" : "ChestXRayConcerning",
-                  "type" : "Property",
-                  "source" : {
-                     "locator" : "126:3-126:25",
-                     "name" : "ClinicalAssessments",
-                     "libraryName" : "C19",
-                     "type" : "ParameterRef"
-                  }
-               }, {
-                  "locator" : "127:3-127:46",
-                  "path" : "UltrasoundConcerning",
-                  "type" : "Property",
-                  "source" : {
-                     "locator" : "127:3-127:25",
-                     "name" : "ClinicalAssessments",
-                     "libraryName" : "C19",
-                     "type" : "ParameterRef"
-                  }
-               }, {
-                  "locator" : "128:3-128:38",
-                  "path" : "CTConcerning",
-                  "type" : "Property",
-                  "source" : {
-                     "locator" : "128:3-128:25",
-                     "name" : "ClinicalAssessments",
-                     "libraryName" : "C19",
-                     "type" : "ParameterRef"
-                  }
-               } ]
-            }
-         }, {
-            "locator" : "134:1-135:58",
-            "name" : "ImagingResultCount",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "locator" : "135:3-135:58",
-               "type" : "Count",
-               "source" : {
-                  "locator" : "135:9-135:57",
-                  "type" : "Query",
-                  "source" : [ {
-                     "locator" : "135:9-135:32",
-                     "alias" : "result",
-                     "expression" : {
-                        "locator" : "135:9-135:25",
-                        "name" : "ImagingResultList",
-                        "type" : "ExpressionRef"
-                     }
-                  } ],
-                  "relationship" : [ ],
-                  "where" : {
-                     "locator" : "135:34-135:57",
-                     "type" : "Not",
-                     "operand" : {
-                        "locator" : "135:40-135:57",
-                        "type" : "IsNull",
-                        "operand" : {
-                           "locator" : "135:40-135:45",
-                           "name" : "result",
-                           "type" : "AliasRef"
-                        }
-                     }
-                  }
-               }
-            }
-         }, {
             "locator" : "192:1-197:56",
             "name" : "Recommend Consider Admission",
             "context" : "Patient",
@@ -3013,12 +3030,12 @@
                } ]
             }
          }, {
-            "locator" : "185:1-190:27",
+            "locator" : "185:1-190:56",
             "name" : "Recommend Consider Discharging Home",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "186:3-190:27",
+               "locator" : "186:3-190:56",
                "type" : "And",
                "operand" : [ {
                   "locator" : "186:3-189:40",
@@ -3074,17 +3091,34 @@
                      }
                   } ]
                }, {
-                  "locator" : "190:9-190:27",
-                  "type" : "GreaterOrEqual",
+                  "locator" : "190:9-190:56",
+                  "type" : "Or",
                   "operand" : [ {
-                     "locator" : "190:9-190:22",
-                     "name" : "LabResultCount",
-                     "type" : "ExpressionRef"
+                     "locator" : "190:10-190:28",
+                     "type" : "GreaterOrEqual",
+                     "operand" : [ {
+                        "locator" : "190:10-190:23",
+                        "name" : "LabResultCount",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "190:28",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
                   }, {
-                     "locator" : "190:27",
-                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                     "value" : "1",
-                     "type" : "Literal"
+                     "locator" : "190:33-190:55",
+                     "type" : "GreaterOrEqual",
+                     "operand" : [ {
+                        "locator" : "190:33-190:50",
+                        "name" : "ImagingResultCount",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "locator" : "190:55",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
                   } ]
                } ]
             }
