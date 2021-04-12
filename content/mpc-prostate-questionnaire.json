@@ -41,6 +41,24 @@
     "resourceType": "Questionnaire",
     "item": [
         {
+            "type": "display",
+            "linkId": "learn-more-intro",
+            "text": "What Tests Are Used to Screen for Prostate Cancer?<br/><br/>Screening for prostate cancer is a blood test called the prostate-specific antigen or PSA test. A high PSA level can be a sign of prostate cancer. However, other things like an enlarged prostate or swelling of the prostate also cause a high PSA level. A biopsy of the prostate is necessary to make the diagnosis of cancer.",
+            "prefix": "Learn More"
+        },
+        {
+            "type": "display",
+            "linkId": "learn-more-video",
+            "text": "Watch a 3-minute video about the PSA testing. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <a id=\"replace\" value=\"psa-video\"></a>",
+            "prefix": "Learn More"
+        },
+        {
+            "type": "display",
+            "linkId": "learn-more-uspstf",
+            "text": "The website linked below provides some information from the U.S. Preventive Services Task Force (USPSTF) about the benefits and harms of prostate cancer screening. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <img width=\"100%\" src=\"https://www.cdc.gov/cancer/prostate/images/prostate-decision-guide-300.jpg\"/> <a id=\"replace\" value=\"psa-benefits-link\"></a> ",
+            "prefix": "Learn More"
+        },
+        {
             "type": "choice",
             "code": [
                 {
@@ -52,7 +70,7 @@
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/uv/StructureDefinition/cpg-answerValueSetSource",
-                    "valueCanonical": "http://fhir.org/guides/preventive-care/ValueSet/pain-types"
+                    "valueCanonical": "http://fhir.org/guides/preventive-care/ValueSet/next-step-types"
                 }
             ],
             "required": true,
@@ -456,18 +474,6 @@
           "prefix": "Next Steps",
           "text": "Would you like to discuss prostate cancer screening at your next appointment? MyPreventiveCare can let you provider know what you want.",
           "type": "boolean"
-        },
-        {
-            "type": "display",
-            "linkId": "13",
-            "text": "Watch a 3-minute video about the PSA testing. We’d like to suggest you watch the video to help you prepare for your upcoming visit. This video can help you prepare to ask questions that are important to you when you visit with your provider. <br/> <br/> <a id=\"replace\" value=\"psa-video\"></a>",
-            "prefix": "Learn More"
-        },
-        {
-            "type": "display",
-            "linkId": "14",
-            "text": "The website linked below provides some information from the U.S. Preventive Services Task Force (USPSTF) about the benefits and harms of prostate cancer screening. This information can help you prepare to ask questions that are important to you when you visit with your provider.<br/> <br/> <img width=\"100%\" src=\"https://www.cdc.gov/cancer/prostate/images/prostate-decision-guide-300.jpg\"/> <a id=\"replace\" value=\"psa-benefits-link\"></a> ",
-            "prefix": "Learn More"
         },
         {
             "type": "group",
