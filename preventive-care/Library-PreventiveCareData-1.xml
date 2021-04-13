@@ -21,75 +21,215 @@
             <operand locator="22:1-22:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def locator="26:1-34:28" name="Patient Race" context="Patient" accessLevel="Public">
-         <expression locator="27:3-34:28" xsi:type="Query">
-            <source locator="27:3-31:6" alias="E">
-               <expression locator="27:3-31:4" xsi:type="Flatten">
-                  <operand locator="27:12-31:3" xsi:type="Query">
-                     <source locator="28:5-28:31" alias="Extension">
-                        <expression locator="28:5-28:21" path="extension" xsi:type="Property">
+      <def locator="26:1-29:2" name="Patient Name" context="Patient" accessLevel="Public">
+         <expression locator="27:2-29:2" xsi:type="Coalesce">
+            <operand locator="27:11-27:36" path="value" xsi:type="Property">
+               <source locator="27:11-27:30" path="text" xsi:type="Property">
+                  <source locator="27:11-27:25" xsi:type="Indexer">
+                     <operand locator="27:11-27:22" path="name" xsi:type="Property">
+                        <source locator="27:11-27:17" name="Patient" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand locator="27:24" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                  </source>
+               </source>
+            </operand>
+            <operand locator="28:4-28:113" xsi:type="Concatenate">
+               <operand locator="28:5-28:59" xsi:type="Concatenate">
+                  <operand locator="28:5-28:53" xsi:type="Combine">
+                     <source locator="28:13-28:47" xsi:type="Query">
+                        <source locator="28:13-28:32" alias="G">
+                           <expression locator="28:13-28:30" xsi:type="Flatten">
+                              <operand xsi:type="Query">
+                                 <source alias="$this">
+                                    <expression path="name" xsi:type="Property">
+                                       <source name="Patient" xsi:type="ExpressionRef"/>
+                                    </expression>
+                                 </source>
+                                 <where xsi:type="Not">
+                                    <operand xsi:type="IsNull">
+                                       <operand path="given" xsi:type="Property">
+                                          <source name="$this" xsi:type="AliasRef"/>
+                                       </operand>
+                                    </operand>
+                                 </where>
+                                 <return distinct="false">
+                                    <expression path="given" xsi:type="Property">
+                                       <source name="$this" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </operand>
+                           </expression>
+                        </source>
+                        <return locator="28:34-28:47">
+                           <expression locator="28:41-28:47" path="value" scope="G" xsi:type="Property"/>
+                        </return>
+                     </source>
+                     <separator locator="28:50-28:52" valueType="t:String" value=" " xsi:type="Literal"/>
+                  </operand>
+                  <operand locator="28:57-28:59" valueType="t:String" value=" " xsi:type="Literal"/>
+               </operand>
+               <operand locator="28:63-28:112" xsi:type="Combine">
+                  <source locator="28:71-28:106" xsi:type="Query">
+                     <source locator="28:71-28:91" alias="F">
+                        <expression locator="28:71-28:89" xsi:type="Query">
+                           <source alias="$this">
+                              <expression path="name" xsi:type="Property">
+                                 <source name="Patient" xsi:type="ExpressionRef"/>
+                              </expression>
+                           </source>
+                           <where xsi:type="Not">
+                              <operand xsi:type="IsNull">
+                                 <operand path="family" xsi:type="Property">
+                                    <source name="$this" xsi:type="AliasRef"/>
+                                 </operand>
+                              </operand>
+                           </where>
+                           <return distinct="false">
+                              <expression path="family" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </expression>
+                     </source>
+                     <return locator="28:93-28:106">
+                        <expression locator="28:100-28:106" path="value" scope="F" xsi:type="Property"/>
+                     </return>
+                  </source>
+                  <separator locator="28:109-28:111" valueType="t:String" value=" " xsi:type="Literal"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def locator="31:1-34:15" name="Patient Birth Sex" context="Patient" accessLevel="Public">
+         <expression locator="32:3-34:15" path="value" xsi:type="Property">
+            <source locator="32:3-34:9" path="value" xsi:type="Property">
+               <source locator="32:3-34:3" xsi:type="First">
+                  <source locator="32:9-33:86" xsi:type="Query">
+                     <source locator="32:9-32:27" alias="e">
+                        <expression locator="32:9-32:25" path="extension" xsi:type="Property">
                            <source name="Patient" xsi:type="ExpressionRef"/>
                         </expression>
                      </source>
-                     <where locator="29:7-29:90" xsi:type="Equal">
+                     <where locator="33:7-33:86" xsi:type="Equal">
                         <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                           <operand locator="29:13-29:25" path="url" scope="Extension" xsi:type="Property"/>
+                           <operand locator="33:13-33:17" path="url" scope="e" xsi:type="Property"/>
                         </operand>
-                        <operand locator="29:29-29:90" valueType="t:String" value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race" xsi:type="Literal"/>
+                        <operand locator="33:21-33:86" valueType="t:String" value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex" xsi:type="Literal"/>
                      </where>
-                     <return locator="30:9-30:34">
-                        <expression locator="30:16-30:34" path="extension" scope="Extension" xsi:type="Property"/>
+                  </source>
+               </source>
+            </source>
+         </expression>
+      </def>
+      <def locator="36:1-44:28" name="Patient Race" context="Patient" accessLevel="Public">
+         <expression locator="37:3-44:28" xsi:type="Query">
+            <source locator="37:3-41:6" alias="E">
+               <expression locator="37:3-41:4" xsi:type="Flatten">
+                  <operand locator="37:12-41:3" xsi:type="Query">
+                     <source locator="38:5-38:31" alias="Extension">
+                        <expression locator="38:5-38:21" path="extension" xsi:type="Property">
+                           <source name="Patient" xsi:type="ExpressionRef"/>
+                        </expression>
+                     </source>
+                     <where locator="39:7-39:90" xsi:type="Equal">
+                        <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand locator="39:13-39:25" path="url" scope="Extension" xsi:type="Property"/>
+                        </operand>
+                        <operand locator="39:29-39:90" valueType="t:String" value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race" xsi:type="Literal"/>
+                     </where>
+                     <return locator="40:9-40:34">
+                        <expression locator="40:16-40:34" path="extension" scope="Extension" xsi:type="Property"/>
                      </return>
                   </operand>
                </expression>
             </source>
-            <where locator="32:5-33:27" xsi:type="Or">
-               <operand locator="32:11-32:31" xsi:type="Equal">
+            <where locator="42:5-43:27" xsi:type="Or">
+               <operand locator="42:11-42:31" xsi:type="Equal">
                   <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                     <operand locator="32:11-32:15" path="url" scope="E" xsi:type="Property"/>
+                     <operand locator="42:11-42:15" path="url" scope="E" xsi:type="Property"/>
                   </operand>
-                  <operand locator="32:19-32:31" valueType="t:String" value="ombCategory" xsi:type="Literal"/>
+                  <operand locator="42:19-42:31" valueType="t:String" value="ombCategory" xsi:type="Literal"/>
                </operand>
-               <operand locator="33:10-33:27" xsi:type="Equal">
+               <operand locator="43:10-43:27" xsi:type="Equal">
                   <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                     <operand locator="33:10-33:14" path="url" scope="E" xsi:type="Property"/>
+                     <operand locator="43:10-43:14" path="url" scope="E" xsi:type="Property"/>
                   </operand>
-                  <operand locator="33:18-33:27" valueType="t:String" value="detailed" xsi:type="Literal"/>
+                  <operand locator="43:18-43:27" valueType="t:String" value="detailed" xsi:type="Literal"/>
                </operand>
             </where>
-            <return locator="34:5-34:28">
-               <expression locator="34:12-34:28" strict="false" xsi:type="As">
-                  <operand locator="34:12-34:18" path="value" scope="E" xsi:type="Property"/>
-                  <asTypeSpecifier locator="34:23-34:28" name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+            <return locator="44:5-44:28">
+               <expression locator="44:12-44:28" strict="false" xsi:type="As">
+                  <operand locator="44:12-44:18" path="value" scope="E" xsi:type="Property"/>
+                  <asTypeSpecifier locator="44:23-44:28" name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
                </expression>
             </return>
          </expression>
       </def>
-      <def locator="38:1-39:25" name="Patient is male" context="Patient" accessLevel="Public">
-         <expression locator="39:3-39:25" xsi:type="Equal">
-            <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-               <operand locator="39:3-39:16" path="gender" xsi:type="Property">
-                  <source locator="39:3-39:9" name="Patient" xsi:type="ExpressionRef"/>
-               </operand>
-            </operand>
-            <operand locator="39:20-39:25" valueType="t:String" value="male" xsi:type="Literal"/>
+      <def locator="46:1-53:42" name="Patient Race Text" context="Patient" accessLevel="Public">
+         <expression locator="47:3-53:42" path="value" xsi:type="Property">
+            <source locator="47:3-53:36" xsi:type="First">
+               <source locator="47:9-53:35" xsi:type="Query">
+                  <source locator="47:9-51:6" alias="E">
+                     <expression locator="47:9-51:4" xsi:type="Flatten">
+                        <operand locator="47:18-51:3" xsi:type="Query">
+                           <source locator="48:5-48:31" alias="Extension">
+                              <expression locator="48:5-48:21" path="extension" xsi:type="Property">
+                                 <source name="Patient" xsi:type="ExpressionRef"/>
+                              </expression>
+                           </source>
+                           <where locator="49:7-49:90" xsi:type="Equal">
+                              <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand locator="49:13-49:25" path="url" scope="Extension" xsi:type="Property"/>
+                              </operand>
+                              <operand locator="49:29-49:90" valueType="t:String" value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race" xsi:type="Literal"/>
+                           </where>
+                           <return locator="50:9-50:34">
+                              <expression locator="50:16-50:34" path="extension" scope="Extension" xsi:type="Property"/>
+                           </return>
+                        </operand>
+                     </expression>
+                  </source>
+                  <where locator="52:5-52:24" xsi:type="Equal">
+                     <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="52:11-52:15" path="url" scope="E" xsi:type="Property"/>
+                     </operand>
+                     <operand locator="52:19-52:24" valueType="t:String" value="text" xsi:type="Literal"/>
+                  </where>
+                  <return locator="53:5-53:35">
+                     <expression locator="53:12-53:35" strict="false" xsi:type="As">
+                        <operand locator="53:13-53:19" path="value" scope="E" xsi:type="Property"/>
+                        <asTypeSpecifier locator="53:24-53:34" name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                     </expression>
+                  </return>
+               </source>
+            </source>
          </expression>
       </def>
-      <def locator="41:1-42:27" name="Patient is female" context="Patient" accessLevel="Public">
-         <expression locator="42:3-42:27" xsi:type="Equal">
+      <def locator="57:1-58:25" name="Patient is male" context="Patient" accessLevel="Public">
+         <expression locator="58:3-58:25" xsi:type="Equal">
             <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-               <operand locator="42:3-42:16" path="gender" xsi:type="Property">
-                  <source locator="42:3-42:9" name="Patient" xsi:type="ExpressionRef"/>
+               <operand locator="58:3-58:16" path="gender" xsi:type="Property">
+                  <source locator="58:3-58:9" name="Patient" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
-            <operand locator="42:20-42:27" valueType="t:String" value="female" xsi:type="Literal"/>
+            <operand locator="58:20-58:25" valueType="t:String" value="male" xsi:type="Literal"/>
          </expression>
       </def>
-      <def locator="44:1-45:57" name="Race is African American" context="Patient" accessLevel="Public">
-         <expression locator="45:3-45:57" xsi:type="Contains">
+      <def locator="60:1-61:27" name="Patient is female" context="Patient" accessLevel="Public">
+         <expression locator="61:3-61:27" xsi:type="Equal">
+            <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand locator="61:3-61:16" path="gender" xsi:type="Property">
+                  <source locator="61:3-61:9" name="Patient" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand locator="61:20-61:27" valueType="t:String" value="female" xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def locator="63:1-64:57" name="Race is African American" context="Patient" accessLevel="Public">
+         <expression locator="64:3-64:57" xsi:type="Contains">
             <operand xsi:type="Query">
                <source alias="X">
-                  <expression locator="45:3-45:16" name="Patient Race" xsi:type="ExpressionRef"/>
+                  <expression locator="64:3-64:16" name="Patient Race" xsi:type="ExpressionRef"/>
                </source>
                <return distinct="false">
                   <expression name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
@@ -97,42 +237,42 @@
                   </expression>
                </return>
             </operand>
-            <operand locator="45:27-45:57" name="Black or African American" libraryName="PCC" xsi:type="CodeRef"/>
+            <operand locator="64:27-64:57" name="Black or African American" libraryName="PCC" xsi:type="CodeRef"/>
          </expression>
       </def>
-      <def locator="47:1-48:20" name="Patient is 40 or older" context="Patient" accessLevel="Public">
-         <expression locator="48:3-48:20" xsi:type="GreaterOrEqual">
-            <operand locator="48:3-48:14" precision="Year" xsi:type="CalculateAge">
+      <def locator="66:1-67:20" name="Patient is 40 or older" context="Patient" accessLevel="Public">
+         <expression locator="67:3-67:20" xsi:type="GreaterOrEqual">
+            <operand locator="67:3-67:14" precision="Year" xsi:type="CalculateAge">
                <operand path="birthDate.value" xsi:type="Property">
                   <source name="Patient" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
-            <operand locator="48:19-48:20" valueType="t:Integer" value="40" xsi:type="Literal"/>
+            <operand locator="67:19-67:20" valueType="t:Integer" value="40" xsi:type="Literal"/>
          </expression>
       </def>
-      <def locator="51:1-52:36" name="Patient PCP" context="Patient" accessLevel="Public">
-         <expression locator="52:3-52:36" xsi:type="First">
-            <source locator="52:9-52:35" path="generalPractitioner" xsi:type="Property">
-               <source locator="52:9-52:15" name="Patient" xsi:type="ExpressionRef"/>
+      <def locator="70:1-71:36" name="Patient PCP" context="Patient" accessLevel="Public">
+         <expression locator="71:3-71:36" xsi:type="First">
+            <source locator="71:9-71:35" path="generalPractitioner" xsi:type="Property">
+               <source locator="71:9-71:15" name="Patient" xsi:type="ExpressionRef"/>
             </source>
          </expression>
       </def>
-      <def locator="56:1-57:56" name="Patient PCP name" context="Patient" accessLevel="Public">
-         <expression locator="57:3-57:56" xsi:type="Coalesce">
-            <operand locator="57:12-57:55" xsi:type="List">
-               <element locator="57:13-57:39" path="value" xsi:type="Property">
-                  <source locator="57:13-57:33" path="display" xsi:type="Property">
-                     <source locator="57:13-57:25" name="Patient PCP" xsi:type="ExpressionRef"/>
+      <def locator="75:1-76:56" name="Patient PCP name" context="Patient" accessLevel="Public">
+         <expression locator="76:3-76:56" xsi:type="Coalesce">
+            <operand locator="76:12-76:55" xsi:type="List">
+               <element locator="76:13-76:39" path="value" xsi:type="Property">
+                  <source locator="76:13-76:33" path="display" xsi:type="Property">
+                     <source locator="76:13-76:25" name="Patient PCP" xsi:type="ExpressionRef"/>
                   </source>
                </element>
-               <element locator="57:42-57:54" valueType="t:String" value="Your Doctor" xsi:type="Literal"/>
+               <element locator="76:42-76:54" valueType="t:String" value="Your Doctor" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="61:1-62:51" name="All active conditions" context="Patient" accessLevel="Public">
-         <expression locator="62:3-62:51" name="Confirmed" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="62:17-62:50" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="62:39-62:49" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
+      <def locator="80:1-81:51" name="All active conditions" context="Patient" accessLevel="Public">
+         <expression locator="81:3-81:51" name="Confirmed" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="81:17-81:50" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="81:39-81:49" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
             </operand>
          </expression>
       </def>

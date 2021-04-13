@@ -22,290 +22,139 @@
             <operand locator="24:1-24:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def locator="31:1-33:40" name="Prostate cancer conditions" context="Patient" accessLevel="Public">
-         <expression locator="32:3-33:40" xsi:type="Query">
-            <source locator="32:3-32:32" alias="C">
-               <expression locator="32:3-32:30" name="All active conditions" libraryName="Data" xsi:type="ExpressionRef"/>
+      <def locator="46:1-47:67" name="PSA Observations" context="Patient" accessLevel="Public">
+         <expression locator="47:3-47:67" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="47:16-47:66" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+               <codes locator="47:30-47:65" name="Prostate Specific Antigen Test" libraryName="PCC" xsi:type="ValueSetRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="61:1-62:32" name="No PSA test results" context="Patient" accessLevel="Public">
+         <expression locator="62:3-62:32" xsi:type="Not">
+            <operand locator="62:7-62:32" xsi:type="Exists">
+               <operand locator="62:13-62:32" name="PSA Observations" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="67:1-68:61" name="Has PSA within two years" context="Patient" accessLevel="Public">
+         <expression locator="68:3-68:61" xsi:type="Exists">
+            <operand locator="68:9-68:61" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="68:34-68:51" name="PSA Observations" xsi:type="ExpressionRef"/>
+               <operand locator="68:54-68:59" value="2" unit="year" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def locator="28:1-33:3" name="Needs Prostate Cancer Screening" context="Patient" accessLevel="Public">
+         <expression locator="29:3-33:3" xsi:type="And">
+            <operand locator="29:3-30:36" xsi:type="And">
+               <operand locator="29:3-29:24" name="Patient is male" libraryName="Data" xsi:type="ExpressionRef"/>
+               <operand locator="30:7-30:36" xsi:type="And">
+                  <operand xsi:type="GreaterOrEqual">
+                     <operand locator="30:7-30:18" precision="Year" xsi:type="CalculateAge">
+                        <operand path="birthDate.value" xsi:type="Property">
+                           <source name="Patient" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                     <operand locator="30:28-30:29" valueType="t:Integer" value="40" xsi:type="Literal"/>
+                  </operand>
+                  <operand xsi:type="LessOrEqual">
+                     <operand locator="30:7-30:18" precision="Year" xsi:type="CalculateAge">
+                        <operand path="birthDate.value" xsi:type="Property">
+                           <source name="Patient" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                     <operand locator="30:35-30:36" valueType="t:Integer" value="70" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand locator="31:7-33:3" xsi:type="Or">
+               <operand locator="31:8-31:28" name="No PSA test results" xsi:type="ExpressionRef"/>
+               <operand locator="32:8-32:37" xsi:type="Not">
+                  <operand locator="32:12-32:37" name="Has PSA within two years" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def locator="38:1-40:40" name="Prostate cancer conditions" context="Patient" accessLevel="Public">
+         <expression locator="39:3-40:40" xsi:type="Query">
+            <source locator="39:3-39:32" alias="C">
+               <expression locator="39:3-39:30" name="All active conditions" libraryName="Data" xsi:type="ExpressionRef"/>
             </source>
-            <where locator="33:5-33:40" xsi:type="Equivalent">
+            <where locator="40:5-40:40" xsi:type="Equivalent">
                <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                  <operand locator="33:11-33:16" path="code" scope="C" xsi:type="Property"/>
+                  <operand locator="40:11-40:16" path="code" scope="C" xsi:type="Property"/>
                </operand>
                <operand xsi:type="ToConcept">
-                  <operand locator="33:20-33:40" name="Prostate cancer" libraryName="PCC" xsi:type="CodeRef"/>
+                  <operand locator="40:20-40:40" name="Prostate cancer" libraryName="PCC" xsi:type="CodeRef"/>
                </operand>
             </where>
          </expression>
       </def>
-      <def locator="28:1-29:40" name="Has prostate cancer Hx" context="Patient" accessLevel="Public">
-         <expression locator="29:3-29:40" xsi:type="Exists">
-            <operand locator="29:9-29:40" name="Prostate cancer conditions" xsi:type="ExpressionRef"/>
+      <def locator="35:1-36:40" name="Has prostate cancer Hx" context="Patient" accessLevel="Public">
+         <expression locator="36:3-36:40" xsi:type="Exists">
+            <operand locator="36:9-36:40" name="Prostate cancer conditions" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="35:1-37:62" name="Has family history of prostate cancer" context="Patient" accessLevel="Public">
-         <expression locator="37:3-37:62" xsi:type="Exists">
-            <operand locator="37:9-37:62" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" codeProperty="code" codeComparator="~" xsi:type="Retrieve">
+      <def locator="42:1-44:62" name="Has family history of prostate cancer" context="Patient" accessLevel="Public">
+         <expression locator="44:3-44:62" xsi:type="Exists">
+            <operand locator="44:9-44:62" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" codeProperty="code" codeComparator="~" xsi:type="Retrieve">
                <codes xsi:type="ToList">
-                  <operand locator="37:22-37:60" name="Family history of prostate cancer" libraryName="PCC" xsi:type="CodeRef"/>
+                  <operand locator="44:22-44:60" name="Family history of prostate cancer" libraryName="PCC" xsi:type="CodeRef"/>
                </codes>
             </operand>
          </expression>
       </def>
-      <def locator="39:1-40:67" name="PSA Observations" context="Patient" accessLevel="Public">
-         <expression locator="40:3-40:67" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="40:16-40:66" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-               <codes locator="40:30-40:65" name="Prostate Specific Antigen Test" libraryName="PCC" xsi:type="ValueSetRef"/>
-            </operand>
+      <def locator="49:1-50:36" name="Last PSA" context="Patient" accessLevel="Public">
+         <expression locator="50:3-50:36" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="50:18-50:35" name="PSA Observations" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="42:1-43:36" name="Last PSA" context="Patient" accessLevel="Public">
-         <expression locator="43:3-43:36" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="43:18-43:35" name="PSA Observations" xsi:type="ExpressionRef"/>
-         </expression>
-      </def>
-      <def locator="45:1-46:37" name="Last PSA value" context="Patient" accessLevel="Public">
-         <expression locator="46:3-46:37" path="value" xsi:type="Property">
-            <source locator="46:3-46:31" name="QuantityValue" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="46:21-46:30" name="Last PSA" xsi:type="ExpressionRef"/>
+      <def locator="52:1-53:37" name="Last PSA value" context="Patient" accessLevel="Public">
+         <expression locator="53:3-53:37" path="value" xsi:type="Property">
+            <source locator="53:3-53:31" name="QuantityValue" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="53:21-53:30" name="Last PSA" xsi:type="ExpressionRef"/>
             </source>
          </expression>
       </def>
-      <def locator="48:1-49:26" name="Last PSA date" context="Patient" accessLevel="Public">
-         <expression locator="49:3-49:26" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="49:16-49:25" name="Last PSA" xsi:type="ExpressionRef"/>
+      <def locator="55:1-56:26" name="Last PSA date" context="Patient" accessLevel="Public">
+         <expression locator="56:3-56:26" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="56:16-56:25" name="Last PSA" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="51:1-52:28" name="Has PSA test" context="Patient" accessLevel="Public">
-         <expression locator="52:3-52:28" xsi:type="Exists">
-            <operand locator="52:9-52:28" name="PSA Observations" xsi:type="ExpressionRef"/>
+      <def locator="58:1-59:28" name="Has PSA test" context="Patient" accessLevel="Public">
+         <expression locator="59:3-59:28" xsi:type="Exists">
+            <operand locator="59:9-59:28" name="PSA Observations" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="54:1-55:32" name="No PSA test results" context="Patient" accessLevel="Public">
-         <expression locator="55:3-55:32" xsi:type="Not">
-            <operand locator="55:7-55:32" xsi:type="Exists">
-               <operand locator="55:13-55:32" name="PSA Observations" xsi:type="ExpressionRef"/>
+      <def locator="64:1-65:61" name="Has PSA within one year" context="Patient" accessLevel="Public">
+         <expression locator="65:3-65:61" xsi:type="Exists">
+            <operand locator="65:9-65:61" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="65:34-65:51" name="PSA Observations" xsi:type="ExpressionRef"/>
+               <operand locator="65:54-65:59" value="1" unit="year" xsi:type="Quantity"/>
             </operand>
          </expression>
       </def>
-      <def locator="57:1-58:61" name="Has PSA within one year" context="Patient" accessLevel="Public">
-         <expression locator="58:3-58:61" xsi:type="Exists">
-            <operand locator="58:9-58:61" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="58:34-58:51" name="PSA Observations" xsi:type="ExpressionRef"/>
-               <operand locator="58:54-58:59" value="1" unit="year" xsi:type="Quantity"/>
-            </operand>
-         </expression>
-      </def>
-      <def locator="60:1-61:61" name="Has PSA within two years" context="Patient" accessLevel="Public">
-         <expression locator="61:3-61:61" xsi:type="Exists">
-            <operand locator="61:9-61:61" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="61:34-61:51" name="PSA Observations" xsi:type="ExpressionRef"/>
-               <operand locator="61:54-61:59" value="2" unit="year" xsi:type="Quantity"/>
-            </operand>
-         </expression>
-      </def>
-      <def locator="63:1-65:43" name="Has high PSA value" context="Patient" accessLevel="Public">
-         <expression locator="64:3-65:43" xsi:type="Exists">
-            <operand locator="64:9-65:43" xsi:type="Query">
-               <source locator="64:10-64:29" alias="C">
-                  <expression locator="64:10-64:27" name="PSA Observations" xsi:type="ExpressionRef"/>
+      <def locator="70:1-72:43" name="Has high PSA value" context="Patient" accessLevel="Public">
+         <expression locator="71:3-72:43" xsi:type="Exists">
+            <operand locator="71:9-72:43" xsi:type="Query">
+               <source locator="71:10-71:29" alias="C">
+                  <expression locator="71:10-71:27" name="PSA Observations" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="65:5-65:42" xsi:type="Greater">
-                  <operand locator="65:11-65:36" path="value" xsi:type="Property">
-                     <source locator="65:11-65:30" name="QuantityValue" libraryName="C3F" xsi:type="FunctionRef">
-                        <operand locator="65:29" name="C" xsi:type="AliasRef"/>
+               <where locator="72:5-72:42" xsi:type="Greater">
+                  <operand locator="72:11-72:36" path="value" xsi:type="Property">
+                     <source locator="72:11-72:30" name="QuantityValue" libraryName="C3F" xsi:type="FunctionRef">
+                        <operand locator="72:29" name="C" xsi:type="AliasRef"/>
                      </source>
                   </operand>
-                  <operand locator="65:40-65:42" valueType="t:Decimal" value="4.0" xsi:type="Literal"/>
+                  <operand locator="72:40-72:42" valueType="t:Decimal" value="4.0" xsi:type="Literal"/>
                </where>
             </operand>
          </expression>
       </def>
-      <def locator="67:1-68:24" name="Last PSA value is high" context="Patient" accessLevel="Public">
-         <expression locator="68:3-68:24" xsi:type="Greater">
-            <operand locator="68:3-68:18" name="Last PSA value" xsi:type="ExpressionRef"/>
-            <operand locator="68:22-68:24" valueType="t:Decimal" value="4.0" xsi:type="Literal"/>
-         </expression>
-      </def>
-      <def locator="76:1-77:90" name="Next Step 1" context="Patient" accessLevel="Public">
-         <expression locator="77:3-77:90" xsi:type="Concatenate">
-            <operand locator="77:3-77:40" xsi:type="Concatenate">
-               <operand locator="77:3-77:14" valueType="t:String" value="Talk with " xsi:type="Literal"/>
-               <operand locator="77:18-77:40" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-            </operand>
-            <operand locator="77:44-77:90" valueType="t:String" value=" about whether you need another PSA test now." xsi:type="Literal"/>
-         </expression>
-      </def>
-      <def locator="79:1-80:118" name="Next Step 4" context="Patient" accessLevel="Public">
-         <expression locator="80:3-80:118" xsi:type="Concatenate">
-            <operand locator="80:3-80:80" valueType="t:String" value="Learn about PSA testing and think about whether you want another test after " xsi:type="Literal"/>
-            <operand locator="80:84-80:118" xsi:type="ToString">
-               <operand locator="80:93-80:117" xsi:type="Add">
-                  <operand locator="80:93-80:107" name="Last PSA date" xsi:type="ExpressionRef"/>
-                  <operand locator="80:111-80:117" value="2" unit="years" xsi:type="Quantity"/>
-               </operand>
-            </operand>
-         </expression>
-      </def>
-      <def locator="84:1-90:8" name="PC Status" context="Patient" accessLevel="Public">
-         <expression locator="85:3-90:8" xsi:type="If">
-            <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="85:6-85:29" name="Has prostate cancer Hx" xsi:type="ExpressionRef"/>
-            </condition>
-            <then locator="86:10-86:85" xsi:type="Concatenate">
-               <operand locator="86:10-86:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-               <operand locator="86:36-86:85" valueType="t:String" value=" says that you have a history of prostate cancer" xsi:type="Literal"/>
-            </then>
-            <else locator="87:8-90:8" xsi:type="If">
-               <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="87:11-87:30" name="Has high PSA value" xsi:type="ExpressionRef"/>
-               </condition>
-               <then locator="88:10-88:89" valueType="t:String" value="you said that you have a history of high PSA value (PSA value higher than 4.0)" xsi:type="Literal"/>
-               <else asType="t:String" xsi:type="As">
-                  <operand locator="90:5-90:8" xsi:type="Null"/>
-               </else>
-            </else>
-         </expression>
-      </def>
-      <def locator="92:1-97:85" name="MI PSA Date 1" context="Patient" accessLevel="Public">
-         <expression locator="93:3-97:85" xsi:type="If">
-            <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="93:6-93:30" name="Has PSA within one year" xsi:type="ExpressionRef"/>
-            </condition>
-            <then locator="94:10-94:164" xsi:type="Concatenate">
-               <operand locator="94:10-94:115" xsi:type="Concatenate">
-                  <operand locator="94:10-94:87" xsi:type="Concatenate">
-                     <operand locator="94:10-94:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-                     <operand locator="94:36-94:87" valueType="t:String" value="'s record states that you last had a PSA test on " xsi:type="Literal"/>
-                  </operand>
-                  <operand locator="94:91-94:115" xsi:type="ToString">
-                     <operand locator="94:100-94:114" name="Last PSA date" xsi:type="ExpressionRef"/>
-                  </operand>
-               </operand>
-               <operand locator="94:119-94:164" valueType="t:String" value=".  You may be up-to-date with your PSA test." xsi:type="Literal"/>
-            </then>
-            <else locator="95:8-97:85" xsi:type="If">
-               <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="95:11-95:24" name="Has PSA test" xsi:type="ExpressionRef"/>
-               </condition>
-               <then locator="96:10-96:159" xsi:type="Concatenate">
-                  <operand locator="96:10-96:115" xsi:type="Concatenate">
-                     <operand locator="96:10-96:87" xsi:type="Concatenate">
-                        <operand locator="96:10-96:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-                        <operand locator="96:36-96:87" valueType="t:String" value="'s record states that you last had a PSA test on " xsi:type="Literal"/>
-                     </operand>
-                     <operand locator="96:91-96:115" xsi:type="ToString">
-                        <operand locator="96:100-96:114" name="Last PSA date" xsi:type="ExpressionRef"/>
-                     </operand>
-                  </operand>
-                  <operand locator="96:119-96:159" valueType="t:String" value=".  You may be due for another PSA test." xsi:type="Literal"/>
-               </then>
-               <else locator="97:8-97:85" xsi:type="Concatenate">
-                  <operand locator="97:8-97:30" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-                  <operand locator="97:34-97:85" valueType="t:String" value=" does not have a record of when your last PSA was." xsi:type="Literal"/>
-               </else>
-            </else>
-         </expression>
-      </def>
-      <def locator="99:1-100:171" name="PSA value 1" context="Patient" accessLevel="Public">
-         <expression locator="100:3-100:171" xsi:type="Concatenate">
-            <operand locator="100:3-100:57" xsi:type="Concatenate">
-               <operand locator="100:3-100:28" valueType="t:String" value="Your last PSA value was " xsi:type="Literal"/>
-               <operand locator="100:32-100:57" xsi:type="ToString">
-                  <operand locator="100:41-100:56" name="Last PSA value" xsi:type="ExpressionRef"/>
-               </operand>
-            </operand>
-            <operand locator="100:61-100:171" valueType="t:String" value=". Generally, a PSA below 4 is considered good. Higher values may be, OK if they are not increasing over time." xsi:type="Literal"/>
-         </expression>
-      </def>
-      <def locator="105:1-115:142" name="PSA risk statement 1" context="Patient" accessLevel="Public">
-         <expression locator="106:3-115:142" xsi:type="If">
-            <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="106:6-106:80" xsi:type="And">
-                  <operand locator="106:6-106:36" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                  <operand locator="106:42-106:80" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-               </operand>
-            </condition>
-            <then locator="107:10-107:134" valueType="t:String" value="You are African American and have a family history of prostate cancer.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
-            <else locator="108:8-115:142" xsi:type="If">
-               <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="108:11-108:89" xsi:type="And">
-                     <operand locator="108:11-108:45" xsi:type="Not">
-                        <operand locator="108:15-108:45" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                     </operand>
-                     <operand locator="108:51-108:89" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-                  </operand>
-               </condition>
-               <then locator="109:10-109:109" valueType="t:String" value="You have a family history of prostate cancer.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
-               <else locator="110:8-115:142" xsi:type="If">
-                  <condition asType="t:Boolean" xsi:type="As">
-                     <operand locator="110:11-110:89" xsi:type="And">
-                        <operand locator="110:11-110:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                        <operand locator="110:47-110:89" xsi:type="Not">
-                           <operand locator="110:51-110:89" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-                        </operand>
-                     </operand>
-                  </condition>
-                  <then locator="111:10-111:89" valueType="t:String" value="You are African American.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
-                  <else locator="112:8-115:142" xsi:type="If">
-                     <condition asType="t:Boolean" xsi:type="As">
-                        <operand locator="112:11-112:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                     </condition>
-                     <then locator="113:10-113:232" valueType="t:String" value="You are African American.  This places you at higher risk for prostate cancer.  You said you are unsure if you have a family history of prostate cancer.  If you do, this also places you at higher risk for prostate cancer." xsi:type="Literal"/>
-                     <else locator="115:5-115:142" valueType="t:String" value="You said you are unsure if you have a family history of prostate cancer.  If you do, this places you at higher risk for prostate cancer." xsi:type="Literal"/>
-                  </else>
-               </else>
-            </else>
-         </expression>
-      </def>
-      <def locator="118:1-128:50" name="PSA risk statement 2" context="Patient" accessLevel="Public">
-         <expression locator="119:3-128:50" xsi:type="If">
-            <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="119:6-119:80" xsi:type="And">
-                  <operand locator="119:6-119:36" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                  <operand locator="119:42-119:80" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-               </operand>
-            </condition>
-            <then locator="120:10-120:76" valueType="t:String" value="are African American and have a family history of prostate cancer" xsi:type="Literal"/>
-            <else locator="121:8-128:50" xsi:type="If">
-               <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="121:11-121:89" xsi:type="And">
-                     <operand locator="121:11-121:45" xsi:type="Not">
-                        <operand locator="121:15-121:45" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                     </operand>
-                     <operand locator="121:51-121:89" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-                  </operand>
-               </condition>
-               <then locator="122:10-122:51" valueType="t:String" value="have a family history of prostate cancer" xsi:type="Literal"/>
-               <else locator="123:8-128:50" xsi:type="If">
-                  <condition asType="t:Boolean" xsi:type="As">
-                     <operand locator="123:11-123:89" xsi:type="And">
-                        <operand locator="123:11-123:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                        <operand locator="123:47-123:89" xsi:type="Not">
-                           <operand locator="123:51-123:89" name="Has family history of prostate cancer" xsi:type="ExpressionRef"/>
-                        </operand>
-                     </operand>
-                  </condition>
-                  <then locator="124:10-124:31" valueType="t:String" value="are African American" xsi:type="Literal"/>
-                  <else locator="125:8-128:50" xsi:type="If">
-                     <condition asType="t:Boolean" xsi:type="As">
-                        <operand locator="125:11-125:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
-                     </condition>
-                     <then locator="126:10-126:80" valueType="t:String" value="are African American and may have a family history of prostate cancer" xsi:type="Literal"/>
-                     <else locator="128:5-128:50" valueType="t:String" value="may have a family history of prostate cancer" xsi:type="Literal"/>
-                  </else>
-               </else>
-            </else>
-         </expression>
-      </def>
-      <def locator="132:1-133:101" name="Need PSA statement" context="Patient" accessLevel="Public">
-         <expression locator="133:3-133:101" xsi:type="Concatenate">
-            <operand locator="133:3-133:73" xsi:type="Concatenate">
-               <operand locator="133:3-133:25" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
-               <operand locator="133:29-133:73" valueType="t:String" value="'s record says you last had a PSA test on " xsi:type="Literal"/>
-            </operand>
-            <operand locator="133:77-133:101" xsi:type="ToString">
-               <operand locator="133:86-133:100" name="Last PSA date" xsi:type="ExpressionRef"/>
-            </operand>
+      <def locator="74:1-75:24" name="Last PSA value is high" context="Patient" accessLevel="Public">
+         <expression locator="75:3-75:24" xsi:type="Greater">
+            <operand locator="75:3-75:18" name="Last PSA value" xsi:type="ExpressionRef"/>
+            <operand locator="75:22-75:24" valueType="t:Decimal" value="4.0" xsi:type="Literal"/>
          </expression>
       </def>
    </statements>

@@ -40,15 +40,15 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.4"}
-    h3,h4,h5,h6{--heading-prefix:"6.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.9"}
+    h3,h4,h5,h6{--heading-prefix:"6.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Pre</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -128,7 +128,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Pre - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -177,7 +177,7 @@
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Related Artifacts</h2><table class="grid"><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1</code></td></tr><tr><td>depends-on</td><td><a href="Library-ProstateCancerScreening.html">CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans (version 1.0.0)</a></td></tr></table><h2>Parameters</h2><table class="grid"><tr><td>Patient</td><td>out</td><td>0</td><td>1</td><td>Patient</td></tr><tr><td>Age Between 40 and 70</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Needs Prostate Cancer Screening</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Needs Prostate Cancer Screening Summary</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Needs Prostate Cancer Screening Detail</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Needs Prostate Cancer Screening Indicator</td><td>out</td><td>0</td><td>1</td><td>string</td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Related Artifacts</h2><table class="grid"><tr><td>depends-on</td><td><code>http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1</code></td></tr><tr><td>depends-on</td><td><a href="Library-ProstateCancerScreening.html">CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans (version 1.0.0)</a></td></tr><tr><td>depends-on</td><td><code>http://fhir.org/guides/preventive-care/Library/ProstateCancerSummary|1.0.0</code></td></tr></table><h2>Parameters</h2><table class="grid"><tr><td>Patient</td><td>out</td><td>0</td><td>1</td><td>Patient</td></tr><tr><td>Age Between 40 and 70</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Needs Prostate Cancer Screening</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Needs Prostate Cancer Screening Summary</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Needs Prostate Cancer Screening Detail</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Needs Prostate Cancer Screening Indicator</td><td>out</td><td>0</td><td>1</td><td>string</td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
 
 // CDS Hooks logic for use with CQF Ruler
 
@@ -189,7 +189,8 @@ using FHIR version '4.0.1'
 
 // # Referenced libraries #
 
-include ProstateCancerScreening version '1.0.0' called Prostate
+include ProstateCancerScreening version '1.0.0' called Screening
+include ProstateCancerSummary version '1.0.0' called Summary
 
 // # CDS logic #
 
@@ -205,19 +206,19 @@ define &quot;Age Between 40 and 70&quot;:
 
 define &quot;Needs Prostate Cancer Screening&quot;:
   &quot;Age Between 40 and 70&quot; and
-  (Prostate.&quot;No PSA test results&quot;
-    or (Prostate.&quot;Last PSA value is high&quot; and not Prostate.&quot;Has PSA within one year&quot;)
-    or not Prostate.&quot;Has PSA within two years&quot;
+  (Screening.&quot;No PSA test results&quot;
+    or (Screening.&quot;Last PSA value is high&quot; and not Screening.&quot;Has PSA within one year&quot;)
+    or not Screening.&quot;Has PSA within two years&quot;
   )
 
 define &quot;Needs Prostate Cancer Screening Summary&quot;:
   'Prostate Cancer Screening'
 
 define &quot;Needs Prostate Cancer Screening Detail&quot;:
-  Prostate.&quot;MI PSA Date 1&quot; + ' ' + Prostate.&quot;PSA value 1&quot;
+  Summary.&quot;MI PSA Date 1&quot; + ' ' + Summary.&quot;PSA value 1&quot;
 
 define &quot;Needs Prostate Cancer Screening Indicator&quot;:
-  if Prostate.&quot;Last PSA value is high&quot; then 'critical'
+  if Screening.&quot;Last PSA value is high&quot; then 'critical'
   else 'warning'
 </code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 5Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 8Kb)</p></div>
 
@@ -246,11 +247,13 @@ define &quot;Needs Prostate Cancer Screening Indicator&quot;:
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 8, 2021 22:54+0000">2021-03-08</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 13, 2021 01:53+0000">2021-04-13</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 
+                
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
@@ -272,6 +275,13 @@ define &quot;Needs Prostate Cancer Screening Indicator&quot;:
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
   <!-- Analytics Below
   ================================================== -->
   </body>

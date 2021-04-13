@@ -23,6 +23,16 @@ context Patient
 
 // # General definitions based on value sets and codes #
 
+define "Patient Name":
+ Coalesce(Patient.name[0].text.value,
+   (Combine(Patient.name.given G return G.value, ' ') + ' ' + Combine(Patient.name.family F return F.value, ' '))
+ )
+
+define "Patient Birth Sex":
+  First(Patient.extension e
+      where e.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex'
+  ).value.value
+
 define "Patient Race":
   (flatten (
     Patient.extension Extension
@@ -32,6 +42,15 @@ define "Patient Race":
     where E.url = 'ombCategory'
       or E.url = 'detailed'
     return E.value as Coding
+
+define "Patient Race Text":
+  First((flatten (
+    Patient.extension Extension
+      where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'
+        return Extension.extension
+  )) E
+    where E.url = 'text'
+    return (E.value as FHIR.string)).value
 
 // # Preventive Care logic #
 

@@ -3,16 +3,16 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="fhir.preventive-care-ig"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>PreventiveCareGuidelines</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig</pre><div><p>Implementation guide for preventive care guidelines and patient-centered care plans.</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>PreventiveCareGuidelines</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig</pre><div><p>Implementation guide for preventive care guidelines and patient-directed care plans.</p>
 </div></div>
   </text>
   <url value="http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig"/>
   <version value="1.0.0"/>
   <name value="PreventiveCareGuidelines"/>
-  <title value="Pre"/>
+  <title value="Preventive Care Guidelines IG"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-03-08T22:54:39+00:00"/>
+  <date value="2021-04-13T01:53:55+00:00"/>
   <publisher value="U.S. Preventive Services Task Force (USPSTF)"/>
   <contact>
     <telecom>
@@ -20,7 +20,7 @@
       <value value="https://www.uspreventiveservicestaskforce.org/uspstf/"/>
     </telecom>
   </contact>
-  <description value="Implementation guide for preventive care guidelines and patient-centered care plans."/>
+  <description value="Implementation guide for preventive care guidelines and patient-directed care plans."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -225,40 +225,20 @@
         <valueString value="Library"/>
       </extension>
       <reference>
+        <reference value="Library/PreventiveCareData"/>
+      </reference>
+      <name value="CQL Library - Preventive Care Shared Data Logic"/>
+      <description value="The Preventive Care Data logic library supports data retrieval for decision support."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
         <reference value="Library/FHIRHelpers-4.0.1"/>
       </reference>
       <name value="CQL Library - FHIR Helpers for CDS"/>
       <description value="CQL Library - FHIR Helpers for CDS"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
-        <reference value="Library/PreventiveCareConcepts"/>
-      </reference>
-      <name value="CQL Library - Preventive Care Shared Concepts and Terminology"/>
-      <description value="Preventive care shared concepts and terminology imported by other CQL logic libraries."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
-        <reference value="Library/PreventiveCareHooks"/>
-      </reference>
-      <name value="CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans"/>
-      <description value="This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
-        <reference value="Library/CDSConnectCommons"/>
-      </reference>
-      <name value="CQL Library - Common Logic for CDS"/>
-      <description value="CQL Common Logic for CDS providing shared helper functions."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -275,10 +255,40 @@
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/PreventiveCareData"/>
+        <reference value="Library/CDSConnectCommons"/>
       </reference>
-      <name value="CQL Library - Preventive Care Shared Data Logic"/>
-      <description value="The Preventive Care Data logic library supports data retrieval for decision support."/>
+      <name value="CQL Library - Common Logic for CDS"/>
+      <description value="CQL Common Logic for CDS providing shared helper functions."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/PreventiveCareHooks"/>
+      </reference>
+      <name value="CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans"/>
+      <description value="This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/PreventiveCareConcepts"/>
+      </reference>
+      <name value="CQL Library - Preventive Care Shared Concepts and Terminology"/>
+      <description value="Preventive care shared concepts and terminology imported by other CQL logic libraries."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/PreventiveCareScreening"/>
+      </reference>
+      <name value="PlanDefinition - Recommendations on Prostate Cancer Screening"/>
+      <description value="Recommends decision-making on preventive care screening for Prostate Cancer."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -292,13 +302,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="PlanDefinition"/>
+        <valueString value="ActivityDefinition"/>
       </extension>
       <reference>
-        <reference value="PlanDefinition/PreventiveCareScreening"/>
+        <reference value="ActivityDefinition/NextStepAction"/>
       </reference>
-      <name value="PlanDefinition - Recommendations on Prostate Cancer Screening"/>
-      <description value="Recommends decision-making on preventive care screening for Prostate Cancer."/>
+      <name value="Activity Next Step Action"/>
+      <description value="Activity Definition for next step action in a patient&#39;s care plan."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

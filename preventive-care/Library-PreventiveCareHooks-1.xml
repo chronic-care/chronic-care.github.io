@@ -8,75 +8,76 @@
       <def locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
    </usings>
    <includes>
-      <def locator="13:1-13:63" localIdentifier="Prostate" path="http://fhir.org/guides/preventive-care/ProstateCancerScreening" version="1.0.0"/>
+      <def locator="13:1-13:64" localIdentifier="Screening" path="http://fhir.org/guides/preventive-care/ProstateCancerScreening" version="1.0.0"/>
+      <def locator="14:1-14:60" localIdentifier="Summary" path="http://fhir.org/guides/preventive-care/ProstateCancerSummary" version="1.0.0"/>
    </includes>
    <contexts>
-      <def locator="17:1-17:15" name="Patient"/>
+      <def locator="18:1-18:15" name="Patient"/>
    </contexts>
    <statements>
-      <def locator="17:1-17:15" name="Patient" context="Patient">
+      <def locator="18:1-18:15" name="Patient" context="Patient">
          <expression xsi:type="SingletonFrom">
-            <operand locator="17:1-17:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+            <operand locator="18:1-18:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def locator="24:1-25:32" name="Age Between 40 and 70" context="Patient" accessLevel="Public">
-         <expression locator="25:3-25:32" xsi:type="And">
+      <def locator="25:1-26:32" name="Age Between 40 and 70" context="Patient" accessLevel="Public">
+         <expression locator="26:3-26:32" xsi:type="And">
             <operand xsi:type="GreaterOrEqual">
-               <operand locator="25:3-25:14" precision="Year" xsi:type="CalculateAge">
+               <operand locator="26:3-26:14" precision="Year" xsi:type="CalculateAge">
                   <operand path="birthDate.value" xsi:type="Property">
                      <source name="Patient" xsi:type="ExpressionRef"/>
                   </operand>
                </operand>
-               <operand locator="25:24-25:25" valueType="t:Integer" value="40" xsi:type="Literal"/>
+               <operand locator="26:24-26:25" valueType="t:Integer" value="40" xsi:type="Literal"/>
             </operand>
             <operand xsi:type="LessOrEqual">
-               <operand locator="25:3-25:14" precision="Year" xsi:type="CalculateAge">
+               <operand locator="26:3-26:14" precision="Year" xsi:type="CalculateAge">
                   <operand path="birthDate.value" xsi:type="Property">
                      <source name="Patient" xsi:type="ExpressionRef"/>
                   </operand>
                </operand>
-               <operand locator="25:31-25:32" valueType="t:Integer" value="70" xsi:type="Literal"/>
+               <operand locator="26:31-26:32" valueType="t:Integer" value="70" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def locator="27:1-32:3" name="Needs Prostate Cancer Screening" context="Patient" accessLevel="Public">
-         <expression locator="28:3-32:3" xsi:type="And">
-            <operand locator="28:3-28:25" name="Age Between 40 and 70" xsi:type="ExpressionRef"/>
-            <operand locator="29:3-32:3" xsi:type="Or">
-               <operand locator="29:4-30:85" xsi:type="Or">
-                  <operand locator="29:4-29:33" name="No PSA test results" libraryName="Prostate" xsi:type="ExpressionRef"/>
-                  <operand locator="30:8-30:85" xsi:type="And">
-                     <operand locator="30:9-30:41" name="Last PSA value is high" libraryName="Prostate" xsi:type="ExpressionRef"/>
-                     <operand locator="30:47-30:84" xsi:type="Not">
-                        <operand locator="30:51-30:84" name="Has PSA within one year" libraryName="Prostate" xsi:type="ExpressionRef"/>
+      <def locator="28:1-33:3" name="Needs Prostate Cancer Screening" context="Patient" accessLevel="Public">
+         <expression locator="29:3-33:3" xsi:type="And">
+            <operand locator="29:3-29:25" name="Age Between 40 and 70" xsi:type="ExpressionRef"/>
+            <operand locator="30:3-33:3" xsi:type="Or">
+               <operand locator="30:4-31:87" xsi:type="Or">
+                  <operand locator="30:4-30:34" name="No PSA test results" libraryName="Screening" xsi:type="ExpressionRef"/>
+                  <operand locator="31:8-31:87" xsi:type="And">
+                     <operand locator="31:9-31:42" name="Last PSA value is high" libraryName="Screening" xsi:type="ExpressionRef"/>
+                     <operand locator="31:48-31:86" xsi:type="Not">
+                        <operand locator="31:52-31:86" name="Has PSA within one year" libraryName="Screening" xsi:type="ExpressionRef"/>
                      </operand>
                   </operand>
                </operand>
-               <operand locator="31:8-31:46" xsi:type="Not">
-                  <operand locator="31:12-31:46" name="Has PSA within two years" libraryName="Prostate" xsi:type="ExpressionRef"/>
+               <operand locator="32:8-32:47" xsi:type="Not">
+                  <operand locator="32:12-32:47" name="Has PSA within two years" libraryName="Screening" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
          </expression>
       </def>
-      <def locator="34:1-35:29" name="Needs Prostate Cancer Screening Summary" context="Patient" accessLevel="Public">
-         <expression locator="35:3-35:29" valueType="t:String" value="Prostate Cancer Screening" xsi:type="Literal"/>
+      <def locator="35:1-36:29" name="Needs Prostate Cancer Screening Summary" context="Patient" accessLevel="Public">
+         <expression locator="36:3-36:29" valueType="t:String" value="Prostate Cancer Screening" xsi:type="Literal"/>
       </def>
-      <def locator="37:1-38:57" name="Needs Prostate Cancer Screening Detail" context="Patient" accessLevel="Public">
-         <expression locator="38:3-38:57" xsi:type="Concatenate">
-            <operand locator="38:3-38:32" xsi:type="Concatenate">
-               <operand locator="38:3-38:26" name="MI PSA Date 1" libraryName="Prostate" xsi:type="ExpressionRef"/>
-               <operand locator="38:30-38:32" valueType="t:String" value=" " xsi:type="Literal"/>
+      <def locator="38:1-39:55" name="Needs Prostate Cancer Screening Detail" context="Patient" accessLevel="Public">
+         <expression locator="39:3-39:55" xsi:type="Concatenate">
+            <operand locator="39:3-39:31" xsi:type="Concatenate">
+               <operand locator="39:3-39:25" name="MI PSA Date 1" libraryName="Summary" xsi:type="ExpressionRef"/>
+               <operand locator="39:29-39:31" valueType="t:String" value=" " xsi:type="Literal"/>
             </operand>
-            <operand locator="38:36-38:57" name="PSA value 1" libraryName="Prostate" xsi:type="ExpressionRef"/>
+            <operand locator="39:35-39:55" name="PSA value 1" libraryName="Summary" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="40:1-42:16" name="Needs Prostate Cancer Screening Indicator" context="Patient" accessLevel="Public">
-         <expression locator="41:3-42:16" xsi:type="If">
+      <def locator="41:1-43:16" name="Needs Prostate Cancer Screening Indicator" context="Patient" accessLevel="Public">
+         <expression locator="42:3-43:16" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="41:6-41:38" name="Last PSA value is high" libraryName="Prostate" xsi:type="ExpressionRef"/>
+               <operand locator="42:6-42:39" name="Last PSA value is high" libraryName="Screening" xsi:type="ExpressionRef"/>
             </condition>
-            <then locator="41:45-41:54" valueType="t:String" value="critical" xsi:type="Literal"/>
-            <else locator="42:8-42:16" valueType="t:String" value="warning" xsi:type="Literal"/>
+            <then locator="42:46-42:55" valueType="t:String" value="critical" xsi:type="Literal"/>
+            <else locator="43:8-43:16" valueType="t:String" value="warning" xsi:type="Literal"/>
          </expression>
       </def>
    </statements>

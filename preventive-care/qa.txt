@@ -1,25 +1,30 @@
 ﻿PreventiveCareGuidelines : Validation Results
 =========================================
 
-err = 14, warn = 0, info = 16
-IG Publisher Version: 1.1.63
-Generated Mon Mar 08 22:54:56 UTC 2021. FHIR version 4.0.1 for fhir.preventive-care-ig#1.0.0 (canonical = http://fhir.org/guides/preventive-care)
+err = 12, warn = 1, info = 16
+IG Publisher Version: 1.1.65
+Generated Tue Apr 13 01:54:11 UTC 2021. FHIR version 4.0.1 for fhir.preventive-care-ig#1.0.0 (canonical = http://fhir.org/guides/preventive-care)
 
- Build Errors : 0 / 0 / 0
+ Build Errors : 1 / 0 / 0
  /github/workspace/input/contentig : 0 / 0 / 1
+ /github/workspace/input/resources/activitydefinition/activitydefinition-NextStep : 0 / 0 / 2
  /github/workspace/input/resources/library/library-CDSConnectCommons : 2 / 0 / 8
  /github/workspace/input/resources/library/library-FHIRHelpers : 1 / 0 / 8
  /github/workspace/input/resources/library/library-PreventiveCareConcepts : 0 / 0 / 8
- /github/workspace/input/resources/library/library-PreventiveCareData : 2 / 0 / 8
+ /github/workspace/input/resources/library/library-PreventiveCareData : 2 / 1 / 8
  /github/workspace/input/resources/library/library-PreventiveCareHooks : 1 / 0 / 3
  /github/workspace/input/resources/library/library-ProstateCancerScreening : 3 / 0 / 8
- /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning : 3 / 0 / 2
+ /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning : 0 / 0 / 2
  /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCareScreening : 0 / 0 / 2
  /github/workspace/input/vocabulary/valueset/valueset-2.16.840.1.113883.3.526.2.215 : 2 / 0 / 1
 </table>
 == n/a ==
+ERROR: /github/workspace/input/cql/ProstateCancerSummary.cql: CQL source was not associated with a library resource in the IG.
 == /github/workspace/input/contentig.xml ==
 INFORMATION: ImplementationGuide/fhir.preventive-care-ig: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+== /github/workspace/input/resources/activitydefinition/activitydefinition-NextStep.json ==
+INFORMATION: ActivityDefinition/NextStepAction: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ActivityDefinition
+INFORMATION: ActivityDefinition/NextStepAction: ActivityDefinition: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity - listed in meta
 == /github/workspace/input/resources/library/library-CDSConnectCommons.json ==
 INFORMATION: Library/CDSConnectCommons: Library: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library
 ERROR: Library/CDSConnectCommons: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve
@@ -51,6 +56,7 @@ INFORMATION: Library/PreventiveCareConcepts: Library: Validate resource against 
 INFORMATION: Library/PreventiveCareConcepts: Library: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta
 INFORMATION: Library/PreventiveCareConcepts: Library.content[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary
 == /github/workspace/input/resources/library/library-PreventiveCareData.json ==
+WARNING: PreventiveCareData.cql: Result type choice<System.Boolean,System.Time,System.DateTime,FHIR.CodeableConcept,FHIR.Quantity,FHIR.Range,FHIR.Reference,System.Integer,FHIR.decimal,FHIR.string,System.Date,System.String,System.Decimal> of definition Patient Birth Sex is not supported; implementations may not be able to use the result of this expression
 INFORMATION: Library/PreventiveCareData: Library: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library
 ERROR: Library/PreventiveCareData: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve
 ERROR: Library/PreventiveCareData: Library.relatedArtifact[1].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve
@@ -79,11 +85,8 @@ INFORMATION: Library/ProstateCancerScreening: Library: Validate resource against
 INFORMATION: Library/ProstateCancerScreening: Library: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary - listed in meta
 INFORMATION: Library/ProstateCancerScreening: Library.content[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablelibrary
 == /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json ==
-ERROR: PlanDefinition.where(url = 'http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening'): Conformance resource /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning.json - the canonical URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCarePlanning) does not match the URL (http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening)
-ERROR: PlanDefinition.url: Resource id/url mismatch: PreventiveCarePlanning/http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening
 INFORMATION: PlanDefinition/PreventiveCarePlanning: PlanDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
 INFORMATION: PlanDefinition/PreventiveCarePlanning: PlanDefinition: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-pathwaydefinition - listed in meta
-ERROR: /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCarePlanning: URL Mismatch http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCarePlanning vs http://fhir.org/guides/preventive-care/PlanDefinition/PreventiveCareScreening
 == /github/workspace/input/resources/plandefinition/plandefinition-PreventiveCareScreening.json ==
 INFORMATION: PlanDefinition/PreventiveCareScreening: PlanDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
 INFORMATION: PlanDefinition/PreventiveCareScreening: PlanDefinition: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition - listed in meta

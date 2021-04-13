@@ -3,15 +3,15 @@
   "id": "fhir.preventive-care-ig",
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PreventiveCareGuidelines</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig</pre><div><p>Implementation guide for preventive care guidelines and patient-centered care plans.</p>\n</div></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PreventiveCareGuidelines</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig</pre><div><p>Implementation guide for preventive care guidelines and patient-directed care plans.</p>\n</div></div>"
   },
   "url": "http://fhir.org/guides/preventive-care/ImplementationGuide/fhir.preventive-care-ig",
   "version": "1.0.0",
   "name": "PreventiveCareGuidelines",
-  "title": "Pre",
+  "title": "Preventive Care Guidelines IG",
   "status": "draft",
   "experimental": false,
-  "date": "2021-03-08T22:54:39+00:00",
+  "date": "2021-04-13T01:53:55+00:00",
   "publisher": "U.S. Preventive Services Task Force (USPSTF)",
   "contact": [
     {
@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "description": "Implementation guide for preventive care guidelines and patient-centered care plans.",
+  "description": "Implementation guide for preventive care guidelines and patient-directed care plans.",
   "jurisdiction": [
     {
       "coding": [
@@ -358,49 +358,23 @@
           }
         ],
         "reference": {
+          "reference": "Library/PreventiveCareData"
+        },
+        "name": "CQL Library - Preventive Care Shared Data Logic",
+        "description": "The Preventive Care Data logic library supports data retrieval for decision support."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
           "reference": "Library/FHIRHelpers-4.0.1"
         },
         "name": "CQL Library - FHIR Helpers for CDS",
         "description": "CQL Library - FHIR Helpers for CDS"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/PreventiveCareConcepts"
-        },
-        "name": "CQL Library - Preventive Care Shared Concepts and Terminology",
-        "description": "Preventive care shared concepts and terminology imported by other CQL logic libraries."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/PreventiveCareHooks"
-        },
-        "name": "CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans",
-        "description": "This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/CDSConnectCommons"
-        },
-        "name": "CQL Library - Common Logic for CDS",
-        "description": "CQL Common Logic for CDS providing shared helper functions."
       },
       {
         "extension": [
@@ -423,10 +397,49 @@
           }
         ],
         "reference": {
-          "reference": "Library/PreventiveCareData"
+          "reference": "Library/CDSConnectCommons"
         },
-        "name": "CQL Library - Preventive Care Shared Data Logic",
-        "description": "The Preventive Care Data logic library supports data retrieval for decision support."
+        "name": "CQL Library - Common Logic for CDS",
+        "description": "CQL Common Logic for CDS providing shared helper functions."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/PreventiveCareHooks"
+        },
+        "name": "CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans",
+        "description": "This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/PreventiveCareConcepts"
+        },
+        "name": "CQL Library - Preventive Care Shared Concepts and Terminology",
+        "description": "Preventive care shared concepts and terminology imported by other CQL logic libraries."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PlanDefinition"
+          }
+        ],
+        "reference": {
+          "reference": "PlanDefinition/PreventiveCareScreening"
+        },
+        "name": "PlanDefinition - Recommendations on Prostate Cancer Screening",
+        "description": "Recommends decision-making on preventive care screening for Prostate Cancer."
       },
       {
         "extension": [
@@ -445,14 +458,14 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "PlanDefinition"
+            "valueString": "ActivityDefinition"
           }
         ],
         "reference": {
-          "reference": "PlanDefinition/PreventiveCareScreening"
+          "reference": "ActivityDefinition/NextStepAction"
         },
-        "name": "PlanDefinition - Recommendations on Prostate Cancer Screening",
-        "description": "Recommends decision-making on preventive care screening for Prostate Cancer."
+        "name": "Activity Next Step Action",
+        "description": "Activity Definition for next step action in a patient's care plan."
       },
       {
         "extension": [

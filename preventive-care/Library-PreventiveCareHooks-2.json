@@ -26,44 +26,49 @@
       },
       "includes" : {
          "def" : [ {
-            "locator" : "13:1-13:63",
-            "localIdentifier" : "Prostate",
+            "locator" : "13:1-13:64",
+            "localIdentifier" : "Screening",
             "path" : "http://fhir.org/guides/preventive-care/ProstateCancerScreening",
+            "version" : "1.0.0"
+         }, {
+            "locator" : "14:1-14:60",
+            "localIdentifier" : "Summary",
+            "path" : "http://fhir.org/guides/preventive-care/ProstateCancerSummary",
             "version" : "1.0.0"
          } ]
       },
       "contexts" : {
          "def" : [ {
-            "locator" : "17:1-17:15",
+            "locator" : "18:1-18:15",
             "name" : "Patient"
          } ]
       },
       "statements" : {
          "def" : [ {
-            "locator" : "17:1-17:15",
+            "locator" : "18:1-18:15",
             "name" : "Patient",
             "context" : "Patient",
             "expression" : {
                "type" : "SingletonFrom",
                "operand" : {
-                  "locator" : "17:1-17:15",
+                  "locator" : "18:1-18:15",
                   "dataType" : "{http://hl7.org/fhir}Patient",
                   "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
                   "type" : "Retrieve"
                }
             }
          }, {
-            "locator" : "24:1-25:32",
+            "locator" : "25:1-26:32",
             "name" : "Age Between 40 and 70",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "25:3-25:32",
+               "locator" : "26:3-26:32",
                "type" : "And",
                "operand" : [ {
                   "type" : "GreaterOrEqual",
                   "operand" : [ {
-                     "locator" : "25:3-25:14",
+                     "locator" : "26:3-26:14",
                      "precision" : "Year",
                      "type" : "CalculateAge",
                      "operand" : {
@@ -75,7 +80,7 @@
                         }
                      }
                   }, {
-                     "locator" : "25:24-25:25",
+                     "locator" : "26:24-26:25",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                      "value" : "40",
                      "type" : "Literal"
@@ -83,7 +88,7 @@
                }, {
                   "type" : "LessOrEqual",
                   "operand" : [ {
-                     "locator" : "25:3-25:14",
+                     "locator" : "26:3-26:14",
                      "precision" : "Year",
                      "type" : "CalculateAge",
                      "operand" : {
@@ -95,7 +100,7 @@
                         }
                      }
                   }, {
-                     "locator" : "25:31-25:32",
+                     "locator" : "26:31-26:32",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                      "value" : "70",
                      "type" : "Literal"
@@ -103,125 +108,125 @@
                } ]
             }
          }, {
-            "locator" : "27:1-32:3",
+            "locator" : "28:1-33:3",
             "name" : "Needs Prostate Cancer Screening",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "28:3-32:3",
+               "locator" : "29:3-33:3",
                "type" : "And",
                "operand" : [ {
-                  "locator" : "28:3-28:25",
+                  "locator" : "29:3-29:25",
                   "name" : "Age Between 40 and 70",
                   "type" : "ExpressionRef"
                }, {
-                  "locator" : "29:3-32:3",
+                  "locator" : "30:3-33:3",
                   "type" : "Or",
                   "operand" : [ {
-                     "locator" : "29:4-30:85",
+                     "locator" : "30:4-31:87",
                      "type" : "Or",
                      "operand" : [ {
-                        "locator" : "29:4-29:33",
+                        "locator" : "30:4-30:34",
                         "name" : "No PSA test results",
-                        "libraryName" : "Prostate",
+                        "libraryName" : "Screening",
                         "type" : "ExpressionRef"
                      }, {
-                        "locator" : "30:8-30:85",
+                        "locator" : "31:8-31:87",
                         "type" : "And",
                         "operand" : [ {
-                           "locator" : "30:9-30:41",
+                           "locator" : "31:9-31:42",
                            "name" : "Last PSA value is high",
-                           "libraryName" : "Prostate",
+                           "libraryName" : "Screening",
                            "type" : "ExpressionRef"
                         }, {
-                           "locator" : "30:47-30:84",
+                           "locator" : "31:48-31:86",
                            "type" : "Not",
                            "operand" : {
-                              "locator" : "30:51-30:84",
+                              "locator" : "31:52-31:86",
                               "name" : "Has PSA within one year",
-                              "libraryName" : "Prostate",
+                              "libraryName" : "Screening",
                               "type" : "ExpressionRef"
                            }
                         } ]
                      } ]
                   }, {
-                     "locator" : "31:8-31:46",
+                     "locator" : "32:8-32:47",
                      "type" : "Not",
                      "operand" : {
-                        "locator" : "31:12-31:46",
+                        "locator" : "32:12-32:47",
                         "name" : "Has PSA within two years",
-                        "libraryName" : "Prostate",
+                        "libraryName" : "Screening",
                         "type" : "ExpressionRef"
                      }
                   } ]
                } ]
             }
          }, {
-            "locator" : "34:1-35:29",
+            "locator" : "35:1-36:29",
             "name" : "Needs Prostate Cancer Screening Summary",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "35:3-35:29",
+               "locator" : "36:3-36:29",
                "valueType" : "{urn:hl7-org:elm-types:r1}String",
                "value" : "Prostate Cancer Screening",
                "type" : "Literal"
             }
          }, {
-            "locator" : "37:1-38:57",
+            "locator" : "38:1-39:55",
             "name" : "Needs Prostate Cancer Screening Detail",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "38:3-38:57",
+               "locator" : "39:3-39:55",
                "type" : "Concatenate",
                "operand" : [ {
-                  "locator" : "38:3-38:32",
+                  "locator" : "39:3-39:31",
                   "type" : "Concatenate",
                   "operand" : [ {
-                     "locator" : "38:3-38:26",
+                     "locator" : "39:3-39:25",
                      "name" : "MI PSA Date 1",
-                     "libraryName" : "Prostate",
+                     "libraryName" : "Summary",
                      "type" : "ExpressionRef"
                   }, {
-                     "locator" : "38:30-38:32",
+                     "locator" : "39:29-39:31",
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
                      "value" : " ",
                      "type" : "Literal"
                   } ]
                }, {
-                  "locator" : "38:36-38:57",
+                  "locator" : "39:35-39:55",
                   "name" : "PSA value 1",
-                  "libraryName" : "Prostate",
+                  "libraryName" : "Summary",
                   "type" : "ExpressionRef"
                } ]
             }
          }, {
-            "locator" : "40:1-42:16",
+            "locator" : "41:1-43:16",
             "name" : "Needs Prostate Cancer Screening Indicator",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "locator" : "41:3-42:16",
+               "locator" : "42:3-43:16",
                "type" : "If",
                "condition" : {
                   "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "As",
                   "operand" : {
-                     "locator" : "41:6-41:38",
+                     "locator" : "42:6-42:39",
                      "name" : "Last PSA value is high",
-                     "libraryName" : "Prostate",
+                     "libraryName" : "Screening",
                      "type" : "ExpressionRef"
                   }
                },
                "then" : {
-                  "locator" : "41:45-41:54",
+                  "locator" : "42:46-42:55",
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
                   "value" : "critical",
                   "type" : "Literal"
                },
                "else" : {
-                  "locator" : "42:8-42:16",
+                  "locator" : "43:8-43:16",
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
                   "value" : "warning",
                   "type" : "Literal"

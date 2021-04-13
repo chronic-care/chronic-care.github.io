@@ -10,7 +10,8 @@ using FHIR version '4.0.1'
 
 // # Referenced libraries #
 
-include ProstateCancerScreening version '1.0.0' called Prostate
+include ProstateCancerScreening version '1.0.0' called Screening
+include ProstateCancerSummary version '1.0.0' called Summary
 
 // # CDS logic #
 
@@ -26,17 +27,17 @@ define "Age Between 40 and 70":
 
 define "Needs Prostate Cancer Screening":
   "Age Between 40 and 70" and
-  (Prostate."No PSA test results"
-    or (Prostate."Last PSA value is high" and not Prostate."Has PSA within one year")
-    or not Prostate."Has PSA within two years"
+  (Screening."No PSA test results"
+    or (Screening."Last PSA value is high" and not Screening."Has PSA within one year")
+    or not Screening."Has PSA within two years"
   )
 
 define "Needs Prostate Cancer Screening Summary":
   'Prostate Cancer Screening'
 
 define "Needs Prostate Cancer Screening Detail":
-  Prostate."MI PSA Date 1" + ' ' + Prostate."PSA value 1"
+  Summary."MI PSA Date 1" + ' ' + Summary."PSA value 1"
 
 define "Needs Prostate Cancer Screening Indicator":
-  if Prostate."Last PSA value is high" then 'critical'
+  if Screening."Last PSA value is high" then 'critical'
   else 'warning'
