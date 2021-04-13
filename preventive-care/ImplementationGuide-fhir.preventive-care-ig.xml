@@ -12,7 +12,7 @@
   <title value="Preventive Care Guidelines IG"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-04-13T01:53:55+00:00"/>
+  <date value="2021-04-13T02:06:34+00:00"/>
   <publisher value="U.S. Preventive Services Task Force (USPSTF)"/>
   <contact>
     <telecom>
@@ -312,6 +312,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/mpc-prostate-questionnaire"/>
+      </reference>
+      <name value="Prostate Cancer Screening Questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -361,6 +370,10 @@
     <parameter>
       <code value="path-resource"/>
       <value value="input/resources/activitydefinition"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources/questionnaires"/>
     </parameter>
     <parameter>
       <code value="path-resource"/>
