@@ -1,9 +1,9 @@
 ﻿COVID19EDSeverityClassification : Validation Results
 =========================================
 
-err = 47, warn = 21, info = 16
+err = 47, warn = 22, info = 16
 IG Publisher Version: 1.1.66
-Generated Mon Apr 19 20:21:23 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
+Generated Wed Apr 21 14:35:50 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
 
  Build Errors : 0 / 0 / 0
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig : 0 / 0 / 1
@@ -11,7 +11,7 @@ Generated Mon Apr 19 20:21:23 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19Concepts : 0 / 0 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment : 3 / 9 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptHooks : 1 / 0 / 3
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptSummary : 2 / 8 / 8
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptSummary : 2 / 9 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers : 1 / 0 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation : 0 / 4 / 2
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cardiovascular : 0 / 0 / 1
@@ -96,6 +96,7 @@ WARNING: COVID19EmergencyDeptSummary.cql: Result type List of tuple of Date: Sys
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of SeverityClassification: System.String, RiskScore: System.Integer, RiskPercent: System.Integer, RiskFactorCount: System.Integer, DiagnosticInterpretation: System.Decimal, ConcerningLabCount: System.Decimal, ConcerningImagingCount: System.Integer of definition RiskSummary is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of Severity: System.String, RiskPrognostication: System.String, RiskAssessment: System.String of definition SmartPhrases is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of ObtainDiagnostics: System.Boolean, DischargeHome: System.Boolean, ConsiderAdmission: System.Boolean, ConsiderDischargingHome: System.Boolean, SevereAdmission: System.Boolean, CriticalAdmission: System.Boolean of definition DispositionSummary is not supported; implementations may not be able to use the result of this expression
+WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of NonPharmacologic: System.Any, Antibodies: System.Any, Anticoagulation: System.Any, Remdesivir: System.Any, Steroids: System.Any, SteroidsAndOrRemdesivir: System.Any of definition TreatmentSummary is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of RespiratoryRate: System.Decimal, O2Saturation: System.Decimal, HeartRate: System.Decimal, BloodPressure: System.String, SystolicBloodPressure: System.Decimal, TemperatureC: System.Decimal, TemperatureF: System.Decimal, SupplementalOxygen: System.Boolean, Alertness: System.String, PerformanceStatus: System.String of definition AssessmentSummary is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of Cancer: System.Boolean, CardiovascularDisease: System.Boolean, ChronicRespiratoryDisease: System.Boolean, DiabetesType2: System.Boolean, DownsSyndrome: System.Boolean, Hypertension: System.Boolean, Immunosuppression: System.Boolean, NeurologicDisease: System.Boolean, Obesity: System.Boolean, ObstructiveSleepApnea: System.Boolean, Pregnancy: System.Boolean, RenalDisease: System.Boolean, SteroidUsage: System.Boolean of definition RiskFactorSummary is not supported; implementations may not be able to use the result of this expression
 INFORMATION: Library/COVID19EmergencyDeptSummary: Library: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library
