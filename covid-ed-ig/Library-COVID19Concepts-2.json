@@ -1,362 +1,417 @@
 {
-   "library" : {
-      "annotation" : [ {
-         "translatorOptions" : "EnableLocators,DisableListDemotion,DisableListPromotion",
-         "type" : "CqlToElmInfo"
-      } ],
-      "identifier" : {
-         "id" : "COVID19Concepts",
-         "system" : "http://fhir.org/guides/acep",
-         "version" : "1.0.0"
-      },
-      "schemaIdentifier" : {
-         "id" : "urn:hl7-org:elm",
-         "version" : "r1"
-      },
-      "usings" : {
-         "def" : [ {
-            "localIdentifier" : "System",
-            "uri" : "urn:hl7-org:elm-types:r1"
-         } ]
-      },
-      "codeSystems" : {
-         "def" : [ {
-            "locator" : "5:1-5:38",
-            "name" : "LOINC",
-            "id" : "http://loinc.org",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "6:1-6:48",
-            "name" : "SNOMED-CT",
-            "id" : "http://snomed.info/sct",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "7:1-7:52",
-            "name" : "Race",
-            "id" : "urn:oid:2.16.840.1.113883.6.238",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "12:1-12:49",
-            "name" : "LOCAL",
-            "id" : "http://fhir.org/guides/acep",
-            "accessLevel" : "Public"
-         } ]
-      },
-      "valueSets" : {
-         "def" : [ {
-            "locator" : "17:1-17:95",
-            "name" : "Race Category",
-            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "20:1-20:118",
-            "name" : "Cardiovascular Disease Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "21:1-21:120",
-            "name" : "Chronic Respiratory Disease Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "22:1-22:105",
-            "name" : "Diabetes Type 2 Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "23:1-23:110",
-            "name" : "Downs Syndrome Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "24:1-24:106",
-            "name" : "Hypertension Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "25:1-25:102",
-            "name" : "Malignancy Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "26:1-26:128",
-            "name" : "Obstructive Sleep Apnea Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "27:1-27:100",
-            "name" : "Renal Disease Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "29:1-29:95",
-            "name" : "Alertness Scale Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-obs-alertness",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "30:1-30:102",
-            "name" : "WHO Performance Status Codes",
-            "id" : "http://fhir.org/guides/acep/ValueSet/who-performance-status",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "33:1-33:83",
-            "name" : "ALT Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "34:1-34:83",
-            "name" : "AST Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "35:1-35:83",
-            "name" : "CRP Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "36:1-36:97",
-            "name" : "Creatinine Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "37:1-37:90",
-            "name" : "D-dimer Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "38:1-38:93",
-            "name" : "Ferritin Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "39:1-39:83",
-            "name" : "LDH Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "40:1-40:95",
-            "name" : "Leukocyte Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "41:1-41:99",
-            "name" : "Lymphocytes Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "42:1-42:99",
-            "name" : "Neutrophils Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "43:1-43:99",
-            "name" : "PaO2FiO2 Ratio Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-pao2fio2",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "44:1-44:95",
-            "name" : "Platelets Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "45:1-45:93",
-            "name" : "Troponin Lab Results",
-            "id" : "http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "48:1-48:114",
-            "name" : "Obesity ICD10CM Codes",
-            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091",
-            "accessLevel" : "Public"
-         }, {
-            "locator" : "49:1-49:113",
-            "name" : "Obesity SNOMED Codes",
-            "id" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203",
-            "accessLevel" : "Public"
-         } ]
-      },
-      "codes" : {
-         "def" : [ {
-            "locator" : "57:1-57:90",
-            "name" : "Black or African American",
-            "id" : "2054-5",
-            "display" : "Black or African American",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "57:49-57:54",
-               "name" : "Race"
-            }
-         }, {
-            "locator" : "58:1-58:50",
-            "name" : "White",
-            "id" : "2106-3",
-            "display" : "White",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "58:29-58:34",
-               "name" : "Race"
-            }
-         }, {
-            "locator" : "61:1-61:81",
-            "name" : "Confused",
-            "id" : "130987000",
-            "display" : "Acute confusion (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "61:35-61:45",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "64:1-64:130",
-            "name" : "Performance Status 0",
-            "id" : "373803006",
-            "display" : "World Health Organization performance status grade 0 (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "64:47-64:57",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "65:1-65:130",
-            "name" : "Performance Status 1",
-            "id" : "373804000",
-            "display" : "World Health Organization performance status grade 1 (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "65:47-65:57",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "66:1-66:130",
-            "name" : "Performance Status 2",
-            "id" : "373805004",
-            "display" : "World Health Organization performance status grade 2 (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "66:47-66:57",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "67:1-67:130",
-            "name" : "Performance Status 3",
-            "id" : "373806003",
-            "display" : "World Health Organization performance status grade 3 (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "67:47-67:57",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "68:1-68:130",
-            "name" : "Performance Status 4",
-            "id" : "373807007",
-            "display" : "World Health Organization performance status grade 4 (finding)",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "68:47-68:57",
-               "name" : "SNOMED-CT"
-            }
-         }, {
-            "locator" : "70:1-70:93",
-            "name" : "Blood pressure",
-            "id" : "85354-9",
-            "display" : "Blood pressure systolic and diastolic",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "70:39-70:45",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "71:1-71:87",
-            "name" : "Systolic blood pressure",
-            "id" : "8480-6",
-            "display" : "Systolic blood pressure",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "71:47-71:53",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "72:1-72:89",
-            "name" : "Diastolic blood pressure",
-            "id" : "8462-4",
-            "display" : "Diastolic blood pressure",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "72:48-72:54",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "74:1-74:61",
-            "name" : "Heart rate",
-            "id" : "8867-4",
-            "display" : "Heart rate",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "74:34-74:40",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "75:1-75:75",
-            "name" : "Oxygen saturation",
-            "id" : "2708-6",
-            "display" : "Oxygen saturation",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "75:41-75:47",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "76:1-76:73",
-            "name" : "Respiratory rate",
-            "id" : "9279-1",
-            "display" : "Respiratory rate",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "76:40-76:46",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "77:1-77:73",
-            "name" : "Body temperature",
-            "id" : "8310-5",
-            "display" : "Body temperature",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "77:40-77:46",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "78:1-78:63",
-            "name" : "Body height",
-            "id" : "8302-2",
-            "display" : "Body height",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "78:35-78:41",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "79:1-79:64",
-            "name" : "Body weight",
-            "id" : "29463-7",
-            "display" : "Body weight",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "79:36-79:42",
-               "name" : "LOINC"
-            }
-         }, {
-            "locator" : "80:1-80:72",
-            "name" : "Body mass index",
-            "id" : "39156-5",
-            "display" : "Body mass index",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "locator" : "80:40-80:46",
-               "name" : "LOINC"
-            }
-         } ]
+  "library": {
+    "annotation": [
+      {
+        "translatorOptions": "EnableLocators,DisableListDemotion,DisableListPromotion",
+        "type": "CqlToElmInfo"
       }
-   }
+    ],
+    "identifier": {
+      "id": "COVID19Concepts",
+      "system": "http://fhir.org/guides/acep",
+      "version": "1.0.0"
+    },
+    "schemaIdentifier": {
+      "id": "urn:hl7-org:elm",
+      "version": "r1"
+    },
+    "usings": {
+      "def": [
+        {
+          "localIdentifier": "System",
+          "uri": "urn:hl7-org:elm-types:r1"
+        }
+      ]
+    },
+    "codeSystems": {
+      "def": [
+        {
+          "locator": "5:1-5:38",
+          "name": "LOINC",
+          "id": "http://loinc.org",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "6:1-6:48",
+          "name": "SNOMED-CT",
+          "id": "http://snomed.info/sct",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "7:1-7:52",
+          "name": "Race",
+          "id": "urn:oid:2.16.840.1.113883.6.238",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "12:1-12:49",
+          "name": "LOCAL",
+          "id": "http://fhir.org/guides/acep",
+          "accessLevel": "Public"
+        }
+      ]
+    },
+    "valueSets": {
+      "def": [
+        {
+          "locator": "17:1-17:95",
+          "name": "Race Category",
+          "id": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.2074.1.1.3",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "20:1-20:118",
+          "name": "Cardiovascular Disease Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "21:1-21:120",
+          "name": "Chronic Respiratory Disease Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "22:1-22:105",
+          "name": "Diabetes Type 2 Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-diabetes",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "23:1-23:110",
+          "name": "Downs Syndrome Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "24:1-24:106",
+          "name": "Hypertension Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-hypertension",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "25:1-25:102",
+          "name": "Malignancy Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-malignancy",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "26:1-26:128",
+          "name": "Obstructive Sleep Apnea Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "27:1-27:100",
+          "name": "Renal Disease Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "29:1-29:95",
+          "name": "Alertness Scale Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-obs-alertness",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "30:1-30:102",
+          "name": "WHO Performance Status Codes",
+          "id": "http://fhir.org/guides/acep/ValueSet/who-performance-status",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "33:1-33:83",
+          "name": "ALT Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "34:1-34:83",
+          "name": "AST Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "35:1-35:83",
+          "name": "CRP Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-crp",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "36:1-36:97",
+          "name": "Creatinine Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-creatinine",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "37:1-37:90",
+          "name": "D-dimer Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "38:1-38:93",
+          "name": "Ferritin Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "39:1-39:83",
+          "name": "LDH Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "40:1-40:95",
+          "name": "Leukocyte Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "41:1-41:99",
+          "name": "Lymphocytes Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "42:1-42:99",
+          "name": "Neutrophils Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-neutrophils",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "43:1-43:99",
+          "name": "PaO2FiO2 Ratio Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-pao2fio2",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "44:1-44:95",
+          "name": "Platelets Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "45:1-45:93",
+          "name": "Troponin Lab Results",
+          "id": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "48:1-48:114",
+          "name": "Obesity ICD10CM Codes",
+          "id": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091",
+          "accessLevel": "Public"
+        },
+        {
+          "locator": "49:1-49:113",
+          "name": "Obesity SNOMED Codes",
+          "id": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203",
+          "accessLevel": "Public"
+        }
+      ]
+    },
+    "codes": {
+      "def": [
+        {
+          "locator": "57:1-57:90",
+          "name": "Black or African American",
+          "id": "2054-5",
+          "display": "Black or African American",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "57:49-57:54",
+            "name": "Race"
+          }
+        },
+        {
+          "locator": "58:1-58:50",
+          "name": "White",
+          "id": "2106-3",
+          "display": "White",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "58:29-58:34",
+            "name": "Race"
+          }
+        },
+        {
+          "locator": "61:1-61:81",
+          "name": "Confused",
+          "id": "130987000",
+          "display": "Acute confusion (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "61:35-61:45",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "64:1-64:130",
+          "name": "Performance Status 0",
+          "id": "373803006",
+          "display": "World Health Organization performance status grade 0 (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "64:47-64:57",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "65:1-65:130",
+          "name": "Performance Status 1",
+          "id": "373804000",
+          "display": "World Health Organization performance status grade 1 (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "65:47-65:57",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "66:1-66:130",
+          "name": "Performance Status 2",
+          "id": "373805004",
+          "display": "World Health Organization performance status grade 2 (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "66:47-66:57",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "67:1-67:130",
+          "name": "Performance Status 3",
+          "id": "373806003",
+          "display": "World Health Organization performance status grade 3 (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "67:47-67:57",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "68:1-68:130",
+          "name": "Performance Status 4",
+          "id": "373807007",
+          "display": "World Health Organization performance status grade 4 (finding)",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "68:47-68:57",
+            "name": "SNOMED-CT"
+          }
+        },
+        {
+          "locator": "70:1-70:93",
+          "name": "Blood pressure",
+          "id": "85354-9",
+          "display": "Blood pressure systolic and diastolic",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "70:39-70:45",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "71:1-71:87",
+          "name": "Systolic blood pressure",
+          "id": "8480-6",
+          "display": "Systolic blood pressure",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "71:47-71:53",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "72:1-72:89",
+          "name": "Diastolic blood pressure",
+          "id": "8462-4",
+          "display": "Diastolic blood pressure",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "72:48-72:54",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "74:1-74:61",
+          "name": "Heart rate",
+          "id": "8867-4",
+          "display": "Heart rate",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "74:34-74:40",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "75:1-75:75",
+          "name": "Oxygen saturation",
+          "id": "2708-6",
+          "display": "Oxygen saturation",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "75:41-75:47",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "76:1-76:73",
+          "name": "Respiratory rate",
+          "id": "9279-1",
+          "display": "Respiratory rate",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "76:40-76:46",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "77:1-77:73",
+          "name": "Body temperature",
+          "id": "8310-5",
+          "display": "Body temperature",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "77:40-77:46",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "78:1-78:63",
+          "name": "Body height",
+          "id": "8302-2",
+          "display": "Body height",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "78:35-78:41",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "79:1-79:64",
+          "name": "Body weight",
+          "id": "29463-7",
+          "display": "Body weight",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "79:36-79:42",
+            "name": "LOINC"
+          }
+        },
+        {
+          "locator": "80:1-80:72",
+          "name": "Body mass index",
+          "id": "39156-5",
+          "display": "Body mass index",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "locator": "80:40-80:46",
+            "name": "LOINC"
+          }
+        }
+      ]
+    }
+  }
 }
