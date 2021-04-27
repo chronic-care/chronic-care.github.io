@@ -40,8 +40,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.27"}
-    h3,h4,h5,h6{--heading-prefix:"6.27"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.31"}
+    h3,h4,h5,h6{--heading-prefix:"6.31"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -748,7 +748,8 @@ define &quot;Has Cancer Risk Factor&quot;:
   Coalesce(
     RiskFactors.Cancer,
     exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Malignancy Codes&quot;)
+      where (C.code in CC.&quot;Cancer SNOMED Codes&quot;
+        or C.code in CC.&quot;Cancer ICD10CM Codes&quot;))
   )
 
 define &quot;Has Cardiovascular Disease Risk Factor&quot;:
@@ -769,7 +770,8 @@ define &quot;Has Diabetes Type 2 Risk Factor&quot;:
   Coalesce(
     RiskFactors.DiabetesType2,
     exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Diabetes Type 2 Codes&quot;)
+      where (C.code in CC.&quot;Diabetes SNOMED Codes&quot;
+        or C.code in CC.&quot;Diabetes ICD10CM Codes&quot;))
   )
 
 define &quot;Has Downs Syndrome Risk Factor&quot;:
@@ -783,7 +785,8 @@ define &quot;Has Hypertension Risk Factor&quot;:
   Coalesce(
     RiskFactors.Hypertension,
     exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Hypertension Codes&quot;)
+      where (C.code in CC.&quot;Hypertension SNOMED Codes&quot;
+        or C.code in CC.&quot;Hypertension ICD10CM Codes&quot;))
   )
 
 define &quot;Has Immunosuppression Risk Factor&quot;:
@@ -815,7 +818,8 @@ define &quot;Has Renal Disease Risk Factor&quot;:
   Coalesce(
     RiskFactors.RenalDisease,
     exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Renal Disease Codes&quot;)
+      where (C.code in CC.&quot;Kidney Disease SNOMED Codes&quot;
+        or C.code in CC.&quot;Kidney Disease ICD10CM Codes&quot;))
   )
 
 define &quot;Has Steroid Usage Risk Factor&quot;:
@@ -920,7 +924,7 @@ define &quot;Last Troponin Lab Result&quot;:
       C3F.Verified([Observation: CC.&quot;Troponin Lab Results&quot;]),
       LabResultsLookbackPeriod)
   )
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 173Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 323Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 175Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 327Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -947,7 +951,7 @@ define &quot;Last Troponin Lab Result&quot;:
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 27, 2021 17:05+0000">2021-04-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 27, 2021 17:41+0000">2021-04-27</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

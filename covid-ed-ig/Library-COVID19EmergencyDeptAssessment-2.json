@@ -3857,37 +3857,37 @@
           }
         },
         {
-          "locator": "712:1-717:3",
+          "locator": "716:1-721:3",
           "name": "Last PaO2FiO2 Ratio Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "713:3-717:3",
+            "locator": "717:3-721:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "714:5-716:31",
+                "locator": "718:5-720:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "715:7-715:66",
+                    "locator": "719:7-719:66",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "715:20-715:65",
+                        "locator": "719:20-719:65",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "715:34-715:64",
+                          "locator": "719:34-719:64",
                           "name": "PaO2FiO2 Ratio Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -3896,7 +3896,7 @@
                     ]
                   },
                   {
-                    "locator": "716:7-716:30",
+                    "locator": "720:7-720:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -3906,20 +3906,20 @@
           }
         },
         {
-          "locator": "719:1-722:3",
+          "locator": "723:1-726:3",
           "name": "Last PaO2FiO2 Ratio Lab Result value",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "720:3-722:3",
+            "locator": "724:3-726:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "720:12-720:44",
+                "locator": "724:12-724:44",
                 "path": "PaO2FiO2Ratio",
                 "type": "Property",
                 "source": {
-                  "locator": "720:12-720:30",
+                  "locator": "724:12-724:30",
                   "name": "ClinicalAssessments",
                   "type": "ParameterRef"
                 }
@@ -3930,25 +3930,25 @@
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "721:5-721:67",
+                    "locator": "725:5-725:67",
                     "path": "value",
                     "type": "Property",
                     "source": {
-                      "locator": "721:5-721:61",
+                      "locator": "725:5-725:61",
                       "strict": false,
                       "type": "As",
                       "operand": {
-                        "locator": "721:6-721:43",
+                        "locator": "725:6-725:43",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "721:6-721:37",
+                          "locator": "725:6-725:37",
                           "name": "Last PaO2FiO2 Ratio Lab Result",
                           "type": "ExpressionRef"
                         }
                       },
                       "asTypeSpecifier": {
-                        "locator": "721:48-721:60",
+                        "locator": "725:48-725:60",
                         "name": "{http://hl7.org/fhir}Quantity",
                         "type": "NamedTypeSpecifier"
                       }
@@ -7202,12 +7202,12 @@
           }
         },
         {
-          "locator": "568:1-573:3",
+          "locator": "568:1-574:3",
           "name": "Has Cancer Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "569:3-573:3",
+            "locator": "569:3-574:3",
             "type": "Coalesce",
             "operand": [
               {
@@ -7221,10 +7221,10 @@
                 }
               },
               {
-                "locator": "571:5-572:44",
+                "locator": "571:5-573:48",
                 "type": "Exists",
                 "operand": {
-                  "locator": "571:11-572:44",
+                  "locator": "571:11-573:48",
                   "type": "Query",
                   "source": [
                     {
@@ -7239,27 +7239,56 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "572:7-572:43",
-                    "type": "InValueSet",
-                    "code": {
-                      "name": "ToConcept",
-                      "libraryName": "FHIRHelpers",
-                      "type": "FunctionRef",
-                      "operand": [
-                        {
-                          "locator": "572:13-572:18",
-                          "path": "code",
-                          "scope": "C",
-                          "type": "Property"
+                    "locator": "572:7-573:47",
+                    "type": "Or",
+                    "operand": [
+                      {
+                        "locator": "572:14-572:47",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "572:14-572:19",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "572:24-572:47",
+                          "name": "Cancer SNOMED Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
                         }
-                      ]
-                    },
-                    "valueset": {
-                      "locator": "572:23-572:43",
-                      "name": "Malignancy Codes",
-                      "libraryName": "CC",
-                      "type": "ValueSetRef"
-                    }
+                      },
+                      {
+                        "locator": "573:12-573:46",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "573:12-573:17",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "573:22-573:46",
+                          "name": "Cancer ICD10CM Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -7267,36 +7296,36 @@
           }
         },
         {
-          "locator": "575:1-580:3",
+          "locator": "576:1-581:3",
           "name": "Has Cardiovascular Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "576:3-580:3",
+            "locator": "577:3-581:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "577:5-577:37",
+                "locator": "578:5-578:37",
                 "path": "CardiovascularDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "577:5-577:15",
+                  "locator": "578:5-578:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "578:5-579:56",
+                "locator": "579:5-580:56",
                 "type": "Exists",
                 "operand": {
-                  "locator": "578:11-579:56",
+                  "locator": "579:11-580:56",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "578:12-578:36",
+                      "locator": "579:12-579:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "578:12-578:34",
+                        "locator": "579:12-579:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7304,7 +7333,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "579:7-579:55",
+                    "locator": "580:7-580:55",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7312,7 +7341,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "579:13-579:18",
+                          "locator": "580:13-580:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7320,7 +7349,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "579:23-579:55",
+                      "locator": "580:23-580:55",
                       "name": "Cardiovascular Disease Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7332,36 +7361,36 @@
           }
         },
         {
-          "locator": "582:1-587:3",
+          "locator": "583:1-588:3",
           "name": "Has Chronic Respiratory Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "583:3-587:3",
+            "locator": "584:3-588:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "584:5-584:41",
+                "locator": "585:5-585:41",
                 "path": "ChronicRespiratoryDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "584:5-584:15",
+                  "locator": "585:5-585:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "585:5-586:61",
+                "locator": "586:5-587:61",
                 "type": "Exists",
                 "operand": {
-                  "locator": "585:11-586:61",
+                  "locator": "586:11-587:61",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "585:12-585:36",
+                      "locator": "586:12-586:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "585:12-585:34",
+                        "locator": "586:12-586:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7369,7 +7398,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "586:7-586:60",
+                    "locator": "587:7-587:60",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7377,7 +7406,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "586:13-586:18",
+                          "locator": "587:13-587:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7385,7 +7414,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "586:23-586:60",
+                      "locator": "587:23-587:60",
                       "name": "Chronic Respiratory Disease Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7397,36 +7426,36 @@
           }
         },
         {
-          "locator": "589:1-594:3",
+          "locator": "590:1-596:3",
           "name": "Has Diabetes Type 2 Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "590:3-594:3",
+            "locator": "591:3-596:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "591:5-591:29",
+                "locator": "592:5-592:29",
                 "path": "DiabetesType2",
                 "type": "Property",
                 "source": {
-                  "locator": "591:5-591:15",
+                  "locator": "592:5-592:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "592:5-593:49",
+                "locator": "593:5-595:50",
                 "type": "Exists",
                 "operand": {
-                  "locator": "592:11-593:49",
+                  "locator": "593:11-595:50",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "592:12-592:36",
+                      "locator": "593:12-593:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "592:12-592:34",
+                        "locator": "593:12-593:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7434,27 +7463,56 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "593:7-593:48",
-                    "type": "InValueSet",
-                    "code": {
-                      "name": "ToConcept",
-                      "libraryName": "FHIRHelpers",
-                      "type": "FunctionRef",
-                      "operand": [
-                        {
-                          "locator": "593:13-593:18",
-                          "path": "code",
-                          "scope": "C",
-                          "type": "Property"
+                    "locator": "594:7-595:49",
+                    "type": "Or",
+                    "operand": [
+                      {
+                        "locator": "594:14-594:49",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "594:14-594:19",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "594:24-594:49",
+                          "name": "Diabetes SNOMED Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
                         }
-                      ]
-                    },
-                    "valueset": {
-                      "locator": "593:23-593:48",
-                      "name": "Diabetes Type 2 Codes",
-                      "libraryName": "CC",
-                      "type": "ValueSetRef"
-                    }
+                      },
+                      {
+                        "locator": "595:12-595:48",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "595:12-595:17",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "595:22-595:48",
+                          "name": "Diabetes ICD10CM Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -7462,36 +7520,36 @@
           }
         },
         {
-          "locator": "596:1-601:3",
+          "locator": "598:1-603:3",
           "name": "Has Downs Syndrome Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "597:3-601:3",
+            "locator": "599:3-603:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "598:5-598:29",
+                "locator": "600:5-600:29",
                 "path": "DownsSyndrome",
                 "type": "Property",
                 "source": {
-                  "locator": "598:5-598:15",
+                  "locator": "600:5-600:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "599:5-600:48",
+                "locator": "601:5-602:48",
                 "type": "Exists",
                 "operand": {
-                  "locator": "599:11-600:48",
+                  "locator": "601:11-602:48",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "599:12-599:36",
+                      "locator": "601:12-601:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "599:12-599:34",
+                        "locator": "601:12-601:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7499,7 +7557,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "600:7-600:47",
+                    "locator": "602:7-602:47",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7507,7 +7565,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "600:13-600:18",
+                          "locator": "602:13-602:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7515,7 +7573,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "600:23-600:47",
+                      "locator": "602:23-602:47",
                       "name": "Downs Syndrome Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7527,36 +7585,36 @@
           }
         },
         {
-          "locator": "603:1-608:3",
+          "locator": "605:1-611:3",
           "name": "Has Hypertension Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "604:3-608:3",
+            "locator": "606:3-611:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "605:5-605:28",
+                "locator": "607:5-607:28",
                 "path": "Hypertension",
                 "type": "Property",
                 "source": {
-                  "locator": "605:5-605:15",
+                  "locator": "607:5-607:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "606:5-607:46",
+                "locator": "608:5-610:54",
                 "type": "Exists",
                 "operand": {
-                  "locator": "606:11-607:46",
+                  "locator": "608:11-610:54",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "606:12-606:36",
+                      "locator": "608:12-608:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "606:12-606:34",
+                        "locator": "608:12-608:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7564,27 +7622,56 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "607:7-607:45",
-                    "type": "InValueSet",
-                    "code": {
-                      "name": "ToConcept",
-                      "libraryName": "FHIRHelpers",
-                      "type": "FunctionRef",
-                      "operand": [
-                        {
-                          "locator": "607:13-607:18",
-                          "path": "code",
-                          "scope": "C",
-                          "type": "Property"
+                    "locator": "609:7-610:53",
+                    "type": "Or",
+                    "operand": [
+                      {
+                        "locator": "609:14-609:53",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "609:14-609:19",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "609:24-609:53",
+                          "name": "Hypertension SNOMED Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
                         }
-                      ]
-                    },
-                    "valueset": {
-                      "locator": "607:23-607:45",
-                      "name": "Hypertension Codes",
-                      "libraryName": "CC",
-                      "type": "ValueSetRef"
-                    }
+                      },
+                      {
+                        "locator": "610:12-610:52",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "610:12-610:17",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "610:22-610:52",
+                          "name": "Hypertension ICD10CM Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -7592,29 +7679,13 @@
           }
         },
         {
-          "locator": "610:1-611:31",
+          "locator": "613:1-614:31",
           "name": "Has Immunosuppression Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "611:3-611:31",
-            "path": "Immunosuppression",
-            "type": "Property",
-            "source": {
-              "locator": "611:3-611:13",
-              "name": "RiskFactors",
-              "type": "ParameterRef"
-            }
-          }
-        },
-        {
-          "locator": "613:1-614:31",
-          "name": "Has Neurologic Disease Risk Factor",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
             "locator": "614:3-614:31",
-            "path": "NeurologicDisease",
+            "path": "Immunosuppression",
             "type": "Property",
             "source": {
               "locator": "614:3-614:13",
@@ -7624,36 +7695,52 @@
           }
         },
         {
-          "locator": "616:1-621:3",
+          "locator": "616:1-617:31",
+          "name": "Has Neurologic Disease Risk Factor",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "locator": "617:3-617:31",
+            "path": "NeurologicDisease",
+            "type": "Property",
+            "source": {
+              "locator": "617:3-617:13",
+              "name": "RiskFactors",
+              "type": "ParameterRef"
+            }
+          }
+        },
+        {
+          "locator": "619:1-624:3",
           "name": "Has Obstructive Sleep Apnea Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "617:3-621:3",
+            "locator": "620:3-624:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "618:5-618:37",
+                "locator": "621:5-621:37",
                 "path": "ObstructiveSleepApnea",
                 "type": "Property",
                 "source": {
-                  "locator": "618:5-618:15",
+                  "locator": "621:5-621:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "619:5-620:57",
+                "locator": "622:5-623:57",
                 "type": "Exists",
                 "operand": {
-                  "locator": "619:11-620:57",
+                  "locator": "622:11-623:57",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "619:12-619:36",
+                      "locator": "622:12-622:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "619:12-619:34",
+                        "locator": "622:12-622:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7661,7 +7748,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "620:7-620:56",
+                    "locator": "623:7-623:56",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7669,7 +7756,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "620:13-620:18",
+                          "locator": "623:13-623:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7677,7 +7764,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "620:23-620:56",
+                      "locator": "623:23-623:56",
                       "name": "Obstructive Sleep Apnea Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7689,40 +7776,40 @@
           }
         },
         {
-          "locator": "623:1-630:3",
+          "locator": "626:1-633:3",
           "name": "Has Obesity Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "624:3-630:3",
+            "locator": "627:3-633:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "625:5-625:23",
+                "locator": "628:5-628:23",
                 "path": "Obesity",
                 "type": "Property",
                 "source": {
-                  "locator": "625:5-625:15",
+                  "locator": "628:5-628:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "626:5-629:31",
+                "locator": "629:5-632:31",
                 "type": "Or",
                 "operand": [
                   {
-                    "locator": "626:6-628:49",
+                    "locator": "629:6-631:49",
                     "type": "Exists",
                     "operand": {
-                      "locator": "626:12-628:49",
+                      "locator": "629:12-631:49",
                       "type": "Query",
                       "source": [
                         {
-                          "locator": "626:13-626:37",
+                          "locator": "629:13-629:37",
                           "alias": "C",
                           "expression": {
-                            "locator": "626:13-626:35",
+                            "locator": "629:13-629:35",
                             "name": "All Active Conditions",
                             "type": "ExpressionRef"
                           }
@@ -7730,11 +7817,11 @@
                       ],
                       "relationship": [],
                       "where": {
-                        "locator": "627:7-628:48",
+                        "locator": "630:7-631:48",
                         "type": "Or",
                         "operand": [
                           {
-                            "locator": "627:14-627:48",
+                            "locator": "630:14-630:48",
                             "type": "InValueSet",
                             "code": {
                               "name": "ToConcept",
@@ -7742,7 +7829,7 @@
                               "type": "FunctionRef",
                               "operand": [
                                 {
-                                  "locator": "627:14-627:19",
+                                  "locator": "630:14-630:19",
                                   "path": "code",
                                   "scope": "C",
                                   "type": "Property"
@@ -7750,14 +7837,14 @@
                               ]
                             },
                             "valueset": {
-                              "locator": "627:24-627:48",
+                              "locator": "630:24-630:48",
                               "name": "Obesity SNOMED Codes",
                               "libraryName": "CC",
                               "type": "ValueSetRef"
                             }
                           },
                           {
-                            "locator": "628:12-628:47",
+                            "locator": "631:12-631:47",
                             "type": "InValueSet",
                             "code": {
                               "name": "ToConcept",
@@ -7765,7 +7852,7 @@
                               "type": "FunctionRef",
                               "operand": [
                                 {
-                                  "locator": "628:12-628:17",
+                                  "locator": "631:12-631:17",
                                   "path": "code",
                                   "scope": "C",
                                   "type": "Property"
@@ -7773,7 +7860,7 @@
                               ]
                             },
                             "valueset": {
-                              "locator": "628:22-628:47",
+                              "locator": "631:22-631:47",
                               "name": "Obesity ICD10CM Codes",
                               "libraryName": "CC",
                               "type": "ValueSetRef"
@@ -7784,15 +7871,15 @@
                     }
                   },
                   {
-                    "locator": "629:9-629:30",
+                    "locator": "632:9-632:30",
                     "type": "GreaterOrEqual",
                     "operand": [
                       {
-                        "locator": "629:9-629:24",
+                        "locator": "632:9-632:24",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "629:9-629:18",
+                          "locator": "632:9-632:18",
                           "name": "Last BMI",
                           "type": "ExpressionRef"
                         }
@@ -7800,7 +7887,7 @@
                       {
                         "type": "ToDecimal",
                         "operand": {
-                          "locator": "629:29-629:30",
+                          "locator": "632:29-632:30",
                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                           "value": "35",
                           "type": "Literal"
@@ -7814,52 +7901,52 @@
           }
         },
         {
-          "locator": "632:1-633:23",
+          "locator": "635:1-636:23",
           "name": "Has Pregnancy Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "633:3-633:23",
+            "locator": "636:3-636:23",
             "path": "Pregnancy",
             "type": "Property",
             "source": {
-              "locator": "633:3-633:13",
+              "locator": "636:3-636:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
           }
         },
         {
-          "locator": "635:1-640:3",
+          "locator": "638:1-644:3",
           "name": "Has Renal Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "636:3-640:3",
+            "locator": "639:3-644:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "637:5-637:28",
+                "locator": "640:5-640:28",
                 "path": "RenalDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "637:5-637:15",
+                  "locator": "640:5-640:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "638:5-639:47",
+                "locator": "641:5-643:56",
                 "type": "Exists",
                 "operand": {
-                  "locator": "638:11-639:47",
+                  "locator": "641:11-643:56",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "638:12-638:36",
+                      "locator": "641:12-641:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "638:12-638:34",
+                        "locator": "641:12-641:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7867,27 +7954,56 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "639:7-639:46",
-                    "type": "InValueSet",
-                    "code": {
-                      "name": "ToConcept",
-                      "libraryName": "FHIRHelpers",
-                      "type": "FunctionRef",
-                      "operand": [
-                        {
-                          "locator": "639:13-639:18",
-                          "path": "code",
-                          "scope": "C",
-                          "type": "Property"
+                    "locator": "642:7-643:55",
+                    "type": "Or",
+                    "operand": [
+                      {
+                        "locator": "642:14-642:55",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "642:14-642:19",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "642:24-642:55",
+                          "name": "Kidney Disease SNOMED Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
                         }
-                      ]
-                    },
-                    "valueset": {
-                      "locator": "639:23-639:46",
-                      "name": "Renal Disease Codes",
-                      "libraryName": "CC",
-                      "type": "ValueSetRef"
-                    }
+                      },
+                      {
+                        "locator": "643:12-643:54",
+                        "type": "InValueSet",
+                        "code": {
+                          "name": "ToConcept",
+                          "libraryName": "FHIRHelpers",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "locator": "643:12-643:17",
+                              "path": "code",
+                              "scope": "C",
+                              "type": "Property"
+                            }
+                          ]
+                        },
+                        "valueset": {
+                          "locator": "643:22-643:54",
+                          "name": "Kidney Disease ICD10CM Codes",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -7895,16 +8011,16 @@
           }
         },
         {
-          "locator": "642:1-643:26",
+          "locator": "646:1-647:26",
           "name": "Has Steroid Usage Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "643:3-643:26",
+            "locator": "647:3-647:26",
             "path": "SteroidUsage",
             "type": "Property",
             "source": {
-              "locator": "643:3-643:13",
+              "locator": "647:3-647:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
@@ -8314,37 +8430,37 @@
           }
         },
         {
-          "locator": "649:1-654:3",
+          "locator": "653:1-658:3",
           "name": "Last ALT Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "650:3-654:3",
+            "locator": "654:3-658:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "651:5-653:31",
+                "locator": "655:5-657:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "652:7-652:55",
+                    "locator": "656:7-656:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "652:20-652:54",
+                        "locator": "656:20-656:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "652:34-652:53",
+                          "locator": "656:34-656:53",
                           "name": "ALT Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8353,7 +8469,7 @@
                     ]
                   },
                   {
-                    "locator": "653:7-653:30",
+                    "locator": "657:7-657:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8363,37 +8479,37 @@
           }
         },
         {
-          "locator": "656:1-661:3",
+          "locator": "660:1-665:3",
           "name": "Last AST Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "657:3-661:3",
+            "locator": "661:3-665:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "658:5-660:31",
+                "locator": "662:5-664:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "659:7-659:55",
+                    "locator": "663:7-663:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "659:20-659:54",
+                        "locator": "663:20-663:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "659:34-659:53",
+                          "locator": "663:34-663:53",
                           "name": "AST Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8402,7 +8518,7 @@
                     ]
                   },
                   {
-                    "locator": "660:7-660:30",
+                    "locator": "664:7-664:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8412,37 +8528,37 @@
           }
         },
         {
-          "locator": "663:1-668:3",
+          "locator": "667:1-672:3",
           "name": "Last CRP Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "664:3-668:3",
+            "locator": "668:3-672:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "665:5-667:31",
+                "locator": "669:5-671:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "666:7-666:55",
+                    "locator": "670:7-670:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "666:20-666:54",
+                        "locator": "670:20-670:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "666:34-666:53",
+                          "locator": "670:34-670:53",
                           "name": "CRP Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8451,7 +8567,7 @@
                     ]
                   },
                   {
-                    "locator": "667:7-667:30",
+                    "locator": "671:7-671:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8461,37 +8577,37 @@
           }
         },
         {
-          "locator": "670:1-675:3",
+          "locator": "674:1-679:3",
           "name": "Last Creatinine Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "671:3-675:3",
+            "locator": "675:3-679:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "672:5-674:31",
+                "locator": "676:5-678:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "673:7-673:62",
+                    "locator": "677:7-677:62",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "673:20-673:61",
+                        "locator": "677:20-677:61",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "673:34-673:60",
+                          "locator": "677:34-677:60",
                           "name": "Creatinine Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8500,7 +8616,7 @@
                     ]
                   },
                   {
-                    "locator": "674:7-674:30",
+                    "locator": "678:7-678:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8510,37 +8626,37 @@
           }
         },
         {
-          "locator": "677:1-682:3",
+          "locator": "681:1-686:3",
           "name": "Last D-dimer Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "678:3-682:3",
+            "locator": "682:3-686:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "679:5-681:31",
+                "locator": "683:5-685:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "680:7-680:59",
+                    "locator": "684:7-684:59",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "680:20-680:58",
+                        "locator": "684:20-684:58",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "680:34-680:57",
+                          "locator": "684:34-684:57",
                           "name": "D-dimer Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8549,7 +8665,7 @@
                     ]
                   },
                   {
-                    "locator": "681:7-681:30",
+                    "locator": "685:7-685:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8559,37 +8675,37 @@
           }
         },
         {
-          "locator": "684:1-689:3",
+          "locator": "688:1-693:3",
           "name": "Last Neutrophils Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "685:3-689:3",
+            "locator": "689:3-693:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "686:5-688:31",
+                "locator": "690:5-692:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "687:7-687:63",
+                    "locator": "691:7-691:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "687:20-687:62",
+                        "locator": "691:20-691:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "687:34-687:61",
+                          "locator": "691:34-691:61",
                           "name": "Neutrophils Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8598,7 +8714,7 @@
                     ]
                   },
                   {
-                    "locator": "688:7-688:30",
+                    "locator": "692:7-692:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8608,37 +8724,37 @@
           }
         },
         {
-          "locator": "691:1-696:3",
+          "locator": "695:1-700:3",
           "name": "Last Leukocyte Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "692:3-696:3",
+            "locator": "696:3-700:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "693:5-695:31",
+                "locator": "697:5-699:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "694:7-694:61",
+                    "locator": "698:7-698:61",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "694:20-694:60",
+                        "locator": "698:20-698:60",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "694:34-694:59",
+                          "locator": "698:34-698:59",
                           "name": "Leukocyte Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8647,7 +8763,7 @@
                     ]
                   },
                   {
-                    "locator": "695:7-695:30",
+                    "locator": "699:7-699:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8657,37 +8773,37 @@
           }
         },
         {
-          "locator": "698:1-703:3",
+          "locator": "702:1-707:3",
           "name": "Last Ferritin Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "699:3-703:3",
+            "locator": "703:3-707:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "700:5-702:31",
+                "locator": "704:5-706:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "701:7-701:60",
+                    "locator": "705:7-705:60",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "701:20-701:59",
+                        "locator": "705:20-705:59",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "701:34-701:58",
+                          "locator": "705:34-705:58",
                           "name": "Ferritin Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8696,7 +8812,7 @@
                     ]
                   },
                   {
-                    "locator": "702:7-702:30",
+                    "locator": "706:7-706:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8706,37 +8822,37 @@
           }
         },
         {
-          "locator": "705:1-710:3",
+          "locator": "709:1-714:3",
           "name": "Last Lymphocytes Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "706:3-710:3",
+            "locator": "710:3-714:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "707:5-709:31",
+                "locator": "711:5-713:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "708:7-708:63",
+                    "locator": "712:7-712:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "708:20-708:62",
+                        "locator": "712:20-712:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "708:34-708:61",
+                          "locator": "712:34-712:61",
                           "name": "Lymphocytes Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8745,7 +8861,7 @@
                     ]
                   },
                   {
-                    "locator": "709:7-709:30",
+                    "locator": "713:7-713:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8755,37 +8871,37 @@
           }
         },
         {
-          "locator": "724:1-729:3",
+          "locator": "728:1-733:3",
           "name": "Last Platelets Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "725:3-729:3",
+            "locator": "729:3-733:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "726:5-728:31",
+                "locator": "730:5-732:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "727:7-727:61",
+                    "locator": "731:7-731:61",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "727:20-727:60",
+                        "locator": "731:20-731:60",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "727:34-727:59",
+                          "locator": "731:34-731:59",
                           "name": "Platelets Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8794,7 +8910,7 @@
                     ]
                   },
                   {
-                    "locator": "728:7-728:30",
+                    "locator": "732:7-732:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8804,37 +8920,37 @@
           }
         },
         {
-          "locator": "731:1-736:3",
+          "locator": "735:1-740:3",
           "name": "Last LDH Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "732:3-736:3",
+            "locator": "736:3-740:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "733:5-735:31",
+                "locator": "737:5-739:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "734:7-734:55",
+                    "locator": "738:7-738:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "734:20-734:54",
+                        "locator": "738:20-738:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "734:34-734:53",
+                          "locator": "738:34-738:53",
                           "name": "LDH Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8843,7 +8959,7 @@
                     ]
                   },
                   {
-                    "locator": "735:7-735:30",
+                    "locator": "739:7-739:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -8853,37 +8969,37 @@
           }
         },
         {
-          "locator": "738:1-743:3",
+          "locator": "742:1-747:3",
           "name": "Last Troponin Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "739:3-743:3",
+            "locator": "743:3-747:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "740:5-742:31",
+                "locator": "744:5-746:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "741:7-741:60",
+                    "locator": "745:7-745:60",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "741:20-741:59",
+                        "locator": "745:20-745:59",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "741:34-741:58",
+                          "locator": "745:34-745:58",
                           "name": "Troponin Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8892,7 +9008,7 @@
                     ]
                   },
                   {
-                    "locator": "742:7-742:30",
+                    "locator": "746:7-746:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }

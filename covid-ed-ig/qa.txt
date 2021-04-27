@@ -1,11 +1,11 @@
 ﻿COVID19EDSeverityClassification : Validation Results
 =========================================
 
-err = 47, warn = 22, info = 16
+err = 71, warn = 38, info = 16
 IG Publisher Version: 1.1.68
-Generated Tue Apr 27 17:06:48 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
+Generated Tue Apr 27 17:42:42 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
 
- Build Errors : 0 / 0 / 0
+ Build Errors : 8 / 8 / 0
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons : 2 / 0 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19Concepts : 0 / 0 / 8
@@ -15,12 +15,8 @@ Generated Tue Apr 27 17:06:48 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers : 1 / 0 / 8
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation : 0 / 4 / 2
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cardiovascular : 0 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-diabetes : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome : 0 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-hypertension : 0 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-malignancy : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea : 0 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-respiratory : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt : 2 / 0 / 2
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ast : 2 / 0 / 2
@@ -36,11 +32,35 @@ Generated Tue Apr 27 17:06:48 UTC 2021. FHIR version 4.0.1 for fhir.acep.covid19
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-platelets : 2 / 0 / 2
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-troponin : 2 / 0 / 2
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness : 4 / 0 / 2
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10 : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10 : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10 : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10 : 2 / 1 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed : 2 / 1 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10 : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance : 4 / 0 / 2
 </table>
 == n/a ==
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig.xml ==
 INFORMATION: ImplementationGuide/fhir.acep.covid19-ed-r4: ImplementationGuide/fhir.acep.covid19-ed-r4: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons.json ==
@@ -128,18 +148,10 @@ WARNING: PlanDefinition/COVID19EmergencyDeptRecommendation: PlanDefinition/COVID
 INFORMATION: PlanDefinition/COVID19EmergencyDeptRecommendation: PlanDefinition/COVID19EmergencyDeptRecommendation: PlanDefinition: Validate resource against profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition - listed in meta
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cardiovascular.json ==
 INFORMATION: ValueSet/covid-19-condition-risk-cardiovascular: ValueSet/covid-19-condition-risk-cardiovascular: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-diabetes.json ==
-INFORMATION: ValueSet/covid-19-condition-risk-diabetes: ValueSet/covid-19-condition-risk-diabetes: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome.json ==
 INFORMATION: ValueSet/covid-19-condition-risk-downs-syndrome: ValueSet/covid-19-condition-risk-downs-syndrome: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-hypertension.json ==
-INFORMATION: ValueSet/covid-19-condition-risk-hypertension: ValueSet/covid-19-condition-risk-hypertension: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-malignancy.json ==
-INFORMATION: ValueSet/covid-19-condition-risk-malignancy: ValueSet/covid-19-condition-risk-malignancy: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea.json ==
 INFORMATION: ValueSet/covid-19-condition-risk-obstructive-sleep-apnea: ValueSet/covid-19-condition-risk-obstructive-sleep-apnea: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal.json ==
-INFORMATION: ValueSet/covid-19-condition-risk-renal: ValueSet/covid-19-condition-risk-renal: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-respiratory.json ==
 INFORMATION: ValueSet/covid-19-condition-risk-respiratory: ValueSet/covid-19-condition-risk-respiratory: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json ==
@@ -214,6 +226,46 @@ INFORMATION: ValueSet/covid-19-obs-alertness: ValueSet/covid-19-obs-alertness: V
 ERROR: ValueSet/covid-19-obs-alertness: ValueSet/covid-19-obs-alertness: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-obs-alertness: ValueSet/covid-19-obs-alertness: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-obs-alertness: ValueSet/covid-19-obs-alertness: ValueSet.expansion: ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174
+== /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json ==
+ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152)
+INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+WARNING: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152: ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152: ValueSet: vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' failed
+ERROR: /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed: URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152
 == /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json ==
 ERROR: ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091'): Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091)
 INFORMATION: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091: ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
