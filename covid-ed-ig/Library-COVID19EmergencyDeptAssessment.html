@@ -293,7 +293,7 @@ parameter RiskFactors Tuple {
 
 parameter PatientData Tuple {
   Gender String,
-  Age Decimal
+  Age Integer
 }
 
 
@@ -588,7 +588,7 @@ define &quot;Is Mild Severity&quot;:
 * Risk Prognostication
 */
 
-define &quot;Risk Score Components&quot;: {
+define &quot;Risk Score Components&quot;: List {
   &quot;Respiratory Rate Risk Score&quot;,
   &quot;O2 Saturation Risk Score&quot;,
   &quot;Heart Rate Risk Score&quot;,
@@ -602,7 +602,7 @@ define &quot;Risk Score Components&quot;: {
 }
 
 define &quot;Total Risk Score&quot;:
-  Sum(&quot;Risk Score Components&quot; score where score is not null)
+  Sum(&quot;Risk Score Components&quot;)
 
 define &quot;Risk Percent&quot;:
   case &quot;Total Risk Score&quot;
@@ -628,42 +628,50 @@ define &quot;Risk Percent&quot;:
   end
 
 define &quot;Respiratory Rate Risk Score&quot;:
-  case
-    when &quot;Last Respiratory Rate value&quot; between 12 and 20 then 0
-    when &quot;Last Respiratory Rate value&quot; between 9 and 11 then 1
-    when &quot;Last Respiratory Rate value&quot; between 21 and 24 then 2
-    when &quot;Last Respiratory Rate value&quot; &lt; 9 then 3
-    when &quot;Last Respiratory Rate value&quot; &gt; 24 then 3
+  &quot;Last Respiratory Rate value&quot; respRate
+    let value: Floor(Round(respRate))    // valid values should be Integer
+  return case
+    when value between 12 and 20 then 0
+    when value between 9 and 11 then 1
+    when value between 21 and 24 then 2
+    when value &lt; 9 then 3
+    when value &gt; 24 then 3
     else null
   end
 
 define &quot;O2 Saturation Risk Score&quot;:
-  case
-    when &quot;Last O2 Saturation percent&quot; &gt; 95 then 0
-    when &quot;Last O2 Saturation percent&quot; between 94 and 95 then 1
-    when &quot;Last O2 Saturation percent&quot; between 92 and 93 then 2
-    when &quot;Last O2 Saturation percent&quot; &lt; 92 then 3
+  &quot;Last O2 Saturation percent&quot; o2Sat
+    let value: Floor(Round(o2Sat))    // valid values should be Integer
+  return case
+    when value &gt; 95 then 0
+    when value between 94 and 95 then 1
+    when value between 92 and 93 then 2
+    when value &lt; 92 then 3
     else null
   end
 
 define &quot;Heart Rate Risk Score&quot;:
-  case
-    when &quot;Last Heart Rate value&quot; between 51 and 90 then 0
-    when &quot;Last Heart Rate value&quot; between 41 and 50 then 1
-    when &quot;Last Heart Rate value&quot; between 91 and 110 then 1
-    when &quot;Last Heart Rate value&quot; between 111 and 130 then 2
-    when &quot;Last Heart Rate value&quot; &lt; 41 then 3
-    when &quot;Last Heart Rate value&quot; &gt; 130 then 3
+  &quot;Last Heart Rate value&quot; heartRate
+    let value: Floor(Round(heartRate))    // valid values should be Integer
+  return case
+    when value between 51 and 90 then 0
+    when value between 41 and 50 then 1
+    when value between 91 and 110 then 1
+    when value between 111 and 130 then 2
+    when value &lt; 41 then 3
+    when value &gt; 130 then 3
     else null
   end
 
 define &quot;Systolic BP Risk Score&quot;:
-  case
-    when &quot;Last SBP value&quot; between 111 and 219 then 0
-    when &quot;Last SBP value&quot; between 101 and 110 then 1
-    when &quot;Last SBP value&quot; between 91 and 100 then 2
-    when &quot;Last SBP value&quot; &lt; 91 then 3
-    when &quot;Last SBP value&quot; &gt; 219 then 3
+  &quot;Last SBP value&quot; bp
+    let value: Floor(Round(bp))    // valid values should be Integer
+  return case
+    when value between 111 and 219 then 0
+    when value between 101 and 110 then 1
+    when value between 91 and 100 then 2
+    when value &lt; 91 then 3
+    when value &gt; 219 then 3
     else null
   end
 
@@ -934,7 +942,7 @@ define &quot;Last Troponin Lab Result&quot;:
       C3F.Verified([Observation: CC.&quot;Troponin Lab Results&quot;]),
       LabResultsLookbackPeriod)
   )
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 176Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 328Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 176Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 331Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -961,7 +969,7 @@ define &quot;Last Troponin Lab Result&quot;:
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 11, 2021 00:07+0000">2021-05-11</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 11, 2021 23:42+0000">2021-05-11</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
