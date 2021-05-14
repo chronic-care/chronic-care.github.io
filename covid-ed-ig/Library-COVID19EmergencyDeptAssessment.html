@@ -605,25 +605,27 @@ define &quot;Total Risk Score&quot;:
   Sum(&quot;Risk Score Components&quot;)
 
 define &quot;Risk Percent&quot;:
-  case &quot;Total Risk Score&quot;
-    when null then null
-    when 0 then 1
-    when 1 then 1
-    when 2 then 2
-    when 3 then 2
-    when 4 then 3
-    when 5 then 9
-    when 6 then 15
-    when 7 then 18
-    when 8 then 22
-    when 9 then 26
-    when 10 then 29
-    when 11 then 34
-    when 12 then 38
-    when 13 then 47
-    when 14 then 48
-    when 15 then 50
-    when 16 then 55
+  &quot;Total Risk Score&quot; totalRiskScore
+    let riskScore: totalRiskScore as Integer
+  return case
+    when riskScore is null then null
+    when riskScore = 0 then 1
+    when riskScore = 1 then 1
+    when riskScore = 2 then 2
+    when riskScore = 3 then 2
+    when riskScore = 4 then 3
+    when riskScore = 5 then 9
+    when riskScore = 6 then 15
+    when riskScore = 7 then 18
+    when riskScore = 8 then 22
+    when riskScore = 9 then 26
+    when riskScore = 10 then 29
+    when riskScore = 11 then 34
+    when riskScore = 12 then 38
+    when riskScore = 13 then 47
+    when riskScore = 14 then 48
+    when riskScore = 15 then 50
+    when riskScore = 16 then 55
     else 66
   end
 
@@ -942,7 +944,7 @@ define &quot;Last Troponin Lab Result&quot;:
       C3F.Verified([Observation: CC.&quot;Troponin Lab Results&quot;]),
       LabResultsLookbackPeriod)
   )
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 176Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 331Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 180Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 340Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -969,7 +971,7 @@ define &quot;Last Troponin Lab Result&quot;:
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 13, 2021 20:47+0000">2021-05-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 14, 2021 16:35+0000">2021-05-14</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
