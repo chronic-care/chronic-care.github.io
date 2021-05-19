@@ -249,7 +249,22 @@ define "Last O2 Saturation percent":
 
 define "O2 Saturation Observations":
   C3F.ObservationLookBack(
-    C3F.Verified([Observation: CC."Oxygen saturation"]),
+    C3F.Verified([Observation: CC."Oxygen saturation"]), VitalSignsLookbackPeriod)
+  union
+  C3F.ObservationLookBack(
+    C3F.Verified([Observation: CC."Pulse oximetry"]), VitalSignsLookbackPeriod)
+
+define "Has Supplemental Oxygen":
+  if IgnoreFallbackResourceValues then ClinicalAssessments.SupplementalOxygen
+  else Coalesce(ClinicalAssessments.SupplementalOxygen,
+    C3F.QuantityValue("Last Inhaled Oxygen Flow Rate").value > 0.0)
+
+define "Last Inhaled Oxygen Flow Rate":
+  C3F.MostRecent("Inhaled Oxygen Flow Rate Observations")
+
+define "Inhaled Oxygen Flow Rate Observations":
+  C3F.ObservationLookBack(
+    C3F.Verified([Observation: CC."Inhaled oxygen flow rate"]),
     VitalSignsLookbackPeriod)
 
 define "Last Respiratory Rate":
@@ -561,14 +576,35 @@ define "Performance Status Score":
   end
 
 define "Inspired Oxygen Score":
-  if ClinicalAssessments.SupplementalOxygen then 2
+  if "Has Supplemental Oxygen" then 2
   else null
 
 /*
  * Assess Risk Factors
  */
 
+define "Risk Factor Components": List {
+  "Has Cancer Risk Factor",
+  "Has Cardiovascular Disease Risk Factor",
+  "Has Chronic Respiratory Disease Risk Factor",
+  "Has Diabetes Type 2 Risk Factor",
+  "Has Downs Syndrome Risk Factor",
+  "Has Hypertension Risk Factor",
+  "Has Immunosuppression Risk Factor",
+  "Has Neurologic Disease Risk Factor",
+  "Has Obstructive Sleep Apnea Risk Factor",
+  "Has Obesity Risk Factor",
+  "Has Pregnancy Risk Factor",
+  "Has Renal Disease Risk Factor",
+  "Has Steroid Usage Risk Factor"
+}
+
+/* The risk factors count is null if all components are null,
+    otherwise returns the count of non-null risk factors.
+*/
 define "Risk Factors count":
+  /* if not exists "Risk Factor Components" then null
+  else */
   (if "Has Cancer Risk Factor" then 1 else 0)
     + (if "Has Cardiovascular Disease Risk Factor" then 1 else 0)
     + (if "Has Chronic Respiratory Disease Risk Factor" then 1 else 0)
