@@ -11,7 +11,7 @@
   "title": "Emergency Department COVID-19 Severity Classification",
   "status": "draft",
   "experimental": false,
-  "date": "2021-05-19T12:32:09+00:00",
+  "date": "2021-05-21T13:17:29+00:00",
   "publisher": "Veterans Health Administration (VHA)",
   "contact": [
     {
@@ -358,6 +358,45 @@
           }
         ],
         "reference": {
+          "reference": "Library/COVID19Concepts"
+        },
+        "name": "CQL Library - COVID-19 Shared Concepts and Terminology",
+        "description": "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/COVID19EmergencyDeptSummary"
+        },
+        "name": "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool",
+        "description": "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/COVID19EmergencyDeptHooks"
+        },
+        "name": "CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic",
+        "description": "This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
           "reference": "Library/CDSConnectCommons"
         },
         "name": "CQL Library - Common Logic for CDS",
@@ -384,49 +423,10 @@
           }
         ],
         "reference": {
-          "reference": "Library/COVID19EmergencyDeptSummary"
-        },
-        "name": "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool",
-        "description": "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
           "reference": "Library/FHIRHelpers-4.0.1"
         },
         "name": "CQL Library - FHIR Helpers for CDS",
         "description": "CQL Library - FHIR Helpers for CDS"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/COVID19Concepts"
-        },
-        "name": "CQL Library - COVID-19 Shared Concepts and Terminology",
-        "description": "COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Library"
-          }
-        ],
-        "reference": {
-          "reference": "Library/COVID19EmergencyDeptHooks"
-        },
-        "name": "CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic",
-        "description": "This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline."
       },
       {
         "extension": [
@@ -449,10 +449,10 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/who-performance-status"
+          "reference": "ValueSet/covid-19-lab-platelets"
         },
-        "name": "WHO Performance Status Value Set",
-        "description": "World Health Organization (WHO) performance status finding (finding)"
+        "name": "COVID-19 Laboratory Value Set for Blood Platelets",
+        "description": "COVID-19 Laboratory Value Set for Blood Platelets"
       },
       {
         "extension": [
@@ -475,10 +475,10 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203"
+          "reference": "ValueSet/covid-19-lab-ast"
         },
-        "name": "COVID19 SNOMED Value Set for Obesity",
-        "description": "This set of values contains terms related to obesity."
+        "name": "COVID-19 Laboratory Value Set for AST",
+        "description": "COVID-19 Laboratory Value Set for AST"
       },
       {
         "extension": [
@@ -488,34 +488,8 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/covid-19-lab-ddimer"
-        },
-        "name": "COVID-19 Laboratory Value Set for D-dimer",
-        "description": "COVID-19 Laboratory Value Set for D-dimer"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048"
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102"
         }
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-lab-pao2fio2"
-        },
-        "name": "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio",
-        "description": "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"
       },
       {
         "extension": [
@@ -538,32 +512,10 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064"
-        }
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-condition-risk-downs-syndrome"
+          "reference": "ValueSet/covid-19-lab-ldh"
         },
-        "name": "COVID-19 Risk Factor Downs Syndrome Conditions Value Set",
-        "description": "COVID-19 Risk Factor Downs Syndrome Conditions Value Set"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102"
-        }
+        "name": "COVID-19 Laboratory Value Set for LDH",
+        "description": "COVID-19 Laboratory Value Set for LDH"
       },
       {
         "extension": [
@@ -584,36 +536,8 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/covid-19-lab-crp"
-        },
-        "name": "COVID-19 Laboratory Value Set for CRP",
-        "description": "COVID-19 Laboratory Value Set for CRP"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091"
-        },
-        "name": "COVID19 ICD10CM Value Set for Obesity",
-        "description": "This set of values contains terms related to obesity."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-lab-leukocyte"
-        },
-        "name": "COVID-19 Laboratory Value Set for Leukocytes",
-        "description": "COVID-19 Laboratory Value Set for Leukocytes"
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048"
+        }
       },
       {
         "extension": [
@@ -636,32 +560,23 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174"
-        }
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100"
-        }
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-lab-platelets"
+          "reference": "ValueSet/covid-19-condition-risk-downs-syndrome"
         },
-        "name": "COVID-19 Laboratory Value Set for Blood Platelets",
-        "description": "COVID-19 Laboratory Value Set for Blood Platelets"
+        "name": "COVID-19 Risk Factor Downs Syndrome Conditions Value Set",
+        "description": "COVID-19 Risk Factor Downs Syndrome Conditions Value Set"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203"
+        },
+        "name": "COVID19 SNOMED Value Set for Obesity",
+        "description": "This set of values contains terms related to obesity."
       },
       {
         "extension": [
@@ -673,6 +588,19 @@
         "reference": {
           "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028"
         }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/who-performance-status"
+        },
+        "name": "WHO Performance Status Value Set",
+        "description": "World Health Organization (WHO) performance status finding (finding)"
       },
       {
         "extension": [
@@ -695,10 +623,71 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/covid-19-condition-risk-respiratory"
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/covid-19-condition-risk-cardiovascular"
         },
-        "name": "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set",
-        "description": "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"
+        "name": "COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set",
+        "description": "Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/covid-19-lab-ddimer"
+        },
+        "name": "COVID-19 Laboratory Value Set for D-dimer",
+        "description": "COVID-19 Laboratory Value Set for D-dimer"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/covid-19-lab-leukocyte"
+        },
+        "name": "COVID-19 Laboratory Value Set for Leukocytes",
+        "description": "COVID-19 Laboratory Value Set for Leukocytes"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091"
+        },
+        "name": "COVID19 ICD10CM Value Set for Obesity",
+        "description": "This set of values contains terms related to obesity."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153"
+        }
       },
       {
         "extension": [
@@ -734,47 +723,36 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153"
-        }
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-lab-ast"
-        },
-        "name": "COVID-19 Laboratory Value Set for AST",
-        "description": "COVID-19 Laboratory Value Set for AST"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/covid-19-lab-ldh"
-        },
-        "name": "COVID-19 Laboratory Value Set for LDH",
-        "description": "COVID-19 Laboratory Value Set for LDH"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
           "reference": "ValueSet/covid-19-lab-lymphocytes"
         },
         "name": "COVID-19 Laboratory Value Set for Lymphocytes",
         "description": "COVID-19 Laboratory Value Set for Lymphocytes"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/covid-19-condition-risk-respiratory"
+        },
+        "name": "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set",
+        "description": "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/covid-19-lab-pao2fio2"
+        },
+        "name": "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio",
+        "description": "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"
       },
       {
         "extension": [
@@ -797,10 +775,32 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/covid-19-condition-risk-cardiovascular"
+          "reference": "ValueSet/covid-19-lab-crp"
         },
-        "name": "COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set",
-        "description": "Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)."
+        "name": "COVID-19 Laboratory Value Set for CRP",
+        "description": "COVID-19 Laboratory Value Set for CRP"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064"
+        }
       }
     ],
     "page": {
