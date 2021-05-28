@@ -2381,11 +2381,9 @@
             </return>
          </expression>
       </def>
-      <def locator="622:1-623:51" name="All Active Conditions" context="Patient" accessLevel="Public">
-         <expression locator="623:3-623:51" name="Confirmed" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="623:17-623:50" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="623:39-623:49" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
-            </operand>
+      <def locator="622:1-623:36" name="All Active Conditions" context="Patient" accessLevel="Public">
+         <expression locator="623:3-623:36" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="623:25-623:35" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
          </expression>
       </def>
       <def locator="625:1-631:3" name="Has Cancer Risk Factor" context="Patient" accessLevel="Public">

@@ -7623,29 +7623,21 @@
           }
         },
         {
-          "locator": "622:1-623:51",
+          "locator": "622:1-623:36",
           "name": "All Active Conditions",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "623:3-623:51",
-            "name": "Confirmed",
+            "locator": "623:3-623:36",
+            "name": "ActiveOrRecurring",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "623:17-623:50",
-                "name": "ActiveOrRecurring",
-                "libraryName": "C3F",
-                "type": "FunctionRef",
-                "operand": [
-                  {
-                    "locator": "623:39-623:49",
-                    "dataType": "{http://hl7.org/fhir}Condition",
-                    "templateId": "http://hl7.org/fhir/StructureDefinition/Condition",
-                    "type": "Retrieve"
-                  }
-                ]
+                "locator": "623:25-623:35",
+                "dataType": "{http://hl7.org/fhir}Condition",
+                "templateId": "http://hl7.org/fhir/StructureDefinition/Condition",
+                "type": "Retrieve"
               }
             ]
           }
