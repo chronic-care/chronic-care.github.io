@@ -1819,19 +1819,64 @@
               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
               "type": "As",
               "operand": {
-                "locator": "326:6-326:16",
-                "type": "IsNull",
-                "operand": {
-                  "locator": "326:7",
-                  "name": "o",
-                  "type": "OperandRef"
-                }
+                "locator": "326:6-326:60",
+                "type": "Or",
+                "operand": [
+                  {
+                    "locator": "326:7-326:34",
+                    "type": "Or",
+                    "operand": [
+                      {
+                        "locator": "326:7-326:15",
+                        "type": "IsNull",
+                        "operand": {
+                          "locator": "326:7",
+                          "name": "o",
+                          "type": "OperandRef"
+                        }
+                      },
+                      {
+                        "locator": "326:20-326:34",
+                        "type": "IsNull",
+                        "operand": {
+                          "locator": "326:20-326:26",
+                          "path": "value",
+                          "type": "Property",
+                          "source": {
+                            "locator": "326:20",
+                            "name": "o",
+                            "type": "OperandRef"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "locator": "326:39-326:59",
+                    "type": "IsNull",
+                    "operand": {
+                      "locator": "326:39-326:51",
+                      "path": "value",
+                      "type": "Property",
+                      "source": {
+                        "locator": "326:39-326:45",
+                        "path": "value",
+                        "type": "Property",
+                        "source": {
+                          "locator": "326:39",
+                          "name": "o",
+                          "type": "OperandRef"
+                        }
+                      }
+                    }
+                  }
+                ]
               }
             },
             "then": {
               "type": "As",
               "operand": {
-                "locator": "326:23-326:26",
+                "locator": "326:67-326:70",
                 "type": "Null"
               },
               "asTypeSpecifier": {

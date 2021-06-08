@@ -504,7 +504,7 @@ define function ReportObservations(ObsList List&lt;Observation&gt;):
     sort by Date asc
 
 define function ReportLabObservation(o FHIR.Observation):
-  if (o is null) then null
+  if (o is null or o.value is null or o.value.value is null) then null
   else
     {
       Date:   ToString(C3F.FindDate(o)),
@@ -545,7 +545,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 100Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 184Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 101Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 185Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -574,11 +574,11 @@ define function LabInterpretation(o FHIR.Observation):
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 28, 2021 15:47+0000">2021-05-28</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 8, 2021 20:12+0000">2021-06-08</span>
           <br/>
-          <span style="color: #FFFF77">
-                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
-                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                  
                 
           </span>
@@ -613,3 +613,4 @@ anchors.add()</script>
   ================================================== -->
   </body>
 </html>
+
