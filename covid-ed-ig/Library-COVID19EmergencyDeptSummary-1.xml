@@ -1367,28 +1367,33 @@
             </element>
          </expression>
       </def>
-      <def locator="253:1-255:83" name="HasAdmissionOrDischargeRecommendation" context="Patient" accessLevel="Public">
-         <expression locator="254:3-255:83" xsi:type="Or">
-            <operand locator="254:3-255:37" xsi:type="Or">
-               <operand locator="254:3-254:116" xsi:type="Or">
-                  <operand locator="254:3-254:76" xsi:type="Or">
-                     <operand locator="254:3-254:38" path="ConsiderAdmission" xsi:type="Property">
-                        <source locator="254:3-254:20" name="DispositionSummary" xsi:type="ExpressionRef"/>
+      <def locator="253:1-255:131" name="HasAdmissionOrDischargeRecommendation" context="Patient" accessLevel="Public">
+         <expression locator="254:3-255:131" xsi:type="Or">
+            <operand locator="254:3-255:83" xsi:type="Or">
+               <operand locator="254:3-255:37" xsi:type="Or">
+                  <operand locator="254:3-254:116" xsi:type="Or">
+                     <operand locator="254:3-254:76" xsi:type="Or">
+                        <operand locator="254:3-254:38" path="ConsiderAdmission" xsi:type="Property">
+                           <source locator="254:3-254:20" name="DispositionSummary" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand locator="254:43-254:76" path="SevereAdmission" xsi:type="Property">
+                           <source locator="254:43-254:60" name="DispositionSummary" xsi:type="ExpressionRef"/>
+                        </operand>
                      </operand>
-                     <operand locator="254:43-254:76" path="SevereAdmission" xsi:type="Property">
-                        <source locator="254:43-254:60" name="DispositionSummary" xsi:type="ExpressionRef"/>
+                     <operand locator="254:81-254:116" path="CriticalAdmission" xsi:type="Property">
+                        <source locator="254:81-254:98" name="DispositionSummary" xsi:type="ExpressionRef"/>
                      </operand>
                   </operand>
-                  <operand locator="254:81-254:116" path="CriticalAdmission" xsi:type="Property">
-                     <source locator="254:81-254:98" name="DispositionSummary" xsi:type="ExpressionRef"/>
+                  <operand locator="255:6-255:37" path="DischargeHome" xsi:type="Property">
+                     <source locator="255:6-255:23" name="DispositionSummary" xsi:type="ExpressionRef"/>
                   </operand>
                </operand>
-               <operand locator="255:6-255:37" path="DischargeHome" xsi:type="Property">
-                  <source locator="255:6-255:23" name="DispositionSummary" xsi:type="ExpressionRef"/>
+               <operand locator="255:42-255:83" path="ConsiderDischargingHome" xsi:type="Property">
+                  <source locator="255:42-255:59" name="DispositionSummary" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
-            <operand locator="255:42-255:83" path="ConsiderDischargingHome" xsi:type="Property">
-               <source locator="255:42-255:59" name="DispositionSummary" xsi:type="ExpressionRef"/>
+            <operand locator="255:88-255:131" path="DischargeHomeElevatedRisk" xsi:type="Property">
+               <source locator="255:88-255:105" name="DispositionSummary" xsi:type="ExpressionRef"/>
             </operand>
          </expression>
       </def>

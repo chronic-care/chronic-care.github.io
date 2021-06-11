@@ -4074,42 +4074,58 @@
           }
         },
         {
-          "locator": "253:1-255:83",
+          "locator": "253:1-255:131",
           "name": "HasAdmissionOrDischargeRecommendation",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "254:3-255:83",
+            "locator": "254:3-255:131",
             "type": "Or",
             "operand": [
               {
-                "locator": "254:3-255:37",
+                "locator": "254:3-255:83",
                 "type": "Or",
                 "operand": [
                   {
-                    "locator": "254:3-254:116",
+                    "locator": "254:3-255:37",
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "254:3-254:76",
+                        "locator": "254:3-254:116",
                         "type": "Or",
                         "operand": [
                           {
-                            "locator": "254:3-254:38",
-                            "path": "ConsiderAdmission",
-                            "type": "Property",
-                            "source": {
-                              "locator": "254:3-254:20",
-                              "name": "DispositionSummary",
-                              "type": "ExpressionRef"
-                            }
+                            "locator": "254:3-254:76",
+                            "type": "Or",
+                            "operand": [
+                              {
+                                "locator": "254:3-254:38",
+                                "path": "ConsiderAdmission",
+                                "type": "Property",
+                                "source": {
+                                  "locator": "254:3-254:20",
+                                  "name": "DispositionSummary",
+                                  "type": "ExpressionRef"
+                                }
+                              },
+                              {
+                                "locator": "254:43-254:76",
+                                "path": "SevereAdmission",
+                                "type": "Property",
+                                "source": {
+                                  "locator": "254:43-254:60",
+                                  "name": "DispositionSummary",
+                                  "type": "ExpressionRef"
+                                }
+                              }
+                            ]
                           },
                           {
-                            "locator": "254:43-254:76",
-                            "path": "SevereAdmission",
+                            "locator": "254:81-254:116",
+                            "path": "CriticalAdmission",
                             "type": "Property",
                             "source": {
-                              "locator": "254:43-254:60",
+                              "locator": "254:81-254:98",
                               "name": "DispositionSummary",
                               "type": "ExpressionRef"
                             }
@@ -4117,11 +4133,11 @@
                         ]
                       },
                       {
-                        "locator": "254:81-254:116",
-                        "path": "CriticalAdmission",
+                        "locator": "255:6-255:37",
+                        "path": "DischargeHome",
                         "type": "Property",
                         "source": {
-                          "locator": "254:81-254:98",
+                          "locator": "255:6-255:23",
                           "name": "DispositionSummary",
                           "type": "ExpressionRef"
                         }
@@ -4129,11 +4145,11 @@
                     ]
                   },
                   {
-                    "locator": "255:6-255:37",
-                    "path": "DischargeHome",
+                    "locator": "255:42-255:83",
+                    "path": "ConsiderDischargingHome",
                     "type": "Property",
                     "source": {
-                      "locator": "255:6-255:23",
+                      "locator": "255:42-255:59",
                       "name": "DispositionSummary",
                       "type": "ExpressionRef"
                     }
@@ -4141,11 +4157,11 @@
                 ]
               },
               {
-                "locator": "255:42-255:83",
-                "path": "ConsiderDischargingHome",
+                "locator": "255:88-255:131",
+                "path": "DischargeHomeElevatedRisk",
                 "type": "Property",
                 "source": {
-                  "locator": "255:42-255:59",
+                  "locator": "255:88-255:105",
                   "name": "DispositionSummary",
                   "type": "ExpressionRef"
                 }
