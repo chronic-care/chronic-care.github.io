@@ -122,8 +122,8 @@
             <element locator="64:3-64:31" name="LungInfiltratesOver50">
                <elementType locator="64:25-64:31" name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
             </element>
-            <element locator="65:3-65:23" name="PaO2FiO2Ratio">
-               <elementType locator="65:17-65:23" name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+            <element locator="65:3-65:34" name="PaO2FiO2RatioLessThan300">
+               <elementType locator="65:28-65:34" name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
             </element>
             <element locator="66:3-66:28" name="RespiratoryFailure">
                <elementType locator="66:22-66:28" name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
@@ -1309,19 +1309,24 @@
             </operand>
          </expression>
       </def>
-      <def locator="780:1-783:3" name="Last PaO2FiO2 Ratio Lab Result value" context="Patient" accessLevel="Public">
+      <def locator="780:1-783:3" name="Last PaO2FiO2 Ratio Lab Result Less Than 300" context="Patient" accessLevel="Public">
          <expression locator="781:3-783:3" xsi:type="Coalesce">
-            <operand locator="781:12-781:44" path="PaO2FiO2Ratio" xsi:type="Property">
+            <operand locator="781:12-781:55" path="PaO2FiO2RatioLessThan300" xsi:type="Property">
                <source locator="781:12-781:30" name="ClinicalAssessments" xsi:type="ParameterRef"/>
             </operand>
-            <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-               <operand locator="782:5-782:67" path="value" xsi:type="Property">
-                  <source locator="782:5-782:61" strict="false" xsi:type="As">
-                     <operand locator="782:6-782:43" path="value" xsi:type="Property">
-                        <source locator="782:6-782:37" name="Last PaO2FiO2 Ratio Lab Result" xsi:type="ExpressionRef"/>
-                     </operand>
-                     <asTypeSpecifier locator="782:48-782:60" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
-                  </source>
+            <operand locator="782:5-782:73" xsi:type="Less">
+               <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand locator="782:5-782:67" path="value" xsi:type="Property">
+                     <source locator="782:5-782:61" strict="false" xsi:type="As">
+                        <operand locator="782:6-782:43" path="value" xsi:type="Property">
+                           <source locator="782:6-782:37" name="Last PaO2FiO2 Ratio Lab Result" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <asTypeSpecifier locator="782:48-782:60" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     </source>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDecimal">
+                  <operand locator="782:71-782:73" valueType="t:Integer" value="300" xsi:type="Literal"/>
                </operand>
             </operand>
          </expression>
@@ -1334,7 +1339,7 @@
                      <operand locator="399:10-399:31" name="Is Critical Severity" xsi:type="ExpressionRef"/>
                   </operand>
                   <operand locator="400:9-403:51" xsi:type="Or">
-                     <operand locator="400:10-402:110" xsi:type="Or">
+                     <operand locator="400:10-402:128" xsi:type="Or">
                         <operand locator="400:10-401:91" xsi:type="Or">
                            <operand locator="400:10-400:89" xsi:type="And">
                               <operand locator="400:11-400:50" xsi:type="Not">
@@ -1363,17 +1368,14 @@
                               </operand>
                            </operand>
                         </operand>
-                        <operand locator="402:10-402:110" xsi:type="And">
-                           <operand locator="402:11-402:60" xsi:type="Not">
-                              <operand locator="402:11-402:60" xsi:type="IsNull">
-                                 <operand locator="402:11-402:48" name="Last PaO2FiO2 Ratio Lab Result value" xsi:type="ExpressionRef"/>
+                        <operand locator="402:10-402:128" xsi:type="And">
+                           <operand locator="402:11-402:68" xsi:type="Not">
+                              <operand locator="402:11-402:68" xsi:type="IsNull">
+                                 <operand locator="402:11-402:56" name="Last PaO2FiO2 Ratio Lab Result Less Than 300" xsi:type="ExpressionRef"/>
                               </operand>
                            </operand>
-                           <operand locator="402:66-402:109" xsi:type="Less">
-                              <operand locator="402:66-402:103" name="Last PaO2FiO2 Ratio Lab Result value" xsi:type="ExpressionRef"/>
-                              <operand xsi:type="ToDecimal">
-                                 <operand locator="402:107-402:109" valueType="t:Integer" value="300" xsi:type="Literal"/>
-                              </operand>
+                           <operand locator="402:74-402:127" xsi:type="IsTrue">
+                              <operand locator="402:74-402:119" name="Last PaO2FiO2 Ratio Lab Result Less Than 300" xsi:type="ExpressionRef"/>
                            </operand>
                         </operand>
                      </operand>

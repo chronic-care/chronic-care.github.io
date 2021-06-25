@@ -378,11 +378,11 @@
                 }
               },
               {
-                "locator": "65:3-65:23",
-                "name": "PaO2FiO2Ratio",
+                "locator": "65:3-65:34",
+                "name": "PaO2FiO2RatioLessThan300",
                 "elementType": {
-                  "locator": "65:17-65:23",
-                  "name": "{urn:hl7-org:elm-types:r1}Decimal",
+                  "locator": "65:28-65:34",
+                  "name": "{urn:hl7-org:elm-types:r1}Boolean",
                   "type": "NamedTypeSpecifier"
                 }
               },
@@ -4112,7 +4112,7 @@
         },
         {
           "locator": "780:1-783:3",
-          "name": "Last PaO2FiO2 Ratio Lab Result value",
+          "name": "Last PaO2FiO2 Ratio Lab Result Less Than 300",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
@@ -4120,8 +4120,8 @@
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "781:12-781:44",
-                "path": "PaO2FiO2Ratio",
+                "locator": "781:12-781:55",
+                "path": "PaO2FiO2RatioLessThan300",
                 "type": "Property",
                 "source": {
                   "locator": "781:12-781:30",
@@ -4130,33 +4130,48 @@
                 }
               },
               {
-                "name": "ToDecimal",
-                "libraryName": "FHIRHelpers",
-                "type": "FunctionRef",
+                "locator": "782:5-782:73",
+                "type": "Less",
                 "operand": [
                   {
-                    "locator": "782:5-782:67",
-                    "path": "value",
-                    "type": "Property",
-                    "source": {
-                      "locator": "782:5-782:61",
-                      "strict": false,
-                      "type": "As",
-                      "operand": {
-                        "locator": "782:6-782:43",
+                    "name": "ToDecimal",
+                    "libraryName": "FHIRHelpers",
+                    "type": "FunctionRef",
+                    "operand": [
+                      {
+                        "locator": "782:5-782:67",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "782:6-782:37",
-                          "name": "Last PaO2FiO2 Ratio Lab Result",
-                          "type": "ExpressionRef"
+                          "locator": "782:5-782:61",
+                          "strict": false,
+                          "type": "As",
+                          "operand": {
+                            "locator": "782:6-782:43",
+                            "path": "value",
+                            "type": "Property",
+                            "source": {
+                              "locator": "782:6-782:37",
+                              "name": "Last PaO2FiO2 Ratio Lab Result",
+                              "type": "ExpressionRef"
+                            }
+                          },
+                          "asTypeSpecifier": {
+                            "locator": "782:48-782:60",
+                            "name": "{http://hl7.org/fhir}Quantity",
+                            "type": "NamedTypeSpecifier"
+                          }
                         }
-                      },
-                      "asTypeSpecifier": {
-                        "locator": "782:48-782:60",
-                        "name": "{http://hl7.org/fhir}Quantity",
-                        "type": "NamedTypeSpecifier"
                       }
+                    ]
+                  },
+                  {
+                    "type": "ToDecimal",
+                    "operand": {
+                      "locator": "782:71-782:73",
+                      "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                      "value": "300",
+                      "type": "Literal"
                     }
                   }
                 ]
@@ -4193,7 +4208,7 @@
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "400:10-402:110",
+                        "locator": "400:10-402:128",
                         "type": "Or",
                         "operand": [
                           {
@@ -4281,41 +4296,30 @@
                             ]
                           },
                           {
-                            "locator": "402:10-402:110",
+                            "locator": "402:10-402:128",
                             "type": "And",
                             "operand": [
                               {
-                                "locator": "402:11-402:60",
+                                "locator": "402:11-402:68",
                                 "type": "Not",
                                 "operand": {
-                                  "locator": "402:11-402:60",
+                                  "locator": "402:11-402:68",
                                   "type": "IsNull",
                                   "operand": {
-                                    "locator": "402:11-402:48",
-                                    "name": "Last PaO2FiO2 Ratio Lab Result value",
+                                    "locator": "402:11-402:56",
+                                    "name": "Last PaO2FiO2 Ratio Lab Result Less Than 300",
                                     "type": "ExpressionRef"
                                   }
                                 }
                               },
                               {
-                                "locator": "402:66-402:109",
-                                "type": "Less",
-                                "operand": [
-                                  {
-                                    "locator": "402:66-402:103",
-                                    "name": "Last PaO2FiO2 Ratio Lab Result value",
-                                    "type": "ExpressionRef"
-                                  },
-                                  {
-                                    "type": "ToDecimal",
-                                    "operand": {
-                                      "locator": "402:107-402:109",
-                                      "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                                      "value": "300",
-                                      "type": "Literal"
-                                    }
-                                  }
-                                ]
+                                "locator": "402:74-402:127",
+                                "type": "IsTrue",
+                                "operand": {
+                                  "locator": "402:74-402:119",
+                                  "name": "Last PaO2FiO2 Ratio Lab Result Less Than 300",
+                                  "type": "ExpressionRef"
+                                }
                               }
                             ]
                           }
