@@ -4062,37 +4062,37 @@
           }
         },
         {
-          "locator": "774:1-779:3",
+          "locator": "773:1-778:3",
           "name": "Last PaO2FiO2 Ratio Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "775:3-779:3",
+            "locator": "774:3-778:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "776:5-778:31",
+                "locator": "775:5-777:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "777:7-777:66",
+                    "locator": "776:7-776:66",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "777:20-777:65",
+                        "locator": "776:20-776:65",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "777:34-777:64",
+                          "locator": "776:34-776:64",
                           "name": "PaO2FiO2 Ratio Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -4101,7 +4101,7 @@
                     ]
                   },
                   {
-                    "locator": "778:7-778:30",
+                    "locator": "777:7-777:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -4111,26 +4111,26 @@
           }
         },
         {
-          "locator": "781:1-784:3",
+          "locator": "780:1-783:3",
           "name": "Last PaO2FiO2 Ratio Lab Result Less Than 300",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "782:3-784:3",
+            "locator": "781:3-783:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "782:12-782:55",
+                "locator": "781:12-781:55",
                 "path": "PaO2FiO2RatioLessThan300",
                 "type": "Property",
                 "source": {
-                  "locator": "782:12-782:30",
+                  "locator": "781:12-781:30",
                   "name": "ClinicalAssessments",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "783:5-783:73",
+                "locator": "782:5-782:73",
                 "type": "Less",
                 "operand": [
                   {
@@ -4139,25 +4139,25 @@
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "783:5-783:67",
+                        "locator": "782:5-782:67",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "783:5-783:61",
+                          "locator": "782:5-782:61",
                           "strict": false,
                           "type": "As",
                           "operand": {
-                            "locator": "783:6-783:43",
+                            "locator": "782:6-782:43",
                             "path": "value",
                             "type": "Property",
                             "source": {
-                              "locator": "783:6-783:37",
+                              "locator": "782:6-782:37",
                               "name": "Last PaO2FiO2 Ratio Lab Result",
                               "type": "ExpressionRef"
                             }
                           },
                           "asTypeSpecifier": {
-                            "locator": "783:48-783:60",
+                            "locator": "782:48-782:60",
                             "name": "{http://hl7.org/fhir}Quantity",
                             "type": "NamedTypeSpecifier"
                           }
@@ -4168,7 +4168,7 @@
                   {
                     "type": "ToDecimal",
                     "operand": {
-                      "locator": "783:71-783:73",
+                      "locator": "782:71-782:73",
                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                       "value": "300",
                       "type": "Literal"
@@ -5894,36 +5894,56 @@
           }
         },
         {
-          "locator": "563:1-567:5",
+          "locator": "560:1-565:5",
           "name": "Alertness Score",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "564:3-567:5",
+            "locator": "561:3-565:5",
             "type": "Case",
             "comparand": {
-              "locator": "564:8-564:34",
+              "locator": "561:8-561:34",
               "name": "Alertness Assessment Code",
               "type": "ExpressionRef"
             },
             "caseItem": [
               {
-                "locator": "565:5-565:34",
+                "locator": "562:5-562:34",
                 "when": {
-                  "locator": "565:10-565:27",
+                  "locator": "562:10-562:27",
                   "path": "code",
                   "type": "Property",
                   "source": {
-                    "locator": "565:10-565:22",
+                    "locator": "562:10-562:22",
                     "name": "Confused",
                     "libraryName": "CC",
                     "type": "CodeRef"
                   }
                 },
                 "then": {
-                  "locator": "565:34",
+                  "locator": "562:34",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                   "value": "3",
+                  "type": "Literal"
+                }
+              },
+              {
+                "locator": "563:5-563:31",
+                "when": {
+                  "locator": "563:10-563:24",
+                  "path": "code",
+                  "type": "Property",
+                  "source": {
+                    "locator": "563:10-563:19",
+                    "name": "Alert",
+                    "libraryName": "CC",
+                    "type": "CodeRef"
+                  }
+                },
+                "then": {
+                  "locator": "563:31",
+                  "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                  "value": "0",
                   "type": "Literal"
                 }
               }
@@ -5932,52 +5952,75 @@
               "asType": "{urn:hl7-org:elm-types:r1}Integer",
               "type": "As",
               "operand": {
-                "locator": "566:10-566:13",
+                "locator": "564:10-564:13",
                 "type": "Null"
               }
             }
           }
         },
         {
-          "locator": "579:1-581:11",
+          "locator": "577:1-580:11",
           "name": "Inspired Oxygen Score",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "580:3-581:11",
+            "locator": "578:3-580:11",
             "type": "If",
             "condition": {
               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
               "type": "As",
               "operand": {
-                "locator": "580:6-580:30",
+                "locator": "578:6-578:30",
                 "name": "Has Supplemental Oxygen",
                 "type": "ExpressionRef"
               }
             },
             "then": {
-              "locator": "580:37",
+              "locator": "578:37",
               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
               "value": "2",
               "type": "Literal"
             },
             "else": {
-              "asType": "{urn:hl7-org:elm-types:r1}Integer",
-              "type": "As",
-              "operand": {
-                "locator": "581:8-581:11",
-                "type": "Null"
+              "locator": "579:8-580:11",
+              "type": "If",
+              "condition": {
+                "asType": "{urn:hl7-org:elm-types:r1}Boolean",
+                "type": "As",
+                "operand": {
+                  "locator": "579:11-579:44",
+                  "type": "IsFalse",
+                  "operand": {
+                    "locator": "579:11-579:35",
+                    "name": "Has Supplemental Oxygen",
+                    "type": "ExpressionRef"
+                  }
+                }
+              },
+              "then": {
+                "locator": "579:51",
+                "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                "value": "0",
+                "type": "Literal"
+              },
+              "else": {
+                "asType": "{urn:hl7-org:elm-types:r1}Integer",
+                "type": "As",
+                "operand": {
+                  "locator": "580:8-580:11",
+                  "type": "Null"
+                }
               }
             }
           }
         },
         {
-          "locator": "527:1-543:7",
+          "locator": "527:1-540:7",
           "name": "Sex Risk Score",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "528:3-543:7",
+            "locator": "528:3-540:7",
             "type": "If",
             "condition": {
               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
@@ -6096,7 +6139,7 @@
               }
             },
             "else": {
-              "locator": "536:5-543:7",
+              "locator": "536:5-540:7",
               "type": "Case",
               "caseItem": [
                 {
@@ -6374,89 +6417,13 @@
                     "value": "0",
                     "type": "Literal"
                   }
-                },
-                {
-                  "locator": "540:7-540:41",
-                  "when": {
-                    "locator": "540:12-540:34",
-                    "type": "Equal",
-                    "operand": [
-                      {
-                        "name": "ToString",
-                        "libraryName": "FHIRHelpers",
-                        "type": "FunctionRef",
-                        "operand": [
-                          {
-                            "locator": "540:12-540:25",
-                            "path": "gender",
-                            "type": "Property",
-                            "source": {
-                              "locator": "540:12-540:18",
-                              "name": "Patient",
-                              "type": "ExpressionRef"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "locator": "540:29-540:34",
-                        "valueType": "{urn:hl7-org:elm-types:r1}String",
-                        "value": "male",
-                        "type": "Literal"
-                      }
-                    ]
-                  },
-                  "then": {
-                    "locator": "540:41",
-                    "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                    "value": "1",
-                    "type": "Literal"
-                  }
-                },
-                {
-                  "locator": "541:7-541:43",
-                  "when": {
-                    "locator": "541:12-541:36",
-                    "type": "Equal",
-                    "operand": [
-                      {
-                        "name": "ToString",
-                        "libraryName": "FHIRHelpers",
-                        "type": "FunctionRef",
-                        "operand": [
-                          {
-                            "locator": "541:12-541:25",
-                            "path": "gender",
-                            "type": "Property",
-                            "source": {
-                              "locator": "541:12-541:18",
-                              "name": "Patient",
-                              "type": "ExpressionRef"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "locator": "541:29-541:36",
-                        "valueType": "{urn:hl7-org:elm-types:r1}String",
-                        "value": "female",
-                        "type": "Literal"
-                      }
-                    ]
-                  },
-                  "then": {
-                    "locator": "541:43",
-                    "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                    "value": "0",
-                    "type": "Literal"
-                  }
                 }
               ],
               "else": {
                 "asType": "{urn:hl7-org:elm-types:r1}Integer",
                 "type": "As",
                 "operand": {
-                  "locator": "542:12-542:15",
+                  "locator": "539:12-539:15",
                   "type": "Null"
                 }
               }
@@ -6464,47 +6431,47 @@
           }
         },
         {
-          "locator": "545:1-561:7",
+          "locator": "542:1-558:7",
           "name": "Age Risk Score",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "546:3-561:7",
+            "locator": "543:3-558:7",
             "type": "If",
             "condition": {
               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
               "type": "As",
               "operand": {
-                "locator": "546:6-546:33",
+                "locator": "543:6-543:33",
                 "name": "IgnoreFallbackResourceValues",
                 "type": "ParameterRef"
               }
             },
             "then": {
-              "locator": "547:5-553:7",
+              "locator": "544:5-550:7",
               "type": "Case",
               "caseItem": [
                 {
-                  "locator": "548:5-548:49",
+                  "locator": "545:5-545:49",
                   "when": {
-                    "locator": "548:10-548:42",
+                    "locator": "545:10-545:42",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "548:10-548:24",
+                            "locator": "545:10-545:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "548:10-548:20",
+                              "locator": "545:10-545:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "548:34-548:35",
+                            "locator": "545:34-545:35",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "16",
                             "type": "Literal"
@@ -6515,17 +6482,17 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "548:10-548:24",
+                            "locator": "545:10-545:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "548:10-548:20",
+                              "locator": "545:10-545:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "548:41-548:42",
+                            "locator": "545:41-545:42",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "49",
                             "type": "Literal"
@@ -6535,33 +6502,33 @@
                     ]
                   },
                   "then": {
-                    "locator": "548:49",
+                    "locator": "545:49",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "0",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "549:5-549:49",
+                  "locator": "546:5-546:49",
                   "when": {
-                    "locator": "549:10-549:42",
+                    "locator": "546:10-546:42",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "549:10-549:24",
+                            "locator": "546:10-546:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "549:10-549:20",
+                              "locator": "546:10-546:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "549:34-549:35",
+                            "locator": "546:34-546:35",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "50",
                             "type": "Literal"
@@ -6572,17 +6539,17 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "549:10-549:24",
+                            "locator": "546:10-546:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "549:10-549:20",
+                              "locator": "546:10-546:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "549:41-549:42",
+                            "locator": "546:41-546:42",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "65",
                             "type": "Literal"
@@ -6592,33 +6559,33 @@
                     ]
                   },
                   "then": {
-                    "locator": "549:49",
+                    "locator": "546:49",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "2",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "550:5-550:49",
+                  "locator": "547:5-547:49",
                   "when": {
-                    "locator": "550:10-550:42",
+                    "locator": "547:10-547:42",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "550:10-550:24",
+                            "locator": "547:10-547:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "550:10-550:20",
+                              "locator": "547:10-547:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "550:34-550:35",
+                            "locator": "547:34-547:35",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "66",
                             "type": "Literal"
@@ -6629,17 +6596,17 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "550:10-550:24",
+                            "locator": "547:10-547:24",
                             "path": "Age",
                             "type": "Property",
                             "source": {
-                              "locator": "550:10-550:20",
+                              "locator": "547:10-547:20",
                               "name": "PatientData",
                               "type": "ParameterRef"
                             }
                           },
                           {
-                            "locator": "550:41-550:42",
+                            "locator": "547:41-547:42",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "80",
                             "type": "Literal"
@@ -6649,30 +6616,30 @@
                     ]
                   },
                   "then": {
-                    "locator": "550:49",
+                    "locator": "547:49",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "3",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "551:5-551:36",
+                  "locator": "548:5-548:36",
                   "when": {
-                    "locator": "551:10-551:29",
+                    "locator": "548:10-548:29",
                     "type": "Greater",
                     "operand": [
                       {
-                        "locator": "551:10-551:24",
+                        "locator": "548:10-548:24",
                         "path": "Age",
                         "type": "Property",
                         "source": {
-                          "locator": "551:10-551:20",
+                          "locator": "548:10-548:20",
                           "name": "PatientData",
                           "type": "ParameterRef"
                         }
                       },
                       {
-                        "locator": "551:28-551:29",
+                        "locator": "548:28-548:29",
                         "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                         "value": "80",
                         "type": "Literal"
@@ -6680,7 +6647,7 @@
                     ]
                   },
                   "then": {
-                    "locator": "551:36",
+                    "locator": "548:36",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "4",
                     "type": "Literal"
@@ -6691,26 +6658,26 @@
                 "asType": "{urn:hl7-org:elm-types:r1}Integer",
                 "type": "As",
                 "operand": {
-                  "locator": "552:12-552:15",
+                  "locator": "549:12-549:15",
                   "type": "Null"
                 }
               }
             },
             "else": {
-              "locator": "555:5-561:7",
+              "locator": "552:5-558:7",
               "type": "Case",
               "caseItem": [
                 {
-                  "locator": "556:7-556:48",
+                  "locator": "553:7-553:48",
                   "when": {
-                    "locator": "556:12-556:41",
+                    "locator": "553:12-553:41",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "556:12-556:23",
+                            "locator": "553:12-553:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6723,7 +6690,7 @@
                             }
                           },
                           {
-                            "locator": "556:33-556:34",
+                            "locator": "553:33-553:34",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "16",
                             "type": "Literal"
@@ -6734,7 +6701,7 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "556:12-556:23",
+                            "locator": "553:12-553:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6747,7 +6714,7 @@
                             }
                           },
                           {
-                            "locator": "556:40-556:41",
+                            "locator": "553:40-553:41",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "49",
                             "type": "Literal"
@@ -6757,23 +6724,23 @@
                     ]
                   },
                   "then": {
-                    "locator": "556:48",
+                    "locator": "553:48",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "0",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "557:7-557:48",
+                  "locator": "554:7-554:48",
                   "when": {
-                    "locator": "557:12-557:41",
+                    "locator": "554:12-554:41",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "557:12-557:23",
+                            "locator": "554:12-554:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6786,7 +6753,7 @@
                             }
                           },
                           {
-                            "locator": "557:33-557:34",
+                            "locator": "554:33-554:34",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "50",
                             "type": "Literal"
@@ -6797,7 +6764,7 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "557:12-557:23",
+                            "locator": "554:12-554:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6810,7 +6777,7 @@
                             }
                           },
                           {
-                            "locator": "557:40-557:41",
+                            "locator": "554:40-554:41",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "65",
                             "type": "Literal"
@@ -6820,23 +6787,23 @@
                     ]
                   },
                   "then": {
-                    "locator": "557:48",
+                    "locator": "554:48",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "2",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "558:7-558:48",
+                  "locator": "555:7-555:48",
                   "when": {
-                    "locator": "558:12-558:41",
+                    "locator": "555:12-555:41",
                     "type": "And",
                     "operand": [
                       {
                         "type": "GreaterOrEqual",
                         "operand": [
                           {
-                            "locator": "558:12-558:23",
+                            "locator": "555:12-555:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6849,7 +6816,7 @@
                             }
                           },
                           {
-                            "locator": "558:33-558:34",
+                            "locator": "555:33-555:34",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "66",
                             "type": "Literal"
@@ -6860,7 +6827,7 @@
                         "type": "LessOrEqual",
                         "operand": [
                           {
-                            "locator": "558:12-558:23",
+                            "locator": "555:12-555:23",
                             "precision": "Year",
                             "type": "CalculateAge",
                             "operand": {
@@ -6873,7 +6840,7 @@
                             }
                           },
                           {
-                            "locator": "558:40-558:41",
+                            "locator": "555:40-555:41",
                             "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                             "value": "80",
                             "type": "Literal"
@@ -6883,20 +6850,20 @@
                     ]
                   },
                   "then": {
-                    "locator": "558:48",
+                    "locator": "555:48",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "3",
                     "type": "Literal"
                   }
                 },
                 {
-                  "locator": "559:7-559:35",
+                  "locator": "556:7-556:35",
                   "when": {
-                    "locator": "559:12-559:28",
+                    "locator": "556:12-556:28",
                     "type": "Greater",
                     "operand": [
                       {
-                        "locator": "559:12-559:23",
+                        "locator": "556:12-556:23",
                         "precision": "Year",
                         "type": "CalculateAge",
                         "operand": {
@@ -6909,7 +6876,7 @@
                         }
                       },
                       {
-                        "locator": "559:27-559:28",
+                        "locator": "556:27-556:28",
                         "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                         "value": "80",
                         "type": "Literal"
@@ -6917,7 +6884,7 @@
                     ]
                   },
                   "then": {
-                    "locator": "559:35",
+                    "locator": "556:35",
                     "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                     "value": "4",
                     "type": "Literal"
@@ -6928,7 +6895,7 @@
                 "asType": "{urn:hl7-org:elm-types:r1}Integer",
                 "type": "As",
                 "operand": {
-                  "locator": "560:12-560:15",
+                  "locator": "557:12-557:15",
                   "type": "Null"
                 }
               }
@@ -6936,19 +6903,59 @@
           }
         },
         {
-          "locator": "569:1-577:5",
+          "locator": "567:1-575:5",
           "name": "Performance Status Score",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "570:3-577:5",
+            "locator": "568:3-575:5",
             "type": "Case",
             "comparand": {
-              "locator": "570:8-570:32",
+              "locator": "568:8-568:32",
               "name": "Performance Status Code",
               "type": "ExpressionRef"
             },
             "caseItem": [
+              {
+                "locator": "569:5-569:46",
+                "when": {
+                  "locator": "569:10-569:39",
+                  "path": "code",
+                  "type": "Property",
+                  "source": {
+                    "locator": "569:10-569:34",
+                    "name": "Performance Status 0",
+                    "libraryName": "CC",
+                    "type": "CodeRef"
+                  }
+                },
+                "then": {
+                  "locator": "569:46",
+                  "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                  "value": "0",
+                  "type": "Literal"
+                }
+              },
+              {
+                "locator": "570:5-570:46",
+                "when": {
+                  "locator": "570:10-570:39",
+                  "path": "code",
+                  "type": "Property",
+                  "source": {
+                    "locator": "570:10-570:34",
+                    "name": "Performance Status 1",
+                    "libraryName": "CC",
+                    "type": "CodeRef"
+                  }
+                },
+                "then": {
+                  "locator": "570:46",
+                  "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                  "value": "1",
+                  "type": "Literal"
+                }
+              },
               {
                 "locator": "571:5-571:46",
                 "when": {
@@ -6957,7 +6964,7 @@
                   "type": "Property",
                   "source": {
                     "locator": "571:10-571:34",
-                    "name": "Performance Status 0",
+                    "name": "Performance Status 2",
                     "libraryName": "CC",
                     "type": "CodeRef"
                   }
@@ -6965,7 +6972,7 @@
                 "then": {
                   "locator": "571:46",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                  "value": "0",
+                  "value": "2",
                   "type": "Literal"
                 }
               },
@@ -6977,7 +6984,7 @@
                   "type": "Property",
                   "source": {
                     "locator": "572:10-572:34",
-                    "name": "Performance Status 1",
+                    "name": "Performance Status 3",
                     "libraryName": "CC",
                     "type": "CodeRef"
                   }
@@ -6985,7 +6992,7 @@
                 "then": {
                   "locator": "572:46",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                  "value": "1",
+                  "value": "3",
                   "type": "Literal"
                 }
               },
@@ -6997,53 +7004,13 @@
                   "type": "Property",
                   "source": {
                     "locator": "573:10-573:34",
-                    "name": "Performance Status 2",
-                    "libraryName": "CC",
-                    "type": "CodeRef"
-                  }
-                },
-                "then": {
-                  "locator": "573:46",
-                  "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                  "value": "2",
-                  "type": "Literal"
-                }
-              },
-              {
-                "locator": "574:5-574:46",
-                "when": {
-                  "locator": "574:10-574:39",
-                  "path": "code",
-                  "type": "Property",
-                  "source": {
-                    "locator": "574:10-574:34",
-                    "name": "Performance Status 3",
-                    "libraryName": "CC",
-                    "type": "CodeRef"
-                  }
-                },
-                "then": {
-                  "locator": "574:46",
-                  "valueType": "{urn:hl7-org:elm-types:r1}Integer",
-                  "value": "3",
-                  "type": "Literal"
-                }
-              },
-              {
-                "locator": "575:5-575:46",
-                "when": {
-                  "locator": "575:10-575:39",
-                  "path": "code",
-                  "type": "Property",
-                  "source": {
-                    "locator": "575:10-575:34",
                     "name": "Performance Status 4",
                     "libraryName": "CC",
                     "type": "CodeRef"
                   }
                 },
                 "then": {
-                  "locator": "575:46",
+                  "locator": "573:46",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                   "value": "4",
                   "type": "Literal"
@@ -7054,7 +7021,7 @@
               "asType": "{urn:hl7-org:elm-types:r1}Integer",
               "type": "As",
               "operand": {
-                "locator": "576:10-576:13",
+                "locator": "574:10-574:13",
                 "type": "Null"
               }
             }
@@ -7658,18 +7625,18 @@
           }
         },
         {
-          "locator": "623:1-624:36",
+          "locator": "622:1-623:36",
           "name": "All Active Conditions",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "624:3-624:36",
+            "locator": "623:3-623:36",
             "name": "ActiveOrRecurring",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "624:25-624:35",
+                "locator": "623:25-623:35",
                 "dataType": "{http://hl7.org/fhir}Condition",
                 "templateId": "http://hl7.org/fhir/StructureDefinition/Condition",
                 "type": "Retrieve"
@@ -7678,36 +7645,36 @@
           }
         },
         {
-          "locator": "626:1-632:3",
+          "locator": "625:1-631:3",
           "name": "Has Cancer Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "627:3-632:3",
+            "locator": "626:3-631:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "628:5-628:22",
+                "locator": "627:5-627:22",
                 "path": "Cancer",
                 "type": "Property",
                 "source": {
-                  "locator": "628:5-628:15",
+                  "locator": "627:5-627:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "629:5-631:48",
+                "locator": "628:5-630:48",
                 "type": "Exists",
                 "operand": {
-                  "locator": "629:11-631:48",
+                  "locator": "628:11-630:48",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "629:12-629:36",
+                      "locator": "628:12-628:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "629:12-629:34",
+                        "locator": "628:12-628:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7715,11 +7682,11 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "630:7-631:47",
+                    "locator": "629:7-630:47",
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "630:14-630:47",
+                        "locator": "629:14-629:47",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -7727,7 +7694,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "630:14-630:19",
+                              "locator": "629:14-629:19",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -7735,14 +7702,14 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "630:24-630:47",
+                          "locator": "629:24-629:47",
                           "name": "Cancer SNOMED Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
                         }
                       },
                       {
-                        "locator": "631:12-631:46",
+                        "locator": "630:12-630:46",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -7750,7 +7717,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "631:12-631:17",
+                              "locator": "630:12-630:17",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -7758,7 +7725,7 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "631:22-631:46",
+                          "locator": "630:22-630:46",
                           "name": "Cancer ICD10CM Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -7772,36 +7739,36 @@
           }
         },
         {
-          "locator": "634:1-639:3",
+          "locator": "633:1-638:3",
           "name": "Has Cardiovascular Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "635:3-639:3",
+            "locator": "634:3-638:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "636:5-636:37",
+                "locator": "635:5-635:37",
                 "path": "CardiovascularDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "636:5-636:15",
+                  "locator": "635:5-635:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "637:5-638:56",
+                "locator": "636:5-637:56",
                 "type": "Exists",
                 "operand": {
-                  "locator": "637:11-638:56",
+                  "locator": "636:11-637:56",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "637:12-637:36",
+                      "locator": "636:12-636:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "637:12-637:34",
+                        "locator": "636:12-636:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7809,7 +7776,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "638:7-638:55",
+                    "locator": "637:7-637:55",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7817,7 +7784,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "638:13-638:18",
+                          "locator": "637:13-637:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7825,7 +7792,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "638:23-638:55",
+                      "locator": "637:23-637:55",
                       "name": "Cardiovascular Disease Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7837,36 +7804,36 @@
           }
         },
         {
-          "locator": "641:1-646:3",
+          "locator": "640:1-645:3",
           "name": "Has Chronic Respiratory Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "642:3-646:3",
+            "locator": "641:3-645:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "643:5-643:41",
+                "locator": "642:5-642:41",
                 "path": "ChronicRespiratoryDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "643:5-643:15",
+                  "locator": "642:5-642:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "644:5-645:61",
+                "locator": "643:5-644:61",
                 "type": "Exists",
                 "operand": {
-                  "locator": "644:11-645:61",
+                  "locator": "643:11-644:61",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "644:12-644:36",
+                      "locator": "643:12-643:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "644:12-644:34",
+                        "locator": "643:12-643:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7874,7 +7841,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "645:7-645:60",
+                    "locator": "644:7-644:60",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -7882,7 +7849,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "645:13-645:18",
+                          "locator": "644:13-644:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -7890,7 +7857,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "645:23-645:60",
+                      "locator": "644:23-644:60",
                       "name": "Chronic Respiratory Disease Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -7902,36 +7869,36 @@
           }
         },
         {
-          "locator": "648:1-654:3",
+          "locator": "647:1-653:3",
           "name": "Has Diabetes Type 2 Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "649:3-654:3",
+            "locator": "648:3-653:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "650:5-650:29",
+                "locator": "649:5-649:29",
                 "path": "DiabetesType2",
                 "type": "Property",
                 "source": {
-                  "locator": "650:5-650:15",
+                  "locator": "649:5-649:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "651:5-653:50",
+                "locator": "650:5-652:50",
                 "type": "Exists",
                 "operand": {
-                  "locator": "651:11-653:50",
+                  "locator": "650:11-652:50",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "651:12-651:36",
+                      "locator": "650:12-650:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "651:12-651:34",
+                        "locator": "650:12-650:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -7939,11 +7906,11 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "652:7-653:49",
+                    "locator": "651:7-652:49",
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "652:14-652:49",
+                        "locator": "651:14-651:49",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -7951,7 +7918,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "652:14-652:19",
+                              "locator": "651:14-651:19",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -7959,14 +7926,14 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "652:24-652:49",
+                          "locator": "651:24-651:49",
                           "name": "Diabetes SNOMED Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
                         }
                       },
                       {
-                        "locator": "653:12-653:48",
+                        "locator": "652:12-652:48",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -7974,7 +7941,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "653:12-653:17",
+                              "locator": "652:12-652:17",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -7982,7 +7949,7 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "653:22-653:48",
+                          "locator": "652:22-652:48",
                           "name": "Diabetes ICD10CM Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -7996,36 +7963,36 @@
           }
         },
         {
-          "locator": "656:1-661:3",
+          "locator": "655:1-660:3",
           "name": "Has Downs Syndrome Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "657:3-661:3",
+            "locator": "656:3-660:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "658:5-658:29",
+                "locator": "657:5-657:29",
                 "path": "DownsSyndrome",
                 "type": "Property",
                 "source": {
-                  "locator": "658:5-658:15",
+                  "locator": "657:5-657:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "659:5-660:48",
+                "locator": "658:5-659:48",
                 "type": "Exists",
                 "operand": {
-                  "locator": "659:11-660:48",
+                  "locator": "658:11-659:48",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "659:12-659:36",
+                      "locator": "658:12-658:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "659:12-659:34",
+                        "locator": "658:12-658:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -8033,7 +8000,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "660:7-660:47",
+                    "locator": "659:7-659:47",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -8041,7 +8008,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "660:13-660:18",
+                          "locator": "659:13-659:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -8049,7 +8016,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "660:23-660:47",
+                      "locator": "659:23-659:47",
                       "name": "Downs Syndrome Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -8061,36 +8028,36 @@
           }
         },
         {
-          "locator": "663:1-669:3",
+          "locator": "662:1-668:3",
           "name": "Has Hypertension Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "664:3-669:3",
+            "locator": "663:3-668:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "665:5-665:28",
+                "locator": "664:5-664:28",
                 "path": "Hypertension",
                 "type": "Property",
                 "source": {
-                  "locator": "665:5-665:15",
+                  "locator": "664:5-664:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "666:5-668:54",
+                "locator": "665:5-667:54",
                 "type": "Exists",
                 "operand": {
-                  "locator": "666:11-668:54",
+                  "locator": "665:11-667:54",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "666:12-666:36",
+                      "locator": "665:12-665:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "666:12-666:34",
+                        "locator": "665:12-665:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -8098,11 +8065,11 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "667:7-668:53",
+                    "locator": "666:7-667:53",
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "667:14-667:53",
+                        "locator": "666:14-666:53",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -8110,7 +8077,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "667:14-667:19",
+                              "locator": "666:14-666:19",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -8118,14 +8085,14 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "667:24-667:53",
+                          "locator": "666:24-666:53",
                           "name": "Hypertension SNOMED Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
                         }
                       },
                       {
-                        "locator": "668:12-668:52",
+                        "locator": "667:12-667:52",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -8133,7 +8100,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "668:12-668:17",
+                              "locator": "667:12-667:17",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -8141,7 +8108,7 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "668:22-668:52",
+                          "locator": "667:22-667:52",
                           "name": "Hypertension ICD10CM Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8155,68 +8122,68 @@
           }
         },
         {
-          "locator": "671:1-672:31",
+          "locator": "670:1-671:31",
           "name": "Has Immunosuppression Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "672:3-672:31",
+            "locator": "671:3-671:31",
             "path": "Immunosuppression",
             "type": "Property",
             "source": {
-              "locator": "672:3-672:13",
+              "locator": "671:3-671:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
           }
         },
         {
-          "locator": "674:1-675:31",
+          "locator": "673:1-674:31",
           "name": "Has Neurologic Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "675:3-675:31",
+            "locator": "674:3-674:31",
             "path": "NeurologicDisease",
             "type": "Property",
             "source": {
-              "locator": "675:3-675:13",
+              "locator": "674:3-674:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
           }
         },
         {
-          "locator": "677:1-682:3",
+          "locator": "676:1-681:3",
           "name": "Has Obstructive Sleep Apnea Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "678:3-682:3",
+            "locator": "677:3-681:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "679:5-679:37",
+                "locator": "678:5-678:37",
                 "path": "ObstructiveSleepApnea",
                 "type": "Property",
                 "source": {
-                  "locator": "679:5-679:15",
+                  "locator": "678:5-678:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "680:5-681:57",
+                "locator": "679:5-680:57",
                 "type": "Exists",
                 "operand": {
-                  "locator": "680:11-681:57",
+                  "locator": "679:11-680:57",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "680:12-680:36",
+                      "locator": "679:12-679:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "680:12-680:34",
+                        "locator": "679:12-679:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -8224,7 +8191,7 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "681:7-681:56",
+                    "locator": "680:7-680:56",
                     "type": "InValueSet",
                     "code": {
                       "name": "ToConcept",
@@ -8232,7 +8199,7 @@
                       "type": "FunctionRef",
                       "operand": [
                         {
-                          "locator": "681:13-681:18",
+                          "locator": "680:13-680:18",
                           "path": "code",
                           "scope": "C",
                           "type": "Property"
@@ -8240,7 +8207,7 @@
                       ]
                     },
                     "valueset": {
-                      "locator": "681:23-681:56",
+                      "locator": "680:23-680:56",
                       "name": "Obstructive Sleep Apnea Codes",
                       "libraryName": "CC",
                       "type": "ValueSetRef"
@@ -8252,40 +8219,40 @@
           }
         },
         {
-          "locator": "684:1-691:3",
+          "locator": "683:1-690:3",
           "name": "Has Obesity Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "685:3-691:3",
+            "locator": "684:3-690:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "686:5-686:23",
+                "locator": "685:5-685:23",
                 "path": "Obesity",
                 "type": "Property",
                 "source": {
-                  "locator": "686:5-686:15",
+                  "locator": "685:5-685:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "687:5-690:31",
+                "locator": "686:5-689:31",
                 "type": "Or",
                 "operand": [
                   {
-                    "locator": "687:6-689:49",
+                    "locator": "686:6-688:49",
                     "type": "Exists",
                     "operand": {
-                      "locator": "687:12-689:49",
+                      "locator": "686:12-688:49",
                       "type": "Query",
                       "source": [
                         {
-                          "locator": "687:13-687:37",
+                          "locator": "686:13-686:37",
                           "alias": "C",
                           "expression": {
-                            "locator": "687:13-687:35",
+                            "locator": "686:13-686:35",
                             "name": "All Active Conditions",
                             "type": "ExpressionRef"
                           }
@@ -8293,11 +8260,11 @@
                       ],
                       "relationship": [],
                       "where": {
-                        "locator": "688:7-689:48",
+                        "locator": "687:7-688:48",
                         "type": "Or",
                         "operand": [
                           {
-                            "locator": "688:14-688:48",
+                            "locator": "687:14-687:48",
                             "type": "InValueSet",
                             "code": {
                               "name": "ToConcept",
@@ -8305,7 +8272,7 @@
                               "type": "FunctionRef",
                               "operand": [
                                 {
-                                  "locator": "688:14-688:19",
+                                  "locator": "687:14-687:19",
                                   "path": "code",
                                   "scope": "C",
                                   "type": "Property"
@@ -8313,14 +8280,14 @@
                               ]
                             },
                             "valueset": {
-                              "locator": "688:24-688:48",
+                              "locator": "687:24-687:48",
                               "name": "Obesity SNOMED Codes",
                               "libraryName": "CC",
                               "type": "ValueSetRef"
                             }
                           },
                           {
-                            "locator": "689:12-689:47",
+                            "locator": "688:12-688:47",
                             "type": "InValueSet",
                             "code": {
                               "name": "ToConcept",
@@ -8328,7 +8295,7 @@
                               "type": "FunctionRef",
                               "operand": [
                                 {
-                                  "locator": "689:12-689:17",
+                                  "locator": "688:12-688:17",
                                   "path": "code",
                                   "scope": "C",
                                   "type": "Property"
@@ -8336,7 +8303,7 @@
                               ]
                             },
                             "valueset": {
-                              "locator": "689:22-689:47",
+                              "locator": "688:22-688:47",
                               "name": "Obesity ICD10CM Codes",
                               "libraryName": "CC",
                               "type": "ValueSetRef"
@@ -8347,15 +8314,15 @@
                     }
                   },
                   {
-                    "locator": "690:9-690:30",
+                    "locator": "689:9-689:30",
                     "type": "GreaterOrEqual",
                     "operand": [
                       {
-                        "locator": "690:9-690:24",
+                        "locator": "689:9-689:24",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "690:9-690:18",
+                          "locator": "689:9-689:18",
                           "name": "Last BMI",
                           "type": "ExpressionRef"
                         }
@@ -8363,7 +8330,7 @@
                       {
                         "type": "ToDecimal",
                         "operand": {
-                          "locator": "690:29-690:30",
+                          "locator": "689:29-689:30",
                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                           "value": "35",
                           "type": "Literal"
@@ -8377,52 +8344,52 @@
           }
         },
         {
-          "locator": "693:1-694:23",
+          "locator": "692:1-693:23",
           "name": "Has Pregnancy Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "694:3-694:23",
+            "locator": "693:3-693:23",
             "path": "Pregnancy",
             "type": "Property",
             "source": {
-              "locator": "694:3-694:13",
+              "locator": "693:3-693:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
           }
         },
         {
-          "locator": "696:1-702:3",
+          "locator": "695:1-701:3",
           "name": "Has Renal Disease Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "697:3-702:3",
+            "locator": "696:3-701:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "698:5-698:28",
+                "locator": "697:5-697:28",
                 "path": "RenalDisease",
                 "type": "Property",
                 "source": {
-                  "locator": "698:5-698:15",
+                  "locator": "697:5-697:15",
                   "name": "RiskFactors",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "699:5-701:56",
+                "locator": "698:5-700:56",
                 "type": "Exists",
                 "operand": {
-                  "locator": "699:11-701:56",
+                  "locator": "698:11-700:56",
                   "type": "Query",
                   "source": [
                     {
-                      "locator": "699:12-699:36",
+                      "locator": "698:12-698:36",
                       "alias": "C",
                       "expression": {
-                        "locator": "699:12-699:34",
+                        "locator": "698:12-698:34",
                         "name": "All Active Conditions",
                         "type": "ExpressionRef"
                       }
@@ -8430,11 +8397,11 @@
                   ],
                   "relationship": [],
                   "where": {
-                    "locator": "700:7-701:55",
+                    "locator": "699:7-700:55",
                     "type": "Or",
                     "operand": [
                       {
-                        "locator": "700:14-700:55",
+                        "locator": "699:14-699:55",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -8442,7 +8409,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "700:14-700:19",
+                              "locator": "699:14-699:19",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -8450,14 +8417,14 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "700:24-700:55",
+                          "locator": "699:24-699:55",
                           "name": "Kidney Disease SNOMED Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
                         }
                       },
                       {
-                        "locator": "701:12-701:54",
+                        "locator": "700:12-700:54",
                         "type": "InValueSet",
                         "code": {
                           "name": "ToConcept",
@@ -8465,7 +8432,7 @@
                           "type": "FunctionRef",
                           "operand": [
                             {
-                              "locator": "701:12-701:17",
+                              "locator": "700:12-700:17",
                               "path": "code",
                               "scope": "C",
                               "type": "Property"
@@ -8473,7 +8440,7 @@
                           ]
                         },
                         "valueset": {
-                          "locator": "701:22-701:54",
+                          "locator": "700:22-700:54",
                           "name": "Kidney Disease ICD10CM Codes",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -8487,92 +8454,92 @@
           }
         },
         {
-          "locator": "704:1-705:26",
+          "locator": "703:1-704:26",
           "name": "Has Steroid Usage Risk Factor",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "705:3-705:26",
+            "locator": "704:3-704:26",
             "path": "SteroidUsage",
             "type": "Property",
             "source": {
-              "locator": "705:3-705:13",
+              "locator": "704:3-704:13",
               "name": "RiskFactors",
               "type": "ParameterRef"
             }
           }
         },
         {
-          "locator": "587:1-601:1",
+          "locator": "586:1-600:1",
           "name": "Risk Factor Components",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "587:34-601:1",
+            "locator": "586:34-600:1",
             "type": "List",
             "element": [
               {
-                "locator": "588:3-588:26",
+                "locator": "587:3-587:26",
                 "name": "Has Cancer Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "589:3-589:42",
+                "locator": "588:3-588:42",
                 "name": "Has Cardiovascular Disease Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "590:3-590:47",
+                "locator": "589:3-589:47",
                 "name": "Has Chronic Respiratory Disease Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "591:3-591:35",
+                "locator": "590:3-590:35",
                 "name": "Has Diabetes Type 2 Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "592:3-592:34",
+                "locator": "591:3-591:34",
                 "name": "Has Downs Syndrome Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "593:3-593:32",
+                "locator": "592:3-592:32",
                 "name": "Has Hypertension Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "594:3-594:37",
+                "locator": "593:3-593:37",
                 "name": "Has Immunosuppression Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "595:3-595:38",
+                "locator": "594:3-594:38",
                 "name": "Has Neurologic Disease Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "596:3-596:43",
+                "locator": "595:3-595:43",
                 "name": "Has Obstructive Sleep Apnea Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "597:3-597:27",
+                "locator": "596:3-596:27",
                 "name": "Has Obesity Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "598:3-598:29",
+                "locator": "597:3-597:29",
                 "name": "Has Pregnancy Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "599:3-599:33",
+                "locator": "598:3-598:33",
                 "name": "Has Renal Disease Risk Factor",
                 "type": "ExpressionRef"
               },
               {
-                "locator": "600:3-600:33",
+                "locator": "599:3-599:33",
                 "name": "Has Steroid Usage Risk Factor",
                 "type": "ExpressionRef"
               }
@@ -8580,103 +8547,103 @@
           }
         },
         {
-          "locator": "606:1-621:56",
+          "locator": "605:1-620:56",
           "name": "Risk Factors count",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "609:3-621:56",
+            "locator": "608:3-620:56",
             "type": "Add",
             "operand": [
               {
-                "locator": "609:3-620:56",
+                "locator": "608:3-619:56",
                 "type": "Add",
                 "operand": [
                   {
-                    "locator": "609:3-619:52",
+                    "locator": "608:3-618:52",
                     "type": "Add",
                     "operand": [
                       {
-                        "locator": "609:3-618:50",
+                        "locator": "608:3-617:50",
                         "type": "Add",
                         "operand": [
                           {
-                            "locator": "609:3-617:66",
+                            "locator": "608:3-616:66",
                             "type": "Add",
                             "operand": [
                               {
-                                "locator": "609:3-616:61",
+                                "locator": "608:3-615:61",
                                 "type": "Add",
                                 "operand": [
                                   {
-                                    "locator": "609:3-615:60",
+                                    "locator": "608:3-614:60",
                                     "type": "Add",
                                     "operand": [
                                       {
-                                        "locator": "609:3-614:55",
+                                        "locator": "608:3-613:55",
                                         "type": "Add",
                                         "operand": [
                                           {
-                                            "locator": "609:3-613:57",
+                                            "locator": "608:3-612:57",
                                             "type": "Add",
                                             "operand": [
                                               {
-                                                "locator": "609:3-612:58",
+                                                "locator": "608:3-611:58",
                                                 "type": "Add",
                                                 "operand": [
                                                   {
-                                                    "locator": "609:3-611:70",
+                                                    "locator": "608:3-610:70",
                                                     "type": "Add",
                                                     "operand": [
                                                       {
-                                                        "locator": "609:3-610:65",
+                                                        "locator": "608:3-609:65",
                                                         "type": "Add",
                                                         "operand": [
                                                           {
-                                                            "locator": "609:3-609:45",
+                                                            "locator": "608:3-608:45",
                                                             "type": "If",
                                                             "condition": {
                                                               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                                               "type": "As",
                                                               "operand": {
-                                                                "locator": "609:7-609:30",
+                                                                "locator": "608:7-608:30",
                                                                 "name": "Has Cancer Risk Factor",
                                                                 "type": "ExpressionRef"
                                                               }
                                                             },
                                                             "then": {
-                                                              "locator": "609:37",
+                                                              "locator": "608:37",
                                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                               "value": "1",
                                                               "type": "Literal"
                                                             },
                                                             "else": {
-                                                              "locator": "609:44",
+                                                              "locator": "608:44",
                                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                               "value": "0",
                                                               "type": "Literal"
                                                             }
                                                           },
                                                           {
-                                                            "locator": "610:7-610:65",
+                                                            "locator": "609:7-609:65",
                                                             "type": "If",
                                                             "condition": {
                                                               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                                               "type": "As",
                                                               "operand": {
-                                                                "locator": "610:11-610:50",
+                                                                "locator": "609:11-609:50",
                                                                 "name": "Has Cardiovascular Disease Risk Factor",
                                                                 "type": "ExpressionRef"
                                                               }
                                                             },
                                                             "then": {
-                                                              "locator": "610:57",
+                                                              "locator": "609:57",
                                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                               "value": "1",
                                                               "type": "Literal"
                                                             },
                                                             "else": {
-                                                              "locator": "610:64",
+                                                              "locator": "609:64",
                                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                               "value": "0",
                                                               "type": "Literal"
@@ -8685,25 +8652,25 @@
                                                         ]
                                                       },
                                                       {
-                                                        "locator": "611:7-611:70",
+                                                        "locator": "610:7-610:70",
                                                         "type": "If",
                                                         "condition": {
                                                           "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                                           "type": "As",
                                                           "operand": {
-                                                            "locator": "611:11-611:55",
+                                                            "locator": "610:11-610:55",
                                                             "name": "Has Chronic Respiratory Disease Risk Factor",
                                                             "type": "ExpressionRef"
                                                           }
                                                         },
                                                         "then": {
-                                                          "locator": "611:62",
+                                                          "locator": "610:62",
                                                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                           "value": "1",
                                                           "type": "Literal"
                                                         },
                                                         "else": {
-                                                          "locator": "611:69",
+                                                          "locator": "610:69",
                                                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                           "value": "0",
                                                           "type": "Literal"
@@ -8712,25 +8679,25 @@
                                                     ]
                                                   },
                                                   {
-                                                    "locator": "612:7-612:58",
+                                                    "locator": "611:7-611:58",
                                                     "type": "If",
                                                     "condition": {
                                                       "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                                       "type": "As",
                                                       "operand": {
-                                                        "locator": "612:11-612:43",
+                                                        "locator": "611:11-611:43",
                                                         "name": "Has Diabetes Type 2 Risk Factor",
                                                         "type": "ExpressionRef"
                                                       }
                                                     },
                                                     "then": {
-                                                      "locator": "612:50",
+                                                      "locator": "611:50",
                                                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                       "value": "1",
                                                       "type": "Literal"
                                                     },
                                                     "else": {
-                                                      "locator": "612:57",
+                                                      "locator": "611:57",
                                                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                       "value": "0",
                                                       "type": "Literal"
@@ -8739,25 +8706,25 @@
                                                 ]
                                               },
                                               {
-                                                "locator": "613:7-613:57",
+                                                "locator": "612:7-612:57",
                                                 "type": "If",
                                                 "condition": {
                                                   "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                                   "type": "As",
                                                   "operand": {
-                                                    "locator": "613:11-613:42",
+                                                    "locator": "612:11-612:42",
                                                     "name": "Has Downs Syndrome Risk Factor",
                                                     "type": "ExpressionRef"
                                                   }
                                                 },
                                                 "then": {
-                                                  "locator": "613:49",
+                                                  "locator": "612:49",
                                                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                   "value": "1",
                                                   "type": "Literal"
                                                 },
                                                 "else": {
-                                                  "locator": "613:56",
+                                                  "locator": "612:56",
                                                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                                   "value": "0",
                                                   "type": "Literal"
@@ -8766,25 +8733,25 @@
                                             ]
                                           },
                                           {
-                                            "locator": "614:7-614:55",
+                                            "locator": "613:7-613:55",
                                             "type": "If",
                                             "condition": {
                                               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                               "type": "As",
                                               "operand": {
-                                                "locator": "614:11-614:40",
+                                                "locator": "613:11-613:40",
                                                 "name": "Has Hypertension Risk Factor",
                                                 "type": "ExpressionRef"
                                               }
                                             },
                                             "then": {
-                                              "locator": "614:47",
+                                              "locator": "613:47",
                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                               "value": "1",
                                               "type": "Literal"
                                             },
                                             "else": {
-                                              "locator": "614:54",
+                                              "locator": "613:54",
                                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                               "value": "0",
                                               "type": "Literal"
@@ -8793,25 +8760,25 @@
                                         ]
                                       },
                                       {
-                                        "locator": "615:7-615:60",
+                                        "locator": "614:7-614:60",
                                         "type": "If",
                                         "condition": {
                                           "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                           "type": "As",
                                           "operand": {
-                                            "locator": "615:11-615:45",
+                                            "locator": "614:11-614:45",
                                             "name": "Has Immunosuppression Risk Factor",
                                             "type": "ExpressionRef"
                                           }
                                         },
                                         "then": {
-                                          "locator": "615:52",
+                                          "locator": "614:52",
                                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                           "value": "1",
                                           "type": "Literal"
                                         },
                                         "else": {
-                                          "locator": "615:59",
+                                          "locator": "614:59",
                                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                           "value": "0",
                                           "type": "Literal"
@@ -8820,25 +8787,25 @@
                                     ]
                                   },
                                   {
-                                    "locator": "616:7-616:61",
+                                    "locator": "615:7-615:61",
                                     "type": "If",
                                     "condition": {
                                       "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                       "type": "As",
                                       "operand": {
-                                        "locator": "616:11-616:46",
+                                        "locator": "615:11-615:46",
                                         "name": "Has Neurologic Disease Risk Factor",
                                         "type": "ExpressionRef"
                                       }
                                     },
                                     "then": {
-                                      "locator": "616:53",
+                                      "locator": "615:53",
                                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                       "value": "1",
                                       "type": "Literal"
                                     },
                                     "else": {
-                                      "locator": "616:60",
+                                      "locator": "615:60",
                                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                       "value": "0",
                                       "type": "Literal"
@@ -8847,25 +8814,25 @@
                                 ]
                               },
                               {
-                                "locator": "617:7-617:66",
+                                "locator": "616:7-616:66",
                                 "type": "If",
                                 "condition": {
                                   "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                                   "type": "As",
                                   "operand": {
-                                    "locator": "617:11-617:51",
+                                    "locator": "616:11-616:51",
                                     "name": "Has Obstructive Sleep Apnea Risk Factor",
                                     "type": "ExpressionRef"
                                   }
                                 },
                                 "then": {
-                                  "locator": "617:58",
+                                  "locator": "616:58",
                                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                   "value": "1",
                                   "type": "Literal"
                                 },
                                 "else": {
-                                  "locator": "617:65",
+                                  "locator": "616:65",
                                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                                   "value": "0",
                                   "type": "Literal"
@@ -8874,25 +8841,25 @@
                             ]
                           },
                           {
-                            "locator": "618:7-618:50",
+                            "locator": "617:7-617:50",
                             "type": "If",
                             "condition": {
                               "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                               "type": "As",
                               "operand": {
-                                "locator": "618:11-618:35",
+                                "locator": "617:11-617:35",
                                 "name": "Has Obesity Risk Factor",
                                 "type": "ExpressionRef"
                               }
                             },
                             "then": {
-                              "locator": "618:42",
+                              "locator": "617:42",
                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                               "value": "1",
                               "type": "Literal"
                             },
                             "else": {
-                              "locator": "618:49",
+                              "locator": "617:49",
                               "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                               "value": "0",
                               "type": "Literal"
@@ -8901,25 +8868,25 @@
                         ]
                       },
                       {
-                        "locator": "619:7-619:52",
+                        "locator": "618:7-618:52",
                         "type": "If",
                         "condition": {
                           "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                           "type": "As",
                           "operand": {
-                            "locator": "619:11-619:37",
+                            "locator": "618:11-618:37",
                             "name": "Has Pregnancy Risk Factor",
                             "type": "ExpressionRef"
                           }
                         },
                         "then": {
-                          "locator": "619:44",
+                          "locator": "618:44",
                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                           "value": "1",
                           "type": "Literal"
                         },
                         "else": {
-                          "locator": "619:51",
+                          "locator": "618:51",
                           "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                           "value": "0",
                           "type": "Literal"
@@ -8928,25 +8895,25 @@
                     ]
                   },
                   {
-                    "locator": "620:7-620:56",
+                    "locator": "619:7-619:56",
                     "type": "If",
                     "condition": {
                       "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                       "type": "As",
                       "operand": {
-                        "locator": "620:11-620:41",
+                        "locator": "619:11-619:41",
                         "name": "Has Renal Disease Risk Factor",
                         "type": "ExpressionRef"
                       }
                     },
                     "then": {
-                      "locator": "620:48",
+                      "locator": "619:48",
                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                       "value": "1",
                       "type": "Literal"
                     },
                     "else": {
-                      "locator": "620:55",
+                      "locator": "619:55",
                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                       "value": "0",
                       "type": "Literal"
@@ -8955,25 +8922,25 @@
                 ]
               },
               {
-                "locator": "621:7-621:56",
+                "locator": "620:7-620:56",
                 "type": "If",
                 "condition": {
                   "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                   "type": "As",
                   "operand": {
-                    "locator": "621:11-621:41",
+                    "locator": "620:11-620:41",
                     "name": "Has Steroid Usage Risk Factor",
                     "type": "ExpressionRef"
                   }
                 },
                 "then": {
-                  "locator": "621:48",
+                  "locator": "620:48",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                   "value": "1",
                   "type": "Literal"
                 },
                 "else": {
-                  "locator": "621:55",
+                  "locator": "620:55",
                   "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                   "value": "0",
                   "type": "Literal"
@@ -8983,37 +8950,37 @@
           }
         },
         {
-          "locator": "711:1-716:3",
+          "locator": "710:1-715:3",
           "name": "Last ALT Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "712:3-716:3",
+            "locator": "711:3-715:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "713:5-715:31",
+                "locator": "712:5-714:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "714:7-714:55",
+                    "locator": "713:7-713:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "714:20-714:54",
+                        "locator": "713:20-713:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "714:34-714:53",
+                          "locator": "713:34-713:53",
                           "name": "ALT Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9022,7 +8989,7 @@
                     ]
                   },
                   {
-                    "locator": "715:7-715:30",
+                    "locator": "714:7-714:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9032,37 +8999,37 @@
           }
         },
         {
-          "locator": "718:1-723:3",
+          "locator": "717:1-722:3",
           "name": "Last AST Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "719:3-723:3",
+            "locator": "718:3-722:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "720:5-722:31",
+                "locator": "719:5-721:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "721:7-721:55",
+                    "locator": "720:7-720:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "721:20-721:54",
+                        "locator": "720:20-720:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "721:34-721:53",
+                          "locator": "720:34-720:53",
                           "name": "AST Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9071,7 +9038,7 @@
                     ]
                   },
                   {
-                    "locator": "722:7-722:30",
+                    "locator": "721:7-721:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9081,37 +9048,37 @@
           }
         },
         {
-          "locator": "725:1-730:3",
+          "locator": "724:1-729:3",
           "name": "Last CRP Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "726:3-730:3",
+            "locator": "725:3-729:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "727:5-729:31",
+                "locator": "726:5-728:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "728:7-728:55",
+                    "locator": "727:7-727:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "728:20-728:54",
+                        "locator": "727:20-727:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "728:34-728:53",
+                          "locator": "727:34-727:53",
                           "name": "CRP Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9120,7 +9087,7 @@
                     ]
                   },
                   {
-                    "locator": "729:7-729:30",
+                    "locator": "728:7-728:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9130,37 +9097,37 @@
           }
         },
         {
-          "locator": "732:1-737:3",
+          "locator": "731:1-736:3",
           "name": "Last Creatinine Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "733:3-737:3",
+            "locator": "732:3-736:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "734:5-736:31",
+                "locator": "733:5-735:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "735:7-735:62",
+                    "locator": "734:7-734:62",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "735:20-735:61",
+                        "locator": "734:20-734:61",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "735:34-735:60",
+                          "locator": "734:34-734:60",
                           "name": "Creatinine Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9169,7 +9136,7 @@
                     ]
                   },
                   {
-                    "locator": "736:7-736:30",
+                    "locator": "735:7-735:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9179,37 +9146,37 @@
           }
         },
         {
-          "locator": "739:1-744:3",
+          "locator": "738:1-743:3",
           "name": "Last D-dimer Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "740:3-744:3",
+            "locator": "739:3-743:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "741:5-743:31",
+                "locator": "740:5-742:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "742:7-742:59",
+                    "locator": "741:7-741:59",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "742:20-742:58",
+                        "locator": "741:20-741:58",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "742:34-742:57",
+                          "locator": "741:34-741:57",
                           "name": "D-dimer Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9218,7 +9185,7 @@
                     ]
                   },
                   {
-                    "locator": "743:7-743:30",
+                    "locator": "742:7-742:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9228,37 +9195,37 @@
           }
         },
         {
-          "locator": "746:1-751:3",
+          "locator": "745:1-750:3",
           "name": "Last Neutrophils Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "747:3-751:3",
+            "locator": "746:3-750:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "748:5-750:31",
+                "locator": "747:5-749:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "749:7-749:63",
+                    "locator": "748:7-748:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "749:20-749:62",
+                        "locator": "748:20-748:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "749:34-749:61",
+                          "locator": "748:34-748:61",
                           "name": "Neutrophils Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9267,7 +9234,7 @@
                     ]
                   },
                   {
-                    "locator": "750:7-750:30",
+                    "locator": "749:7-749:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9277,37 +9244,37 @@
           }
         },
         {
-          "locator": "753:1-758:3",
+          "locator": "752:1-757:3",
           "name": "Last Leukocyte Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "754:3-758:3",
+            "locator": "753:3-757:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "755:5-757:31",
+                "locator": "754:5-756:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "756:7-756:61",
+                    "locator": "755:7-755:61",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "756:20-756:60",
+                        "locator": "755:20-755:60",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "756:34-756:59",
+                          "locator": "755:34-755:59",
                           "name": "Leukocyte Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9316,7 +9283,7 @@
                     ]
                   },
                   {
-                    "locator": "757:7-757:30",
+                    "locator": "756:7-756:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9326,37 +9293,37 @@
           }
         },
         {
-          "locator": "760:1-765:3",
+          "locator": "759:1-764:3",
           "name": "Last Ferritin Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "761:3-765:3",
+            "locator": "760:3-764:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "762:5-764:31",
+                "locator": "761:5-763:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "763:7-763:60",
+                    "locator": "762:7-762:60",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "763:20-763:59",
+                        "locator": "762:20-762:59",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "763:34-763:58",
+                          "locator": "762:34-762:58",
                           "name": "Ferritin Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9365,7 +9332,7 @@
                     ]
                   },
                   {
-                    "locator": "764:7-764:30",
+                    "locator": "763:7-763:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9375,37 +9342,37 @@
           }
         },
         {
-          "locator": "767:1-772:3",
+          "locator": "766:1-771:3",
           "name": "Last Lymphocytes Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "768:3-772:3",
+            "locator": "767:3-771:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "769:5-771:31",
+                "locator": "768:5-770:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "770:7-770:63",
+                    "locator": "769:7-769:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "770:20-770:62",
+                        "locator": "769:20-769:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "770:34-770:61",
+                          "locator": "769:34-769:61",
                           "name": "Lymphocytes Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9414,7 +9381,7 @@
                     ]
                   },
                   {
-                    "locator": "771:7-771:30",
+                    "locator": "770:7-770:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9424,37 +9391,37 @@
           }
         },
         {
-          "locator": "786:1-791:3",
+          "locator": "785:1-790:3",
           "name": "Last Platelets Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "787:3-791:3",
+            "locator": "786:3-790:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "788:5-790:31",
+                "locator": "787:5-789:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "789:7-789:61",
+                    "locator": "788:7-788:61",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "789:20-789:60",
+                        "locator": "788:20-788:60",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "789:34-789:59",
+                          "locator": "788:34-788:59",
                           "name": "Platelets Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9463,7 +9430,7 @@
                     ]
                   },
                   {
-                    "locator": "790:7-790:30",
+                    "locator": "789:7-789:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9473,37 +9440,37 @@
           }
         },
         {
-          "locator": "793:1-798:3",
+          "locator": "792:1-797:3",
           "name": "Last LDH Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "794:3-798:3",
+            "locator": "793:3-797:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "795:5-797:31",
+                "locator": "794:5-796:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "796:7-796:55",
+                    "locator": "795:7-795:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "796:20-796:54",
+                        "locator": "795:20-795:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "796:34-796:53",
+                          "locator": "795:34-795:53",
                           "name": "LDH Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9512,7 +9479,7 @@
                     ]
                   },
                   {
-                    "locator": "797:7-797:30",
+                    "locator": "796:7-796:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -9522,37 +9489,37 @@
           }
         },
         {
-          "locator": "800:1-805:3",
+          "locator": "799:1-804:3",
           "name": "Last Troponin Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "801:3-805:3",
+            "locator": "800:3-804:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "802:5-804:31",
+                "locator": "801:5-803:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "803:7-803:60",
+                    "locator": "802:7-802:60",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "803:20-803:59",
+                        "locator": "802:20-802:59",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "803:34-803:58",
+                          "locator": "802:34-802:58",
                           "name": "Troponin Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -9561,7 +9528,7 @@
                     ]
                   },
                   {
-                    "locator": "804:7-804:30",
+                    "locator": "803:7-803:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
