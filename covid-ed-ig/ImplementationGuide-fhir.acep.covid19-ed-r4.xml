@@ -12,7 +12,7 @@
   <title value="Emergency Department COVID-19 Severity Classification"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-06-25T20:33:12+00:00"/>
+  <date value="2021-07-02T17:56:17+00:00"/>
   <publisher value="Veterans Health Administration (VHA)"/>
   <contact>
     <telecom>
@@ -225,36 +225,6 @@
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/CDSConnectCommons"/>
-      </reference>
-      <name value="CQL Library - Common Logic for CDS"/>
-      <description value="CQL Common Logic for CDS providing shared helper functions."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
-        <reference value="Library/COVID19EmergencyDeptHooks"/>
-      </reference>
-      <name value="CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic"/>
-      <description value="This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
-        <reference value="Library/COVID19EmergencyDeptAssessment"/>
-      </reference>
-      <name value="CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic"/>
-      <description value="This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Library"/>
-      </extension>
-      <reference>
         <reference value="Library/COVID19EmergencyDeptSummary"/>
       </reference>
       <name value="CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool"/>
@@ -275,10 +245,40 @@
         <valueString value="Library"/>
       </extension>
       <reference>
+        <reference value="Library/COVID19EmergencyDeptHooks"/>
+      </reference>
+      <name value="CQL Library - CDS Hooks for ACEP Emergency Department COVID-19 Management Tool Logic"/>
+      <description value="This library contains logic to support CDS Hooks for the ACEP Emergency Department COVID-19 Management Tool guideline."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
         <reference value="Library/COVID19Concepts"/>
       </reference>
       <name value="CQL Library - COVID-19 Shared Concepts and Terminology"/>
       <description value="COVID-19 Shared Concepts and Terminology imported by other CQL logic libraries."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/CDSConnectCommons"/>
+      </reference>
+      <name value="CQL Library - Common Logic for CDS"/>
+      <description value="CQL Common Logic for CDS providing shared helper functions."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/COVID19EmergencyDeptAssessment"/>
+      </reference>
+      <name value="CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic"/>
+      <description value="This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -295,8 +295,40 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174"/>
+        <reference value="ValueSet/covid-19-condition-risk-respiratory"/>
       </reference>
+      <name value="COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"/>
+      <description value="COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-lymphocytes"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for Lymphocytes"/>
+      <description value="COVID-19 Laboratory Value Set for Lymphocytes"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-pao2fio2"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
+      <description value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-leukocyte"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for Leukocytes"/>
+      <description value="COVID-19 Laboratory Value Set for Leukocytes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -311,10 +343,178 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091"/>
+      </reference>
+      <name value="COVID19 ICD10CM Value Set for Obesity"/>
+      <description value="This set of values contains terms related to obesity."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-platelets"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for Blood Platelets"/>
+      <description value="COVID-19 Laboratory Value Set for Blood Platelets"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-ddimer"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for D-dimer"/>
+      <description value="COVID-19 Laboratory Value Set for D-dimer"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/covid-19-lab-ast"/>
       </reference>
       <name value="COVID-19 Laboratory Value Set for AST"/>
       <description value="COVID-19 Laboratory Value Set for AST"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/who-performance-status"/>
+      </reference>
+      <name value="WHO Performance Status Value Set"/>
+      <description value="World Health Organization (WHO) performance status finding (finding)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-condition-risk-downs-syndrome"/>
+      </reference>
+      <name value="COVID-19 Risk Factor Downs Syndrome Conditions Value Set"/>
+      <description value="COVID-19 Risk Factor Downs Syndrome Conditions Value Set"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-crp"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for CRP"/>
+      <description value="COVID-19 Laboratory Value Set for CRP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-ldh"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for LDH"/>
+      <description value="COVID-19 Laboratory Value Set for LDH"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-obs-alertness"/>
+      </reference>
+      <name value="COVID-19 Clinical Observation for Alertness"/>
+      <description value="COVID-19 Clinical Observation for Alertness"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203"/>
+      </reference>
+      <name value="COVID19 SNOMED Value Set for Obesity"/>
+      <description value="This set of values contains terms related to obesity."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-condition-risk-cardiovascular"/>
+      </reference>
+      <name value="COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set"/>
+      <description value="Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-alt"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for ALT"/>
+      <description value="COVID-19 Laboratory Value Set for ALT"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/covid-19-lab-neutrophils"/>
+      </reference>
+      <name value="COVID-19 Laboratory Value Set for Neutrophils"/>
+      <description value="COVID-19 Laboratory Value Set for Neutrophils"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048"/>
+      </reference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -339,200 +539,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-leukocyte"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for Leukocytes"/>
-      <description value="COVID-19 Laboratory Value Set for Leukocytes"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/who-performance-status"/>
-      </reference>
-      <name value="WHO Performance Status Value Set"/>
-      <description value="World Health Organization (WHO) performance status finding (finding)"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203"/>
-      </reference>
-      <name value="COVID19 SNOMED Value Set for Obesity"/>
-      <description value="This set of values contains terms related to obesity."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/covid-19-lab-ferritin"/>
       </reference>
       <name value="COVID-19 Laboratory Value Set for Ferritin"/>
       <description value="COVID-19 Laboratory Value Set for Ferritin"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-pao2fio2"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
-      <description value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-alt"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for ALT"/>
-      <description value="COVID-19 Laboratory Value Set for ALT"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-creatinine"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for Creatinine"/>
-      <description value="COVID-19 Laboratory Value Set for Creatinine"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-ddimer"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for D-dimer"/>
-      <description value="COVID-19 Laboratory Value Set for D-dimer"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-neutrophils"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for Neutrophils"/>
-      <description value="COVID-19 Laboratory Value Set for Neutrophils"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-obs-alertness"/>
-      </reference>
-      <name value="COVID-19 Clinical Observation for Alertness"/>
-      <description value="COVID-19 Clinical Observation for Alertness"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-condition-risk-respiratory"/>
-      </reference>
-      <name value="COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"/>
-      <description value="COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-platelets"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for Blood Platelets"/>
-      <description value="COVID-19 Laboratory Value Set for Blood Platelets"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-ldh"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for LDH"/>
-      <description value="COVID-19 Laboratory Value Set for LDH"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-lymphocytes"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for Lymphocytes"/>
-      <description value="COVID-19 Laboratory Value Set for Lymphocytes"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-condition-risk-cardiovascular"/>
-      </reference>
-      <name value="COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set"/>
-      <description value="Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-lab-crp"/>
-      </reference>
-      <name value="COVID-19 Laboratory Value Set for CRP"/>
-      <description value="COVID-19 Laboratory Value Set for CRP"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -549,20 +559,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091"/>
+        <reference value="ValueSet/covid-19-lab-creatinine"/>
       </reference>
-      <name value="COVID19 ICD10CM Value Set for Obesity"/>
-      <description value="This set of values contains terms related to obesity."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/covid-19-condition-risk-downs-syndrome"/>
-      </reference>
-      <name value="COVID-19 Risk Factor Downs Syndrome Conditions Value Set"/>
-      <description value="COVID-19 Risk Factor Downs Syndrome Conditions Value Set"/>
+      <name value="COVID-19 Laboratory Value Set for Creatinine"/>
+      <description value="COVID-19 Laboratory Value Set for Creatinine"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
