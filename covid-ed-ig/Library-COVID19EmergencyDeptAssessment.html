@@ -803,49 +803,62 @@ define &quot;Risk Factors count&quot;:
 define &quot;All Active Conditions&quot;:
   C3F.ActiveOrRecurring([Condition])
 
+define function DoesExistElseNull(CondList List&lt;Condition&gt;):
+  if exists(CondList) then
+    true
+  else
+    null
+
+define function HasConditionWithOverride(
+  CondList List&lt;Condition&gt;,
+  OverridingValue Boolean
+):
+  if IgnoreFallbackResourceValues then OverridingValue
+  else DoesExistElseNull(CondList)
+
 define &quot;Has Cancer Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.Cancer,
-    exists(&quot;All Active Conditions&quot; C
-      where (C.code in CC.&quot;Cancer SNOMED Codes&quot;
-        or C.code in CC.&quot;Cancer ICD10CM Codes&quot;))
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
+          where (C.code in CC.&quot;Cancer SNOMED Codes&quot;
+            or C.code in CC.&quot;Cancer ICD10CM Codes&quot;)),
+    RiskFactors.Cancer
   )
 
 define &quot;Has Cardiovascular Disease Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.CardiovascularDisease,
-    exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Cardiovascular Disease Codes&quot;)
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
+          where C.code in CC.&quot;Cardiovascular Disease Codes&quot;),
+    RiskFactors.CardiovascularDisease
   )
 
 define &quot;Has Chronic Respiratory Disease Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.ChronicRespiratoryDisease,
-    exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Chronic Respiratory Disease Codes&quot;)
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
+          where C.code in CC.&quot;Chronic Respiratory Disease Codes&quot;),
+    RiskFactors.ChronicRespiratoryDisease
   )
 
 define &quot;Has Diabetes Type 2 Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.DiabetesType2,
-    exists(&quot;All Active Conditions&quot; C
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
       where (C.code in CC.&quot;Diabetes SNOMED Codes&quot;
-        or C.code in CC.&quot;Diabetes ICD10CM Codes&quot;))
+        or C.code in CC.&quot;Diabetes ICD10CM Codes&quot;)),
+    RiskFactors.DiabetesType2
   )
 
 define &quot;Has Downs Syndrome Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.DownsSyndrome,
-    exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Downs Syndrome Codes&quot;)
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
+      where C.code in CC.&quot;Downs Syndrome Codes&quot;),
+    RiskFactors.DownsSyndrome
   )
 
 define &quot;Has Hypertension Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.Hypertension,
-    exists(&quot;All Active Conditions&quot; C
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
       where (C.code in CC.&quot;Hypertension SNOMED Codes&quot;
-        or C.code in CC.&quot;Hypertension ICD10CM Codes&quot;))
+        or C.code in CC.&quot;Hypertension ICD10CM Codes&quot;)),
+    RiskFactors.Hypertension
   )
 
 define &quot;Has Immunosuppression Risk Factor&quot;:
@@ -855,30 +868,29 @@ define &quot;Has Neurologic Disease Risk Factor&quot;:
   RiskFactors.NeurologicDisease
 
 define &quot;Has Obstructive Sleep Apnea Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.ObstructiveSleepApnea,
-    exists(&quot;All Active Conditions&quot; C
-      where C.code in CC.&quot;Obstructive Sleep Apnea Codes&quot;)
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
+      where C.code in CC.&quot;Obstructive Sleep Apnea Codes&quot;),
+    RiskFactors.ObstructiveSleepApnea
   )
 
 define &quot;Has Obesity Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.Obesity,
-    (exists(&quot;All Active Conditions&quot; C
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
       where (C.code in CC.&quot;Obesity SNOMED Codes&quot;
-        or C.code in CC.&quot;Obesity ICD10CM Codes&quot;))
-     or &quot;Last BMI&quot;.value &gt;= 35)
+        or C.code in CC.&quot;Obesity ICD10CM Codes&quot;)),
+    RiskFactors.Obesity
   )
 
 define &quot;Has Pregnancy Risk Factor&quot;:
   RiskFactors.Pregnancy
 
 define &quot;Has Renal Disease Risk Factor&quot;:
-  Coalesce(
-    RiskFactors.RenalDisease,
-    exists(&quot;All Active Conditions&quot; C
+  HasConditionWithOverride(
+    (&quot;All Active Conditions&quot; C
       where (C.code in CC.&quot;Kidney Disease SNOMED Codes&quot;
-        or C.code in CC.&quot;Kidney Disease ICD10CM Codes&quot;))
+        or C.code in CC.&quot;Kidney Disease ICD10CM Codes&quot;)),
+    RiskFactors.RenalDisease
   )
 
 define &quot;Has Steroid Usage Risk Factor&quot;:
@@ -983,7 +995,7 @@ define &quot;Last Troponin Lab Result&quot;:
       C3F.Verified([Observation: CC.&quot;Troponin Lab Results&quot;]),
       LabResultsLookbackPeriod)
   )
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 185Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 348Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 186Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 349Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -1012,7 +1024,7 @@ define &quot;Last Troponin Lab Result&quot;:
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 9, 2021 16:50+0000">2021-07-09</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 16, 2021 17:30+0000">2021-07-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

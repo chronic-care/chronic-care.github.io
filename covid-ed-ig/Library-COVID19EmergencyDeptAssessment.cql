@@ -622,49 +622,62 @@ define "Risk Factors count":
 define "All Active Conditions":
   C3F.ActiveOrRecurring([Condition])
 
+define function DoesExistElseNull(CondList List<Condition>):
+  if exists(CondList) then
+    true
+  else
+    null
+
+define function HasConditionWithOverride(
+  CondList List<Condition>,
+  OverridingValue Boolean
+):
+  if IgnoreFallbackResourceValues then OverridingValue
+  else DoesExistElseNull(CondList)
+
 define "Has Cancer Risk Factor":
-  Coalesce(
-    RiskFactors.Cancer,
-    exists("All Active Conditions" C
-      where (C.code in CC."Cancer SNOMED Codes"
-        or C.code in CC."Cancer ICD10CM Codes"))
+  HasConditionWithOverride(
+    ("All Active Conditions" C
+          where (C.code in CC."Cancer SNOMED Codes"
+            or C.code in CC."Cancer ICD10CM Codes")),
+    RiskFactors.Cancer
   )
 
 define "Has Cardiovascular Disease Risk Factor":
-  Coalesce(
-    RiskFactors.CardiovascularDisease,
-    exists("All Active Conditions" C
-      where C.code in CC."Cardiovascular Disease Codes")
+  HasConditionWithOverride(
+    ("All Active Conditions" C
+          where C.code in CC."Cardiovascular Disease Codes"),
+    RiskFactors.CardiovascularDisease
   )
 
 define "Has Chronic Respiratory Disease Risk Factor":
-  Coalesce(
-    RiskFactors.ChronicRespiratoryDisease,
-    exists("All Active Conditions" C
-      where C.code in CC."Chronic Respiratory Disease Codes")
+  HasConditionWithOverride(
+    ("All Active Conditions" C
+          where C.code in CC."Chronic Respiratory Disease Codes"),
+    RiskFactors.ChronicRespiratoryDisease
   )
 
 define "Has Diabetes Type 2 Risk Factor":
-  Coalesce(
-    RiskFactors.DiabetesType2,
-    exists("All Active Conditions" C
+  HasConditionWithOverride(
+    ("All Active Conditions" C
       where (C.code in CC."Diabetes SNOMED Codes"
-        or C.code in CC."Diabetes ICD10CM Codes"))
+        or C.code in CC."Diabetes ICD10CM Codes")),
+    RiskFactors.DiabetesType2
   )
 
 define "Has Downs Syndrome Risk Factor":
-  Coalesce(
-    RiskFactors.DownsSyndrome,
-    exists("All Active Conditions" C
-      where C.code in CC."Downs Syndrome Codes")
+  HasConditionWithOverride(
+    ("All Active Conditions" C
+      where C.code in CC."Downs Syndrome Codes"),
+    RiskFactors.DownsSyndrome
   )
 
 define "Has Hypertension Risk Factor":
-  Coalesce(
-    RiskFactors.Hypertension,
-    exists("All Active Conditions" C
+  HasConditionWithOverride(
+    ("All Active Conditions" C
       where (C.code in CC."Hypertension SNOMED Codes"
-        or C.code in CC."Hypertension ICD10CM Codes"))
+        or C.code in CC."Hypertension ICD10CM Codes")),
+    RiskFactors.Hypertension
   )
 
 define "Has Immunosuppression Risk Factor":
@@ -674,30 +687,29 @@ define "Has Neurologic Disease Risk Factor":
   RiskFactors.NeurologicDisease
 
 define "Has Obstructive Sleep Apnea Risk Factor":
-  Coalesce(
-    RiskFactors.ObstructiveSleepApnea,
-    exists("All Active Conditions" C
-      where C.code in CC."Obstructive Sleep Apnea Codes")
+  HasConditionWithOverride(
+    ("All Active Conditions" C
+      where C.code in CC."Obstructive Sleep Apnea Codes"),
+    RiskFactors.ObstructiveSleepApnea
   )
 
 define "Has Obesity Risk Factor":
-  Coalesce(
-    RiskFactors.Obesity,
-    (exists("All Active Conditions" C
+  HasConditionWithOverride(
+    ("All Active Conditions" C
       where (C.code in CC."Obesity SNOMED Codes"
-        or C.code in CC."Obesity ICD10CM Codes"))
-     or "Last BMI".value >= 35)
+        or C.code in CC."Obesity ICD10CM Codes")),
+    RiskFactors.Obesity
   )
 
 define "Has Pregnancy Risk Factor":
   RiskFactors.Pregnancy
 
 define "Has Renal Disease Risk Factor":
-  Coalesce(
-    RiskFactors.RenalDisease,
-    exists("All Active Conditions" C
+  HasConditionWithOverride(
+    ("All Active Conditions" C
       where (C.code in CC."Kidney Disease SNOMED Codes"
-        or C.code in CC."Kidney Disease ICD10CM Codes"))
+        or C.code in CC."Kidney Disease ICD10CM Codes")),
+    RiskFactors.RenalDisease
   )
 
 define "Has Steroid Usage Risk Factor":
