@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "Emergency Department COVID-19 Severity Classification"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2021-07-20T15:56:35+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-07-21T20:23:19+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "Veterans Health Administration (VHA)"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -752,13 +752,26 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cancer>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-cancer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ]
+     ], [
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin>;
          fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ferritin" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -771,7 +784,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Obstructive Sleep Apnea Conditions Value Set" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Obstructive Sleep Apnea Conditions Value Set" ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -783,6 +796,19 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Creatinine" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Creatinine" ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal-disease>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-renal-disease" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ];
