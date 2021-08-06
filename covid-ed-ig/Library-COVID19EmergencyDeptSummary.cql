@@ -31,13 +31,23 @@ define PatientSummary: {
 }
 
 define RiskSummary: {
-  SeverityClassification: C19."Severity Classification",
-  RiskScore: C19."Total Risk Score",
-  RiskPercent: C19."Risk Percent",
-  RiskFactorCount: C19."Risk Factors count",
-  DiagnosticInterpretation: DiagnosticInterpretation,
-  ConcerningLabCount: ConcerningLabCount,
-  ConcerningImagingCount: ConcerningImagingCount
+  SeverityClassification: Message(C19."Severity Classification", true, 'Undefined', 'Trace', 'Calculating C19."Severity Classification"'),
+  Saturation: Message(C19."O2 Saturation Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."O2 Saturation Risk Score"'),
+  HeartRate: Message(C19."Heart Rate Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Heart Rate Risk Score"'),
+  Respirtory: Message(C19."Respiratory Rate Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Respiratory Rate Risk Score"'),
+  Temperature: Message(C19."Temperature Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Temperature Risk Score"'),
+  Alertness: Message(C19."Alertness Score", true, 'Undefined', 'Trace', 'Calculating C19."Alertness Score"'),
+  Oxygen: Message(C19."Inspired Oxygen Score", true, 'Undefined', 'Trace', 'Calculating C19."Inspired Oxygen Score"'),
+  Sex: Message(C19."Sex Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Sex Risk Score"'),
+  Age: Message(C19."Age Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Age Risk Score"'),
+  PerformanceStatus: Message(C19."Performance Status Score", true, 'Undefined', 'Trace', 'Calculating C19."Performance Status Score"'),
+  BloodPressure: Message(C19."Systolic BP Risk Score", true, 'Undefined', 'Trace', 'Calculating "Systolic BP Risk Score"'),
+  RiskScore: Message(C19."Total Risk Score", true, 'Undefined', 'Trace', 'Calculating C19."Total Risk Score"'),
+  RiskPercent: Message(C19."Risk Percent", true, 'Undefined', 'Trace', 'Calculating C19."Risk Percent"'),
+  RiskFactorCount: Message(C19."Risk Factors count", true, 'Undefined', 'Trace', 'Calculating C19."Risk Factors count"'),
+  DiagnosticInterpretation: Message(DiagnosticInterpretation, true, 'Undefined', 'Trace', 'Calculating DiagnosticInterpretation'),
+  ConcerningLabCount: Message(ConcerningLabCount, true, 'Undefined', 'Trace', 'Calculating ConcerningLabCount'),
+  ConcerningImagingCount: Message(ConcerningImagingCount, true, 'Undefined', 'Trace', 'Calculating ConcerningImagingCount')
 }
 
 define SmartPhrases: {
@@ -101,21 +111,21 @@ define RiskFactorSummary: {
 }
 
 define DiagnosticSummary: {
-  ALT: ReportLabObservation(C19."Last ALT Lab Result"),
-  AST: ReportLabObservation(C19."Last AST Lab Result"),
-  Creatinine: ReportLabObservation(C19."Last Creatinine Lab Result"),
-  CRP: ReportLabObservation(C19."Last CRP Lab Result"),
-  DDimer: ReportLabObservation(C19."Last D-dimer Lab Result"),
-  Ferritin: ReportLabObservation(C19."Last Ferritin Lab Result"),
-  LDH: ReportLabObservation(C19."Last LDH Lab Result"),
-  Lymphopenia: ReportLabObservation(C19."Last Lymphocytes Lab Result"),
-  Neutrophils: ReportLabObservation(C19."Last Neutrophils Lab Result"),
-  Thrombocytopenia: ReportLabObservation(C19."Last Platelets Lab Result"),
-  Troponin: ReportLabObservation(C19."Last Troponin Lab Result"),
-  WBC: ReportLabObservation(C19."Last Leukocyte Lab Result"),
+  ALT: Message(ReportLabObservation(C19."Last ALT Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last ALT Lab Result")'),
+  AST: Message(ReportLabObservation(C19."Last AST Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last AST Lab Result")'),
+  Creatinine: Message(ReportLabObservation(C19."Last Creatinine Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Creatinine Lab Result")'),
+  CRP: Message(ReportLabObservation(C19."Last CRP Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last CRP Lab Result")'),
+  DDimer: Message(ReportLabObservation(C19."Last D-dimer Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last D-dimer Lab Result")'),
+  Ferritin: Message(ReportLabObservation(C19."Last Ferritin Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Ferritin Lab Result")'),
+  LDH: Message(ReportLabObservation(C19."Last LDH Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last LDH Lab Result")'),
+  Lymphopenia: Message(ReportLabObservation(C19."Last Lymphocytes Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Lymphocytes Lab Result")'),
+  Neutrophils: Message(ReportLabObservation(C19."Last Neutrophils Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Neutrophils Lab Result")'),
+  Thrombocytopenia: Message(ReportLabObservation(C19."Last Platelets Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Platelets Lab Result")'),
+  Troponin: Message(ReportLabObservation(C19."Last Troponin Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Troponin Lab Result")'),
+  WBC: Message(ReportLabObservation(C19."Last Leukocyte Lab Result"), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19."Last Leukocyte Lab Result")'),
 
   // Not included in count of concerning labs; used for severity classification.
-  PaO2FiO2: C19."Last PaO2FiO2 Ratio Lab Result Less Than 300"
+  PaO2FiO2: Message(C19."Last PaO2FiO2 Ratio Lab Result Less Than 300", true, 'Undefined', 'Trace', 'Calculating C19."Last PaO2FiO2 Ratio Lab Result Less Than 300"')
 }
 
 define LabResultList: {
@@ -140,15 +150,21 @@ define ImagingResultList: {
 }
 
 define LabResultCount:
-  if (C19.ClinicalAssessments.ConcerningLabCount is not null and C19.ClinicalAssessments.ConcerningLabCount = 0) then 1
-  else if (C19.ClinicalAssessments.ConcerningLabCount is not null) then C19.ClinicalAssessments.ConcerningLabCount
-  /* else if not exists LabResultList then null */
-  else Count(LabResultList result where result is not null)
+  Message(
+
+    if (C19.ClinicalAssessments.ConcerningLabCount is not null and C19.ClinicalAssessments.ConcerningLabCount = 0) then 1
+    else if (C19.ClinicalAssessments.ConcerningLabCount is not null) then C19.ClinicalAssessments.ConcerningLabCount
+    /* else if not exists LabResultList then null */
+    else Count(LabResultList result where result is not null)
+
+  , true, 'Undefined', 'Trace', 'Calculating LabResultCount')
 
 define ImagingResultCount:
   /* if not exists ImagingResultList then null
   else  */
+  Message(
   Count(ImagingResultList result where result is not null)
+  , true, 'Undefined', 'Trace', 'Calculating ImagingResultCount')
 
 // TODO Always returns count of 0 or 1 in Javascript engine... Bug?
 /*
@@ -159,17 +175,21 @@ define ConcerningImagingCount:
 define ConcerningImagingCount:
   /* if not exists ImagingResultList then null
   else */
+  Message(
   (if C19.ClinicalAssessments.ChestXRayConcerning is true then 1 else 0)
     + (if C19.ClinicalAssessments.UltrasoundConcerning is true then 1 else 0)
     + (if C19.ClinicalAssessments.CTConcerning is true then 1 else 0)
+  , true, 'Undefined', 'Trace', 'Calculating ConcerningImagingCount')
 
 define ConcerningLabCount:
   /* if (not exists LabResultList and C19.ClinicalAssessments.ConcerningLabCount is null) then null
   else */
+  Message(
   Coalesce(
     C19.ClinicalAssessments.ConcerningLabCount,
     Count(LabResultList result where result.Flag is true)
   )
+  , true, 'Undefined', 'Trace', 'Calculating ConcerningLabCount')
 
 define ConcerningLabsOrImaging:
   ConcerningLabCount >= 1 or ConcerningImagingCount >= 1
@@ -241,7 +261,9 @@ define "Recommend Severe Admission":
   C19."Is Severe Severity"
 
 define "Recommend Critical Admission":
+  Message(
   C19."Is Critical Severity"
+  , true, 'Undefined', 'Trace', 'Calculating Recommend Critical Admission')
 
 /*
  * Treatment Recommendations

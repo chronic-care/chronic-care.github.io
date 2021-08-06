@@ -180,7 +180,7 @@ define "Heart Rate Observations":
     VitalSignsLookbackPeriod)
 
 define "Last SBP":
-  Last("Blood Pressure Observations" o where o.Systolic is not null)
+  Last("Blood Pressure Observation Components" o where o.Systolic is not null)
 
 define "Last SBP value":
   if IgnoreFallbackResourceValues then ClinicalAssessments.SystolicBloodPressure
@@ -223,7 +223,7 @@ define function ComponentValue(Obs FHIR.Observation, code System.Code):
 // Use the following if Systolic and Diastolic are combined as components within one Observation.
 define "Blood Pressure Observation Components":
   (C3F.ObservationLookBack(C3F.Verified(
-        [Observation: CC."Blood pressure"] union [Observation: CC."Blood pressure, deprecated"]
+        [Observation: CC."Blood pressure codes"]
       ), VitalSignsLookbackPeriod)) bp
     let SystolicValue: Round(ComponentValue(bp, CC."Systolic blood pressure").value),
         DiastolicValue: Round(ComponentValue(bp, CC."Diastolic blood pressure").value)
@@ -271,9 +271,11 @@ define "Last Respiratory Rate":
   C3F.MostRecent("Respiratory Rate Observations")
 
 define "Last Respiratory Rate value":
+  Message(
   if IgnoreFallbackResourceValues then ClinicalAssessments.RespiratoryRate
   else Coalesce(ClinicalAssessments.RespiratoryRate,
     C3F.QuantityValue("Last Respiratory Rate").value)
+  , true, 'Undefined', 'Trace', 'Calculating "Last Respiratory Rate value"')
 
 define "Respiratory Rate Observations":
   C3F.ObservationLookBack(
@@ -382,64 +384,68 @@ define "Performance Status Code":
 */
 
 define "Severity Classification":
+  Message(
   if "Is Critical Severity" then 'CRITICAL'
   else if "Is Severe Severity" then 'SEVERE'
   else if "Is Moderate Severity" then 'MODERATE'
   else if "Is Mild Severity" then 'MILD'
   else null
+  , true, 'Undefined', 'Trace', 'Calculating Severity Classification')
 
 define "Is Critical Severity":
-  if ClinicalAssessments.RespiratoryFailure
+  Message(if ClinicalAssessments.RespiratoryFailure
     or ClinicalAssessments.SepticShock
     or ClinicalAssessments.MultiorganDysfunction
     then true
-  else false
+  else false, true, 'Undefined', 'Trace', 'Calculating Is Critical Severity')
 
 define "Is Severe Severity":
-  if not "Is Critical Severity"
+  Message(if not "Is Critical Severity"
     and (("Last O2 Saturation percent" is not null and "Last O2 Saturation percent" < 94)
       or ("Last Respiratory Rate value" is not null and "Last Respiratory Rate value" > 30)
       or ("Last PaO2FiO2 Ratio Lab Result Less Than 300" is not null and "Last PaO2FiO2 Ratio Lab Result Less Than 300" is true)
       or ClinicalAssessments.LungInfiltratesOver50)
     then true
-  else false
+  else false, true, 'Undefined', 'Trace', 'Calculating Is Severe Severity')
 
 // TODO O2 Sat on room air (not Supplemental Oxygen)
 define "Is Moderate Severity":
-  if not "Is Severe Severity" and not "Is Critical Severity"
+  Message(if not "Is Severe Severity" and not "Is Critical Severity"
     and ("Last O2 Saturation percent" is not null and "Last O2 Saturation percent" >= 94)
     and (ClinicalAssessments.RespiratoryDiseaseSymptoms
         or ClinicalAssessments.RespiratoryDiseaseImagingEvidence)
     then true
-  else false
+  else false, true, 'Undefined', 'Trace', 'Calculating Is Moderate Severity')
 
 // TODO moved 3 parameters to Moderat as "evidence of lower respiratory disease"
 define "Is Mild Severity":
-  if not "Is Severe Severity" and not "Is Critical Severity" and not "Is Moderate Severity"
+  Message(if not "Is Severe Severity" and not "Is Critical Severity" and not "Is Moderate Severity"
     and ClinicalAssessments.AnyMildCOVIDSymptoms is true
     and ClinicalAssessments.RespiratoryDiseaseSymptoms is false
     then true
-  else false
+  else false, true, 'Undefined', 'Trace', 'Calculating Mild Severity')
 
 /*
 * Risk Prognostication
 */
 
 define "Risk Score Components": List {
-  "Respiratory Rate Risk Score",
-  "O2 Saturation Risk Score",
-  "Heart Rate Risk Score",
-  "Systolic BP Risk Score",
-  "Temperature Risk Score",
-  "Alertness Score",
-  "Inspired Oxygen Score",
-  "Sex Risk Score",
-  "Age Risk Score",
-  "Performance Status Score"
+  Message("Respiratory Rate Risk Score", true, 'Undefined', 'Trace', 'Calculating "Respiratory Rate Risk Score"'),
+  Message("O2 Saturation Risk Score", true, 'Undefined', 'Trace', 'Calculating "O2 Saturation Risk Score"'),
+  Message("Heart Rate Risk Score", true, 'Undefined', 'Trace', 'Calculating "Heart Rate Risk Score"'),
+  Message("Systolic BP Risk Score", true, 'Undefined', 'Trace', 'Calculating "Systolic BP Risk Score"'),
+  Message("Temperature Risk Score", true, 'Undefined', 'Trace', 'Calculating "Temperature Risk Score"'),
+  Message("Alertness Score", true, 'Undefined', 'Trace', 'Calculating "Alertness Score"'),
+  Message("Inspired Oxygen Score", true, 'Undefined', 'Trace', 'Calculating "Inspired Oxygen Score"'),
+  Message("Sex Risk Score", true, 'Undefined', 'Trace', 'Calculating "Sex Risk Score"'),
+  Message("Age Risk Score", true, 'Undefined', 'Trace', 'Calculating "Age Risk Score"'),
+  Message("Performance Status Score", true, 'Undefined', 'Trace', 'Calculating "Performance Status Score"')
 }
 
 define "Total Risk Score":
+  Message(
   Sum("Risk Score Components")
+  , true, 'Undefined', 'Trace', 'Calculating "Total Risk Score"')
 
 define "Risk Percent":
   "Total Risk Score" totalRiskScore
@@ -467,6 +473,7 @@ define "Risk Percent":
   end
 
 define "Respiratory Rate Risk Score":
+    Message(
   "Last Respiratory Rate value" respRate
     let value: Floor(Round(respRate))    // valid values should be Integer
   return case
@@ -477,8 +484,10 @@ define "Respiratory Rate Risk Score":
     when value > 24 then 3
     else null
   end
+    , true, 'Undefined', 'Trace', 'Calculating define "Respiratory Rate Risk Score"')
 
 define "O2 Saturation Risk Score":
+    Message(
   "Last O2 Saturation percent" o2Sat
     let value: Floor(Round(o2Sat))    // valid values should be Integer
   return case
@@ -488,8 +497,10 @@ define "O2 Saturation Risk Score":
     when value < 92 then 3
     else null
   end
+    , true, 'Undefined', 'Trace', 'Calculating define "O2 Saturation Risk Score"')
 
 define "Heart Rate Risk Score":
+    Message(
   "Last Heart Rate value" heartRate
     let value: Floor(Round(heartRate))    // valid values should be Integer
   return case
@@ -501,8 +512,10 @@ define "Heart Rate Risk Score":
     when value > 130 then 3
     else null
   end
+    , true, 'Undefined', 'Trace', 'Calculating define "Heart Rate Risk Score"')
 
 define "Systolic BP Risk Score":
+    Message(
   "Last SBP value" bp
     let value: Floor(Round(bp))    // valid values should be Integer
   return case
@@ -513,8 +526,10 @@ define "Systolic BP Risk Score":
     when value > 219 then 3
     else null
   end
+    , true, 'Undefined', 'Trace', 'Calculating define "Systolic BP Risk Score"')
 
 define "Temperature Risk Score":
+    Message(
   case
     when "Last Body Temperature value in C" between 36.1 and 38.0 then 0
     when "Last Body Temperature value in C" between 35.1 and 36.0 then 1
@@ -523,6 +538,7 @@ define "Temperature Risk Score":
     when "Last Body Temperature value in C" < 35.1 then 3
     else null
   end
+    , true, 'Undefined', 'Trace', 'Calculating define "Temperature Risk Score"')
 
 define "Sex Risk Score":
   if IgnoreFallbackResourceValues then
