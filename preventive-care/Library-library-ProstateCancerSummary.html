@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\ - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.33"}
+    h3,h4,h5,h6{--heading-prefix:"6.33"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+  
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="Library-library-ProstateCancerSummary.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-library-ProstateCancerSummary.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Library: </h2>
+
+
+  
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
+
+// The Preventive Care logic library supports decision-making on preventive care screening for Prostate Cancer.
+
+library ProstateCancerSummary version '1.0.0'
+
+// # Data model #
+
+using FHIR version '4.0.1'
+
+// # Referenced libraries #
+
+// The FHIRHelpers library provides common functions for simplifying interaction w/ the FHIR R4 data model.
+include FHIRHelpers version '4.0.1' called FHIRHelpers
+// The CDS Connect Commons library provides functions representing commonly used CDS logic and patterns.
+include CDSConnectCommons version '1.0.0' called C3F
+// The PreventiveCareConcepts library provides terminology concepts used to identify data elements throughout the artifact.
+include PreventiveCareConcepts version '1.0.0' called PCC
+// The PreventiveCareData library provides common data retrieval logic for preventive care guidelines.
+include PreventiveCareData version '1.0.0' called Data
+// Common expressions and functions for summaries.
+include PreventiveCareSummary version '1.0.0' called Summary
+// Prostate cancer screening logic from USPSTF
+include ProstateCancerScreening version '1.0.0' called PCS
+
+// # CDS logic #
+
+context Patient
+
+/*
+ *  Summary Tuples are the primary interface for returning results to applications.
+ */
+/* define PatientSummary: {
+  givenName: Data.&quot;Patient Given Name&quot;,
+  fullName: Data.&quot;Patient Full Name&quot;,
+  gender: Patient.gender.value,
+  birthSex: Data.&quot;Patient Birth Sex&quot;,
+  age: AgeInYears(),
+  race: Data.&quot;Patient Race Text&quot;,
+  pcpName: Data.&quot;Patient PCP name&quot;
+} */
+
+define ScreeningSummary: {
+  alertPatient: PCS.&quot;Needs Prostate Cancer Screening&quot;,
+  information: &quot;Screening Information Statement&quot;,
+  riskStatement: &quot;PSA risk statement&quot;,
+  riskPhrase: &quot;PSA risk phrase&quot;
+}
+
+// TODO: nextSteps is a list that should be customized for each patient.
+define NextStepsSummary: {
+  nextSteps: {
+    &quot;Next Step 3&quot;,
+    &quot;Next Step 4&quot;
+  }
+}
+
+/*
+ * Patient messages personalized with content from patient's clinical data.
+ */
+
+define &quot;Screening Information Statement&quot;:
+  if PCS.&quot;No PSA test results&quot;
+    then 'You have never had a PSA test'
+  else
+    'Your PSA value was ' + ToString(PCS.&quot;Last PSA value&quot;) + ' on ' + ToString(PCS.&quot;Last PSA date&quot;)
+
+// # Next Steps #
+
+define &quot;Next Step 1&quot;:
+  'Talk with ' + Data.&quot;Patient PCP name&quot; + ' about whether you need another PSA test now.'
+
+define &quot;Next Step 2&quot;:
+  'When you turn 55, learn about prostate cancer screening and think about whether you want to be tested.'
+
+define &quot;Next Step 3&quot;:
+  'Decide with ' + Data.&quot;Patient PCP name&quot; + ' whether a PSA test is right for you.'
+
+define &quot;Next Step 4&quot;:
+  'Learn about PSA testing and think about whether you want another test after ' + ToString(PCS.&quot;Last PSA date&quot; + 2 years)
+
+// # Text Variables #
+
+define &quot;PC Status&quot;:
+  if PCS.&quot;Has prostate cancer Hx&quot;
+    then Data.&quot;Patient PCP name&quot; + ' says that you have a history of prostate cancer'
+  else if PCS.&quot;Has high PSA value&quot;
+    then 'you said that you have a history of high PSA value (PSA value higher than 4.0)'
+  else
+    null
+
+define &quot;MI PSA Date 1&quot;:
+  if PCS.&quot;Has PSA within one year&quot;
+    then Data.&quot;Patient PCP name&quot; + '\'s record states that you last had a PSA test on ' + ToString(PCS.&quot;Last PSA date&quot;) + '.  You may be up-to-date with your PSA test.'
+  else if PCS.&quot;Has PSA test&quot;
+    then Data.&quot;Patient PCP name&quot; + '\'s record states that you last had a PSA test on ' + ToString(PCS.&quot;Last PSA date&quot;) + '.  You may be due for another PSA test.'
+  else Data.&quot;Patient PCP name&quot; + ' does not have a record of when your last PSA was.'
+
+define &quot;PSA value 1&quot;:
+  'Your last PSA value was ' + ToString(PCS.&quot;Last PSA value&quot;) + '. Generally, a PSA below 4 is considered good. Higher values may be, OK if they are not increasing over time.'
+
+// # PSA risk statements #
+
+// TODO handle unknown FH. Research negation of conditions and unknown.
+define &quot;PSA risk statement&quot;:
+  if Data.&quot;Race is African American&quot; and PCS.&quot;Has family history of prostate cancer&quot;
+    then 'You are African American and have a family history of prostate cancer.  This places you at higher risk for prostate cancer.'
+  else if not Data.&quot;Race is African American&quot; and PCS.&quot;Has family history of prostate cancer&quot;
+    then 'You have a family history of prostate cancer.  This places you at higher risk for prostate cancer.'
+  else if Data.&quot;Race is African American&quot; and not PCS.&quot;Has family history of prostate cancer&quot;
+    then 'You are African American.  This places you at higher risk for prostate cancer.'
+  else if Data.&quot;Race is African American&quot;
+    then 'You are African American.  This places you at higher risk for prostate cancer.  You said you are unsure if you have a family history of prostate cancer.  If you do, this also places you at higher risk for prostate cancer.'
+  else
+    'You said you are unsure if you have a family history of prostate cancer.  If you do, this places you at higher risk for prostate cancer.'
+
+// TODO handle unknown FH. Research negation of conditions and unknown.
+define &quot;PSA risk phrase&quot;:
+  if Data.&quot;Race is African American&quot; and PCS.&quot;Has family history of prostate cancer&quot;
+    then 'are African American and have a family history of prostate cancer'
+  else if not Data.&quot;Race is African American&quot; and PCS.&quot;Has family history of prostate cancer&quot;
+    then 'have a family history of prostate cancer'
+  else if Data.&quot;Race is African American&quot; and not PCS.&quot;Has family history of prostate cancer&quot;
+    then 'are African American'
+  else if Data.&quot;Race is African American&quot;
+    then 'are African American and may have a family history of prostate cancer'
+  else
+    'may have a family history of prostate cancer'
+
+// # Patient text blocks #
+
+define &quot;Need PSA statement&quot;:
+  Data.&quot;Patient PCP name&quot; + '\'s record says you last had a PSA test on ' + ToString(PCS.&quot;Last PSA date&quot;)
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 51Kb)</p></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 3, 2021 16:48+0000">2021-09-03</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

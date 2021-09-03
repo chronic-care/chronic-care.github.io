@@ -1,0 +1,102 @@
+{
+  "resourceType": "ValueSet",
+  "id": "currentsmoker",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 4 concepts</p><p>All codes in this table are from the system <a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-snomed-CT.html\"><code>http://snomed.info/sct</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-449868002\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=449868002\">449868002</a></td><td>Current every day smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428041000124106\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428041000124106\">428041000124106</a></td><td>Current some day smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428071000124103\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428071000124103\">428071000124103</a></td><td>Current Heavy tobacco smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428061000124105\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428061000124105\">428061000124105</a></td><td>Current Light tobacco smoker</td><td/></tr></table></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueString": "executable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueString": "executable"
+    }
+  ],
+  "url": "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker",
+  "version": "1.0.0",
+  "name": "CurrentSmoker",
+  "title": "Current Smoker Status",
+  "status": "active",
+  "date": "2020-03-04T00:00:00+10:00",
+  "publisher": "U.S. Preventive Services Task Force (USPSTF)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.uspreventiveservicestaskforce.org/uspstf/"
+        }
+      ]
+    }
+  ],
+  "description": "This value set indicates the current smoking status of a patient who is currently a smoker.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "449868002",
+            "display": "Current every day smoker"
+          },
+          {
+            "code": "428041000124106",
+            "display": "Current some day smoker"
+          },
+          {
+            "code": "428071000124103",
+            "display": "Current Heavy tobacco smoker"
+          },
+          {
+            "code": "428061000124105",
+            "display": "Current Light tobacco smoker"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2021-06-04T14:54:23-06:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "449868002",
+        "display": "Current every day smoker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "428041000124106",
+        "display": "Current some day smoker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "428071000124103",
+        "display": "Current Heavy tobacco smoker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "428061000124105",
+        "display": "Current Light tobacco smoker"
+      }
+    ]
+  }
+}

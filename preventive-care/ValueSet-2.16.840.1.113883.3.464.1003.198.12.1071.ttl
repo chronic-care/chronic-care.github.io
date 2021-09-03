@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1071"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 8 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-cm-Z90.10\"> </a>Z90.10</td><td>http://hl7.org/fhir/sid/icd-10-cm</td><td>Acquired absence of unspecified breast and nipple</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---terminology.hl7.org-CodeSystem-icd9cm-V45.71\"> </a>V45.71</td><td>http://terminology.hl7.org/CodeSystem/icd9cm</td><td>Acquired absence of breast and nipple</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-22964006\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=22964006\">22964006</a></td><td>http://snomed.info/sct</td><td>Unilateral simple mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-72269009\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=72269009\">72269009</a></td><td>http://snomed.info/sct</td><td>Unilateral modified radical mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-73359007\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=73359007\">73359007</a></td><td>http://snomed.info/sct</td><td>Unilateral mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-8115005\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=8115005\">8115005</a></td><td>http://snomed.info/sct</td><td>Unilateral radical mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-88764002\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=88764002\">88764002</a></td><td>http://snomed.info/sct</td><td>Unilateral extended simple mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-248802009\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=248802009\">248802009</a></td><td>http://snomed.info/sct</td><td>Absence of breast (finding)</td><td/></tr></table></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1071" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "UnilateralMastectomy,UnspecifiedLaterality"];
+  fhir:ValueSet.title [ fhir:value "Unilateral Mastectomy, Unspecified Laterality"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2021-09-03T16:48:06+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "20200507" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-01-14T20:59:46-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "Z90.10" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Acquired absence of unspecified breast and nipple" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://terminology.hl7.org/CodeSystem/icd9cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "V45.71" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Acquired absence of breast and nipple" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2017-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "22964006" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unilateral simple mastectomy (situation)" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2017-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "72269009" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unilateral modified radical mastectomy (situation)" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2017-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "73359007" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unilateral mastectomy (situation)" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2017-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "8115005" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unilateral radical mastectomy (situation)" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2017-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "88764002" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unilateral extended simple mastectomy (situation)" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "248802009" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Absence of breast (finding)" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

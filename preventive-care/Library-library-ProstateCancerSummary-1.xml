@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorVersion="1.3" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="178">
+         <a:s>// # Introduction
+
+// The Preventive Care logic library supports decision-making on preventive care screening for Prostate Cancer.library ProstateCancerSummary version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ProstateCancerSummary" system="http://fhir.org/guides/preventive-care" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>// # Data model #using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="14:1-14:54" localIdentifier="FHIRHelpers" path="http://hl7.org/fhir/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>// # Referenced libraries #
+
+// The FHIRHelpers library provides common functions for simplifying interaction w/ the FHIR R4 data model.include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="16:1-16:52" localIdentifier="C3F" path="http://fhir.org/guides/preventive-care/CDSConnectCommons" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>// The CDS Connect Commons library provides functions representing commonly used CDS logic and patterns.include </a:s>
+               <a:s>
+                  <a:s>CDSConnectCommons</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called C3F</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="18:1-18:57" localIdentifier="PCC" path="http://fhir.org/guides/preventive-care/PreventiveCareConcepts" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>// The PreventiveCareConcepts library provides terminology concepts used to identify data elements throughout the artifact.include </a:s>
+               <a:s>
+                  <a:s>PreventiveCareConcepts</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called PCC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="20:1-20:54" localIdentifier="Data" path="http://fhir.org/guides/preventive-care/PreventiveCareData" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>// The PreventiveCareData library provides common data retrieval logic for preventive care guidelines.include </a:s>
+               <a:s>
+                  <a:s>PreventiveCareData</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Data</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="22:1-22:60" localIdentifier="Summary" path="http://fhir.org/guides/preventive-care/PreventiveCareSummary" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>// Common expressions and functions for summaries.include </a:s>
+               <a:s>
+                  <a:s>PreventiveCareSummary</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Summary</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="7" locator="24:1-24:58" localIdentifier="PCS" path="http://fhir.org/guides/preventive-care/ProstateCancerScreening" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>// Prostate cancer screening logic from USPSTFinclude </a:s>
+               <a:s>
+                  <a:s>ProstateCancerScreening</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called PCS</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <contexts>
+      <def locator="28:1-28:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="28:1-28:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="28:1-28:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="25" locator="62:1-66:99" name="Screening Information Statement" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="25">
+               <a:s>/*
+ * Patient messages personalized with content from patient's clinical data.
+ */define &quot;Screening Information Statement&quot;:
+  </a:s>
+               <a:s r="24">
+                  <a:s>if </a:s>
+                  <a:s r="11">
+                     <a:s r="10">
+                        <a:s>PCS</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="11">
+                        <a:s>&quot;No PSA test results&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="12">
+                     <a:s>'You have never had a PSA test'</a:s>
+                  </a:s>
+                  <a:s>
+  else
+    </a:s>
+                  <a:s r="23">
+                     <a:s r="19">
+                        <a:s r="17">
+                           <a:s r="13">
+                              <a:s>'Your PSA value was '</a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="16">
+                              <a:s>ToString(</a:s>
+                              <a:s r="15">
+                                 <a:s r="14">
+                                    <a:s>PCS</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="15">
+                                    <a:s>&quot;Last PSA value&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> + </a:s>
+                        <a:s r="18">
+                           <a:s>' on '</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="22">
+                        <a:s>ToString(</a:s>
+                        <a:s r="21">
+                           <a:s r="20">
+                              <a:s>PCS</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="21">
+                              <a:s>&quot;Last PSA date&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="24" locator="63:3-66:99" xsi:type="If">
+            <condition localId="11" locator="63:6-63:30" name="No PSA test results" libraryName="PCS" xsi:type="ExpressionRef"/>
+            <then localId="12" locator="64:10-64:40" valueType="t:String" value="You have never had a PSA test" xsi:type="Literal"/>
+            <else localId="23" locator="66:5-66:99" xsi:type="Concatenate">
+               <operand localId="19" locator="66:5-66:67" xsi:type="Concatenate">
+                  <operand localId="17" locator="66:5-66:58" xsi:type="Concatenate">
+                     <operand localId="13" locator="66:5-66:25" valueType="t:String" value="Your PSA value was " xsi:type="Literal"/>
+                     <operand localId="16" locator="66:29-66:58" xsi:type="ToString">
+                        <operand localId="15" locator="66:38-66:57" name="Last PSA value" libraryName="PCS" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="18" locator="66:62-66:67" valueType="t:String" value=" on " xsi:type="Literal"/>
+               </operand>
+               <operand localId="22" locator="66:71-66:99" xsi:type="ToString">
+                  <operand localId="21" locator="66:80-66:98" name="Last PSA date" libraryName="PCS" xsi:type="ExpressionRef"/>
+               </operand>
+            </else>
+         </expression>
+      </def>
+      <def localId="55" locator="105:1-115:142" name="PSA risk statement" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="55">
+               <a:s>// # PSA risk statements #
+
+// TODO handle unknown FH. Research negation of conditions and unknown.define &quot;PSA risk statement&quot;:
+  </a:s>
+               <a:s r="54">
+                  <a:s>if </a:s>
+                  <a:s r="31">
+                     <a:s r="28">
+                        <a:s r="27">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="28">
+                           <a:s>&quot;Race is African American&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> and </a:s>
+                     <a:s r="30">
+                        <a:s r="29">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="30">
+                           <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="32">
+                     <a:s>'You are African American and have a family history of prostate cancer.  This places you at higher risk for prostate cancer.'</a:s>
+                  </a:s>
+                  <a:s>
+  else </a:s>
+                  <a:s r="53">
+                     <a:s>if </a:s>
+                     <a:s r="38">
+                        <a:s r="35">
+                           <a:s>not </a:s>
+                           <a:s r="34">
+                              <a:s r="33">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="34">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="37">
+                           <a:s r="36">
+                              <a:s>PCS</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="37">
+                              <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    then </a:s>
+                     <a:s r="39">
+                        <a:s>'You have a family history of prostate cancer.  This places you at higher risk for prostate cancer.'</a:s>
+                     </a:s>
+                     <a:s>
+  else </a:s>
+                     <a:s r="52">
+                        <a:s>if </a:s>
+                        <a:s r="45">
+                           <a:s r="41">
+                              <a:s r="40">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="41">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="44">
+                              <a:s>not </a:s>
+                              <a:s r="43">
+                                 <a:s r="42">
+                                    <a:s>PCS</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="43">
+                                    <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    then </a:s>
+                        <a:s r="46">
+                           <a:s>'You are African American.  This places you at higher risk for prostate cancer.'</a:s>
+                        </a:s>
+                        <a:s>
+  else </a:s>
+                        <a:s r="51">
+                           <a:s>if </a:s>
+                           <a:s r="48">
+                              <a:s r="47">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="48">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    then </a:s>
+                           <a:s r="49">
+                              <a:s>'You are African American.  This places you at higher risk for prostate cancer.  You said you are unsure if you have a family history of prostate cancer.  If you do, this also places you at higher risk for prostate cancer.'</a:s>
+                           </a:s>
+                           <a:s>
+  else
+    </a:s>
+                           <a:s r="50">
+                              <a:s>'You said you are unsure if you have a family history of prostate cancer.  If you do, this places you at higher risk for prostate cancer.'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="54" locator="106:3-115:142" xsi:type="If">
+            <condition localId="31" locator="106:6-106:84" xsi:type="And">
+               <operand localId="28" locator="106:6-106:36" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+               <operand localId="30" locator="106:42-106:84" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+            </condition>
+            <then localId="32" locator="107:10-107:134" valueType="t:String" value="You are African American and have a family history of prostate cancer.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
+            <else localId="53" locator="108:8-115:142" xsi:type="If">
+               <condition localId="38" locator="108:11-108:93" xsi:type="And">
+                  <operand localId="35" locator="108:11-108:45" xsi:type="Not">
+                     <operand localId="34" locator="108:15-108:45" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="37" locator="108:51-108:93" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+               </condition>
+               <then localId="39" locator="109:10-109:109" valueType="t:String" value="You have a family history of prostate cancer.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
+               <else localId="52" locator="110:8-115:142" xsi:type="If">
+                  <condition localId="45" locator="110:11-110:93" xsi:type="And">
+                     <operand localId="41" locator="110:11-110:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                     <operand localId="44" locator="110:47-110:93" xsi:type="Not">
+                        <operand localId="43" locator="110:51-110:93" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </condition>
+                  <then localId="46" locator="111:10-111:89" valueType="t:String" value="You are African American.  This places you at higher risk for prostate cancer." xsi:type="Literal"/>
+                  <else localId="51" locator="112:8-115:142" xsi:type="If">
+                     <condition localId="48" locator="112:11-112:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                     <then localId="49" locator="113:10-113:232" valueType="t:String" value="You are African American.  This places you at higher risk for prostate cancer.  You said you are unsure if you have a family history of prostate cancer.  If you do, this also places you at higher risk for prostate cancer." xsi:type="Literal"/>
+                     <else localId="50" locator="115:5-115:142" valueType="t:String" value="You said you are unsure if you have a family history of prostate cancer.  If you do, this places you at higher risk for prostate cancer." xsi:type="Literal"/>
+                  </else>
+               </else>
+            </else>
+         </expression>
+      </def>
+      <def localId="85" locator="118:1-128:50" name="PSA risk phrase" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="85">
+               <a:s>// TODO handle unknown FH. Research negation of conditions and unknown.define &quot;PSA risk phrase&quot;:
+  </a:s>
+               <a:s r="84">
+                  <a:s>if </a:s>
+                  <a:s r="61">
+                     <a:s r="58">
+                        <a:s r="57">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="58">
+                           <a:s>&quot;Race is African American&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> and </a:s>
+                     <a:s r="60">
+                        <a:s r="59">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="60">
+                           <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="62">
+                     <a:s>'are African American and have a family history of prostate cancer'</a:s>
+                  </a:s>
+                  <a:s>
+  else </a:s>
+                  <a:s r="83">
+                     <a:s>if </a:s>
+                     <a:s r="68">
+                        <a:s r="65">
+                           <a:s>not </a:s>
+                           <a:s r="64">
+                              <a:s r="63">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="64">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> and </a:s>
+                        <a:s r="67">
+                           <a:s r="66">
+                              <a:s>PCS</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="67">
+                              <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    then </a:s>
+                     <a:s r="69">
+                        <a:s>'have a family history of prostate cancer'</a:s>
+                     </a:s>
+                     <a:s>
+  else </a:s>
+                     <a:s r="82">
+                        <a:s>if </a:s>
+                        <a:s r="75">
+                           <a:s r="71">
+                              <a:s r="70">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="71">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> and </a:s>
+                           <a:s r="74">
+                              <a:s>not </a:s>
+                              <a:s r="73">
+                                 <a:s r="72">
+                                    <a:s>PCS</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="73">
+                                    <a:s>&quot;Has family history of prostate cancer&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    then </a:s>
+                        <a:s r="76">
+                           <a:s>'are African American'</a:s>
+                        </a:s>
+                        <a:s>
+  else </a:s>
+                        <a:s r="81">
+                           <a:s>if </a:s>
+                           <a:s r="78">
+                              <a:s r="77">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="78">
+                                 <a:s>&quot;Race is African American&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    then </a:s>
+                           <a:s r="79">
+                              <a:s>'are African American and may have a family history of prostate cancer'</a:s>
+                           </a:s>
+                           <a:s>
+  else
+    </a:s>
+                           <a:s r="80">
+                              <a:s>'may have a family history of prostate cancer'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="84" locator="119:3-128:50" xsi:type="If">
+            <condition localId="61" locator="119:6-119:84" xsi:type="And">
+               <operand localId="58" locator="119:6-119:36" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+               <operand localId="60" locator="119:42-119:84" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+            </condition>
+            <then localId="62" locator="120:10-120:76" valueType="t:String" value="are African American and have a family history of prostate cancer" xsi:type="Literal"/>
+            <else localId="83" locator="121:8-128:50" xsi:type="If">
+               <condition localId="68" locator="121:11-121:93" xsi:type="And">
+                  <operand localId="65" locator="121:11-121:45" xsi:type="Not">
+                     <operand localId="64" locator="121:15-121:45" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="67" locator="121:51-121:93" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+               </condition>
+               <then localId="69" locator="122:10-122:51" valueType="t:String" value="have a family history of prostate cancer" xsi:type="Literal"/>
+               <else localId="82" locator="123:8-128:50" xsi:type="If">
+                  <condition localId="75" locator="123:11-123:93" xsi:type="And">
+                     <operand localId="71" locator="123:11-123:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                     <operand localId="74" locator="123:47-123:93" xsi:type="Not">
+                        <operand localId="73" locator="123:51-123:93" name="Has family history of prostate cancer" libraryName="PCS" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </condition>
+                  <then localId="76" locator="124:10-124:31" valueType="t:String" value="are African American" xsi:type="Literal"/>
+                  <else localId="81" locator="125:8-128:50" xsi:type="If">
+                     <condition localId="78" locator="125:11-125:41" name="Race is African American" libraryName="Data" xsi:type="ExpressionRef"/>
+                     <then localId="79" locator="126:10-126:80" valueType="t:String" value="are African American and may have a family history of prostate cancer" xsi:type="Literal"/>
+                     <else localId="80" locator="128:5-128:50" valueType="t:String" value="may have a family history of prostate cancer" xsi:type="Literal"/>
+                  </else>
+               </else>
+            </else>
+         </expression>
+      </def>
+      <def localId="88" locator="43:1-48:1" name="ScreeningSummary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="88">
+               <a:s>/*
+ *  Summary Tuples are the primary interface for returning results to applications.
+ */
+/* define PatientSummary: {
+  givenName: Data.&quot;Patient Given Name&quot;,
+  fullName: Data.&quot;Patient Full Name&quot;,
+  gender: Patient.gender.value,
+  birthSex: Data.&quot;Patient Birth Sex&quot;,
+  age: AgeInYears(),
+  race: Data.&quot;Patient Race Text&quot;,
+  pcpName: Data.&quot;Patient PCP name&quot;
+} */define ScreeningSummary: </a:s>
+               <a:s r="87">
+                  <a:s>{
+  </a:s>
+                  <a:s>
+                     <a:s>alertPatient: </a:s>
+                     <a:s r="9">
+                        <a:s r="8">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="9">
+                           <a:s>&quot;Needs Prostate Cancer Screening&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>information: </a:s>
+                     <a:s r="26">
+                        <a:s>&quot;Screening Information Statement&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>riskStatement: </a:s>
+                     <a:s r="56">
+                        <a:s>&quot;PSA risk statement&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>riskPhrase: </a:s>
+                     <a:s r="86">
+                        <a:s>&quot;PSA risk phrase&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+}</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="87" locator="43:26-48:1" xsi:type="Tuple">
+            <element name="alertPatient">
+               <value localId="9" locator="44:17-44:53" name="Needs Prostate Cancer Screening" libraryName="PCS" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="information">
+               <value localId="26" locator="45:16-45:48" name="Screening Information Statement" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="riskStatement">
+               <value localId="56" locator="46:18-46:37" name="PSA risk statement" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="riskPhrase">
+               <value localId="86" locator="47:15-47:31" name="PSA risk phrase" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="95" locator="76:1-77:84" name="Next Step 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="95">
+               <a:s>define &quot;Next Step 3&quot;:
+  </a:s>
+               <a:s r="94">
+                  <a:s r="92">
+                     <a:s r="89">
+                        <a:s>'Decide with '</a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="91">
+                        <a:s r="90">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="91">
+                           <a:s>&quot;Patient PCP name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="93">
+                     <a:s>' whether a PSA test is right for you.'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="94" locator="77:3-77:84" xsi:type="Concatenate">
+            <operand localId="92" locator="77:3-77:42" xsi:type="Concatenate">
+               <operand localId="89" locator="77:3-77:16" valueType="t:String" value="Decide with " xsi:type="Literal"/>
+               <operand localId="91" locator="77:20-77:42" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="93" locator="77:46-77:84" valueType="t:String" value=" whether a PSA test is right for you." xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def localId="104" locator="79:1-80:122" name="Next Step 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="104">
+               <a:s>define &quot;Next Step 4&quot;:
+  </a:s>
+               <a:s r="103">
+                  <a:s r="97">
+                     <a:s>'Learn about PSA testing and think about whether you want another test after '</a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="102">
+                     <a:s>ToString(</a:s>
+                     <a:s r="101">
+                        <a:s r="99">
+                           <a:s r="98">
+                              <a:s>PCS</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="99">
+                              <a:s>&quot;Last PSA date&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> + </a:s>
+                        <a:s r="100">
+                           <a:s>2 years</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="103" locator="80:3-80:122" xsi:type="Concatenate">
+            <operand localId="97" locator="80:3-80:80" valueType="t:String" value="Learn about PSA testing and think about whether you want another test after " xsi:type="Literal"/>
+            <operand localId="102" locator="80:84-80:122" xsi:type="ToString">
+               <operand localId="101" locator="80:93-80:121" xsi:type="Add">
+                  <operand localId="99" locator="80:93-80:111" name="Last PSA date" libraryName="PCS" xsi:type="ExpressionRef"/>
+                  <operand localId="100" locator="80:115-80:121" value="2" unit="years" xsi:type="Quantity"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="108" locator="51:1-56:1" name="NextStepsSummary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="108">
+               <a:s>// TODO: nextSteps is a list that should be customized for each patient.define NextStepsSummary: </a:s>
+               <a:s r="107">
+                  <a:s>{
+  </a:s>
+                  <a:s>
+                     <a:s>nextSteps: </a:s>
+                     <a:s r="106">
+                        <a:s>{
+    </a:s>
+                        <a:s r="96">
+                           <a:s>&quot;Next Step 3&quot;</a:s>
+                        </a:s>
+                        <a:s>,
+    </a:s>
+                        <a:s r="105">
+                           <a:s>&quot;Next Step 4&quot;</a:s>
+                        </a:s>
+                        <a:s>
+  }</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+}</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="107" locator="51:26-56:1" xsi:type="Tuple">
+            <element name="nextSteps">
+               <value localId="106" locator="52:14-55:3" xsi:type="List">
+                  <element localId="96" locator="53:5-53:17" name="Next Step 3" xsi:type="ExpressionRef"/>
+                  <element localId="105" locator="54:5-54:17" name="Next Step 4" xsi:type="ExpressionRef"/>
+               </value>
+            </element>
+         </expression>
+      </def>
+      <def localId="115" locator="70:1-71:90" name="Next Step 1" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="115">
+               <a:s>// # Next Steps #define &quot;Next Step 1&quot;:
+  </a:s>
+               <a:s r="114">
+                  <a:s r="112">
+                     <a:s r="109">
+                        <a:s>'Talk with '</a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="111">
+                        <a:s r="110">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="111">
+                           <a:s>&quot;Patient PCP name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="113">
+                     <a:s>' about whether you need another PSA test now.'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="114" locator="71:3-71:90" xsi:type="Concatenate">
+            <operand localId="112" locator="71:3-71:40" xsi:type="Concatenate">
+               <operand localId="109" locator="71:3-71:14" valueType="t:String" value="Talk with " xsi:type="Literal"/>
+               <operand localId="111" locator="71:18-71:40" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="113" locator="71:44-71:90" valueType="t:String" value=" about whether you need another PSA test now." xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def localId="117" locator="73:1-74:106" name="Next Step 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="117">
+               <a:s>define &quot;Next Step 2&quot;:
+  </a:s>
+               <a:s r="116">
+                  <a:s>'When you turn 55, learn about prostate cancer screening and think about whether you want to be tested.'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="116" locator="74:3-74:106" valueType="t:String" value="When you turn 55, learn about prostate cancer screening and think about whether you want to be tested." xsi:type="Literal"/>
+      </def>
+      <def localId="130" locator="84:1-90:8" name="PC Status" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="130">
+               <a:s>// # Text Variables #define &quot;PC Status&quot;:
+  </a:s>
+               <a:s r="129">
+                  <a:s>if </a:s>
+                  <a:s r="119">
+                     <a:s r="118">
+                        <a:s>PCS</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="119">
+                        <a:s>&quot;Has prostate cancer Hx&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="123">
+                     <a:s r="121">
+                        <a:s r="120">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="121">
+                           <a:s>&quot;Patient PCP name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="122">
+                        <a:s>' says that you have a history of prostate cancer'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  else </a:s>
+                  <a:s r="128">
+                     <a:s>if </a:s>
+                     <a:s r="125">
+                        <a:s r="124">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="125">
+                           <a:s>&quot;Has high PSA value&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    then </a:s>
+                     <a:s r="126">
+                        <a:s>'you said that you have a history of high PSA value (PSA value higher than 4.0)'</a:s>
+                     </a:s>
+                     <a:s r="127">
+  else
+    null</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="129" locator="85:3-90:8" xsi:type="If">
+            <condition localId="119" locator="85:6-85:33" name="Has prostate cancer Hx" libraryName="PCS" xsi:type="ExpressionRef"/>
+            <then localId="123" locator="86:10-86:85" xsi:type="Concatenate">
+               <operand localId="121" locator="86:10-86:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+               <operand localId="122" locator="86:36-86:85" valueType="t:String" value=" says that you have a history of prostate cancer" xsi:type="Literal"/>
+            </then>
+            <else localId="128" locator="87:8-90:8" xsi:type="If">
+               <condition localId="125" locator="87:11-87:34" name="Has high PSA value" libraryName="PCS" xsi:type="ExpressionRef"/>
+               <then localId="126" locator="88:10-88:89" valueType="t:String" value="you said that you have a history of high PSA value (PSA value higher than 4.0)" xsi:type="Literal"/>
+               <else asType="t:String" xsi:type="As">
+                  <operand localId="127" locator="90:5-90:8" xsi:type="Null"/>
+               </else>
+            </else>
+         </expression>
+      </def>
+      <def localId="161" locator="92:1-97:85" name="MI PSA Date 1" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="161">
+               <a:s>define &quot;MI PSA Date 1&quot;:
+  </a:s>
+               <a:s r="160">
+                  <a:s>if </a:s>
+                  <a:s r="132">
+                     <a:s r="131">
+                        <a:s>PCS</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="132">
+                        <a:s>&quot;Has PSA within one year&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="142">
+                     <a:s r="140">
+                        <a:s r="136">
+                           <a:s r="134">
+                              <a:s r="133">
+                                 <a:s>Data</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="134">
+                                 <a:s>&quot;Patient PCP name&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="135">
+                              <a:s>'\'s record states that you last had a PSA test on '</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> + </a:s>
+                        <a:s r="139">
+                           <a:s>ToString(</a:s>
+                           <a:s r="138">
+                              <a:s r="137">
+                                 <a:s>PCS</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="138">
+                                 <a:s>&quot;Last PSA date&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="141">
+                        <a:s>'.  You may be up-to-date with your PSA test.'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  else </a:s>
+                  <a:s r="159">
+                     <a:s>if </a:s>
+                     <a:s r="144">
+                        <a:s r="143">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="144">
+                           <a:s>&quot;Has PSA test&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    then </a:s>
+                     <a:s r="154">
+                        <a:s r="152">
+                           <a:s r="148">
+                              <a:s r="146">
+                                 <a:s r="145">
+                                    <a:s>Data</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="146">
+                                    <a:s>&quot;Patient PCP name&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> + </a:s>
+                              <a:s r="147">
+                                 <a:s>'\'s record states that you last had a PSA test on '</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="151">
+                              <a:s>ToString(</a:s>
+                              <a:s r="150">
+                                 <a:s r="149">
+                                    <a:s>PCS</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="150">
+                                    <a:s>&quot;Last PSA date&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> + </a:s>
+                        <a:s r="153">
+                           <a:s>'.  You may be due for another PSA test.'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  else </a:s>
+                     <a:s r="158">
+                        <a:s r="156">
+                           <a:s r="155">
+                              <a:s>Data</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="156">
+                              <a:s>&quot;Patient PCP name&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> + </a:s>
+                        <a:s r="157">
+                           <a:s>' does not have a record of when your last PSA was.'</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="160" locator="93:3-97:85" xsi:type="If">
+            <condition localId="132" locator="93:6-93:34" name="Has PSA within one year" libraryName="PCS" xsi:type="ExpressionRef"/>
+            <then localId="142" locator="94:10-94:168" xsi:type="Concatenate">
+               <operand localId="140" locator="94:10-94:119" xsi:type="Concatenate">
+                  <operand localId="136" locator="94:10-94:87" xsi:type="Concatenate">
+                     <operand localId="134" locator="94:10-94:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+                     <operand localId="135" locator="94:36-94:87" valueType="t:String" value="'s record states that you last had a PSA test on " xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="139" locator="94:91-94:119" xsi:type="ToString">
+                     <operand localId="138" locator="94:100-94:118" name="Last PSA date" libraryName="PCS" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand localId="141" locator="94:123-94:168" valueType="t:String" value=".  You may be up-to-date with your PSA test." xsi:type="Literal"/>
+            </then>
+            <else localId="159" locator="95:8-97:85" xsi:type="If">
+               <condition localId="144" locator="95:11-95:28" name="Has PSA test" libraryName="PCS" xsi:type="ExpressionRef"/>
+               <then localId="154" locator="96:10-96:163" xsi:type="Concatenate">
+                  <operand localId="152" locator="96:10-96:119" xsi:type="Concatenate">
+                     <operand localId="148" locator="96:10-96:87" xsi:type="Concatenate">
+                        <operand localId="146" locator="96:10-96:32" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+                        <operand localId="147" locator="96:36-96:87" valueType="t:String" value="'s record states that you last had a PSA test on " xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="151" locator="96:91-96:119" xsi:type="ToString">
+                        <operand localId="150" locator="96:100-96:118" name="Last PSA date" libraryName="PCS" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="153" locator="96:123-96:163" valueType="t:String" value=".  You may be due for another PSA test." xsi:type="Literal"/>
+               </then>
+               <else localId="158" locator="97:8-97:85" xsi:type="Concatenate">
+                  <operand localId="156" locator="97:8-97:30" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+                  <operand localId="157" locator="97:34-97:85" valueType="t:String" value=" does not have a record of when your last PSA was." xsi:type="Literal"/>
+               </else>
+            </else>
+         </expression>
+      </def>
+      <def localId="169" locator="99:1-100:175" name="PSA value 1" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="169">
+               <a:s>define &quot;PSA value 1&quot;:
+  </a:s>
+               <a:s r="168">
+                  <a:s r="166">
+                     <a:s r="162">
+                        <a:s>'Your last PSA value was '</a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="165">
+                        <a:s>ToString(</a:s>
+                        <a:s r="164">
+                           <a:s r="163">
+                              <a:s>PCS</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="164">
+                              <a:s>&quot;Last PSA value&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="167">
+                     <a:s>'. Generally, a PSA below 4 is considered good. Higher values may be, OK if they are not increasing over time.'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="168" locator="100:3-100:175" xsi:type="Concatenate">
+            <operand localId="166" locator="100:3-100:61" xsi:type="Concatenate">
+               <operand localId="162" locator="100:3-100:28" valueType="t:String" value="Your last PSA value was " xsi:type="Literal"/>
+               <operand localId="165" locator="100:32-100:61" xsi:type="ToString">
+                  <operand localId="164" locator="100:41-100:60" name="Last PSA value" libraryName="PCS" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="167" locator="100:65-100:175" valueType="t:String" value=". Generally, a PSA below 4 is considered good. Higher values may be, OK if they are not increasing over time." xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def localId="178" locator="132:1-133:105" name="Need PSA statement" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="178">
+               <a:s>// # Patient text blocks #define &quot;Need PSA statement&quot;:
+  </a:s>
+               <a:s r="177">
+                  <a:s r="173">
+                     <a:s r="171">
+                        <a:s r="170">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="171">
+                           <a:s>&quot;Patient PCP name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="172">
+                        <a:s>'\'s record says you last had a PSA test on '</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="176">
+                     <a:s>ToString(</a:s>
+                     <a:s r="175">
+                        <a:s r="174">
+                           <a:s>PCS</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="175">
+                           <a:s>&quot;Last PSA date&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="177" locator="133:3-133:105" xsi:type="Concatenate">
+            <operand localId="173" locator="133:3-133:73" xsi:type="Concatenate">
+               <operand localId="171" locator="133:3-133:25" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+               <operand localId="172" locator="133:29-133:73" valueType="t:String" value="'s record says you last had a PSA test on " xsi:type="Literal"/>
+            </operand>
+            <operand localId="176" locator="133:77-133:105" xsi:type="ToString">
+               <operand localId="175" locator="133:86-133:104" name="Last PSA date" libraryName="PCS" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

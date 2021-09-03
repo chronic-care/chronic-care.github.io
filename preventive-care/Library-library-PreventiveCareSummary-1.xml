@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorVersion="1.3" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="264">
+         <a:s>// # Introduction
+
+// The Preventive Care logic library supports decision-making on preventive care screening.library PreventiveCareSummary version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="PreventiveCareSummary" system="http://fhir.org/guides/preventive-care" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>// # Data model #using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="14:1-14:54" localIdentifier="FHIRHelpers" path="http://hl7.org/fhir/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>// # Referenced libraries #
+
+// The FHIRHelpers library provides common functions for simplifying interaction w/ the FHIR R4 data model.include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="16:1-16:52" localIdentifier="C3F" path="http://fhir.org/guides/preventive-care/CDSConnectCommons" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>// The CDS Connect Commons library provides functions representing commonly used CDS logic and patterns.include </a:s>
+               <a:s>
+                  <a:s>CDSConnectCommons</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called C3F</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="18:1-18:57" localIdentifier="PCC" path="http://fhir.org/guides/preventive-care/PreventiveCareConcepts" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>// The PreventiveCareConcepts library provides terminology concepts used to identify data elements throughout the artifact.include </a:s>
+               <a:s>
+                  <a:s>PreventiveCareConcepts</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called PCC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="20:1-20:54" localIdentifier="Data" path="http://fhir.org/guides/preventive-care/PreventiveCareData" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>// The PreventiveCareData library provides common data retrieval logic for preventive care guidelines.include </a:s>
+               <a:s>
+                  <a:s>PreventiveCareData</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Data</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <contexts>
+      <def locator="24:1-24:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="24:1-24:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="24:1-24:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="21" locator="26:1-34:1" name="PatientSummary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="21">
+               <a:s>define PatientSummary: </a:s>
+               <a:s r="20">
+                  <a:s>{
+  </a:s>
+                  <a:s>
+                     <a:s>givenName: </a:s>
+                     <a:s r="7">
+                        <a:s r="6">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="7">
+                           <a:s>&quot;Patient Given Name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>fullName: </a:s>
+                     <a:s r="9">
+                        <a:s r="8">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="9">
+                           <a:s>&quot;Patient Full Name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>gender: </a:s>
+                     <a:s r="12">
+                        <a:s r="11">
+                           <a:s r="10">
+                              <a:s>Patient</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="11">
+                              <a:s>gender</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="12">
+                           <a:s>value</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>birthSex: </a:s>
+                     <a:s r="14">
+                        <a:s r="13">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="14">
+                           <a:s>&quot;Patient birth sex&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>age: </a:s>
+                     <a:s r="15">
+                        <a:s>AgeInYears()</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>race: </a:s>
+                     <a:s r="17">
+                        <a:s r="16">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="17">
+                           <a:s>&quot;Patient Race Text&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>,
+  </a:s>
+                  <a:s>
+                     <a:s>pcpName: </a:s>
+                     <a:s r="19">
+                        <a:s r="18">
+                           <a:s>Data</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="19">
+                           <a:s>&quot;Patient PCP name&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+}</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="20" locator="26:24-34:1" xsi:type="Tuple">
+            <element name="givenName">
+               <value localId="7" locator="27:14-27:38" name="Patient Given Name" libraryName="Data" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="fullName">
+               <value localId="9" locator="28:13-28:36" name="Patient Full Name" libraryName="Data" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="gender">
+               <value localId="12" locator="29:11-29:30" path="value" xsi:type="Property">
+                  <source localId="11" locator="29:11-29:24" path="gender" xsi:type="Property">
+                     <source localId="10" locator="29:11-29:17" name="Patient" xsi:type="ExpressionRef"/>
+                  </source>
+               </value>
+            </element>
+            <element name="birthSex">
+               <value localId="14" locator="30:13-30:36" name="Patient birth sex" libraryName="Data" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="age">
+               <value localId="15" locator="31:8-31:19" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </value>
+            </element>
+            <element name="race">
+               <value localId="17" locator="32:9-32:32" name="Patient Race Text" libraryName="Data" xsi:type="ExpressionRef"/>
+            </element>
+            <element name="pcpName">
+               <value localId="19" locator="33:12-33:34" name="Patient PCP name" libraryName="Data" xsi:type="ExpressionRef"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="45" locator="44:1-45:119" name="ConceptText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="45">
+               <a:s>/*
+ *  Helper expressions and functions used by summaries.
+ */
+
+// Returns the first-found display text for a CodeableConcept, looking first at the `text` attribute, then the
+// `display` on each `coding` until it finds a non-null value.
+// @param c - a FHIR CodeableConcept to get text from
+// @returns {System.String} the display text or null if none is founddefine function ConceptText(c </a:s>
+               <a:s r="22">
+                  <a:s>FHIR.CodeableConcept</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="44">
+                  <a:s r="44">
+                     <a:s>Coalesce(</a:s>
+                     <a:s r="25">
+                        <a:s r="24">
+                           <a:s r="23">
+                              <a:s>c</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="24">
+                              <a:s>text</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="25">
+                           <a:s>value</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="34">
+                        <a:s>Coalesce(</a:s>
+                        <a:s r="33">
+                           <a:s>
+                              <a:s r="28">
+                                 <a:s r="27">
+                                    <a:s>(</a:s>
+                                    <a:s r="27">
+                                       <a:s r="26">
+                                          <a:s>c</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="27">
+                                          <a:s>coding</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s> c2</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="32">
+                              <a:s>return </a:s>
+                              <a:s r="31">
+                                 <a:s r="30">
+                                    <a:s r="29">
+                                       <a:s>c2</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="30">
+                                       <a:s>display</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="31">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="43">
+                        <a:s>Coalesce(</a:s>
+                        <a:s r="42">
+                           <a:s>
+                              <a:s r="37">
+                                 <a:s r="36">
+                                    <a:s>(</a:s>
+                                    <a:s r="36">
+                                       <a:s r="35">
+                                          <a:s>c</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="36">
+                                          <a:s>coding</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s> c3</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="41">
+                              <a:s>return </a:s>
+                              <a:s r="40">
+                                 <a:s r="39">
+                                    <a:s r="38">
+                                       <a:s>c3</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="39">
+                                       <a:s>code</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="40">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="44" locator="45:3-45:119" xsi:type="Coalesce">
+            <operand localId="25" locator="45:12-45:23" path="value" xsi:type="Property">
+               <source localId="24" locator="45:12-45:17" path="text" xsi:type="Property">
+                  <source localId="23" locator="45:12" name="c" xsi:type="OperandRef"/>
+               </source>
+            </operand>
+            <operand localId="34" locator="45:26-45:72" xsi:type="Coalesce">
+               <operand localId="33" locator="45:35-45:71" xsi:type="Query">
+                  <source localId="28" locator="45:35-45:47" alias="c2">
+                     <expression localId="27" locator="45:35-45:44" path="coding" xsi:type="Property">
+                        <source localId="26" locator="45:36" name="c" xsi:type="OperandRef"/>
+                     </expression>
+                  </source>
+                  <return localId="32" locator="45:49-45:71">
+                     <expression localId="31" locator="45:56-45:71" path="value" xsi:type="Property">
+                        <source localId="30" locator="45:56-45:65" path="display" scope="c2" xsi:type="Property"/>
+                     </expression>
+                  </return>
+               </operand>
+            </operand>
+            <operand localId="43" locator="45:75-45:118" xsi:type="Coalesce">
+               <operand localId="42" locator="45:84-45:117" xsi:type="Query">
+                  <source localId="37" locator="45:84-45:96" alias="c3">
+                     <expression localId="36" locator="45:84-45:93" path="coding" xsi:type="Property">
+                        <source localId="35" locator="45:85" name="c" xsi:type="OperandRef"/>
+                     </expression>
+                  </source>
+                  <return localId="41" locator="45:98-45:117">
+                     <expression localId="40" locator="45:105-45:117" path="value" xsi:type="Property">
+                        <source localId="39" locator="45:105-45:111" path="code" scope="c3" xsi:type="Property"/>
+                     </expression>
+                  </return>
+               </operand>
+            </operand>
+         </expression>
+         <operand name="c">
+            <operandTypeSpecifier localId="22" locator="44:31-44:50" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="95" locator="51:1-55:30" name="QuantityText" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="95">
+               <a:s>// Returns a text representation of a Quantity with the Quantity's value and unit.
+// If the unit is {score}, then omit it (as it is not useful to display)
+// @param q - a FHIR Quantity to get text for
+// @returns {System.String} the text representation of the Quantitydefine function QuantityText(q </a:s>
+               <a:s r="46">
+                  <a:s>FHIR.Quantity</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="94">
+                  <a:s r="94">
+                     <a:s>if </a:s>
+                     <a:s r="48">
+                        <a:s>(</a:s>
+                        <a:s r="48">
+                           <a:s r="47">
+                              <a:s>q</a:s>
+                           </a:s>
+                           <a:s> is null</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s r="49"> then null
+  else </a:s>
+                     <a:s r="93">
+                        <a:s>if </a:s>
+                        <a:s r="58">
+                           <a:s>(</a:s>
+                           <a:s r="58">
+                              <a:s r="52">
+                                 <a:s r="51">
+                                    <a:s r="50">
+                                       <a:s>q</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="51">
+                                       <a:s>unit</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> is not null</a:s>
+                              </a:s>
+                              <a:s> and </a:s>
+                              <a:s r="57">
+                                 <a:s r="55">
+                                    <a:s r="54">
+                                       <a:s r="53">
+                                          <a:s>q</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="54">
+                                          <a:s>unit</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="55">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> != </a:s>
+                                 <a:s r="56">
+                                    <a:s>'{score}'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="68">
+                           <a:s r="64">
+                              <a:s r="62">
+                                 <a:s>ToString(</a:s>
+                                 <a:s r="61">
+                                    <a:s r="60">
+                                       <a:s r="59">
+                                          <a:s>q</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="60">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="61">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s> + </a:s>
+                              <a:s r="63">
+                                 <a:s>' '</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="67">
+                              <a:s r="66">
+                                 <a:s r="65">
+                                    <a:s>q</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="66">
+                                    <a:s>unit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="67">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  else </a:s>
+                        <a:s r="92">
+                           <a:s>if </a:s>
+                           <a:s r="77">
+                              <a:s>(</a:s>
+                              <a:s r="77">
+                                 <a:s r="71">
+                                    <a:s r="70">
+                                       <a:s r="69">
+                                          <a:s>q</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="70">
+                                          <a:s>code</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> is not null</a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="76">
+                                    <a:s r="74">
+                                       <a:s r="73">
+                                          <a:s r="72">
+                                             <a:s>q</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="73">
+                                             <a:s>code</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="74">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> != </a:s>
+                                    <a:s r="75">
+                                       <a:s>'{score}'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                           <a:s> then </a:s>
+                           <a:s r="87">
+                              <a:s r="83">
+                                 <a:s r="81">
+                                    <a:s>ToString(</a:s>
+                                    <a:s r="80">
+                                       <a:s r="79">
+                                          <a:s r="78">
+                                             <a:s>q</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="79">
+                                             <a:s>value</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="80">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="82">
+                                    <a:s>' '</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> + </a:s>
+                              <a:s r="86">
+                                 <a:s r="85">
+                                    <a:s r="84">
+                                       <a:s>q</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="85">
+                                       <a:s>code</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="86">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  else </a:s>
+                           <a:s r="91">
+                              <a:s>ToString(</a:s>
+                              <a:s r="90">
+                                 <a:s r="89">
+                                    <a:s r="88">
+                                       <a:s>q</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="89">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="90">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="94" locator="52:3-55:30" xsi:type="If">
+            <condition localId="48" locator="52:6-52:16" xsi:type="IsNull">
+               <operand localId="47" locator="52:7" name="q" xsi:type="OperandRef"/>
+            </condition>
+            <then asType="t:String" xsi:type="As">
+               <operand localId="49" locator="52:23-52:26" xsi:type="Null"/>
+            </then>
+            <else localId="93" locator="53:8-55:30" xsi:type="If">
+               <condition localId="58" locator="53:11-53:60" xsi:type="And">
+                  <operand localId="52" locator="53:12-53:29" xsi:type="Not">
+                     <operand locator="53:12-53:29" xsi:type="IsNull">
+                        <operand localId="51" locator="53:12-53:17" path="unit" xsi:type="Property">
+                           <source localId="50" locator="53:12" name="q" xsi:type="OperandRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="57" locator="53:35-53:59" xsi:type="Not">
+                     <operand locator="53:35-53:59" xsi:type="Equal">
+                        <operand localId="55" locator="53:35-53:46" path="value" xsi:type="Property">
+                           <source localId="54" locator="53:35-53:40" path="unit" xsi:type="Property">
+                              <source localId="53" locator="53:35" name="q" xsi:type="OperandRef"/>
+                           </source>
+                        </operand>
+                        <operand localId="56" locator="53:51-53:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </condition>
+               <then localId="68" locator="53:67-53:110" xsi:type="Concatenate">
+                  <operand localId="64" locator="53:67-53:95" xsi:type="Concatenate">
+                     <operand localId="62" locator="53:67-53:89" xsi:type="ToString">
+                        <operand localId="61" locator="53:76-53:88" path="value" xsi:type="Property">
+                           <source localId="60" locator="53:76-53:82" path="value" xsi:type="Property">
+                              <source localId="59" locator="53:76" name="q" xsi:type="OperandRef"/>
+                           </source>
+                        </operand>
+                     </operand>
+                     <operand localId="63" locator="53:93-53:95" valueType="t:String" value=" " xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="67" locator="53:99-53:110" path="value" xsi:type="Property">
+                     <source localId="66" locator="53:99-53:104" path="unit" xsi:type="Property">
+                        <source localId="65" locator="53:99" name="q" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+               </then>
+               <else localId="92" locator="54:8-55:30" xsi:type="If">
+                  <condition localId="77" locator="54:11-54:60" xsi:type="And">
+                     <operand localId="71" locator="54:12-54:29" xsi:type="Not">
+                        <operand locator="54:12-54:29" xsi:type="IsNull">
+                           <operand localId="70" locator="54:12-54:17" path="code" xsi:type="Property">
+                              <source localId="69" locator="54:12" name="q" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="76" locator="54:35-54:59" xsi:type="Not">
+                        <operand locator="54:35-54:59" xsi:type="Equal">
+                           <operand localId="74" locator="54:35-54:46" path="value" xsi:type="Property">
+                              <source localId="73" locator="54:35-54:40" path="code" xsi:type="Property">
+                                 <source localId="72" locator="54:35" name="q" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                           <operand localId="75" locator="54:51-54:59" valueType="t:String" value="{score}" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </condition>
+                  <then localId="87" locator="54:67-54:110" xsi:type="Concatenate">
+                     <operand localId="83" locator="54:67-54:95" xsi:type="Concatenate">
+                        <operand localId="81" locator="54:67-54:89" xsi:type="ToString">
+                           <operand localId="80" locator="54:76-54:88" path="value" xsi:type="Property">
+                              <source localId="79" locator="54:76-54:82" path="value" xsi:type="Property">
+                                 <source localId="78" locator="54:76" name="q" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                        </operand>
+                        <operand localId="82" locator="54:93-54:95" valueType="t:String" value=" " xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="86" locator="54:99-54:110" path="value" xsi:type="Property">
+                        <source localId="85" locator="54:99-54:104" path="code" xsi:type="Property">
+                           <source localId="84" locator="54:99" name="q" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                  </then>
+                  <else localId="91" locator="55:8-55:30" xsi:type="ToString">
+                     <operand localId="90" locator="55:17-55:29" path="value" xsi:type="Property">
+                        <source localId="89" locator="55:17-55:23" path="value" xsi:type="Property">
+                           <source localId="88" locator="55:17" name="q" xsi:type="OperandRef"/>
+                        </source>
+                     </operand>
+                  </else>
+               </else>
+            </else>
+         </expression>
+         <operand name="q">
+            <operandTypeSpecifier localId="46" locator="51:32-51:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="123" locator="58:1-66:20" name="ReportObservations" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="123">
+               <a:s>// Returns a list of observation view Tuples.define function ReportObservations(ObsList </a:s>
+               <a:s r="97">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="96">
+                     <a:s>Observation</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="122">
+                  <a:s r="122">
+                     <a:s>
+                        <a:s r="99">
+                           <a:s r="98">
+                              <a:s>
+                                 <a:s>ObsList</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> o</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="118">
+                        <a:s>return </a:s>
+                        <a:s r="117">
+                           <a:s>{   // result decimal value
+      </a:s>
+                           <a:s>
+                              <a:s>Date:   </a:s>
+                              <a:s r="103">
+                                 <a:s>ToString(</a:s>
+                                 <a:s r="102">
+                                    <a:s r="100">
+                                       <a:s>C3F</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="102">
+                                       <a:s>FindDate(</a:s>
+                                       <a:s r="101">
+                                          <a:s>o</a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,
+      </a:s>
+                           <a:s>
+                              <a:s>Name:   </a:s>
+                              <a:s r="106">
+                                 <a:s>ConceptText(</a:s>
+                                 <a:s r="105">
+                                    <a:s r="104">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="105">
+                                       <a:s>code</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,                                // display nanme
+      </a:s>
+                           <a:s>
+                              <a:s>Result: </a:s>
+                              <a:s r="111">
+                                 <a:s>QuantityText(</a:s>
+                                 <a:s r="110">
+                                    <a:s r="108">
+                                       <a:s r="107">
+                                          <a:s>o</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="108">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> as </a:s>
+                                    <a:s r="109">
+                                       <a:s>FHIR.Quantity</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,             // result value with units
+      </a:s>
+                           <a:s>
+                              <a:s>ResultValue: </a:s>
+                              <a:s r="116">
+                                 <a:s r="115">
+                                    <a:s>(</a:s>
+                                    <a:s r="115">
+                                       <a:s r="113">
+                                          <a:s r="112">
+                                             <a:s>o</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="113">
+                                             <a:s>value</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> as </a:s>
+                                       <a:s r="114">
+                                          <a:s>FHIR.Quantity</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="116">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>               // result value as Decimal
+    }</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="121">
+                        <a:s>sort by </a:s>
+                        <a:s r="120">
+                           <a:s r="119">
+                              <a:s>Date</a:s>
+                           </a:s>
+                           <a:s> asc</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="122" locator="59:3-66:20" xsi:type="Query">
+            <source localId="99" locator="59:3-59:11" alias="o">
+               <expression localId="98" locator="59:3-59:9" name="ObsList" xsi:type="OperandRef"/>
+            </source>
+            <return localId="118" locator="60:5-65:5">
+               <expression localId="117" locator="60:12-65:5" xsi:type="Tuple">
+                  <element name="Date">
+                     <value localId="103" locator="61:15-61:39" xsi:type="ToString">
+                        <operand localId="102" locator="61:24-61:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
+                           <operand localId="101" locator="61:37" name="o" xsi:type="AliasRef"/>
+                        </operand>
+                     </value>
+                  </element>
+                  <element name="Name">
+                     <value localId="106" locator="62:15-62:33" name="ConceptText" xsi:type="FunctionRef">
+                        <operand localId="105" locator="62:27-62:32" path="code" scope="o" xsi:type="Property"/>
+                     </value>
+                  </element>
+                  <element name="Result">
+                     <value localId="111" locator="63:15-63:52" name="QuantityText" xsi:type="FunctionRef">
+                        <operand localId="110" locator="63:28-63:51" strict="false" xsi:type="As">
+                           <operand localId="108" locator="63:28-63:34" path="value" scope="o" xsi:type="Property"/>
+                           <asTypeSpecifier localId="109" locator="63:39-63:51" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </value>
+                  </element>
+                  <element name="ResultValue">
+                     <value localId="116" locator="64:20-64:51" path="value" xsi:type="Property">
+                        <source localId="115" locator="64:20-64:45" strict="false" xsi:type="As">
+                           <operand localId="113" locator="64:21-64:27" path="value" scope="o" xsi:type="Property"/>
+                           <asTypeSpecifier localId="114" locator="64:32-64:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </value>
+                  </element>
+               </expression>
+            </return>
+            <sort localId="121" locator="66:5-66:20">
+               <by localId="120" locator="66:13-66:20" direction="asc" path="Date" xsi:type="ByColumn"/>
+            </sort>
+         </expression>
+         <operand name="ObsList">
+            <operandTypeSpecifier localId="97" locator="58:44-58:60" xsi:type="ListTypeSpecifier">
+               <elementType localId="96" locator="58:49-58:59" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="171" locator="89:1-90:35" name="LabReferenceRangeLow" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="171">
+               <a:s>define function LabReferenceRangeLow(o </a:s>
+               <a:s r="165">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="170">
+                  <a:s r="170">
+                     <a:s r="169">
+                        <a:s r="168">
+                           <a:s>First(</a:s>
+                           <a:s r="167">
+                              <a:s r="166">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="167">
+                                 <a:s>referenceRange</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="169">
+                           <a:s>low</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="170">
+                        <a:s>value</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="170" locator="90:3-90:35" path="value" xsi:type="Property">
+            <source localId="169" locator="90:3-90:29" path="low" xsi:type="Property">
+               <source localId="168" locator="90:3-90:25" xsi:type="First">
+                  <source localId="167" locator="90:9-90:24" path="referenceRange" xsi:type="Property">
+                     <source localId="166" locator="90:9" name="o" xsi:type="OperandRef"/>
+                  </source>
+               </source>
+            </source>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="165" locator="89:40-89:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="183" locator="92:1-93:36" name="LabReferenceRangeHigh" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="183">
+               <a:s>define function LabReferenceRangeHigh(o </a:s>
+               <a:s r="177">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="182">
+                  <a:s r="182">
+                     <a:s r="181">
+                        <a:s r="180">
+                           <a:s>First(</a:s>
+                           <a:s r="179">
+                              <a:s r="178">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="179">
+                                 <a:s>referenceRange</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="181">
+                           <a:s>high</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="182">
+                        <a:s>value</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="182" locator="93:3-93:36" path="value" xsi:type="Property">
+            <source localId="181" locator="93:3-93:30" path="high" xsi:type="Property">
+               <source localId="180" locator="93:3-93:25" xsi:type="First">
+                  <source localId="179" locator="93:9-93:24" path="referenceRange" xsi:type="Property">
+                     <source localId="178" locator="93:9" name="o" xsi:type="OperandRef"/>
+                  </source>
+               </source>
+            </source>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="177" locator="92:41-92:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="189" locator="82:1-87:5" name="LabReferenceRange" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="189">
+               <a:s>define function LabReferenceRange(o </a:s>
+               <a:s r="152">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="188">
+                  <a:s r="188">
+                     <a:s>if </a:s>
+                     <a:s r="158">
+                        <a:s>(</a:s>
+                        <a:s r="158">
+                           <a:s r="154">
+                              <a:s r="153">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s> is null</a:s>
+                           </a:s>
+                           <a:s> or </a:s>
+                           <a:s r="157">
+                              <a:s r="156">
+                                 <a:s r="155">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="156">
+                                    <a:s>referenceRange</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is null</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s r="159"> then null
+  else
+    </a:s>
+                     <a:s r="187">
+                        <a:s>Coalesce(</a:s>
+                        <a:s r="163">
+                           <a:s>First(</a:s>
+                           <a:s r="162">
+                              <a:s r="161">
+                                 <a:s r="160">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="161">
+                                    <a:s>referenceRange</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="162">
+                                 <a:s>text</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s r="186">
+                           <a:s r="175">
+                              <a:s r="173">
+                                 <a:s>ToString(</a:s>
+                                 <a:s r="172">
+                                    <a:s>LabReferenceRangeLow(</a:s>
+                                    <a:s r="164">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s> + </a:s>
+                              <a:s r="174">
+                                 <a:s>' - '</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="185">
+                              <a:s>ToString(</a:s>
+                              <a:s r="184">
+                                 <a:s>LabReferenceRangeHigh(</a:s>
+                                 <a:s r="176">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="188" locator="83:3-87:5" xsi:type="If">
+            <condition localId="158" locator="83:6-83:44" xsi:type="Or">
+               <operand localId="154" locator="83:7-83:15" xsi:type="IsNull">
+                  <operand localId="153" locator="83:7" name="o" xsi:type="OperandRef"/>
+               </operand>
+               <operand localId="157" locator="83:20-83:43" xsi:type="IsNull">
+                  <operand localId="156" locator="83:20-83:35" path="referenceRange" xsi:type="Property">
+                     <source localId="155" locator="83:20" name="o" xsi:type="OperandRef"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then asType="t:String" xsi:type="As">
+               <operand localId="159" locator="83:51-83:54" xsi:type="Null"/>
+            </then>
+            <else localId="187" locator="85:5-87:5" xsi:type="Coalesce">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="163" locator="85:14-85:41" xsi:type="First">
+                     <source localId="162" locator="85:20-85:40" xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="161" locator="85:20-85:35" path="referenceRange" xsi:type="Property">
+                              <source localId="160" locator="85:20" name="o" xsi:type="OperandRef"/>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="text" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return distinct="false">
+                           <expression path="text" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </source>
+                  </operand>
+               </operand>
+               <operand localId="186" locator="86:7-86:84" xsi:type="Concatenate">
+                  <operand localId="175" locator="86:7-86:47" xsi:type="Concatenate">
+                     <operand localId="173" locator="86:7-86:39" xsi:type="ToString">
+                        <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="172" locator="86:16-86:38" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                              <operand localId="164" locator="86:37" name="o" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="174" locator="86:43-86:47" valueType="t:String" value=" - " xsi:type="Literal"/>
+                  </operand>
+                  <operand localId="185" locator="86:51-86:84" xsi:type="ToString">
+                     <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="184" locator="86:60-86:83" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                           <operand localId="176" locator="86:82" name="o" xsi:type="OperandRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </operand>
+            </else>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="152" locator="82:37-82:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="230" locator="100:1-109:8" name="LabInterpretation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="230">
+               <a:s>define function LabInterpretation(o </a:s>
+               <a:s r="192">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="229">
+                  <a:s r="229">
+                     <a:s>if </a:s>
+                     <a:s r="195">
+                        <a:s>(</a:s>
+                        <a:s r="195">
+                           <a:s r="194">
+                              <a:s r="193">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="194">
+                                 <a:s>interpretation</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s> then
+    </a:s>
+                     <a:s r="206">
+                        <a:s>Coalesce(</a:s>
+                        <a:s r="199">
+                           <a:s>First(</a:s>
+                           <a:s r="198">
+                              <a:s r="197">
+                                 <a:s r="196">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="197">
+                                    <a:s>interpretation</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="198">
+                                 <a:s>text</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="205">
+                           <a:s>First(</a:s>
+                           <a:s r="204">
+                              <a:s r="203">
+                                 <a:s r="202">
+                                    <a:s>First(</a:s>
+                                    <a:s r="201">
+                                       <a:s r="200">
+                                          <a:s>o</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="201">
+                                          <a:s>interpretation</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="203">
+                                    <a:s>coding</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="204">
+                                 <a:s>display</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s>
+  else </a:s>
+                     <a:s r="228">
+                        <a:s>if </a:s>
+                        <a:s r="209">
+                           <a:s r="208">
+                              <a:s r="207">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="208">
+                                 <a:s>referenceRange</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                        <a:s> then
+    // Derive interpretation from the reference range, return null if within normal range.
+    </a:s>
+                        <a:s r="226">
+                           <a:s>if </a:s>
+                           <a:s r="215">
+                              <a:s r="212">
+                                 <a:s r="211">
+                                    <a:s r="210">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="211">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="212">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> &lt; </a:s>
+                              <a:s r="214">
+                                 <a:s>LabReferenceRangeLow(</a:s>
+                                 <a:s r="213">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> then </a:s>
+                           <a:s r="216">
+                              <a:s>'L'</a:s>
+                           </a:s>
+                           <a:s>
+    else </a:s>
+                           <a:s r="225">
+                              <a:s>if </a:s>
+                              <a:s r="222">
+                                 <a:s r="219">
+                                    <a:s r="218">
+                                       <a:s r="217">
+                                          <a:s>o</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="218">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="219">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> > </a:s>
+                                 <a:s r="221">
+                                    <a:s>LabReferenceRangeHigh(</a:s>
+                                    <a:s r="220">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> then </a:s>
+                              <a:s r="223">
+                                 <a:s>'H'</a:s>
+                              </a:s>
+                              <a:s r="224">
+    else null</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="227">
+  else
+    null</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="229" locator="101:3-109:8" xsi:type="If">
+            <condition localId="195" locator="101:6-101:35" xsi:type="Not">
+               <operand locator="101:7-101:34" xsi:type="IsNull">
+                  <operand localId="194" locator="101:7-101:22" path="interpretation" xsi:type="Property">
+                     <source localId="193" locator="101:7" name="o" xsi:type="OperandRef"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="206" locator="102:5-102:89" xsi:type="Coalesce">
+                  <operand localId="199" locator="102:14-102:41" xsi:type="First">
+                     <source localId="198" locator="102:20-102:40" xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="197" locator="102:20-102:35" path="interpretation" xsi:type="Property">
+                              <source localId="196" locator="102:20" name="o" xsi:type="OperandRef"/>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="text" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return distinct="false">
+                           <expression path="text" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </source>
+                  </operand>
+                  <operand localId="205" locator="102:44-102:88" xsi:type="First">
+                     <source localId="204" locator="102:50-102:87" xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="203" locator="102:50-102:79" path="coding" xsi:type="Property">
+                              <source localId="202" locator="102:50-102:72" xsi:type="First">
+                                 <source localId="201" locator="102:56-102:71" path="interpretation" xsi:type="Property">
+                                    <source localId="200" locator="102:56" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </source>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="display" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return distinct="false">
+                           <expression path="display" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </source>
+                  </operand>
+               </operand>
+            </then>
+            <else localId="228" locator="103:8-109:8" xsi:type="If">
+               <condition localId="209" locator="103:11-103:38" xsi:type="Not">
+                  <operand locator="103:11-103:38" xsi:type="IsNull">
+                     <operand localId="208" locator="103:11-103:26" path="referenceRange" xsi:type="Property">
+                        <source localId="207" locator="103:11" name="o" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </condition>
+               <then localId="226" locator="105:5-107:13" xsi:type="If">
+                  <condition localId="215" locator="105:8-105:46" xsi:type="Less">
+                     <operand xsi:type="Case">
+                        <caseItem>
+                           <when isType="t:Integer" xsi:type="Is">
+                              <operand localId="212" locator="105:8-105:20" path="value" xsi:type="Property">
+                                 <source localId="211" locator="105:8-105:14" path="value" xsi:type="Property">
+                                    <source localId="210" locator="105:8" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </when>
+                           <then xsi:type="ToDecimal">
+                              <operand asType="t:Integer" xsi:type="As">
+                                 <operand localId="212" locator="105:8-105:20" path="value" xsi:type="Property">
+                                    <source localId="211" locator="105:8-105:14" path="value" xsi:type="Property">
+                                       <source localId="210" locator="105:8" name="o" xsi:type="OperandRef"/>
+                                    </source>
+                                 </operand>
+                              </operand>
+                           </then>
+                        </caseItem>
+                        <caseItem>
+                           <when isType="fhir:decimal" xsi:type="Is">
+                              <operand localId="212" locator="105:8-105:20" path="value" xsi:type="Property">
+                                 <source localId="211" locator="105:8-105:14" path="value" xsi:type="Property">
+                                    <source localId="210" locator="105:8" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </when>
+                           <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand asType="fhir:decimal" xsi:type="As">
+                                 <operand localId="212" locator="105:8-105:20" path="value" xsi:type="Property">
+                                    <source localId="211" locator="105:8-105:14" path="value" xsi:type="Property">
+                                       <source localId="210" locator="105:8" name="o" xsi:type="OperandRef"/>
+                                    </source>
+                                 </operand>
+                              </operand>
+                           </then>
+                        </caseItem>
+                        <else resultTypeName="t:Decimal" xsi:type="Null"/>
+                     </operand>
+                     <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="214" locator="105:24-105:46" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                           <operand localId="213" locator="105:45" name="o" xsi:type="OperandRef"/>
+                        </operand>
+                     </operand>
+                  </condition>
+                  <then localId="216" locator="105:53-105:55" valueType="t:String" value="L" xsi:type="Literal"/>
+                  <else localId="225" locator="106:10-107:13" xsi:type="If">
+                     <condition localId="222" locator="106:13-106:52" xsi:type="Greater">
+                        <operand xsi:type="Case">
+                           <caseItem>
+                              <when isType="t:Integer" xsi:type="Is">
+                                 <operand localId="219" locator="106:13-106:25" path="value" xsi:type="Property">
+                                    <source localId="218" locator="106:13-106:19" path="value" xsi:type="Property">
+                                       <source localId="217" locator="106:13" name="o" xsi:type="OperandRef"/>
+                                    </source>
+                                 </operand>
+                              </when>
+                              <then xsi:type="ToDecimal">
+                                 <operand asType="t:Integer" xsi:type="As">
+                                    <operand localId="219" locator="106:13-106:25" path="value" xsi:type="Property">
+                                       <source localId="218" locator="106:13-106:19" path="value" xsi:type="Property">
+                                          <source localId="217" locator="106:13" name="o" xsi:type="OperandRef"/>
+                                       </source>
+                                    </operand>
+                                 </operand>
+                              </then>
+                           </caseItem>
+                           <caseItem>
+                              <when isType="fhir:decimal" xsi:type="Is">
+                                 <operand localId="219" locator="106:13-106:25" path="value" xsi:type="Property">
+                                    <source localId="218" locator="106:13-106:19" path="value" xsi:type="Property">
+                                       <source localId="217" locator="106:13" name="o" xsi:type="OperandRef"/>
+                                    </source>
+                                 </operand>
+                              </when>
+                              <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand asType="fhir:decimal" xsi:type="As">
+                                    <operand localId="219" locator="106:13-106:25" path="value" xsi:type="Property">
+                                       <source localId="218" locator="106:13-106:19" path="value" xsi:type="Property">
+                                          <source localId="217" locator="106:13" name="o" xsi:type="OperandRef"/>
+                                       </source>
+                                    </operand>
+                                 </operand>
+                              </then>
+                           </caseItem>
+                           <else resultTypeName="t:Decimal" xsi:type="Null"/>
+                        </operand>
+                        <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="221" locator="106:29-106:52" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                              <operand localId="220" locator="106:51" name="o" xsi:type="OperandRef"/>
+                           </operand>
+                        </operand>
+                     </condition>
+                     <then localId="223" locator="106:59-106:61" valueType="t:String" value="H" xsi:type="Literal"/>
+                     <else asType="t:String" xsi:type="As">
+                        <operand localId="224" locator="107:10-107:13" xsi:type="Null"/>
+                     </else>
+                  </else>
+               </then>
+               <else asType="t:String" xsi:type="As">
+                  <operand localId="227" locator="109:5-109:8" xsi:type="Null"/>
+               </else>
+            </else>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="192" locator="100:37-100:52" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="250" locator="95:1-98:12" name="LabReferenceRangeFlag" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="250">
+               <a:s>define function LabReferenceRangeFlag(o </a:s>
+               <a:s r="233">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="249">
+                  <a:s r="249">
+                     <a:s>if </a:s>
+                     <a:s r="246">
+                        <a:s>(</a:s>
+                        <a:s r="246">
+                           <a:s r="239">
+                              <a:s r="236">
+                                 <a:s r="235">
+                                    <a:s r="234">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="235">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="236">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> &lt; </a:s>
+                              <a:s r="238">
+                                 <a:s>LabReferenceRangeLow(</a:s>
+                                 <a:s r="237">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      or </a:s>
+                           <a:s r="245">
+                              <a:s r="242">
+                                 <a:s r="241">
+                                    <a:s r="240">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="241">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="242">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> > </a:s>
+                              <a:s r="244">
+                                 <a:s>LabReferenceRangeHigh(</a:s>
+                                 <a:s r="243">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s r="247"> then true
+  else false</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="249" locator="96:3-98:12" xsi:type="If">
+            <condition localId="246" locator="96:6-97:50" xsi:type="Or">
+               <operand localId="239" locator="96:7-96:45" xsi:type="Less">
+                  <operand xsi:type="Case">
+                     <caseItem>
+                        <when isType="t:Integer" xsi:type="Is">
+                           <operand localId="236" locator="96:7-96:19" path="value" xsi:type="Property">
+                              <source localId="235" locator="96:7-96:13" path="value" xsi:type="Property">
+                                 <source localId="234" locator="96:7" name="o" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                        </when>
+                        <then xsi:type="ToDecimal">
+                           <operand asType="t:Integer" xsi:type="As">
+                              <operand localId="236" locator="96:7-96:19" path="value" xsi:type="Property">
+                                 <source localId="235" locator="96:7-96:13" path="value" xsi:type="Property">
+                                    <source localId="234" locator="96:7" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </operand>
+                        </then>
+                     </caseItem>
+                     <caseItem>
+                        <when isType="fhir:decimal" xsi:type="Is">
+                           <operand localId="236" locator="96:7-96:19" path="value" xsi:type="Property">
+                              <source localId="235" locator="96:7-96:13" path="value" xsi:type="Property">
+                                 <source localId="234" locator="96:7" name="o" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                        </when>
+                        <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand asType="fhir:decimal" xsi:type="As">
+                              <operand localId="236" locator="96:7-96:19" path="value" xsi:type="Property">
+                                 <source localId="235" locator="96:7-96:13" path="value" xsi:type="Property">
+                                    <source localId="234" locator="96:7" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </operand>
+                        </then>
+                     </caseItem>
+                     <else resultTypeName="t:Decimal" xsi:type="Null"/>
+                  </operand>
+                  <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="238" locator="96:23-96:45" name="LabReferenceRangeLow" xsi:type="FunctionRef">
+                        <operand localId="237" locator="96:44" name="o" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="245" locator="97:10-97:49" xsi:type="Greater">
+                  <operand xsi:type="Case">
+                     <caseItem>
+                        <when isType="t:Integer" xsi:type="Is">
+                           <operand localId="242" locator="97:10-97:22" path="value" xsi:type="Property">
+                              <source localId="241" locator="97:10-97:16" path="value" xsi:type="Property">
+                                 <source localId="240" locator="97:10" name="o" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                        </when>
+                        <then xsi:type="ToDecimal">
+                           <operand asType="t:Integer" xsi:type="As">
+                              <operand localId="242" locator="97:10-97:22" path="value" xsi:type="Property">
+                                 <source localId="241" locator="97:10-97:16" path="value" xsi:type="Property">
+                                    <source localId="240" locator="97:10" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </operand>
+                        </then>
+                     </caseItem>
+                     <caseItem>
+                        <when isType="fhir:decimal" xsi:type="Is">
+                           <operand localId="242" locator="97:10-97:22" path="value" xsi:type="Property">
+                              <source localId="241" locator="97:10-97:16" path="value" xsi:type="Property">
+                                 <source localId="240" locator="97:10" name="o" xsi:type="OperandRef"/>
+                              </source>
+                           </operand>
+                        </when>
+                        <then name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand asType="fhir:decimal" xsi:type="As">
+                              <operand localId="242" locator="97:10-97:22" path="value" xsi:type="Property">
+                                 <source localId="241" locator="97:10-97:16" path="value" xsi:type="Property">
+                                    <source localId="240" locator="97:10" name="o" xsi:type="OperandRef"/>
+                                 </source>
+                              </operand>
+                           </operand>
+                        </then>
+                     </caseItem>
+                     <else resultTypeName="t:Decimal" xsi:type="Null"/>
+                  </operand>
+                  <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="244" locator="97:26-97:49" name="LabReferenceRangeHigh" xsi:type="FunctionRef">
+                        <operand localId="243" locator="97:48" name="o" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </condition>
+            <then localId="247" locator="97:57-97:60" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <else localId="248" locator="98:8-98:12" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="233" locator="95:41-95:56" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="254" locator="68:1-80:5" name="ReportLabObservation" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="254">
+               <a:s>define function ReportLabObservation(o </a:s>
+               <a:s r="124">
+                  <a:s>FHIR.Observation</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="253">
+                  <a:s r="253">
+                     <a:s>if </a:s>
+                     <a:s r="126">
+                        <a:s>(</a:s>
+                        <a:s r="126">
+                           <a:s r="125">
+                              <a:s>o</a:s>
+                           </a:s>
+                           <a:s> is null</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                     <a:s r="127"> then null
+  else
+    </a:s>
+                     <a:s r="252">
+                        <a:s>{
+      </a:s>
+                        <a:s>
+                           <a:s>Date:   </a:s>
+                           <a:s r="131">
+                              <a:s>ToString(</a:s>
+                              <a:s r="130">
+                                 <a:s r="128">
+                                    <a:s>C3F</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="130">
+                                    <a:s>FindDate(</a:s>
+                                    <a:s r="129">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s>
+                           <a:s>Name:   </a:s>
+                           <a:s r="134">
+                              <a:s>ConceptText(</a:s>
+                              <a:s r="133">
+                                 <a:s r="132">
+                                    <a:s>o</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="133">
+                                    <a:s>code</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,                                // display nanme
+      </a:s>
+                        <a:s>
+                           <a:s>ResultText: </a:s>
+                           <a:s r="139">
+                              <a:s>QuantityText(</a:s>
+                              <a:s r="138">
+                                 <a:s r="136">
+                                    <a:s r="135">
+                                       <a:s>o</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="136">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> as </a:s>
+                                 <a:s r="137">
+                                    <a:s>FHIR.Quantity</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,         // result value with units
+      </a:s>
+                        <a:s>
+                           <a:s>ResultValue: </a:s>
+                           <a:s r="144">
+                              <a:s r="143">
+                                 <a:s>(</a:s>
+                                 <a:s r="143">
+                                    <a:s r="141">
+                                       <a:s r="140">
+                                          <a:s>o</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="141">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> as </a:s>
+                                    <a:s r="142">
+                                       <a:s>FHIR.Quantity</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="144">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s>
+                           <a:s>ResultUnits: </a:s>
+                           <a:s r="150">
+                              <a:s r="149">
+                                 <a:s r="148">
+                                    <a:s>(</a:s>
+                                    <a:s r="148">
+                                       <a:s r="146">
+                                          <a:s r="145">
+                                             <a:s>o</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="146">
+                                             <a:s>value</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> as </a:s>
+                                       <a:s r="147">
+                                          <a:s>FHIR.Quantity</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="149">
+                                    <a:s>unit</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="150">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s>
+                           <a:s>ReferenceRange: </a:s>
+                           <a:s r="190">
+                              <a:s>LabReferenceRange(</a:s>
+                              <a:s r="151">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s>
+                           <a:s>Interpretation: </a:s>
+                           <a:s r="231">
+                              <a:s>LabInterpretation(</a:s>
+                              <a:s r="191">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,
+      </a:s>
+                        <a:s>
+                           <a:s>Flag: </a:s>
+                           <a:s r="251">
+                              <a:s>LabReferenceRangeFlag(</a:s>
+                              <a:s r="232">
+                                 <a:s>o</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>   // true if value out of range, else false
+    }</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="253" locator="69:3-80:5" xsi:type="If">
+            <condition localId="126" locator="69:6-69:16" xsi:type="IsNull">
+               <operand localId="125" locator="69:7" name="o" xsi:type="OperandRef"/>
+            </condition>
+            <then xsi:type="As">
+               <operand localId="127" locator="69:23-69:26" xsi:type="Null"/>
+               <asTypeSpecifier xsi:type="TupleTypeSpecifier">
+                  <element name="Date">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Name">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="ResultText">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="ResultValue">
+                     <elementType name="fhir:decimal" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="ResultUnits">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="ReferenceRange">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Interpretation">
+                     <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Flag">
+                     <elementType name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </asTypeSpecifier>
+            </then>
+            <else localId="252" locator="71:5-80:5" xsi:type="Tuple">
+               <element name="Date">
+                  <value localId="131" locator="72:15-72:39" xsi:type="ToString">
+                     <operand localId="130" locator="72:24-72:38" name="FindDate" libraryName="C3F" xsi:type="FunctionRef">
+                        <operand localId="129" locator="72:37" name="o" xsi:type="OperandRef"/>
+                     </operand>
+                  </value>
+               </element>
+               <element name="Name">
+                  <value localId="134" locator="73:15-73:33" name="ConceptText" xsi:type="FunctionRef">
+                     <operand localId="133" locator="73:27-73:32" path="code" xsi:type="Property">
+                        <source localId="132" locator="73:27" name="o" xsi:type="OperandRef"/>
+                     </operand>
+                  </value>
+               </element>
+               <element name="ResultText">
+                  <value localId="139" locator="74:19-74:56" name="QuantityText" xsi:type="FunctionRef">
+                     <operand localId="138" locator="74:32-74:55" strict="false" xsi:type="As">
+                        <operand localId="136" locator="74:32-74:38" path="value" xsi:type="Property">
+                           <source localId="135" locator="74:32" name="o" xsi:type="OperandRef"/>
+                        </operand>
+                        <asTypeSpecifier localId="137" locator="74:43-74:55" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     </operand>
+                  </value>
+               </element>
+               <element name="ResultValue">
+                  <value localId="144" locator="75:20-75:51" path="value" xsi:type="Property">
+                     <source localId="143" locator="75:20-75:45" strict="false" xsi:type="As">
+                        <operand localId="141" locator="75:21-75:27" path="value" xsi:type="Property">
+                           <source localId="140" locator="75:21" name="o" xsi:type="OperandRef"/>
+                        </operand>
+                        <asTypeSpecifier localId="142" locator="75:32-75:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     </source>
+                  </value>
+               </element>
+               <element name="ResultUnits">
+                  <value localId="150" locator="76:20-76:56" path="value" xsi:type="Property">
+                     <source localId="149" locator="76:20-76:50" path="unit" xsi:type="Property">
+                        <source localId="148" locator="76:20-76:45" strict="false" xsi:type="As">
+                           <operand localId="146" locator="76:21-76:27" path="value" xsi:type="Property">
+                              <source localId="145" locator="76:21" name="o" xsi:type="OperandRef"/>
+                           </operand>
+                           <asTypeSpecifier localId="147" locator="76:32-76:44" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        </source>
+                     </source>
+                  </value>
+               </element>
+               <element name="ReferenceRange">
+                  <value localId="190" locator="77:23-77:42" name="LabReferenceRange" xsi:type="FunctionRef">
+                     <operand localId="151" locator="77:41" name="o" xsi:type="OperandRef"/>
+                  </value>
+               </element>
+               <element name="Interpretation">
+                  <value localId="231" locator="78:23-78:42" name="LabInterpretation" xsi:type="FunctionRef">
+                     <operand localId="191" locator="78:41" name="o" xsi:type="OperandRef"/>
+                  </value>
+               </element>
+               <element name="Flag">
+                  <value localId="251" locator="79:13-79:36" name="LabReferenceRangeFlag" xsi:type="FunctionRef">
+                     <operand localId="232" locator="79:35" name="o" xsi:type="OperandRef"/>
+                  </value>
+               </element>
+            </else>
+         </expression>
+         <operand name="o">
+            <operandTypeSpecifier localId="124" locator="68:40-68:55" name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+   </statements>
+</library>

@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "Preventive Care Guidelines IG"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2021-04-13T02:06:34+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-09-03T16:48:06+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -339,11 +339,9 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/PreventiveCareData>;
-         fhir:Reference.reference [ fhir:value "Library/PreventiveCareData" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Preventive Care Shared Data Logic" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The Preventive Care Data logic library supports data retrieval for decision support." ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-PreventiveCareHooks>;
+         fhir:Reference.reference [ fhir:value "Library/library-PreventiveCareHooks" ]
+       ]
      ], [
        fhir:index 1;
        fhir:Element.extension [
@@ -352,11 +350,9 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/FHIRHelpers-4.0.1>;
-         fhir:Reference.reference [ fhir:value "Library/FHIRHelpers-4.0.1" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - FHIR Helpers for CDS" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Library - FHIR Helpers for CDS" ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-PreventiveCareSummary>;
+         fhir:Reference.reference [ fhir:value "Library/library-PreventiveCareSummary" ]
+       ]
      ], [
        fhir:index 2;
        fhir:Element.extension [
@@ -365,11 +361,9 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/ProstateCancerScreening>;
-         fhir:Reference.reference [ fhir:value "Library/ProstateCancerScreening" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support prostate cancer screening and personalized, patient-centered care plans." ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-CDSConnectCommons>;
+         fhir:Reference.reference [ fhir:value "Library/library-CDSConnectCommons" ]
+       ]
      ], [
        fhir:index 3;
        fhir:Element.extension [
@@ -378,11 +372,9 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/CDSConnectCommons>;
-         fhir:Reference.reference [ fhir:value "Library/CDSConnectCommons" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Common Logic for CDS" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Common Logic for CDS providing shared helper functions." ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-FHIRHelpers>;
+         fhir:Reference.reference [ fhir:value "Library/library-FHIRHelpers" ]
+       ]
      ], [
        fhir:index 4;
        fhir:Element.extension [
@@ -391,11 +383,9 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/PreventiveCareHooks>;
-         fhir:Reference.reference [ fhir:value "Library/PreventiveCareHooks" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans." ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-PreventiveCareData>;
+         fhir:Reference.reference [ fhir:value "Library/library-PreventiveCareData" ]
+       ]
      ], [
        fhir:index 5;
        fhir:Element.extension [
@@ -404,13 +394,77 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Library/PreventiveCareConcepts>;
-         fhir:Reference.reference [ fhir:value "Library/PreventiveCareConcepts" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Preventive Care Shared Concepts and Terminology" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Preventive care shared concepts and terminology imported by other CQL logic libraries." ]
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-ProstateCancerSummary>;
+         fhir:Reference.reference [ fhir:value "Library/library-ProstateCancerSummary" ]
+       ]
      ], [
        fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-ColonCancerScreening>;
+         fhir:Reference.reference [ fhir:value "Library/library-ColonCancerScreening" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-BreastCancerScreening>;
+         fhir:Reference.reference [ fhir:value "Library/library-BreastCancerScreening" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-PreventiveCareConcepts>;
+         fhir:Reference.reference [ fhir:value "Library/library-PreventiveCareConcepts" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-FHIRCommon>;
+         fhir:Reference.reference [ fhir:value "Library/library-FHIRCommon" ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-LungCancerScreening>;
+         fhir:Reference.reference [ fhir:value "Library/library-LungCancerScreening" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Library" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Library/library-ProstateCancerScreening>;
+         fhir:Reference.reference [ fhir:value "Library/library-ProstateCancerScreening" ]
+       ]
+     ], [
+       fhir:index 12;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -423,7 +477,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PlanDefinition - Recommendations on Prostate Cancer Screening" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Recommends decision-making on preventive care screening for Prostate Cancer." ]
      ], [
-       fhir:index 7;
+       fhir:index 13;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -436,7 +490,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PlanDefinition - Patient-Directed Care Plan for Prostate Cancer Screening" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Create a patient-directed preventive care plan for Prostate Cancer screening." ]
      ], [
-       fhir:index 8;
+       fhir:index 14;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -449,19 +503,324 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Activity Next Step Action" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Activity Definition for next step action in a patient's care plan." ]
      ], [
-       fhir:index 9;
+       fhir:index 15;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Questionnaire" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/preventive-care/Questionnaire/mpc-prostate-questionnaire>;
-         fhir:Reference.reference [ fhir:value "Questionnaire/mpc-prostate-questionnaire" ]
+         fhir:link <http://fhir.org/guides/preventive-care/Questionnaire/mpc-lung-cancer>;
+         fhir:Reference.reference [ fhir:value "Questionnaire/mpc-lung-cancer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Lung Cancer Screening Questionnaire" ]
+     ], [
+       fhir:index 16;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Questionnaire" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Questionnaire/mpc-colon-cancer>;
+         fhir:Reference.reference [ fhir:value "Questionnaire/mpc-colon-cancer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Colon Cancer Screening Questionnaire" ]
+     ], [
+       fhir:index 17;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Questionnaire" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Questionnaire/mpc-breast-cancer>;
+         fhir:Reference.reference [ fhir:value "Questionnaire/mpc-breast-cancer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Breast Cancer Screening Questionnaire" ]
+     ], [
+       fhir:index 18;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Questionnaire" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/Questionnaire/mpc-prostate-cancer>;
+         fhir:Reference.reference [ fhir:value "Questionnaire/mpc-prostate-cancer" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Prostate Cancer Screening Questionnaire" ]
      ], [
-       fhir:index 10;
+       fhir:index 19;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.199.12.1035>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.199.12.1035" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Chronic Liver Disease" ]
+     ], [
+       fhir:index 20;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.199.12.1036>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.199.12.1036" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Chronic Malnutrition" ]
+     ], [
+       fhir:index 21;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Mammography" ]
+     ], [
+       fhir:index 22;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Unilateral Mastectomy Right" ]
+     ], [
+       fhir:index 23;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Unilateral Mastectomy, Unspecified Laterality" ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Unilateral Mastectomy Left" ]
+     ], [
+       fhir:index 25;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Alcohol and Drug Dependence Treatment" ]
+     ], [
+       fhir:index 26;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Status Post Left Mastectomy" ]
+     ], [
+       fhir:index 27;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "History of bilateral mastectomy" ]
+     ], [
+       fhir:index 28;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Status Post Right Mastectomy" ]
+     ], [
+       fhir:index 29;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1011>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1011" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Fecal Occult Blood Test (FOBT)" ]
+     ], [
+       fhir:index 30;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1010>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1010" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Flexible Sigmoidoscopy" ]
+     ], [
+       fhir:index 31;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Total Colectomy" ]
+     ], [
+       fhir:index 32;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1039>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1039" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "FIT DNA" ]
+     ], [
+       fhir:index 33;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Malignant Neoplasm of Colon" ]
+     ], [
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1038>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1038" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CT Colonography" ]
+     ], [
+       fhir:index 35;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Colonoscopy" ]
+     ], [
+       fhir:index 36;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/currentsmoker>;
+         fhir:Reference.reference [ fhir:value "ValueSet/currentsmoker" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Current Smoker Status" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This value set indicates the current smoking status of a patient who is currently a smoker." ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/us-core-observation-smokingstatus>;
+         fhir:Reference.reference [ fhir:value "ValueSet/us-core-observation-smokingstatus" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "US Core Smoking Status" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This value set indicates the current smoking status of a patient." ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113762.1.4.1116.89>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113762.1.4.1116.89" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Lung Cancer" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This value set indicates the possible ICD9/ICD10 Lung Cancer codes." ]
+     ], [
+       fhir:index 39;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/chest-ct-proc-code>;
+         fhir:Reference.reference [ fhir:value "ValueSet/chest-ct-proc-code" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Chest CT Procedure Code" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah" ]
+     ], [
+       fhir:index 40;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/preventive-care/ValueSet/conditionclinical>;
+         fhir:Reference.reference [ fhir:value "ValueSet/conditionclinical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Condition Clinical Status" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Value set for Active Condition Clinical Status." ]
+     ], [
+       fhir:index 41;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -532,57 +891,69 @@
      ], [
        fhir:index 6;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/capabilities" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary/valueset/bcs" ]
      ], [
        fhir:index 7;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/examples" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary/valueset/ccs" ]
      ], [
        fhir:index 8;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/extensions" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary/valueset/lcs" ]
      ], [
        fhir:index 9;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/models" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary/valueset/pcs" ]
      ], [
        fhir:index 10;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/operations" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/capabilities" ]
      ], [
        fhir:index 11;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/profiles" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/examples" ]
      ], [
        fhir:index 12;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/extensions" ]
      ], [
        fhir:index 13;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/models" ]
      ], [
        fhir:index 14;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/testing" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/operations" ]
      ], [
        fhir:index 15;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/history" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/profiles" ]
      ], [
        fhir:index 16;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "fsh-generated/resources" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources" ]
      ], [
        fhir:index 17;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary" ]
+     ], [
+       fhir:index 18;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/testing" ]
+     ], [
+       fhir:index 19;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/history" ]
+     ], [
+       fhir:index 20;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
        fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/config" ]
      ], [
-       fhir:index 18;
+       fhir:index 21;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
        fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/images" ]
      ], [
-       fhir:index 19;
+       fhir:index 22;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-tx-cache" ];
        fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input-cache/txcache" ]
      ]

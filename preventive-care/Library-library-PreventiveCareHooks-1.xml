@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorVersion="1.3" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="40">
+         <a:s>// # Introduction
+
+// CDS Hooks logic for use with CQF Rulerlibrary PreventiveCareHooks version '1.0.0'</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="PreventiveCareHooks" system="http://fhir.org/guides/preventive-care" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="9:1-9:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>// # Data model #using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="13:1-13:64" localIdentifier="Screening" path="http://fhir.org/guides/preventive-care/ProstateCancerScreening" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>// # Referenced libraries #include </a:s>
+               <a:s>
+                  <a:s>ProstateCancerScreening</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Screening</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="14:1-14:60" localIdentifier="Summary" path="http://fhir.org/guides/preventive-care/ProstateCancerSummary" version="1.0.0">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ProstateCancerSummary</a:s>
+               </a:s>
+               <a:s> version '1.0.0' called Summary</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <contexts>
+      <def locator="18:1-18:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="18:1-18:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="18:1-18:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="8" locator="25:1-26:32" name="Age Between 40 and 70" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>/*
+ * Expressions for CDS Hook cards.
+ */
+
+// Used to trigger presentation of recommendationsdefine &quot;Age Between 40 and 70&quot;:
+  </a:s>
+               <a:s r="7">
+                  <a:s r="4">
+                     <a:s>AgeInYears()</a:s>
+                  </a:s>
+                  <a:s r="5"> between 40 and 70</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="7" locator="26:3-26:32" xsi:type="And">
+            <operand xsi:type="GreaterOrEqual">
+               <operand localId="4" locator="26:3-26:14" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand localId="5" locator="26:24-26:25" valueType="t:Integer" value="40" xsi:type="Literal"/>
+            </operand>
+            <operand xsi:type="LessOrEqual">
+               <operand localId="4" locator="26:3-26:14" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand localId="6" locator="26:31-26:32" valueType="t:Integer" value="70" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="24" locator="28:1-33:3" name="Needs Prostate Cancer Screening" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="24">
+               <a:s>define &quot;Needs Prostate Cancer Screening&quot;:
+  </a:s>
+               <a:s r="23">
+                  <a:s r="9">
+                     <a:s>&quot;Age Between 40 and 70&quot;</a:s>
+                  </a:s>
+                  <a:s> and
+  </a:s>
+                  <a:s r="22">
+                     <a:s>(</a:s>
+                     <a:s r="22">
+                        <a:s r="18">
+                           <a:s r="11">
+                              <a:s r="10">
+                                 <a:s>Screening</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="11">
+                                 <a:s>&quot;No PSA test results&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="17">
+                              <a:s>(</a:s>
+                              <a:s r="17">
+                                 <a:s r="13">
+                                    <a:s r="12">
+                                       <a:s>Screening</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="13">
+                                       <a:s>&quot;Last PSA value is high&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> and </a:s>
+                                 <a:s r="16">
+                                    <a:s>not </a:s>
+                                    <a:s r="15">
+                                       <a:s r="14">
+                                          <a:s>Screening</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="15">
+                                          <a:s>&quot;Has PSA within one year&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="21">
+                           <a:s>not </a:s>
+                           <a:s r="20">
+                              <a:s r="19">
+                                 <a:s>Screening</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="20">
+                                 <a:s>&quot;Has PSA within two years&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="23" locator="29:3-33:3" xsi:type="And">
+            <operand localId="9" locator="29:3-29:25" name="Age Between 40 and 70" xsi:type="ExpressionRef"/>
+            <operand localId="22" locator="30:3-33:3" xsi:type="Or">
+               <operand localId="18" locator="30:4-31:87" xsi:type="Or">
+                  <operand localId="11" locator="30:4-30:34" name="No PSA test results" libraryName="Screening" xsi:type="ExpressionRef"/>
+                  <operand localId="17" locator="31:8-31:87" xsi:type="And">
+                     <operand localId="13" locator="31:9-31:42" name="Last PSA value is high" libraryName="Screening" xsi:type="ExpressionRef"/>
+                     <operand localId="16" locator="31:48-31:86" xsi:type="Not">
+                        <operand localId="15" locator="31:52-31:86" name="Has PSA within one year" libraryName="Screening" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="21" locator="32:8-32:47" xsi:type="Not">
+                  <operand localId="20" locator="32:12-32:47" name="Has PSA within two years" libraryName="Screening" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="26" locator="35:1-36:29" name="Needs Prostate Cancer Screening Summary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="26">
+               <a:s>define &quot;Needs Prostate Cancer Screening Summary&quot;:
+  </a:s>
+               <a:s r="25">
+                  <a:s>'Prostate Cancer Screening'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="25" locator="36:3-36:29" valueType="t:String" value="Prostate Cancer Screening" xsi:type="Literal"/>
+      </def>
+      <def localId="34" locator="38:1-39:55" name="Needs Prostate Cancer Screening Detail" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="34">
+               <a:s>define &quot;Needs Prostate Cancer Screening Detail&quot;:
+  </a:s>
+               <a:s r="33">
+                  <a:s r="30">
+                     <a:s r="28">
+                        <a:s r="27">
+                           <a:s>Summary</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="28">
+                           <a:s>&quot;MI PSA Date 1&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="29">
+                        <a:s>' '</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="32">
+                     <a:s r="31">
+                        <a:s>Summary</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="32">
+                        <a:s>&quot;PSA value 1&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="33" locator="39:3-39:55" xsi:type="Concatenate">
+            <operand localId="30" locator="39:3-39:31" xsi:type="Concatenate">
+               <operand localId="28" locator="39:3-39:25" name="MI PSA Date 1" libraryName="Summary" xsi:type="ExpressionRef"/>
+               <operand localId="29" locator="39:29-39:31" valueType="t:String" value=" " xsi:type="Literal"/>
+            </operand>
+            <operand localId="32" locator="39:35-39:55" name="PSA value 1" libraryName="Summary" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="40" locator="41:1-43:16" name="Needs Prostate Cancer Screening Indicator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="40">
+               <a:s>define &quot;Needs Prostate Cancer Screening Indicator&quot;:
+  </a:s>
+               <a:s r="39">
+                  <a:s>if </a:s>
+                  <a:s r="36">
+                     <a:s r="35">
+                        <a:s>Screening</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="36">
+                        <a:s>&quot;Last PSA value is high&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> then </a:s>
+                  <a:s r="37">
+                     <a:s>'critical'</a:s>
+                  </a:s>
+                  <a:s>
+  else </a:s>
+                  <a:s r="38">
+                     <a:s>'warning'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="39" locator="42:3-43:16" xsi:type="If">
+            <condition localId="36" locator="42:6-42:39" name="Last PSA value is high" libraryName="Screening" xsi:type="ExpressionRef"/>
+            <then localId="37" locator="42:46-42:55" valueType="t:String" value="critical" xsi:type="Literal"/>
+            <else localId="38" locator="43:8-43:16" valueType="t:String" value="warning" xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>

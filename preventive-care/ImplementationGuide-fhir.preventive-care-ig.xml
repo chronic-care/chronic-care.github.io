@@ -12,7 +12,7 @@
   <title value="Preventive Care Guidelines IG"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-04-13T02:06:34+00:00"/>
+  <date value="2021-09-03T16:48:06+00:00"/>
   <publisher value="U.S. Preventive Services Task Force (USPSTF)"/>
   <contact>
     <telecom>
@@ -225,60 +225,96 @@
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/PreventiveCareData"/>
+        <reference value="Library/library-PreventiveCareHooks"/>
       </reference>
-      <name value="CQL Library - Preventive Care Shared Data Logic"/>
-      <description value="The Preventive Care Data logic library supports data retrieval for decision support."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/FHIRHelpers-4.0.1"/>
+        <reference value="Library/library-PreventiveCareSummary"/>
       </reference>
-      <name value="CQL Library - FHIR Helpers for CDS"/>
-      <description value="CQL Library - FHIR Helpers for CDS"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/ProstateCancerScreening"/>
+        <reference value="Library/library-CDSConnectCommons"/>
       </reference>
-      <name value="CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans"/>
-      <description value="This library contains logic to support prostate cancer screening and personalized, patient-centered care plans."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/CDSConnectCommons"/>
+        <reference value="Library/library-FHIRHelpers"/>
       </reference>
-      <name value="CQL Library - Common Logic for CDS"/>
-      <description value="CQL Common Logic for CDS providing shared helper functions."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/PreventiveCareHooks"/>
+        <reference value="Library/library-PreventiveCareData"/>
       </reference>
-      <name value="CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans"/>
-      <description value="This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Library"/>
       </extension>
       <reference>
-        <reference value="Library/PreventiveCareConcepts"/>
+        <reference value="Library/library-ProstateCancerSummary"/>
       </reference>
-      <name value="CQL Library - Preventive Care Shared Concepts and Terminology"/>
-      <description value="Preventive care shared concepts and terminology imported by other CQL logic libraries."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-ColonCancerScreening"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-BreastCancerScreening"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-PreventiveCareConcepts"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-FHIRCommon"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-LungCancerScreening"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Library"/>
+      </extension>
+      <reference>
+        <reference value="Library/library-ProstateCancerScreening"/>
+      </reference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -315,9 +351,239 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/mpc-prostate-questionnaire"/>
+        <reference value="Questionnaire/mpc-lung-cancer"/>
+      </reference>
+      <name value="Lung Cancer Screening Questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/mpc-colon-cancer"/>
+      </reference>
+      <name value="Colon Cancer Screening Questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/mpc-breast-cancer"/>
+      </reference>
+      <name value="Breast Cancer Screening Questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/mpc-prostate-cancer"/>
       </reference>
       <name value="Prostate Cancer Screening Questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.199.12.1035"/>
+      </reference>
+      <name value="Chronic Liver Disease"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.199.12.1036"/>
+      </reference>
+      <name value="Chronic Malnutrition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018"/>
+      </reference>
+      <name value="Mammography"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134"/>
+      </reference>
+      <name value="Unilateral Mastectomy Right"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071"/>
+      </reference>
+      <name value="Unilateral Mastectomy, Unspecified Laterality"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133"/>
+      </reference>
+      <name value="Unilateral Mastectomy Left"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005"/>
+      </reference>
+      <name value="Alcohol and Drug Dependence Treatment"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069"/>
+      </reference>
+      <name value="Status Post Left Mastectomy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068"/>
+      </reference>
+      <name value="History of bilateral mastectomy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070"/>
+      </reference>
+      <name value="Status Post Right Mastectomy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1011"/>
+      </reference>
+      <name value="Fecal Occult Blood Test (FOBT)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1010"/>
+      </reference>
+      <name value="Flexible Sigmoidoscopy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019"/>
+      </reference>
+      <name value="Total Colectomy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.108.12.1039"/>
+      </reference>
+      <name value="FIT DNA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001"/>
+      </reference>
+      <name value="Malignant Neoplasm of Colon"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.108.12.1038"/>
+      </reference>
+      <name value="CT Colonography"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020"/>
+      </reference>
+      <name value="Colonoscopy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/currentsmoker"/>
+      </reference>
+      <name value="Current Smoker Status"/>
+      <description value="This value set indicates the current smoking status of a patient who is currently a smoker."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/us-core-observation-smokingstatus"/>
+      </reference>
+      <name value="US Core Smoking Status"/>
+      <description value="This value set indicates the current smoking status of a patient."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/2.16.840.1.113762.1.4.1116.89"/>
+      </reference>
+      <name value="Lung Cancer"/>
+      <description value="This value set indicates the possible ICD9/ICD10 Lung Cancer codes."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/chest-ct-proc-code"/>
+      </reference>
+      <name value="Chest CT Procedure Code"/>
+      <description value="This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/conditionclinical"/>
+      </reference>
+      <name value="Condition Clinical Status"/>
+      <description value="Value set for Active Condition Clinical Status."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -385,6 +651,22 @@
     </parameter>
     <parameter>
       <code value="path-resource"/>
+      <value value="input/vocabulary/valueset/bcs"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary/valueset/ccs"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary/valueset/lcs"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary/valueset/pcs"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
       <value value="input/capabilities"/>
     </parameter>
     <parameter>
@@ -422,10 +704,6 @@
     <parameter>
       <code value="path-resource"/>
       <value value="input/history"/>
-    </parameter>
-    <parameter>
-      <code value="path-resource"/>
-      <value value="fsh-generated/resources"/>
     </parameter>
     <parameter>
       <code value="path-pages"/>

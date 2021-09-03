@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1070"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 3 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-cm-Z90.11\"> </a>Z90.11</td><td>http://hl7.org/fhir/sid/icd-10-cm</td><td>Acquired absence of right breast and nipple</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-137681000119108\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=137681000119108\">137681000119108</a></td><td>http://snomed.info/sct</td><td>History of prophylactic mastectomy of right breast (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-429242008\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=429242008\">429242008</a></td><td>http://snomed.info/sct</td><td>History of right mastectomy (situation)</td><td/></tr></table></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1070" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "StatusPostRightMastectomy"];
+  fhir:ValueSet.title [ fhir:value "Status Post Right Mastectomy"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2021-09-03T16:48:06+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "20200507" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-01-14T20:59:46-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "Z90.11" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Acquired absence of right breast and nipple" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "137681000119108" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "History of prophylactic mastectomy of right breast (situation)" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "429242008" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "History of right mastectomy (situation)" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

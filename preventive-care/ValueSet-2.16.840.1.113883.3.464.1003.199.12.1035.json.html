@@ -1,0 +1,1136 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\Chronic Liver Disease - JSON Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.5"}
+    h3,h4,h5,h6{--heading-prefix:"6.5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Chronic Liver Disease</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="ValueSet-2.16.840.1.113883.3.464.1003.199.12.1035.html">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="ValueSet-2.16.840.1.113883.3.464.1003.199.12.1035.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Chronic Liver Disease - JSON Representation</h2>
+
+<p><a href="ValueSet-2.16.840.1.113883.3.464.1003.199.12.1035.json" no-download="true">Raw json</a> | <a href="ValueSet-2.16.840.1.113883.3.464.1003.199.12.1035.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json"><code>
+{
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.id">id</a>" : "2.16.840.1.113883.3.464.1003.199.12.1035",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;This value set contains 142 concepts&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;System&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.0\&quot;&gt; &lt;/a&gt;K70.0&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic fatty liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.2\&quot;&gt; &lt;/a&gt;K70.2&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic fibrosis and sclerosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.30\&quot;&gt; &lt;/a&gt;K70.30&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic cirrhosis of liver without ascites&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.31\&quot;&gt; &lt;/a&gt;K70.31&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic cirrhosis of liver with ascites&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.40\&quot;&gt; &lt;/a&gt;K70.40&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic hepatic failure without coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.41\&quot;&gt; &lt;/a&gt;K70.41&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic hepatic failure with coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K70.9\&quot;&gt; &lt;/a&gt;K70.9&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Alcoholic liver disease, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.0\&quot;&gt; &lt;/a&gt;K71.0&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with cholestasis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.10\&quot;&gt; &lt;/a&gt;K71.10&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with hepatic necrosis, without coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.11\&quot;&gt; &lt;/a&gt;K71.11&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with hepatic necrosis, with coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.3\&quot;&gt; &lt;/a&gt;K71.3&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with chronic persistent hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.4\&quot;&gt; &lt;/a&gt;K71.4&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with chronic lobular hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.50\&quot;&gt; &lt;/a&gt;K71.50&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with chronic active hepatitis without ascites&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.51\&quot;&gt; &lt;/a&gt;K71.51&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with chronic active hepatitis with ascites&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K71.7\&quot;&gt; &lt;/a&gt;K71.7&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Toxic liver disease with fibrosis and cirrhosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K72.10\&quot;&gt; &lt;/a&gt;K72.10&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic hepatic failure without coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K72.11\&quot;&gt; &lt;/a&gt;K72.11&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic hepatic failure with coma&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K73.0\&quot;&gt; &lt;/a&gt;K73.0&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic persistent hepatitis, not elsewhere classified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K73.1\&quot;&gt; &lt;/a&gt;K73.1&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic lobular hepatitis, not elsewhere classified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K73.2\&quot;&gt; &lt;/a&gt;K73.2&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic active hepatitis, not elsewhere classified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K73.8\&quot;&gt; &lt;/a&gt;K73.8&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Other chronic hepatitis, not elsewhere classified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K73.9\&quot;&gt; &lt;/a&gt;K73.9&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic hepatitis, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.0\&quot;&gt; &lt;/a&gt;K74.0&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Hepatic fibrosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.1\&quot;&gt; &lt;/a&gt;K74.1&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Hepatic sclerosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.2\&quot;&gt; &lt;/a&gt;K74.2&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Hepatic fibrosis with hepatic sclerosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.3\&quot;&gt; &lt;/a&gt;K74.3&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Primary biliary cirrhosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.4\&quot;&gt; &lt;/a&gt;K74.4&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Secondary biliary cirrhosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.5\&quot;&gt; &lt;/a&gt;K74.5&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Biliary cirrhosis, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.60\&quot;&gt; &lt;/a&gt;K74.60&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Unspecified cirrhosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K74.69\&quot;&gt; &lt;/a&gt;K74.69&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Other cirrhosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.1\&quot;&gt; &lt;/a&gt;K76.1&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Chronic passive congestion of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.2\&quot;&gt; &lt;/a&gt;K76.2&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Central hemorrhagic necrosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.3\&quot;&gt; &lt;/a&gt;K76.3&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Infarction of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.5\&quot;&gt; &lt;/a&gt;K76.5&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Hepatic veno-occlusive disease&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.6\&quot;&gt; &lt;/a&gt;K76.6&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Portal hypertension&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---hl7.org-fhir-sid-icd-10-cm-K76.7\&quot;&gt; &lt;/a&gt;K76.7&lt;/td&gt;&lt;td&gt;http://hl7.org/fhir/sid/icd-10-cm&lt;/td&gt;&lt;td&gt;Hepatorenal syndrome&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.0\&quot;&gt; &lt;/a&gt;571.0&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Alcoholic fatty liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.1\&quot;&gt; &lt;/a&gt;571.1&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Acute alcoholic hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.2\&quot;&gt; &lt;/a&gt;571.2&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Alcoholic cirrhosis of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.3\&quot;&gt; &lt;/a&gt;571.3&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Alcoholic liver damage, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.40\&quot;&gt; &lt;/a&gt;571.40&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Chronic hepatitis, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.41\&quot;&gt; &lt;/a&gt;571.41&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Chronic persistent hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.42\&quot;&gt; &lt;/a&gt;571.42&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Autoimmune hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.49\&quot;&gt; &lt;/a&gt;571.49&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Other chronic hepatitis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.5\&quot;&gt; &lt;/a&gt;571.5&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Cirrhosis of liver without mention of alcohol&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.6\&quot;&gt; &lt;/a&gt;571.6&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Biliary cirrhosis&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.8\&quot;&gt; &lt;/a&gt;571.8&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Other chronic nonalcoholic liver disease&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-571.9\&quot;&gt; &lt;/a&gt;571.9&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Unspecified chronic liver disease without mention of alcohol&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.0\&quot;&gt; &lt;/a&gt;572.0&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Abscess of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.1\&quot;&gt; &lt;/a&gt;572.1&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Portal pyemia&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.2\&quot;&gt; &lt;/a&gt;572.2&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatic encephalopathy&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.3\&quot;&gt; &lt;/a&gt;572.3&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Portal hypertension&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.4\&quot;&gt; &lt;/a&gt;572.4&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatorenal syndrome&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-572.8\&quot;&gt; &lt;/a&gt;572.8&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Other sequelae of chronic liver disease&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.0\&quot;&gt; &lt;/a&gt;573.0&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Chronic passive congestion of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.1\&quot;&gt; &lt;/a&gt;573.1&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatitis in viral diseases classified elsewhere&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.2\&quot;&gt; &lt;/a&gt;573.2&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatitis in other infectious diseases classified elsewhere&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.3\&quot;&gt; &lt;/a&gt;573.3&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatitis, unspecified&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.4\&quot;&gt; &lt;/a&gt;573.4&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatic infarction&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.5\&quot;&gt; &lt;/a&gt;573.5&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Hepatopulmonary syndrome&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.8\&quot;&gt; &lt;/a&gt;573.8&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Other specified disorders of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---terminology.hl7.org-CodeSystem-icd9cm-573.9\&quot;&gt; &lt;/a&gt;573.9&lt;/td&gt;&lt;td&gt;http://terminology.hl7.org/CodeSystem/icd9cm&lt;/td&gt;&lt;td&gt;Unspecified disorder of liver&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-111370006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=111370006\&quot;&gt;111370006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis of liver not due to alcohol (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197304003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197304003\&quot;&gt;197304003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cardituberculous cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235870003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235870003\&quot;&gt;235870003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic non-A non-B hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-10295004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=10295004\&quot;&gt;10295004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-109819003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=109819003\&quot;&gt;109819003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Obstructive biliary cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-1116000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=1116000\&quot;&gt;1116000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic aggressive type B viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-123604002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=123604002\&quot;&gt;123604002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Toxic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-123606000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=123606000\&quot;&gt;123606000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cholangiolitic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-123607009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=123607009\&quot;&gt;123607009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Septal fibrosis of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-12368000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=12368000\&quot;&gt;12368000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Secondary biliary cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-123716002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=123716002\&quot;&gt;123716002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Latent cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-123717006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=123717006\&quot;&gt;123717006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Advanced cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-128302006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=128302006\&quot;&gt;128302006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-15999000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=15999000\&quot;&gt;15999000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Mixed micro AND macronodular cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-1761006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=1761006\&quot;&gt;1761006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Biliary cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-186639003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=186639003\&quot;&gt;186639003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic viral hepatitis B without delta-agent (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-186698009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=186698009\&quot;&gt;186698009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cytomegalovirus hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197279005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197279005\&quot;&gt;197279005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis and chronic liver disease (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197284004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197284004\&quot;&gt;197284004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic active hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197293003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197293003\&quot;&gt;197293003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Diffuse nodular cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197296006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197296006\&quot;&gt;197296006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Capsular portal cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197441003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197441003\&quot;&gt;197441003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Primary sclerosing cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-197442005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=197442005\&quot;&gt;197442005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Secondary sclerosing cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-19943007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=19943007\&quot;&gt;19943007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-21861000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=21861000\&quot;&gt;21861000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Micronodular cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235869004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235869004\&quot;&gt;235869004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic viral hepatitis B with hepatitis D (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235880004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235880004\&quot;&gt;235880004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Alcoholic fibrosis and sclerosis of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235889003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235889003\&quot;&gt;235889003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Drug-induced chronic hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235895002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235895002\&quot;&gt;235895002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Laennec's cirrhosis, non-alcoholic (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235896001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235896001\&quot;&gt;235896001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Infectious cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235897005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235897005\&quot;&gt;235897005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Hypoxia-associated cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235898000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235898000\&quot;&gt;235898000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Pericellular fibrosis of congenital syphilis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235899008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235899008\&quot;&gt;235899008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Hepatic sclerosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235900003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235900003\&quot;&gt;235900003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Portal and splenic vein sclerosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235901004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235901004\&quot;&gt;235901004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Hepatic fibrosis with hepatic sclerosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235902006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235902006\&quot;&gt;235902006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Intrahepatic phlebosclerosis and fibrosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-235917005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=235917005\&quot;&gt;235917005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Sclerosing cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-266468003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=266468003\&quot;&gt;266468003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis - non-alcoholic (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-271440004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=271440004\&quot;&gt;271440004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis secondary to cholestasis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-27156006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=27156006\&quot;&gt;27156006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Posthepatitic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-281388009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=281388009\&quot;&gt;281388009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Human immunodeficiency virus-related sclerosing cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-30188007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=30188007\&quot;&gt;30188007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Alpha-1-antitrypsin deficiency (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-31712002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=31712002\&quot;&gt;31712002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Primary biliary cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-328383001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=328383001\&quot;&gt;328383001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic liver disease (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-33144001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=33144001\&quot;&gt;33144001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Parasitic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-371139006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=371139006\&quot;&gt;371139006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Early cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-37688005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=37688005\&quot;&gt;37688005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Clonorchiasis with biliary cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-38662009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=38662009\&quot;&gt;38662009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic persistent type B viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-41889008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=41889008\&quot;&gt;41889008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic persistent hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-420054005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=420054005\&quot;&gt;420054005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Alcoholic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-424340000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=424340000\&quot;&gt;424340000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Hepatic coma due to chronic hepatitis B (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-425413006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=425413006\&quot;&gt;425413006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Drug-induced cirrhosis of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-43904005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=43904005\&quot;&gt;43904005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Macronodular cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-450880008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=450880008\&quot;&gt;450880008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis E (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-50167007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=50167007\&quot;&gt;50167007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic active type B viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-536002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=536002\&quot;&gt;536002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Glissonian cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-57339008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=57339008\&quot;&gt;57339008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic lobular hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-60037002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=60037002\&quot;&gt;60037002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic persistent viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-61977001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=61977001\&quot;&gt;61977001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic type B viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-62484002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=62484002\&quot;&gt;62484002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Hepatic fibrosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-66870002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=66870002\&quot;&gt;66870002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic active viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-735733008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=735733008\&quot;&gt;735733008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Cirrhosis of liver co-occurrent and due to primary sclerosing cholangitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-737202006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=737202006\&quot;&gt;737202006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Fibropolycystic disease of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-76301009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=76301009\&quot;&gt;76301009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Florid cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-767809001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=767809001\&quot;&gt;767809001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by hepatitis C virus genotype 6 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-767810006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=767810006\&quot;&gt;767810006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by hepatitis C virus genotype 5 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-76783007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=76783007\&quot;&gt;76783007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768006009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768006009\&quot;&gt;768006009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 3 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768125005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768125005\&quot;&gt;768125005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 2 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768126006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768126006\&quot;&gt;768126006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 4 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768127002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768127002\&quot;&gt;768127002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 1 (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768288001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768288001\&quot;&gt;768288001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 1b (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-768289009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=768289009\&quot;&gt;768289009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic hepatitis C caused by Hepatitis C virus genotype 1a (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-78208005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=78208005\&quot;&gt;78208005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Pigment cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-79607001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=79607001\&quot;&gt;79607001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Congenital hepatic fibrosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-79720007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=79720007\&quot;&gt;79720007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic nonalcoholic liver disease (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-81675001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=81675001\&quot;&gt;81675001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic yellow atrophy of liver (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-86454000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=86454000\&quot;&gt;86454000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Postnecrotic cirrhosis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-88518009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=88518009\&quot;&gt;88518009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Wilson's disease (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-89789003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=89789003\&quot;&gt;89789003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://snomed.info/sct&lt;/td&gt;&lt;td&gt;Chronic aggressive viral hepatitis (disorder)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a>" : "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.199.12.1035",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.identifier">identifier</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "2.16.840.1.113883.3.464.1003.199.12.1035"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a>" : "1.0.0",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a>" : "ChronicLiverDisease",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a>" : "Chronic Liver Disease",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2021-09-03T16:48:06+00:00",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a>" : "U.S. Preventive Services Task Force (USPSTF)",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.uspreventiveservicestaskforce.org/uspstf/"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "001"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion">expansion</a>" : {
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.identifier">identifier</a>" : "20200507",
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.timestamp">timestamp</a>" : "2021-01-14T20:59:47-07:00",
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains">contains</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic fatty liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic fibrosis and sclerosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.30",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic cirrhosis of liver without ascites"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.31",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic cirrhosis of liver with ascites"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.40",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic hepatic failure without coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.41",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic hepatic failure with coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K70.9",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic liver disease, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with cholestasis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.10",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with hepatic necrosis, without coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.11",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with hepatic necrosis, with coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with chronic persistent hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.4",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with chronic lobular hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.50",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with chronic active hepatitis without ascites"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.51",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with chronic active hepatitis with ascites"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K71.7",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic liver disease with fibrosis and cirrhosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K72.10",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatic failure without coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K72.11",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatic failure with coma"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K73.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic persistent hepatitis, not elsewhere classified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K73.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic lobular hepatitis, not elsewhere classified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K73.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic active hepatitis, not elsewhere classified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K73.8",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other chronic hepatitis, not elsewhere classified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K73.9",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic fibrosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic sclerosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic fibrosis with hepatic sclerosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Primary biliary cirrhosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.4",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Secondary biliary cirrhosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.5",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Biliary cirrhosis, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.60",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Unspecified cirrhosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K74.69",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other cirrhosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic passive congestion of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Central hemorrhagic necrosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Infarction of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.5",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic veno-occlusive disease"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.6",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Portal hypertension"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://hl7.org/fhir/sid/icd-10-cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2020",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "K76.7",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatorenal syndrome"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic fatty liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Acute alcoholic hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic cirrhosis of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic liver damage, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.40",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.41",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic persistent hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.42",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Autoimmune hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.49",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other chronic hepatitis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.5",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis of liver without mention of alcohol"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.6",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Biliary cirrhosis"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.8",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other chronic nonalcoholic liver disease"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "571.9",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Unspecified chronic liver disease without mention of alcohol"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Abscess of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Portal pyemia"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic encephalopathy"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Portal hypertension"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.4",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatorenal syndrome"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "572.8",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other sequelae of chronic liver disease"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.0",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic passive congestion of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.1",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatitis in viral diseases classified elsewhere"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.2",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatitis in other infectious diseases classified elsewhere"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.3",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatitis, unspecified"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.4",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic infarction"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.5",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatopulmonary syndrome"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.8",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other specified disorders of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://terminology.hl7.org/CodeSystem/icd9cm",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2013",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "573.9",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Unspecified disorder of liver"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2015-03",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "111370006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis of liver not due to alcohol (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2015-03",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197304003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cardituberculous cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2018-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235870003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic non-A non-B hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "10295004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "109819003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Obstructive biliary cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "1116000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic aggressive type B viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "123604002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Toxic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "123606000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cholangiolitic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "123607009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Septal fibrosis of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "12368000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Secondary biliary cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "123716002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Latent cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "123717006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Advanced cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "128302006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "15999000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Mixed micro AND macronodular cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "1761006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Biliary cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "186639003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic viral hepatitis B without delta-agent (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "186698009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cytomegalovirus hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197279005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis and chronic liver disease (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197284004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic active hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197293003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Diffuse nodular cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197296006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Capsular portal cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197441003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Primary sclerosing cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "197442005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Secondary sclerosing cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "19943007",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "21861000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Micronodular cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235869004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic viral hepatitis B with hepatitis D (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235880004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic fibrosis and sclerosis of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235889003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Drug-induced chronic hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235895002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Laennec's cirrhosis, non-alcoholic (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235896001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Infectious cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235897005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hypoxia-associated cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235898000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pericellular fibrosis of congenital syphilis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235899008",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic sclerosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235900003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Portal and splenic vein sclerosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235901004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic fibrosis with hepatic sclerosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235902006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Intrahepatic phlebosclerosis and fibrosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "235917005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Sclerosing cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "266468003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis - non-alcoholic (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "271440004",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis secondary to cholestasis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "27156006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Posthepatitic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "281388009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Human immunodeficiency virus-related sclerosing cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "30188007",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alpha-1-antitrypsin deficiency (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "31712002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Primary biliary cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "328383001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic liver disease (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "33144001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Parasitic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "371139006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Early cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "37688005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Clonorchiasis with biliary cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "38662009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic persistent type B viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "41889008",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic persistent hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "420054005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Alcoholic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "424340000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic coma due to chronic hepatitis B (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "425413006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Drug-induced cirrhosis of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "43904005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Macronodular cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "450880008",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis E (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "50167007",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic active type B viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "536002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Glissonian cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "57339008",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic lobular hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "60037002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic persistent viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "61977001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic type B viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "62484002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Hepatic fibrosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "66870002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic active viral hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "735733008",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cirrhosis of liver co-occurrent and due to primary sclerosing cholangitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "737202006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Fibropolycystic disease of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "76301009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Florid cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "767809001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by hepatitis C virus genotype 6 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "767810006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by hepatitis C virus genotype 5 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "76783007",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768006009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 3 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768125005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 2 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768126006",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 4 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768127002",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 1 (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768288001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 1b (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "768289009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic hepatitis C caused by Hepatitis C virus genotype 1a (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "78208005",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pigment cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "79607001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Congenital hepatic fibrosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "79720007",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic nonalcoholic liver disease (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "81675001",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic yellow atrophy of liver (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "86454000",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Postnecrotic cirrhosis (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "88518009",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Wilson's disease (disorder)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">version</a>" : "2019-09",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "89789003",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Chronic aggressive viral hepatitis (disorder)"
+      }
+    ]
+  }
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 3, 2021 16:48+0000">2021-09-03</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

@@ -1,0 +1,495 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\Alcohol and Drug Dependence Treatment - TTL Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.11"}
+    h3,h4,h5,h6{--heading-prefix:"6.11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Alcohol and Drug Dependence Treatment</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="ValueSet-2.16.840.1.113883.3.464.1003.106.12.1005.html">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="ValueSet-2.16.840.1.113883.3.464.1003.106.12.1005.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-2.16.840.1.113883.3.464.1003.106.12.1005.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Alcohol and Drug Dependence Treatment - TTL Representation</h2>
+
+<p><a href="ValueSet-2.16.840.1.113883.3.464.1003.106.12.1005.ttl" no-download="true">Raw ttl</a> | <a href="ValueSet-2.16.840.1.113883.3.464.1003.106.12.1005.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.16.840.1.113883.3.464.1003.106.12.1005&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;This value set contains 41 concepts&lt;/p&gt;&lt;p&gt;All codes in this table are from the system &lt;a href=\&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-snomed-CT.html\&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-171047005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=171047005\&quot;&gt;171047005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drugs of addiction education (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-20093000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=20093000\&quot;&gt;20093000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol rehabilitation and detoxification (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-23915005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=23915005\&quot;&gt;23915005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Combined alcohol and drug rehabilitation and detoxification (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-24165007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=24165007\&quot;&gt;24165007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcoholism counseling (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-266707007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=266707007\&quot;&gt;266707007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug addiction therapy (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-310653000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=310653000\&quot;&gt;310653000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug addiction therapy - methadone (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-313071005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=313071005\&quot;&gt;313071005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Counseling for substance abuse (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-370881007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=370881007\&quot;&gt;370881007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Abuse prevention assessment (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-370884004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=370884004\&quot;&gt;370884004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Abuse prevention management (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-385989002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=385989002\&quot;&gt;385989002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use therapy (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-386448003\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=386448003\&quot;&gt;386448003&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use prevention (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-386449006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=386449006\&quot;&gt;386449006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use treatment: alcohol withdrawal (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-386450006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=386450006\&quot;&gt;386450006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use treatment: drug withdrawal (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-386451005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=386451005\&quot;&gt;386451005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use treatment: overdose (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408933008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408933008\&quot;&gt;408933008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance abuse prevention (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408934002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408934002\&quot;&gt;408934002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance abuse prevention assessment (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408935001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408935001\&quot;&gt;408935001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance abuse prevention education (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408936000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408936000\&quot;&gt;408936000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance abuse prevention management (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408941008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408941008\&quot;&gt;408941008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug abuse prevention (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408942001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408942001\&quot;&gt;408942001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug abuse prevention assessment (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408943006\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408943006\&quot;&gt;408943006&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug abuse prevention education (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408944000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408944000\&quot;&gt;408944000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug abuse prevention management (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408945004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408945004\&quot;&gt;408945004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol abuse prevention (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408947007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408947007\&quot;&gt;408947007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol abuse prevention education (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-408948002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=408948002\&quot;&gt;408948002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol abuse prevention management (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-410419007\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=410419007\&quot;&gt;410419007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use surveillance (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-413473000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=413473000\&quot;&gt;413473000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Counseling about alcohol consumption (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-423416000\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=423416000\&quot;&gt;423416000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use cessation case management (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-424148004\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=424148004\&quot;&gt;424148004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use cessation surveillance (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-424407005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=424407005\&quot;&gt;424407005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use cessation education, guidance, and counseling (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-424589009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=424589009\&quot;&gt;424589009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Substance use treatment: cessation (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-426928008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=426928008\&quot;&gt;426928008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Prevention of opioid abuse (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-429291000124102\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=429291000124102\&quot;&gt;429291000124102&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol brief intervention (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-56876005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=56876005\&quot;&gt;56876005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug rehabilitation and detoxification (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-60112009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=60112009\&quot;&gt;60112009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug addiction counseling (procedure)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-707166002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=707166002\&quot;&gt;707166002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol reduction program (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-720174008\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=720174008\&quot;&gt;720174008&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug harm reduction program (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-720175009\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=720175009\&quot;&gt;720175009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol harm reduction program (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-720176005\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=720176005\&quot;&gt;720176005&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol relapse prevention program (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-720177001\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=720177001\&quot;&gt;720177001&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug relapse prevention program (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;http---snomed.info-sct-737363002\&quot;&gt; &lt;/a&gt;&lt;a href=\&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=737363002\&quot;&gt;737363002&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Alcohol abuse surveillance (regime/therapy)&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.identifier">fhir:ValueSet.identifier</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:Identifier.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:ietf:rfc:3986&quot; ];
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2.16.840.1.113883.3.464.1003.106.12.1005&quot; ]
+  ];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;1.0.0&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;AlcoholandDrugDependenceTreatment&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol and Drug Dependence Treatment&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">fhir:ValueSet.experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2021-09-03T16:48:06+00:00&quot;^^xsd:dateTime];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">fhir:ValueSet.publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;U.S. Preventive Services Task Force (USPSTF)&quot;];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">fhir:ValueSet.contact</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;url&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;https://www.uspreventiveservicestaskforce.org/uspstf/&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">fhir:ValueSet.jurisdiction</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://unstats.un.org/unsd/methods/m49/m49.htm&quot; ];
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;001&quot; ]     ]
+  ];
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion">fhir:ValueSet.expansion</a> [
+     <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.identifier">fhir:ValueSet.expansion.identifier</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;20200507&quot; ];
+     <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.timestamp">fhir:ValueSet.expansion.timestamp</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2021-01-14T20:59:46-07:00&quot;^^xsd:dateTime ];
+     <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains">fhir:ValueSet.expansion.contains</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;171047005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drugs of addiction education (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;20093000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol rehabilitation and detoxification (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;23915005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Combined alcohol and drug rehabilitation and detoxification (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;24165007&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcoholism counseling (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 4;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;266707007&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug addiction therapy (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 5;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;310653000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug addiction therapy - methadone (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 6;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;313071005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Counseling for substance abuse (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 7;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;370881007&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Abuse prevention assessment (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 8;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;370884004&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Abuse prevention management (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 9;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;385989002&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use therapy (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 10;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;386448003&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use prevention (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 11;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;386449006&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use treatment: alcohol withdrawal (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 12;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;386450006&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use treatment: drug withdrawal (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 13;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;386451005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use treatment: overdose (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 14;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408933008&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance abuse prevention (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 15;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408934002&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance abuse prevention assessment (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 16;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408935001&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance abuse prevention education (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 17;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408936000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance abuse prevention management (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 18;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408941008&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug abuse prevention (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 19;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408942001&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug abuse prevention assessment (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 20;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408943006&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug abuse prevention education (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 21;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408944000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug abuse prevention management (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 22;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408945004&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol abuse prevention (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 23;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408947007&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol abuse prevention education (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 24;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;408948002&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol abuse prevention management (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 25;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;410419007&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use surveillance (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 26;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;413473000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Counseling about alcohol consumption (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 27;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;423416000&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use cessation case management (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 28;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;424148004&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use cessation surveillance (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 29;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;424407005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use cessation education, guidance, and counseling (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 30;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;424589009&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Substance use treatment: cessation (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 31;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;426928008&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Prevention of opioid abuse (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 32;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;429291000124102&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol brief intervention (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 33;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;56876005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug rehabilitation and detoxification (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 34;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;60112009&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug addiction counseling (procedure)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 35;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;707166002&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol reduction program (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 36;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;720174008&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug harm reduction program (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 37;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;720175009&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol harm reduction program (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 38;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;720176005&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol relapse prevention program (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 39;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;720177001&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Drug relapse prevention program (regime/therapy)&quot; ]     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 40;
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">fhir:ValueSet.expansion.contains.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.version">fhir:ValueSet.expansion.contains.version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;2019-09&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">fhir:ValueSet.expansion.contains.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;737363002&quot; ];
+       <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">fhir:ValueSet.expansion.contains.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Alcohol abuse surveillance (regime/therapy)&quot; ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 3, 2021 16:48+0000">2021-09-03</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

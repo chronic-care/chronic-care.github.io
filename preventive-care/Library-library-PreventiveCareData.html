@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\ - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.32"}
+    h3,h4,h5,h6{--heading-prefix:"6.32"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+  
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="Library-library-PreventiveCareData.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-library-PreventiveCareData.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Library: </h2>
+
+
+  
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Related Artifacts</h2><table class="grid"><tr><td>depends-on</td><td>FHIR model information</td><td><code>http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</code></td></tr><tr><td>depends-on</td><td>Library FHIRHelpers</td><td><code>http://hl7.org/fhir/Library/FHIRHelpers|4.0.1</code></td></tr><tr><td>depends-on</td><td>Library C3F</td><td><a href="Library-library-CDSConnectCommons.html">CDSConnectCommons (version 1.0.0)</a></td></tr><tr><td>depends-on</td><td>Library PCC</td><td><a href="Library-library-PreventiveCareConcepts.html">PreventiveCareConcepts (version 1.0.0)</a></td></tr><tr><td>depends-on</td><td>Library FHIRHelpers</td><td><code>http://hl7.org/fhir/Library/FHIRHelpers|4.0.1</code></td></tr><tr><td>depends-on</td><td>Code system Race</td><td><code>urn:oid:2.16.840.1.113883.6.238</code></td></tr><tr><td>depends-on</td><td>Code system CONDVERSTATUS</td><td><a href="http://terminology.hl7.org/2.1.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a></td></tr><tr><td>depends-on</td><td>Code system CONDCLINSTATUS</td><td><a href="http://terminology.hl7.org/2.1.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a></td></tr></table><h2>Parameters</h2><table class="grid"><tr><td>Patient</td><td>out</td><td>0</td><td>1</td><td>Patient</td></tr><tr><td>Patient Full Name</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Patient Given Name</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Patient age in years based on date of birth</td><td>out</td><td>0</td><td>1</td><td>integer</td></tr><tr><td>Patient administrative gender</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Patient birth sex</td><td>out</td><td>0</td><td>1</td><td>Any</td></tr><tr><td>Patient Race</td><td>out</td><td>0</td><td>*</td><td>Coding</td></tr><tr><td>Patient Race Text</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>Patient is female</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Patient is male</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Race is African American</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Patient is 40 or older</td><td>out</td><td>0</td><td>1</td><td>boolean</td></tr><tr><td>Patient PCP</td><td>out</td><td>0</td><td>1</td><td>Reference</td></tr><tr><td>Patient PCP name</td><td>out</td><td>0</td><td>1</td><td>string</td></tr><tr><td>All active conditions</td><td>out</td><td>0</td><td>*</td><td>Condition</td></tr></table><h2>Data Requirements</h2><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>use.value</td><td>One of these codes: </td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>use.value</td><td>One of these codes: </td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-race: http://hl7.org/fhir/us/core/StructureDefinition/us-core-race</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-race: http://hl7.org/fhir/us/core/StructureDefinition/us-core-race</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-race: http://hl7.org/fhir/us/core/StructureDefinition/us-core-race</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-race: http://hl7.org/fhir/us/core/StructureDefinition/us-core-race</td></tr><tr><td>url</td><td>One of these codes: [not stated] text: text</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/R4/patient.html">Patient</a>)</td></tr><tr style="background-color: #efefef"><td>Filter</td><td>Value</td></tr><tr><td>url</td><td>One of these codes: [not stated] http://hl7.org/fhir/us/core/StructureDefinition/us-core-race: http://hl7.org/fhir/us/core/StructureDefinition/us-core-race</td></tr></table><table class="grid"><tr><td colspan="2"><b>Type</b>: <a href="http://hl7.org/fhir/R4/condition.html">Condition</a> (<a href="http://hl7.org/fhir/R4/condition.html">Condition</a>)</td></tr></table><h2>Contents</h2><p><code>text/cql</code></p><pre><code class="language-sql">// # Introduction
+
+// The Preventive Care Data logic library supports data retrieval for decision support.
+
+library PreventiveCareData version '1.0.0'
+
+// # Data model #
+
+using FHIR version '4.0.1'
+
+// # Referenced libraries #
+
+// The FHIRHelpers library provides common functions for simplifying interaction w/ the FHIR R4 data model.
+include FHIRHelpers version '4.0.1' called FHIRHelpers
+// The CDS Connect Commons for FHIRv400 library provides functions representing commonly used CDS logic and patterns.
+include CDSConnectCommons version '1.0.0' called C3F
+// The PreventiveCareConcepts library provides terminology concepts used to identify data elements throughout the artifact.
+include PreventiveCareConcepts version '1.0.0' called PCC
+
+// # CDS logic #
+
+context Patient
+
+/* Data Elements */
+
+// Returns full name preferring 'official' use, if available.
+define &quot;Patient Full Name&quot;:
+  ( Coalesce(GetPatientName('official'),
+    GetPatientName('usual'),
+    Patient.name[0]) ) Name
+  return Coalesce(Name.text.value,
+   (Combine(Name.given G return G.value, ' ') + ' ' + Name.family.value)
+  )
+  /* First((Patient.name N where N.use.value = 'official') Name
+    return Coalesce(Name.text.value,
+     (Combine(Name.given G return G.value, ' ') + ' ' + Name.family.value)
+    )
+  ) */
+
+// Returns the first Given name, used for informal patient greeting.
+define &quot;Patient Given Name&quot;:
+  Coalesce(GetPatientName('usual').given[0].value,
+    GetPatientName('official').given[0].value,
+    Patient.name[0].given[0].value
+  )
+
+define function GetPatientName(use String):
+  First((Patient.name N where N.use.value = use) Name
+    return Name
+  )
+
+define &quot;Patient age in years based on date of birth&quot;:
+  AgeInYears()
+
+define &quot;Patient administrative gender&quot;:
+  Patient.gender.value
+
+define &quot;Patient birth sex&quot;:
+  First(Patient.extension e
+      where e.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex'
+  ).value.value
+
+define &quot;Patient Race&quot;:
+  (flatten (
+    Patient.extension Extension
+      where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'
+        return Extension.extension
+  )) E
+    where E.url = 'ombCategory'
+      or E.url = 'detailed'
+    return E.value as Coding
+
+define &quot;Patient Race Text&quot;:
+  First((flatten (
+    Patient.extension Extension
+      where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'
+        return Extension.extension
+  )) E
+    where E.url = 'text'
+    return (E.value as FHIR.string)).value
+
+/* Intermediate Data Elements */
+
+define &quot;Patient is female&quot;:
+  case
+    when &quot;Patient birth sex&quot; = 'F' then true
+    when &quot;Patient birth sex&quot; = 'M' then false
+    // if birth sex is UNK or not available, then use Administrative Gender
+    when &quot;Patient administrative gender&quot; = 'female' then true
+    when &quot;Patient administrative gender&quot; = 'male' then false
+    else null
+  end
+
+define &quot;Patient is male&quot;:
+  case
+    when &quot;Patient birth sex&quot; = 'F' then false
+    when &quot;Patient birth sex&quot; = 'M' then true
+    // if birth sex is UNK or not available, then use Administrative Gender
+    when &quot;Patient administrative gender&quot; = 'female' then false
+    when &quot;Patient administrative gender&quot; = 'male' then true
+    else null
+  end
+
+define &quot;Race is African American&quot;:
+  &quot;Patient Race&quot; contains PCC.&quot;Black or African American&quot;
+
+define &quot;Patient is 40 or older&quot;:
+  AgeInYears() &gt;= 40
+
+// Returns a FHIR.Reference, or null if not present.
+define &quot;Patient PCP&quot;:
+  First(Patient.generalPractitioner)
+
+// Reference to a Practitioner resource
+// TODO Resolve Practitioner reference if display value is missing
+define &quot;Patient PCP name&quot;:
+  Coalesce({&quot;Patient PCP&quot;.display.value, 'Your Doctor'})
+
+// # Patient diagnoses
+
+define &quot;All active conditions&quot;:
+  C3F.Confirmed(C3F.ActiveOrRecurring([Condition]))
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 62Kb)</p></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 3, 2021 16:48+0000">2021-09-03</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

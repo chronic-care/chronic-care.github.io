@@ -1,0 +1,1656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorVersion="1.3" translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="234">
+         <a:s>library LungCancerScreening</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="LungCancerScreening" system="http://fhir.org/guides/preventive-care"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:54" localIdentifier="FHIRHelpers" path="http://hl7.org/fhir/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1' called FHIRHelpers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="6:1-6:44" localIdentifier="FC" path="http://fhir.org/guides/preventive-care/FHIRCommon" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRCommon</a:s>
+               </a:s>
+               <a:s> version '4.0.1' called FC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <codeSystems>
+      <def localId="4" locator="8:1-8:45" name="SNOMED" id="http://snomed.info/sct" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>codesystem &quot;SNOMED&quot;: 'http://snomed.info/sct'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:55" name="UTAH_EDU" id="http://utah.edu/epic/proc_code" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>codesystem &quot;UTAH_EDU&quot;: 'http://utah.edu/epic/proc_code'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:38" name="LOINC" id="http://loinc.org" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>codesystem &quot;LOINC&quot;: 'http://loinc.org'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </codeSystems>
+   <valueSets>
+      <def localId="7" locator="12:1-12:93" name="Lung Cancer" id="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>valueset &quot;Lung Cancer&quot;:  'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="8" locator="13:1-13:99" name="Smoking Status" id="http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>valueset &quot;Smoking Status&quot;: 'http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="9" locator="14:1-14:91" name="Current Smoker" id="http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>valueset &quot;Current Smoker&quot;: 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/currentsmoker'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="10" locator="15:1-15:90" name="Chest CT" id="http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>valueset &quot;Chest CT&quot;: 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/chest-ct-proc-code'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="11" locator="16:1-16:106" name="Condition Clinical Status" id="http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="11">
+               <a:s>valueset &quot;Condition Clinical Status&quot;: 'http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </valueSets>
+   <codes>
+      <def localId="13" locator="18:1-18:53" name="Tobacco Smoking Status" id="72166-2" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="13">
+               <a:s>code &quot;Tobacco Smoking Status&quot;: '72166-2' from </a:s>
+               <a:s r="12">
+                  <a:s>&quot;LOINC&quot;</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="12" locator="18:47-18:53" name="LOINC"/>
+      </def>
+      <def localId="15" locator="19:1-19:45" name="Former Smoker" id="8517006" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="15">
+               <a:s>code &quot;Former Smoker&quot;: '8517006' from </a:s>
+               <a:s r="14">
+                  <a:s>&quot;SNOMED&quot;</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="14" locator="19:38-19:45" name="SNOMED"/>
+      </def>
+      <def localId="17" locator="20:1-20:65" name="PACKS A DAY" id="8663-7" display="packs per day" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="17">
+               <a:s>code &quot;PACKS A DAY&quot;: '8663-7' from </a:s>
+               <a:s r="16">
+                  <a:s>&quot;LOINC&quot;</a:s>
+               </a:s>
+               <a:s> display 'packs per day'</a:s>
+            </a:s>
+         </annotation>
+         <codeSystem localId="16" locator="20:35-20:41" name="LOINC"/>
+      </def>
+   </codes>
+   <contexts>
+      <def locator="22:1-22:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="22:1-22:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="22:1-22:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="19" locator="25:1-26:14" name="Patient age in years based on date of birth" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="19">
+               <a:s>/* Data Elements */define &quot;Patient age in years based on date of birth&quot;:
+  </a:s>
+               <a:s r="18">
+                  <a:s>AgeInYears()</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="18" locator="26:3-26:14" precision="Year" xsi:type="CalculateAge">
+            <operand path="birthDate.value" xsi:type="Property">
+               <source name="Patient" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="29" locator="29:1-31:44" name="Smoking status observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="29">
+               <a:s>// When a tobacco smoking status is more than 10 years old, should that be a &quot;warning&quot; surfaced to the clinician in some way?define &quot;Smoking status observation&quot;:
+  </a:s>
+               <a:s r="28">
+                  <a:s>
+                     <a:s r="21">
+                        <a:s r="20">
+                           <a:s r="20">
+                              <a:s>[Observation: </a:s>
+                              <a:s>
+                                 <a:s>&quot;Tobacco Smoking Status&quot;</a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="27">
+                     <a:s>where </a:s>
+                     <a:s r="27">
+                        <a:s r="23">
+                           <a:s r="22">
+                              <a:s>O</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="23">
+                              <a:s>status</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="26">
+                           <a:s>{ </a:s>
+                           <a:s r="24">
+                              <a:s>'final'</a:s>
+                           </a:s>
+                           <a:s>, </a:s>
+                           <a:s r="25">
+                              <a:s>'amended'</a:s>
+                           </a:s>
+                           <a:s> }</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="28" locator="30:3-31:44" xsi:type="Query">
+            <source localId="21" locator="30:3-30:43" alias="O">
+               <expression localId="20" locator="30:3-30:41" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="~" xsi:type="Retrieve">
+                  <codes xsi:type="ToList">
+                     <operand locator="30:17-30:40" name="Tobacco Smoking Status" xsi:type="CodeRef"/>
+                  </codes>
+               </expression>
+            </source>
+            <where localId="27" locator="31:5-31:44" xsi:type="In">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="23" locator="31:11-31:18" path="status" scope="O" xsi:type="Property"/>
+               </operand>
+               <operand localId="26" locator="31:23-31:44" xsi:type="List">
+                  <element localId="24" locator="31:25-31:31" valueType="t:String" value="final" xsi:type="Literal"/>
+                  <element localId="25" locator="31:34-31:42" valueType="t:String" value="amended" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="37" locator="34:1-36:57" name="Lung cancer diagnosis" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="37">
+               <a:s>//and FHIRHelpers.ToDateTime(O.issued) 10 years or less before Today()define &quot;Lung cancer diagnosis&quot;:
+  </a:s>
+               <a:s r="36">
+                  <a:s>
+                     <a:s r="31">
+                        <a:s r="30">
+                           <a:s r="30">
+                              <a:s>[Condition: </a:s>
+                              <a:s>
+                                 <a:s>&quot;Lung Cancer&quot;</a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="35">
+                     <a:s>where </a:s>
+                     <a:s r="35">
+                        <a:s r="33">
+                           <a:s r="32">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="33">
+                              <a:s>clinicalStatus</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="34">
+                           <a:s>&quot;Condition Clinical Status&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="36" locator="35:3-36:57" xsi:type="Query">
+            <source localId="31" locator="35:3-35:30" alias="C">
+               <expression localId="30" locator="35:3-35:28" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                  <codes locator="35:15-35:27" name="Lung Cancer" xsi:type="ValueSetRef"/>
+               </expression>
+            </source>
+            <where localId="35" locator="36:5-36:57" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="33" locator="36:11-36:26" path="clinicalStatus" scope="C" xsi:type="Property"/>
+               </code>
+               <valueset localId="34" locator="36:31-36:57" name="Condition Clinical Status" xsi:type="ValueSetRef"/>
+            </where>
+         </expression>
+      </def>
+      <def localId="45" locator="38:1-40:32" name="Chest CT procedure" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="45">
+               <a:s>define &quot;Chest CT procedure&quot;:
+  </a:s>
+               <a:s r="44">
+                  <a:s>
+                     <a:s r="39">
+                        <a:s r="38">
+                           <a:s r="38">
+                              <a:s>[Procedure: </a:s>
+                              <a:s>
+                                 <a:s>&quot;Chest CT&quot;</a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> P</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="43">
+                     <a:s>where </a:s>
+                     <a:s r="43">
+                        <a:s r="41">
+                           <a:s r="40">
+                              <a:s>P</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="41">
+                              <a:s>status</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> = </a:s>
+                        <a:s r="42">
+                           <a:s>'completed'</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="44" locator="39:3-40:32" xsi:type="Query">
+            <source localId="39" locator="39:3-39:27" alias="P">
+               <expression localId="38" locator="39:3-39:25" dataType="fhir:Procedure" templateId="http://hl7.org/fhir/StructureDefinition/Procedure" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                  <codes locator="39:15-39:24" name="Chest CT" xsi:type="ValueSetRef"/>
+               </expression>
+            </source>
+            <where localId="43" locator="40:5-40:32" xsi:type="Equal">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="41" locator="40:11-40:18" path="status" scope="P" xsi:type="Property"/>
+               </operand>
+               <operand localId="42" locator="40:22-40:32" valueType="t:String" value="completed" xsi:type="Literal"/>
+            </where>
+         </expression>
+      </def>
+      <def localId="53" locator="43:1-44:43" name="55 through 80" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="53">
+               <a:s>/* Intermediate Data Elements */define &quot;55 through 80&quot;:
+  </a:s>
+               <a:s r="52">
+                  <a:s r="48">
+                     <a:s r="46">
+                        <a:s>AgeInYears()</a:s>
+                     </a:s>
+                     <a:s r="47"> >= 55</a:s>
+                  </a:s>
+                  <a:s> and </a:s>
+                  <a:s r="51">
+                     <a:s r="49">
+                        <a:s>AgeInYears()</a:s>
+                     </a:s>
+                     <a:s r="50"> &lt;= 80</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="52" locator="44:3-44:43" xsi:type="And">
+            <operand localId="48" locator="44:3-44:20" xsi:type="GreaterOrEqual">
+               <operand localId="46" locator="44:3-44:14" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand localId="47" locator="44:19-44:20" valueType="t:Integer" value="55" xsi:type="Literal"/>
+            </operand>
+            <operand localId="51" locator="44:26-44:43" xsi:type="LessOrEqual">
+               <operand localId="49" locator="44:26-44:37" precision="Year" xsi:type="CalculateAge">
+                  <operand path="birthDate.value" xsi:type="Property">
+                     <source name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand localId="50" locator="44:42-44:43" valueType="t:Integer" value="80" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="63" locator="46:1-49:3" name="Most recent smoking status observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="63">
+               <a:s>define &quot;Most recent smoking status observation&quot;:
+  </a:s>
+               <a:s r="62">
+                  <a:s>Last(</a:s>
+                  <a:s r="61">
+                     <a:s>
+                        <a:s r="55">
+                           <a:s r="54">
+                              <a:s>
+                                 <a:s>&quot;Smoking status observation&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> O</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="60">
+                        <a:s>sort by </a:s>
+                        <a:s r="59">
+                           <a:s r="58">
+                              <a:s>(</a:s>
+                              <a:s r="58">
+                                 <a:s r="56">
+                                    <a:s>FHIRHelpers</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="58">
+                                    <a:s>ToDateTime(</a:s>
+                                    <a:s r="57">
+                                       <a:s>issued</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  )</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="62" locator="47:3-49:3" xsi:type="Last">
+            <source localId="61" locator="47:8-48:44" xsi:type="Query">
+               <source localId="55" locator="47:8-47:37" alias="O">
+                  <expression localId="54" locator="47:8-47:35" name="Smoking status observation" xsi:type="ExpressionRef"/>
+               </source>
+               <sort localId="60" locator="48:5-48:44">
+                  <by localId="59" locator="48:13-48:44" direction="asc" xsi:type="ByExpression">
+                     <expression localId="58" locator="48:13-48:44" name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="57" locator="48:37-48:42" name="issued" xsi:type="IdentifierRef"/>
+                     </expression>
+                  </by>
+               </sort>
+            </source>
+         </expression>
+      </def>
+      <def localId="73" locator="51:1-53:58" name="Current smoker observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="73">
+               <a:s>define &quot;Current smoker observation&quot;:
+  </a:s>
+               <a:s r="72">
+                  <a:s>
+                     <a:s r="65">
+                        <a:s r="64">
+                           <a:s>
+                              <a:s>&quot;Most recent smoking status observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="71">
+                     <a:s>where </a:s>
+                     <a:s r="71">
+                        <a:s r="69">
+                           <a:s>(</a:s>
+                           <a:s r="69">
+                              <a:s r="67">
+                                 <a:s r="66">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="67">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> as </a:s>
+                              <a:s r="68">
+                                 <a:s>CodeableConcept</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="70">
+                           <a:s>&quot;Current Smoker&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="72" locator="52:3-53:58" xsi:type="Query">
+            <source localId="65" locator="52:3-52:44" alias="O">
+               <expression localId="64" locator="52:3-52:42" name="Most recent smoking status observation" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="71" locator="53:5-53:58" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="69" locator="53:11-53:38" strict="false" xsi:type="As">
+                     <operand localId="67" locator="53:12-53:18" path="value" scope="O" xsi:type="Property"/>
+                     <asTypeSpecifier localId="68" locator="53:23-53:37" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+                  </operand>
+               </code>
+               <valueset localId="70" locator="53:43-53:58" name="Current Smoker" xsi:type="ValueSetRef"/>
+            </where>
+         </expression>
+      </def>
+      <def localId="83" locator="55:1-57:56" name="Former smoker observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="83">
+               <a:s>define &quot;Former smoker observation&quot;:
+  </a:s>
+               <a:s r="82">
+                  <a:s>
+                     <a:s r="75">
+                        <a:s r="74">
+                           <a:s>
+                              <a:s>&quot;Most recent smoking status observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="81">
+                     <a:s>where </a:s>
+                     <a:s r="81">
+                        <a:s r="79">
+                           <a:s>(</a:s>
+                           <a:s r="79">
+                              <a:s r="77">
+                                 <a:s r="76">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="77">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> as </a:s>
+                              <a:s r="78">
+                                 <a:s>CodeableConcept</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                        <a:s> ~ </a:s>
+                        <a:s r="80">
+                           <a:s>&quot;Former Smoker&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="82" locator="56:3-57:56" xsi:type="Query">
+            <source localId="75" locator="56:3-56:44" alias="O">
+               <expression localId="74" locator="56:3-56:42" name="Most recent smoking status observation" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="81" locator="57:5-57:56" xsi:type="Equivalent">
+               <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="79" locator="57:11-57:38" strict="false" xsi:type="As">
+                     <operand localId="77" locator="57:12-57:18" path="value" scope="O" xsi:type="Property"/>
+                     <asTypeSpecifier localId="78" locator="57:23-57:37" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToConcept">
+                  <operand localId="80" locator="57:42-57:56" name="Former Smoker" xsi:type="CodeRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="86" locator="59:1-60:42" name="Is current smoker" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="86">
+               <a:s>define &quot;Is current smoker&quot;:
+  </a:s>
+               <a:s r="85">
+                  <a:s r="84">
+                     <a:s>&quot;Current smoker observation&quot;</a:s>
+                  </a:s>
+                  <a:s> is not null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="85" locator="60:3-60:42" xsi:type="Not">
+            <operand locator="60:3-60:42" xsi:type="IsNull">
+               <operand localId="84" locator="60:3-60:30" name="Current smoker observation" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="96" locator="62:1-65:15" name="Is former smoker who quit within past 15 years" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="96">
+               <a:s>define &quot;Is former smoker who quit within past 15 years&quot;:
+  </a:s>
+               <a:s r="95">
+                  <a:s r="94">
+                     <a:s>(</a:s>
+                     <a:s r="94">
+                        <a:s>
+                           <a:s r="88">
+                              <a:s r="87">
+                                 <a:s>
+                                    <a:s>&quot;Former smoker observation&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> O</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    </a:s>
+                        <a:s r="93">
+                           <a:s>where </a:s>
+                           <a:s r="93">
+                              <a:s r="90">
+                                 <a:s r="89">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="90">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> </a:s>
+                              <a:s r="93">
+                                 <a:s>ends </a:s>
+                                 <a:s r="92">
+                                    <a:s>15 years</a:s>
+                                 </a:s>
+                                 <a:s> or less before</a:s>
+                              </a:s>
+                              <a:s> </a:s>
+                              <a:s r="91">
+                                 <a:s>Today()</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+                  <a:s> is not null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="95" locator="63:3-65:15" xsi:type="Not">
+            <operand locator="63:3-65:15" xsi:type="IsNull">
+               <operand localId="94" locator="63:3-65:3" xsi:type="Query">
+                  <source localId="88" locator="63:4-63:32" alias="O">
+                     <expression localId="87" locator="63:4-63:30" name="Former smoker observation" xsi:type="ExpressionRef"/>
+                  </source>
+                  <where localId="93" locator="64:5-64:58" xsi:type="And">
+                     <operand locator="64:28-64:43" xsi:type="In">
+                        <operand locator="64:23-64:26" xsi:type="End">
+                           <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand asType="fhir:Period" xsi:type="As">
+                                 <operand localId="90" locator="64:11-64:21" path="effective" scope="O" xsi:type="Property"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand xsi:type="Interval">
+                           <low xsi:type="ToDateTime">
+                              <operand path="low" xsi:type="Property">
+                                 <source locator="64:28-64:43" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                    <low locator="64:52-64:58" xsi:type="Subtract">
+                                       <operand localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                       <operand localId="92" locator="64:28-64:35" value="15" unit="years" xsi:type="Quantity"/>
+                                    </low>
+                                    <high localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                 </source>
+                              </operand>
+                           </low>
+                           <lowClosedExpression path="lowClosed" xsi:type="Property">
+                              <source locator="64:28-64:43" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                 <low locator="64:52-64:58" xsi:type="Subtract">
+                                    <operand localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                    <operand localId="92" locator="64:28-64:35" value="15" unit="years" xsi:type="Quantity"/>
+                                 </low>
+                                 <high localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                              </source>
+                           </lowClosedExpression>
+                           <high xsi:type="ToDateTime">
+                              <operand path="high" xsi:type="Property">
+                                 <source locator="64:28-64:43" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                    <low locator="64:52-64:58" xsi:type="Subtract">
+                                       <operand localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                       <operand localId="92" locator="64:28-64:35" value="15" unit="years" xsi:type="Quantity"/>
+                                    </low>
+                                    <high localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                 </source>
+                              </operand>
+                           </high>
+                           <highClosedExpression path="highClosed" xsi:type="Property">
+                              <source locator="64:28-64:43" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                 <low locator="64:52-64:58" xsi:type="Subtract">
+                                    <operand localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                                    <operand localId="92" locator="64:28-64:35" value="15" unit="years" xsi:type="Quantity"/>
+                                 </low>
+                                 <high localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                              </source>
+                           </highClosedExpression>
+                        </operand>
+                     </operand>
+                     <operand locator="64:28-64:43" xsi:type="Not">
+                        <operand locator="64:28-64:43" xsi:type="IsNull">
+                           <operand localId="91" locator="64:52-64:58" xsi:type="Today"/>
+                        </operand>
+                     </operand>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="124" locator="67:1-71:114" name="Pack-years" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="124">
+               <a:s>define &quot;Pack-years&quot;:
+  </a:s>
+               <a:s r="123">
+                  <a:s>
+                     <a:s r="98">
+                        <a:s r="97">
+                           <a:s>
+                              <a:s>&quot;Most recent smoking status observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s>
+                     <a:s>let </a:s>
+                     <a:s r="108">
+                        <a:s>PacksPerDay: </a:s>
+                        <a:s r="107">
+                           <a:s>singleton from </a:s>
+                           <a:s r="106">
+                              <a:s r="105">
+                                 <a:s>(</a:s>
+                                 <a:s r="105">
+                                    <a:s>
+                                       <a:s r="100">
+                                          <a:s r="99">
+                                             <a:s>
+                                                <a:s>O.component</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> C</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> </a:s>
+                                    <a:s r="104">
+                                       <a:s>where </a:s>
+                                       <a:s r="104">
+                                          <a:s r="102">
+                                             <a:s r="101">
+                                                <a:s>C</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="102">
+                                                <a:s>code</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> ~ </a:s>
+                                          <a:s r="103">
+                                             <a:s>&quot;PACKS A DAY&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="106">
+                                 <a:s>value</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>,
+    </a:s>
+                     <a:s r="112">
+                        <a:s>DurationInDays: </a:s>
+                        <a:s r="111">
+                           <a:s>duration in days of </a:s>
+                           <a:s r="110">
+                              <a:s r="109">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="110">
+                                 <a:s>effective</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="122">
+                     <a:s>return </a:s>
+                     <a:s r="121">
+                        <a:s>System.Quantity { </a:s>
+                        <a:s>
+                           <a:s>value: </a:s>
+                           <a:s r="119">
+                              <a:s>Round(</a:s>
+                              <a:s r="118">
+                                 <a:s r="117">
+                                    <a:s>(</a:s>
+                                    <a:s r="117">
+                                       <a:s r="113">
+                                          <a:s>PacksPerDay</a:s>
+                                       </a:s>
+                                       <a:s> * </a:s>
+                                       <a:s r="116">
+                                          <a:s>(</a:s>
+                                          <a:s r="116">
+                                             <a:s r="114">
+                                                <a:s>DurationInDays</a:s>
+                                             </a:s>
+                                             <a:s r="115"> / 365.25</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="118">
+                                    <a:s>value</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s>
+                           <a:s>unit: </a:s>
+                           <a:s r="120">
+                              <a:s>'{Pack-years}'</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> }</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="123" locator="68:3-71:114" xsi:type="Query">
+            <source localId="98" locator="68:3-68:44" alias="O">
+               <expression localId="97" locator="68:3-68:42" name="Most recent smoking status observation" xsi:type="ExpressionRef"/>
+            </source>
+            <let localId="108" locator="69:9-69:86" identifier="PacksPerDay">
+               <expression localId="107" locator="69:22-69:86" xsi:type="SingletonFrom">
+                  <operand localId="106" locator="69:37-69:86" xsi:type="Query">
+                     <source alias="$this">
+                        <expression localId="105" locator="69:37-69:80" xsi:type="Query">
+                           <source localId="100" locator="69:38-69:50" alias="C">
+                              <expression localId="99" locator="69:38-69:48" path="component" scope="O" xsi:type="Property"/>
+                           </source>
+                           <where localId="104" locator="69:52-69:79" xsi:type="Equivalent">
+                              <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="102" locator="69:58-69:63" path="code" scope="C" xsi:type="Property"/>
+                              </operand>
+                              <operand xsi:type="ToConcept">
+                                 <operand localId="103" locator="69:67-69:79" name="PACKS A DAY" xsi:type="CodeRef"/>
+                              </operand>
+                           </where>
+                        </expression>
+                     </source>
+                     <where xsi:type="Not">
+                        <operand xsi:type="IsNull">
+                           <operand path="value" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </operand>
+                        </operand>
+                     </where>
+                     <return distinct="false">
+                        <expression path="value" xsi:type="Property">
+                           <source name="$this" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </operand>
+               </expression>
+            </let>
+            <let localId="112" locator="70:5-70:51" identifier="DurationInDays">
+               <expression localId="111" locator="70:21-70:51" precision="Day" xsi:type="DurationBetween">
+                  <operand xsi:type="Start">
+                     <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand asType="fhir:Period" xsi:type="As">
+                           <operand localId="110" locator="70:41-70:51" path="effective" scope="O" xsi:type="Property"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="End">
+                     <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand asType="fhir:Period" xsi:type="As">
+                           <operand localId="110" locator="70:41-70:51" path="effective" scope="O" xsi:type="Property"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </expression>
+            </let>
+            <return localId="122" locator="71:5-71:114">
+               <expression localId="121" locator="71:12-71:114" classType="t:Quantity" xsi:type="Instance">
+                  <element name="value">
+                     <value localId="119" locator="71:37-71:90" xsi:type="Round">
+                        <operand localId="118" locator="71:43-71:89" path="value" xsi:type="Property">
+                           <source localId="117" locator="71:43-71:83" xsi:type="Multiply">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand asType="fhir:Quantity" xsi:type="As">
+                                    <operand localId="113" locator="71:44-71:54" name="PacksPerDay" xsi:type="QueryLetRef"/>
+                                 </operand>
+                              </operand>
+                              <operand xsi:type="ToQuantity">
+                                 <operand localId="116" locator="71:58-71:82" xsi:type="Divide">
+                                    <operand xsi:type="ToDecimal">
+                                       <operand localId="114" locator="71:59-71:72" name="DurationInDays" xsi:type="QueryLetRef"/>
+                                    </operand>
+                                    <operand localId="115" locator="71:76-71:81" valueType="t:Decimal" value="365.25" xsi:type="Literal"/>
+                                 </operand>
+                              </operand>
+                           </source>
+                        </operand>
+                     </value>
+                  </element>
+                  <element name="unit">
+                     <value localId="120" locator="71:99-71:112" valueType="t:String" value="{Pack-years}" xsi:type="Literal"/>
+                  </element>
+               </expression>
+            </return>
+         </expression>
+      </def>
+      <def localId="128" locator="73:1-74:35" name="Has 30 pack-year smoking history" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="128">
+               <a:s>define &quot;Has 30 pack-year smoking history&quot;:
+  </a:s>
+               <a:s r="127">
+                  <a:s r="125">
+                     <a:s>&quot;Pack-years&quot;</a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="126">
+                     <a:s>30 '{Pack-years}'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="127" locator="74:3-74:35" xsi:type="GreaterOrEqual">
+            <operand localId="125" locator="74:3-74:14" name="Pack-years" xsi:type="ExpressionRef"/>
+            <operand localId="126" locator="74:19-74:35" value="30" unit="{Pack-years}" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="131" locator="76:1-77:34" name="Has lung cancer" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="131">
+               <a:s>define &quot;Has lung cancer&quot;:
+  </a:s>
+               <a:s r="130">
+                  <a:s>exists </a:s>
+                  <a:s r="129">
+                     <a:s>(</a:s>
+                     <a:s r="129">
+                        <a:s>&quot;Lung cancer diagnosis&quot;</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="130" locator="77:3-77:34" xsi:type="Exists">
+            <operand localId="129" locator="77:10-77:34" name="Lung cancer diagnosis" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="143" locator="79:1-82:3" name="Had chest CT in past year" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="143">
+               <a:s>define &quot;Had chest CT in past year&quot;:
+  </a:s>
+               <a:s r="142">
+                  <a:s>exists </a:s>
+                  <a:s r="141">
+                     <a:s>(</a:s>
+                     <a:s r="141">
+                        <a:s>
+                           <a:s r="133">
+                              <a:s r="132">
+                                 <a:s>
+                                    <a:s>&quot;Chest CT procedure&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> P</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    </a:s>
+                        <a:s r="140">
+                           <a:s>where </a:s>
+                           <a:s r="140">
+                              <a:s r="137">
+                                 <a:s r="134">
+                                    <a:s>FC</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="137">
+                                    <a:s>ToInterval(</a:s>
+                                    <a:s r="136">
+                                       <a:s r="135">
+                                          <a:s>P</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="136">
+                                          <a:s>performed</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> </a:s>
+                              <a:s r="140">
+                                 <a:s>ends </a:s>
+                                 <a:s r="139">
+                                    <a:s>1 year</a:s>
+                                 </a:s>
+                                 <a:s> or less before</a:s>
+                              </a:s>
+                              <a:s> </a:s>
+                              <a:s r="138">
+                                 <a:s>Today()</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="142" locator="80:3-82:3" xsi:type="Exists">
+            <operand localId="141" locator="80:10-82:3" xsi:type="Query">
+               <source localId="133" locator="80:11-80:32" alias="P">
+                  <expression localId="132" locator="80:11-80:30" name="Chest CT procedure" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="140" locator="81:5-81:71" xsi:type="And">
+                  <operand locator="81:43-81:56" xsi:type="In">
+                     <operand locator="81:38-81:41" xsi:type="End">
+                        <operand localId="137" locator="81:11-81:36" name="ToInterval" libraryName="FC" xsi:type="FunctionRef">
+                           <operand localId="136" locator="81:25-81:35" path="performed" scope="P" xsi:type="Property"/>
+                        </operand>
+                     </operand>
+                     <operand xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <operand path="low" xsi:type="Property">
+                              <source locator="81:43-81:56" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                 <low locator="81:65-81:71" xsi:type="Subtract">
+                                    <operand localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                                    <operand localId="139" locator="81:43-81:48" value="1" unit="year" xsi:type="Quantity"/>
+                                 </low>
+                                 <high localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                              </source>
+                           </operand>
+                        </low>
+                        <lowClosedExpression path="lowClosed" xsi:type="Property">
+                           <source locator="81:43-81:56" lowClosed="true" highClosed="false" xsi:type="Interval">
+                              <low locator="81:65-81:71" xsi:type="Subtract">
+                                 <operand localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                                 <operand localId="139" locator="81:43-81:48" value="1" unit="year" xsi:type="Quantity"/>
+                              </low>
+                              <high localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                           </source>
+                        </lowClosedExpression>
+                        <high xsi:type="ToDateTime">
+                           <operand path="high" xsi:type="Property">
+                              <source locator="81:43-81:56" lowClosed="true" highClosed="false" xsi:type="Interval">
+                                 <low locator="81:65-81:71" xsi:type="Subtract">
+                                    <operand localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                                    <operand localId="139" locator="81:43-81:48" value="1" unit="year" xsi:type="Quantity"/>
+                                 </low>
+                                 <high localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                              </source>
+                           </operand>
+                        </high>
+                        <highClosedExpression path="highClosed" xsi:type="Property">
+                           <source locator="81:43-81:56" lowClosed="true" highClosed="false" xsi:type="Interval">
+                              <low locator="81:65-81:71" xsi:type="Subtract">
+                                 <operand localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                                 <operand localId="139" locator="81:43-81:48" value="1" unit="year" xsi:type="Quantity"/>
+                              </low>
+                              <high localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                           </source>
+                        </highClosedExpression>
+                     </operand>
+                  </operand>
+                  <operand locator="81:43-81:56" xsi:type="Not">
+                     <operand locator="81:43-81:56" xsi:type="IsNull">
+                        <operand localId="138" locator="81:65-81:71" xsi:type="Today"/>
+                     </operand>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="157" locator="85:1-90:39" name="Inclusion Criteria" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="157">
+               <a:s>/* Inclusion Criteria */define &quot;Inclusion Criteria&quot;:
+  </a:s>
+               <a:s r="156">
+                  <a:s r="153">
+                     <a:s r="150">
+                        <a:s r="148">
+                           <a:s r="144">
+                              <a:s>&quot;55 through 80&quot;</a:s>
+                           </a:s>
+                           <a:s>
+    and </a:s>
+                           <a:s r="147">
+                              <a:s>(</a:s>
+                              <a:s r="147">
+                                 <a:s r="145">
+                                    <a:s>&quot;Is current smoker&quot;</a:s>
+                                 </a:s>
+                                 <a:s> or </a:s>
+                                 <a:s r="146">
+                                    <a:s>&quot;Is former smoker who quit within past 15 years&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    and </a:s>
+                        <a:s r="149">
+                           <a:s>&quot;Has 30 pack-year smoking history&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    and </a:s>
+                     <a:s r="152">
+                        <a:s>not </a:s>
+                        <a:s r="151">
+                           <a:s>&quot;Has lung cancer&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="155">
+                     <a:s>not </a:s>
+                     <a:s r="154">
+                        <a:s>&quot;Had chest CT in past year&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="156" locator="86:3-90:39" xsi:type="And">
+            <operand localId="153" locator="86:3-89:29" xsi:type="And">
+               <operand localId="150" locator="86:3-88:42" xsi:type="And">
+                  <operand localId="148" locator="86:3-87:81" xsi:type="And">
+                     <operand localId="144" locator="86:3-86:17" name="55 through 80" xsi:type="ExpressionRef"/>
+                     <operand localId="147" locator="87:9-87:81" xsi:type="Or">
+                        <operand localId="145" locator="87:10-87:28" name="Is current smoker" xsi:type="ExpressionRef"/>
+                        <operand localId="146" locator="87:33-87:80" name="Is former smoker who quit within past 15 years" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="149" locator="88:9-88:42" name="Has 30 pack-year smoking history" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="152" locator="89:9-89:29" xsi:type="Not">
+                  <operand localId="151" locator="89:13-89:29" name="Has lung cancer" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="155" locator="90:9-90:39" xsi:type="Not">
+               <operand localId="154" locator="90:13-90:39" name="Had chest CT in past year" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="183" locator="92:1-98:11" name="Is Eligible Detail" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="183">
+               <a:s>define &quot;Is Eligible Detail&quot;:
+  </a:s>
+               <a:s r="182">
+                  <a:s>if </a:s>
+                  <a:s r="158">
+                     <a:s>&quot;Inclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="180">
+                     <a:s r="177">
+                        <a:s r="175">
+                           <a:s r="172">
+                              <a:s r="170">
+                                 <a:s r="166">
+                                    <a:s r="164">
+                                       <a:s r="159">
+                                          <a:s>'Potential eligible patient: '</a:s>
+                                       </a:s>
+                                       <a:s> + </a:s>
+                                       <a:s r="163">
+                                          <a:s r="162">
+                                             <a:s>First(</a:s>
+                                             <a:s r="161">
+                                                <a:s r="160">
+                                                   <a:s>Patient</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="161">
+                                                   <a:s>name</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="163">
+                                             <a:s>text</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> +
+      </a:s>
+                                    <a:s r="165">
+                                       <a:s>': Born '</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="169">
+                                    <a:s>ToString(</a:s>
+                                    <a:s r="168">
+                                       <a:s r="167">
+                                          <a:s>Patient</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="168">
+                                          <a:s>birthDate</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> +
+      </a:s>
+                              <a:s r="171">
+                                 <a:s>' (Age: '</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="174">
+                              <a:s>ToString(</a:s>
+                              <a:s r="173">
+                                 <a:s>AgeInYears()</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> +
+      </a:s>
+                        <a:s r="176">
+                           <a:s>'), Gender: '</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="179">
+                        <a:s r="178">
+                           <a:s>Patient</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="179">
+                           <a:s>gender</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s r="181">
+  else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="182" locator="93:3-98:11" xsi:type="If">
+            <condition localId="158" locator="93:6-93:25" name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="180" locator="94:10-97:36" xsi:type="Concatenate">
+               <operand localId="177" locator="94:10-97:19" xsi:type="Concatenate">
+                  <operand localId="175" locator="94:10-96:40" xsi:type="Concatenate">
+                     <operand localId="172" locator="94:10-96:15" xsi:type="Concatenate">
+                        <operand localId="170" locator="94:10-95:45" xsi:type="Concatenate">
+                           <operand localId="166" locator="94:10-95:15" xsi:type="Concatenate">
+                              <operand localId="164" locator="94:10-94:66" xsi:type="Concatenate">
+                                 <operand localId="159" locator="94:10-94:39" valueType="t:String" value="Potential eligible patient: " xsi:type="Literal"/>
+                                 <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="163" locator="94:43-94:66" path="text" xsi:type="Property">
+                                       <source localId="162" locator="94:43-94:61" xsi:type="First">
+                                          <source localId="161" locator="94:49-94:60" path="name" xsi:type="Property">
+                                             <source localId="160" locator="94:49-94:55" name="Patient" xsi:type="ExpressionRef"/>
+                                          </source>
+                                       </source>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                              <operand localId="165" locator="95:7-95:15" valueType="t:String" value=": Born " xsi:type="Literal"/>
+                           </operand>
+                           <operand localId="169" locator="95:19-95:45" xsi:type="ToString">
+                              <operand name="ToDate" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="168" locator="95:28-95:44" path="birthDate" xsi:type="Property">
+                                    <source localId="167" locator="95:28-95:34" name="Patient" xsi:type="ExpressionRef"/>
+                                 </operand>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="171" locator="96:7-96:15" valueType="t:String" value=" (Age: " xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="174" locator="96:19-96:40" xsi:type="ToString">
+                        <operand localId="173" locator="96:28-96:39" precision="Year" xsi:type="CalculateAge">
+                           <operand path="birthDate.value" xsi:type="Property">
+                              <source name="Patient" xsi:type="ExpressionRef"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="176" locator="97:7-97:19" valueType="t:String" value="), Gender: " xsi:type="Literal"/>
+               </operand>
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="179" locator="97:23-97:36" path="gender" xsi:type="Property">
+                     <source localId="178" locator="97:23-97:29" name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="181" locator="98:8-98:11" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def localId="188" locator="100:1-103:11" name="Is Eligible Summary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="188">
+               <a:s>define &quot;Is Eligible Summary&quot;:
+  </a:s>
+               <a:s r="187">
+                  <a:s>if </a:s>
+                  <a:s r="184">
+                     <a:s>&quot;Inclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="185">
+                     <a:s>'Recommend shared decision making for lung cancer screening'</a:s>
+                  </a:s>
+                  <a:s r="186">
+  else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="187" locator="101:3-103:11" xsi:type="If">
+            <condition localId="184" locator="101:6-101:25" name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="185" locator="102:10-102:69" valueType="t:String" value="Recommend shared decision making for lung cancer screening" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="186" locator="103:8-103:11" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def localId="193" locator="105:1-108:11" name="Is Eligible Indicator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="193">
+               <a:s>define &quot;Is Eligible Indicator&quot;:
+  </a:s>
+               <a:s r="192">
+                  <a:s>if </a:s>
+                  <a:s r="189">
+                     <a:s>&quot;Inclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="190">
+                     <a:s>'info'</a:s>
+                  </a:s>
+                  <a:s r="191">
+  else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="192" locator="106:3-108:11" xsi:type="If">
+            <condition localId="189" locator="106:6-106:25" name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="190" locator="107:10-107:15" valueType="t:String" value="info" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="191" locator="108:8-108:11" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def localId="200" locator="111:1-115:3" name="Exclusion Criteria" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="200">
+               <a:s>/* Exclusion Criteria */define &quot;Exclusion Criteria&quot;:
+  </a:s>
+               <a:s r="199">
+                  <a:s>(
+    </a:s>
+                  <a:s r="199">
+                     <a:s r="197">
+                        <a:s>not </a:s>
+                        <a:s r="196">
+                           <a:s>(</a:s>
+                           <a:s r="196">
+                              <a:s r="194">
+                                 <a:s>&quot;Is current smoker&quot;</a:s>
+                              </a:s>
+                              <a:s> or </a:s>
+                              <a:s r="195">
+                                 <a:s>&quot;Is former smoker who quit within past 15 years&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      or </a:s>
+                     <a:s r="198">
+                        <a:s>&quot;Has lung cancer&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  )</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="199" locator="112:3-115:3" xsi:type="Or">
+            <operand localId="197" locator="113:5-113:81" xsi:type="Not">
+               <operand localId="196" locator="113:9-113:81" xsi:type="Or">
+                  <operand localId="194" locator="113:10-113:28" name="Is current smoker" xsi:type="ExpressionRef"/>
+                  <operand localId="195" locator="113:33-113:80" name="Is former smoker who quit within past 15 years" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="198" locator="114:10-114:26" name="Has lung cancer" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="224" locator="117:1-123:13" name="Exclusion Detail" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="224">
+               <a:s>define &quot;Exclusion Detail&quot;:
+  </a:s>
+               <a:s r="223">
+                  <a:s>if </a:s>
+                  <a:s r="201">
+                     <a:s>&quot;Exclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="221">
+                     <a:s r="218">
+                        <a:s r="216">
+                           <a:s r="213">
+                              <a:s r="211">
+                                 <a:s r="207">
+                                    <a:s r="205">
+                                       <a:s r="204">
+                                          <a:s>First(</a:s>
+                                          <a:s r="203">
+                                             <a:s r="202">
+                                                <a:s>Patient</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="203">
+                                                <a:s>name</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="205">
+                                          <a:s>text</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> +
+      </a:s>
+                                    <a:s r="206">
+                                       <a:s>': Born '</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="210">
+                                    <a:s>ToString(</a:s>
+                                    <a:s r="209">
+                                       <a:s r="208">
+                                          <a:s>Patient</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="209">
+                                          <a:s>birthDate</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> +
+      </a:s>
+                              <a:s r="212">
+                                 <a:s>' (Age: '</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> + </a:s>
+                           <a:s r="215">
+                              <a:s>ToString(</a:s>
+                              <a:s r="214">
+                                 <a:s>AgeInYears()</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> +
+      </a:s>
+                        <a:s r="217">
+                           <a:s>'), Gender: '</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="220">
+                        <a:s r="219">
+                           <a:s>Patient</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="220">
+                           <a:s>gender</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s r="222">
+    else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="223" locator="118:3-123:13" xsi:type="If">
+            <condition localId="201" locator="118:6-118:25" name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="221" locator="119:10-122:36" xsi:type="Concatenate">
+               <operand localId="218" locator="119:10-122:19" xsi:type="Concatenate">
+                  <operand localId="216" locator="119:10-121:40" xsi:type="Concatenate">
+                     <operand localId="213" locator="119:10-121:15" xsi:type="Concatenate">
+                        <operand localId="211" locator="119:10-120:45" xsi:type="Concatenate">
+                           <operand localId="207" locator="119:10-120:15" xsi:type="Concatenate">
+                              <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="205" locator="119:10-119:33" path="text" xsi:type="Property">
+                                    <source localId="204" locator="119:10-119:28" xsi:type="First">
+                                       <source localId="203" locator="119:16-119:27" path="name" xsi:type="Property">
+                                          <source localId="202" locator="119:16-119:22" name="Patient" xsi:type="ExpressionRef"/>
+                                       </source>
+                                    </source>
+                                 </operand>
+                              </operand>
+                              <operand localId="206" locator="120:7-120:15" valueType="t:String" value=": Born " xsi:type="Literal"/>
+                           </operand>
+                           <operand localId="210" locator="120:19-120:45" xsi:type="ToString">
+                              <operand name="ToDate" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="209" locator="120:28-120:44" path="birthDate" xsi:type="Property">
+                                    <source localId="208" locator="120:28-120:34" name="Patient" xsi:type="ExpressionRef"/>
+                                 </operand>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="212" locator="121:7-121:15" valueType="t:String" value=" (Age: " xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="215" locator="121:19-121:40" xsi:type="ToString">
+                        <operand localId="214" locator="121:28-121:39" precision="Year" xsi:type="CalculateAge">
+                           <operand path="birthDate.value" xsi:type="Property">
+                              <source name="Patient" xsi:type="ExpressionRef"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="217" locator="122:7-122:19" valueType="t:String" value="), Gender: " xsi:type="Literal"/>
+               </operand>
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="220" locator="122:23-122:36" path="gender" xsi:type="Property">
+                     <source localId="219" locator="122:23-122:29" name="Patient" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="222" locator="123:10-123:13" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def localId="229" locator="125:1-128:11" name="Exclusion Summary" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="229">
+               <a:s>define &quot;Exclusion Summary&quot;:
+  </a:s>
+               <a:s r="228">
+                  <a:s>if </a:s>
+                  <a:s r="225">
+                     <a:s>&quot;Exclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="226">
+                     <a:s>'Patient is not currently recommended for lung cancer screening'</a:s>
+                  </a:s>
+                  <a:s r="227">
+  else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="228" locator="126:3-128:11" xsi:type="If">
+            <condition localId="225" locator="126:6-126:25" name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="226" locator="127:10-127:73" valueType="t:String" value="Patient is not currently recommended for lung cancer screening" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="227" locator="128:8-128:11" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def localId="234" locator="130:1-133:11" name="Exclusion Indicator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="234">
+               <a:s>define &quot;Exclusion Indicator&quot;:
+  </a:s>
+               <a:s r="233">
+                  <a:s>if </a:s>
+                  <a:s r="230">
+                     <a:s>&quot;Exclusion Criteria&quot;</a:s>
+                  </a:s>
+                  <a:s>
+    then </a:s>
+                  <a:s r="231">
+                     <a:s>'info'</a:s>
+                  </a:s>
+                  <a:s r="232">
+  else null</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="233" locator="131:3-133:11" xsi:type="If">
+            <condition localId="230" locator="131:6-131:25" name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+            <then localId="231" locator="132:10-132:15" valueType="t:String" value="info" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="232" locator="133:8-133:11" xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+   </statements>
+</library>

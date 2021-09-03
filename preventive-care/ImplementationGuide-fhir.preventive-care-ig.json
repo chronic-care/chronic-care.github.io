@@ -11,7 +11,7 @@
   "title": "Preventive Care Guidelines IG",
   "status": "draft",
   "experimental": false,
-  "date": "2021-04-13T02:06:34+00:00",
+  "date": "2021-09-03T16:48:06+00:00",
   "publisher": "U.S. Preventive Services Task Force (USPSTF)",
   "contact": [
     {
@@ -358,10 +358,8 @@
           }
         ],
         "reference": {
-          "reference": "Library/PreventiveCareData"
-        },
-        "name": "CQL Library - Preventive Care Shared Data Logic",
-        "description": "The Preventive Care Data logic library supports data retrieval for decision support."
+          "reference": "Library/library-PreventiveCareHooks"
+        }
       },
       {
         "extension": [
@@ -371,10 +369,8 @@
           }
         ],
         "reference": {
-          "reference": "Library/FHIRHelpers-4.0.1"
-        },
-        "name": "CQL Library - FHIR Helpers for CDS",
-        "description": "CQL Library - FHIR Helpers for CDS"
+          "reference": "Library/library-PreventiveCareSummary"
+        }
       },
       {
         "extension": [
@@ -384,10 +380,8 @@
           }
         ],
         "reference": {
-          "reference": "Library/ProstateCancerScreening"
-        },
-        "name": "CQL Library - CDS Logic for Prostate Cancer Screening and Personalized Care Plans",
-        "description": "This library contains logic to support prostate cancer screening and personalized, patient-centered care plans."
+          "reference": "Library/library-CDSConnectCommons"
+        }
       },
       {
         "extension": [
@@ -397,10 +391,8 @@
           }
         ],
         "reference": {
-          "reference": "Library/CDSConnectCommons"
-        },
-        "name": "CQL Library - Common Logic for CDS",
-        "description": "CQL Common Logic for CDS providing shared helper functions."
+          "reference": "Library/library-FHIRHelpers"
+        }
       },
       {
         "extension": [
@@ -410,10 +402,8 @@
           }
         ],
         "reference": {
-          "reference": "Library/PreventiveCareHooks"
-        },
-        "name": "CQL Library - CDS Hooks for Preventive Care Screening and Personalized Care Plans",
-        "description": "This library contains logic to support CDS Hooks for the preventive care screening and personalized, patient-centered care plans."
+          "reference": "Library/library-PreventiveCareData"
+        }
       },
       {
         "extension": [
@@ -423,10 +413,74 @@
           }
         ],
         "reference": {
-          "reference": "Library/PreventiveCareConcepts"
-        },
-        "name": "CQL Library - Preventive Care Shared Concepts and Terminology",
-        "description": "Preventive care shared concepts and terminology imported by other CQL logic libraries."
+          "reference": "Library/library-ProstateCancerSummary"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-ColonCancerScreening"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-BreastCancerScreening"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-PreventiveCareConcepts"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-FHIRCommon"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-LungCancerScreening"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Library"
+          }
+        ],
+        "reference": {
+          "reference": "Library/library-ProstateCancerScreening"
+        }
       },
       {
         "extension": [
@@ -475,9 +529,314 @@
           }
         ],
         "reference": {
-          "reference": "Questionnaire/mpc-prostate-questionnaire"
+          "reference": "Questionnaire/mpc-lung-cancer"
+        },
+        "name": "Lung Cancer Screening Questionnaire"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Questionnaire"
+          }
+        ],
+        "reference": {
+          "reference": "Questionnaire/mpc-colon-cancer"
+        },
+        "name": "Colon Cancer Screening Questionnaire"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Questionnaire"
+          }
+        ],
+        "reference": {
+          "reference": "Questionnaire/mpc-breast-cancer"
+        },
+        "name": "Breast Cancer Screening Questionnaire"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Questionnaire"
+          }
+        ],
+        "reference": {
+          "reference": "Questionnaire/mpc-prostate-cancer"
         },
         "name": "Prostate Cancer Screening Questionnaire"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.199.12.1035"
+        },
+        "name": "Chronic Liver Disease"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.199.12.1036"
+        },
+        "name": "Chronic Malnutrition"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1018"
+        },
+        "name": "Mammography"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134"
+        },
+        "name": "Unilateral Mastectomy Right"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071"
+        },
+        "name": "Unilateral Mastectomy, Unspecified Laterality"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133"
+        },
+        "name": "Unilateral Mastectomy Left"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005"
+        },
+        "name": "Alcohol and Drug Dependence Treatment"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069"
+        },
+        "name": "Status Post Left Mastectomy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068"
+        },
+        "name": "History of bilateral mastectomy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070"
+        },
+        "name": "Status Post Right Mastectomy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1011"
+        },
+        "name": "Fecal Occult Blood Test (FOBT)"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1010"
+        },
+        "name": "Flexible Sigmoidoscopy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019"
+        },
+        "name": "Total Colectomy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1039"
+        },
+        "name": "FIT DNA"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1001"
+        },
+        "name": "Malignant Neoplasm of Colon"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1038"
+        },
+        "name": "CT Colonography"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113883.3.464.1003.108.12.1020"
+        },
+        "name": "Colonoscopy"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/currentsmoker"
+        },
+        "name": "Current Smoker Status",
+        "description": "This value set indicates the current smoking status of a patient who is currently a smoker."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/us-core-observation-smokingstatus"
+        },
+        "name": "US Core Smoking Status",
+        "description": "This value set indicates the current smoking status of a patient."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/2.16.840.1.113762.1.4.1116.89"
+        },
+        "name": "Lung Cancer",
+        "description": "This value set indicates the possible ICD9/ICD10 Lung Cancer codes."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/chest-ct-proc-code"
+        },
+        "name": "Chest CT Procedure Code",
+        "description": "This value set includes CPT codes used to identify Low-dose Cest CT scans used for Lung Cancer screening at University of Utah"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/conditionclinical"
+        },
+        "name": "Condition Clinical Status",
+        "description": "Value set for Active Condition Clinical Status."
       },
       {
         "extension": [
@@ -552,6 +911,22 @@
       },
       {
         "code": "path-resource",
+        "value": "input/vocabulary/valueset/bcs"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/vocabulary/valueset/ccs"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/vocabulary/valueset/lcs"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/vocabulary/valueset/pcs"
+      },
+      {
+        "code": "path-resource",
         "value": "input/capabilities"
       },
       {
@@ -589,10 +964,6 @@
       {
         "code": "path-resource",
         "value": "input/history"
-      },
-      {
-        "code": "path-resource",
-        "value": "fsh-generated/resources"
       },
       {
         "code": "path-pages",

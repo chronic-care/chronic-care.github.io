@@ -1,0 +1,299 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113762.1.4.1116.89> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113762.1.4.1116.89"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 22 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.2\"> </a>162.2</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of main bronchus</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.3\"> </a>162.3</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of upper lobe, bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.4\"> </a>162.4</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of middle lobe, bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.5\"> </a>162.5</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of lower lobe, bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.8\"> </a>162.8</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of other parts of bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-9-cm-162.9\"> </a>162.9</td><td>http://hl7.org/fhir/sid/icd-9-cm</td><td>Malignant neoplasm of bronchus and lung, unspecified</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.00\"> </a>C34.00</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of unspecified main bronchus</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.01\"> </a>C34.01</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of right main bronchus</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.02\"> </a>C34.02</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of left main bronchus</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.10\"> </a>C34.10</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of upper lobe, unspecified bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.11\"> </a>C34.11</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of upper lobe, right bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.12\"> </a>C34.12</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of upper lobe, left bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.2\"> </a>C34.2</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of middle lobe, bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.30\"> </a>C34.30</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of lower lobe, unspecified bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.31\"> </a>C34.31</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of lower lobe, right bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.32\"> </a>C34.32</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of lower lobe, left bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.80\"> </a>C34.80</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of overlapping sites of unspecified bronchus and lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.81\"> </a>C34.81</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of overlapping sites of right bronchus and lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.82\"> </a>C34.82</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of overlapping sites of left bronchus and lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.90\"> </a>C34.90</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of unspecified part of unspecified bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.91\"> </a>C34.91</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of unspecified part of right bronchus or lung</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-sid-icd-10-C34.92\"> </a>C34.92</td><td>http://hl7.org/fhir/sid/icd-10</td><td>Malignant neoplasm of unspecified part of left bronchus or lung</td><td/></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.89"];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "LungCancer"];
+  fhir:ValueSet.title [ fhir:value "Lung Cancer"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-09-03T16:48:06+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "This value set indicates the possible ICD9/ICD10 Lung Cancer codes."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.compose.include.version [ fhir:value "2013" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.2" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of main bronchus" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.3" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of upper lobe, bronchus or lung" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.4" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of middle lobe, bronchus or lung" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.5" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of lower lobe, bronchus or lung" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.8" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of other parts of bronchus or lung" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "162.9" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of bronchus and lung, unspecified" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.compose.include.version [ fhir:value "2020" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.00" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of unspecified main bronchus" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.01" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of right main bronchus" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.02" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of left main bronchus" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.10" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of upper lobe, unspecified bronchus or lung" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.11" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of upper lobe, right bronchus or lung" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.12" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of upper lobe, left bronchus or lung" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.2" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of middle lobe, bronchus or lung" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.30" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of lower lobe, unspecified bronchus or lung" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.31" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of lower lobe, right bronchus or lung" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.32" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of lower lobe, left bronchus or lung" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.80" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of overlapping sites of unspecified bronchus and lung" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.81" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of overlapping sites of right bronchus and lung" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.82" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of overlapping sites of left bronchus and lung" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.90" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of unspecified part of unspecified bronchus or lung" ]
+       ], [
+         fhir:index 14;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.91" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of unspecified part of right bronchus or lung" ]
+       ], [
+         fhir:index 15;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C34.92" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malignant neoplasm of unspecified part of left bronchus or lung" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-06-04T14:54:23-06:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.2" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of main bronchus" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.3" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of upper lobe, bronchus or lung" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.4" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of middle lobe, bronchus or lung" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.5" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of lower lobe, bronchus or lung" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.8" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of other parts of bronchus or lung" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-9-cm" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2013" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "162.9" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of bronchus and lung, unspecified" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.00" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of unspecified main bronchus" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.01" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of right main bronchus" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.02" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of left main bronchus" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.10" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of upper lobe, unspecified bronchus or lung" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.11" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of upper lobe, right bronchus or lung" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.12" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of upper lobe, left bronchus or lung" ]
+     ], [
+       fhir:index 12;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.2" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of middle lobe, bronchus or lung" ]
+     ], [
+       fhir:index 13;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.30" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of lower lobe, unspecified bronchus or lung" ]
+     ], [
+       fhir:index 14;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.31" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of lower lobe, right bronchus or lung" ]
+     ], [
+       fhir:index 15;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.32" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of lower lobe, left bronchus or lung" ]
+     ], [
+       fhir:index 16;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.80" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of overlapping sites of unspecified bronchus and lung" ]
+     ], [
+       fhir:index 17;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.81" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of overlapping sites of right bronchus and lung" ]
+     ], [
+       fhir:index 18;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.82" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of overlapping sites of left bronchus and lung" ]
+     ], [
+       fhir:index 19;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.90" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of unspecified part of unspecified bronchus or lung" ]
+     ], [
+       fhir:index 20;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.91" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of unspecified part of right bronchus or lung" ]
+     ], [
+       fhir:index 21;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "C34.92" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malignant neoplasm of unspecified part of left bronchus or lung" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113762.1.4.1116.89.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

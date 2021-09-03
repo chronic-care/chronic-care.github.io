@@ -1,0 +1,806 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.PREVENTIVE-CARE-IG\Breast Cancer Screening Questionnaire - XML Representation - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.3"}
+    h3,h4,h5,h6{--heading-prefix:"6.3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Preventive Care Guidelines IG</span><br/>1.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Background</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="spec.html">Detailed Specification</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Breast Cancer Screening Questionnaire</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Preventive Care Guidelines IG - Local Development build (v1.0.0). See the <a href="http://fhir.org/guides/preventive-care/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Questionnaire-mpc-breast-cancer.html">Narrative Content</a>
+  </li>
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Questionnaire-mpc-breast-cancer.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Breast Cancer Screening Questionnaire - XML Representation</h2>
+
+<p><a href="Questionnaire-mpc-breast-cancer.xml" no-download="true">Raw xml</a> | <a href="Questionnaire-mpc-breast-cancer.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml"><code>
+
+&lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire">Questionnaire</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;mpc-breast-cancer&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.versionId">versionId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;0.1.0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablequestionnaire&quot;/&gt;
+  &lt;/meta&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;b&gt;Structure&lt;/b&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;&quot;&gt;&lt;tr style=&quot;border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top&quot;&gt;&lt;th style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;The linkId for the item&quot;&gt;LinkId&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Text for the item&quot;&gt;Text&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Minimum and Maximum # of times the the itemcan appear in the instance&quot;&gt;Cardinality&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;The type of the item&quot;&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Additional information about the item&quot;&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=&quot;float: right&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Legend for this format&quot;&gt;&lt;img src=&quot;http://hl7.org/fhir/R4/help16.png&quot; alt=&quot;doco&quot; style=&quot;background-color: inherit&quot;/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon_q_root.gif&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;QuestionnaireRoot&quot; class=&quot;hierarchy&quot;/&gt; &lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Questionnaire&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-display.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Display&quot; class=&quot;hierarchy&quot;/&gt; learn-more-benefits&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Learn More. &amp;lt;h3&amp;gt;The Benefits&amp;lt;/h3&amp;gt;What Tests Are Used to Screen for Breast Cancer?&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Mammograms can help find breast cancer early.  You have a better chance of surviving breast cancer and will have fewer complications if you find it early.  Because of the increased use of mammograms and better treatments, more women survive breast cancer today.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women get a mammogram every two years from age 50 to 74 years, we will prevent 8 women from dying from breast cancer.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women get a mammogram every two years from age 50 to 74 years, we will prevent 9 to 10 women from dying from breast cancer.&amp;lt;/li&amp;gt;&amp;lt;ul&amp;gt;.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display&quot;&gt;display&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-display.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Display&quot; class=&quot;hierarchy&quot;/&gt; learn-more-harms&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Learn More. &amp;lt;h3&amp;gt;The Harms&amp;lt;/h3&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;The main harm from a mammogram is a “false-positive result.  This means the mammogram is abnormal but there is no cancer.  About half of all women will have a false positive result at some time in their life if they opt for screening every 2 years between the ages of 50 and 74 years.  This can cause anxiety and unnecessary follow-up tests.  Sometimes these tests can be more invasive or even hurt you.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women choose to start screening at age 40 years, instead of age 50 years, there will be an additional 576 false positive mammograms (some women will have more than one false positive) and 67 benign biopsies.&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display&quot;&gt;display&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-display.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Display&quot; class=&quot;hierarchy&quot;/&gt; learn-more-video&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Learn More. Mayo Clinic Minute: What women need to know about mammograms. &amp;lt;br/&amp;gt; &amp;lt;br/&amp;gt; &amp;lt;a id=&amp;quot;youtube&amp;quot; value=&amp;quot;Sz1YL4EX2pI&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display&quot;&gt;display&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Next Steps. What do you want to do next?&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;1..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.1&quot;&gt;3 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-group.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Group&quot; class=&quot;hierarchy&quot;/&gt; 2&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Next Steps. How do you feel about your decision?&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group&quot;&gt;group&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 2.1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;I know the benefits of getting a mammogram now.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.2.1&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 2.2&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;I know the risks of getting a mammogram now.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.2.2&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 2.3&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;I am clear about which benefits and risks matter most to me.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.2.3&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 2.4&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;I have enough support and advice to make a decision about wo start getting mammograms.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.2.4&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin_end.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 2.5&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;I feel sure about the best choice for me.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.2.5&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-boolean.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Boolean&quot; class=&quot;hierarchy&quot;/&gt; 3&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Next Steps. Would you like to discuss breast cancer screening at your next appointment? MyPreventiveCare can let your provider know what you want.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;1..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-boolean&quot;&gt;boolean&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-group.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Group&quot; class=&quot;hierarchy&quot;/&gt; 15&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Feedback. Please indicate your level of agreement with the following statement:&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group&quot;&gt;group&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vline.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin_end.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-coding.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Coding&quot; class=&quot;hierarchy&quot;/&gt; 15.1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Using the MyPreventiveCare tool has helped me begin preparing for a conversation with my provider about making health decisions.&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice&quot;&gt;choice&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Options: &lt;a href=&quot;#opt-item.15.1&quot;&gt;5 options&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin_end.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon-q-text.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Text&quot; class=&quot;hierarchy&quot;/&gt; 16&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;Feedback. Do you have any other feedback or thoughts to share on your use of MyPreventiveCare?&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;0..1&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/codesystem-item-type.html#item-type-text&quot;&gt;text&lt;/a&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;/&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;5&quot; class=&quot;hierarchy&quot;&gt;&lt;br/&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Legend for this format&quot;&gt;&lt;img src=&quot;http://hl7.org/fhir/R4/help16.png&quot; alt=&quot;doco&quot; style=&quot;background-color: inherit&quot;/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;p&gt;&lt;b&gt;Option Sets&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;opt-item.1&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 1&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes#more-thought (&amp;quot;I want to give it more thought&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes#get-test (&amp;quot;I want to get a mammogram now&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes#do-not-want-test (&amp;quot;I want to wait to get a mammogram when I am older&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.2.1&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2.1&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Neutral&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Agree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly agree&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.2.2&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2.2&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Neutral&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Agree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly agree&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.2.3&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2.3&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Neutral&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Agree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly agree&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.2.4&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2.4&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Neutral&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Agree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly agree&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.2.5&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 2.5&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Neutral&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Agree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;&lt;a href=&quot;http://terminology.hl7.org/2.1.0/CodeSystem-v3-loinc.html&quot;&gt;LOINC&lt;/a&gt;: x (&amp;quot;Strongly agree&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;a name=&quot;opt-item.15.1&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Answer options for 15.1&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;https://loinc.org/LL1606-4/#LA15238-1 (&amp;quot;Disagree a lot&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;https://loinc.org/LL1606-4/#LA15239-9 (&amp;quot;Disagree a little&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;https://loinc.org/LL1606-4/#LA15240-7 (&amp;quot;Neither agree nor disagree&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;https://loinc.org/LL1606-4/#LA15241-5 (&amp;quot;Agree a little&amp;quot;)&lt;/li&gt;&lt;li style=&quot;font-size: 11px&quot;&gt;https://loinc.org/LL1606-4/#LA15242-3 (&amp;quot;Agree a lot&amp;quot;)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;shareable&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;publishable&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;narrative&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;computable&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;structured&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;executable&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.extension">extension</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel&quot;&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;executable&quot;/&gt;
+  &lt;/extension&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.url">url</a>
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/Questionnaire/mpc-breast-cancer&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.0.0&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Breast Cancer Screening Questionnaire&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2021-09-03T16:48:06+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;U.S. Preventive Services Task Force (USPSTF)&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;https://www.uspreventiveservicestaskforce.org/uspstf/&quot;/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://unstats.un.org/unsd/methods/m49/m49.htm&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;001&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;learn-more-benefits&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Learn More&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;&amp;lt;h3&amp;gt;The Benefits&amp;lt;/h3&amp;gt;What Tests Are Used to Screen for Breast Cancer?&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Mammograms can help find breast cancer early.  You have a better chance of surviving breast cancer and will have fewer complications if you find it early.  Because of the increased use of mammograms and better treatments, more women survive breast cancer today.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women get a mammogram every two years from age 50 to 74 years, we will prevent 8 women from dying from breast cancer.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women get a mammogram every two years from age 50 to 74 years, we will prevent 9 to 10 women from dying from breast cancer.&amp;lt;/li&amp;gt;&amp;lt;ul&amp;gt;.&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;display&quot;/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;learn-more-harms&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Learn More&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;&amp;lt;h3&amp;gt;The Harms&amp;lt;/h3&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;The main harm from a mammogram is a “false-positive result.  This means the mammogram is abnormal but there is no cancer.  About half of all women will have a false positive result at some time in their life if they opt for screening every 2 years between the ages of 50 and 74 years.  This can cause anxiety and unnecessary follow-up tests.  Sometimes these tests can be more invasive or even hurt you.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If 1,000 women choose to start screening at age 40 years, instead of age 50 years, there will be an additional 576 false positive mammograms (some women will have more than one false positive) and 67 benign biopsies.&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;.&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;display&quot;/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;learn-more-video&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Learn More&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Mayo Clinic Minute: What women need to know about mammograms. &amp;lt;br/&amp;gt; &amp;lt;br/&amp;gt; &amp;lt;a id=&amp;quot;youtube&amp;quot; value=&amp;quot;Sz1YL4EX2pI&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;display&quot;/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a>
+                      <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://fhir.org/guides/preventive-care/ValueSet/next-step-types&quot;/&gt;
+    &lt;/extension&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mpc-do-next&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;What do you want to do next?&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Next Steps&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;What do you want to do next?&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;more-thought&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I want to give it more thought&quot;/&gt;
+      &lt;/valueCoding&gt;
+    &lt;/answerOption&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;get-test&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I want to get a mammogram now&quot;/&gt;
+      &lt;/valueCoding&gt;
+    &lt;/answerOption&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;do-not-want-test&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I want to wait to get a mammogram when I am older&quot;/&gt;
+      &lt;/valueCoding&gt;
+    &lt;/answerOption&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;next-step&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;What do you want to do next?&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Next Steps&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;How do you feel about your decision?&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;group&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL2949-7&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.1&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;mpc codesystem&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Know benefits&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I know the benefits of getting a mammogram now.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neutral&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL2949-7&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.2&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;mpc codesystem&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Know risks&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I know the risks of getting a mammogram now.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neutral&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL2949-7&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.3&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;mpc codesystem&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Clear on what matters to me&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I am clear about which benefits and risks matter most to me.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neutral&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL2949-7&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.4&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;mpc codesystem&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Have support&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I have enough support and advice to make a decision about wo start getting mammograms.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neutral&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL2949-7&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.5&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;mpc codesystem&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Sure about choice&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;I feel sure about the best choice for me.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neutral&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;x&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Strongly agree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://example.org/questionnaires&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Discuss at next appointment&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Next Steps&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Would you like to discuss breast cancer screening at your next appointment? MyPreventiveCare can let your provider know what you want.&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;boolean&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;15&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mpc-feedback&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Feedback about your use of MyPreventiveCare&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Feedback&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Please indicate your level of agreement with the following statement:&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;group&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.item">item</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCodeableConcept</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/questionnaire-item-control&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;drop-down&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+          &lt;/coding&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Drop down&quot;/&gt;
+        &lt;/valueCodeableConcept&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.extension">extension</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-answerValueSetSource&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCanonical</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://loinc.org/vs/LL1606-4&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;15.1&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mpq-1063&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Please indicate your level of agreement with the following statement: Using the MyPreventiveCare tool has helped me begin preparing for a conversation with my provider about making health decisions.&quot;/&gt;
+      &lt;/code&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Using the MyPreventiveCare tool has helped me begin preparing for a conversation with my provider about making health decisions.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;choice&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://loinc.org/LL1606-4/&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;LA15238-1&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree a lot&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://loinc.org/LL1606-4/&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;LA15239-9&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Disagree a little&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://loinc.org/LL1606-4/&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;LA15240-7&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neither agree nor disagree&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://loinc.org/LL1606-4/&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;LA15241-5&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree a little&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption">answerOption</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.answerOption.value[x]">valueCoding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://loinc.org/LL1606-4/&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;LA15242-3&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Agree a lot&quot;/&gt;
+        &lt;/valueCoding&gt;
+      &lt;/answerOption&gt;
+    &lt;/item&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;16&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mpq-1064&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Do you have any other feedback or thoughts to share on your use of MyPreventiveCare?&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.code">code</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/preventive-care/CodeSystem/mpc-questionnaire-codes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;mpc-feedback&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Feedback on your use of MyPreventiveCare&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.prefix">prefix</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Feedback&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.text">text</a>
+          <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Do you have any other feedback or thoughts to share on your use of MyPreventiveCare?&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/questionnaire.html#Questionnaire.item.required">required</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;/item&gt;
+&lt;/Questionnaire&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="https://www.uspreventiveservicestaskforce.org/uspstf/">U.S. Preventive Services Task Force (USPSTF)</a>.  Package fhir.preventive-care-ig#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Sep 3, 2021 16:48+0000">2021-09-03</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

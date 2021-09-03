@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/conditionclinical> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "conditionclinical"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ], [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 1;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 3 concepts</p><p>All codes in this table are from the system <a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-condition-clinical.html\"><code>http://terminology.hl7.org/CodeSystem/condition-clinical</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---terminology.hl7.org-CodeSystem-condition-clinical-active\"> </a><a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-condition-clinical.html#condition-clinical-active\">active</a></td><td>Active</td><td>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---terminology.hl7.org-CodeSystem-condition-clinical-recurrence\"> </a><a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-condition-clinical.html#condition-clinical-recurrence\">recurrence</a></td><td>Recurrence</td><td>The subject is experiencing a reoccurence or repeating of a previously resolved condition or situation, e.g. urinary tract infection, food insecurity.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---terminology.hl7.org-CodeSystem-condition-clinical-relapse\"> </a><a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-condition-clinical.html#condition-clinical-relapse\">relapse</a></td><td>Relapse</td><td>The subject is experiencing a return of a condition or situation after a period of improvement or remission, e.g. relapse of cancer, alcoholism.</td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/utah-edu/lcs-cds/ValueSet/conditionclinical"];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "ConditionClinical"];
+  fhir:ValueSet.title [ fhir:value "Condition Clinical Status"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2020-03-21T00:00:00+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Value set for Active Condition Clinical Status."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "active" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Active" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "recurrence" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Recurrence" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "relapse" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Relapse" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-06-04T14:54:23-06:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "active" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Active" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "recurrence" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Recurrence" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "relapse" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Relapse" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/conditionclinical.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

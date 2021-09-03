@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1133"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 9 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---www.cms.gov-Medicare-Coding-ICD10-0HTU0ZZ\"> </a>0HTU0ZZ</td><td>http://www.cms.gov/Medicare/Coding/ICD10</td><td>Resection of Left Breast, Open Approach</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-12275221000119100\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=12275221000119100\">12275221000119100</a></td><td>http://snomed.info/sct</td><td>Postmastectomy lymphedema syndrome of left upper limb (disorder)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-137671000119105\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=137671000119105\">137671000119105</a></td><td>http://snomed.info/sct</td><td>History of prophylactic mastectomy of left breast (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428571003\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428571003\">428571003</a></td><td>http://snomed.info/sct</td><td>Mastectomy of left breast (procedure)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-429009003\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=429009003\">429009003</a></td><td>http://snomed.info/sct</td><td>History of left mastectomy (situation)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-451211000124109\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=451211000124109\">451211000124109</a></td><td>http://snomed.info/sct</td><td>Prophylactic mastectomy of left breast (procedure)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-726429001\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=726429001\">726429001</a></td><td>http://snomed.info/sct</td><td>Radical mastectomy of left breast (procedure)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-726435001\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=726435001\">726435001</a></td><td>http://snomed.info/sct</td><td>Subcutaneous mastectomy of left breast (procedure)</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-726437009\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=726437009\">726437009</a></td><td>http://snomed.info/sct</td><td>Modified radical mastectomy of left breast (procedure)</td><td/></tr></table></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "2.16.840.1.113883.3.464.1003.198.12.1133" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "UnilateralMastectomyLeft"];
+  fhir:ValueSet.title [ fhir:value "Unilateral Mastectomy Left"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:ValueSet.date [ fhir:value "2021-09-03T16:48:06+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.identifier [ fhir:value "20200507" ];
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-01-14T20:59:46-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://www.cms.gov/Medicare/Coding/ICD10" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2020" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "0HTU0ZZ" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Resection of Left Breast, Open Approach" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "12275221000119100" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Postmastectomy lymphedema syndrome of left upper limb (disorder)" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "137671000119105" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "History of prophylactic mastectomy of left breast (situation)" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "428571003" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Mastectomy of left breast (procedure)" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "429009003" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "History of left mastectomy (situation)" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "451211000124109" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Prophylactic mastectomy of left breast (procedure)" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "726429001" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Radical mastectomy of left breast (procedure)" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "726435001" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Subcutaneous mastectomy of left breast (procedure)" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.version [ fhir:value "2019-09" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "726437009" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Modified radical mastectomy of left breast (procedure)" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

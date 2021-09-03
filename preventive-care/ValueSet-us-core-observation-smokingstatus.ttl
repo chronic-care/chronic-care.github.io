@@ -1,0 +1,151 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/us-core-observation-smokingstatus> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "us-core-observation-smokingstatus"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 8 concepts</p><p>All codes in this table are from the system <a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-snomed-CT.html\"><code>http://snomed.info/sct</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-449868002\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=449868002\">449868002</a></td><td>Current every day smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428041000124106\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428041000124106\">428041000124106</a></td><td>Current some day smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-8517006\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=8517006\">8517006</a></td><td>Former smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-266919005\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=266919005\">266919005</a></td><td>Never smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-77176002\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=77176002\">77176002</a></td><td>Smoker, current status unknown</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-266927001\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=266927001\">266927001</a></td><td>Unknown if ever smoked</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428071000124103\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428071000124103\">428071000124103</a></td><td>Current Heavy tobacco smoker</td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---snomed.info-sct-428061000124105\"> </a><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=428061000124105\">428061000124105</a></td><td>Current Light tobacco smoker</td><td/></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smokingstatus"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:2.16.840.1.113883.4.642.2.602" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "1.0.0"];
+  fhir:ValueSet.name [ fhir:value "USCoreSmokingStatus"];
+  fhir:ValueSet.title [ fhir:value "US Core Smoking Status"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2019-05-21T00:00:00+10:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "U.S. Preventive Services Task Force (USPSTF)"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.uspreventiveservicestaskforce.org/uspstf/" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "This value set indicates the current smoking status of a patient."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.copyright [ fhir:value "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "449868002" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Current every day smoker" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "428041000124106" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Current some day smoker" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "8517006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Former smoker" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "266919005" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Never smoker" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77176002" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Smoker, current status unknown" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "266927001" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Unknown if ever smoked" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "428071000124103" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Current Heavy tobacco smoker" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "428061000124105" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Current Light tobacco smoker" ]
+       ]
+     ]
+  ];
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-06-04T14:54:23-06:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "449868002" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Current every day smoker" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "428041000124106" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Current some day smoker" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "8517006" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Former smoker" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "266919005" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Never smoker" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "77176002" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Smoker, current status unknown" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "266927001" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unknown if ever smoked" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "428071000124103" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Current Heavy tobacco smoker" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "428061000124105" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Current Light tobacco smoker" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/preventive-care/ValueSet/us-core-observation-smokingstatus.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
