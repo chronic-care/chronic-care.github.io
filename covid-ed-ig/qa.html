@@ -6,6 +6,8 @@
   <link href="fhir.css" rel="stylesheet"/>
   <style>
     span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+    span.toggle  { background-color: #e6f2ff; color: black; border: solid 1px #0056b3; padding: 2px; font-size: 10px }
+    span.toggle  { font-size: 10px }
   </style>
   <script>
     function flip(id) {
@@ -19,13 +21,24 @@
         span.innerHTML = 'Show Reasoning';
       }
     }
+    function toggle(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Validation Information') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Validation Information';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Validation Information';
+      }
+    }
   </script>
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for COVID19EDSeverityClassification</h1>
- <p>Generated Tue Aug 24 21:19:53 UTC 2021, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.min.html">Errors Only</a></p>
+ <p>Generated Mon Oct 18 15:41:53 UTC 2021, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
- <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.77</span></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.82</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = fhir.acep.covid19-ed-r4, Canonical = http://fhir.org/guides/acep</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
  <tr><td>Version Check:</td><td>0.1.0: <span stlye="color: marron; font-weight: bold">No entry in the package-list.json file for this version</span></td></tr>
@@ -191,13 +204,32 @@
 </table>
 <hr/>
 <a name="internal"> </a>
-<h2><a href="">n/a</a></h2>
+<h2><a href="">n/a</a> <span id="sv" class="toggle" onclick="toggle('v')">Show Validation Information</span> <span class="vcount" onclick="toggle('v')"></span></h2>
+ <div style="border: 1px grey solid; display: none" id="v"></div>
  <table class="grid">
+   <tr style="background-color: #ffcccc">
+     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
    <tr style="background-color: #ffcccc">
      <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
      <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
@@ -212,39 +244,22 @@
      <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffebcc">
-     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffebcc">
-     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffebcc">
-     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffebcc">
-     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
      <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_contentig"> </a>
-<h2><a href="ImplementationGuide-fhir.acep.covid19-ed-r4.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig.xml</a></h2>
+<h2><a href="ImplementationGuide-fhir.acep.covid19-ed-r4.html">input/contentig.xml</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(0)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi1"></div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -252,9 +267,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-CDSConnectCommons"> </a>
-<h2><a href="Library-CDSConnectCommons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-CDSConnectCommons.html">input/resources/library/library-CDSConnectCommons.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(5)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -277,9 +292,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19Concepts"> </a>
-<h2><a href="Library-COVID19Concepts.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19Concepts.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-COVID19Concepts.html">input/resources/library/library-COVID19Concepts.json</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(5)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi3"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -296,9 +311,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptAssessment"> </a>
-<h2><a href="Library-COVID19EmergencyDeptAssessment.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-COVID19EmergencyDeptAssessment.html">input/resources/library/library-COVID19EmergencyDeptAssessment.json</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(5)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi4"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -351,9 +366,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptHooks"> </a>
-<h2><a href="Library-COVID19EmergencyDeptHooks.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptHooks.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-COVID19EmergencyDeptHooks.html">input/resources/library/library-COVID19EmergencyDeptHooks.json</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -367,9 +382,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-COVID19EmergencyDeptSummary"> </a>
-<h2><a href="Library-COVID19EmergencyDeptSummary.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptSummary.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-COVID19EmergencyDeptSummary.html">input/resources/library/library-COVID19EmergencyDeptSummary.json</a> <span id="svi6" class="toggle" onclick="toggle('vi6')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi6')">(5)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi6"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -419,9 +434,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_library_library-FHIRHelpers"> </a>
-<h2><a href="Library-FHIRHelpers-4.0.1.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers.json</a></h2>
- <ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
-
+<h2><a href="Library-FHIRHelpers-4.0.1.html">input/resources/library/library-FHIRHelpers.json</a> <span id="svi7" class="toggle" onclick="toggle('vi7')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi7')">(5)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi7"><ul style="font-size: 7px"><li>Library: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/library.html">Library</a>, hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-shareablelibrary.html">CPGShareableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-computablelibrary.html">CPGComputableLibrary</a> (per meta), hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-publishablelibrary.html">CPGPublishableLibrary</a> (per meta) and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablelibrary.html">CPGExecutableLibrary</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -441,9 +456,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_resources_plandefinition_plandefinition-COVID19EmergencyDeptRecommendation"> </a>
-<h2><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></h2>
- <ul style="font-size: 7px"><li>PlanDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/plandefinition.html">PlanDefinition</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-recommendationdefinition.html">CPGRecommendationDefinition</a> (per meta)</li></ul>
-
+<h2><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a> <span id="svi8" class="toggle" onclick="toggle('vi8')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi8')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi8"><ul style="font-size: 7px"><li>PlanDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/plandefinition.html">PlanDefinition</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-recommendationdefinition.html">CPGRecommendationDefinition</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -463,9 +478,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-cancer"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-cancer.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cancer.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-cancer.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cancer.json</a> <span id="svi9" class="toggle" onclick="toggle('vi9')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi9')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi9"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -476,9 +491,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-cardiovascular"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-cardiovascular.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cardiovascular.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-cardiovascular.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cardiovascular.json</a> <span id="svi10" class="toggle" onclick="toggle('vi10')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi10')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi10"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -486,9 +501,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-downs-syndrome-icd10"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-downs-syndrome-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-downs-syndrome-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-icd10.json</a> <span id="svi11" class="toggle" onclick="toggle('vi11')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi11')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi11"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -499,9 +514,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-downs-syndrome-snomed"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-downs-syndrome-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-downs-syndrome-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-snomed.json</a> <span id="svi12" class="toggle" onclick="toggle('vi12')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi12')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi12"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -509,9 +524,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-immunosuppression-icd10"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-immunosuppression-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-immunosuppression-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-icd10.json</a> <span id="svi13" class="toggle" onclick="toggle('vi13')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi13')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi13"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -522,9 +537,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-immunosuppression-snomed"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-immunosuppression-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-immunosuppression-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-snomed.json</a> <span id="svi14" class="toggle" onclick="toggle('vi14')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi14')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi14"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -535,9 +550,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-obstructive-sleep-apnea-icd10"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-icd10.json</a> <span id="svi15" class="toggle" onclick="toggle('vi15')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi15')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi15"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -548,9 +563,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-obstructive-sleep-apnea-snomed"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-snomed.json</a> <span id="svi16" class="toggle" onclick="toggle('vi16')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi16')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi16"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -558,9 +573,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-renal-disease"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-renal-disease.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal-disease.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-renal-disease.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal-disease.json</a> <span id="svi17" class="toggle" onclick="toggle('vi17')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi17')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi17"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -571,9 +586,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-respiratory"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-respiratory.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-respiratory.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-respiratory.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-respiratory.json</a> <span id="svi18" class="toggle" onclick="toggle('vi18')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi18')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi18"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -581,9 +596,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-steroid-usage-icd10"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-steroid-usage-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-steroid-usage-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-icd10.json</a> <span id="svi19" class="toggle" onclick="toggle('vi19')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi19')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi19"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -594,9 +609,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-risk-steroid-usage-snomed"> </a>
-<h2><a href="ValueSet-covid-19-condition-risk-steroid-usage-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-risk-steroid-usage-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-snomed.json</a> <span id="svi20" class="toggle" onclick="toggle('vi20')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi20')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi20"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -607,9 +622,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-condition-vital-blood-pressure"> </a>
-<h2><a href="ValueSet-covid-19-condition-vital-blood-pressure.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-covid-19-condition-vital-blood-pressure.html">input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure.json</a> <span id="svi21" class="toggle" onclick="toggle('vi21')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi21')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi21"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -620,9 +635,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-alt"> </a>
-<h2><a href="ValueSet-covid-19-lab-alt.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-alt.html">input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a> <span id="svi22" class="toggle" onclick="toggle('vi22')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi22')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi22"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -636,9 +651,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-ast"> </a>
-<h2><a href="ValueSet-covid-19-lab-ast.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-ast.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a> <span id="svi23" class="toggle" onclick="toggle('vi23')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi23')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi23"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -652,9 +667,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-creatinine"> </a>
-<h2><a href="ValueSet-covid-19-lab-creatinine.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-creatinine.html">input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a> <span id="svi24" class="toggle" onclick="toggle('vi24')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi24')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi24"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -668,9 +683,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-crp"> </a>
-<h2><a href="ValueSet-covid-19-lab-crp.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-crp.html">input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a> <span id="svi25" class="toggle" onclick="toggle('vi25')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi25')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi25"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -684,9 +699,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-ddimer"> </a>
-<h2><a href="ValueSet-covid-19-lab-ddimer.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-ddimer.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a> <span id="svi26" class="toggle" onclick="toggle('vi26')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi26')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi26"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -700,9 +715,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-ferritin"> </a>
-<h2><a href="ValueSet-covid-19-lab-ferritin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-ferritin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a> <span id="svi27" class="toggle" onclick="toggle('vi27')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi27')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi27"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -716,9 +731,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-ldh"> </a>
-<h2><a href="ValueSet-covid-19-lab-ldh.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-ldh.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a> <span id="svi28" class="toggle" onclick="toggle('vi28')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi28')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi28"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -732,9 +747,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-leukocyte"> </a>
-<h2><a href="ValueSet-covid-19-lab-leukocyte.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-leukocyte.html">input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a> <span id="svi29" class="toggle" onclick="toggle('vi29')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi29')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi29"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -748,9 +763,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-lymphocytes"> </a>
-<h2><a href="ValueSet-covid-19-lab-lymphocytes.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-lymphocytes.html">input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a> <span id="svi30" class="toggle" onclick="toggle('vi30')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi30')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi30"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -764,9 +779,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-neutrophils"> </a>
-<h2><a href="ValueSet-covid-19-lab-neutrophils.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-neutrophils.html">input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a> <span id="svi31" class="toggle" onclick="toggle('vi31')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi31')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi31"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -780,9 +795,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-pao2fio2"> </a>
-<h2><a href="ValueSet-covid-19-lab-pao2fio2.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-pao2fio2.html">input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a> <span id="svi32" class="toggle" onclick="toggle('vi32')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi32')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi32"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -796,9 +811,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-platelets"> </a>
-<h2><a href="ValueSet-covid-19-lab-platelets.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-platelets.html">input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a> <span id="svi33" class="toggle" onclick="toggle('vi33')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi33')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi33"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -812,9 +827,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-lab-troponin"> </a>
-<h2><a href="ValueSet-covid-19-lab-troponin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-lab-troponin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a> <span id="svi34" class="toggle" onclick="toggle('vi34')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi34')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi34"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -828,9 +843,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-covid-19-obs-alertness"> </a>
-<h2><a href="ValueSet-covid-19-obs-alertness.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-covid-19-obs-alertness.html">input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a> <span id="svi35" class="toggle" onclick="toggle('vi35')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi35')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi35"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -850,9 +865,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-cancer-icd10"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3028.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3028.html">input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json</a> <span id="svi36" class="toggle" onclick="toggle('vi36')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi36')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi36"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -864,14 +879,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-cancer-snomed"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6048.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6048.html">input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json</a> <span id="svi37" class="toggle" onclick="toggle('vi37')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi37')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi37"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -883,14 +898,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-ckd-icd10"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3102.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3102.html">input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json</a> <span id="svi38" class="toggle" onclick="toggle('vi38')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi38')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi38"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -902,14 +917,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-ckd-snomed"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6064.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6064.html">input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json</a> <span id="svi39" class="toggle" onclick="toggle('vi39')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi39')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi39"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -921,14 +936,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-diabetes-icd10"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3153.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3153.html">input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json</a> <span id="svi40" class="toggle" onclick="toggle('vi40')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi40')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi40"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -940,14 +955,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-diabetes-snomed"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6100.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6100.html">input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json</a> <span id="svi41" class="toggle" onclick="toggle('vi41')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi41')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi41"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -959,14 +974,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-hypertension-icd10"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3174.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3174.html">input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json</a> <span id="svi42" class="toggle" onclick="toggle('vi42')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi42')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi42"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -978,14 +993,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-hypertension-snomed"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6152.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6152.html">input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json</a> <span id="svi43" class="toggle" onclick="toggle('vi43')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi43')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi43"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -997,14 +1012,14 @@
      <td><b>ValueSet</b></td><td><b>warning</b></td><td title="vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>vsd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-obesity-icd10"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3091.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3091.html">input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json</a> <span id="svi44" class="toggle" onclick="toggle('vi44')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi44')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi44"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -1013,14 +1028,14 @@
      <td><b>ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091')</b></td><td><b>error</b></td><td title="RESOURCE_CANONICAL_MISMATCH"><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091)</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-vsac-covid19-obesity-snomed"> </a>
-<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6203.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6203.html">input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json</a> <span id="svi45" class="toggle" onclick="toggle('vi45')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi45')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi45"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -1029,14 +1044,14 @@
      <td><b>ValueSet.where(url = 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203')</b></td><td><b>error</b></td><td title="RESOURCE_CANONICAL_MISMATCH"><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203)</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203</b></td>
+     <td><b>input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed</b></td><td><b>error</b></td><td title=""><b>URL Mismatch http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203 vs http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_home_runner_work_covid-ed-ig_covid-ed-ig_input_vocabulary_ValueSet_valueset-who-performance"> </a>
-<h2><a href="ValueSet-who-performance-status.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
-
+<h2><a href="ValueSet-who-performance-status.html">input/vocabulary/ValueSet/valueset-who-performance.json</a> <span id="svi46" class="toggle" onclick="toggle('vi46')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi46')">(2)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi46"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a> and hl7.fhir.uv.cpg.<a href="https://build.fhir.org/ig/HL7/cqf-recommendations//StructureDefinition-cpg-executablevalueset.html">CPGExecutableValueSet</a> (per meta)</li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -1068,34 +1083,34 @@
 <h2>RESOURCE_CANONICAL_MISMATCH</h2>
  <table class="grid">
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3028.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3028.html">input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6048.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6048.html">input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-cancer-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3102.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3102.html">input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6064.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6064.html">input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-ckd-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3153.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3153.html">input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6100.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6100.html">input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-diabetes-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3174.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3174.html">input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6152.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6152.html">input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-hypertension-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3091.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.3091.html">input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-icd10.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6203.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203)</b></td>
+     <td><a href="ValueSet-2.16.840.1.113883.3.3616.200.110.102.6203.html">input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json</a></td><td><b>Conformance resource /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-vsac-covid19-obesity-snomed.json - the canonical URL (http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203) does not match the URL (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6203)</b></td>
    </tr>
 </table>
 <hr/>
@@ -1103,28 +1118,28 @@
 <h2>TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE</h2>
  <table class="grid">
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-CDSConnectCommons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+     <td><a href="Library-CDSConnectCommons.html">input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-CDSConnectCommons.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+     <td><a href="Library-CDSConnectCommons.html">input/resources/library/library-CDSConnectCommons.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-COVID19EmergencyDeptAssessment.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+     <td><a href="Library-COVID19EmergencyDeptAssessment.html">input/resources/library/library-COVID19EmergencyDeptAssessment.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-COVID19EmergencyDeptAssessment.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptAssessment.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+     <td><a href="Library-COVID19EmergencyDeptAssessment.html">input/resources/library/library-COVID19EmergencyDeptAssessment.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-COVID19EmergencyDeptHooks.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptHooks.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+     <td><a href="Library-COVID19EmergencyDeptHooks.html">input/resources/library/library-COVID19EmergencyDeptHooks.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-COVID19EmergencyDeptSummary.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptSummary.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+     <td><a href="Library-COVID19EmergencyDeptSummary.html">input/resources/library/library-COVID19EmergencyDeptSummary.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-COVID19EmergencyDeptSummary.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-COVID19EmergencyDeptSummary.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
+     <td><a href="Library-COVID19EmergencyDeptSummary.html">input/resources/library/library-COVID19EmergencyDeptSummary.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIRHelpers|4.0.1' does not resolve</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="Library-FHIRHelpers-4.0.1.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-FHIRHelpers.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
+     <td><a href="Library-FHIRHelpers-4.0.1.html">input/resources/library/library-FHIRHelpers.json</a></td><td><b>Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve</b></td>
    </tr>
 </table>
 <hr/>
@@ -1132,16 +1147,16 @@
 <h2>Terminology_TX_ValueSet_NotFound</h2>
  <table class="grid">
    <tr style="background-color: #fff4ee">
-     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
    </tr>
    <tr style="background-color: #fff4ee">
-     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
    </tr>
    <tr style="background-color: #fff4ee">
-     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
    </tr>
    <tr style="background-color: #fff4ee">
-     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
+     <td><a href="PlanDefinition-COVID19EmergencyDeptRecommendation.html">input/resources/plandefinition/plandefinition-COVID19EmergencyDeptRecommendation.json</a></td><td><b>ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator</b></td>
    </tr>
 </table>
 <hr/>
@@ -1149,133 +1164,133 @@
 <h2>Validation_VAL_Profile_Minimum</h2>
  <table class="grid">
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-cancer.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cancer.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-cancer.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-cancer.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-downs-syndrome-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-downs-syndrome-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-downs-syndrome-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-immunosuppression-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-immunosuppression-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-immunosuppression-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-snomed.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-immunosuppression-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-immunosuppression-snomed.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-obstructive-sleep-apnea-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-obstructive-sleep-apnea-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-renal-disease.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal-disease.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-renal-disease.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-renal-disease.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-steroid-usage-icd10.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-steroid-usage-icd10.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-icd10.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-risk-steroid-usage-snomed.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-snomed.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-risk-steroid-usage-snomed.html">input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-snomed.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-condition-vital-blood-pressure.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-condition-vital-blood-pressure.html">input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-alt.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-alt.html">input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-alt.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-alt.html">input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ast.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ast.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ast.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ast.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-creatinine.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-creatinine.html">input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-creatinine.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-creatinine.html">input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-crp.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-crp.html">input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-crp.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-crp.html">input/vocabulary/ValueSet/valueset-covid-19-lab-crp.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ddimer.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ddimer.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ddimer.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ddimer.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ferritin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ferritin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ferritin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ferritin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ldh.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ldh.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-ldh.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-ldh.html">input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-leukocyte.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-leukocyte.html">input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-leukocyte.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-leukocyte.html">input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-lymphocytes.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-lymphocytes.html">input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-lymphocytes.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-lymphocytes.html">input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-neutrophils.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-neutrophils.html">input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-neutrophils.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-neutrophils.html">input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-pao2fio2.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-pao2fio2.html">input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-pao2fio2.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-pao2fio2.html">input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-platelets.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-platelets.html">input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-platelets.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-platelets.html">input/vocabulary/ValueSet/valueset-covid-19-lab-platelets.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-troponin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-troponin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-lab-troponin.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-lab-troponin.html">input/vocabulary/ValueSet/valueset-covid-19-lab-troponin.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-obs-alertness.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-covid-19-obs-alertness.html">input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-obs-alertness.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-obs-alertness.html">input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-obs-alertness.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-obs-alertness.html">input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-covid-19-obs-alertness.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-covid-19-obs-alertness.html">input/vocabulary/ValueSet/valueset-covid-19-obs-alertness.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-who-performance-status.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
+     <td><a href="ValueSet-who-performance-status.html">input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-who-performance-status.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-who-performance-status.html">input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-who-performance-status.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-who-performance-status.html">input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
    <tr style="background-color: #ffeeee">
-     <td><a href="ValueSet-who-performance-status.html">/home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
+     <td><a href="ValueSet-who-performance-status.html">input/vocabulary/ValueSet/valueset-who-performance.json</a></td><td><b>ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)</b></td>
    </tr>
 </table>
 </body>

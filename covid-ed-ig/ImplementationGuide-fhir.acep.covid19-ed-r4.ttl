@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "Emergency Department COVID-19 Severity Classification"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2021-08-24T21:18:53+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-10-18T15:41:03+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "Veterans Health Administration (VHA)"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -339,11 +339,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptAssessment>;
-         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptAssessment" ]
+         fhir:link <http://fhir.org/guides/acep/Library/FHIRHelpers-4.0.1>;
+         fhir:Reference.reference [ fhir:value "Library/FHIRHelpers-4.0.1" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - FHIR Helpers for CDS" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Library - FHIR Helpers for CDS" ]
      ], [
        fhir:index 1;
        fhir:Element.extension [
@@ -365,11 +365,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/FHIRHelpers-4.0.1>;
-         fhir:Reference.reference [ fhir:value "Library/FHIRHelpers-4.0.1" ]
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptSummary>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptSummary" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - FHIR Helpers for CDS" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Library - FHIR Helpers for CDS" ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores." ]
      ], [
        fhir:index 3;
        fhir:Element.extension [
@@ -378,11 +378,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/CDSConnectCommons>;
-         fhir:Reference.reference [ fhir:value "Library/CDSConnectCommons" ]
+         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptAssessment>;
+         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptAssessment" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Common Logic for CDS" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Common Logic for CDS providing shared helper functions." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - ACEP Emergency Department COVID-19 Management Tool Logic" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, including caclculation of the risk score and severity." ]
      ], [
        fhir:index 4;
        fhir:Element.extension [
@@ -404,11 +404,11 @@
          fhir:Extension.valueString [ fhir:value "Library" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/Library/COVID19EmergencyDeptSummary>;
-         fhir:Reference.reference [ fhir:value "Library/COVID19EmergencyDeptSummary" ]
+         fhir:link <http://fhir.org/guides/acep/Library/CDSConnectCommons>;
+         fhir:Reference.reference [ fhir:value "Library/CDSConnectCommons" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Summary of results for the ACEP Emergency Department COVID-19 Management Tool" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This library contains logic to support the ACEP Emergency Department COVID-19 Management Tool guideline, summarizing clinical assessment, risk factores, diagnostic tests, and risk scores." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CQL Library - Common Logic for CDS" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL Common Logic for CDS providing shared helper functions." ]
      ], [
        fhir:index 6;
        fhir:Element.extension [
@@ -430,209 +430,13 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-leukocyte" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Leukocytes" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Leukocytes" ]
-     ], [
-       fhir:index 8;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ast" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for AST" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for AST" ]
-     ], [
-       fhir:index 9;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152" ]
-       ]
-     ], [
-       fhir:index 10;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174" ]
-       ]
-     ], [
-       fhir:index 11;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-vital-blood-pressure>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-vital-blood-pressure" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Condition Vital Blood Pressure Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Condition Vital Blood Pressure Value Set" ]
-     ], [
-       fhir:index 12;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-pao2fio2>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-pao2fio2" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio" ]
-     ], [
-       fhir:index 13;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-troponin" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Troponin" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Troponin" ]
-     ], [
-       fhir:index 14;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-icd10>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-icd10" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10CM Risk Factor Obstructive Sleep Apnea Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10CM Risk Factor Obstructive Sleep Apnea Conditions Value Set" ]
-     ], [
-       fhir:index 15;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-snomed>;
          fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-snomed" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Risk Factor Obstructive Sleep Apnea Conditions Value Set" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Risk Factor Obstructive Sleep Apnea Conditions Value Set" ]
      ], [
-       fhir:index 16;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102" ]
-       ]
-     ], [
-       fhir:index 17;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048" ]
-       ]
-     ], [
-       fhir:index 18;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome-icd10>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-downs-syndrome-icd10" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Risk Factor Downs Syndrome Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Risk Factor Downs Syndrome Conditions Value Set" ]
-     ], [
-       fhir:index 19;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064" ]
-       ]
-     ], [
-       fhir:index 20;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100" ]
-       ]
-     ], [
-       fhir:index 21;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-steroid-usage-snomed>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-steroid-usage-snomed" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Condition Risk Steroid Usage" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Condition Risk Steroid Usage" ]
-     ], [
-       fhir:index 22;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-steroid-usage-icd10>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-steroid-usage-icd10" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Condition Risk Steroid Usage" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Condition Risk Steroid Usage" ]
-     ], [
-       fhir:index 23;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/who-performance-status>;
-         fhir:Reference.reference [ fhir:value "ValueSet/who-performance-status" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "WHO Performance Status Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "World Health Organization (WHO) performance status finding (finding)" ]
-     ], [
-       fhir:index 24;
+       fhir:index 8;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -645,7 +449,231 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for CRP" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for CRP" ]
      ], [
+       fhir:index 9;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6100" ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-cardiovascular" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)." ]
+     ], [
+       fhir:index 11;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6064" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ferritin" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ]
+     ], [
+       fhir:index 13;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-lymphocytes" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Lymphocytes" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Lymphocytes" ]
+     ], [
+       fhir:index 14;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6152" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-troponin>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-troponin" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Troponin" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Troponin" ]
+     ], [
+       fhir:index 16;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cancer>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-cancer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ]
+     ], [
+       fhir:index 17;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-steroid-usage-snomed>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-steroid-usage-snomed" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Condition Risk Steroid Usage" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Condition Risk Steroid Usage" ]
+     ], [
+       fhir:index 18;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-leukocyte>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-leukocyte" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Leukocytes" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Leukocytes" ]
+     ], [
+       fhir:index 19;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome-snomed>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-downs-syndrome-snomed" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Risk Factor Downs Syndrome Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Risk Factor Downs Syndrome Conditions Value Set" ]
+     ], [
+       fhir:index 20;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-immunosuppression-icd10>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-immunosuppression-icd10" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Condition Risk Immunosuppression" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Condition Risk Immunosuppression" ]
+     ], [
+       fhir:index 21;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal-disease>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-renal-disease" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ]
+     ], [
+       fhir:index 22;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome-icd10>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-downs-syndrome-icd10" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Risk Factor Downs Syndrome Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Risk Factor Downs Syndrome Conditions Value Set" ]
+     ], [
+       fhir:index 23;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ddimer" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for D-dimer" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for D-dimer" ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028" ]
+       ]
+     ], [
        fhir:index 25;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-respiratory" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set" ]
+     ], [
+       fhir:index 26;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3174" ]
+       ]
+     ], [
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -657,30 +685,6 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Neutrophils" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Neutrophils" ]
-     ], [
-       fhir:index 26;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3028" ]
-       ]
-     ], [
-       fhir:index 27;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-platelets" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Blood Platelets" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Blood Platelets" ]
      ], [
        fhir:index 28;
        fhir:Element.extension [
@@ -702,11 +706,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ldh" ]
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-pao2fio2>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-pao2fio2" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for LDH" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for LDH" ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for PaO2FiO2 Ratio" ]
      ], [
        fhir:index 30;
        fhir:Element.extension [
@@ -715,11 +719,9 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-respiratory>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-respiratory" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Chronic Respiratory Disease Conditions Value Set" ]
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3102" ]
+       ]
      ], [
        fhir:index 31;
        fhir:Element.extension [
@@ -728,11 +730,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-immunosuppression-icd10>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-immunosuppression-icd10" ]
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-icd10>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-obstructive-sleep-apnea-icd10" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Condition Risk Immunosuppression" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Condition Risk Immunosuppression" ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10CM Risk Factor Obstructive Sleep Apnea Conditions Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10CM Risk Factor Obstructive Sleep Apnea Conditions Value Set" ]
      ], [
        fhir:index 32;
        fhir:Element.extension [
@@ -741,141 +743,13 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cardiovascular>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-cardiovascular" ]
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-steroid-usage-icd10>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-steroid-usage-icd10" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Cardiovascular Disease Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Includes all SNOMED CT codes for Cardiovascular Disease, excluding Hypertension (which is a separate risk factor category in the ACEP guideline)." ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 ICD10 Condition Risk Steroid Usage" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 ICD10 Condition Risk Steroid Usage" ]
      ], [
        fhir:index 33;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-alt" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for ALT" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for ALT" ]
-     ], [
-       fhir:index 34;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID19 ICD10CM Value Set for Obesity" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This set of values contains terms related to obesity." ]
-     ], [
-       fhir:index 35;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ddimer>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ddimer" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for D-dimer" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for D-dimer" ]
-     ], [
-       fhir:index 36;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ferritin>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ferritin" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Ferritin" ]
-     ], [
-       fhir:index 37;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-lymphocytes>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-lymphocytes" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Lymphocytes" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Lymphocytes" ]
-     ], [
-       fhir:index 38;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153>;
-         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153" ]
-       ]
-     ], [
-       fhir:index 39;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-obs-alertness>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-obs-alertness" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Clinical Observation for Alertness" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Clinical Observation for Alertness" ]
-     ], [
-       fhir:index 40;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-renal-disease>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-renal-disease" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Renal Disease Conditions Value Set" ]
-     ], [
-       fhir:index 41;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-cancer>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-cancer" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Risk Factor Cancer Conditions Value Set" ]
-     ], [
-       fhir:index 42;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-immunosuppression-snomed>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-immunosuppression-snomed" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Condition Risk Immunosuppression" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Condition Risk Immunosuppression" ]
-     ], [
-       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -888,6 +762,132 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID19 SNOMED Value Set for Obesity" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "This set of values contains terms related to obesity." ]
      ], [
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-vital-blood-pressure>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-vital-blood-pressure" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Condition Vital Blood Pressure Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Condition Vital Blood Pressure Value Set" ]
+     ], [
+       fhir:index 35;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-platelets>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-platelets" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for Blood Platelets" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for Blood Platelets" ]
+     ], [
+       fhir:index 36;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3153" ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ldh>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ldh" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for LDH" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for LDH" ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-obs-alertness>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-obs-alertness" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Clinical Observation for Alertness" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Clinical Observation for Alertness" ]
+     ], [
+       fhir:index 39;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.3091" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID19 ICD10CM Value Set for Obesity" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This set of values contains terms related to obesity." ]
+     ], [
+       fhir:index 40;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048>;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.3.3616.200.110.102.6048" ]
+       ]
+     ], [
+       fhir:index 41;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-ast>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-ast" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for AST" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for AST" ]
+     ], [
+       fhir:index 42;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/who-performance-status>;
+         fhir:Reference.reference [ fhir:value "ValueSet/who-performance-status" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "WHO Performance Status Value Set" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "World Health Organization (WHO) performance status finding (finding)" ]
+     ], [
+       fhir:index 43;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-immunosuppression-snomed>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-immunosuppression-snomed" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Condition Risk Immunosuppression" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Condition Risk Immunosuppression" ]
+     ], [
        fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
@@ -895,11 +895,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-condition-risk-downs-syndrome-snomed>;
-         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-condition-risk-downs-syndrome-snomed" ]
+         fhir:link <http://fhir.org/guides/acep/ValueSet/covid-19-lab-alt>;
+         fhir:Reference.reference [ fhir:value "ValueSet/covid-19-lab-alt" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 SNOMED Risk Factor Downs Syndrome Conditions Value Set" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 SNOMED Risk Factor Downs Syndrome Conditions Value Set" ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "COVID-19 Laboratory Value Set for ALT" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "COVID-19 Laboratory Value Set for ALT" ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ];
