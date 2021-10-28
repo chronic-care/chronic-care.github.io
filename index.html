@@ -1,0 +1,25 @@
+<html>
+    <h1>Demonstration SMART on FHIR apps</h1>
+    <h2>MyPreventiveCare</h2>
+    <p>This patient-facing SMART on FHIR app contains embedded execution of USPSTF guidelines for cancer screening that are implemented using CQL. The app logic determines which screenings are applicable based on patient clinical records queried using FHIR R4 and presents a FHIR Questionnaire containing educational content and questions about the patient's decision. The initial set of USPSTF guidelines include prostate, breast, colon, and lung cancer screening decisions. A modular design will allow additional screening decisions to be added into the same application.</p>
+    <p>The current design is limited to read-only access to a patient's EHR clinical records and has been successfully tested with both Epic and Cerner. Future work will expand the application to save patient questionnaire responses into a secure FHIR repository and write extracted FHIR Observations into EHR systems via FHIR APIs to support shared decision-making with a patient's primary care provider.</p>
+    <p>For more information about MyPreventiveCare: <ul>
+        <li>CDS Connect entry <a href="https://cds.ahrq.gov/cdsconnect/artifact/patient-directed-preventive-care-planning">Patient-Directed Preventive Care Planning</a></li>
+        <li>Source code for app and CQL <a href="https://github.com/chronic-care/mpc-patient">on GitHub</a></li>
+    </ul>
+    <h3>Epic Public Sandbox</h3>
+    <a href="https://secure.mypreventivecare.com/mpc-patient/launch.html?iss=https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4">https://secure.mypreventivecare.com/mpc-patient/launch.html?iss=https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4</a>
+    <ul><li>Derrick Lin, age 48 &ndash; Colon Cancer Screening</li>
+        <li>Username: fhirderrick</li>
+        <li>Password: epicepic1</li>
+    </ul>
+    <p>Additional Epic test patients: <a href="https://fhir.epic.com/Documentation?docId=testpatients">https://fhir.epic.com/Documentation?docId=testpatients</a></p>
+        
+    <h3>Cerner Public Sandbox</h3>
+    <a href="https://chronic-care.github.io/mpc-patient/launch.html?iss=https://fhir-myrecord.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d">https://chronic-care.github.io/mpc-patient/launch.html?iss=https://fhir-myrecord.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d</a>
+    <ul><li>Nancy Smart, age 41 &ndash; Breast Cancer Screening</li>
+        <li>Username: nancysmart</li>
+        <li>Password: Cerner01</li>
+    </ul>
+
+</html>
