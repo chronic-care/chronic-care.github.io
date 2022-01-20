@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="covid-19-lab-procalcitonin"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><p>This value set contains 2 concepts</p><p>All codes in this table are from the system <a href="http://terminology.hl7.org/3.0.0/CodeSystem-v3-loinc.html"><code>http://loinc.org</code></a></p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b> - English (English, en)</td></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-33959-8"> </a><a href="http://details.loinc.org/LOINC/33959-8.html">33959-8</a></td><td/></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-75241-0"> </a><a href="http://details.loinc.org/LOINC/75241-0.html">75241-0</a></td><td/></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability">
+    <valueCode value="executable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel">
+    <valueCode value="executable"/>
+  </extension>
+  <url value="http://fhir.org/guides/acep/ValueSet/covid-19-lab-procalcitonin"/>
+  <version value="0.1.0"/>
+  <name value="COVID19LabProcalcitonin"/>
+  <title value="COVID-19 Laboratory Value Set for Procalcitonin"/>
+  <status value="active"/>
+  <date value="2022-01-04T20:00:00+00:00"/>
+  <publisher value="Veterans Health Administration (VHA)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/[something]"/>
+    </telecom>
+  </contact>
+  <description value="COVID-19 Laboratory Value Set for Procalcitonin"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="33959-8"/>
+      </concept>
+      <concept>
+        <code value="75241-0"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <timestamp value="2021-03-14T21:43:10-06:00"/>
+    <contains>
+      <system value="http://loinc.org"/>
+      <code value="33959-8"/>
+    </contains>
+    <contains>
+      <system value="http://loinc.org"/>
+      <code value="75241-0"/>
+    </contains>
+  </expansion>
+</ValueSet>

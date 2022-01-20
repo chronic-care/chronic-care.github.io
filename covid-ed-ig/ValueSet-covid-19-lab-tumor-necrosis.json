@@ -1,0 +1,87 @@
+{
+  "resourceType": "ValueSet",
+  "id": "covid-19-lab-tumor-necrosis",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
+    ]
+  },
+  "language": "en",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p>This value set contains 3 concepts</p><p>All codes in this table are from the system <a href=\"http://terminology.hl7.org/3.0.0/CodeSystem-v3-loinc.html\"><code>http://loinc.org</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b> - English (English, en)</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-13900-6\"> </a><a href=\"http://details.loinc.org/LOINC/13900-6.html\">13900-6</a></td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-3074-2\"> </a><a href=\"http://details.loinc.org/LOINC/3074-2.html\">3074-2</a></td><td/></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-34939-9\"> </a><a href=\"http://details.loinc.org/LOINC/34939-9.html\">34939-9</a></td><td/></tr></table></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "valueCode": "executable"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "valueCode": "executable"
+    }
+  ],
+  "url": "http://fhir.org/guides/acep/ValueSet/covid-19-lab-tumor-necrosis",
+  "version": "0.1.0",
+  "name": "COVID19LabTumorNecrosis",
+  "title": "COVID-19 Laboratory Value Set for Tumor Necrosis",
+  "status": "active",
+  "date": "2022-01-04T20:00:00+00:00",
+  "publisher": "Veterans Health Administration (VHA)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/[something]"
+        }
+      ]
+    }
+  ],
+  "description": "COVID-19 Laboratory Value Set for Tumor Necrosis",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "13900-6"
+          },
+          {
+            "code": "3074-2"
+          },
+          {
+            "code": "34939-9"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2021-03-14T21:43:10-06:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "code": "13900-6"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "3074-2"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "34939-9"
+      }
+    ]
+  }
+}
