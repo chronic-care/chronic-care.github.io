@@ -1,9 +1,9 @@
 ﻿COVID19EDSeverityClassification : Validation Results
 =========================================
 
-err = 89, warn = 34, info = 16
-IG Publisher Version: 1.1.99
-Generated Fri Feb 04 01:37:52 UTC 2022. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
+err = 73, warn = 34, info = 16
+IG Publisher Version: 1.1.103
+Generated Tue Feb 15 15:40:22 UTC 2022. FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = http://fhir.org/guides/acep)
  Build Errors : 6 / 6 / 0
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/contentig : 0 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/resources/library/library-CDSConnectCommons : 2 / 0 / 19
@@ -20,26 +20,18 @@ Generated Fri Feb 04 01:37:52 UTC 2022. FHIR version 4.0.1 for fhir.acep.covid19
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-icd10 : 1 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-risk-steroid-usage-snomed : 1 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure : 1 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alanine-aminotransferase : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-alt : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-aspartate-aminotransferase : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ast : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-c-reactive-protein : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-crp : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ddimer : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ferritin : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-fibrin : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-1 : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-6 : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-8 : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-lactate-dehydrogenase : 2 / 0 / 1
+ /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-immunedysregulation : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-ldh : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-leukocyte : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-lymphocytes : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils : 2 / 0 / 1
- /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-oxygen : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2 : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-platelets : 2 / 0 / 1
  /home/runner/work/covid-ed-ig/covid-ed-ig/input/vocabulary/ValueSet/valueset-covid-19-lab-procalcitonin : 2 / 0 / 1
@@ -99,7 +91,7 @@ INFORMATION: Library/COVID19EmergencyDeptHooks: Library.content[0]: This element
 ERROR: Library/COVID19EmergencyDeptHooks: Library.relatedArtifact[0].resource: Canonical URL 'http://hl7.org/fhir/Library/FHIR-ModelInfo|4.0.1' does not resolve
 == input/resources/library/library-COVID19EmergencyDeptSummary.json ==
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of Name: System.String, Gender: System.String, BirthSex: choice<FHIR.base64Binary,FHIR.boolean,FHIR.canonical,FHIR.code,FHIR.date,FHIR.dateTime,FHIR.decimal,FHIR.id,FHIR.instant,FHIR.integer,FHIR.markdown,FHIR.oid,FHIR.positiveInt,FHIR.string,FHIR.time,FHIR.unsignedInt,FHIR.uri,FHIR.url,FHIR.uuid,FHIR.Address,FHIR.Age,FHIR.Annotation,FHIR.Attachment,FHIR.CodeableConcept,FHIR.Coding,FHIR.ContactPoint,FHIR.Count,FHIR.Distance,FHIR.Duration,FHIR.HumanName,FHIR.Identifier,FHIR.Money,FHIR.Period,FHIR.Quantity,FHIR.Range,FHIR.Ratio,FHIR.Reference,FHIR.SampledData,FHIR.Signature,FHIR.Timing,FHIR.ContactDetail,FHIR.Contributor,FHIR.DataRequirement,FHIR.Expression,FHIR.ParameterDefinition,FHIR.RelatedArtifact,FHIR.TriggerDefinition,FHIR.UsageContext,FHIR.Dosage,FHIR.Meta>, Age: System.Integer, Race: string of definition PatientSummary is not supported; implementations may not be able to use the result of this expression
-WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of ALT: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, AST: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Creatinine: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, CRP: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, DDimer: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Ferritin: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, LDH: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Lymphopenia: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Neutrophils: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Thrombocytopenia: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Troponin: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, WBC: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, PaO2FiO2: System.Boolean of definition DiagnosticSummary is not supported; implementations may not be able to use the result of this expression
+WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of ALT: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, AST: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, CRP: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, DDimer: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Ferritin: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, LDH: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Lymphopenia: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, Neutrophils: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, PCT: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, ImmuneDysregulation: tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean, PaO2FiO2: System.Boolean of definition DiagnosticSummary is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type List of tuple of Date: System.String, Name: System.String, ResultText: System.String, ResultValue: System.Decimal, ResultUnits: System.String, ReferenceRange: System.String, Interpretation: System.String, Flag: System.Boolean of definition LabResultList is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of SeverityClassification: System.String, Saturation: System.Integer, HeartRate: System.Integer, Respirtory: System.Integer, Temperature: System.Integer, Alertness: System.Integer, Oxygen: System.Integer, Sex: System.Integer, Age: System.Integer, PerformanceStatus: System.Integer, BloodPressure: System.Integer, RiskScore: System.Integer, RiskPercent: System.Integer, RiskFactorCount: System.Integer, DiagnosticInterpretation: System.Decimal, ConcerningLabCount: System.Decimal, ConcerningImagingCount: System.Integer of definition RiskSummary is not supported; implementations may not be able to use the result of this expression
 WARNING: COVID19EmergencyDeptSummary.cql: Result type tuple of Severity: System.String, RiskPrognostication: System.String, RiskAssessment: System.String of definition SmartPhrases is not supported; implementations may not be able to use the result of this expression
@@ -135,21 +127,12 @@ ERROR: ValueSet/covid-19-condition-risk-steroid-usage-icd10: ValueSet.expansion:
 ERROR: ValueSet/covid-19-condition-risk-steroid-usage-snomed: ValueSet.expansion: ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)
 == input/vocabulary/ValueSet/valueset-covid-19-condition-vital-blood-pressure.json ==
 ERROR: ValueSet/covid-19-condition-vital-blood-pressure: ValueSet.expansion: ValueSet.expansion.timestamp: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ValueSet)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-alanine-aminotransferase.json ==
-ERROR: ValueSet/covid-19-lab-alanine-aminotransferase: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-alanine-aminotransferase: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 == input/vocabulary/ValueSet/valueset-covid-19-lab-alt.json ==
 ERROR: ValueSet/covid-19-lab-alt: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-alt: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-aspartate-aminotransferase.json ==
-ERROR: ValueSet/covid-19-lab-aspartate-aminotransferase: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-aspartate-aminotransferase: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 == input/vocabulary/ValueSet/valueset-covid-19-lab-ast.json ==
 ERROR: ValueSet/covid-19-lab-ast: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-ast: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-c-reactive-protein.json ==
-ERROR: ValueSet/covid-19-lab-c-reactive-protein: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-c-reactive-protein: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 == input/vocabulary/ValueSet/valueset-covid-19-lab-creatinine.json ==
 ERROR: ValueSet/covid-19-lab-creatinine: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-creatinine: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
@@ -165,21 +148,9 @@ ERROR: ValueSet/covid-19-lab-ferritin: ValueSet: ValueSet.experimental: minimum 
 == input/vocabulary/ValueSet/valueset-covid-19-lab-fibrin.json ==
 ERROR: ValueSet/covid-19-lab-fibrin: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-fibrin: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin.json ==
-ERROR: ValueSet/covid-19-lab-interleukin: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-interleukin: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-1.json ==
-ERROR: ValueSet/covid-19-lab-interleukin-1: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-interleukin-1: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-6.json ==
-ERROR: ValueSet/covid-19-lab-interleukin-6: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-interleukin-6: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-interleukin-8.json ==
-ERROR: ValueSet/covid-19-lab-interleukin-8: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-interleukin-8: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-lactate-dehydrogenase.json ==
-ERROR: ValueSet/covid-19-lab-lactate-dehydrogenase: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-lactate-dehydrogenase: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
+== input/vocabulary/ValueSet/valueset-covid-19-lab-immunedysregulation.json ==
+ERROR: ValueSet/covid-19-lab-immunedysregulation: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
+ERROR: ValueSet/covid-19-lab-immunedysregulation: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 == input/vocabulary/ValueSet/valueset-covid-19-lab-ldh.json ==
 ERROR: ValueSet/covid-19-lab-ldh: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-ldh: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
@@ -192,9 +163,6 @@ ERROR: ValueSet/covid-19-lab-lymphocytes: ValueSet: ValueSet.experimental: minim
 == input/vocabulary/ValueSet/valueset-covid-19-lab-neutrophils.json ==
 ERROR: ValueSet/covid-19-lab-neutrophils: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-neutrophils: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-== input/vocabulary/ValueSet/valueset-covid-19-lab-oxygen.json ==
-ERROR: ValueSet/covid-19-lab-oxygen: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
-ERROR: ValueSet/covid-19-lab-oxygen: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 == input/vocabulary/ValueSet/valueset-covid-19-lab-pao2fio2.json ==
 ERROR: ValueSet/covid-19-lab-pao2fio2: ValueSet: ValueSet.extension:usageWarning: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)
 ERROR: ValueSet/covid-19-lab-pao2fio2: ValueSet: ValueSet.experimental: minimum required = 1, but only found 0 (from http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset)

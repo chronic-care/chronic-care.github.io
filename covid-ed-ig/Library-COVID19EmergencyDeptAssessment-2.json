@@ -4469,37 +4469,37 @@
           }
         },
         {
-          "locator": "973:1-978:3",
+          "locator": "976:1-981:3",
           "name": "Last PaO2FiO2 Ratio Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "974:3-978:3",
+            "locator": "977:3-981:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "975:5-977:31",
+                "locator": "978:5-980:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "976:7-976:66",
+                    "locator": "979:7-979:66",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "976:20-976:65",
+                        "locator": "979:20-979:65",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "976:34-976:64",
+                          "locator": "979:34-979:64",
                           "name": "PaO2FiO2 Ratio Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -4508,7 +4508,7 @@
                     ]
                   },
                   {
-                    "locator": "977:7-977:30",
+                    "locator": "980:7-980:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -4518,26 +4518,26 @@
           }
         },
         {
-          "locator": "980:1-983:3",
+          "locator": "983:1-986:3",
           "name": "Last PaO2FiO2 Ratio Lab Result Less Than 300",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "981:3-983:3",
+            "locator": "984:3-986:3",
             "type": "Coalesce",
             "operand": [
               {
-                "locator": "981:12-981:55",
+                "locator": "984:12-984:55",
                 "path": "PaO2FiO2RatioLessThan300",
                 "type": "Property",
                 "source": {
-                  "locator": "981:12-981:30",
+                  "locator": "984:12-984:30",
                   "name": "ClinicalAssessments",
                   "type": "ParameterRef"
                 }
               },
               {
-                "locator": "982:5-982:73",
+                "locator": "985:5-985:73",
                 "type": "Less",
                 "operand": [
                   {
@@ -4546,25 +4546,25 @@
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "982:5-982:67",
+                        "locator": "985:5-985:67",
                         "path": "value",
                         "type": "Property",
                         "source": {
-                          "locator": "982:5-982:61",
+                          "locator": "985:5-985:61",
                           "strict": false,
                           "type": "As",
                           "operand": {
-                            "locator": "982:6-982:43",
+                            "locator": "985:6-985:43",
                             "path": "value",
                             "type": "Property",
                             "source": {
-                              "locator": "982:6-982:37",
+                              "locator": "985:6-985:37",
                               "name": "Last PaO2FiO2 Ratio Lab Result",
                               "type": "ExpressionRef"
                             }
                           },
                           "asTypeSpecifier": {
-                            "locator": "982:48-982:60",
+                            "locator": "985:48-985:60",
                             "name": "{http://hl7.org/fhir}Quantity",
                             "type": "NamedTypeSpecifier"
                           }
@@ -4575,7 +4575,7 @@
                   {
                     "type": "ToDecimal",
                     "operand": {
-                      "locator": "982:71-982:73",
+                      "locator": "985:71-985:73",
                       "valueType": "{urn:hl7-org:elm-types:r1}Integer",
                       "value": "300",
                       "type": "Literal"
@@ -11741,86 +11741,37 @@
           }
         },
         {
-          "locator": "931:1-936:3",
-          "name": "Last Creatinine Lab Result",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
-            "locator": "932:3-936:3",
-            "name": "MostRecent",
-            "libraryName": "C3F",
-            "type": "FunctionRef",
-            "operand": [
-              {
-                "locator": "933:5-935:31",
-                "name": "ObservationLookBack",
-                "libraryName": "C3F",
-                "type": "FunctionRef",
-                "operand": [
-                  {
-                    "locator": "934:7-934:62",
-                    "name": "Verified",
-                    "libraryName": "C3F",
-                    "type": "FunctionRef",
-                    "operand": [
-                      {
-                        "locator": "934:20-934:61",
-                        "dataType": "{http://hl7.org/fhir}Observation",
-                        "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
-                        "codeProperty": "code",
-                        "codeComparator": "in",
-                        "type": "Retrieve",
-                        "codes": {
-                          "locator": "934:34-934:60",
-                          "name": "Creatinine Lab Results",
-                          "libraryName": "CC",
-                          "type": "ValueSetRef"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "locator": "935:7-935:30",
-                    "name": "LabResultsLookbackPeriod",
-                    "type": "ParameterRef"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "locator": "938:1-943:3",
+          "locator": "932:1-937:3",
           "name": "Last D-dimer Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "939:3-943:3",
+            "locator": "933:3-937:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "940:5-942:31",
+                "locator": "934:5-936:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "941:7-941:59",
+                    "locator": "935:7-935:59",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "941:20-941:58",
+                        "locator": "935:20-935:58",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "941:34-941:57",
+                          "locator": "935:34-935:57",
                           "name": "D-dimer Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -11829,7 +11780,7 @@
                     ]
                   },
                   {
-                    "locator": "942:7-942:30",
+                    "locator": "936:7-936:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -11839,37 +11790,37 @@
           }
         },
         {
-          "locator": "945:1-950:3",
+          "locator": "939:1-944:3",
           "name": "Last Neutrophils Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "946:3-950:3",
+            "locator": "940:3-944:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "947:5-949:31",
+                "locator": "941:5-943:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "948:7-948:63",
+                    "locator": "942:7-942:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "948:20-948:62",
+                        "locator": "942:20-942:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "948:34-948:61",
+                          "locator": "942:34-942:61",
                           "name": "Neutrophils Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -11878,7 +11829,7 @@
                     ]
                   },
                   {
-                    "locator": "949:7-949:30",
+                    "locator": "943:7-943:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -11888,86 +11839,37 @@
           }
         },
         {
-          "locator": "952:1-957:3",
-          "name": "Last Leukocyte Lab Result",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
-            "locator": "953:3-957:3",
-            "name": "MostRecent",
-            "libraryName": "C3F",
-            "type": "FunctionRef",
-            "operand": [
-              {
-                "locator": "954:5-956:31",
-                "name": "ObservationLookBack",
-                "libraryName": "C3F",
-                "type": "FunctionRef",
-                "operand": [
-                  {
-                    "locator": "955:7-955:61",
-                    "name": "Verified",
-                    "libraryName": "C3F",
-                    "type": "FunctionRef",
-                    "operand": [
-                      {
-                        "locator": "955:20-955:60",
-                        "dataType": "{http://hl7.org/fhir}Observation",
-                        "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
-                        "codeProperty": "code",
-                        "codeComparator": "in",
-                        "type": "Retrieve",
-                        "codes": {
-                          "locator": "955:34-955:59",
-                          "name": "Leukocyte Lab Results",
-                          "libraryName": "CC",
-                          "type": "ValueSetRef"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "locator": "956:7-956:30",
-                    "name": "LabResultsLookbackPeriod",
-                    "type": "ParameterRef"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "locator": "959:1-964:3",
+          "locator": "947:1-952:3",
           "name": "Last Ferritin Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "960:3-964:3",
+            "locator": "948:3-952:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "961:5-963:31",
+                "locator": "949:5-951:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "962:7-962:60",
+                    "locator": "950:7-950:60",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "962:20-962:59",
+                        "locator": "950:20-950:59",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "962:34-962:58",
+                          "locator": "950:34-950:58",
                           "name": "Ferritin Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -11976,7 +11878,7 @@
                     ]
                   },
                   {
-                    "locator": "963:7-963:30",
+                    "locator": "951:7-951:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -11986,37 +11888,37 @@
           }
         },
         {
-          "locator": "966:1-971:3",
+          "locator": "954:1-959:3",
           "name": "Last Lymphocytes Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "967:3-971:3",
+            "locator": "955:3-959:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "968:5-970:31",
+                "locator": "956:5-958:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "969:7-969:63",
+                    "locator": "957:7-957:63",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "969:20-969:62",
+                        "locator": "957:20-957:62",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "969:34-969:61",
+                          "locator": "957:34-957:61",
                           "name": "Lymphocytes Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -12025,7 +11927,7 @@
                     ]
                   },
                   {
-                    "locator": "970:7-970:30",
+                    "locator": "958:7-958:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -12035,38 +11937,38 @@
           }
         },
         {
-          "locator": "985:1-990:3",
-          "name": "Last Platelets Lab Result",
+          "locator": "961:3-966:3",
+          "name": "Last PCT Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "986:3-990:3",
+            "locator": "962:3-966:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "987:5-989:31",
+                "locator": "963:5-965:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "988:7-988:61",
+                    "locator": "964:7-964:55",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "988:20-988:60",
+                        "locator": "964:20-964:54",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "988:34-988:59",
-                          "name": "Platelets Lab Results",
+                          "locator": "964:34-964:53",
+                          "name": "PCT Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
                         }
@@ -12074,7 +11976,7 @@
                     ]
                   },
                   {
-                    "locator": "989:7-989:30",
+                    "locator": "965:7-965:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }
@@ -12084,37 +11986,86 @@
           }
         },
         {
-          "locator": "992:1-997:3",
-          "name": "Last LDH Lab Result",
+          "locator": "969:3-974:3",
+          "name": "Last Immune Dysregulation Lab Result",
           "context": "Patient",
           "accessLevel": "Public",
           "expression": {
-            "locator": "993:3-997:3",
+            "locator": "970:3-974:3",
             "name": "MostRecent",
             "libraryName": "C3F",
             "type": "FunctionRef",
             "operand": [
               {
-                "locator": "994:5-996:31",
+                "locator": "971:5-973:31",
                 "name": "ObservationLookBack",
                 "libraryName": "C3F",
                 "type": "FunctionRef",
                 "operand": [
                   {
-                    "locator": "995:7-995:55",
+                    "locator": "972:7-972:72",
                     "name": "Verified",
                     "libraryName": "C3F",
                     "type": "FunctionRef",
                     "operand": [
                       {
-                        "locator": "995:20-995:54",
+                        "locator": "972:20-972:71",
                         "dataType": "{http://hl7.org/fhir}Observation",
                         "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
                         "codeProperty": "code",
                         "codeComparator": "in",
                         "type": "Retrieve",
                         "codes": {
-                          "locator": "995:34-995:53",
+                          "locator": "972:34-972:70",
+                          "name": "Immune Dysregulation Lab Results",
+                          "libraryName": "CC",
+                          "type": "ValueSetRef"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "locator": "973:7-973:30",
+                    "name": "LabResultsLookbackPeriod",
+                    "type": "ParameterRef"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "locator": "989:1-994:3",
+          "name": "Last LDH Lab Result",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "locator": "990:3-994:3",
+            "name": "MostRecent",
+            "libraryName": "C3F",
+            "type": "FunctionRef",
+            "operand": [
+              {
+                "locator": "991:5-993:31",
+                "name": "ObservationLookBack",
+                "libraryName": "C3F",
+                "type": "FunctionRef",
+                "operand": [
+                  {
+                    "locator": "992:7-992:55",
+                    "name": "Verified",
+                    "libraryName": "C3F",
+                    "type": "FunctionRef",
+                    "operand": [
+                      {
+                        "locator": "992:20-992:54",
+                        "dataType": "{http://hl7.org/fhir}Observation",
+                        "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
+                        "codeProperty": "code",
+                        "codeComparator": "in",
+                        "type": "Retrieve",
+                        "codes": {
+                          "locator": "992:34-992:53",
                           "name": "LDH Lab Results",
                           "libraryName": "CC",
                           "type": "ValueSetRef"
@@ -12123,56 +12074,7 @@
                     ]
                   },
                   {
-                    "locator": "996:7-996:30",
-                    "name": "LabResultsLookbackPeriod",
-                    "type": "ParameterRef"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "locator": "999:1-1004:3",
-          "name": "Last Troponin Lab Result",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
-            "locator": "1000:3-1004:3",
-            "name": "MostRecent",
-            "libraryName": "C3F",
-            "type": "FunctionRef",
-            "operand": [
-              {
-                "locator": "1001:5-1003:31",
-                "name": "ObservationLookBack",
-                "libraryName": "C3F",
-                "type": "FunctionRef",
-                "operand": [
-                  {
-                    "locator": "1002:7-1002:60",
-                    "name": "Verified",
-                    "libraryName": "C3F",
-                    "type": "FunctionRef",
-                    "operand": [
-                      {
-                        "locator": "1002:20-1002:59",
-                        "dataType": "{http://hl7.org/fhir}Observation",
-                        "templateId": "http://hl7.org/fhir/StructureDefinition/Observation",
-                        "codeProperty": "code",
-                        "codeComparator": "in",
-                        "type": "Retrieve",
-                        "codes": {
-                          "locator": "1002:34-1002:58",
-                          "name": "Troponin Lab Results",
-                          "libraryName": "CC",
-                          "type": "ValueSetRef"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "locator": "1003:7-1003:30",
+                    "locator": "993:7-993:30",
                     "name": "LabResultsLookbackPeriod",
                     "type": "ParameterRef"
                   }

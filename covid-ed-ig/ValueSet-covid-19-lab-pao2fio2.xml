@@ -7,7 +7,7 @@
   </meta>
   <language value="en"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><p>This value set contains 1 concepts</p><p>All codes in this table are from the system <a href="http://terminology.hl7.org/3.0.0/CodeSystem-v3-loinc.html"><code>http://loinc.org</code></a></p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b> - English (English, en)</td></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-50984-4"> </a><a href="http://details.loinc.org/LOINC/50984-4.html">50984-4</a></td><td/></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><p>This value set contains 3 concepts</p><p>All codes in this table are from the system <a href="http://terminology.hl7.org/3.0.0/CodeSystem-v3-loinc.html"><code>http://loinc.org</code></a></p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b> - English (English, en)</td></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-2703-7"> </a><a href="http://details.loinc.org/LOINC/2703-7.html">2703-7</a></td><td/></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-19255-9"> </a><a href="http://details.loinc.org/LOINC/19255-9.html">19255-9</a></td><td/></tr><tr><td style="white-space:nowrap"><a name="http---loinc.org-19214-6"> </a><a href="http://details.loinc.org/LOINC/19214-6.html">19214-6</a></td><td/></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability">
     <valueCode value="executable"/>
@@ -17,10 +17,10 @@
   </extension>
   <url value="http://fhir.org/guides/acep/ValueSet/covid-19-lab-pao2fio2"/>
   <version value="0.1.0"/>
-  <name value="COVID19LabPaO2FiO2Ratio"/>
-  <title value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
+  <name value="COVID19LabPao2fio2"/>
+  <title value="COVID-19 Laboratory Value Set for Pao2fio2"/>
   <status value="active"/>
-  <date value="2021-02-26T20:00:00+00:00"/>
+  <date value="2022-01-04T20:00:00+00:00"/>
   <publisher value="Veterans Health Administration (VHA)"/>
   <contact>
     <telecom>
@@ -28,7 +28,7 @@
       <value value="http://hl7.org/Special/committees/[something]"/>
     </telecom>
   </contact>
-  <description value="COVID-19 Laboratory Value Set for PaO2FiO2 Ratio"/>
+  <description value="COVID-19 Laboratory Value Set for Pao2fio2"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -39,7 +39,13 @@
     <include>
       <system value="http://loinc.org"/>
       <concept>
-        <code value="50984-4"/>
+        <code value="2703-7"/>
+      </concept>
+      <concept>
+        <code value="19255-9"/>
+      </concept>
+      <concept>
+        <code value="19214-6"/>
       </concept>
     </include>
   </compose>
@@ -47,7 +53,15 @@
     <timestamp value="2021-03-14T21:43:10-06:00"/>
     <contains>
       <system value="http://loinc.org"/>
-      <code value="50984-4"/>
+      <code value="2703-7"/>
+    </contains>
+    <contains>
+      <system value="http://loinc.org"/>
+      <code value="19255-9"/>
+    </contains>
+    <contains>
+      <system value="http://loinc.org"/>
+      <code value="19214-6"/>
     </contains>
   </expansion>
 </ValueSet>
