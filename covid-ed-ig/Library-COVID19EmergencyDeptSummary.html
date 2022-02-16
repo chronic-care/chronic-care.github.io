@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.34"}
-    h3,h4,h5,h6{--heading-prefix:"6.34"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.37"}
+    h3,h4,h5,h6{--heading-prefix:"6.37"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -318,7 +318,10 @@ define DiagnosticSummary: {
   Lymphopenia: Message(ReportLabObservation(C19.&quot;Last Lymphocytes Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Lymphocytes Lab Result&quot;)'),
   Neutrophils: Message(ReportLabObservation(C19.&quot;Last Neutrophils Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Neutrophils Lab Result&quot;)'),
   PCT: Message(ReportLabObservation(C19.&quot;Last PCT Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last PCT Lab Result&quot;)'),
-  ImmuneDysregulation: Message(ReportLabObservation(C19.&quot;Last Immune Dysregulation Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Immune Dysregulation Lab Result&quot;)'),
+  Interleukin1: Message(ReportLabObservation(C19.&quot;Last Interleukin 1 Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Interleukin 1 Lab Result&quot;)'),
+  Interleukin6: Message(ReportLabObservation(C19.&quot;Last Interleukin 6 Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Interleukin 6 Lab Result&quot;)'),
+  Interleukin8: Message(ReportLabObservation(C19.&quot;Last Interleukin 8 Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Interleukin 8 Lab Result&quot;)'),
+  TumorNecrosisFactorAlpha: Message(ReportLabObservation(C19.&quot;Last Tumor Necrosis Factor Alpha Lab Result&quot;), true, 'Undefined', 'Trace', 'Calculating ReportLabObservation(C19.&quot;Last Tumor Necrosis Factor Alpha  Lab Result&quot;)'),
   // Not included in count of concerning labs; used for severity classification.
   PaO2FiO2: Message(C19.&quot;Last PaO2FiO2 Ratio Lab Result Less Than 300&quot;, true, 'Undefined', 'Trace', 'Calculating C19.&quot;Last PaO2FiO2 Ratio Lab Result Less Than 300&quot;')
 }
@@ -333,7 +336,10 @@ define LabResultList: {
   DiagnosticSummary.Lymphopenia,
   DiagnosticSummary.Neutrophils,
   DiagnosticSummary.PCT,
-  DiagnosticSummary.ImmuneDysregulation
+  DiagnosticSummary.Interleukin1,
+  DiagnosticSummary.Interleukin6,
+  DiagnosticSummary.Interleukin8,
+  DiagnosticSummary.TumorNecrosisFactorAlpha
 }
 
 
@@ -573,7 +579,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 121Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 229Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 125Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 235Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -602,7 +608,7 @@ define function LabInterpretation(o FHIR.Observation):
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 15, 2022 15:39+0000">2022-02-15</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 16, 2022 22:34+0000">2022-02-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
