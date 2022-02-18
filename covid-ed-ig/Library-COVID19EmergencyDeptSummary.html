@@ -484,7 +484,7 @@ define &quot;Recommend Non-Pharmacologic Treatment&quot;:
 // Recommend discharge from emergency department treamtment for mild and moderate severity.
 define &quot;Recommend Discharge Treatment&quot;:
   if HasAdmissionOrDischargeRecommendation is false then null
-  else if (C19.&quot;Is Mild Severity&quot; or C19.&quot;Is Moderate Severity&quot;) then true
+  else if (C19.&quot;Is Mild Severity&quot; or C19.&quot;Is Moderate Severity&quot; or C19.&quot;Is Severe Severity&quot; ) then true
   else null
 
 // Recommend admission to emergency department treamtment for moderate, severe and critical severity.
@@ -579,7 +579,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 125Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 235Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 125Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 236Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -608,7 +608,7 @@ define function LabInterpretation(o FHIR.Observation):
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 17, 2022 21:48+0000">2022-02-17</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 18, 2022 00:07+0000">2022-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

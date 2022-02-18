@@ -5359,18 +5359,30 @@
                 "asType": "{urn:hl7-org:elm-types:r1}Boolean",
                 "type": "As",
                 "operand": {
-                  "locator": "306:11-306:64",
+                  "locator": "306:11-306:93",
                   "type": "Or",
                   "operand": [
                     {
-                      "locator": "306:12-306:33",
-                      "name": "Is Mild Severity",
-                      "libraryName": "C19",
-                      "type": "ExpressionRef"
+                      "locator": "306:12-306:63",
+                      "type": "Or",
+                      "operand": [
+                        {
+                          "locator": "306:12-306:33",
+                          "name": "Is Mild Severity",
+                          "libraryName": "C19",
+                          "type": "ExpressionRef"
+                        },
+                        {
+                          "locator": "306:38-306:63",
+                          "name": "Is Moderate Severity",
+                          "libraryName": "C19",
+                          "type": "ExpressionRef"
+                        }
+                      ]
                     },
                     {
-                      "locator": "306:38-306:63",
-                      "name": "Is Moderate Severity",
+                      "locator": "306:68-306:91",
+                      "name": "Is Severe Severity",
                       "libraryName": "C19",
                       "type": "ExpressionRef"
                     }
@@ -5378,7 +5390,7 @@
                 }
               },
               "then": {
-                "locator": "306:71-306:74",
+                "locator": "306:100-306:103",
                 "valueType": "{urn:hl7-org:elm-types:r1}Boolean",
                 "value": "true",
                 "type": "Literal"

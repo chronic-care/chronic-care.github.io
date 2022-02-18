@@ -1674,12 +1674,15 @@
             </then>
             <else locator="306:8-307:11" xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="306:11-306:64" xsi:type="Or">
-                     <operand locator="306:12-306:33" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
-                     <operand locator="306:38-306:63" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                  <operand locator="306:11-306:93" xsi:type="Or">
+                     <operand locator="306:12-306:63" xsi:type="Or">
+                        <operand locator="306:12-306:33" name="Is Mild Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                        <operand locator="306:38-306:63" name="Is Moderate Severity" libraryName="C19" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand locator="306:68-306:91" name="Is Severe Severity" libraryName="C19" xsi:type="ExpressionRef"/>
                   </operand>
                </condition>
-               <then locator="306:71-306:74" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+               <then locator="306:100-306:103" valueType="t:Boolean" value="true" xsi:type="Literal"/>
                <else asType="t:Boolean" xsi:type="As">
                   <operand locator="307:8-307:11" xsi:type="Null"/>
                </else>
