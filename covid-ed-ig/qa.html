@@ -36,9 +36,9 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for COVID19EDSeverityClassification</h1>
- <p>Generated Fri Feb 18 00:08:29 UTC 2022, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.min.html">Errors Only</a></p>
+ <p>Generated Wed Feb 23 18:17:07 UTC 2022, FHIR version 4.0.1 for fhir.acep.covid19-ed-r4#0.1.0 (canonical = <a href="http://fhir.org/guides/acep">http://fhir.org/guides/acep</a> (<a href="http://fhir.org/guides/acep/history.html">history</a>)). See <a href="/home/runner/work/covid-ed-ig/covid-ed-ig/output/qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
- <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.104</span></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.106</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = fhir.acep.covid19-ed-r4, Canonical = http://fhir.org/guides/acep</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
  <tr><td>Version Check:</td><td>0.1.0: <span stlye="color: marron; font-weight: bold">No entry in the package-list.json file for this version</span></td></tr>
@@ -54,7 +54,7 @@
  <br/><br/>The copyrightYear parameter ('2020+') in the IG resource is good</td></tr>
  <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
  <tr><td>R5 Dependencies:</td><td><span style="color: grey">(none)</span></td></tr>
- <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://fhir.org/guides/acep (Problem #1 with package-list.json at http://fhir.org/guides/acep: Invalid HTTP response 404 from http://fhir.org/guides/acep/package-list.json?nocache=1645142862774 (Not Found) (content in /tmp/fhir-http-4.log))</td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://fhir.org/guides/acep (Problem #1 with package-list.json at http://fhir.org/guides/acep: Invalid HTTP response 404 from http://fhir.org/guides/acep/package-list.json?nocache=1645640180875 (Not Found) (content in /tmp/fhir-http-4.log))</td></tr>
  <tr><td>Summary:</td><td> broken links = 0, errors = 79, warn = 34, info = 16</td></tr>
 </table>
  <table class="grid">
@@ -388,7 +388,7 @@
      <td><b>COVID19EmergencyDeptSummary.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of ObtainDiagnostics: System.Boolean, DischargeHome: System.Boolean, DischargeHomeElevatedRisk: System.Boolean, ConsiderAdmission: System.Boolean, ConsiderDischargingHome: System.Boolean, SevereAdmission: System.Boolean, CriticalAdmission: System.Boolean of definition DispositionSummary is not supported; implementations may not be able to use the result of this expression</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
-     <td><b>COVID19EmergencyDeptSummary.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of NonPharmacologic: System.Boolean, Discharge: System.Boolean, Admission: System.Boolean, Steroids: System.Boolean of definition TreatmentSummary is not supported; implementations may not be able to use the result of this expression</b></td>
+     <td><b>COVID19EmergencyDeptSummary.cql</b></td><td><b>warning</b></td><td title=""><b>Result type List of tuple of TreatmentType: System.String, PriorityOrder: System.Integer, Recommend: System.Boolean of definition TreatmentSummary is not supported; implementations may not be able to use the result of this expression</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>COVID19EmergencyDeptSummary.cql</b></td><td><b>warning</b></td><td title=""><b>Result type tuple of RespiratoryRate: System.Decimal, O2Saturation: System.Decimal, HeartRate: System.Decimal, BloodPressure: System.String, SystolicBloodPressure: System.Decimal, TemperatureC: System.Decimal, TemperatureF: System.Decimal, SupplementalOxygen: System.Boolean, Alertness: System.String, PerformanceStatus: System.String of definition AssessmentSummary is not supported; implementations may not be able to use the result of this expression</b></td>
