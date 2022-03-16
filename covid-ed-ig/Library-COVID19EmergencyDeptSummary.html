@@ -395,7 +395,9 @@ define ImagingResultList: {
 
 define LabResultCount:
   Message(
-   if (C19.ClinicalAssessments.ConcerningLabCount is not null) then C19.ClinicalAssessments.ConcerningLabCount
+   // 0 means labs exist but were not concerning so obtain diagnosis does not need to show
+   if (C19.ClinicalAssessments.ConcerningLabCount is not null and C19.ClinicalAssessments.ConcerningLabCount = 0) then 1
+    else if (C19.ClinicalAssessments.ConcerningLabCount is not null) then C19.ClinicalAssessments.ConcerningLabCount
     else Count(LabResultList result where result is not null)
 
   , true, 'Undefined', 'Trace', 'Calculating LabResultCount')
@@ -626,7 +628,7 @@ define function LabInterpretation(o FHIR.Observation):
     else null
   else
     null
-</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 130Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 246Kb)</p></div>
+</code></pre><p><code>Content not shown - (</code><code>application/elm+xml</code>, size = 132Kb)</p><p><code>Content not shown - (</code><code>application/elm+json</code>, size = 249Kb)</p></div>
 
   <!-- insert notes if present -->
   
@@ -655,7 +657,7 @@ define function LabInterpretation(o FHIR.Observation):
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 16, 2022 16:50+0000">2022-03-16</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7.org/Special/committees/[something]">Veterans Health Administration (VHA)</a>.  Package fhir.acep.covid19-ed-r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 16, 2022 20:44+0000">2022-03-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
