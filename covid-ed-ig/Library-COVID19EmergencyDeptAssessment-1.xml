@@ -1419,36 +1419,36 @@
             <message locator="428:43-428:76" valueType="t:String" value="Calculating Is Critical Severity" xsi:type="Literal"/>
          </expression>
       </def>
-      <def locator="996:1-1001:3" name="Last PaO2FiO2 Ratio Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="997:3-1001:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="998:5-1000:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="999:7-999:66" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="999:20-999:65" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="999:34-999:64" name="PaO2FiO2 Ratio Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="1000:1-1005:3" name="Last PaO2FiO2 Ratio Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="1001:3-1005:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="1002:5-1004:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="1003:7-1003:66" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="1003:20-1003:65" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="1003:34-1003:64" name="PaO2FiO2 Ratio Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="1000:7-1000:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="1004:7-1004:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="1003:1-1006:3" name="Last PaO2FiO2 Ratio Lab Result Less Than 300" context="Patient" accessLevel="Public">
-         <expression locator="1004:3-1006:3" xsi:type="Coalesce">
-            <operand locator="1004:12-1004:55" path="PaO2FiO2RatioLessThan300" xsi:type="Property">
-               <source locator="1004:12-1004:30" name="ClinicalAssessments" xsi:type="ParameterRef"/>
+      <def locator="1007:1-1010:3" name="Last PaO2FiO2 Ratio Lab Result Less Than 300" context="Patient" accessLevel="Public">
+         <expression locator="1008:3-1010:3" xsi:type="Coalesce">
+            <operand locator="1008:12-1008:55" path="PaO2FiO2RatioLessThan300" xsi:type="Property">
+               <source locator="1008:12-1008:30" name="ClinicalAssessments" xsi:type="ParameterRef"/>
             </operand>
-            <operand locator="1005:5-1005:73" xsi:type="Less">
+            <operand locator="1009:5-1009:73" xsi:type="Less">
                <operand name="ToDecimal" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                  <operand locator="1005:5-1005:67" path="value" xsi:type="Property">
-                     <source locator="1005:5-1005:61" strict="false" xsi:type="As">
-                        <operand locator="1005:6-1005:43" path="value" xsi:type="Property">
-                           <source locator="1005:6-1005:37" name="Last PaO2FiO2 Ratio Lab Result" xsi:type="ExpressionRef"/>
+                  <operand locator="1009:5-1009:67" path="value" xsi:type="Property">
+                     <source locator="1009:5-1009:61" strict="false" xsi:type="As">
+                        <operand locator="1009:6-1009:43" path="value" xsi:type="Property">
+                           <source locator="1009:6-1009:37" name="Last PaO2FiO2 Ratio Lab Result" xsi:type="ExpressionRef"/>
                         </operand>
-                        <asTypeSpecifier locator="1005:48-1005:60" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        <asTypeSpecifier locator="1009:48-1009:60" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
                      </source>
                   </operand>
                </operand>
                <operand xsi:type="ToDecimal">
-                  <operand locator="1005:71-1005:73" valueType="t:Integer" value="300" xsi:type="Literal"/>
+                  <operand locator="1009:71-1009:73" valueType="t:Integer" value="300" xsi:type="Literal"/>
                </operand>
             </operand>
          </expression>
@@ -2626,311 +2626,311 @@
             </return>
          </expression>
       </def>
-      <def locator="777:1-778:28" name="Has Bronchiectasis Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="778:3-778:28" path="Bronchiectasis" xsi:type="Property">
-            <source locator="778:3-778:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="781:1-782:28" name="Has Bronchiectasis Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="782:3-782:28" path="Bronchiectasis" xsi:type="Property">
+            <source locator="782:3-782:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="780:1-781:39" name="Has Bronchopulmonary Dysplasia Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="781:3-781:39" path="BronchopulmonaryDysplasia" xsi:type="Property">
-            <source locator="781:3-781:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="784:1-785:39" name="Has Bronchopulmonary Dysplasia Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="785:3-785:39" path="BronchopulmonaryDysplasia" xsi:type="Property">
+            <source locator="785:3-785:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="783:1-784:35" name="Has Pulmonary Hypertension Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="784:3-784:35" path="PulmonaryHypertension" xsi:type="Property">
-            <source locator="784:3-784:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="787:1-788:35" name="Has Pulmonary Hypertension Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="788:3-788:35" path="PulmonaryHypertension" xsi:type="Property">
+            <source locator="788:3-788:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="786:1-787:31" name="Has Pulmonary Embolism Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="787:3-787:31" path="PulmonaryEmbolism" xsi:type="Property">
-            <source locator="787:3-787:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="790:1-791:31" name="Has Pulmonary Embolism Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="791:3-791:31" path="PulmonaryEmbolism" xsi:type="Property">
+            <source locator="791:3-791:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="797:1-798:36" name="Has Cerebrovascular Disease Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="798:3-798:36" path="CerebrovascularDisease" xsi:type="Property">
-            <source locator="798:3-798:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="801:1-802:36" name="Has Cerebrovascular Disease Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="802:3-802:36" path="CerebrovascularDisease" xsi:type="Property">
+            <source locator="802:3-802:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="760:1-761:112" name="All Active Conditions" context="Patient" accessLevel="Public">
-         <expression locator="761:3-761:112" xsi:type="Message">
-            <source locator="761:11-761:44" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="761:33-761:43" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
+      <def locator="764:1-765:112" name="All Active Conditions" context="Patient" accessLevel="Public">
+         <expression locator="765:3-765:112" xsi:type="Message">
+            <source locator="765:11-765:44" name="ActiveOrRecurring" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="765:33-765:43" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" xsi:type="Retrieve"/>
             </source>
-            <condition locator="761:47-761:50" valueType="t:Boolean" value="true" xsi:type="Literal"/>
-            <code locator="761:53-761:63" valueType="t:String" value="Undefined" xsi:type="Literal"/>
-            <severity locator="761:66-761:72" valueType="t:String" value="Trace" xsi:type="Literal"/>
-            <message locator="761:75-761:111" valueType="t:String" value="Calculating &quot;All Active Conditions&quot;" xsi:type="Literal"/>
+            <condition locator="765:47-765:50" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <code locator="765:53-765:63" valueType="t:String" value="Undefined" xsi:type="Literal"/>
+            <severity locator="765:66-765:72" valueType="t:String" value="Trace" xsi:type="Literal"/>
+            <message locator="765:75-765:111" valueType="t:String" value="Calculating &quot;All Active Conditions&quot;" xsi:type="Literal"/>
          </expression>
       </def>
-      <def locator="763:1-767:8" name="DoesExistElseNull" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="764:3-767:8" xsi:type="If">
+      <def locator="767:1-771:8" name="DoesExistElseNull" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="768:3-771:8" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="764:6-764:21" xsi:type="Exists">
-                  <operand locator="764:12-764:21" name="CondList" xsi:type="OperandRef"/>
+               <operand locator="768:6-768:21" xsi:type="Exists">
+                  <operand locator="768:12-768:21" name="CondList" xsi:type="OperandRef"/>
                </operand>
             </condition>
-            <then locator="765:5-765:8" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            <then locator="769:5-769:8" valueType="t:Boolean" value="true" xsi:type="Literal"/>
             <else asType="t:Boolean" xsi:type="As">
-               <operand locator="767:5-767:8" xsi:type="Null"/>
+               <operand locator="771:5-771:8" xsi:type="Null"/>
             </else>
          </expression>
          <operand name="CondList">
-            <operandTypeSpecifier locator="763:44-763:58" xsi:type="ListTypeSpecifier">
-               <elementType locator="763:49-763:57" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="767:44-767:58" xsi:type="ListTypeSpecifier">
+               <elementType locator="767:49-767:57" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="769:1-774:34" name="HasConditionWithOverride" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="773:3-774:34" xsi:type="If">
+      <def locator="773:1-778:34" name="HasConditionWithOverride" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="777:3-778:34" xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand locator="773:6-773:33" name="IgnoreFallbackResourceValues" xsi:type="ParameterRef"/>
+               <operand locator="777:6-777:33" name="IgnoreFallbackResourceValues" xsi:type="ParameterRef"/>
             </condition>
-            <then locator="773:40-773:54" name="OverridingValue" xsi:type="OperandRef"/>
-            <else locator="774:8-774:34" name="DoesExistElseNull" xsi:type="FunctionRef">
-               <operand locator="774:26-774:33" name="CondList" xsi:type="OperandRef"/>
+            <then locator="777:40-777:54" name="OverridingValue" xsi:type="OperandRef"/>
+            <else locator="778:8-778:34" name="DoesExistElseNull" xsi:type="FunctionRef">
+               <operand locator="778:26-778:33" name="CondList" xsi:type="OperandRef"/>
             </else>
          </expression>
          <operand name="CondList">
-            <operandTypeSpecifier locator="770:12-770:26" xsi:type="ListTypeSpecifier">
-               <elementType locator="770:17-770:25" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="774:12-774:26" xsi:type="ListTypeSpecifier">
+               <elementType locator="774:17-774:25" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
          <operand name="OverridingValue">
-            <operandTypeSpecifier locator="771:19-771:25" name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="775:19-775:25" name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
          </operand>
       </def>
-      <def locator="800:1-806:3" name="Has Chronic Kidney Disease Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="801:3-806:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="802:5-804:56" xsi:type="Query">
-               <source locator="802:6-802:30" alias="C">
-                  <expression locator="802:6-802:28" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="804:1-810:3" name="Has Chronic Kidney Disease Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="805:3-810:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="806:5-808:56" xsi:type="Query">
+               <source locator="806:6-806:30" alias="C">
+                  <expression locator="806:6-806:28" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="803:7-804:55" xsi:type="Or">
-                  <operand locator="803:14-803:55" xsi:type="InValueSet">
+               <where locator="807:7-808:55" xsi:type="Or">
+                  <operand locator="807:14-807:55" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="803:14-803:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="807:14-807:19" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="803:24-803:55" name="Kidney Disease SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="807:24-807:55" name="Kidney Disease SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="804:12-804:54" xsi:type="InValueSet">
+                  <operand locator="808:12-808:54" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="804:12-804:17" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="808:12-808:17" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="804:22-804:54" name="Kidney Disease ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="808:22-808:54" name="Kidney Disease ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="805:5-805:36" path="ChronicKidneyDisease" xsi:type="Property">
-               <source locator="805:5-805:15" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="809:5-809:36" path="ChronicKidneyDisease" xsi:type="Property">
+               <source locator="809:5-809:15" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="808:1-809:33" name="Has Chronic Liver Disease Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="809:3-809:33" path="ChronicLiverDisease" xsi:type="Property">
-            <source locator="809:3-809:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="812:1-813:33" name="Has Chronic Liver Disease Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="813:3-813:33" path="ChronicLiverDisease" xsi:type="Property">
+            <source locator="813:3-813:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="811:1-812:18" name="Has COPD Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="812:3-812:18" path="COPD" xsi:type="Property">
-            <source locator="812:3-812:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="815:1-816:18" name="Has COPD Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="816:3-816:18" path="COPD" xsi:type="Property">
+            <source locator="816:3-816:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="814:1-820:1" name="Has Diabetes Mellitus Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="815:1-820:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="816:3-818:47" xsi:type="Query">
-               <source locator="816:4-816:28" alias="C">
-                  <expression locator="816:4-816:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="818:1-824:1" name="Has Diabetes Mellitus Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="819:1-824:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="820:3-822:47" xsi:type="Query">
+               <source locator="820:4-820:28" alias="C">
+                  <expression locator="820:4-820:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="817:6-818:46" xsi:type="Or">
-                  <operand locator="817:13-817:49" xsi:type="InValueSet">
+               <where locator="821:6-822:46" xsi:type="Or">
+                  <operand locator="821:13-821:49" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="817:13-817:18" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="821:13-821:18" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="817:23-817:49" name="Diabetes ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="821:23-821:49" name="Diabetes ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="818:10-818:45" xsi:type="InValueSet">
+                  <operand locator="822:10-822:45" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="818:10-818:15" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="822:10-822:15" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="818:20-818:45" name="Diabetes SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="822:20-822:45" name="Diabetes SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="819:3-819:30" path="DiabetesMellitus" xsi:type="Property">
-               <source locator="819:3-819:13" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="823:3-823:30" path="DiabetesMellitus" xsi:type="Property">
+               <source locator="823:3-823:13" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="822:1-823:29" name="Has Heart Conditions Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="823:3-823:29" path="HeartConditions" xsi:type="Property">
-            <source locator="823:3-823:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="826:1-827:29" name="Has Heart Conditions Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="827:3-827:29" path="HeartConditions" xsi:type="Property">
+            <source locator="827:3-827:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="825:1-826:37" name="Has Interstitial Lung Disease Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="826:3-826:37" path="InterstitialLungDisease" xsi:type="Property">
-            <source locator="826:3-826:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="829:1-830:37" name="Has Interstitial Lung Disease Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="830:3-830:37" path="InterstitialLungDisease" xsi:type="Property">
+            <source locator="830:3-830:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="828:1-829:37" name="Has Current And Former Smoking Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="829:3-829:37" path="CurrentAndFormerSmoking" xsi:type="Property">
-            <source locator="829:3-829:13" name="RiskFactors" xsi:type="ParameterRef"/>
-         </expression>
-      </def>
-      <def locator="832:1-833:26" name="Has Tuberculosis Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="833:3-833:26" path="Tuberculosis" xsi:type="Property">
+      <def locator="832:1-833:37" name="Has Current And Former Smoking Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="833:3-833:37" path="CurrentAndFormerSmoking" xsi:type="Property">
             <source locator="833:3-833:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="835:1-836:21" name="Has Obesity Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="836:3-836:21" path="Obesity" xsi:type="Property">
-            <source locator="836:3-836:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="836:1-837:26" name="Has Tuberculosis Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="837:3-837:26" path="Tuberculosis" xsi:type="Property">
+            <source locator="837:3-837:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="838:1-839:41" name="Has Pregnancy And Recent Pregnancy Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="839:3-839:41" path="PregnancyAndRecentPregnancy" xsi:type="Property">
-            <source locator="839:3-839:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="839:1-840:21" name="Has Obesity Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="840:3-840:21" path="Obesity" xsi:type="Property">
+            <source locator="840:3-840:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="842:1-843:35" name="Has Mental Health Disorders Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="843:3-843:35" path="MentalHealthDisorders" xsi:type="Property">
+      <def locator="842:1-843:41" name="Has Pregnancy And Recent Pregnancy Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="843:3-843:41" path="PregnancyAndRecentPregnancy" xsi:type="Property">
             <source locator="843:3-843:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="845:1-846:53" name="Has Children With Certain Underlying Conditions Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="846:3-846:53" path="ChildrenWithCertainUnderlyingConditions" xsi:type="Property">
-            <source locator="846:3-846:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="846:1-847:35" name="Has Mental Health Disorders Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="847:3-847:35" path="MentalHealthDisorders" xsi:type="Property">
+            <source locator="847:3-847:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="848:1-854:1" name="Has Down Syndrome Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="849:1-854:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="850:3-852:53" xsi:type="Query">
-               <source locator="850:4-850:28" alias="C">
-                  <expression locator="850:4-850:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="849:1-850:53" name="Has Children With Certain Underlying Conditions Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="850:3-850:53" path="ChildrenWithCertainUnderlyingConditions" xsi:type="Property">
+            <source locator="850:3-850:13" name="RiskFactors" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def locator="852:1-858:1" name="Has Down Syndrome Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="853:1-858:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="854:3-856:53" xsi:type="Query">
+               <source locator="854:4-854:28" alias="C">
+                  <expression locator="854:4-854:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="851:6-852:52" xsi:type="Or">
-                  <operand locator="851:13-851:55" xsi:type="InValueSet">
+               <where locator="855:6-856:52" xsi:type="Or">
+                  <operand locator="855:13-855:55" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="851:13-851:18" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="855:13-855:18" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="851:23-851:55" name="Downs Syndrome ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="855:23-855:55" name="Downs Syndrome ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="852:10-852:51" xsi:type="InValueSet">
+                  <operand locator="856:10-856:51" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="852:10-852:15" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="856:10-856:15" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="852:20-852:51" name="Downs Syndrome SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="856:20-856:51" name="Downs Syndrome SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="853:3-853:26" path="DownSyndrome" xsi:type="Property">
-               <source locator="853:3-853:13" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="857:3-857:26" path="DownSyndrome" xsi:type="Property">
+               <source locator="857:3-857:13" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="856:1-857:17" name="Has HIV Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="857:3-857:17" path="HIV" xsi:type="Property">
-            <source locator="857:3-857:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="860:1-861:17" name="Has HIV Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="861:3-861:17" path="HIV" xsi:type="Property">
+            <source locator="861:3-861:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="859:1-860:34" name="Has Neurologic Conditions Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="860:3-860:34" path="NeurologicConditions" xsi:type="Property">
-            <source locator="860:3-860:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="863:1-864:34" name="Has Neurologic Conditions Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="864:3-864:34" path="NeurologicConditions" xsi:type="Property">
+            <source locator="864:3-864:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="862:1-863:24" name="Has Overweight Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="863:3-863:24" path="Overweight" xsi:type="Property">
-            <source locator="863:3-863:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="866:1-867:24" name="Has Overweight Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="867:3-867:24" path="Overweight" xsi:type="Property">
+            <source locator="867:3-867:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="865:1-866:31" name="Has Sickle Cell Disease Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="866:3-866:31" path="SickleCellDisease" xsi:type="Property">
-            <source locator="866:3-866:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="869:1-870:31" name="Has Sickle Cell Disease Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="870:3-870:31" path="SickleCellDisease" xsi:type="Property">
+            <source locator="870:3-870:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="868:1-869:50" name="Has Solid Organ Or Blood Stem Transplantation Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="869:3-869:50" path="SolidOrganOrBloodStemTransplantation" xsi:type="Property">
-            <source locator="869:3-869:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="872:1-873:50" name="Has Solid Organ Or Blood Stem Transplantation Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="873:3-873:50" path="SolidOrganOrBloodStemTransplantation" xsi:type="Property">
+            <source locator="873:3-873:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="871:1-872:35" name="Has Substance Use Disorders Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="872:3-872:35" path="SubstanceUseDisorders" xsi:type="Property">
-            <source locator="872:3-872:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="875:1-876:35" name="Has Substance Use Disorders Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="876:3-876:35" path="SubstanceUseDisorders" xsi:type="Property">
+            <source locator="876:3-876:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="874:1-880:1" name="Has Corticosteroids Usage Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="875:1-880:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="876:3-878:60" xsi:type="Query">
-               <source locator="876:4-876:28" alias="C">
-                  <expression locator="876:4-876:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="878:1-884:1" name="Has Corticosteroids Usage Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="879:1-884:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="880:3-882:60" xsi:type="Query">
+               <source locator="880:4-880:28" alias="C">
+                  <expression locator="880:4-880:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="877:6-878:59" xsi:type="Or">
-                  <operand locator="877:13-877:62" xsi:type="InValueSet">
+               <where locator="881:6-882:59" xsi:type="Or">
+                  <operand locator="881:13-881:62" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="877:13-877:18" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="881:13-881:18" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="877:23-877:62" name="Corticosteroids Usage ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="881:23-881:62" name="Corticosteroids Usage ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="878:10-878:58" xsi:type="InValueSet">
+                  <operand locator="882:10-882:58" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="878:10-878:15" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="882:10-882:15" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="878:20-878:58" name="Corticosteroids Usage SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="882:20-882:58" name="Corticosteroids Usage SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="879:3-879:29" path="Corticosteroids" xsi:type="Property">
-               <source locator="879:3-879:13" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="883:3-883:29" path="Corticosteroids" xsi:type="Property">
+               <source locator="883:3-883:13" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="882:1-883:42" name="Has Immunosuppressive Medications Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="883:3-883:42" path="ImmunosuppressiveMedications" xsi:type="Property">
-            <source locator="883:3-883:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="886:1-887:42" name="Has Immunosuppressive Medications Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="887:3-887:42" path="ImmunosuppressiveMedications" xsi:type="Property">
+            <source locator="887:3-887:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="885:1-886:28" name="Has Cystic Fibrosis Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="886:3-886:28" path="CysticFibrosis" xsi:type="Property">
-            <source locator="886:3-886:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="889:1-890:28" name="Has Cystic Fibrosis Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="890:3-890:28" path="CysticFibrosis" xsi:type="Property">
+            <source locator="890:3-890:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="888:1-889:25" name="Has Thalassemia Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="889:3-889:25" path="Thalassemia" xsi:type="Property">
-            <source locator="889:3-889:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="892:1-893:25" name="Has Thalassemia Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="893:3-893:25" path="Thalassemia" xsi:type="Property">
+            <source locator="893:3-893:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="891:1-892:20" name="Has Asthma Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="892:3-892:20" path="Asthma" xsi:type="Property">
-            <source locator="892:3-892:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="895:1-896:20" name="Has Asthma Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="896:3-896:20" path="Asthma" xsi:type="Property">
+            <source locator="896:3-896:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="894:1-895:26" name="Has Hypertension Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="895:3-895:26" path="Hypertension" xsi:type="Property">
-            <source locator="895:3-895:13" name="RiskFactors" xsi:type="ParameterRef"/>
+      <def locator="898:1-899:26" name="Has Hypertension Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="899:3-899:26" path="Hypertension" xsi:type="Property">
+            <source locator="899:3-899:13" name="RiskFactors" xsi:type="ParameterRef"/>
          </expression>
       </def>
-      <def locator="898:1-904:1" name="Has Immune deficiencies Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="899:1-904:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="900:3-902:58" xsi:type="Query">
-               <source locator="900:4-900:28" alias="C">
-                  <expression locator="900:4-900:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="902:1-908:1" name="Has Immune deficiencies Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="903:1-908:1" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="904:3-906:58" xsi:type="Query">
+               <source locator="904:4-904:28" alias="C">
+                  <expression locator="904:4-904:26" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="901:6-902:57" xsi:type="Or">
-                  <operand locator="901:13-901:60" xsi:type="InValueSet">
+               <where locator="905:6-906:57" xsi:type="Or">
+                  <operand locator="905:13-905:60" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="901:13-901:18" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="905:13-905:18" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="901:23-901:60" name="Immune Deficiencies ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="905:23-905:60" name="Immune Deficiencies ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="902:10-902:56" xsi:type="InValueSet">
+                  <operand locator="906:10-906:56" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="902:10-902:15" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="906:10-906:15" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="902:20-902:56" name="Immune Deficiencies SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="906:20-906:56" name="Immune Deficiencies SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="903:3-903:32" path="ImmuneDeficiencies" xsi:type="Property">
-               <source locator="903:3-903:13" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="907:3-907:32" path="ImmuneDeficiencies" xsi:type="Property">
+               <source locator="907:3-907:13" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
@@ -2973,681 +2973,707 @@
             <element locator="662:3-662:39" name="Has Immune deficiencies Risk Factor" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def locator="675:1-681:3" name="hasCancerRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="676:3-681:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="677:5-679:50" xsi:type="Query">
-               <source locator="677:6-677:17" alias="C">
-                  <expression locator="677:6-677:15" name="conditions" xsi:type="OperandRef"/>
-               </source>
-               <where locator="678:11-679:49" xsi:type="Or">
-                  <operand locator="678:18-678:51" xsi:type="InValueSet">
-                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="678:18-678:23" path="code" scope="C" xsi:type="Property"/>
-                     </code>
-                     <valueset locator="678:28-678:51" name="Cancer SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="672:1-675:11" name="All Risk Factors Are Null" context="Patient" accessLevel="Public">
+         <expression locator="673:3-675:11" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="673:6-674:43" xsi:type="Or">
+                  <operand locator="673:6-673:44" xsi:type="Contains">
+                     <operand locator="673:6-673:29" name="Risk Factor Components" xsi:type="ExpressionRef"/>
+                     <operand locator="673:40-673:44" valueType="t:Boolean" value="false" xsi:type="Literal"/>
                   </operand>
-                  <operand locator="679:14-679:48" xsi:type="InValueSet">
+                  <operand locator="674:6-674:43" xsi:type="Contains">
+                     <operand locator="674:6-674:29" name="Risk Factor Components" xsi:type="ExpressionRef"/>
+                     <operand locator="674:40-674:43" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then locator="674:50-674:54" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+            <else locator="675:8-675:11" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def locator="679:1-685:3" name="hasCancerRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="680:3-685:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="681:5-683:50" xsi:type="Query">
+               <source locator="681:6-681:17" alias="C">
+                  <expression locator="681:6-681:15" name="conditions" xsi:type="OperandRef"/>
+               </source>
+               <where locator="682:11-683:49" xsi:type="Or">
+                  <operand locator="682:18-682:51" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="679:14-679:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="682:18-682:23" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="679:24-679:48" name="Cancer ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="682:28-682:51" name="Cancer SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                  </operand>
+                  <operand locator="683:14-683:48" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand locator="683:14-683:19" path="code" scope="C" xsi:type="Property"/>
+                     </code>
+                     <valueset locator="683:24-683:48" name="Cancer ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="680:5-680:22" path="Cancer" xsi:type="Property">
-               <source locator="680:5-680:15" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="684:5-684:22" path="Cancer" xsi:type="Property">
+               <source locator="684:5-684:15" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="675:49-675:63" xsi:type="ListTypeSpecifier">
-               <elementType locator="675:54-675:62" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="679:49-679:63" xsi:type="ListTypeSpecifier">
+               <elementType locator="679:54-679:62" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="683:1-689:5" name="hasChronicKidneyDiseaseRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="684:5-689:5" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="685:9-687:60" xsi:type="Query">
-               <source locator="685:10-685:21" alias="C">
-                  <expression locator="685:10-685:19" name="conditions" xsi:type="OperandRef"/>
+      <def locator="687:1-693:5" name="hasChronicKidneyDiseaseRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="688:5-693:5" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="689:9-691:60" xsi:type="Query">
+               <source locator="689:10-689:21" alias="C">
+                  <expression locator="689:10-689:19" name="conditions" xsi:type="OperandRef"/>
                </source>
-               <where locator="686:11-687:59" xsi:type="Or">
-                  <operand locator="686:18-686:59" xsi:type="InValueSet">
+               <where locator="690:11-691:59" xsi:type="Or">
+                  <operand locator="690:18-690:59" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="686:18-686:23" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="690:18-690:23" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="686:28-686:59" name="Kidney Disease SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="690:28-690:59" name="Kidney Disease SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="687:16-687:58" xsi:type="InValueSet">
+                  <operand locator="691:16-691:58" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="687:16-687:21" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="691:16-691:21" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="687:26-687:58" name="Kidney Disease ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="691:26-691:58" name="Kidney Disease ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="688:9-688:40" path="ChronicKidneyDisease" xsi:type="Property">
-               <source locator="688:9-688:19" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="692:9-692:40" path="ChronicKidneyDisease" xsi:type="Property">
+               <source locator="692:9-692:19" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="683:63-683:77" xsi:type="ListTypeSpecifier">
-               <elementType locator="683:68-683:76" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="687:63-687:77" xsi:type="ListTypeSpecifier">
+               <elementType locator="687:68-687:76" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="691:1-697:3" name="hasDiabetesMellitusRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="692:3-697:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="693:5-695:49" xsi:type="Query">
-               <source locator="693:6-693:17" alias="C">
-                  <expression locator="693:6-693:15" name="conditions" xsi:type="OperandRef"/>
+      <def locator="695:1-701:3" name="hasDiabetesMellitusRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="696:3-701:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="697:5-699:49" xsi:type="Query">
+               <source locator="697:6-697:17" alias="C">
+                  <expression locator="697:6-697:15" name="conditions" xsi:type="OperandRef"/>
                </source>
-               <where locator="694:7-695:48" xsi:type="Or">
-                  <operand locator="694:14-694:50" xsi:type="InValueSet">
+               <where locator="698:7-699:48" xsi:type="Or">
+                  <operand locator="698:14-698:50" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="694:14-694:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="698:14-698:19" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="694:24-694:50" name="Diabetes ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="698:24-698:50" name="Diabetes ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="695:12-695:47" xsi:type="InValueSet">
+                  <operand locator="699:12-699:47" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="695:12-695:17" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="699:12-699:17" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="695:22-695:47" name="Diabetes SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="699:22-699:47" name="Diabetes SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="696:5-696:32" path="DiabetesMellitus" xsi:type="Property">
-               <source locator="696:5-696:15" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="700:5-700:32" path="DiabetesMellitus" xsi:type="Property">
+               <source locator="700:5-700:15" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="691:58-691:72" xsi:type="ListTypeSpecifier">
-               <elementType locator="691:63-691:71" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="695:58-695:72" xsi:type="ListTypeSpecifier">
+               <elementType locator="695:63-695:71" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="699:1-705:3" name="hasDownSyndromeRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="700:3-705:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="701:7-703:57" xsi:type="Query">
-               <source locator="701:8-701:19" alias="C">
-                  <expression locator="701:8-701:17" name="conditions" xsi:type="OperandRef"/>
+      <def locator="703:1-709:3" name="hasDownSyndromeRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="704:3-709:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="705:7-707:57" xsi:type="Query">
+               <source locator="705:8-705:19" alias="C">
+                  <expression locator="705:8-705:17" name="conditions" xsi:type="OperandRef"/>
                </source>
-               <where locator="702:9-703:56" xsi:type="Or">
-                  <operand locator="702:16-702:58" xsi:type="InValueSet">
+               <where locator="706:9-707:56" xsi:type="Or">
+                  <operand locator="706:16-706:58" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="702:16-702:21" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="706:16-706:21" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="702:26-702:58" name="Downs Syndrome ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="706:26-706:58" name="Downs Syndrome ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="703:14-703:55" xsi:type="InValueSet">
+                  <operand locator="707:14-707:55" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="703:14-703:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="707:14-707:19" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="703:24-703:55" name="Downs Syndrome SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="707:24-707:55" name="Downs Syndrome SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="704:7-704:30" path="DownSyndrome" xsi:type="Property">
-               <source locator="704:7-704:17" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="708:7-708:30" path="DownSyndrome" xsi:type="Property">
+               <source locator="708:7-708:17" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="699:54-699:68" xsi:type="ListTypeSpecifier">
-               <elementType locator="699:59-699:67" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="703:54-703:68" xsi:type="ListTypeSpecifier">
+               <elementType locator="703:59-703:67" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="707:1-713:3" name="hasCorticosteroidsUsageRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="708:3-713:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="709:7-711:64" xsi:type="Query">
-               <source locator="709:8-709:19" alias="C">
-                  <expression locator="709:8-709:17" name="conditions" xsi:type="OperandRef"/>
+      <def locator="711:1-717:3" name="hasCorticosteroidsUsageRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="712:3-717:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="713:7-715:64" xsi:type="Query">
+               <source locator="713:8-713:19" alias="C">
+                  <expression locator="713:8-713:17" name="conditions" xsi:type="OperandRef"/>
                </source>
-               <where locator="710:9-711:63" xsi:type="Or">
-                  <operand locator="710:16-710:65" xsi:type="InValueSet">
+               <where locator="714:9-715:63" xsi:type="Or">
+                  <operand locator="714:16-714:65" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="710:16-710:21" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="714:16-714:21" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="710:26-710:65" name="Corticosteroids Usage ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="714:26-714:65" name="Corticosteroids Usage ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="711:14-711:62" xsi:type="InValueSet">
+                  <operand locator="715:14-715:62" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="711:14-711:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="715:14-715:19" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="711:24-711:62" name="Corticosteroids Usage SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="715:24-715:62" name="Corticosteroids Usage SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="712:7-712:33" path="Corticosteroids" xsi:type="Property">
-               <source locator="712:7-712:17" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="716:7-716:33" path="Corticosteroids" xsi:type="Property">
+               <source locator="716:7-716:17" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="707:62-707:76" xsi:type="ListTypeSpecifier">
-               <elementType locator="707:67-707:75" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="711:62-711:76" xsi:type="ListTypeSpecifier">
+               <elementType locator="711:67-711:75" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="715:1-721:3" name="hasImmunedeficienciesRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="716:3-721:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="717:7-719:62" xsi:type="Query">
-               <source locator="717:8-717:19" alias="C">
-                  <expression locator="717:8-717:17" name="conditions" xsi:type="OperandRef"/>
+      <def locator="719:1-725:3" name="hasImmunedeficienciesRiskFactor" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="720:3-725:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="721:7-723:62" xsi:type="Query">
+               <source locator="721:8-721:19" alias="C">
+                  <expression locator="721:8-721:17" name="conditions" xsi:type="OperandRef"/>
                </source>
-               <where locator="718:9-719:61" xsi:type="Or">
-                  <operand locator="718:16-718:63" xsi:type="InValueSet">
+               <where locator="722:9-723:61" xsi:type="Or">
+                  <operand locator="722:16-722:63" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="718:16-718:21" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="722:16-722:21" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="718:26-718:63" name="Immune Deficiencies ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="722:26-722:63" name="Immune Deficiencies ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="719:14-719:60" xsi:type="InValueSet">
+                  <operand locator="723:14-723:60" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="719:14-719:19" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="723:14-723:19" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="719:24-719:60" name="Immune Deficiencies SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="723:24-723:60" name="Immune Deficiencies SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="720:7-720:36" path="ImmuneDeficiencies" xsi:type="Property">
-               <source locator="720:7-720:17" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="724:7-724:36" path="ImmuneDeficiencies" xsi:type="Property">
+               <source locator="724:7-724:17" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="715:60-715:74" xsi:type="ListTypeSpecifier">
-               <elementType locator="715:65-715:73" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="719:60-719:74" xsi:type="ListTypeSpecifier">
+               <elementType locator="719:65-719:73" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="726:1-758:63" name="allRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression locator="727:1-758:63" xsi:type="Add">
-            <operand locator="727:1-757:50" xsi:type="Add">
-               <operand locator="727:1-756:44" xsi:type="Add">
-                  <operand locator="727:1-755:49" xsi:type="Add">
-                     <operand locator="727:1-754:53" xsi:type="Add">
-                        <operand locator="727:1-753:67" xsi:type="Add">
-                           <operand locator="727:1-752:65" xsi:type="Add">
-                              <operand locator="727:1-751:61" xsi:type="Add">
-                                 <operand locator="727:1-750:79" xsi:type="Add">
-                                    <operand locator="727:1-749:57" xsi:type="Add">
-                                       <operand locator="727:1-748:48" xsi:type="Add">
-                                          <operand locator="727:1-747:59" xsi:type="Add">
-                                             <operand locator="727:1-746:41" xsi:type="Add">
-                                                <operand locator="727:1-745:57" xsi:type="Add">
-                                                   <operand locator="727:1-744:81" xsi:type="Add">
-                                                      <operand locator="727:1-743:61" xsi:type="Add">
-                                                         <operand locator="727:1-742:68" xsi:type="Add">
-                                                            <operand locator="727:1-741:45" xsi:type="Add">
-                                                               <operand locator="727:1-740:50" xsi:type="Add">
-                                                                  <operand locator="727:1-739:64" xsi:type="Add">
-                                                                     <operand locator="727:1-738:63" xsi:type="Add">
-                                                                        <operand locator="727:1-737:54" xsi:type="Add">
-                                                                           <operand locator="727:1-736:61" xsi:type="Add">
-                                                                              <operand locator="727:1-735:42" xsi:type="Add">
-                                                                                 <operand locator="727:1-734:59" xsi:type="Add">
-                                                                                    <operand locator="727:1-733:66" xsi:type="Add">
-                                                                                       <operand locator="727:1-732:61" xsi:type="Add">
-                                                                                          <operand locator="727:1-731:52" xsi:type="Add">
-                                                                                             <operand locator="727:1-730:56" xsi:type="Add">
-                                                                                                <operand locator="727:1-729:60" xsi:type="Add">
-                                                                                                   <operand locator="727:1-728:64" xsi:type="Add">
-                                                                                                      <operand locator="727:1-727:51" xsi:type="If">
+      <def locator="730:1-762:63" name="allRiskFactors" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression locator="731:1-762:63" xsi:type="Add">
+            <operand locator="731:1-761:50" xsi:type="Add">
+               <operand locator="731:1-760:44" xsi:type="Add">
+                  <operand locator="731:1-759:49" xsi:type="Add">
+                     <operand locator="731:1-758:53" xsi:type="Add">
+                        <operand locator="731:1-757:67" xsi:type="Add">
+                           <operand locator="731:1-756:65" xsi:type="Add">
+                              <operand locator="731:1-755:61" xsi:type="Add">
+                                 <operand locator="731:1-754:79" xsi:type="Add">
+                                    <operand locator="731:1-753:57" xsi:type="Add">
+                                       <operand locator="731:1-752:48" xsi:type="Add">
+                                          <operand locator="731:1-751:59" xsi:type="Add">
+                                             <operand locator="731:1-750:41" xsi:type="Add">
+                                                <operand locator="731:1-749:57" xsi:type="Add">
+                                                   <operand locator="731:1-748:81" xsi:type="Add">
+                                                      <operand locator="731:1-747:61" xsi:type="Add">
+                                                         <operand locator="731:1-746:68" xsi:type="Add">
+                                                            <operand locator="731:1-745:45" xsi:type="Add">
+                                                               <operand locator="731:1-744:50" xsi:type="Add">
+                                                                  <operand locator="731:1-743:64" xsi:type="Add">
+                                                                     <operand locator="731:1-742:63" xsi:type="Add">
+                                                                        <operand locator="731:1-741:54" xsi:type="Add">
+                                                                           <operand locator="731:1-740:61" xsi:type="Add">
+                                                                              <operand locator="731:1-739:42" xsi:type="Add">
+                                                                                 <operand locator="731:1-738:59" xsi:type="Add">
+                                                                                    <operand locator="731:1-737:66" xsi:type="Add">
+                                                                                       <operand locator="731:1-736:61" xsi:type="Add">
+                                                                                          <operand locator="731:1-735:52" xsi:type="Add">
+                                                                                             <operand locator="731:1-734:56" xsi:type="Add">
+                                                                                                <operand locator="731:1-733:60" xsi:type="Add">
+                                                                                                   <operand locator="731:1-732:64" xsi:type="Add">
+                                                                                                      <operand locator="731:1-731:51" xsi:type="If">
                                                                                                          <condition asType="t:Boolean" xsi:type="As">
-                                                                                                            <operand locator="727:5-727:36" name="Has Bronchiectasis Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                                            <operand locator="731:5-731:36" name="Has Bronchiectasis Risk Factor" xsi:type="ExpressionRef"/>
                                                                                                          </condition>
-                                                                                                         <then locator="727:43" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                                         <else locator="727:50" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                                         <then locator="731:43" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                                         <else locator="731:50" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                                       </operand>
-                                                                                                      <operand locator="728:2-728:64" xsi:type="If">
+                                                                                                      <operand locator="732:2-732:64" xsi:type="If">
                                                                                                          <condition asType="t:Boolean" xsi:type="As">
-                                                                                                            <operand locator="728:6-728:49" name="Has Bronchopulmonary Dysplasia Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                                            <operand locator="732:6-732:49" name="Has Bronchopulmonary Dysplasia Risk Factor" xsi:type="ExpressionRef"/>
                                                                                                          </condition>
-                                                                                                         <then locator="728:56" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                                         <else locator="728:63" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                                         <then locator="732:56" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                                         <else locator="732:63" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                                       </operand>
                                                                                                    </operand>
-                                                                                                   <operand locator="729:2-729:60" xsi:type="If">
+                                                                                                   <operand locator="733:2-733:60" xsi:type="If">
                                                                                                       <condition asType="t:Boolean" xsi:type="As">
-                                                                                                         <operand locator="729:6-729:45" name="Has Pulmonary Hypertension Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                                         <operand locator="733:6-733:45" name="Has Pulmonary Hypertension Risk Factor" xsi:type="ExpressionRef"/>
                                                                                                       </condition>
-                                                                                                      <then locator="729:52" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                                      <else locator="729:59" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                                      <then locator="733:52" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                                      <else locator="733:59" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                                    </operand>
                                                                                                 </operand>
-                                                                                                <operand locator="730:2-730:56" xsi:type="If">
+                                                                                                <operand locator="734:2-734:56" xsi:type="If">
                                                                                                    <condition asType="t:Boolean" xsi:type="As">
-                                                                                                      <operand locator="730:6-730:41" name="Has Pulmonary Embolism Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                                      <operand locator="734:6-734:41" name="Has Pulmonary Embolism Risk Factor" xsi:type="ExpressionRef"/>
                                                                                                    </condition>
-                                                                                                   <then locator="730:48" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                                   <else locator="730:55" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                                   <then locator="734:48" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                                   <else locator="734:55" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                                 </operand>
                                                                                              </operand>
-                                                                                             <operand locator="731:2-731:52" xsi:type="If">
+                                                                                             <operand locator="735:2-735:52" xsi:type="If">
                                                                                                 <condition asType="t:Boolean" xsi:type="As">
-                                                                                                   <operand locator="731:6-731:37" name="hasCancerRiskFactors" xsi:type="FunctionRef">
-                                                                                                      <operand locator="731:27-731:36" name="conditions" xsi:type="OperandRef"/>
+                                                                                                   <operand locator="735:6-735:37" name="hasCancerRiskFactors" xsi:type="FunctionRef">
+                                                                                                      <operand locator="735:27-735:36" name="conditions" xsi:type="OperandRef"/>
                                                                                                    </operand>
                                                                                                 </condition>
-                                                                                                <then locator="731:44" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                                <else locator="731:51" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                                <then locator="735:44" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                                <else locator="735:51" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                              </operand>
                                                                                           </operand>
-                                                                                          <operand locator="732:2-732:61" xsi:type="If">
+                                                                                          <operand locator="736:2-736:61" xsi:type="If">
                                                                                              <condition asType="t:Boolean" xsi:type="As">
-                                                                                                <operand locator="732:6-732:46" name="Has Cerebrovascular Disease Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                                <operand locator="736:6-736:46" name="Has Cerebrovascular Disease Risk Factor" xsi:type="ExpressionRef"/>
                                                                                              </condition>
-                                                                                             <then locator="732:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                             <else locator="732:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                             <then locator="736:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                             <else locator="736:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                           </operand>
                                                                                        </operand>
-                                                                                       <operand locator="733:2-733:66" xsi:type="If">
+                                                                                       <operand locator="737:2-737:66" xsi:type="If">
                                                                                           <condition asType="t:Boolean" xsi:type="As">
-                                                                                             <operand locator="733:6-733:51" name="hasChronicKidneyDiseaseRiskFactors" xsi:type="FunctionRef">
-                                                                                                <operand locator="733:41-733:50" name="conditions" xsi:type="OperandRef"/>
+                                                                                             <operand locator="737:6-737:51" name="hasChronicKidneyDiseaseRiskFactors" xsi:type="FunctionRef">
+                                                                                                <operand locator="737:41-737:50" name="conditions" xsi:type="OperandRef"/>
                                                                                              </operand>
                                                                                           </condition>
-                                                                                          <then locator="733:58" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                          <else locator="733:65" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                          <then locator="737:58" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                          <else locator="737:65" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                        </operand>
                                                                                     </operand>
-                                                                                    <operand locator="734:2-734:59" xsi:type="If">
+                                                                                    <operand locator="738:2-738:59" xsi:type="If">
                                                                                        <condition asType="t:Boolean" xsi:type="As">
-                                                                                          <operand locator="734:6-734:44" name="Has Chronic Liver Disease Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                          <operand locator="738:6-738:44" name="Has Chronic Liver Disease Risk Factor" xsi:type="ExpressionRef"/>
                                                                                        </condition>
-                                                                                       <then locator="734:51" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                       <else locator="734:58" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                       <then locator="738:51" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                       <else locator="738:58" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                     </operand>
                                                                                  </operand>
-                                                                                 <operand locator="735:2-735:42" xsi:type="If">
+                                                                                 <operand locator="739:2-739:42" xsi:type="If">
                                                                                     <condition asType="t:Boolean" xsi:type="As">
-                                                                                       <operand locator="735:6-735:27" name="Has COPD Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                       <operand locator="739:6-739:27" name="Has COPD Risk Factor" xsi:type="ExpressionRef"/>
                                                                                     </condition>
-                                                                                    <then locator="735:34" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                    <else locator="735:41" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                    <then locator="739:34" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                    <else locator="739:41" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                                  </operand>
                                                                               </operand>
-                                                                              <operand locator="736:2-736:61" xsi:type="If">
+                                                                              <operand locator="740:2-740:61" xsi:type="If">
                                                                                  <condition asType="t:Boolean" xsi:type="As">
-                                                                                    <operand locator="736:6-736:46" name="hasDiabetesMellitusRiskFactor" xsi:type="FunctionRef">
-                                                                                       <operand locator="736:36-736:45" name="conditions" xsi:type="OperandRef"/>
+                                                                                    <operand locator="740:6-740:46" name="hasDiabetesMellitusRiskFactor" xsi:type="FunctionRef">
+                                                                                       <operand locator="740:36-740:45" name="conditions" xsi:type="OperandRef"/>
                                                                                     </operand>
                                                                                  </condition>
-                                                                                 <then locator="736:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                                 <else locator="736:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                                 <then locator="740:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                                 <else locator="740:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                               </operand>
                                                                            </operand>
-                                                                           <operand locator="737:2-737:54" xsi:type="If">
+                                                                           <operand locator="741:2-741:54" xsi:type="If">
                                                                               <condition asType="t:Boolean" xsi:type="As">
-                                                                                 <operand locator="737:6-737:39" name="Has Heart Conditions Risk Factor" xsi:type="ExpressionRef"/>
+                                                                                 <operand locator="741:6-741:39" name="Has Heart Conditions Risk Factor" xsi:type="ExpressionRef"/>
                                                                               </condition>
-                                                                              <then locator="737:46" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                              <else locator="737:53" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                              <then locator="741:46" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                              <else locator="741:53" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                            </operand>
                                                                         </operand>
-                                                                        <operand locator="738:2-738:63" xsi:type="If">
+                                                                        <operand locator="742:2-742:63" xsi:type="If">
                                                                            <condition asType="t:Boolean" xsi:type="As">
-                                                                              <operand locator="738:6-738:48" name="Has Interstitial Lung Disease Risk Factor" xsi:type="ExpressionRef"/>
+                                                                              <operand locator="742:6-742:48" name="Has Interstitial Lung Disease Risk Factor" xsi:type="ExpressionRef"/>
                                                                            </condition>
-                                                                           <then locator="738:55" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                           <else locator="738:62" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                           <then locator="742:55" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                           <else locator="742:62" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                         </operand>
                                                                      </operand>
-                                                                     <operand locator="739:2-739:64" xsi:type="If">
+                                                                     <operand locator="743:2-743:64" xsi:type="If">
                                                                         <condition asType="t:Boolean" xsi:type="As">
-                                                                           <operand locator="739:6-739:49" name="Has Current And Former Smoking Risk Factor" xsi:type="ExpressionRef"/>
+                                                                           <operand locator="743:6-743:49" name="Has Current And Former Smoking Risk Factor" xsi:type="ExpressionRef"/>
                                                                         </condition>
-                                                                        <then locator="739:56" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                        <else locator="739:63" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                        <then locator="743:56" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                        <else locator="743:63" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                      </operand>
                                                                   </operand>
-                                                                  <operand locator="740:2-740:50" xsi:type="If">
+                                                                  <operand locator="744:2-744:50" xsi:type="If">
                                                                      <condition asType="t:Boolean" xsi:type="As">
-                                                                        <operand locator="740:6-740:35" name="Has Tuberculosis Risk Factor" xsi:type="ExpressionRef"/>
+                                                                        <operand locator="744:6-744:35" name="Has Tuberculosis Risk Factor" xsi:type="ExpressionRef"/>
                                                                      </condition>
-                                                                     <then locator="740:42" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                     <else locator="740:49" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                     <then locator="744:42" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                     <else locator="744:49" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                   </operand>
                                                                </operand>
-                                                               <operand locator="741:2-741:45" xsi:type="If">
+                                                               <operand locator="745:2-745:45" xsi:type="If">
                                                                   <condition asType="t:Boolean" xsi:type="As">
-                                                                     <operand locator="741:6-741:30" name="Has Obesity Risk Factor" xsi:type="ExpressionRef"/>
+                                                                     <operand locator="745:6-745:30" name="Has Obesity Risk Factor" xsi:type="ExpressionRef"/>
                                                                   </condition>
-                                                                  <then locator="741:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                                  <else locator="741:44" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                                  <then locator="745:37" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                                  <else locator="745:44" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                                </operand>
                                                             </operand>
-                                                            <operand locator="742:2-742:68" xsi:type="If">
+                                                            <operand locator="746:2-746:68" xsi:type="If">
                                                                <condition asType="t:Boolean" xsi:type="As">
-                                                                  <operand locator="742:6-742:53" name="Has Pregnancy And Recent Pregnancy Risk Factor" xsi:type="ExpressionRef"/>
+                                                                  <operand locator="746:6-746:53" name="Has Pregnancy And Recent Pregnancy Risk Factor" xsi:type="ExpressionRef"/>
                                                                </condition>
-                                                               <then locator="742:60" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                               <else locator="742:67" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                               <then locator="746:60" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                               <else locator="746:67" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                             </operand>
                                                          </operand>
-                                                         <operand locator="743:2-743:61" xsi:type="If">
+                                                         <operand locator="747:2-747:61" xsi:type="If">
                                                             <condition asType="t:Boolean" xsi:type="As">
-                                                               <operand locator="743:6-743:46" name="Has Mental Health Disorders Risk Factor" xsi:type="ExpressionRef"/>
+                                                               <operand locator="747:6-747:46" name="Has Mental Health Disorders Risk Factor" xsi:type="ExpressionRef"/>
                                                             </condition>
-                                                            <then locator="743:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                            <else locator="743:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                            <then locator="747:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                            <else locator="747:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                          </operand>
                                                       </operand>
-                                                      <operand locator="744:2-744:81" xsi:type="If">
+                                                      <operand locator="748:2-748:81" xsi:type="If">
                                                          <condition asType="t:Boolean" xsi:type="As">
-                                                            <operand locator="744:6-744:66" name="Has Children With Certain Underlying Conditions Risk Factor" xsi:type="ExpressionRef"/>
+                                                            <operand locator="748:6-748:66" name="Has Children With Certain Underlying Conditions Risk Factor" xsi:type="ExpressionRef"/>
                                                          </condition>
-                                                         <then locator="744:73" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                         <else locator="744:80" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                         <then locator="748:73" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                         <else locator="748:80" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                       </operand>
                                                    </operand>
-                                                   <operand locator="745:2-745:57" xsi:type="If">
+                                                   <operand locator="749:2-749:57" xsi:type="If">
                                                       <condition asType="t:Boolean" xsi:type="As">
-                                                         <operand locator="745:6-745:42" name="hasDownSyndromeRiskFactor" xsi:type="FunctionRef">
-                                                            <operand locator="745:32-745:41" name="conditions" xsi:type="OperandRef"/>
+                                                         <operand locator="749:6-749:42" name="hasDownSyndromeRiskFactor" xsi:type="FunctionRef">
+                                                            <operand locator="749:32-749:41" name="conditions" xsi:type="OperandRef"/>
                                                          </operand>
                                                       </condition>
-                                                      <then locator="745:49" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                      <else locator="745:56" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                      <then locator="749:49" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                      <else locator="749:56" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                    </operand>
                                                 </operand>
-                                                <operand locator="746:2-746:41" xsi:type="If">
+                                                <operand locator="750:2-750:41" xsi:type="If">
                                                    <condition asType="t:Boolean" xsi:type="As">
-                                                      <operand locator="746:6-746:26" name="Has HIV Risk Factor" xsi:type="ExpressionRef"/>
+                                                      <operand locator="750:6-750:26" name="Has HIV Risk Factor" xsi:type="ExpressionRef"/>
                                                    </condition>
-                                                   <then locator="746:33" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                   <else locator="746:40" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                   <then locator="750:33" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                   <else locator="750:40" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                                 </operand>
                                              </operand>
-                                             <operand locator="747:2-747:59" xsi:type="If">
+                                             <operand locator="751:2-751:59" xsi:type="If">
                                                 <condition asType="t:Boolean" xsi:type="As">
-                                                   <operand locator="747:6-747:44" name="Has Neurologic Conditions Risk Factor" xsi:type="ExpressionRef"/>
+                                                   <operand locator="751:6-751:44" name="Has Neurologic Conditions Risk Factor" xsi:type="ExpressionRef"/>
                                                 </condition>
-                                                <then locator="747:51" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                                <else locator="747:58" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                <then locator="751:51" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                <else locator="751:58" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                              </operand>
                                           </operand>
-                                          <operand locator="748:2-748:48" xsi:type="If">
+                                          <operand locator="752:2-752:48" xsi:type="If">
                                              <condition asType="t:Boolean" xsi:type="As">
-                                                <operand locator="748:6-748:33" name="Has Overweight Risk Factor" xsi:type="ExpressionRef"/>
+                                                <operand locator="752:6-752:33" name="Has Overweight Risk Factor" xsi:type="ExpressionRef"/>
                                              </condition>
-                                             <then locator="748:40" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                             <else locator="748:47" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                             <then locator="752:40" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                             <else locator="752:47" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                           </operand>
                                        </operand>
-                                       <operand locator="749:2-749:57" xsi:type="If">
+                                       <operand locator="753:2-753:57" xsi:type="If">
                                           <condition asType="t:Boolean" xsi:type="As">
-                                             <operand locator="749:6-749:42" name="Has Sickle Cell Disease Risk Factor" xsi:type="ExpressionRef"/>
+                                             <operand locator="753:6-753:42" name="Has Sickle Cell Disease Risk Factor" xsi:type="ExpressionRef"/>
                                           </condition>
-                                          <then locator="749:49" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                          <else locator="749:56" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                          <then locator="753:49" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                          <else locator="753:56" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                        </operand>
                                     </operand>
-                                    <operand locator="750:2-750:79" xsi:type="If">
+                                    <operand locator="754:2-754:79" xsi:type="If">
                                        <condition asType="t:Boolean" xsi:type="As">
-                                          <operand locator="750:6-750:64" name="Has Solid Organ Or Blood Stem Transplantation Risk Factor" xsi:type="ExpressionRef"/>
+                                          <operand locator="754:6-754:64" name="Has Solid Organ Or Blood Stem Transplantation Risk Factor" xsi:type="ExpressionRef"/>
                                        </condition>
-                                       <then locator="750:71" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                       <else locator="750:78" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                       <then locator="754:71" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                       <else locator="754:78" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                     </operand>
                                  </operand>
-                                 <operand locator="751:2-751:61" xsi:type="If">
+                                 <operand locator="755:2-755:61" xsi:type="If">
                                     <condition asType="t:Boolean" xsi:type="As">
-                                       <operand locator="751:6-751:46" name="Has Substance Use Disorders Risk Factor" xsi:type="ExpressionRef"/>
+                                       <operand locator="755:6-755:46" name="Has Substance Use Disorders Risk Factor" xsi:type="ExpressionRef"/>
                                     </condition>
-                                    <then locator="751:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                    <else locator="751:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                    <then locator="755:53" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                    <else locator="755:60" valueType="t:Integer" value="0" xsi:type="Literal"/>
                                  </operand>
                               </operand>
-                              <operand locator="752:2-752:65" xsi:type="If">
+                              <operand locator="756:2-756:65" xsi:type="If">
                                  <condition asType="t:Boolean" xsi:type="As">
-                                    <operand locator="752:6-752:50" name="hasCorticosteroidsUsageRiskFactor" xsi:type="FunctionRef">
-                                       <operand locator="752:40-752:49" name="conditions" xsi:type="OperandRef"/>
+                                    <operand locator="756:6-756:50" name="hasCorticosteroidsUsageRiskFactor" xsi:type="FunctionRef">
+                                       <operand locator="756:40-756:49" name="conditions" xsi:type="OperandRef"/>
                                     </operand>
                                  </condition>
-                                 <then locator="752:57" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                                 <else locator="752:64" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                 <then locator="756:57" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                 <else locator="756:64" valueType="t:Integer" value="0" xsi:type="Literal"/>
                               </operand>
                            </operand>
-                           <operand locator="753:2-753:67" xsi:type="If">
+                           <operand locator="757:2-757:67" xsi:type="If">
                               <condition asType="t:Boolean" xsi:type="As">
-                                 <operand locator="753:6-753:52" name="Has Immunosuppressive Medications Risk Factor" xsi:type="ExpressionRef"/>
+                                 <operand locator="757:6-757:52" name="Has Immunosuppressive Medications Risk Factor" xsi:type="ExpressionRef"/>
                               </condition>
-                              <then locator="753:59" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                              <else locator="753:66" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                              <then locator="757:59" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                              <else locator="757:66" valueType="t:Integer" value="0" xsi:type="Literal"/>
                            </operand>
                         </operand>
-                        <operand locator="754:2-754:53" xsi:type="If">
+                        <operand locator="758:2-758:53" xsi:type="If">
                            <condition asType="t:Boolean" xsi:type="As">
-                              <operand locator="754:6-754:38" name="Has Cystic Fibrosis Risk Factor" xsi:type="ExpressionRef"/>
+                              <operand locator="758:6-758:38" name="Has Cystic Fibrosis Risk Factor" xsi:type="ExpressionRef"/>
                            </condition>
-                           <then locator="754:45" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                           <else locator="754:52" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                           <then locator="758:45" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                           <else locator="758:52" valueType="t:Integer" value="0" xsi:type="Literal"/>
                         </operand>
                      </operand>
-                     <operand locator="755:2-755:49" xsi:type="If">
+                     <operand locator="759:2-759:49" xsi:type="If">
                         <condition asType="t:Boolean" xsi:type="As">
-                           <operand locator="755:6-755:34" name="Has Thalassemia Risk Factor" xsi:type="ExpressionRef"/>
+                           <operand locator="759:6-759:34" name="Has Thalassemia Risk Factor" xsi:type="ExpressionRef"/>
                         </condition>
-                        <then locator="755:41" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                        <else locator="755:48" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        <then locator="759:41" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                        <else locator="759:48" valueType="t:Integer" value="0" xsi:type="Literal"/>
                      </operand>
                   </operand>
-                  <operand locator="756:2-756:44" xsi:type="If">
+                  <operand locator="760:2-760:44" xsi:type="If">
                      <condition asType="t:Boolean" xsi:type="As">
-                        <operand locator="756:6-756:29" name="Has Asthma Risk Factor" xsi:type="ExpressionRef"/>
+                        <operand locator="760:6-760:29" name="Has Asthma Risk Factor" xsi:type="ExpressionRef"/>
                      </condition>
-                     <then locator="756:36" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                     <else locator="756:43" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     <then locator="760:36" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     <else locator="760:43" valueType="t:Integer" value="0" xsi:type="Literal"/>
                   </operand>
                </operand>
-               <operand locator="757:2-757:50" xsi:type="If">
+               <operand locator="761:2-761:50" xsi:type="If">
                   <condition asType="t:Boolean" xsi:type="As">
-                     <operand locator="757:6-757:35" name="Has Hypertension Risk Factor" xsi:type="ExpressionRef"/>
+                     <operand locator="761:6-761:35" name="Has Hypertension Risk Factor" xsi:type="ExpressionRef"/>
                   </condition>
-                  <then locator="757:42" valueType="t:Integer" value="1" xsi:type="Literal"/>
-                  <else locator="757:49" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                  <then locator="761:42" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  <else locator="761:49" valueType="t:Integer" value="0" xsi:type="Literal"/>
                </operand>
             </operand>
-            <operand locator="758:2-758:63" xsi:type="If">
+            <operand locator="762:2-762:63" xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
-                  <operand locator="758:6-758:48" name="hasImmunedeficienciesRiskFactor" xsi:type="FunctionRef">
-                     <operand locator="758:38-758:47" name="conditions" xsi:type="OperandRef"/>
+                  <operand locator="762:6-762:48" name="hasImmunedeficienciesRiskFactor" xsi:type="FunctionRef">
+                     <operand locator="762:38-762:47" name="conditions" xsi:type="OperandRef"/>
                   </operand>
                </condition>
-               <then locator="758:55" valueType="t:Integer" value="1" xsi:type="Literal"/>
-               <else locator="758:62" valueType="t:Integer" value="0" xsi:type="Literal"/>
+               <then locator="762:55" valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <else locator="762:62" valueType="t:Integer" value="0" xsi:type="Literal"/>
             </operand>
          </expression>
          <operand name="conditions">
-            <operandTypeSpecifier locator="726:43-726:57" xsi:type="ListTypeSpecifier">
-               <elementType locator="726:48-726:56" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            <operandTypeSpecifier locator="730:43-730:57" xsi:type="ListTypeSpecifier">
+               <elementType locator="730:48-730:56" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
             </operandTypeSpecifier>
          </operand>
       </def>
-      <def locator="668:1-669:43" name="Risk Factors count" context="Patient" accessLevel="Public">
-         <expression locator="669:5-669:43" name="allRiskFactors" xsi:type="FunctionRef">
-            <operand locator="669:20-669:42" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="668:1-670:41" name="Risk Factors count" context="Patient" accessLevel="Public">
+         <expression locator="669:3-670:41" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand locator="669:6-669:32" name="All Risk Factors Are Null" xsi:type="ExpressionRef"/>
+            </condition>
+            <then asType="t:Integer" xsi:type="As">
+               <operand locator="669:40-669:43" xsi:type="Null"/>
+            </then>
+            <else locator="670:3-670:41" name="allRiskFactors" xsi:type="FunctionRef">
+               <operand locator="670:18-670:40" name="All Active Conditions" xsi:type="ExpressionRef"/>
+            </else>
          </expression>
       </def>
-      <def locator="789:1-795:3" name="Has Cancer Risk Factor" context="Patient" accessLevel="Public">
-         <expression locator="790:3-795:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
-            <operand locator="791:5-793:52" xsi:type="Query">
-               <source locator="791:6-791:30" alias="C">
-                  <expression locator="791:6-791:28" name="All Active Conditions" xsi:type="ExpressionRef"/>
+      <def locator="793:1-799:3" name="Has Cancer Risk Factor" context="Patient" accessLevel="Public">
+         <expression locator="794:3-799:3" name="HasConditionWithOverride" xsi:type="FunctionRef">
+            <operand locator="795:5-797:52" xsi:type="Query">
+               <source locator="795:6-795:30" alias="C">
+                  <expression locator="795:6-795:28" name="All Active Conditions" xsi:type="ExpressionRef"/>
                </source>
-               <where locator="792:11-793:51" xsi:type="Or">
-                  <operand locator="792:18-792:51" xsi:type="InValueSet">
+               <where locator="796:11-797:51" xsi:type="Or">
+                  <operand locator="796:18-796:51" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="792:18-792:23" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="796:18-796:23" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="792:28-792:51" name="Cancer SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="796:28-796:51" name="Cancer SNOMED Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
-                  <operand locator="793:16-793:50" xsi:type="InValueSet">
+                  <operand locator="797:16-797:50" xsi:type="InValueSet">
                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand locator="793:16-793:21" path="code" scope="C" xsi:type="Property"/>
+                        <operand locator="797:16-797:21" path="code" scope="C" xsi:type="Property"/>
                      </code>
-                     <valueset locator="793:26-793:50" name="Cancer ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
+                     <valueset locator="797:26-797:50" name="Cancer ICD10CM Codes" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </where>
             </operand>
-            <operand locator="794:5-794:22" path="Cancer" xsi:type="Property">
-               <source locator="794:5-794:15" name="RiskFactors" xsi:type="ParameterRef"/>
+            <operand locator="798:5-798:22" path="Cancer" xsi:type="Property">
+               <source locator="798:5-798:15" name="RiskFactors" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="910:1-915:3" name="Last ALT Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="911:3-915:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="912:5-914:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="913:7-913:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="913:20-913:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="913:34-913:53" name="ALT Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="914:1-919:3" name="Last ALT Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="915:3-919:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="916:5-918:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="917:7-917:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="917:20-917:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="917:34-917:53" name="ALT Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="914:7-914:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="918:7-918:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="917:1-922:3" name="Last AST Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="918:3-922:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="919:5-921:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="920:7-920:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="920:20-920:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="920:34-920:53" name="AST Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="921:1-926:3" name="Last AST Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="922:3-926:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="923:5-925:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="924:7-924:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="924:20-924:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="924:34-924:53" name="AST Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="921:7-921:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="925:7-925:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="924:1-929:3" name="Last CRP Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="925:3-929:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="926:5-928:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="927:7-927:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="927:20-927:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="927:34-927:53" name="CRP Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="928:1-933:3" name="Last CRP Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="929:3-933:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="930:5-932:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="931:7-931:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="931:20-931:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="931:34-931:53" name="CRP Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="928:7-928:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="932:7-932:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="932:1-937:3" name="Last D-dimer Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="933:3-937:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="934:5-936:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="935:7-935:59" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="935:20-935:58" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="935:34-935:57" name="D-dimer Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="936:1-941:3" name="Last D-dimer Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="937:3-941:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="938:5-940:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="939:7-939:59" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="939:20-939:58" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="939:34-939:57" name="D-dimer Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="936:7-936:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="940:7-940:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="939:1-944:3" name="Last Neutrophils Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="940:3-944:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="941:5-943:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="942:7-942:63" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="942:20-942:62" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="942:34-942:61" name="Neutrophils Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="943:1-948:3" name="Last Neutrophils Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="944:3-948:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="945:5-947:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="946:7-946:63" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="946:20-946:62" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="946:34-946:61" name="Neutrophils Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="943:7-943:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="947:7-947:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="947:1-952:3" name="Last Ferritin Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="948:3-952:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="949:5-951:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="950:7-950:60" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="950:20-950:59" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="950:34-950:58" name="Ferritin Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="951:1-956:3" name="Last Ferritin Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="952:3-956:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="953:5-955:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="954:7-954:60" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="954:20-954:59" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="954:34-954:58" name="Ferritin Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="951:7-951:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="955:7-955:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="954:1-959:3" name="Last Lymphocytes Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="955:3-959:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="956:5-958:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="957:7-957:63" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="957:20-957:62" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="957:34-957:61" name="Lymphocytes Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="958:1-963:3" name="Last Lymphocytes Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="959:3-963:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="960:5-962:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="961:7-961:63" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="961:20-961:62" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="961:34-961:61" name="Lymphocytes Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="958:7-958:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="962:7-962:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="961:3-966:3" name="Last PCT Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="962:3-966:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="963:5-965:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="964:7-964:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="964:20-964:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="964:34-964:53" name="PCT Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="965:3-970:3" name="Last PCT Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="966:3-970:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="967:5-969:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="968:7-968:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="968:20-968:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="968:34-968:53" name="PCT Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="965:7-965:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="969:7-969:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="968:1-973:3" name="Last Interleukin 1 Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="969:3-973:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="970:5-972:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="971:7-971:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="971:20-971:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="971:34-971:63" name="Interleukin 1 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="972:1-977:3" name="Last Interleukin 1 Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="973:3-977:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="974:5-976:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="975:7-975:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="975:20-975:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="975:34-975:63" name="Interleukin 1 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="972:7-972:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="976:7-976:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="975:1-980:3" name="Last Interleukin 6 Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="976:3-980:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="977:5-979:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="978:7-978:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="978:20-978:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="978:34-978:63" name="Interleukin 6 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="979:1-984:3" name="Last Interleukin 6 Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="980:3-984:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="981:5-983:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="982:7-982:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="982:20-982:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="982:34-982:63" name="Interleukin 6 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="979:7-979:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="983:7-983:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="982:1-987:3" name="Last Interleukin 8 Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="983:3-987:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="984:5-986:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="985:7-985:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="985:20-985:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="985:34-985:63" name="Interleukin 8 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="986:1-991:3" name="Last Interleukin 8 Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="987:3-991:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="988:5-990:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="989:7-989:65" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="989:20-989:64" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="989:34-989:63" name="Interleukin 8 Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="986:7-986:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="990:7-990:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="989:1-994:3" name="Last Tumor Necrosis Factor Alpha Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="990:3-994:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="991:5-993:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="992:7-992:79" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="992:20-992:78" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="992:34-992:77" name="Tumor Necrosis Factor Alpha Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="993:1-998:3" name="Last Tumor Necrosis Factor Alpha Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="994:3-998:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="995:5-997:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="996:7-996:79" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="996:20-996:78" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="996:34-996:77" name="Tumor Necrosis Factor Alpha Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="993:7-993:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="997:7-997:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
-      <def locator="1009:1-1014:3" name="Last LDH Lab Result" context="Patient" accessLevel="Public">
-         <expression locator="1010:3-1014:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
-            <operand locator="1011:5-1013:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
-               <operand locator="1012:7-1012:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
-                  <operand locator="1012:20-1012:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
-                     <codes locator="1012:34-1012:53" name="LDH Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
+      <def locator="1013:1-1018:3" name="Last LDH Lab Result" context="Patient" accessLevel="Public">
+         <expression locator="1014:3-1018:3" name="MostRecent" libraryName="C3F" xsi:type="FunctionRef">
+            <operand locator="1015:5-1017:31" name="ObservationLookBack" libraryName="C3F" xsi:type="FunctionRef">
+               <operand locator="1016:7-1016:55" name="Verified" libraryName="C3F" xsi:type="FunctionRef">
+                  <operand locator="1016:20-1016:54" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                     <codes locator="1016:34-1016:53" name="LDH Lab Results" libraryName="CC" xsi:type="ValueSetRef"/>
                   </operand>
                </operand>
-               <operand locator="1013:7-1013:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
+               <operand locator="1017:7-1017:30" name="LabResultsLookbackPeriod" xsi:type="ParameterRef"/>
             </operand>
          </expression>
       </def>
