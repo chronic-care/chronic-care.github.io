@@ -8656,22 +8656,6 @@
           }
         },
         {
-          "locator": "801:1-802:36",
-          "name": "Has Cerebrovascular Disease Risk Factor",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
-            "locator": "802:3-802:36",
-            "path": "CerebrovascularDisease",
-            "type": "Property",
-            "source": {
-              "locator": "802:3-802:13",
-              "name": "RiskFactors",
-              "type": "ParameterRef"
-            }
-          }
-        },
-        {
           "locator": "764:1-765:112",
           "name": "All Active Conditions",
           "context": "Patient",
@@ -8829,6 +8813,113 @@
               }
             }
           ]
+        },
+        {
+          "locator": "793:1-799:3",
+          "name": "Has Cancer Risk Factor",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "locator": "794:3-799:3",
+            "name": "HasConditionWithOverride",
+            "type": "FunctionRef",
+            "operand": [
+              {
+                "locator": "795:5-797:52",
+                "type": "Query",
+                "source": [
+                  {
+                    "locator": "795:6-795:30",
+                    "alias": "C",
+                    "expression": {
+                      "locator": "795:6-795:28",
+                      "name": "All Active Conditions",
+                      "type": "ExpressionRef"
+                    }
+                  }
+                ],
+                "relationship": [],
+                "where": {
+                  "locator": "796:11-797:51",
+                  "type": "Or",
+                  "operand": [
+                    {
+                      "locator": "796:18-796:51",
+                      "type": "InValueSet",
+                      "code": {
+                        "name": "ToConcept",
+                        "libraryName": "FHIRHelpers",
+                        "type": "FunctionRef",
+                        "operand": [
+                          {
+                            "locator": "796:18-796:23",
+                            "path": "code",
+                            "scope": "C",
+                            "type": "Property"
+                          }
+                        ]
+                      },
+                      "valueset": {
+                        "locator": "796:28-796:51",
+                        "name": "Cancer SNOMED Codes",
+                        "libraryName": "CC",
+                        "type": "ValueSetRef"
+                      }
+                    },
+                    {
+                      "locator": "797:16-797:50",
+                      "type": "InValueSet",
+                      "code": {
+                        "name": "ToConcept",
+                        "libraryName": "FHIRHelpers",
+                        "type": "FunctionRef",
+                        "operand": [
+                          {
+                            "locator": "797:16-797:21",
+                            "path": "code",
+                            "scope": "C",
+                            "type": "Property"
+                          }
+                        ]
+                      },
+                      "valueset": {
+                        "locator": "797:26-797:50",
+                        "name": "Cancer ICD10CM Codes",
+                        "libraryName": "CC",
+                        "type": "ValueSetRef"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "locator": "798:5-798:22",
+                "path": "Cancer",
+                "type": "Property",
+                "source": {
+                  "locator": "798:5-798:15",
+                  "name": "RiskFactors",
+                  "type": "ParameterRef"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "locator": "801:1-802:36",
+          "name": "Has Cerebrovascular Disease Risk Factor",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "locator": "802:3-802:36",
+            "path": "CerebrovascularDisease",
+            "type": "Property",
+            "source": {
+              "locator": "802:3-802:13",
+              "name": "RiskFactors",
+              "type": "ParameterRef"
+            }
+          }
         },
         {
           "locator": "804:1-810:3",
@@ -9646,20 +9737,14 @@
                 "type": "ExpressionRef"
               },
               {
-                "locator": "634:3-635:26",
-                "type": "Query",
-                "source": [
-                  {
-                    "locator": "634:3-635:26",
-                    "alias": "Has Cancer Risk Factor",
-                    "expression": {
-                      "locator": "634:3-634:38",
-                      "name": "Has Pulmonary Embolism Risk Factor",
-                      "type": "ExpressionRef"
-                    }
-                  }
-                ],
-                "relationship": []
+                "locator": "634:3-634:38",
+                "name": "Has Pulmonary Embolism Risk Factor",
+                "type": "ExpressionRef"
+              },
+              {
+                "locator": "635:3-635:26",
+                "name": "Has Cancer Risk Factor",
+                "type": "ExpressionRef"
               },
               {
                 "locator": "636:3-636:43",
@@ -11587,97 +11672,6 @@
                 }
               ]
             }
-          }
-        },
-        {
-          "locator": "793:1-799:3",
-          "name": "Has Cancer Risk Factor",
-          "context": "Patient",
-          "accessLevel": "Public",
-          "expression": {
-            "locator": "794:3-799:3",
-            "name": "HasConditionWithOverride",
-            "type": "FunctionRef",
-            "operand": [
-              {
-                "locator": "795:5-797:52",
-                "type": "Query",
-                "source": [
-                  {
-                    "locator": "795:6-795:30",
-                    "alias": "C",
-                    "expression": {
-                      "locator": "795:6-795:28",
-                      "name": "All Active Conditions",
-                      "type": "ExpressionRef"
-                    }
-                  }
-                ],
-                "relationship": [],
-                "where": {
-                  "locator": "796:11-797:51",
-                  "type": "Or",
-                  "operand": [
-                    {
-                      "locator": "796:18-796:51",
-                      "type": "InValueSet",
-                      "code": {
-                        "name": "ToConcept",
-                        "libraryName": "FHIRHelpers",
-                        "type": "FunctionRef",
-                        "operand": [
-                          {
-                            "locator": "796:18-796:23",
-                            "path": "code",
-                            "scope": "C",
-                            "type": "Property"
-                          }
-                        ]
-                      },
-                      "valueset": {
-                        "locator": "796:28-796:51",
-                        "name": "Cancer SNOMED Codes",
-                        "libraryName": "CC",
-                        "type": "ValueSetRef"
-                      }
-                    },
-                    {
-                      "locator": "797:16-797:50",
-                      "type": "InValueSet",
-                      "code": {
-                        "name": "ToConcept",
-                        "libraryName": "FHIRHelpers",
-                        "type": "FunctionRef",
-                        "operand": [
-                          {
-                            "locator": "797:16-797:21",
-                            "path": "code",
-                            "scope": "C",
-                            "type": "Property"
-                          }
-                        ]
-                      },
-                      "valueset": {
-                        "locator": "797:26-797:50",
-                        "name": "Cancer ICD10CM Codes",
-                        "libraryName": "CC",
-                        "type": "ValueSetRef"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "locator": "798:5-798:22",
-                "path": "Cancer",
-                "type": "Property",
-                "source": {
-                  "locator": "798:5-798:15",
-                  "name": "RiskFactors",
-                  "type": "ParameterRef"
-                }
-              }
-            ]
           }
         },
         {
